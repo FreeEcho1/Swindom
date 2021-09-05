@@ -1,4 +1,5 @@
 # Swindom
 
- - 使用ライブラリ
-<a herf="https://github.com/FreeEcho1/FreeEcho-Check-For-Update">FreeEcho Check For Update</a>
+ - 使用ライブラリ<br>
+FreeEcho Check For Update</a>
+https://github.com/FreeEcho1/FreeEcho-Check-For-Update<br>
