@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swindom", "Swindom\Swindom.csproj", "{79D707DF-099D-4266-A902-41368F648F53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D707DF-099D-4266-A902-41368F648F53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D707DF-099D-4266-A902-41368F648F53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D707DF-099D-4266-A902-41368F648F53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D707DF-099D-4266-A902-41368F648F53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {059EAA32-DBB4-46F4-9879-A9CD5A1216BC}
+	EndGlobalSection
+EndGlobal
