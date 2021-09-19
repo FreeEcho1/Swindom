@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language>
+  <LanguageName>język polski</LanguageName>
+  <ErrorOccurred>Wystąpił błąd.</ErrorOccurred>
+  <Check>Potwierdź</Check>
+  <Ok>OK</Ok>
+  <Yes>Tak Nie</Yes>
+  <No>Nie</No>
+  <Cancel>Anuluj</Cancel>
+  <SettingFileNotFound>Nie można znaleźć określonego pliku konfiguracyjnego.</SettingFileNotFound>
+  <ShareSettings>Czy chcesz udostępnić informacje o konfiguracji wszystkim użytkownikom?</ShareSettings>
+  <Open>Otwórz</Open>
+  <BatchProcessingOfEvent>Przetwarzanie wsadowe "Zdarzenie</BatchProcessingOfEvent>
+  <BatchProcessingOfTimer>Przetwarzanie wsadowe "Timer".</BatchProcessingOfTimer>
+  <End>Koniec</End>
+  <UpdateCheckFailed>Nie powiodło się sprawdzenie aktualizacji.</UpdateCheckFailed>
+  <LatestVersion>Dostępna jest najnowsza wersja.</LatestVersion>
+  <ThereIsTheLatestVersion>Dostępna jest najnowsza wersja.</ThereIsTheLatestVersion>
+  <Event>Wydarzenia</Event>
+  <Timer>Timer</Timer>
+  <WindowProcessing>Obróbka okien</WindowProcessing>
+  <Magnet>Magnes</Magnet>
+  <Setting>Ustawienia</Setting>
+  <Information>Informacje</Information>
+  <Add>Dodaj</Add>
+  <Modify>Zmodyfikuj</Modify>
+  <Delete>Usuń</Delete>
+  <Select>Wybierz</Select>
+  <Enabling>Włącz</Enabling>
+  <Disabling>Wyłącz</Disabling>
+  <MoveUp>Ruszaj do góry</MoveUp>
+  <MoveDown>Przesuń w dół</MoveDown>
+  <Copy>Kopia</Copy>
+  <ProcessingState>Status przetwarzania</ProcessingState>
+  <Deleted>Usunięto.</Deleted>
+  <AllowDelete>Czy mogę go usunąć?</AllowDelete>
+  <SoftwareName>Nazwa oprogramowania</SoftwareName>
+  <Version>Wersja</Version>
+  <UpdateCheck>Potwierdzenie aktualizacji</UpdateCheck>
+  <Manual>Opis</Manual>
+  <UpdateHistory>Historia aktualizacji</UpdateHistory>
+  <Website>Strona internetowa</Website>
+  <ReportsAndRequests>Raport, wniosek</ReportsAndRequests>
+  <Library>Biblioteka</Library>
+  <DisplayCoordinates>Wyświetl współrzędne</DisplayCoordinates>
+  <GlobalCoordinates>Współrzędne globalne</GlobalCoordinates>
+  <General>Ogólne</General>
+  <Hotkey>Skróty klawiszowe</Hotkey>
+  <DisplayItem>Wyświetlane elementy</DisplayItem>
+  <Language>Język</Language>
+  <Translators>Tłumacz : DeepL</Translators>
+  <AutomaticUpdateCheck>Automatycznie sprawdzaj aktualizacje w czasie pracy</AutomaticUpdateCheck>
+  <CheckBetaVersion>Sprawdź aktualizacje, w tym wersje beta</CheckBetaVersion>
+  <RegisterMultipleWindowActions>Zarejestruj przetwarzanie w wielu oknach</RegisterMultipleWindowActions>
+  <CoordinateSpecificationMethod>Jak określić współrzędne</CoordinateSpecificationMethod>
+  <ProcessingInterval>Interwał przetwarzania (milisekundy)</ProcessingInterval>
+  <RunAtWindowsStartup>Uruchom przy starcie systemu Windows</RunAtWindowsStartup>
+  <RunAtWindowsStartupAdministrator>Uruchom przy starcie systemu Windows (uprawnienia administratora)</RunAtWindowsStartupAdministrator>
+  <NormalExecution>Czy to jest normalna egzekucja? (bez praw administratora - "tak" / z prawami administratora - "nie")</NormalExecution>
+  <WaitTimeToProcessingNextWindow>Czas oczekiwania (w milisekundach) na przetworzenie następnego okna</WaitTimeToProcessingNextWindow>
+  <StopProcessingWhenWindowIsFullScreen>Zatrzymaj przetwarzanie, jeśli jest okno pełnoekranowe</StopProcessingWhenWindowIsFullScreen>
+  <CaseSensitiveWindowQueries>w wykrywaniu okien uwzględniana jest wielkość liter</CaseSensitiveWindowQueries>
+  <DoNotChangePositionSizeOutOfScreen>Nie zmieniaj pozycji ani rozmiaru, gdy wychodzisz poza ekran.</DoNotChangePositionSizeOutOfScreen>
+  <StopProcessingShowAddModify>Zatrzymaj przetwarzanie, gdy wyświetlane jest okno dodawania/modyfikacji</StopProcessingShowAddModify>
+  <HotkeysDoNotStop>Nie zatrzymuj skrótów klawiszowych (gdy jest okno pełnoekranowe)</HotkeysDoNotStop>
+  <MoveThePastePosition>Przesuń pozycję, aby wkleić</MoveThePastePosition>
+  <PasteToTheEdgeOfScreen>Wklej do krawędzi ekranu</PasteToTheEdgeOfScreen>
+  <PasteIntoAnotherWindow>Wklej do innego okna</PasteIntoAnotherWindow>
+  <PasteWithTheCtrlKeyPressed>Wklej z wciśniętym klawiszem Ctrl</PasteWithTheCtrlKeyPressed>
+  <StopTimeWhenPasting>Czas zatrzymania podczas wklejania (milisekundy)</StopTimeWhenPasting>
+  <DecisionDistanceToPaste>Odległość wyroku do wklejenia</DecisionDistanceToPaste>
+  <AddItem>Dodaj pozycję</AddItem>
+  <ItemModification>Korekta pozycji</ItemModification>
+  <TitleName>Nazwa tytułu</TitleName>
+  <ClassName>Nazwa klasy</ClassName>
+  <FileName>Nazwa pliku</FileName>
+  <Display>Wyświetlacz</Display>
+  <WindowState>Stan okna</WindowState>
+  <ProcessingType>Typ przetwarzania</ProcessingType>
+  <SpecifyPositionAndSize>Określenie pozycji i rozmiaru</SpecifyPositionAndSize>
+  <PositionAndSize>Pozycja i rozmiar</PositionAndSize>
+  <MoveXCoordinate>Przesunąć współrzędną X</MoveXCoordinate>
+  <MoveYCoordinate>Przesunięcie Współrzędna Y</MoveYCoordinate>
+  <MoveXAndYCoordinate>Przesuń współrzędne X i Y</MoveXAndYCoordinate>
+  <IncreaseDecreaseWidth>Zwiększanie lub zmniejszanie szerokości</IncreaseDecreaseWidth>
+  <IncreaseDecreaseHeight>Zwiększanie lub zmniejszanie wysokości</IncreaseDecreaseHeight>
+  <IncreaseDecreaseWidthAndHeight>Zwiększanie/zmniejszanie szerokości i wysokości</IncreaseDecreaseWidthAndHeight>
+  <StartStopProcessingOfEvent>Uruchomienie/zatrzymanie przetwarzania "Zdarzenia</StartStopProcessingOfEvent>
+  <StartStopProcessingOfTimer>Uruchomienie/zatrzymanie przetwarzania "Timer</StartStopProcessingOfTimer>
+  <StartStopProcessingOfMagnet>Uruchomienie/zatrzymanie przetwarzania "Magnes</StartStopProcessingOfMagnet>
+  <AlwaysShowOrCancelOnTop>Wyświetlanie zawsze z przodu / Zwolnienie</AlwaysShowOrCancelOnTop>
+  <SpecifyCancelTransparency>Ustawianie/wyłączanie przezroczystości</SpecifyCancelTransparency>
+  <LeftEdge>Lewy koniec</LeftEdge>
+  <Middle>Centrum</Middle>
+  <RightEdge>Prawy koniec</RightEdge>
+  <TopEdge>Górna krawędź</TopEdge>
+  <BottomEdge>Na dole</BottomEdge>
+  <X>X</X>
+  <Y>Y</Y>
+  <Width>Szerokość</Width>
+  <Height>Wysokość</Height>
+  <Pixel>px</Pixel>
+  <Percent>procent</Percent>
+  <RegisteredName>Nazwa rejestracji</RegisteredName>
+  <WindowDecide>Wyrok z okna</WindowDecide>
+  <ProcessingSettings>Ustawienie przetwarzania</ProcessingSettings>
+  <HoldDownMouseCursorMoveToSelectWindow>Przesuń kursor myszy na okno, które ma zostać wybrane, naciskając jednocześnie przycisk</HoldDownMouseCursorMoveToSelectWindow>
+  <GetWindowInformation>Pozyskiwanie informacji o oknach</GetWindowInformation>
+  <WindowInformationToGet>Informacje o oknach do pozyskania</WindowInformationToGet>
+  <FileSelection>Wybór pliku</FileSelection>
+  <ExactMatch>Idealne dopasowanie</ExactMatch>
+  <PartialMatch>Częściowe dopasowanie</PartialMatch>
+  <ForwardMatch>Dopasowanie do przodu</ForwardMatch>
+  <BackwardMatch>Dopasowanie wsteczne</BackwardMatch>
+  <IncludePath>Uwzględnić ścieżkę</IncludePath>
+  <DoNotIncludePath>Nie zawiera ścieżki</DoNotIncludePath>
+  <DoNotSpecify>Nie określono</DoNotSpecify>
+  <TitleProcessingConditions>Warunki dotyczące przetwarzania tytułów</TitleProcessingConditions>
+  <DoNotProcessingUntitledWindow>Nie przetwarzaj okna bez tytułu</DoNotProcessingUntitledWindow>
+  <DoNotProcessingWindowWithTitle>Nie przetwarzaj okna z tytułem</DoNotProcessingWindowWithTitle>
+  <DeleteItem>Usuwanie elementów</DeleteItem>
+  <Active>Aktywny</Active>
+  <Item>Pozycja</Item>
+  <Processing>Przetwarzanie</Processing>
+  <ProcessingName>Nazwa procesu</ProcessingName>
+  <GetItemWindowInformationOnly>Uzyskaj tylko informacje o oknie elementu</GetItemWindowInformationOnly>
+  <Other>Inne</Other>
+  <DisplayToUseAsStandard>Wyświetlacz służący jako punkt odniesienia</DisplayToUseAsStandard>
+  <DisplayWithWindow>Wyświetlacz z oknem</DisplayWithWindow>
+  <TheSpecifiedDisplay>Określony wyświetlacz</TheSpecifiedDisplay>
+  <OnlyIfItIsOnTheSpecifiedDisplay>Tylko jeśli element znajduje się na określonym wyświetlaczu</OnlyIfItIsOnTheSpecifiedDisplay>
+  <ProcessOnlyOnce>Przetwarzać tylko raz</ProcessOnlyOnce>
+  <OnceWindowOpen>Gdy okno jest otwarte</OnceWindowOpen>
+  <OnceWhileItIsRunning>Podczas pracy tego oprogramowania</OnceWhileItIsRunning>
+  <WhenToProcessing>Kiedy przetwarzać</WhenToProcessing>
+  <TypesOfEventsToEnable>Typ zdarzenia, które ma zostać włączone</TypesOfEventsToEnable>
+  <TheForegroundHasBeenChanged>Pierwsza plansza została zmieniona</TheForegroundHasBeenChanged>
+  <MoveSizeChangeStart>Przesuwanie i zmiana rozmiaru rozpoczęte</MoveSizeChangeStart>
+  <MoveSizeChangeEnd>Zakończono przenoszenie i zmianę rozmiaru</MoveSizeChangeEnd>
+  <MinimizeStart>Minimalizacja została rozpoczęta.</MinimizeStart>
+  <MinimizeEnd>Minimalizacja została zakończona</MinimizeEnd>
+  <Create>Utworzony</Create>
+  <Show>Wyświetlane</Show>
+  <PositionChanged>Stanowisko zostało zmienione</PositionChanged>
+  <NameChanged>Nazwa została zmieniona</NameChanged>
+  <Forefront>Pierwsza strona</Forefront>
+  <DoNotChange>Nigdy się nie zmieniaj</DoNotChange>
+  <AlwaysForefront>Zawsze w czołówce</AlwaysForefront>
+  <AlwaysCancelForefront>Zawsze usuwać najwyżej położone</AlwaysCancelForefront>
+  <SpecifyTransparency>Określić przejrzystość</SpecifyTransparency>
+  <CloseWindow>Zamknij okno</CloseWindow>
+  <NumberOfTimesNotToProcessingFirst>Ilość razy nie przetwarzać w pierwszej kolejności (opóźnia przetwarzanie natychmiast po wykonaniu)</NumberOfTimesNotToProcessingFirst>
+  <NormalWindow>Normalne okno</NormalWindow>
+  <Maximize>Maksymalizuj</Maximize>
+  <Minimize>Zminimalizuj</Minimize>
+  <ProcessOnlyWhenNormalWindow>Proces tylko wtedy, gdy jest to "normalne okno</ProcessOnlyWhenNormalWindow>
+  <CoordinateSpecification>Określić współrzędne</CoordinateSpecification>
+  <WidthSpecification>Określ szerokość</WidthSpecification>
+  <HeightSpecification>Wysokość</HeightSpecification>
+  <ConditionsThatDoNotProcess>Warunek nieprzetwarzania</ConditionsThatDoNotProcess>
+  <ClientArea>Ukierunkowanie na obszar klienta</ClientArea>
+  <ProcessingPositionAndSizeTwice>Pozycja i rozmiar są przetwarzane dwukrotnie</ProcessingPositionAndSizeTwice>
+  <TitleNameExclusionString>Wykluczający ciąg znaków nazwy tytułu</TitleNameExclusionString>
+  <Size>Rozmiar</Size>
+  <RetrievedAfterFiveSeconds>Informacje o oknie są pobierane po pięciu sekundach, dlatego należy aktywować okno, które pobiera informacje w ciągu pięciu sekund.</RetrievedAfterFiveSeconds>
+  <SelectionComplete>Została ona wybrana.</SelectionComplete>
+  <ThereAreDuplicateItems>Pozycja jest zdublowana.</ThereAreDuplicateItems>
+  <ThereIsADuplicateRegistrationName>Istnieje duplikat nazwy rejestracyjnej.</ThereIsADuplicateRegistrationName>
+  <ThereIsADuplicateProcessingName>Nazwa procesu jest zduplikowana.</ThereIsADuplicateProcessingName>
+  <Added>Dodano.</Added>
+  <Modified>Poprawione.</Modified>
+  <ProcessingWindowRange>Zakres okien do obróbki</ProcessingWindowRange>
+  <ActiveWindowOnly>Tylko aktywne okno</ActiveWindowOnly>
+  <AllWindow>Wszystkie okna</AllWindow>
+  <OnlyActiveWindowEvent>Przetwarzane jest tylko aktywne okno "Wydarzenie".</OnlyActiveWindowEvent>
+  <OnlyActiveWindowTimer>Obrabiane jest tylko aktywne okno "Timer".</OnlyActiveWindowTimer>
+  <AmountOfMovement>Wielkość ruchu</AmountOfMovement>
+  <SizeChangeAmount>Zmień rozmiar Ilość</SizeChangeAmount>
+  <Transparency>Przejrzystość</Transparency>
+  <NumericCalculation>Obliczenia numeryczne</NumericCalculation>
+  <Ratio>Stosunek</Ratio>
+  <ExplanationOfTheEvent>Można określić okno, które ma być przetwarzane automatycznie. Jeśli chcesz używać tylko klawiszy skrótu bez automatycznego przetwarzania, usuń zaznaczenie pola wyboru, aby je wyłączyć.</ExplanationOfTheEvent>
+  <ExplanationOfTheTimer>Można określić okno, które ma być przetwarzane automatycznie. Jeśli chcesz przetwarzać tylko za pomocą klawisza skrótu bez automatycznego przetwarzania, odznacz to pole i wyłącz je. Interwał przetwarzania" jest to odstęp czasu pomiędzy zakończeniem przetwarzania wszystkich okien a rozpoczęciem następnego przetwarzania.</ExplanationOfTheTimer>
+  <HotkeyExplanation>Aktywne okno (stan, który przyjmuje dane wejściowe) można obsługiwać za pomocą klawisza skrótu. Za pomocą przycisku "Wybierz" można wybrać okno, które ma zostać przetworzone i przetworzyć je bez użycia klawiszy skrótu.</HotkeyExplanation>
+  <MagnetExplanation>Gdy okno jest przesuwane za pomocą myszy, wkleja je do krawędzi ekranu lub innego okna.</MagnetExplanation>
+  <WindowMoveOutsideToInside>Przesuń okno do środka ekranu, jeśli okno jest poza ekranem</WindowMoveOutsideToInside>
+  <MoveWindowToCenterOfScreen>Przesuń na środek ekranu, gdy wyświetlane jest okno</MoveWindowToCenterOfScreen>
+</Language>

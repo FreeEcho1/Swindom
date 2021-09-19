@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Language>
+  <LanguageName>한국어</LanguageName>
+  <ErrorOccurred>오류가 발생했습니다.</ErrorOccurred>
+  <Check>확인</Check>
+  <Ok>OK</Ok>
+  <Yes>예</Yes>
+  <No>아니오</No>
+  <Cancel>취소</Cancel>
+  <SettingFileNotFound>지정된 설정 파일을 찾을 수 없습니다.</SettingFileNotFound>
+  <ShareSettings>모든 사용자 설정 정보를 공유합니까?</ShareSettings>
+  <Open>열</Open>
+  <BatchProcessingOfEvent>"이벤트"일괄 처리</BatchProcessingOfEvent>
+  <BatchProcessingOfTimer>"타이머"일괄 처리</BatchProcessingOfTimer>
+  <End>종료</End>
+  <UpdateCheckFailed>업데이트 확인에 실패했습니다.</UpdateCheckFailed>
+  <LatestVersion>최신 버전입니다.</LatestVersion>
+  <ThereIsTheLatestVersion>최신 버전이 있습니다.</ThereIsTheLatestVersion>
+  <Event>이벤트</Event>
+  <Timer>타이머</Timer>
+  <WindowProcessing>창 처리</WindowProcessing>
+  <Magnet>자석</Magnet>
+  <Setting>설정</Setting>
+  <Information>정보</Information>
+  <Add>추가</Add>
+  <Modify>수정</Modify>
+  <Delete>삭제</Delete>
+  <Select>선택</Select>
+  <Enabling>활성화</Enabling>
+  <Disabling>비활성화</Disabling>
+  <MoveUp>위로 이동</MoveUp>
+  <MoveDown>아래로 이동</MoveDown>
+  <Copy>복사</Copy>
+  <ProcessingState>처리 상태</ProcessingState>
+  <Deleted>삭제했습니다.</Deleted>
+  <AllowDelete>삭제 하시겠습니까?</AllowDelete>
+  <SoftwareName>소프트웨어 이름</SoftwareName>
+  <Version>버전</Version>
+  <UpdateCheck>업데이트 확인</UpdateCheck>
+  <Manual>설명서</Manual>
+  <UpdateHistory>업데이트 내역</UpdateHistory>
+  <Website>웹 사이트</Website>
+  <ReportsAndRequests>보고 요망</ReportsAndRequests>
+  <Library>라이브러리</Library>
+  <DisplayCoordinates>디스플레이 좌표</DisplayCoordinates>
+  <GlobalCoordinates>글로벌 좌표</GlobalCoordinates>
+  <General>일반</General>
+  <Hotkey>단축키</Hotkey>
+  <DisplayItem>표시 항목</DisplayItem>
+  <Language>언어</Language>
+  <Translators>역자 : Google Translate</Translators>
+  <AutomaticUpdateCheck>실행시 자동으로 업데이트 확인</AutomaticUpdateCheck>
+  <CheckBetaVersion>베타 버전을 포함하여 업데이트 확인</CheckBetaVersion>
+  <RegisterMultipleWindowActions>창 처리를 복수 등록</RegisterMultipleWindowActions>
+  <CoordinateSpecificationMethod>좌표 지정 방법</CoordinateSpecificationMethod>
+  <ProcessingInterval>처리 간격 (밀리 초)</ProcessingInterval>
+  <RunAtWindowsStartup>Windows 시작시 실행</RunAtWindowsStartup>
+  <RunAtWindowsStartupAdministrator>Windows 시작시 실행 (관리자 권한)</RunAtWindowsStartupAdministrator>
+  <NormalExecution>일반적으로 실행입니까? (관리자 권한없이 - "예"/ 관리자 권한 있음 - "아니오")</NormalExecution>
+  <WaitTimeToProcessingNextWindow>다음 창을 처리하는 시간 (밀리 초)</WaitTimeToProcessingNextWindow>
+  <StopProcessingWhenWindowIsFullScreen>전체 화면 창이있는 경우 처리 중지</StopProcessingWhenWindowIsFullScreen>
+  <CaseSensitiveWindowQueries>창 판정에서 대소 문자를 구별</CaseSensitiveWindowQueries>
+  <DoNotChangePositionSizeOutOfScreen>화면 벗어날 경우 위치와 크기를 변경하지</DoNotChangePositionSizeOutOfScreen>
+  <StopProcessingShowAddModify>추가 / 수정 창이 표시되는 경우 처리 중지</StopProcessingShowAddModify>
+  <HotkeysDoNotStop>단축키는 정지시키지 않는 (전체 화면 창이있는 경우)</HotkeysDoNotStop>
+  <MoveThePastePosition>붙여 넣을 위치를 이동할</MoveThePastePosition>
+  <PasteToTheEdgeOfScreen>화면 가장자리에 붙여 넣기</PasteToTheEdgeOfScreen>
+  <PasteIntoAnotherWindow>다른 창에 붙여 넣기</PasteIntoAnotherWindow>
+  <PasteWithTheCtrlKeyPressed>Ctrl 키를 누른 상태에서 붙여 넣기</PasteWithTheCtrlKeyPressed>
+  <StopTimeWhenPasting>붙어 때의 정지 시간 (밀리 초)</StopTimeWhenPasting>
+  <DecisionDistanceToPaste>붙여 판정 거리</DecisionDistanceToPaste>
+  <AddItem>항목 추가</AddItem>
+  <ItemModification>항목 수정</ItemModification>
+  <TitleName>타이틀 명</TitleName>
+  <ClassName>클래스 이름</ClassName>
+  <FileName>파일 이름</FileName>
+  <Display>디스플레이</Display>
+  <WindowState>윈도우 상태</WindowState>
+  <ProcessingType>처리 유형</ProcessingType>
+  <SpecifyPositionAndSize>위치와 크기를 지정</SpecifyPositionAndSize>
+  <PositionAndSize>위치와 크기</PositionAndSize>
+  <MoveXCoordinate>X 좌표를 이동</MoveXCoordinate>
+  <MoveYCoordinate>Y 좌표를 이동</MoveYCoordinate>
+  <MoveXAndYCoordinate>X와 Y 좌표를 이동</MoveXAndYCoordinate>
+  <IncreaseDecreaseWidth>폭을 증감</IncreaseDecreaseWidth>
+  <IncreaseDecreaseHeight>높이를 증감</IncreaseDecreaseHeight>
+  <IncreaseDecreaseWidthAndHeight>폭과 높이를 증감</IncreaseDecreaseWidthAndHeight>
+  <StartStopProcessingOfEvent>"이벤트"처리 시작 / 정지</StartStopProcessingOfEvent>
+  <StartStopProcessingOfTimer>"타이머"처리 시작 / 정지</StartStopProcessingOfTimer>
+  <StartStopProcessingOfMagnet>"자석"처리 시작 / 정지</StartStopProcessingOfMagnet>
+  <AlwaysShowOrCancelOnTop>항상 맨 위에 표시 / 해제</AlwaysShowOrCancelOnTop>
+  <SpecifyCancelTransparency>투명도를 지정 / 해제</SpecifyCancelTransparency>
+  <LeftEdge>왼쪽</LeftEdge>
+  <Middle>중앙</Middle>
+  <RightEdge>오른쪽</RightEdge>
+  <TopEdge>상단</TopEdge>
+  <BottomEdge>하단</BottomEdge>
+  <X>X</X>
+  <Y>Y</Y>
+  <Width>폭</Width>
+  <Height>높이</Height>
+  <Pixel>px</Pixel>
+  <Percent>%</Percent>
+  <RegisteredName>등록 이름</RegisteredName>
+  <WindowDecide>창 판정</WindowDecide>
+  <ProcessingSettings>처리 설정</ProcessingSettings>
+  <HoldDownMouseCursorMoveToSelectWindow>길게 선택하는 창에 마우스 커서를 이동</HoldDownMouseCursorMoveToSelectWindow>
+  <GetWindowInformation>창 정보 취득</GetWindowInformation>
+  <WindowInformationToGet>검색 창 정보</WindowInformationToGet>
+  <FileSelection>파일 선택</FileSelection>
+  <ExactMatch>완전 일치</ExactMatch>
+  <PartialMatch>부분 일치</PartialMatch>
+  <ForwardMatch>전방 일치</ForwardMatch>
+  <BackwardMatch>후방 일치</BackwardMatch>
+  <IncludePath>경로를 포함</IncludePath>
+  <DoNotIncludePath>경로를 포함하지 않는</DoNotIncludePath>
+  <DoNotSpecify>지정하지</DoNotSpecify>
+  <TitleProcessingConditions>제목의 처리 조건</TitleProcessingConditions>
+  <DoNotProcessingUntitledWindow>제목이없는 창은 처리하지</DoNotProcessingUntitledWindow>
+  <DoNotProcessingWindowWithTitle>제목이 창은 처리하지</DoNotProcessingWindowWithTitle>
+  <DeleteItem>항목 삭제</DeleteItem>
+  <Active>활성</Active>
+  <Item>항목</Item>
+  <Processing>처리</Processing>
+  <ProcessingName>처리 명</ProcessingName>
+  <GetItemWindowInformationOnly>항목 창 정보 만 취득</GetItemWindowInformationOnly>
+  <Other>기타</Other>
+  <DisplayToUseAsStandard>기준으로하는 디스플레이</DisplayToUseAsStandard>
+  <DisplayWithWindow>창이있는 디스플레이</DisplayWithWindow>
+  <TheSpecifiedDisplay>지정한 디스플레이</TheSpecifiedDisplay>
+  <OnlyIfItIsOnTheSpecifiedDisplay>지정된 디스플레이에있는 경우에만</OnlyIfItIsOnTheSpecifiedDisplay>
+  <ProcessOnlyOnce>한 번만 처리</ProcessOnlyOnce>
+  <OnceWindowOpen>창이 열렸을 때</OnceWindowOpen>
+  <OnceWhileItIsRunning>이 소프트웨어가 실행되는 동안</OnceWhileItIsRunning>
+  <WhenToProcessing>처리 시간</WhenToProcessing>
+  <TypesOfEventsToEnable>활성화하는 이벤트의 종류</TypesOfEventsToEnable>
+  <TheForegroundHasBeenChanged>전경이 변경된</TheForegroundHasBeenChanged>
+  <MoveSizeChangeStart>이동 및 크기 조정이 시작되었다</MoveSizeChangeStart>
+  <MoveSizeChangeEnd>이동 및 크기 조정이 종료 된</MoveSizeChangeEnd>
+  <MinimizeStart>최소화가 시작되었다</MinimizeStart>
+  <MinimizeEnd>최소화가 종료 된</MinimizeEnd>
+  <Create>작성된</Create>
+  <Show>표시된</Show>
+  <PositionChanged>위치가 변경된</PositionChanged>
+  <NameChanged>이름이 변경된</NameChanged>
+  <Forefront>맨</Forefront>
+  <DoNotChange>변경하지</DoNotChange>
+  <AlwaysForefront>항상 최상위</AlwaysForefront>
+  <AlwaysCancelForefront>항상 최상위 해제</AlwaysCancelForefront>
+  <SpecifyTransparency>투명도 지정</SpecifyTransparency>
+  <CloseWindow>창 닫기</CloseWindow>
+  <NumberOfTimesNotToProcessingFirst>먼저 처리하는 횟수 (실행 직후의 처리를 지연)</NumberOfTimesNotToProcessingFirst>
+  <NormalWindow>일반 창</NormalWindow>
+  <Maximize>극대화</Maximize>
+  <Minimize>최소화</Minimize>
+  <ProcessOnlyWhenNormalWindow>"일반 창"때만 처리</ProcessOnlyWhenNormalWindow>
+  <CoordinateSpecification>좌표 지정</CoordinateSpecification>
+  <WidthSpecification>폭 지정</WidthSpecification>
+  <HeightSpecification>높이 지정</HeightSpecification>
+  <ConditionsThatDoNotProcess>처리하지 않는 조건</ConditionsThatDoNotProcess>
+  <ClientArea>클라이언트 영역을 대상으로하는</ClientArea>
+  <ProcessingPositionAndSizeTwice>위치와 크기를 2 회 처리</ProcessingPositionAndSizeTwice>
+  <TitleNameExclusionString>타이틀 명을 제외 문자열</TitleNameExclusionString>
+  <Size>크기</Size>
+  <RetrievedAfterFiveSeconds>5 초 후에 윈도우 정보가 검색되므로 5 초 이내에 정보를 얻을 창을 활성화하십시오.</RetrievedAfterFiveSeconds>
+  <SelectionComplete>선택했습니다.</SelectionComplete>
+  <ThereAreDuplicateItems>중복 된 항목이 있습니다.</ThereAreDuplicateItems>
+  <ThereIsADuplicateRegistrationName>중복 등록 이름이 있습니다.</ThereIsADuplicateRegistrationName>
+  <ThereIsADuplicateProcessingName>중복 처리 이름이 있습니다.</ThereIsADuplicateProcessingName>
+  <Added>추가했습니다.</Added>
+  <Modified>수정했습니다.</Modified>
+  <ProcessingWindowRange>처리하는 창의 범위</ProcessingWindowRange>
+  <ActiveWindowOnly>활성 창만</ActiveWindowOnly>
+  <AllWindow>모든 창</AllWindow>
+  <OnlyActiveWindowEvent>"이벤트"활성 창만 처리</OnlyActiveWindowEvent>
+  <OnlyActiveWindowTimer>"타이머"활성 창만 처리</OnlyActiveWindowTimer>
+  <AmountOfMovement>이동량</AmountOfMovement>
+  <SizeChangeAmount>크기 조정 량</SizeChangeAmount>
+  <Transparency>투명도</Transparency>
+  <NumericCalculation>수치 계산</NumericCalculation>
+  <Ratio>비율</Ratio>
+  <ExplanationOfTheEvent>창을 지정하여 자동으로 처리 할 수 ​​있습니다. 자동 처리없이 단축키만으로 처리하고 싶은 경우 체크를 해제 해제 상태로하십시오.</ExplanationOfTheEvent>
+  <ExplanationOfTheTimer>창을 지정하여 자동으로 처리 할 수 ​​있습니다. 자동 처리없이 단축키만으로 처리하고 싶은 경우 체크를 해제 해제 상태로하십시오. "처리 간격"은 모든 윈도우 처리가 끝난 후 다음 작업을 시작하기까지의 간격입니다.</ExplanationOfTheTimer>
+  <HotkeyExplanation>단축키로 활성 창 (입력을 받고있는 상태)를 처리 할 수 ​​있습니다. "선택"버튼은 단축키를 사용하지 않고 처리하고자하는 창을 선택하여 처리 할 수 ​​있습니다.</HotkeyExplanation>
+  <MagnetExplanation>마우스로 창을 이동하는 경우에 화면 가장자리 또는 별도의 창에 붙여 넣습니다.</MagnetExplanation>
+  <WindowMoveOutsideToInside>창이 화면 벗어나면 화면에 이동</WindowMoveOutsideToInside>
+  <MoveWindowToCenterOfScreen>창이 표시 될 때 화면의 중앙으로 이동</MoveWindowToCenterOfScreen>
+</Language>
