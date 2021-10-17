@@ -227,7 +227,7 @@ namespace Swindom.Source.Window
                 NotifyIcon = new();
                 NotifyIcon.LeftButtonDoubleClickEvent += NotifyIcon_LeftButtonDoubleClickEvent;
                 NotifyIcon.RightButtonClickEvent += NotifyIcon_RightButtonClickEvent;
-                NotifyIcon.Add(this, 1, Common.ApplicationData.SystemTrayIconHwnd, icon, Common.ApplicationName);
+                NotifyIcon.Add(this, 1, Common.ApplicationData.SystemTrayIconHwnd, icon, Common.ApplicationName, Common.MaxRetryNotifyIcon);
             }
             catch
             {
@@ -532,11 +532,11 @@ namespace Swindom.Source.Window
                 switch (e.ProcessingEventType)
                 {
                     case ProcessingEventType.EventProcessingStateChanged:
-                        NotifyIcon.ModifyIcon((Common.ApplicationData.Settings.EventInformation.Enabled || Common.ApplicationData.Settings.TimerInformation.Enabled) ? Properties.Resources.ApplicationIcon : Properties.Resources.ApplicationIconInvalid);
+                        NotifyIcon.ModifyIcon((Common.ApplicationData.Settings.EventInformation.Enabled || Common.ApplicationData.Settings.TimerInformation.Enabled) ? Properties.Resources.ApplicationIcon : Properties.Resources.ApplicationIconInvalid, Common.MaxRetryNotifyIcon);
                         EventMenuItem.IsChecked = Common.ApplicationData.Settings.EventInformation.Enabled;
                         break;
                     case ProcessingEventType.TimerProcessingStateChanged:
-                        NotifyIcon.ModifyIcon((Common.ApplicationData.Settings.EventInformation.Enabled || Common.ApplicationData.Settings.TimerInformation.Enabled) ? Properties.Resources.ApplicationIcon : Properties.Resources.ApplicationIconInvalid);
+                        NotifyIcon.ModifyIcon((Common.ApplicationData.Settings.EventInformation.Enabled || Common.ApplicationData.Settings.TimerInformation.Enabled) ? Properties.Resources.ApplicationIcon : Properties.Resources.ApplicationIconInvalid, Common.MaxRetryNotifyIcon);
                         TimerMenuItem.IsChecked = Common.ApplicationData.Settings.TimerInformation.Enabled;
                         break;
                     case ProcessingEventType.MagnetProcessingStateChanged:

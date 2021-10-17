@@ -137,13 +137,15 @@
         /// <param name="hwnd">ウィンドウハンドル</param>
         /// <param name="icon">アイコン</param>
         /// <param name="tip">ツールチップの文字列</param>
+        /// <param name="maxRetry">登録に失敗した場合の最大繰り返し回数</param>
         /// <returns>追加に成功したかの値 (失敗「false」/成功「true」)</returns>
         public bool Add(
             System.Windows.Window window,
             int id,
             System.IntPtr hwnd,
             System.Drawing.Icon icon,
-            string tip = ""
+            string tip = "",
+            int maxRetry = 3
             )
         {
             bool result = false;        // 結果
@@ -159,7 +161,20 @@
                 data.uCallbackMessage = WM_NOTIFYICON;
                 data.szTip = tip;
 
+                // システムトレイアイコンを登録 (失敗した場合はリトライする)
                 result = NativeMethods.Shell_NotifyIcon((uint)NIM.NIM_ADD, ref data);
+                if (result == false)
+                {
+                    int countRetry = 0;       // リトライした回数
+                    do
+                    {
+                        if (maxRetry <= countRetry)
+                        {
+                            break;
+                        }
+                        countRetry++;
+                    } while ((result = NativeMethods.Shell_NotifyIcon((uint)NIM.NIM_MODIFY, ref data)) == false);
+                }
                 if (result)
                 {
                     Id = id;
@@ -175,12 +190,14 @@
         }
 
         /// <summary>
-        /// アイコンを変更
+        /// システムトレイのアイコンを変更
         /// </summary>
         /// <param name="icon">アイコン</param>
+        /// <param name="maxRetry">登録に失敗した場合の最大繰り返し回数</param>
         /// <returns>変更に成功したかの値 (失敗「false」/成功「true」)</returns>
         public bool ModifyIcon(
-            System.Drawing.Icon icon
+            System.Drawing.Icon icon,
+            int maxRetry = 3
             )
         {
             bool result = false;        // 結果
@@ -197,6 +214,18 @@
                 data.szTip = Tip;
 
                 result = NativeMethods.Shell_NotifyIcon((uint)NIM.NIM_MODIFY, ref data);
+                if (result == false)
+                {
+                    int countRetry = 0;       // リトライした回数
+                    do
+                    {
+                        if (maxRetry <= countRetry)
+                        {
+                            break;
+                        }
+                        countRetry++;
+                    } while ((result = NativeMethods.Shell_NotifyIcon((uint)NIM.NIM_MODIFY, ref data)) == false);
+                }
             }
 
             return (result);
