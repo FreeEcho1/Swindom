@@ -27,6 +27,7 @@ DPIに対応させるとヘルプファイル(hh.exe)のウィンドウで不具
 <br>
 [動作環境]<br>
 Windows 10 (64 bit)<br>
+Windows 11 (64 bit)<br>
 「.NET 5」に対応しているOSであれば動作します。<br>
 32 bit OSは未確認ですが多分動作します。<br>
 64 bit OSは64 bitとして動作、32 bit OSは32 bitとして動作します。<br>
