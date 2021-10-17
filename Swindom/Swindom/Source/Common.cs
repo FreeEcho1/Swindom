@@ -137,6 +137,10 @@
         /// ウィンドウタイトル、コピー、の区切り文字列
         /// </summary>
         public static readonly string SeparateString = " - ";
+        /// <summary>
+        /// システムトレイアイコンの作成や変更の最大繰り返し回数 (失敗した場合)
+        /// </summary>
+        public static readonly int MaxRetryNotifyIcon = 10;
 
         /// <summary>
         /// イベントのホットキーの開始ID
