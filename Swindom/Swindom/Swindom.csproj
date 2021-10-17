@@ -8,7 +8,7 @@
     <ApplicationIcon>Resource\ApplicationIcon.ico</ApplicationIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <Copyright>© 2021 FreeEcho</Copyright>
-    <Version>4.0.1</Version>
+    <Version>4.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
