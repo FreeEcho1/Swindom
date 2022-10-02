@@ -1,0 +1,285 @@
+﻿<Window x:Class="Swindom.AddModifyWindowSpecifiedWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        xmlns:Controls="clr-namespace:FreeEcho.FEControls;assembly=FEControls"
+        Title="追加" MinWidth="720" MaxWidth="1300" MinHeight="300" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid Style="{StaticResource BackgroundGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="400" Width="*"/>
+                <ColumnDefinition x:Name="ProcessingListColumnDefinition" MinWidth="300" MaxWidth="350" Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel x:Name="GetWindowInformationStackPanel" Orientation="Horizontal" Grid.Row="0" Margin="10">
+                    <Button x:Name="GetWindowInformationButton" Content="ウィンドウ情報取得" HorizontalAlignment="Left" Width="320"/>
+                    <Controls:ImageButton x:Name="HoldDownMouseCursorMoveToSelectWindowButton" ToolTip="押したまま選択するウィンドウにマウスカーソルを移動" HorizontalAlignment="Right" Width="24" Height="24" ImageSource="{DynamicResource TargetImage}"/>
+                </StackPanel>
+                <ScrollViewer x:Name="InformationToRetrieveScrollViewer" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <StackPanel Orientation="Vertical">
+                        <Expander x:Name="InformationToRetrieveExpander" Header="取得する情報" BorderThickness="1" BorderBrush="#DDDDDD"  IsExpanded="True" Margin="10,0,10,10">
+                            <StackPanel>
+                                <CheckBox x:Name="TitleNameCheckBox" Content="タイトル名"/>
+                                <CheckBox x:Name="ClassNameCheckBox" Content="クラス名"/>
+                                <CheckBox x:Name="FileNameCheckBox" Content="ファイル名"/>
+                                <CheckBox x:Name="DisplayCheckBox" Content="ディスプレイ"/>
+                                <CheckBox x:Name="WindowStateCheckBox" Content="ウィンドウの状態"/>
+                                <CheckBox x:Name="XCheckBox" Content="X"/>
+                                <CheckBox x:Name="YCheckBox" Content="Y"/>
+                                <CheckBox x:Name="WidthCheckBox" Content="幅"/>
+                                <CheckBox x:Name="HeightCheckBox" Content="高さ"/>
+                            </StackPanel>
+                        </Expander>
+                        <Label x:Name="RegisteredNameLabel" Content="登録名" Margin="10,0,10,0"/>
+                        <TextBox x:Name="RegisteredNameTextBox" Height="23" TextWrapping="NoWrap" Margin="10,0,10,0"/>
+                        <TabControl TabStripPlacement="Left" Margin="0,10,0,0">
+                            <TabItem x:Name="WindowDecideTabItem" Header="ウィンドウ判定">
+                                <StackPanel MinWidth="300" Margin="5">
+                                    <Label x:Name="TitleNameLabel" Content="タイトル名"/>
+                                    <TextBox x:Name="TitleNameTextBox" TextWrapping="NoWrap" Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
+                                    <ComboBox x:Name="TitleNameMatchingConditionComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="完全一致"/>
+                                        <ComboBoxItem Content="部分一致"/>
+                                        <ComboBoxItem Content="前方一致"/>
+                                        <ComboBoxItem Content="後方一致"/>
+                                    </ComboBox>
+                                    <Label x:Name="ClassNameLabel" Content="クラス名" Margin="0,10,0,0"/>
+                                    <TextBox x:Name="ClassNameTextBox" TextWrapping="NoWrap" Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}"/>
+                                    <ComboBox x:Name="ClassNameMatchingConditionComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="完全一致"/>
+                                        <ComboBoxItem Content="部分一致"/>
+                                        <ComboBoxItem Content="前方一致"/>
+                                        <ComboBoxItem Content="後方一致"/>
+                                    </ComboBox>
+                                    <Label x:Name="FileNameLabel" Content="ファイル名" Margin="0,10,0,0"/>
+                                    <Grid Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type StackPanel}}, Path=ActualWidth}">
+                                        <TextBox x:Name="FileNameTextBox" Margin="0,0,23,0" TextWrapping="NoWrap"/>
+                                        <Button x:Name="FileNameFileSelectionButton" Content="..." ToolTip="ファイル選択" HorizontalAlignment="Right" Width="23"/>
+                                    </Grid>
+                                    <ComboBox x:Name="FileNameMatchingConditionComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="パスを含む"/>
+                                        <ComboBoxItem Content="パスを含まない"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem x:Name="ProcessingSettingsTabItem" Header="処理設定">
+                                <StackPanel MinWidth="300" Margin="5">
+                                    <Label x:Name="StandardDisplayLabel" Content="基準にするディスプレイ"/>
+                                    <ComboBox x:Name="StandardDisplayComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="指定したディスプレイ"/>
+                                        <ComboBoxItem Content="ウィンドウがあるディスプレイ"/>
+                                        <ComboBoxItem Content="指定したディスプレイにある場合のみ"/>
+                                    </ComboBox>
+                                    <Label x:Name="ProcessOnlyOnceLabel" Content="1度だけ処理" Margin="0,10,0,0"/>
+                                    <ComboBox x:Name="ProcessOnlyOnceComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="指定しない"/>
+                                        <ComboBoxItem Content="ウィンドウが開かれた時"/>
+                                        <ComboBoxItem Content="このソフトウェアが実行されている間"/>
+                                    </ComboBox>
+                                    <GroupBox x:Name="EventGroupBox" Header="処理するタイミング" Margin="0,10,0,0">
+                                        <StackPanel Margin="5">
+                                            <Controls:ToggleSwitch x:Name="ForegroundToggleSwitch" Text="フォアグラウンドが変更された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="MoveSizeEndToggleSwitch" Text="移動及びサイズの変更が終了された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="MinimizeStartToggleSwitch" Text="最小化が開始された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="MinimizeEndToggleSwitch" Text="最小化が終了された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="CreateToggleSwitch" Text="作成された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="ShowToggleSwitch" Text="表示された" Margin="0,10,0,0"/>
+                                            <Controls:ToggleSwitch x:Name="NameChangeToggleSwitch" Text="名前が変更された" Margin="0,10,0,0"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <StackPanel x:Name="TimerStackPanel">
+                                        <Label x:Name="DelayLabel" Content="最初に処理しない回数 (実行直後の処理を遅らせる)" Margin="0,10,0,0"/>
+                                        <Controls:NumericUpDown x:Name="DelayNumericUpDown" HorizontalAlignment="Left" Width="100" MaximumValue="1000" MinimumValue="0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem x:Name="WindowProcessingTabItem" Header="ウィンドウ処理">
+                                <StackPanel MinWidth="300" Margin="5">
+                                    <Controls:ToggleSwitch x:Name="CloseWindowToggleSwitch" Text="ウィンドウを閉じる"/>
+                                    <GroupBox x:Name="ProcessingGroupBox" Header="処理" Margin="0,10,0,0">
+                                        <StackPanel Margin="5">
+                                            <Label x:Name="ProcessingNameLabel" Content="処理名" Margin="0,10,0,0"/>
+                                            <TextBox x:Name="ProcessingNameTextBox" TextWrapping="NoWrap"/>
+                                            <Label x:Name="DisplayLabel" Content="ディスプレイ" Margin="0,10,0,0"/>
+                                            <ComboBox x:Name="DisplayComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600"/>
+                                            <GroupBox x:Name="PositionAndSizeGroupBox" Header="位置とサイズ" Margin="0,10,0,0">
+                                                <StackPanel Margin="5">
+                                                    <Label x:Name="WindowStateLabel" Content="ウィンドウの状態" Margin="0,10,0,0"/>
+                                                    <ComboBox x:Name="WindowStateComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                                        <ComboBoxItem Content="変更しない"/>
+                                                        <ComboBoxItem Content="通常のウィンドウ"/>
+                                                        <ComboBoxItem Content="最大化"/>
+                                                        <ComboBoxItem Content="最小化"/>
+                                                    </ComboBox>
+                                                    <Controls:ToggleSwitch x:Name="ProcessOnlyWhenNormalWindowToggleSwitch" Text="「通常のウィンドウ」の時だけ処理する" Margin="0,10,0,0"/>
+                                                    <StackPanel Margin="0,10,0,0">
+                                                        <Label x:Name="XLabel" Content="X"/>
+                                                        <StackPanel x:Name="XStackPanel">
+                                                            <ComboBox x:Name="XComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                                                <ComboBoxItem Content="変更しない"/>
+                                                                <ComboBoxItem Content="左端"/>
+                                                                <ComboBoxItem Content="中央"/>
+                                                                <ComboBoxItem Content="右端"/>
+                                                                <ComboBoxItem Content="座標指定"/>
+                                                            </ComboBox>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Controls:NumericUpDown x:Name="XNumericUpDown" Width="150"/>
+                                                                <ComboBox x:Name="XTypeComboBox" Width="60" SelectedIndex="0">
+                                                                    <ComboBoxItem Content="px"/>
+                                                                    <ComboBoxItem Content="%"/>
+                                                                </ComboBox>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <Label x:Name="YLabel" Content="Y" Margin="0,10,0,0"/>
+                                                        <StackPanel x:Name="YStackPanel">
+                                                            <ComboBox x:Name="YComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" Grid.Column="0" SelectedIndex="0">
+                                                                <ComboBoxItem Content="変更しない"/>
+                                                                <ComboBoxItem Content="上端"/>
+                                                                <ComboBoxItem Content="中央"/>
+                                                                <ComboBoxItem Content="下端"/>
+                                                                <ComboBoxItem Content="座標指定"/>
+                                                            </ComboBox>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Controls:NumericUpDown x:Name="YNumericUpDown" Width="150"/>
+                                                                <ComboBox x:Name="YTypeComboBox" Width="60" SelectedIndex="0">
+                                                                    <ComboBoxItem Content="px"/>
+                                                                    <ComboBoxItem Content="%"/>
+                                                                </ComboBox>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <Label x:Name="WidthLabel" Content="幅" Margin="0,10,0,0"/>
+                                                        <StackPanel x:Name="WidthStackPanel">
+                                                            <ComboBox x:Name="WidthComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" Grid.Column="0" SelectedIndex="0">
+                                                                <ComboBoxItem Content="変更しない"/>
+                                                                <ComboBoxItem Content="幅指定"/>
+                                                            </ComboBox>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Controls:NumericUpDown x:Name="WidthNumericUpDown" Width="150" MinimumValue="0"/>
+                                                                <ComboBox x:Name="WidthTypeComboBox" Width="60" SelectedIndex="0">
+                                                                    <ComboBoxItem Content="px"/>
+                                                                    <ComboBoxItem Content="%"/>
+                                                                </ComboBox>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <Label x:Name="HeightLabel" Content="高さ" Margin="0,10,0,0"/>
+                                                        <StackPanel x:Name="HeightStackPanel">
+                                                            <ComboBox x:Name="HeightComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                                                <ComboBoxItem Content="変更しない"/>
+                                                                <ComboBoxItem Content="高さ指定"/>
+                                                            </ComboBox>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <Controls:NumericUpDown x:Name="HeightNumericUpDown" Width="150" MinimumValue="0"/>
+                                                                <ComboBox x:Name="HeightTypeComboBox" Width="60" SelectedIndex="0">
+                                                                    <ComboBoxItem Content="px"/>
+                                                                    <ComboBoxItem Content="%"/>
+                                                                </ComboBox>
+                                                            </StackPanel>
+                                                        </StackPanel>
+                                                        <Controls:ToggleSwitch x:Name="ClientAreaToggleSwitch" Text="クライアントエリアを対象とする" Margin="0,10,0,0"/>
+                                                        <Controls:ToggleSwitch x:Name="ProcessingPositionAndSizeTwiceToggleSwitch" Text="位置とサイズを2回処理" Margin="0,10,0,0"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </GroupBox>
+                                            <Label x:Name="ForefrontLabel" Content="最前面" Margin="0,10,0,0"/>
+                                            <ComboBox x:Name="ForefrontComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                                <ComboBoxItem Content="変更しない"/>
+                                                <ComboBoxItem Content="常に最前面"/>
+                                                <ComboBoxItem Content="常に最前面解除"/>
+                                                <ComboBoxItem Content="最前面"/>
+                                            </ComboBox>
+                                            <Grid Margin="0,10,0,0">
+                                                <Controls:ToggleSwitch x:Name="SpecifyTransparencyToggleSwitch" Text="透明度指定" Margin="0,0,90,0"/>
+                                                <Controls:NumericUpDown x:Name="TransparencyNumericUpDown" HorizontalAlignment="Right" Width="90" MaximumValue="255" Value="255"/>
+                                            </Grid>
+                                            <Label x:Name="HotkeyLabel" Content="ホットキー" Margin="0,10,0,0"/>
+                                            <TextBox x:Name="HotkeyTextBox" HorizontalAlignment="Left" Width="300" TextWrapping="NoWrap"/>
+                                            <Grid x:Name="AddAndModifyProcessingGrid" VerticalAlignment="Bottom" Margin="0,10,0,0">
+                                                <Button x:Name="AddProcessingButton" Content="追加" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="0,0,135,0"/>
+                                                <Button x:Name="ModifyProcessingButton" Content="修正" HorizontalAlignment="Right" VerticalAlignment="Top" Width="130" Margin="0,0,0,0"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </GroupBox>
+                                </StackPanel>
+                            </TabItem>
+                            <TabItem x:Name="ConditionsThatDoNotProcessingTabItem" Header="処理しない条件">
+                                <StackPanel MinWidth="300" Margin="5">
+                                    <Label x:Name="UntitledWindowConditionsLabel" Content="タイトルの処理条件"/>
+                                    <ComboBox x:Name="UntitledWindowConditionsComboBox" HorizontalAlignment="Left" MinWidth="300" MaxWidth="600" SelectedIndex="0">
+                                        <ComboBoxItem Content="指定しない"/>
+                                        <ComboBoxItem Content="タイトルがないウィンドウは処理しない"/>
+                                        <ComboBoxItem Content="タイトルがあるウィンドウは処理しない"/>
+                                    </ComboBox>
+                                    <GroupBox x:Name="TitleNameExclusionStringGroupBox" Header="タイトル名の除外文字列" Margin="0,10,0,0">
+                                        <StackPanel Margin="5">
+                                            <ListBox x:Name="TitleNameExclusionStringListBox" Height="100" Margin="0,10,0,0"/>
+                                            <TextBox x:Name="TitleNameExclusionStringTextBox" Margin="0,10,0,0"/>
+                                            <Grid Margin="0,10,0,10">
+                                                <Button x:Name="AddTitleNameExclusionStringButton" Content="追加" HorizontalAlignment="Right" Width="130" Margin="0,0,135,0"/>
+                                                <Button x:Name="DeleteTitleNameExclusionStringButton" Content="削除" HorizontalAlignment="Right" Width="130"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox x:Name="DoNotProcessingSizeGroupBox" Header="サイズ" Margin="0,10,0,0">
+                                        <StackPanel Margin="5">
+                                            <ListBox x:Name="DoNotProcessingSizeListBox" Height="100" Margin="0,10,0,0"/>
+                                            <Grid Margin="0,10,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="191*"/>
+                                                    <ColumnDefinition Width="103*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel HorizontalAlignment="Left" Width="140">
+                                                    <Label x:Name="DoNotProcessingSizeWidthLabel" Content="幅"/>
+                                                    <Controls:NumericUpDown x:Name="DoNotProcessingSizeWidthNumericUpDown" MinimumValue="0"/>
+                                                </StackPanel>
+                                                <StackPanel HorizontalAlignment="Left" Width="140" Margin="145,0,0,0" Grid.ColumnSpan="2">
+                                                    <Label x:Name="DoNotProcessingSizeHeightLabel" Content="高さ"/>
+                                                    <Controls:NumericUpDown x:Name="DoNotProcessingSizeHeightNumericUpDown" MinimumValue="0"/>
+                                                </StackPanel>
+                                            </Grid>
+                                            <Grid Margin="0,10,0,10">
+                                                <Button x:Name="DoNotProcessingSizeAddButton" Content="追加" HorizontalAlignment="Right" Width="130" Margin="0,0,135,0"/>
+                                                <Button x:Name="DoNotProcessingSizeDeleteButton" Content="削除" HorizontalAlignment="Right" Width="130"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </GroupBox>
+                                </StackPanel>
+                            </TabItem>
+                        </TabControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <Grid x:Name="ProcessingListGrid" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ListBox x:Name="WindowProcessingListBox" Grid.Row="0"/>
+                <Grid Grid.Row="2">
+                    <Button x:Name="ActiveProcessingButton" Content="アクティブ" HorizontalAlignment="Right" Width="130" Margin="0,0,145,0"/>
+                    <Button x:Name="DeleteProcessingButton" Content="削除" HorizontalAlignment="Right" Width="130" Margin="0,0,10,0"/>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Button x:Name="CopyProcessingButton" Content="コピー" HorizontalAlignment="Right" Width="130" Margin="0,0,10,0"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,10,10">
+            <Button x:Name="AddOrModifyButton" Content="追加" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Margin="0,6,155,0" IsDefault="True"/>
+            <Button x:Name="CancelButton" Content="キャンセル" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="150" Margin="0,6,0,0"/>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="Swindom.EventWindowProcessingControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Swindom"
+             mc:Ignorable="d" 
+             xmlns:Controls="clr-namespace:FreeEcho.FEControls;assembly=FEControls"
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid Style="{StaticResource BackgroundGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" MinWidth="150">
+                <Grid.RowDefinitions>
+                    <RowDefinition x:Name="ItemsRowDefinition" Height="*"/>
+                    <RowDefinition x:Name="SettingsRowDefinition" Height="*"/>
+                </Grid.RowDefinitions>
+                <ListBox x:Name="EventListBox" Grid.Row="0"/>
+                <ScrollViewer x:Name="SettingsScrollViewer" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" MinWidth="150" MinHeight="40">
+                    <StackPanel Margin="10">
+                        <Controls:ToggleSwitch x:Name="ProcessingStateToggleSwitch" Text="処理状態"/>
+                        <Controls:ToggleSwitch x:Name="RegisterMultipleToggleSwitch" Text="ウィンドウ処理を複数登録" Margin="0,10,0,0"/>
+                        <Controls:ToggleSwitch x:Name="CaseSensitiveWindowQueriesToggleSwitch" Text="ウィンドウ判定で大文字と小文字を区別する" Margin="0,10,0,0" IsOn="False"/>
+                        <Controls:ToggleSwitch x:Name="DoNotChangeOutOfScreenToggleSwitch" Text="画面外に出る場合は位置やサイズを変更しない" Margin="0,10,0,0"/>
+                        <Controls:ToggleSwitch x:Name="StopProcessingShowAddModifyToggleSwitch" Text="追加/修正のウィンドウが表示されている場合は処理停止" Margin="0,10,0,0" IsOn="False"/>
+                        <Controls:ToggleSwitch x:Name="StopProcessingFullScreenToggleSwitch" Text="ウィンドウが全画面表示の場合は処理停止" Margin="0,10,0,0" IsOn="False"/>
+                        <Controls:ToggleSwitch x:Name="HotkeysDoNotStopFullScreenToggleSwitch" Text="ホットキーは停止させない (全画面ウィンドウがある場合)" Margin="0,10,0,0" IsOn="False"/>
+                        <GroupBox x:Name="TypesOfEventsToEnableGroupBox" Header="有効にするイベントの種類" Margin="0,10,0,0">
+                            <StackPanel>
+                                <Controls:ToggleSwitch x:Name="ForegroundEventToggleSwitch" Text="フォアグラウンドが変更された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="MoveSizeEndEventToggleSwitch" Text="移動及びサイズの変更が終了された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="MinimizeStartEventToggleSwitch" Text="最小化が開始された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="MinimizeEndEventToggleSwitch" Text="最小化が終了された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="CreateEventToggleSwitch" Text="作成された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="ShowEventToggleSwitch" Text="表示された" Margin="0,10,0,0" IsOn="True"/>
+                                <Controls:ToggleSwitch x:Name="NameChangeEventToggleSwitch" Text="名前が変更された" Margin="0,10,0,0" IsOn="True"/>
+                            </StackPanel>
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+            <StackPanel Grid.Column="1" MaxWidth="170" Orientation="Vertical">
+                <Controls:ImageButton x:Name="AddButton" Text="追加" Height="30" ImageSource="{DynamicResource AdditionImage}"/>
+                <Controls:ImageButton x:Name="ModifyButton" Text="修正" Height="30" ImageSource="{DynamicResource ModifyImage}"/>
+                <Controls:ImageButton x:Name="DeleteButton" Text="削除" Height="30" ImageSource="{DynamicResource DeleteImage}"/>
+                <Controls:ImageButton x:Name="CopyButton" Text="コピー" Height="30" ImageSource="{DynamicResource CopyImage}"/>
+                <Controls:ImageButton x:Name="MoveUpButton" Text="上に移動" Height="30" ImageSource="{DynamicResource UpImage}"/>
+                <Controls:ImageButton x:Name="MoveDownButton" Text="下に移動" Height="30" ImageSource="{DynamicResource DownImage}"/>
+                <Controls:ImageButton x:Name="SettingsButton" Text="設定" Height="30" ImageSource="{DynamicResource SettingsImage}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TextBlock x:Name="ExplanationTextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" Text="ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。"/>
+        </Grid>
+    </Grid>
+</UserControl>
