@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+  <Check>Confirmation</Check>
+  <ErrorOccurred>An error has occurred.</ErrorOccurred>
+  <LanguageName>English</LanguageName>
+  <LanguagesWindow>
+    <Active>Active</Active>
+    <ActiveWindowOnly>Active window only</ActiveWindowOnly>
+    <Add>Add</Add>
+    <AddItem>Item added</AddItem>
+    <Added>Added</Added>
+    <AllWindow>All windows</AllWindow>
+    <AllowDelete>Can I delete them?</AllowDelete>
+    <AlwaysCancelForefront>Always release frontmost</AlwaysCancelForefront>
+    <AlwaysForefront>Always foremost</AlwaysForefront>
+    <AlwaysShowOrCancelOnTop>Always bring to foremost/unmove</AlwaysShowOrCancelOnTop>
+    <AmountOfMovement>Movement</AmountOfMovement>
+    <AutomaticUpdateCheck>Automatically check for updates at runtime</AutomaticUpdateCheck>
+    <BackwardMatch>Backward match</BackwardMatch>
+    <BatchProcessingOfEvent>Batch processing of "Event</BatchProcessingOfEvent>
+    <BatchProcessingOfTimer>Batch processing of "timer</BatchProcessingOfTimer>
+    <BottomEdge>Lower end</BottomEdge>
+    <Cancel>Cancel</Cancel>
+    <CaseSensitiveWindowQueries>Case sensitive in window determination</CaseSensitiveWindowQueries>
+    <CheckBetaVersion>Check for updates, including beta version</CheckBetaVersion>
+    <ClassName>Class name</ClassName>
+    <ClientArea>Target client area</ClientArea>
+    <CloseWindow>Close window</CloseWindow>
+    <ConditionsThatDoNotProcess>Condition not to process</ConditionsThatDoNotProcess>
+    <CoordinateSpecification>Coordinate specification</CoordinateSpecification>
+    <CoordinateSpecificationMethod>Coordinate specification method</CoordinateSpecificationMethod>
+    <Copy>Copy</Copy>
+    <Create>Created</Create>
+    <DecisionDistanceToPaste>Decision distance to paste</DecisionDistanceToPaste>
+    <Delete>Delete</Delete>
+    <DeleteItem>Item Deleted</DeleteItem>
+    <Deleted>Deleted</Deleted>
+    <Disabling>Disabled</Disabling>
+    <Display>Display</Display>
+    <DisplayCoordinates>Display Coordinates</DisplayCoordinates>
+    <DisplayInformationUpdate>Display Information Update</DisplayInformationUpdate>
+    <DisplayItem>Display Item</DisplayItem>
+    <DisplayToUseAsStandard>Display to be referenced</DisplayToUseAsStandard>
+    <DisplayWithWindow>Display with window</DisplayWithWindow>
+    <DoNotChange>Do not change</DoNotChange>
+    <DoNotChangePositionSizeOutOfScreen>Does not change position or size if off-screen</DoNotChangePositionSizeOutOfScreen>
+    <DoNotIncludePath>Does not include paths</DoNotIncludePath>
+    <DoNotProcessingUntitledWindow>Do not process windows with no title</DoNotProcessingUntitledWindow>
+    <DoNotProcessingWindowWithTitle>Do not process window with title</DoNotProcessingWindowWithTitle>
+    <DoNotSpecify>Not specified</DoNotSpecify>
+    <Enabling>Enable</Enabling>
+    <End>Exit</End>
+    <Event>Event</Event>
+    <ExactMatch>Exact Match</ExactMatch>
+    <ExplanationOfTheEvent>You can specify a window to be processed automatically. If you want to process only with hot keys without automatic processing, uncheck the checkbox to disable it.</ExplanationOfTheEvent>
+    <ExplanationOfTheTimer>You can specify a window to be processed automatically. If you want to process only with hot keys without automatic processing, uncheck this checkbox and disable it. The "Interval" is the interval between when all windows are processed and when the next window is processed.</ExplanationOfTheTimer>
+    <FileName>File Name</FileName>
+    <FileSelection>File Selection</FileSelection>
+    <Forefront>Frontmost</Forefront>
+    <ForwardMatch>Front match</ForwardMatch>
+    <General>general</General>
+    <GetItemWindowInformationOnly>Get only window information for an item</GetItemWindowInformationOnly>
+    <GetWindowInformation>Get Window Info</GetWindowInformation>
+    <GlobalCoordinates>Global Coordinates</GlobalCoordinates>
+    <Height>Height</Height>
+    <HeightSpecification>Specify height</HeightSpecification>
+    <HoldDownMouseCursorMoveToSelectWindow>Move mouse cursor to window to select while holding down</HoldDownMouseCursorMoveToSelectWindow>
+    <Hotkey>Hot Keys</Hotkey>
+    <HotkeyExplanation>Hotkeys can be used to process the active window (i.e., the window that is accepting input). The "Select" button allows you to select a window to be processed without using a hotkey.</HotkeyExplanation>
+    <HotkeysDoNotStop>Hotkeys do not stop (if a full screen window is present)</HotkeysDoNotStop>
+    <IncludePath>Include path</IncludePath>
+    <IncreaseDecreaseHeight>Increase/decrease height</IncreaseDecreaseHeight>
+    <IncreaseDecreaseWidth>Increase or decrease width</IncreaseDecreaseWidth>
+    <IncreaseDecreaseWidthAndHeight>Increase/decrease width and height</IncreaseDecreaseWidthAndHeight>
+    <Information>Information</Information>
+    <Item>Item</Item>
+    <ItemModification>Item Modification</ItemModification>
+    <Language>Language</Language>
+    <LatestVersion>Latest version.</LatestVersion>
+    <LeftEdge>Left end</LeftEdge>
+    <Library>Library</Library>
+    <Magnet>Magnet</Magnet>
+    <MagnetExplanation>Attaches to the edge of the screen or another window when the window is moved with the mouse.</MagnetExplanation>
+    <Manual>Description</Manual>
+    <Maximize>Maximize</Maximize>
+    <Middle>Center</Middle>
+    <Minimize>Minimize</Minimize>
+    <MinimizeEnd>Minimization has been finished</MinimizeEnd>
+    <MinimizeStart>Minimization started</MinimizeStart>
+    <Modified>Fixed</Modified>
+    <Modify>Fixed</Modify>
+    <MoveDown>Move Down</MoveDown>
+    <MoveSizeChangeEnd>Finished moving and resizing</MoveSizeChangeEnd>
+    <MoveThePastePosition>Shift the position to paste</MoveThePastePosition>
+    <MoveUp>Move Up</MoveUp>
+    <MoveXCoordinate>Move X coordinate</MoveXCoordinate>
+    <MoveYCoordinate>Move Y coordinate</MoveYCoordinate>
+    <NameChanged>Name changed</NameChanged>
+    <No>No, it is not.</No>
+    <NormalExecution>Normal execution? (without administrator rights - "Yes" / with administrator rights - "No")</NormalExecution>
+    <NormalWindow>Normal window</NormalWindow>
+    <NumberOfTimesNotToProcessingFirst>Number of times not processed first (delays processing immediately after execution)</NumberOfTimesNotToProcessingFirst>
+    <NumericCalculation>Numeric calculation</NumericCalculation>
+    <Ok>Ok</Ok>
+    <OnceWhileItIsRunning>While this software is running</OnceWhileItIsRunning>
+    <OnceWindowOpen>When a window is opened</OnceWindowOpen>
+    <OnlyActiveWindowEvent>Process only the active window of "Event</OnlyActiveWindowEvent>
+    <OnlyActiveWindowTimer>Only the active window of a "timer" is processed</OnlyActiveWindowTimer>
+    <OnlyIfItIsOnTheSpecifiedDisplay>Only if on the specified display</OnlyIfItIsOnTheSpecifiedDisplay>
+    <Open>Open</Open>
+    <PartialMatch>Partial Match</PartialMatch>
+    <PasteIntoAnotherWindow>Paste to another window</PasteIntoAnotherWindow>
+    <PasteToTheEdgeOfScreen>Paste to edge of screen</PasteToTheEdgeOfScreen>
+    <PasteWithTheCtrlKeyPressed>Paste with Ctrl key pressed</PasteWithTheCtrlKeyPressed>
+    <Percent>% (for example, %)</Percent>
+    <Pixel>px</Pixel>
+    <PositionAndSize>Position and size</PositionAndSize>
+    <ProcessOnlyOnce>Process only once</ProcessOnlyOnce>
+    <ProcessOnlyWhenNormalWindow>Process only when in "Normal Window</ProcessOnlyWhenNormalWindow>
+    <Processing>Processing</Processing>
+    <ProcessingInterval>Interval (milliseconds)</ProcessingInterval>
+    <ProcessingName>Processing name</ProcessingName>
+    <ProcessingPositionAndSizeTwice>Process position and size twice</ProcessingPositionAndSizeTwice>
+    <ProcessingSettings>Processing setting</ProcessingSettings>
+    <ProcessingState>Processing status</ProcessingState>
+    <ProcessingType>Type of processing</ProcessingType>
+    <ProcessingWindowRange>Range of windows to process</ProcessingWindowRange>
+    <Ratio>Ratio</Ratio>
+    <RegisterMultipleWindowActions>Register multiple window processing</RegisterMultipleWindowActions>
+    <RegisteredName>Registration name</RegisteredName>
+    <ReportsAndRequests>Report, Request</ReportsAndRequests>
+    <RetrievedAfterFiveSeconds>Window information will be retrieved in 5 seconds, so please activate the window for which you want to retrieve information within 5 seconds.</RetrievedAfterFiveSeconds>
+    <RightEdge>Right end</RightEdge>
+    <RunAtWindowsStartup>Execute at Windows startup</RunAtWindowsStartup>
+    <RunAtWindowsStartupAdministrator>Run at Windows startup (administrator privileges)</RunAtWindowsStartupAdministrator>
+    <Select>Selected</Select>
+    <SelectionComplete>Selected</SelectionComplete>
+    <Setting>Configuration</Setting>
+    <ShareSettings>Do you want to share configuration information with all users?</ShareSettings>
+    <Show>Displayed</Show>
+    <Size>Size</Size>
+    <SizeChangeAmount>Size Change Amount</SizeChangeAmount>
+    <SoftwareName>Software name</SoftwareName>
+    <SpecifyCancelTransparency>Specify/release transparency</SpecifyCancelTransparency>
+    <SpecifyPositionAndSize>Specify position and size</SpecifyPositionAndSize>
+    <SpecifyTransparency>Specify transparency</SpecifyTransparency>
+    <StartStopProcessingOfEvent>Start/Stop "Event" processing</StartStopProcessingOfEvent>
+    <StartStopProcessingOfMagnet>Start/Stop processing of "Magnet</StartStopProcessingOfMagnet>
+    <StartStopProcessingOfTimer>Start/Stop processing of "Timer</StartStopProcessingOfTimer>
+    <StopProcessingShowAddModify>Stop processing if add/modify window is displayed</StopProcessingShowAddModify>
+    <StopProcessingWhenWindowIsFullScreen>Stop processing if there is a full screen window</StopProcessingWhenWindowIsFullScreen>
+    <StopTimeWhenPasting>Stop time when stuck (milliseconds)</StopTimeWhenPasting>
+    <TheForegroundHasBeenChanged>Foreground changed</TheForegroundHasBeenChanged>
+    <TheSpecifiedDisplay>Specified display</TheSpecifiedDisplay>
+    <ThereAreDuplicateItems>There are duplicate items.</ThereAreDuplicateItems>
+    <ThereIsADuplicateProcessingName>There are duplicate process names.</ThereIsADuplicateProcessingName>
+    <ThereIsADuplicateRegistrationName>Duplicate registration name exists.</ThereIsADuplicateRegistrationName>
+    <ThereIsTheLatestVersion>There is the latest version.</ThereIsTheLatestVersion>
+    <Timer>Timer</Timer>
+    <TitleName>Title name</TitleName>
+    <TitleNameExclusionString>Excluded string of title name</TitleNameExclusionString>
+    <TitleProcessingConditions>Processing conditions for title</TitleProcessingConditions>
+    <TopEdge>Top edge</TopEdge>
+    <Translators>Translator: DeepL Translator</Translators>
+    <Transparency>Transparency</Transparency>
+    <TypesOfEventsToEnable>Type of event to enable</TypesOfEventsToEnable>
+    <UpdateCheck>Update confirmation</UpdateCheck>
+    <UpdateCheckFailed>Update confirmation failed.</UpdateCheckFailed>
+    <UpdateHistory>Update History</UpdateHistory>
+    <Version>Version</Version>
+    <WaitTimeToProcessingNextWindow>Wait time to process next window (in milliseconds)</WaitTimeToProcessingNextWindow>
+    <Website>Website</Website>
+    <WhenToProcessing>Timing to process</WhenToProcessing>
+    <Width>Width</Width>
+    <WidthSpecification>Width specification</WidthSpecification>
+    <WindowDecide>Window determination</WindowDecide>
+    <WindowInformationToGet>Window information to be acquired</WindowInformationToGet>
+    <WindowMoveOutsideToInside>If window is outside the screen, move to inside the screen</WindowMoveOutsideToInside>
+    <WindowProcessing>Window processing</WindowProcessing>
+    <WindowState>Window status</WindowState>
+    <X>X</X>
+    <Y>Y</Y>
+    <Yes>Yes</Yes>
+  </LanguagesWindow>
+</Languages>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+  <Check>Подтверждение.</Check>
+  <ErrorOccurred>Произошла ошибка.</ErrorOccurred>
+  <LanguageName>Русский</LanguageName>
+  <LanguagesWindow>
+    <Active>Активный</Active>
+    <ActiveWindowOnly>Только активное окно</ActiveWindowOnly>
+    <Add>Добавить</Add>
+    <AddItem>Пункт добавлен</AddItem>
+    <Added>Добавлено в.</Added>
+    <AllWindow>Все окна</AllWindow>
+    <AllowDelete>Могу ли я удалить их?</AllowDelete>
+    <AlwaysCancelForefront>Всегда выпускайте вперед</AlwaysCancelForefront>
+    <AlwaysForefront>Всегда на первом месте</AlwaysForefront>
+    <AlwaysShowOrCancelOnTop>Всегда на первом месте/без монтировки</AlwaysShowOrCancelOnTop>
+    <AmountOfMovement>Движение</AmountOfMovement>
+    <AutomaticUpdateCheck>Автоматическая проверка обновлений во время выполнения</AutomaticUpdateCheck>
+    <BackwardMatch>Обратное соответствие</BackwardMatch>
+    <BatchProcessingOfEvent>Пакетная обработка "Событий</BatchProcessingOfEvent>
+    <BatchProcessingOfTimer>Пакетная обработка "таймеров</BatchProcessingOfTimer>
+    <BottomEdge>Нижний конец</BottomEdge>
+    <Cancel>Отмена</Cancel>
+    <CaseSensitiveWindowQueries>Чувствительность к регистру при определении окна</CaseSensitiveWindowQueries>
+    <CheckBetaVersion>Проверяйте наличие обновлений, включая бета-версии</CheckBetaVersion>
+    <ClassName>Название класса</ClassName>
+    <ClientArea>Целевая клиентская зона</ClientArea>
+    <CloseWindow>Закрыть окно</CloseWindow>
+    <ConditionsThatDoNotProcess>Условия не обрабатываются</ConditionsThatDoNotProcess>
+    <CoordinateSpecification>Согласование спецификации</CoordinateSpecification>
+    <CoordinateSpecificationMethod>Метод обозначения координат</CoordinateSpecificationMethod>
+    <Copy>Копировать</Copy>
+    <Create>Создано</Create>
+    <DecisionDistanceToPaste>Расстояние принятия решения для вставки</DecisionDistanceToPaste>
+    <Delete>Удалить</Delete>
+    <DeleteItem>Пункт удален</DeleteItem>
+    <Deleted>Удалено.</Deleted>
+    <Disabling>Инвалид</Disabling>
+    <Display>Дисплей</Display>
+    <DisplayCoordinates>Отображение координат</DisplayCoordinates>
+    <DisplayInformationUpdate>Обновление информации на дисплее</DisplayInformationUpdate>
+    <DisplayItem>Элемент дисплея</DisplayItem>
+    <DisplayToUseAsStandard>Отображение, на котором основана ссылка</DisplayToUseAsStandard>
+    <DisplayWithWindow>Дисплей с окном</DisplayWithWindow>
+    <DoNotChange>Не менять</DoNotChange>
+    <DoNotChangePositionSizeOutOfScreen>Не изменяет положение или размер, если находится вне экрана</DoNotChangePositionSizeOutOfScreen>
+    <DoNotIncludePath>Не включает пути</DoNotIncludePath>
+    <DoNotProcessingUntitledWindow>Окно без заголовка не обрабатывается</DoNotProcessingUntitledWindow>
+    <DoNotProcessingWindowWithTitle>Окно с заголовком не обрабатывается</DoNotProcessingWindowWithTitle>
+    <DoNotSpecify>Не указано</DoNotSpecify>
+    <Enabling>Включить</Enabling>
+    <End>Окончание</End>
+    <Event>Событие</Event>
+    <ExactMatch>Точное совпадение</ExactMatch>
+    <ExplanationOfTheEvent>Вы можете указать окно, которое будет обрабатываться автоматически. Если вы хотите обрабатывать события только с помощью горячих клавиш без автоматической обработки, снимите флажок, чтобы отключить эту опцию.</ExplanationOfTheEvent>
+    <ExplanationOfTheTimer>Вы можете указать окно, которое будет обрабатываться автоматически. Если вы хотите обрабатывать только горячие клавиши без автоматической обработки, снимите флажок и отключите эту опцию. Интервал обработки" - это интервал между окончанием обработки всего окна и началом следующей обработки.</ExplanationOfTheTimer>
+    <FileName>Имя файла</FileName>
+    <FileSelection>Выбор файла</FileSelection>
+    <Forefront>На переднем крае</Forefront>
+    <ForwardMatch>Фронтальный матч</ForwardMatch>
+    <General>Общий</General>
+    <GetItemWindowInformationOnly>Получение только информации об окне элемента</GetItemWindowInformationOnly>
+    <GetWindowInformation>Получить информацию об окне</GetWindowInformation>
+    <GlobalCoordinates>Глобальные координаты</GlobalCoordinates>
+    <Height>Высота</Height>
+    <HeightSpecification>Укажите высоту</HeightSpecification>
+    <HoldDownMouseCursorMoveToSelectWindow>Переместите курсор мыши на окно, которое нужно выбрать, удерживая нажатой кнопку</HoldDownMouseCursorMoveToSelectWindow>
+    <Hotkey>Горячие клавиши</Hotkey>
+    <HotkeyExplanation>Горячие клавиши можно использовать для обработки активного окна (принимающего ввод). Кнопка 'Выбрать' позволяет выбрать окно, которое вы хотите обработать, без использования горячей клавиши.</HotkeyExplanation>
+    <HotkeysDoNotStop>Горячие клавиши не останавливаются (при наличии полноэкранного окна).</HotkeysDoNotStop>
+    <IncludePath>Включить пути</IncludePath>
+    <IncreaseDecreaseHeight>Увеличение/уменьшение высоты</IncreaseDecreaseHeight>
+    <IncreaseDecreaseWidth>Увеличение/уменьшение ширины</IncreaseDecreaseWidth>
+    <IncreaseDecreaseWidthAndHeight>Увеличение/уменьшение ширины и высоты</IncreaseDecreaseWidthAndHeight>
+    <Information>Информация.</Information>
+    <Item>Пункт</Item>
+    <ItemModification>Модификация предмета</ItemModification>
+    <Language>Язык.</Language>
+    <LatestVersion>Последняя версия.</LatestVersion>
+    <LeftEdge>Левый конец</LeftEdge>
+    <Library>Библиотека</Library>
+    <Magnet>Магнит.</Magnet>
+    <MagnetExplanation>Прикрепляется к краю экрана или другого окна при перемещении окна с помощью мыши.</MagnetExplanation>
+    <Manual>Описание.</Manual>
+    <Maximize>Максимизировать</Maximize>
+    <Middle>Центр</Middle>
+    <Minimize>Минимизация</Minimize>
+    <MinimizeEnd>Минимизация была прекращена</MinimizeEnd>
+    <MinimizeStart>Начата минимизация</MinimizeStart>
+    <Modified>Исправлено.</Modified>
+    <Modify>Исправлено</Modify>
+    <MoveDown>Переместился вниз</MoveDown>
+    <MoveSizeChangeEnd>Перемещение и изменение размеров готовой</MoveSizeChangeEnd>
+    <MoveThePastePosition>Смещение позиции вставки</MoveThePastePosition>
+    <MoveUp>Поднимайтесь</MoveUp>
+    <MoveXCoordinate>Перемещение по координате X</MoveXCoordinate>
+    <MoveYCoordinate>Перемещение по координате Y</MoveYCoordinate>
+    <NameChanged>Имя изменено</NameChanged>
+    <No>Нет, название было изменено</No>
+    <NormalExecution>Нормальное исполнение? (без прав администратора - 'Да' / с правами администратора - 'Нет')</NormalExecution>
+    <NormalWindow>Обычное окно</NormalWindow>
+    <NumberOfTimesNotToProcessingFirst>Количество раз, не обработанных первыми (задерживает обработку сразу после выполнения)</NumberOfTimesNotToProcessingFirst>
+    <NumericCalculation>Численное вычисление</NumericCalculation>
+    <Ok>Хорошо.</Ok>
+    <OnceWhileItIsRunning>Во время работы этого программного обеспечения</OnceWhileItIsRunning>
+    <OnceWindowOpen>При открытии окна</OnceWindowOpen>
+    <OnlyActiveWindowEvent>Обрабатывается только активное окно "События"</OnlyActiveWindowEvent>
+    <OnlyActiveWindowTimer>Обрабатывается только активное окно "Таймер"</OnlyActiveWindowTimer>
+    <OnlyIfItIsOnTheSpecifiedDisplay>Только если на указанном дисплее</OnlyIfItIsOnTheSpecifiedDisplay>
+    <Open>Открыть</Open>
+    <PartialMatch>Частичное совпадение</PartialMatch>
+    <PasteIntoAnotherWindow>Вставить в другое окно</PasteIntoAnotherWindow>
+    <PasteToTheEdgeOfScreen>Вставить к краю экрана</PasteToTheEdgeOfScreen>
+    <PasteWithTheCtrlKeyPressed>Вставка с нажатой клавишей Ctrl</PasteWithTheCtrlKeyPressed>
+    <Percent>%, %, %, %, %, %, %, %, %, %, %.</Percent>
+    <Pixel>px</Pixel>
+    <PositionAndSize>Положение и размер</PositionAndSize>
+    <ProcessOnlyOnce>Обработка только один раз</ProcessOnlyOnce>
+    <ProcessOnlyWhenNormalWindow>Обработка только в "Обычном окне</ProcessOnlyWhenNormalWindow>
+    <Processing>Обработка</Processing>
+    <ProcessingInterval>Интервал обработки (миллисекунды)</ProcessingInterval>
+    <ProcessingName>Название обработки</ProcessingName>
+    <ProcessingPositionAndSizeTwice>Обрабатывайте позицию и размер дважды</ProcessingPositionAndSizeTwice>
+    <ProcessingSettings>Настройка обработки</ProcessingSettings>
+    <ProcessingState>Статус обработки</ProcessingState>
+    <ProcessingType>Тип обработки</ProcessingType>
+    <ProcessingWindowRange>Диапазон обрабатываемого окна</ProcessingWindowRange>
+    <Ratio>Соотношение</Ratio>
+    <RegisterMultipleWindowActions>Регистрация нескольких оконных процессов</RegisterMultipleWindowActions>
+    <RegisteredName>Регистрационное имя</RegisteredName>
+    <ReportsAndRequests>Отчет, запрос</ReportsAndRequests>
+    <RetrievedAfterFiveSeconds>Информация об окне извлекается через 5 секунд, пожалуйста, активируйте окно, для которого вы хотите получить информацию в течение 5 секунд.</RetrievedAfterFiveSeconds>
+    <RightEdge>Правый конец</RightEdge>
+    <RunAtWindowsStartup>Выполняется при запуске Windows</RunAtWindowsStartup>
+    <RunAtWindowsStartupAdministrator>Запуск при загрузке Windows (с правами администратора)</RunAtWindowsStartupAdministrator>
+    <Select>Выбор.</Select>
+    <SelectionComplete>Избранные.</SelectionComplete>
+    <Setting>Конфигурация</Setting>
+    <ShareSettings>Хотите ли вы поделиться информацией о конфигурации со всеми пользователями?</ShareSettings>
+    <Show>Отображается</Show>
+    <Size>Размер</Size>
+    <SizeChangeAmount>Величина изменения размера</SizeChangeAmount>
+    <SoftwareName>Название программного обеспечения</SoftwareName>
+    <SpecifyCancelTransparency>Уточнить/отпустить прозрачность</SpecifyCancelTransparency>
+    <SpecifyPositionAndSize>Укажите положение и размер</SpecifyPositionAndSize>
+    <SpecifyTransparency>Укажите прозрачность</SpecifyTransparency>
+    <StartStopProcessingOfEvent>Запуск/остановка обработки "события</StartStopProcessingOfEvent>
+    <StartStopProcessingOfMagnet>Запуск/остановка обработки "магнитов</StartStopProcessingOfMagnet>
+    <StartStopProcessingOfTimer>Запуск/остановка обработки "Таймера".</StartStopProcessingOfTimer>
+    <StopProcessingShowAddModify>Остановите обработку, если отображается окно добавления/изменения.</StopProcessingShowAddModify>
+    <StopProcessingWhenWindowIsFullScreen>Остановка обработки при наличии полноэкранного окна.</StopProcessingWhenWindowIsFullScreen>
+    <StopTimeWhenPasting>Время остановки при застревании (миллисекунды)</StopTimeWhenPasting>
+    <TheForegroundHasBeenChanged>Изменен передний план</TheForegroundHasBeenChanged>
+    <TheSpecifiedDisplay>Указанный дисплей</TheSpecifiedDisplay>
+    <ThereAreDuplicateItems>Есть дублирующие элементы.</ThereAreDuplicateItems>
+    <ThereIsADuplicateProcessingName>Имеются дублирующиеся имена процессов.</ThereIsADuplicateProcessingName>
+    <ThereIsADuplicateRegistrationName>Имеются дубликаты регистрационных имен.</ThereIsADuplicateRegistrationName>
+    <ThereIsTheLatestVersion>Существует последняя версия.</ThereIsTheLatestVersion>
+    <Timer>Таймер</Timer>
+    <TitleName>Титульное имя.</TitleName>
+    <TitleNameExclusionString>Строка исключения названия заголовка.</TitleNameExclusionString>
+    <TitleProcessingConditions>Условия оформления титула</TitleProcessingConditions>
+    <TopEdge>Верхняя часть</TopEdge>
+    <Translators>Переводчик: DeepL Переводчик</Translators>
+    <Transparency>Прозрачность</Transparency>
+    <TypesOfEventsToEnable>Тип события, которое необходимо включить</TypesOfEventsToEnable>
+    <UpdateCheck>Подтверждение обновления</UpdateCheck>
+    <UpdateCheckFailed>Подтверждение обновления не удалось.</UpdateCheckFailed>
+    <UpdateHistory>История обновления</UpdateHistory>
+    <Version>Версия.</Version>
+    <WaitTimeToProcessingNextWindow>Время ожидания обработки следующего окна (миллисекунды)</WaitTimeToProcessingNextWindow>
+    <Website>Сайт</Website>
+    <WhenToProcessing>Когда обрабатывать</WhenToProcessing>
+    <Width>Ширина</Width>
+    <WidthSpecification>Спецификация ширины</WidthSpecification>
+    <WindowDecide>Определение окна</WindowDecide>
+    <WindowInformationToGet>Информация об окне, которую необходимо получить</WindowInformationToGet>
+    <WindowMoveOutsideToInside>Если окно находится за пределами экрана, оно перемещается на внутреннюю сторону экрана.</WindowMoveOutsideToInside>
+    <WindowProcessing>Обработка окон</WindowProcessing>
+    <WindowState>Состояние окна</WindowState>
+    <X>X</X>
+    <Y>Y</Y>
+    <Yes>Да Нет</Yes>
+  </LanguagesWindow>
+</Languages>
