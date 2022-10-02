@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Version>4.1.0-beta</Version>
+    <Authors>FreeEcho</Authors>
+    <Product>Swindom</Product>
+    <Copyright>© 2022 FreeEcho</Copyright>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resource\ApplicationIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Settings\**" />
+    <EmbeddedResource Remove="Settings\**" />
+    <None Remove="Settings\**" />
+    <Page Remove="Settings\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resource\ApplicationIcon.ico" />
+    <None Remove="Resource\ApplicationIconInvalid.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>f935dc20-1cf0-11d0-adb9-00c04fd58a0b</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="TaskScheduler">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>e34cb9f1-c7f7-424c-be29-027dcc09363a</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resource\ApplicationIcon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ControlsStyle">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\ControlsStyle.dll</HintPath>
+    </Reference>
+    <Reference Include="FECheckForUpdate">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FECheckForUpdate.dll</HintPath>
+    </Reference>
+    <Reference Include="FEControls">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEControls.dll</HintPath>
+    </Reference>
+    <Reference Include="FEHotKeyWPF">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEHotKeyWPF.dll</HintPath>
+    </Reference>
+    <Reference Include="FEWindowEvent">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowEvent.dll</HintPath>
+    </Reference>
+    <Reference Include="FEWindowMoveDetectionMouse">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowMoveDetectionMouse.dll</HintPath>
+    </Reference>
+    <Reference Include="FEWindowSelectionMouse">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowSelectionMouse.dll</HintPath>
+    </Reference>
+    <Reference Include="SwindomImage">
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6 (Swindom)\SwindomImage.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resource\ApplicationIcon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resource\ApplicationIconInvalid.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

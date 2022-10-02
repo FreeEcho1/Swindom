@@ -1,0 +1,13 @@
+﻿<Application x:Class="Swindom.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Swindom">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="ControlStyleResourceDictionary" Source="/ControlsStyle;component/Style.xaml"/>
+                <ResourceDictionary x:Name="ImageResourceDictionary" Source="/SwindomImage;component/ImageDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
