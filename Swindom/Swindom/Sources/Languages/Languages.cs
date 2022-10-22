@@ -23,6 +23,16 @@ public class Languages : IExtensibleDataObject
     [DataMember]
     public string Check;
     /// <summary>
+    /// バージョンが変更されました
+    /// </summary>
+    [DataMember]
+    public string ChangeVersion;
+    /// <summary>
+    /// 設定を新しいバージョンに変更「はい」 / 処理を無効にする「いいえ」
+    /// </summary>
+    [DataMember]
+    public string DifferentVersionSettingMessage;
+    /// <summary>
     /// ウィンドウで使用する言語
     /// </summary>
     [DataMember]
@@ -54,6 +64,8 @@ public class Languages : IExtensibleDataObject
         LanguageName = "日本語";
         ErrorOccurred = "エラーが発生しました。";
         Check = "確認";
+        ChangeVersion = "バージョンが変更されました";
+        DifferentVersionSettingMessage = "設定を新しいバージョンに変更「はい」 / 処理を無効にする「いいえ」";
         LanguagesWindow = new();
     }
 

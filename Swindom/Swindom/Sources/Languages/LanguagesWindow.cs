@@ -782,6 +782,16 @@ public class LanguagesWindow : IExtensibleDataObject
     [DataMember]
     public string Size;
     /// <summary>
+    /// バージョンが違う
+    /// </summary>
+    [DataMember]
+    public string DifferentVersion;
+    /// <summary>
+    /// 知らせる
+    /// </summary>
+    [DataMember]
+    public string Announce;
+    /// <summary>
     /// 5秒後にウィンドウ情報が取得されるので、5秒以内に情報を取得するウィンドウをアクティブにしてください。
     /// </summary>
     [DataMember]
@@ -1070,6 +1080,8 @@ public class LanguagesWindow : IExtensibleDataObject
         ProcessingPositionAndSizeTwice = "位置とサイズを2回処理";
         TitleNameExclusionString = "タイトル名の除外文字列";
         Size = "サイズ";
+        DifferentVersion = "バージョンが違う";
+        Announce = "知らせる";
         RetrievedAfterFiveSeconds = "5秒後にウィンドウ情報が取得されるので、5秒以内に情報を取得するウィンドウをアクティブにしてください。";
         SelectionComplete = "選択しました。";
         ThereAreDuplicateItems = "重複した項目があります。";
