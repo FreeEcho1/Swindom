@@ -17,4 +17,8 @@ public class WindowInformation
     /// ファイル名
     /// </summary>
     public string FileName = "";
+    /// <summary>
+    /// バージョン
+    /// </summary>
+    public string Version = "";
 }

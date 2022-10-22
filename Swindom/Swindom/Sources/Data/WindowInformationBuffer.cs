@@ -20,5 +20,5 @@ public class WindowInformationBuffer
     /// <summary>
     /// ファイル名
     /// </summary>
-    public StringBuilder FileName = new(Common.FileNameLength);
+    public StringBuilder FileName = new(Common.PathLength);
 }

@@ -152,17 +152,17 @@ public static class Common
     /// </summary>
     public static readonly int ClassNameMaxLength = 256;
     /// <summary>
-    /// ファイル名の文字数
+    /// パスの文字数
     /// </summary>
-    public static int FileNameLength { get; set; } = 300;
+    public static int PathLength { get; set; } = 260;
     /// <summary>
-    /// ファイル名の文字数を増やす文字数
+    /// パスの最大文字数
     /// </summary>
-    public static readonly int FileNameLengthAdd = 100;
+    public static int PathMaxLength = 260;
     /// <summary>
-    /// ファイル名の最大文字数
+    /// パスの拡張された最大文字数
     /// </summary>
-    public static readonly int FileNameMaxLength = 20000;
+    public static int LongPathMaxLength = 32767;
     /// <summary>
     /// システムトレイアイコンの作成や変更の最大繰り返し回数 (失敗した場合)
     /// </summary>
