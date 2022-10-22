@@ -253,6 +253,13 @@
                                             </Grid>
                                         </StackPanel>
                                     </GroupBox>
+                                    <GroupBox x:Name="DifferentVersionGroupBox" Header="バージョンが違う" Margin="0,10,0,0">
+                                        <StackPanel>
+                                            <Label x:Name="DifferentVersionLabel" Content="バージョン" Margin="0,10,0,0"/>
+                                            <TextBox x:Name="DifferentVersionTextBox"/>
+                                            <Controls:ToggleSwitch x:Name="DifferentVersionAnnounceToggleSwitch" Text="知らせる" Margin="0,10,0,10"/>
+                                        </StackPanel>
+                                    </GroupBox>
                                 </StackPanel>
                             </TabItem>
                         </TabControl>

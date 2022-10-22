@@ -99,9 +99,9 @@ public partial class NotifyIconWindow : Window
         try
         {
             // 言語ファイルを作成する処理 (必要ないときはコメントアウト)
-            //Processing.ReadLanguage();
+            //LanguageFileProcessing.ReadLanguage();
             //string tempPath = Processing.GetApplicationDirectoryPath() + "Languages/ja-JP.lang";
-            //Processing.WriteLanguages(tempPath);
+            //LanguageFileProcessing.WriteLanguages(tempPath);
 
             FreeEcho.FEControls.MessageBoxWindow.UseStyle = new Uri(Common.UriMessageBoxStyle);
 
@@ -168,6 +168,7 @@ public partial class NotifyIconWindow : Window
                 }
             }
 
+            Common.PathLength = Common.ApplicationData.Settings.UseLongPath ? Common.LongPathMaxLength : Common.PathMaxLength;
             SetTextOnControls();
 
             // システムトレイアイコン用のメニューの初期化
@@ -233,8 +234,8 @@ public partial class NotifyIconWindow : Window
             }
 
             // 更新確認ウィンドウの動作確認処理 (必要ないときはコメントアウト)
-            //Processing.ReadLanguage();
-            //CommonMain.ApplicationDataMain.WindowManagement.ShowUpdateCheckWindow();
+            //LanguageFileProcessing.ReadLanguage();
+            //Common.ApplicationData.WindowManagement.ShowUpdateCheckWindow();
         }
         catch
         {

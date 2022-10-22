@@ -28,7 +28,7 @@ public partial class AddModifyWindowSpecifiedWindow : Window
     /// <summary>
     /// ウィンドウ情報取得タイマー
     /// </summary>
-    private readonly Timer WindowInformationAcquisitionTimer;
+    private readonly System.Windows.Threading.DispatcherTimer WindowInformationAcquisitionTimer;
     /// <summary>
     /// ウィンドウ選択枠
     /// </summary>
@@ -132,15 +132,9 @@ public partial class AddModifyWindowSpecifiedWindow : Window
 
         WindowInformationAcquisitionTimer = new()
         {
-            Interval = Common.WaitTimeForWindowInformationAcquisition
+            Interval = new(0, 0, 0, 0, Common.WaitTimeForWindowInformationAcquisition)
         };
-        WindowInformationAcquisitionTimer.Elapsed += (s, e) =>
-        {
-            Dispatcher.Invoke(new Action(() =>
-            {
-                WindowInformationAcquisitionTimerAfterProcessing();
-            }));
-        };
+        WindowInformationAcquisitionTimer.Tick += WindowInformationAcquisitionTimer_Tick;
         WindowSelectionMouse = new()
         {
             MouseLeftUpStop = true
@@ -263,6 +257,9 @@ public partial class AddModifyWindowSpecifiedWindow : Window
         DoNotProcessingSizeHeightLabel.Content = Common.ApplicationData.Languages.LanguagesWindow.Height;
         DoNotProcessingSizeAddButton.Content = Common.ApplicationData.Languages.LanguagesWindow.Add;
         DoNotProcessingSizeDeleteButton.Content = Common.ApplicationData.Languages.LanguagesWindow.Delete;
+        DifferentVersionGroupBox.Header = Common.ApplicationData.Languages.LanguagesWindow.DifferentVersion;
+        DifferentVersionLabel.Content = Common.ApplicationData.Languages.LanguagesWindow.Version;
+        DifferentVersionAnnounceToggleSwitch.Text = Common.ApplicationData.Languages.LanguagesWindow.Announce;
         AddProcessingButton.Content = Common.ApplicationData.Languages.LanguagesWindow.Add;
         ModifyProcessingButton.Content = Common.ApplicationData.Languages.LanguagesWindow.Modify;
         ActiveProcessingButton.Content = Common.ApplicationData.Languages.LanguagesWindow.Active;
@@ -381,6 +378,8 @@ public partial class AddModifyWindowSpecifiedWindow : Window
             };
             DoNotProcessingSizeListBox.Items.Add(newItem);
         }
+        DifferentVersionTextBox.Text = SpecifiedWindowBaseItemInformation.DifferentVersionVersion;
+        DifferentVersionAnnounceToggleSwitch.IsOn = SpecifiedWindowBaseItemInformation.DifferentVersionAnnounce;
         SettingsValueToControls();
         SettingsPositionSizeControlEnabled();
         TransparencyNumericUpDown.IsEnabled = SpecifyTransparencyToggleSwitch.IsOn;
@@ -443,6 +442,25 @@ public partial class AddModifyWindowSpecifiedWindow : Window
     }
 
     /// <summary>
+    /// 「ウィンドウ情報取得タイマー」の「Tick」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void WindowInformationAcquisitionTimer_Tick(
+        object? sender,
+        EventArgs e
+        )
+    {
+        try
+        {
+            WindowInformationAcquisitionTimerAfterProcessing();
+        }
+        catch
+        {
+        }
+    }
+
+    /// <summary>
     /// ウィンドウの「Loaded」イベント
     /// </summary>
     /// <param name="sender"></param>
@@ -484,7 +502,6 @@ public partial class AddModifyWindowSpecifiedWindow : Window
         try
         {
             WindowInformationAcquisitionTimer.Stop();
-            WindowInformationAcquisitionTimer.Dispose();
             WindowSelectionMouse.Dispose();
 
             SpecifiedWindowBaseInformation.AcquiredItems.TitleName = TitleNameCheckBox.IsChecked ?? false;
@@ -1728,6 +1745,8 @@ public partial class AddModifyWindowSpecifiedWindow : Window
             timerItemInformation.NumberOfTimesNotToProcessingFirst = DelayNumericUpDown.ValueInt;
         }
         SpecifiedWindowBaseItemInformation.CloseWindow = CloseWindowToggleSwitch.IsOn;
+        SpecifiedWindowBaseItemInformation.DifferentVersionVersion = DifferentVersionTextBox.Text;
+        SpecifiedWindowBaseItemInformation.DifferentVersionAnnounce = DifferentVersionAnnounceToggleSwitch.IsOn;
     }
 
     /// <summary>
@@ -2169,6 +2188,14 @@ public partial class AddModifyWindowSpecifiedWindow : Window
         if (FileNameCheckBox.IsChecked == true)
         {
             FileNameTextBox.Text = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content == Common.ApplicationData.Languages.LanguagesWindow?.IncludePath ? windowInformation.FileName : Path.GetFileNameWithoutExtension(windowInformation.FileName);
+        }
+        try
+        {
+            FileVersionInfo info = FileVersionInfo.GetVersionInfo(windowInformation.FileName);
+            DifferentVersionTextBox.Text = info.ProductVersion;
+        }
+        catch
+        {
         }
         GetPositionSizeFromHandle(hwnd);
     }
