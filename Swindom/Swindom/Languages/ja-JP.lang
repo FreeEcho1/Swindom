@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+ <ChangeVersion>バージョンが変更されました</ChangeVersion>
  <Check>確認</Check>
+ <DifferentVersionSettingMessage>設定を新しいバージョンに変更「はい」 / 処理を無効にする「いいえ」</DifferentVersionSettingMessage>
  <ErrorOccurred>エラーが発生しました。</ErrorOccurred>
  <LanguageName>日本語</LanguageName>
  <LanguagesWindow>
@@ -15,6 +17,7 @@
   <AlwaysForefront>常に最前面</AlwaysForefront>
   <AlwaysShowOrCancelOnTop>常に最前面に表示/解除</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>移動量</AmountOfMovement>
+  <Announce>知らせる</Announce>
   <AutomaticUpdateCheck>実行時に自動で更新確認</AutomaticUpdateCheck>
   <BackwardMatch>後方一致</BackwardMatch>
   <BatchProcessingOfEvent>「イベント」の一括処理</BatchProcessingOfEvent>
@@ -35,6 +38,7 @@
   <Delete>削除</Delete>
   <DeleteItem>項目削除</DeleteItem>
   <Deleted>削除しました。</Deleted>
+  <DifferentVersion>バージョンが違う</DifferentVersion>
   <Disabling>無効化</Disabling>
   <Display>ディスプレイ</Display>
   <DisplayCoordinates>ディスプレイ座標</DisplayCoordinates>

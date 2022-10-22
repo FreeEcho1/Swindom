@@ -1,185 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
-  <Check>Confirmation.</Check>
-  <ErrorOccurred>Une erreur s'est produite.</ErrorOccurred>
-  <LanguageName>Français</LanguageName>
-  <LanguagesWindow>
-    <Active>Actif</Active>
-    <ActiveWindowOnly>Fenêtre active uniquement</ActiveWindowOnly>
-    <Add>Ajouter</Add>
-    <AddItem>Article ajouté</AddItem>
-    <Added>Ajouté à.</Added>
-    <AllWindow>Toutes les fenêtres</AllWindow>
-    <AllowDelete>Je peux les supprimer ?</AllowDelete>
-    <AlwaysCancelForefront>Toujours libérer le front</AlwaysCancelForefront>
-    <AlwaysForefront>Toujours à l'avant-garde</AlwaysForefront>
-    <AlwaysShowOrCancelOnTop>Toujours à l'avant/à l'arrière</AlwaysShowOrCancelOnTop>
-    <AmountOfMovement>Mouvement</AmountOfMovement>
-    <AutomaticUpdateCheck>Vérification automatique des mises à jour au moment de l'exécution</AutomaticUpdateCheck>
-    <BackwardMatch>Correspondance à rebours</BackwardMatch>
-    <BatchProcessingOfEvent>Traitement par lots des "événements".</BatchProcessingOfEvent>
-    <BatchProcessingOfTimer>Traitement par lots des "timers".</BatchProcessingOfTimer>
-    <BottomEdge>Extrémité inférieure</BottomEdge>
-    <Cancel>Annuler</Cancel>
-    <CaseSensitiveWindowQueries>Sensible à la casse dans la détermination de la fenêtre</CaseSensitiveWindowQueries>
-    <CheckBetaVersion>Vérifier les mises à jour, y compris les versions bêta</CheckBetaVersion>
-    <ClassName>Nom de la classe</ClassName>
-    <ClientArea>Zone de clientèle cible</ClientArea>
-    <CloseWindow>Fermer la fenêtre</CloseWindow>
-    <ConditionsThatDoNotProcess>Conditions non traitées</ConditionsThatDoNotProcess>
-    <CoordinateSpecification>Coordonner les spécifications</CoordinateSpecification>
-    <CoordinateSpecificationMethod>Méthode de désignation des coordonnées</CoordinateSpecificationMethod>
-    <Copy>Copie</Copy>
-    <Create>Créé</Create>
-    <DecisionDistanceToPaste>Distance de décision pour le collage</DecisionDistanceToPaste>
-    <Delete>Supprimer</Delete>
-    <DeleteItem>Article supprimé</DeleteItem>
-    <Deleted>Supprimé.</Deleted>
-    <Disabling>Handicapés</Disabling>
-    <Display>Afficher</Display>
-    <DisplayCoordinates>Afficher les coordonnées</DisplayCoordinates>
-    <DisplayInformationUpdate>Mise à jour des informations d'affichage</DisplayInformationUpdate>
-    <DisplayItem>Afficher l'élément</DisplayItem>
-    <DisplayToUseAsStandard>Affichage sur lequel la référence est basée</DisplayToUseAsStandard>
-    <DisplayWithWindow>Affichage avec fenêtre</DisplayWithWindow>
-    <DoNotChange>Ne pas changer</DoNotChange>
-    <DoNotChangePositionSizeOutOfScreen>Ne change pas de position ou de taille s'il est hors écran.</DoNotChangePositionSizeOutOfScreen>
-    <DoNotIncludePath>Ne comprend pas les chemins</DoNotIncludePath>
-    <DoNotProcessingUntitledWindow>La fenêtre sans titre n'est pas traitée</DoNotProcessingUntitledWindow>
-    <DoNotProcessingWindowWithTitle>La fenêtre avec le titre n'est pas traitée</DoNotProcessingWindowWithTitle>
-    <DoNotSpecify>Non spécifié</DoNotSpecify>
-    <Enabling>Activer</Enabling>
-    <End>Fin de l'année</End>
-    <Event>Événement</Event>
-    <ExactMatch>Correspondance exacte</ExactMatch>
-    <ExplanationOfTheEvent>Vous pouvez spécifier une fenêtre à traiter automatiquement. Si vous souhaitez traiter les événements en utilisant uniquement les touches de raccourci sans traitement automatique, décochez la case pour désactiver cette option.</ExplanationOfTheEvent>
-    <ExplanationOfTheTimer>Vous pouvez spécifier une fenêtre à traiter automatiquement. Si vous souhaitez traiter uniquement avec les touches de raccourci sans traitement automatique, décochez la case et désactivez cette option. L'"intervalle de traitement" est l'intervalle entre la fin du traitement de la fenêtre et le début du traitement suivant.</ExplanationOfTheTimer>
-    <FileName>Nom du fichier</FileName>
-    <FileSelection>Sélection de fichiers</FileSelection>
-    <Forefront>Frontmost</Forefront>
-    <ForwardMatch>Match frontal</ForwardMatch>
-    <General>Général</General>
-    <GetItemWindowInformationOnly>Obtenir uniquement les informations sur la fenêtre de l'élément</GetItemWindowInformationOnly>
-    <GetWindowInformation>Obtenir des informations sur les fenêtres</GetWindowInformation>
-    <GlobalCoordinates>Coordonnées globales</GlobalCoordinates>
-    <Height>Hauteur</Height>
-    <HeightSpecification>Précisez la hauteur</HeightSpecification>
-    <HoldDownMouseCursorMoveToSelectWindow>Déplacez le curseur de la souris vers la fenêtre à sélectionner en maintenant la touche</HoldDownMouseCursorMoveToSelectWindow>
-    <Hotkey>Touches de raccourci</Hotkey>
-    <HotkeyExplanation>Les touches de raccourci peuvent être utilisées pour traiter la fenêtre active (qui accepte les entrées). Le bouton "Select" vous permet de sélectionner la fenêtre que vous souhaitez traiter sans utiliser de touche de raccourci.</HotkeyExplanation>
-    <HotkeysDoNotStop>Les touches de raccourci ne s'arrêtent pas (si une fenêtre plein écran est présente).</HotkeysDoNotStop>
-    <IncludePath>Inclure les chemins</IncludePath>
-    <IncreaseDecreaseHeight>Augmenter/diminuer la hauteur</IncreaseDecreaseHeight>
-    <IncreaseDecreaseWidth>Augmenter/diminuer la largeur</IncreaseDecreaseWidth>
-    <IncreaseDecreaseWidthAndHeight>Augmenter/diminuer la largeur et la hauteur</IncreaseDecreaseWidthAndHeight>
-    <Information>Info.</Information>
-    <Item>Article</Item>
-    <ItemModification>Modification de l'article</ItemModification>
-    <Language>Langue.</Language>
-    <LatestVersion>Dernière version.</LatestVersion>
-    <LeftEdge>Extrémité gauche</LeftEdge>
-    <Library>Bibliothèque</Library>
-    <Magnet>Aimant.</Magnet>
-    <MagnetExplanation>S'attache au bord de l'écran ou à une autre fenêtre lorsque la fenêtre est déplacée avec la souris.</MagnetExplanation>
-    <Manual>Description.</Manual>
-    <Maximize>Maximiser</Maximize>
-    <Middle>Centre</Middle>
-    <Minimize>Minimisation de</Minimize>
-    <MinimizeEnd>La minimisation est terminée</MinimizeEnd>
-    <MinimizeStart>La minimisation a commencé</MinimizeStart>
-    <Modified>Fixe.</Modified>
-    <Modify>Fixe</Modify>
-    <MoveDown>Déplacé vers le bas</MoveDown>
-    <MoveSizeChangeEnd>Déplacer et redimensionner les produits finis</MoveSizeChangeEnd>
-    <MoveThePastePosition>Position de collage décalée</MoveThePastePosition>
-    <MoveUp>Avancez</MoveUp>
-    <MoveXCoordinate>Déplacement de la coordonnée X</MoveXCoordinate>
-    <MoveYCoordinate>Déplacement de la coordonnée Y</MoveYCoordinate>
-    <NameChanged>Nom changé</NameChanged>
-    <No>Non, le nom a été changé</No>
-    <NormalExecution>Exécution normale ? (sans droits d'administrateur - 'Oui' / avec droits d'administrateur - 'Non')</NormalExecution>
-    <NormalWindow>Fenêtre normale</NormalWindow>
-    <NumberOfTimesNotToProcessingFirst>Nombre de fois où il n'est pas traité en premier (retarde le traitement immédiatement après l'exécution)</NumberOfTimesNotToProcessingFirst>
-    <NumericCalculation>Calcul numérique</NumericCalculation>
-    <Ok>Ok.</Ok>
-    <OnceWhileItIsRunning>Pendant que ce logiciel est en cours d'exécution</OnceWhileItIsRunning>
-    <OnceWindowOpen>Lorsqu'une fenêtre est ouverte</OnceWindowOpen>
-    <OnlyActiveWindowEvent>Seule la fenêtre active d'un "événement" est traitée.</OnlyActiveWindowEvent>
-    <OnlyActiveWindowTimer>Seule la fenêtre active du "Timer" est traitée.</OnlyActiveWindowTimer>
-    <OnlyIfItIsOnTheSpecifiedDisplay>Seulement si sur l'affichage spécifié</OnlyIfItIsOnTheSpecifiedDisplay>
-    <Open>Ouvrir</Open>
-    <PartialMatch>Correspondance partielle</PartialMatch>
-    <PasteIntoAnotherWindow>Coller dans une autre fenêtre</PasteIntoAnotherWindow>
-    <PasteToTheEdgeOfScreen>Coller au bord de l'écran</PasteToTheEdgeOfScreen>
-    <PasteWithTheCtrlKeyPressed>Coller avec la touche Ctrl enfoncée</PasteWithTheCtrlKeyPressed>
-    <Percent>%, %, %, %, %, %, %, %, %, %, %.</Percent>
-    <Pixel>px</Pixel>
-    <PositionAndSize>Position et taille</PositionAndSize>
-    <ProcessOnlyOnce>Traiter une seule fois</ProcessOnlyOnce>
-    <ProcessOnlyWhenNormalWindow>Traitement uniquement dans la "fenêtre normale".</ProcessOnlyWhenNormalWindow>
-    <Processing>Traitement</Processing>
-    <ProcessingInterval>Intervalle de traitement (millisecondes)</ProcessingInterval>
-    <ProcessingName>Nom du traitement</ProcessingName>
-    <ProcessingPositionAndSizeTwice>Traiter deux fois la position et la taille</ProcessingPositionAndSizeTwice>
-    <ProcessingSettings>Paramètres de traitement</ProcessingSettings>
-    <ProcessingState>État du traitement</ProcessingState>
-    <ProcessingType>Type de traitement</ProcessingType>
-    <ProcessingWindowRange>Plage de la fenêtre à traiter</ProcessingWindowRange>
-    <Ratio>Ratio</Ratio>
-    <RegisterMultipleWindowActions>Enregistrer des processus à fenêtres multiples</RegisterMultipleWindowActions>
-    <RegisteredName>Nom de l'enregistrement</RegisteredName>
-    <ReportsAndRequests>Rapport, demande</ReportsAndRequests>
-    <RetrievedAfterFiveSeconds>Les informations de la fenêtre sont récupérées après 5 secondes, veuillez activer la fenêtre pour laquelle vous souhaitez récupérer les informations dans les 5 secondes.</RetrievedAfterFiveSeconds>
-    <RightEdge>Extrémité droite</RightEdge>
-    <RunAtWindowsStartup>Exécuter au démarrage de Windows</RunAtWindowsStartup>
-    <RunAtWindowsStartupAdministrator>Exécuter au démarrage de Windows (droits d'administrateur)</RunAtWindowsStartupAdministrator>
-    <Select>Sélection.</Select>
-    <SelectionComplete>Sélectionné.</SelectionComplete>
-    <Setting>Configuration</Setting>
-    <ShareSettings>Voulez-vous partager les informations de configuration avec tous les utilisateurs ?</ShareSettings>
-    <Show>Affiché</Show>
-    <Size>Taille</Size>
-    <SizeChangeAmount>Montant du changement de taille</SizeChangeAmount>
-    <SoftwareName>Nom du logiciel</SoftwareName>
-    <SpecifyCancelTransparency>Préciser/libérer la transparence</SpecifyCancelTransparency>
-    <SpecifyPositionAndSize>Précisez la position et la taille</SpecifyPositionAndSize>
-    <SpecifyTransparency>Précisez la transparence</SpecifyTransparency>
-    <StartStopProcessingOfEvent>Démarrer/arrêter le traitement des "événements".</StartStopProcessingOfEvent>
-    <StartStopProcessingOfMagnet>Démarrage/arrêt du traitement des "aimants</StartStopProcessingOfMagnet>
-    <StartStopProcessingOfTimer>Démarrer/arrêter le traitement du "Timer".</StartStopProcessingOfTimer>
-    <StopProcessingShowAddModify>Arrêter le traitement si une fenêtre d'ajout/modification est affichée.</StopProcessingShowAddModify>
-    <StopProcessingWhenWindowIsFullScreen>Le traitement s'arrête lorsqu'il y a une fenêtre plein écran.</StopProcessingWhenWindowIsFullScreen>
-    <StopTimeWhenPasting>Temps d'arrêt en cas de blocage (millisecondes)</StopTimeWhenPasting>
-    <TheForegroundHasBeenChanged>Le premier plan a changé</TheForegroundHasBeenChanged>
-    <TheSpecifiedDisplay>Affichage spécifié</TheSpecifiedDisplay>
-    <ThereAreDuplicateItems>Il y a des éléments en double.</ThereAreDuplicateItems>
-    <ThereIsADuplicateProcessingName>Il y a des noms de processus en double.</ThereIsADuplicateProcessingName>
-    <ThereIsADuplicateRegistrationName>Il y a des noms d'enregistrement en double.</ThereIsADuplicateRegistrationName>
-    <ThereIsTheLatestVersion>Il y a la dernière version.</ThereIsTheLatestVersion>
-    <Timer>Minuterie</Timer>
-    <TitleName>Nom du titre.</TitleName>
-    <TitleNameExclusionString>Chaîne d'exclusion du nom du titre.</TitleNameExclusionString>
-    <TitleProcessingConditions>Conditions de traitement des titres</TitleProcessingConditions>
-    <TopEdge>Haut de gamme</TopEdge>
-    <Translators>Traducteur : DeepL Traducteur</Translators>
-    <Transparency>Transparence</Transparency>
-    <TypesOfEventsToEnable>Type d'événement à activer</TypesOfEventsToEnable>
-    <UpdateCheck>Confirmation de la mise à jour</UpdateCheck>
-    <UpdateCheckFailed>La confirmation de la mise à jour a échoué.</UpdateCheckFailed>
-    <UpdateHistory>Historique des mises à jour</UpdateHistory>
-    <Version>Version.</Version>
-    <WaitTimeToProcessingNextWindow>Temps d'attente pour traiter la fenêtre suivante (millisecondes)</WaitTimeToProcessingNextWindow>
-    <Website>Site web</Website>
-    <WhenToProcessing>Quand traiter</WhenToProcessing>
-    <Width>Largeur</Width>
-    <WidthSpecification>Spécification de la largeur</WidthSpecification>
-    <WindowDecide>Détermination de la fenêtre</WindowDecide>
-    <WindowInformationToGet>Informations sur les fenêtres à acquérir</WindowInformationToGet>
-    <WindowMoveOutsideToInside>Si la fenêtre est hors écran, elle est déplacée vers l'intérieur de l'écran.</WindowMoveOutsideToInside>
-    <WindowProcessing>Traitement des fenêtres</WindowProcessing>
-    <WindowState>État des fenêtres</WindowState>
-    <X>X</X>
-    <Y>Y</Y>
-    <Yes>Oui Non</Yes>
-  </LanguagesWindow>
+ <ChangeVersion>Version modifiée</ChangeVersion>
+ <Check>Confirmation.</Check>
+ <DifferentVersionSettingMessage>Changer les paramètres pour la nouvelle version 'Oui' / Désactiver le traitement 'Non'.</DifferentVersionSettingMessage>
+ <ErrorOccurred>Une erreur s'est produite.</ErrorOccurred>
+ <LanguageName>Français</LanguageName>
+ <LanguagesWindow>
+  <Active>Actif</Active>
+  <ActiveWindowOnly>Fenêtre active uniquement</ActiveWindowOnly>
+  <Add>Ajouter</Add>
+  <AddItem>Article ajouté.</AddItem>
+  <Added>Ajouté à.</Added>
+  <AllWindow>Toutes les fenêtres</AllWindow>
+  <AllowDelete>Je peux les supprimer ?</AllowDelete>
+  <AlwaysCancelForefront>Toujours libérer le front</AlwaysCancelForefront>
+  <AlwaysForefront>Toujours en tête</AlwaysForefront>
+  <AlwaysShowOrCancelOnTop>Toujours à l'avant/à l'arrière</AlwaysShowOrCancelOnTop>
+  <AmountOfMovement>Mouvement</AmountOfMovement>
+  <Announce>Informer</Announce>
+  <AutomaticUpdateCheck>Confirmation automatique de la mise à jour au moment de l'exécution</AutomaticUpdateCheck>
+  <BackwardMatch>Correspondance à rebours</BackwardMatch>
+  <BatchProcessingOfEvent>Traitement par lots des "événements".</BatchProcessingOfEvent>
+  <BatchProcessingOfTimer>Traitement par lots des "timers</BatchProcessingOfTimer>
+  <BottomEdge>Extrémité inférieure</BottomEdge>
+  <Cancel>Annuler</Cancel>
+  <CaseSensitiveWindowQueries>Sensible à la casse dans la détermination de la fenêtre</CaseSensitiveWindowQueries>
+  <CheckBetaVersion>Vérifier les mises à jour, y compris les versions bêta</CheckBetaVersion>
+  <ClassName>Nom de la classe</ClassName>
+  <ClientArea>Zone de clientèle cible</ClientArea>
+  <CloseWindow>Fermer la fenêtre</CloseWindow>
+  <ConditionsThatDoNotProcess>Conditions non traitées</ConditionsThatDoNotProcess>
+  <CoordinateSpecification>Coordonner les spécifications</CoordinateSpecification>
+  <CoordinateSpecificationMethod>Méthode de désignation des coordonnées</CoordinateSpecificationMethod>
+  <Copy>Copie</Copy>
+  <Create>Créé</Create>
+  <DecisionDistanceToPaste>Distance de décision pour le collage</DecisionDistanceToPaste>
+  <Delete>Supprimer</Delete>
+  <DeleteItem>Article supprimé</DeleteItem>
+  <Deleted>Supprimé.</Deleted>
+  <DifferentVersion>Mauvaise version.</DifferentVersion>
+  <Disabling>Handicapés</Disabling>
+  <Display>Afficher</Display>
+  <DisplayCoordinates>Afficher les coordonnées</DisplayCoordinates>
+  <DisplayInformationUpdate>Mise à jour des informations d'affichage</DisplayInformationUpdate>
+  <DisplayItem>Afficher l'élément</DisplayItem>
+  <DisplayToUseAsStandard>Affichage de la référence</DisplayToUseAsStandard>
+  <DisplayWithWindow>Afficheur avec fenêtre</DisplayWithWindow>
+  <DoNotChange>Ne pas changer</DoNotChange>
+  <DoNotChangePositionSizeOutOfScreen>Ne change pas de position ou de taille s'il est hors écran.</DoNotChangePositionSizeOutOfScreen>
+  <DoNotIncludePath>Ne comprend pas les chemins</DoNotIncludePath>
+  <DoNotProcessingUntitledWindow>La fenêtre sans titre n'est pas traitée</DoNotProcessingUntitledWindow>
+  <DoNotProcessingWindowWithTitle>La fenêtre avec le titre n'est pas traitée</DoNotProcessingWindowWithTitle>
+  <DoNotSpecify>Non spécifié</DoNotSpecify>
+  <Enabling>Activer</Enabling>
+  <End>Fin de l'année</End>
+  <Event>Événement</Event>
+  <ExactMatch>Correspondance exacte</ExactMatch>
+  <ExplanationOfTheEvent>Vous pouvez spécifier une fenêtre à traiter automatiquement. Si vous souhaitez traiter les événements en utilisant uniquement les touches de raccourci sans traitement automatique, décochez la case pour désactiver cette option.</ExplanationOfTheEvent>
+  <ExplanationOfTheTimer>Vous pouvez spécifier une fenêtre à traiter automatiquement. Si vous souhaitez traiter uniquement avec les touches de raccourci sans traitement automatique, décochez la case et désactivez cette option. L'"intervalle de traitement" est l'intervalle entre la fin du traitement de la fenêtre et le début du traitement suivant.</ExplanationOfTheTimer>
+  <FileName>Nom du fichier</FileName>
+  <FileSelection>Sélection de fichiers</FileSelection>
+  <Forefront>Frontmost</Forefront>
+  <ForwardMatch>Match frontal</ForwardMatch>
+  <General>Général</General>
+  <GetItemWindowInformationOnly>Obtenir uniquement les informations sur la fenêtre de l'élément</GetItemWindowInformationOnly>
+  <GetWindowInformation>Obtenir des informations sur les fenêtres</GetWindowInformation>
+  <GlobalCoordinates>Coordonnées globales</GlobalCoordinates>
+  <Height>Hauteur</Height>
+  <HeightSpecification>Précisez la hauteur</HeightSpecification>
+  <HoldDownMouseCursorMoveToSelectWindow>Déplacez le curseur de la souris sur la fenêtre à sélectionner en maintenant la touche</HoldDownMouseCursorMoveToSelectWindow>
+  <Hotkey>Touches de raccourci</Hotkey>
+  <HotkeyExplanation>Les touches de raccourci peuvent être utilisées pour traiter la fenêtre active (qui accepte les entrées). Le bouton "Select" vous permet de sélectionner la fenêtre que vous souhaitez traiter sans utiliser de touche de raccourci.</HotkeyExplanation>
+  <HotkeysDoNotStop>Les touches de raccourci ne s'arrêtent pas (si une fenêtre plein écran est présente).</HotkeysDoNotStop>
+  <IncludePath>Inclure les chemins</IncludePath>
+  <IncreaseDecreaseHeight>Augmenter/diminuer la hauteur</IncreaseDecreaseHeight>
+  <IncreaseDecreaseWidth>Augmenter/diminuer la largeur</IncreaseDecreaseWidth>
+  <IncreaseDecreaseWidthAndHeight>Augmenter/diminuer la largeur et la hauteur</IncreaseDecreaseWidthAndHeight>
+  <Information>Info.</Information>
+  <Item>Article</Item>
+  <ItemModification>Modification de l'article</ItemModification>
+  <Language>Langue.</Language>
+  <LatestVersion>Dernière version.</LatestVersion>
+  <LeftEdge>Extrémité gauche</LeftEdge>
+  <Library>Bibliothèque</Library>
+  <Magnet>Aimant.</Magnet>
+  <MagnetExplanation>S'attache au bord de l'écran ou à une autre fenêtre lorsque la fenêtre est déplacée avec la souris.</MagnetExplanation>
+  <Manual>Description.</Manual>
+  <Maximize>Maximiser</Maximize>
+  <Middle>Centre</Middle>
+  <Minimize>Minimisation de</Minimize>
+  <MinimizeEnd>La minimisation est terminée</MinimizeEnd>
+  <MinimizeStart>La minimisation a commencé</MinimizeStart>
+  <Modified>Fixe.</Modified>
+  <Modify>Fixe</Modify>
+  <MoveDown>Déplacé vers le bas</MoveDown>
+  <MoveSizeChangeEnd>Déplacer et redimensionner les produits finis</MoveSizeChangeEnd>
+  <MoveThePastePosition>Position de collage décalée</MoveThePastePosition>
+  <MoveUp>Avancez</MoveUp>
+  <MoveXCoordinate>Déplacement de la coordonnée X</MoveXCoordinate>
+  <MoveYCoordinate>Déplacement de la coordonnée Y</MoveYCoordinate>
+  <NameChanged>Nom changé</NameChanged>
+  <No>Non, le nom a été changé.</No>
+  <NormalExecution>Exécution normale ? (sans droits d'administration - 'Oui' / avec droits d'administration - 'Non')</NormalExecution>
+  <NormalWindow>Fenêtre normale</NormalWindow>
+  <NumberOfTimesNotToProcessingFirst>Nombre de fois où il n'est pas traité en premier (retarde le traitement immédiatement après l'exécution)</NumberOfTimesNotToProcessingFirst>
+  <NumericCalculation>Calcul numérique</NumericCalculation>
+  <Ok>Ok.</Ok>
+  <OnceWhileItIsRunning>Pendant que ce logiciel est en cours d'exécution</OnceWhileItIsRunning>
+  <OnceWindowOpen>Lorsqu'une fenêtre est ouverte</OnceWindowOpen>
+  <OnlyActiveWindowEvent>Seule la fenêtre active d'un "événement" est traitée.</OnlyActiveWindowEvent>
+  <OnlyActiveWindowTimer>Seule la fenêtre active du "Timer" est traitée.</OnlyActiveWindowTimer>
+  <OnlyIfItIsOnTheSpecifiedDisplay>Seulement si sur l'affichage spécifié</OnlyIfItIsOnTheSpecifiedDisplay>
+  <Open>Ouvrir</Open>
+  <PartialMatch>Correspondance partielle</PartialMatch>
+  <PasteIntoAnotherWindow>Coller dans une autre fenêtre</PasteIntoAnotherWindow>
+  <PasteToTheEdgeOfScreen>Coller au bord de l'écran</PasteToTheEdgeOfScreen>
+  <PasteWithTheCtrlKeyPressed>Coller avec la touche Ctrl enfoncée</PasteWithTheCtrlKeyPressed>
+  <Percent>%, %, %, %, %, %, %, %, %, %, %.</Percent>
+  <Pixel>px</Pixel>
+  <PositionAndSize>Position et taille</PositionAndSize>
+  <ProcessOnlyOnce>Traiter une seule fois</ProcessOnlyOnce>
+  <ProcessOnlyWhenNormalWindow>Traitement uniquement dans la "fenêtre normale".</ProcessOnlyWhenNormalWindow>
+  <Processing>Traitement</Processing>
+  <ProcessingInterval>Intervalle de traitement (millisecondes)</ProcessingInterval>
+  <ProcessingName>Nom du traitement</ProcessingName>
+  <ProcessingPositionAndSizeTwice>Traiter deux fois la position et la taille</ProcessingPositionAndSizeTwice>
+  <ProcessingSettings>Paramètres de traitement</ProcessingSettings>
+  <ProcessingState>État du traitement</ProcessingState>
+  <ProcessingType>Type de traitement</ProcessingType>
+  <ProcessingWindowRange>Plage de la fenêtre à traiter</ProcessingWindowRange>
+  <Ratio>Ratio</Ratio>
+  <RegisterMultipleWindowActions>Enregistrer plusieurs traitements de fenêtres</RegisterMultipleWindowActions>
+  <RegisteredName>Nom d'enregistrement</RegisteredName>
+  <ReportsAndRequests>Rapport, demande</ReportsAndRequests>
+  <RetrievedAfterFiveSeconds>Les informations de la fenêtre sont récupérées après 5 secondes, veuillez activer la fenêtre pour laquelle vous souhaitez récupérer les informations dans les 5 secondes.</RetrievedAfterFiveSeconds>
+  <RightEdge>Extrémité droite</RightEdge>
+  <RunAtWindowsStartup>Exécuter au démarrage de Windows</RunAtWindowsStartup>
+  <RunAtWindowsStartupAdministrator>Exécuter au démarrage de Windows (droits d'administrateur)</RunAtWindowsStartupAdministrator>
+  <Select>Sélection.</Select>
+  <SelectionComplete>Sélectionné.</SelectionComplete>
+  <Setting>Paramètres</Setting>
+  <ShareSettings>Voulez-vous partager les informations de configuration avec tous les utilisateurs ?</ShareSettings>
+  <Show>Affiché</Show>
+  <Size>Taille</Size>
+  <SizeChangeAmount>Montant du changement de taille</SizeChangeAmount>
+  <SoftwareName>Nom du logiciel</SoftwareName>
+  <SpecifyCancelTransparency>Préciser/libérer la transparence</SpecifyCancelTransparency>
+  <SpecifyPositionAndSize>Précisez la position et la taille</SpecifyPositionAndSize>
+  <SpecifyTransparency>Précisez la transparence</SpecifyTransparency>
+  <StartStopProcessingOfEvent>Démarrer/arrêter le traitement des "événements".</StartStopProcessingOfEvent>
+  <StartStopProcessingOfMagnet>Démarrage/arrêt du traitement des "aimants</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfTimer>Démarrer/arrêter le traitement du "Timer".</StartStopProcessingOfTimer>
+  <StopProcessingShowAddModify>Arrêter le traitement si une fenêtre d'ajout/modification est affichée.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Le traitement s'arrête lorsqu'il y a une fenêtre plein écran.</StopProcessingWhenWindowIsFullScreen>
+  <StopTimeWhenPasting>Temps d'arrêt en cas de blocage (millisecondes)</StopTimeWhenPasting>
+  <TheForegroundHasBeenChanged>Le premier plan a changé</TheForegroundHasBeenChanged>
+  <TheSpecifiedDisplay>Affichage spécifié</TheSpecifiedDisplay>
+  <ThereAreDuplicateItems>Il y a des éléments en double.</ThereAreDuplicateItems>
+  <ThereIsADuplicateProcessingName>Il y a des noms de processus en double.</ThereIsADuplicateProcessingName>
+  <ThereIsADuplicateRegistrationName>Il y a des noms d'enregistrement en double.</ThereIsADuplicateRegistrationName>
+  <ThereIsTheLatestVersion>Il y a la dernière version.</ThereIsTheLatestVersion>
+  <Timer>Minuterie</Timer>
+  <TitleName>Nom du titre.</TitleName>
+  <TitleNameExclusionString>Chaîne d'exclusion du nom du titre.</TitleNameExclusionString>
+  <TitleProcessingConditions>Conditions de traitement des titres</TitleProcessingConditions>
+  <TopEdge>Haut de gamme</TopEdge>
+  <Translators>Traducteur : DeepL</Translators>
+  <Transparency>Transparence</Transparency>
+  <TypesOfEventsToEnable>Type d'événement à activer</TypesOfEventsToEnable>
+  <UpdateCheck>Confirmation de la mise à jour</UpdateCheck>
+  <UpdateCheckFailed>La confirmation de la mise à jour a échoué.</UpdateCheckFailed>
+  <UpdateHistory>Historique des mises à jour</UpdateHistory>
+  <Version>Version.</Version>
+  <WaitTimeToProcessingNextWindow>Temps d'attente pour traiter la fenêtre suivante (millisecondes)</WaitTimeToProcessingNextWindow>
+  <Website>Site web</Website>
+  <WhenToProcessing>Quand traiter</WhenToProcessing>
+  <Width>Largeur</Width>
+  <WidthSpecification>Spécification de la largeur</WidthSpecification>
+  <WindowDecide>Détermination de la fenêtre</WindowDecide>
+  <WindowInformationToGet>Informations sur les fenêtres à acquérir</WindowInformationToGet>
+  <WindowMoveOutsideToInside>Si la fenêtre est hors écran, elle est déplacée vers l'intérieur de l'écran.</WindowMoveOutsideToInside>
+  <WindowProcessing>Traitement des fenêtres</WindowProcessing>
+  <WindowState>État des fenêtres</WindowState>
+  <X>X</X>
+  <Y>Y</Y>
+  <Yes>Oui Non</Yes>
+ </LanguagesWindow>
 </Languages>
