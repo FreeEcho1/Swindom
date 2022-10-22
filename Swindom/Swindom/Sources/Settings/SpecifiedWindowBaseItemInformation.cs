@@ -81,6 +81,16 @@ public class SpecifiedWindowBaseItemInformation : IExtensibleDataObject
     /// </summary>
     [DataMember]
     public List<string> DoNotProcessingTitleName;
+    /// <summary>
+    /// バージョン
+    /// </summary>
+    [DataMember]
+    public string DifferentVersionVersion;
+    /// <summary>
+    /// 知らせる
+    /// </summary>
+    [DataMember]
+    public bool DifferentVersionAnnounce;
 
     // ------------------ 設定ファイルに保存しないデータ ------------------ //
     /// <summary>
@@ -136,6 +146,8 @@ public class SpecifiedWindowBaseItemInformation : IExtensibleDataObject
             DoNotProcessingSize.Add(nowSize);
         }
         DoNotProcessingTitleName = new(item.DoNotProcessingTitleName);
+        DifferentVersionVersion = item.DifferentVersionVersion;
+        DifferentVersionAnnounce = item.DifferentVersionAnnounce;
         EndedProcessingOnlyOnce = false;
         Hwnd = IntPtr.Zero;
     }
@@ -170,6 +182,8 @@ public class SpecifiedWindowBaseItemInformation : IExtensibleDataObject
         TitleProcessingConditions = TitleProcessingConditions.NotSpecified;
         DoNotProcessingSize = new();
         DoNotProcessingTitleName = new();
+        DifferentVersionVersion = "";
+        DifferentVersionAnnounce = false;
         EndedProcessingOnlyOnce = false;
         Hwnd = IntPtr.Zero;
     }

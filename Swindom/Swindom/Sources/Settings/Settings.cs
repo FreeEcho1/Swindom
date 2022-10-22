@@ -37,6 +37,11 @@ public class Settings : IExtensibleDataObject
     [DataMember]
     public bool CheckBetaVersion;
     /// <summary>
+    /// 長いパスを使用 (32767文字)
+    /// </summary>
+    [DataMember]
+    public bool UseLongPath;
+    /// <summary>
     /// 「貼り付ける位置をずらす」情報
     /// </summary>
     [DataMember]
@@ -92,6 +97,7 @@ public class Settings : IExtensibleDataObject
         CoordinateType = CoordinateType.Display;
         AutomaticallyUpdateCheck = false;
         CheckBetaVersion = false;
+        UseLongPath = false;
         ShiftPastePosition = new();
         EventInformation = new();
         TimerInformation = new();
@@ -129,6 +135,7 @@ public class Settings : IExtensibleDataObject
             element1.Add(new XElement("CoordinateType", Enum.GetName(typeof(CoordinateType), CoordinateType)));
             element1.Add(new XElement("AutomaticallyUpdateCheck", AutomaticallyUpdateCheck.ToString()));
             element1.Add(new XElement("CheckBetaVersion", CheckBetaVersion.ToString()));
+            element1.Add(new XElement("UseLongPath", UseLongPath.ToString()));
             // Start ShiftPastePosition
             element2 = new("ShiftPastePosition");
             element2.Add(new XElement("Enabled", ShiftPastePosition.Enabled.ToString()));
@@ -232,6 +239,8 @@ public class Settings : IExtensibleDataObject
                     element5.Add(element6);
                 }
                 element4.Add(element5);
+                element4.Add(new XElement("DifferentVersionVersion", nowItem.DifferentVersionVersion));
+                element4.Add(new XElement("DifferentVersionAnnounce", nowItem.DifferentVersionAnnounce.ToString()));
                 element4.Add(new XElement("Foreground", nowItem.WindowEventData.Foreground.ToString()));
                 element4.Add(new XElement("MoveSizeEnd", nowItem.WindowEventData.MoveSizeEnd.ToString()));
                 element4.Add(new XElement("MinimizeStart", nowItem.WindowEventData.MinimizeStart.ToString()));
@@ -335,6 +344,8 @@ public class Settings : IExtensibleDataObject
                     element5.Add(element6);
                 }
                 element4.Add(element5);
+                element4.Add(new XElement("DifferentVersionVersion", nowItem.DifferentVersionVersion));
+                element4.Add(new XElement("DifferentVersionAnnounce", nowItem.DifferentVersionAnnounce.ToString()));
                 element3.Add(element4);
             }
             element2.Add(element3);
@@ -439,6 +450,7 @@ public class Settings : IExtensibleDataObject
                 _ = Enum.TryParse(Processing.GetStringXml(element, "CoordinateType", Enum.GetName(typeof(CoordinateType), CoordinateType) ?? ""), out CoordinateType);
                 AutomaticallyUpdateCheck = Processing.GetBoolXml(element, "AutomaticallyUpdateCheck", AutomaticallyUpdateCheck);
                 CheckBetaVersion = Processing.GetBoolXml(element, "CheckBetaVersion", CheckBetaVersion);
+                UseLongPath = Processing.GetBoolXml(element, "UseLongPath", UseLongPath);
                 // Start ShiftPastePosition
                 elementNode1 = element.Element("ShiftPastePosition");
                 if (elementNode1 != null)
@@ -561,6 +573,8 @@ public class Settings : IExtensibleDataObject
                                     newEII.DoNotProcessingTitleName.Add(newString);
                                 }
                             }
+                            newEII.DifferentVersionVersion = Processing.GetStringXml(nowElementEII, "DifferentVersionVersion", newEII.DifferentVersionVersion);
+                            newEII.DifferentVersionAnnounce = Processing.GetBoolXml(nowElementEII, "DifferentVersionAnnounce", newEII.DifferentVersionAnnounce);
                             newEII.WindowEventData.Foreground = Processing.GetBoolXml(nowElementEII, "Foreground", newEII.WindowEventData.Foreground);
                             newEII.WindowEventData.MoveSizeEnd = Processing.GetBoolXml(nowElementEII, "MoveSizeEnd", newEII.WindowEventData.MoveSizeEnd);
                             newEII.WindowEventData.MinimizeStart = Processing.GetBoolXml(nowElementEII, "MinimizeStart", newEII.WindowEventData.MinimizeStart);
@@ -682,6 +696,8 @@ public class Settings : IExtensibleDataObject
                                     newTII.DoNotProcessingTitleName.Add(newString);
                                 }
                             }
+                            newTII.DifferentVersionVersion = Processing.GetStringXml(nowElementTII, "DifferentVersionVersion", newTII.DifferentVersionVersion);
+                            newTII.DifferentVersionAnnounce = Processing.GetBoolXml(nowElementTII, "DifferentVersionAnnounce", newTII.DifferentVersionAnnounce);
 
                             TimerInformation.Items.Add(newTII);
                         }
