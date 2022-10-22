@@ -12,7 +12,7 @@ public class TimerWindowProcessing : IDisposable
     /// <summary>
     /// 処理のタイマー
     /// </summary>
-    private readonly Timer ProcessingTimer = new();
+    private readonly System.Windows.Threading.DispatcherTimer ProcessingTimer = new();
     /// <summary>
     /// マウスでウィンドウ移動検知
     /// </summary>
@@ -28,8 +28,8 @@ public class TimerWindowProcessing : IDisposable
     public TimerWindowProcessing()
     {
         ProcessingSettings();
-        ProcessingTimer.Interval = Common.ApplicationData.Settings.TimerInformation.ProcessingInterval;
-        ProcessingTimer.Elapsed += ProcessingTimer_Elapsed;
+        ProcessingTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.TimerInformation.ProcessingInterval);
+        ProcessingTimer.Tick += ProcessingTimer_Tick;
         MouseMoveWindowDetection.StartMove += MouseMoveWindowDetection_StartMove;
         MouseMoveWindowDetection.StopMove += MouseMoveWindowDetection_StopMove;
         Common.ApplicationData.ProcessingEvent += ApplicationData_ProcessingEvent;
@@ -67,7 +67,6 @@ public class TimerWindowProcessing : IDisposable
             Disposed = true;
             Common.ApplicationData.ProcessingEvent -= ApplicationData_ProcessingEvent;
             ProcessingTimer.Stop();
-            ProcessingTimer.Dispose();
             MouseMoveWindowDetection.Stop();
             UnregisterHotkeys();
         }
@@ -95,7 +94,7 @@ public class TimerWindowProcessing : IDisposable
             switch (e.ProcessingEventType)
             {
                 case ProcessingEventType.TimerProcessingInterval:
-                    ProcessingTimer.Interval = Common.ApplicationData.Settings.TimerInformation.ProcessingInterval;
+                    ProcessingTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.TimerInformation.ProcessingInterval);
                     break;
                 case ProcessingEventType.TimerPause:
                     ProcessingTimer?.Stop();
@@ -155,18 +154,18 @@ public class TimerWindowProcessing : IDisposable
     /// </summary>
     public void ProcessingSettings()
     {
-        ProcessingTimer.Interval = Common.ApplicationData.Settings.TimerInformation.ProcessingInterval;
+        ProcessingTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.TimerInformation.ProcessingInterval);
         RegisterHotkeys();
     }
 
     /// <summary>
-    /// 「処理のタイマー」の「Elapsed」イベント
+    /// 「処理のタイマー」の「Tick」イベント
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ProcessingTimer_Elapsed(
+    private void ProcessingTimer_Tick(
         object? sender,
-        ElapsedEventArgs e
+        EventArgs e
         )
     {
         try

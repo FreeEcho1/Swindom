@@ -446,39 +446,29 @@ public static class WindowProcessing
                     StringBuilder getString;
                     if (checkProcessing)
                     {
-                        getString = new(Common.FileNameLength);
+                        getString = new(Common.PathLength);
                     }
                     else
                     {
                         wib.FileName.Clear();
                         getString = wib.FileName;
                     }
-
-                    uint result = 0;
-                    do
-                    {
-                        result = NativeMethods.GetModuleFileNameEx(process, pmodules, getString, getString.Capacity);
-                        if (result == 0)
-                        {
-                            break;
-                        }
-                        else if (result + 1 == getString.Capacity)
-                        {
-                            Common.FileNameLength += Common.FileNameLengthAdd;
-                            getString = new(Common.FileNameLength);
-                            if (checkProcessing == false)
-                            {
-                                wib.FileName = getString;
-                            }
-                        }
-                        else
-                        {
-                            information.FileName = getString.ToString();
-                            break;
-                        }
-                    } while (result + 1 == getString.Capacity && Common.FileNameLength < Common.FileNameMaxLength);
+                    _ = NativeMethods.GetModuleFileNameEx(process, pmodules, getString, getString.Capacity);
+                    information.FileName = getString.ToString();
                 }
                 NativeMethods.CloseHandle(process);
+            }
+        }
+        catch
+        {
+        }
+        // バージョン取得
+        try
+        {
+            FileVersionInfo info = FileVersionInfo.GetVersionInfo(information.FileName);
+            if (info.ProductVersion != null)
+            {
+                information.Version = info.ProductVersion;
             }
         }
         catch

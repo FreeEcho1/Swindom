@@ -16,11 +16,11 @@ public class MagnetProcessing : IDisposable
     /// <summary>
     /// マウスカーソルのX座標の停止タイマー
     /// </summary>
-    private Timer? CursorStopXTimer;
+    private System.Windows.Threading.DispatcherTimer? CursorStopXTimer;
     /// <summary>
     /// マウスカーソルのY座標の停止タイマー
     /// </summary>
-    private Timer? CursorStopYTimer;
+    private System.Windows.Threading.DispatcherTimer? CursorStopYTimer;
     /// <summary>
     /// 初期のマウスカーソルのクリッピング範囲
     /// </summary>
@@ -77,13 +77,11 @@ public class MagnetProcessing : IDisposable
             if (CursorStopXTimer != null)
             {
                 CursorStopXTimer.Stop();
-                CursorStopXTimer.Dispose();
                 CursorStopXTimer = null;
             }
             if (CursorStopYTimer != null)
             {
                 CursorStopYTimer.Stop();
-                CursorStopYTimer.Dispose();
                 CursorStopYTimer = null;
             }
         }
@@ -115,15 +113,15 @@ public class MagnetProcessing : IDisposable
             if (CursorStopXTimer == null)
             {
                 CursorStopXTimer = new();
-                CursorStopXTimer.Elapsed += CursorStopXTimer_Elapsed;
+                CursorStopXTimer.Tick += CursorStopXTimer_Tick;
             }
-            CursorStopXTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+            CursorStopXTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
             if (CursorStopYTimer == null)
             {
                 CursorStopYTimer = new();
-                CursorStopYTimer.Elapsed += CursorStopYTimer_Elapsed;
+                CursorStopYTimer.Tick += CursorStopYTimer_Tick;
             }
-            CursorStopYTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+            CursorStopYTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
 
             if (HwndList == null && Common.ApplicationData.Settings.MagnetInformation.PasteToAnotherWindow)
             {
@@ -191,13 +189,11 @@ public class MagnetProcessing : IDisposable
             if (CursorStopXTimer != null)
             {
                 CursorStopXTimer.Stop();
-                CursorStopXTimer.Dispose();
                 CursorStopXTimer = null;
             }
             if (CursorStopYTimer != null)
             {
                 CursorStopYTimer.Stop();
-                CursorStopYTimer.Dispose();
                 CursorStopYTimer = null;
             }
             if (HwndList != null)
@@ -212,19 +208,19 @@ public class MagnetProcessing : IDisposable
     }
 
     /// <summary>
-    /// 「マウスカーソルのX座標の停止タイマー」の「Elapsed」イベント
+    /// 「マウスカーソルのX座標の停止タイマー」の「Tick」イベント
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void CursorStopXTimer_Elapsed(
+    private void CursorStopXTimer_Tick(
         object? sender,
-        ElapsedEventArgs e
+        EventArgs e
         )
     {
         try
         {
             CursorStopXTimer?.Stop();
-            if (CursorStopYTimer?.Enabled == false)
+            if (CursorStopYTimer?.IsEnabled == false)
             {
                 // ディスプレイの数で初期のクリッピング範囲が違うから (タスクバーの領域も含まれるか) 設定する値を分けている
                 NativeMethods.ClipCursor(Common.MonitorInformation.MonitorInfo.Count == 1 ? CursorClip : null);
@@ -236,19 +232,19 @@ public class MagnetProcessing : IDisposable
     }
 
     /// <summary>
-    /// 「マウスカーソルのY座標の停止タイマー」の「Elapsed」イベント
+    /// 「マウスカーソルのY座標の停止タイマー」の「Tick」イベント
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void CursorStopYTimer_Elapsed(
+    private void CursorStopYTimer_Tick(
         object? sender,
-        ElapsedEventArgs e
+        EventArgs e
         )
     {
         try
         {
             CursorStopYTimer?.Stop();
-            if (CursorStopXTimer?.Enabled == false)
+            if (CursorStopXTimer?.IsEnabled == false)
             {
                 NativeMethods.ClipCursor(Common.MonitorInformation.MonitorInfo.Count == 1 ? CursorClip : null);
             }
@@ -292,7 +288,7 @@ public class MagnetProcessing : IDisposable
                 Y = cursorPosition.Y - PreviousCursorPosition.Y
             };        // マウスカーソルが移動した距離
             byte checkCursorMoveX = 0;        // マウスカーソルのXの移動判定 (移動してない「0」/左「1」/右「2」)
-            if (CursorStopXTimer?.Enabled == false)
+            if (CursorStopXTimer?.IsEnabled == false)
             {
                 // ウィンドウがディスプレイの左側の貼り付ける範囲内にある
                 if (monitorInfo.WorkArea.Left - Common.ApplicationData.Settings.MagnetInformation.DecisionDistanceToPaste < windowRect.Left
@@ -316,7 +312,7 @@ public class MagnetProcessing : IDisposable
                 }
             }
             byte checkCursorMoveY = 0;        // マウスカーソルのYの移動判定 (移動してない「0」/上「1」/下「2」)
-            if (CursorStopYTimer?.Enabled == false)
+            if (CursorStopYTimer?.IsEnabled == false)
             {
                 // ウィンドウがディスプレイの上側の貼り付ける範囲内にある
                 if (monitorInfo.WorkArea.Top - Common.ApplicationData.Settings.MagnetInformation.DecisionDistanceToPaste < windowRect.Top
@@ -354,7 +350,7 @@ public class MagnetProcessing : IDisposable
                 NativeMethods.GetClipCursor(out nowClipRect);
 
                 // 初期のマウスカーソルのクリッピング範囲を保存
-                if (CursorStopXTimer?.Enabled == false && CursorStopYTimer?.Enabled == false)
+                if (CursorStopXTimer?.IsEnabled == false && CursorStopYTimer?.IsEnabled == false)
                 {
                     CursorClip = new()
                     {
@@ -366,7 +362,7 @@ public class MagnetProcessing : IDisposable
                 }
 
                 // マウスカーソルの移動制限範囲を計算して制限
-                if (CursorStopXTimer?.Enabled == true)
+                if (CursorStopXTimer?.IsEnabled == true)
                 {
                     settingClipRect.Left = nowClipRect.Left;
                     settingClipRect.Right = nowClipRect.Right;
@@ -381,7 +377,7 @@ public class MagnetProcessing : IDisposable
                     settingClipRect.Left = monitorInfo.WorkArea.Right - (windowRect.Right - windowRect.Left) + (cursorPosition.X - windowRect.Left);
                     settingClipRect.Right = settingClipRect.Left + 1;
                 }
-                if (CursorStopYTimer?.Enabled == true)
+                if (CursorStopYTimer?.IsEnabled == true)
                 {
                     settingClipRect.Top = nowClipRect.Top;
                     settingClipRect.Bottom = nowClipRect.Bottom;
@@ -399,14 +395,14 @@ public class MagnetProcessing : IDisposable
                 NativeMethods.ClipCursor(settingClipRect);
 
                 // タイマー開始
-                if (checkCursorMoveX != 0 && CursorStopXTimer?.Enabled == false)
+                if (checkCursorMoveX != 0 && CursorStopXTimer?.IsEnabled == false)
                 {
-                    CursorStopXTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+                    CursorStopXTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
                     CursorStopXTimer.Start();
                 }
-                if (checkCursorMoveY != 0 && CursorStopYTimer?.Enabled == false)
+                if (checkCursorMoveY != 0 && CursorStopYTimer?.IsEnabled == false)
                 {
-                    CursorStopYTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+                    CursorStopYTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
                     CursorStopYTimer.Start();
                 }
             }
@@ -457,7 +453,7 @@ public class MagnetProcessing : IDisposable
 
                     // 貼り付けるか判定
                     byte checkCursorMoveX = 0;        // マウスカーソルのXの移動判定 (移動してない「0」/左「1」/右「2」)
-                    if (CursorStopXTimer?.Enabled == false
+                    if (CursorStopXTimer?.IsEnabled == false
                         && windowRect.Top < movingWindowRect.Bottom
                         && movingWindowRect.Top < windowRect.Bottom)
                     {
@@ -483,7 +479,7 @@ public class MagnetProcessing : IDisposable
                         }
                     }
                     byte checkCursorMoveY = 0;        // マウスカーソルのYの移動判定 (移動してない「0」/上「1」/下「2」)
-                    if (CursorStopYTimer?.Enabled == false
+                    if (CursorStopYTimer?.IsEnabled == false
                         && windowRect.Left < movingWindowRect.Right
                         && movingWindowRect.Left < windowRect.Right)
                     {
@@ -525,7 +521,7 @@ public class MagnetProcessing : IDisposable
                         NativeMethods.GetClipCursor(out nowClipRect);
 
                         // 初期状態のマウスカーソルのクリッピング範囲を保存
-                        if (CursorStopXTimer?.Enabled == false && CursorStopYTimer?.Enabled == false)
+                        if (CursorStopXTimer?.IsEnabled == false && CursorStopYTimer?.IsEnabled == false)
                         {
                             CursorClip = new()
                             {
@@ -537,7 +533,7 @@ public class MagnetProcessing : IDisposable
                         }
 
                         // マウスカーソルの移動制限範囲を計算して制限
-                        if (CursorStopXTimer?.Enabled == true)
+                        if (CursorStopXTimer?.IsEnabled == true)
                         {
                             settingClipRect.Left = nowClipRect.Left;
                             settingClipRect.Right = nowClipRect.Right;
@@ -552,7 +548,7 @@ public class MagnetProcessing : IDisposable
                             settingClipRect.Left = windowRect.Left - (movingWindowRect.Right - cursorPosition.X);
                             settingClipRect.Right = settingClipRect.Left + 1;
                         }
-                        if (CursorStopYTimer?.Enabled == true)
+                        if (CursorStopYTimer?.IsEnabled == true)
                         {
                             settingClipRect.Top = nowClipRect.Top;
                             settingClipRect.Bottom = nowClipRect.Bottom;
@@ -570,14 +566,14 @@ public class MagnetProcessing : IDisposable
                         NativeMethods.ClipCursor(settingClipRect);
 
                         // タイマー開始
-                        if (checkCursorMoveX != 0 && CursorStopXTimer?.Enabled == false)
+                        if (checkCursorMoveX != 0 && CursorStopXTimer?.IsEnabled == false)
                         {
-                            CursorStopXTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+                            CursorStopXTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
                             CursorStopXTimer.Start();
                         }
-                        if (checkCursorMoveY != 0 && CursorStopYTimer?.Enabled == false)
+                        if (checkCursorMoveY != 0 && CursorStopYTimer?.IsEnabled == false)
                         {
-                            CursorStopYTimer.Interval = Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted;
+                            CursorStopYTimer.Interval = new(0, 0, 0, 0, Common.ApplicationData.Settings.MagnetInformation.StopTimeWhenPasted);
                             CursorStopYTimer.Start();
                         }
 

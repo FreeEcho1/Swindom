@@ -203,6 +203,28 @@ public static class SpecifiedWindow
                 }
             }
 
+            // バージョン判定
+            if (string.IsNullOrEmpty(specifiedWindowBaseItemInformation.DifferentVersionVersion) == false)
+            {
+                if (specifiedWindowBaseItemInformation.DifferentVersionVersion != windowInformation.Version)
+                {
+                    if (specifiedWindowBaseItemInformation.DifferentVersionAnnounce)
+                    {
+                        FreeEcho.FEControls.MessageBoxResult messageBoxResult = FreeEcho.FEControls.MessageBox.Show(Common.ApplicationData.Languages.ChangeVersion + Common.CopySeparateString + Common.ApplicationName, specifiedWindowBaseItemInformation.RegisteredName + Environment.NewLine + Common.ApplicationData.Languages.DifferentVersionSettingMessage, FreeEcho.FEControls.MessageBoxButton.YesNo);
+                        if (messageBoxResult == FreeEcho.FEControls.MessageBoxResult.Yes)
+                        {
+                            specifiedWindowBaseItemInformation.DifferentVersionVersion = windowInformation.Version;
+                        }
+                        else
+                        {
+                            specifiedWindowBaseItemInformation.Enabled = false;
+                        }
+                        SettingFileProcessing.WriteSettings();
+                    }
+                    return false;
+                }
+            }
+
             result = true;
         }
         catch
