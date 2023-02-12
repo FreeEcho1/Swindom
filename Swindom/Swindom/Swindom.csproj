@@ -2,39 +2,60 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net7.0-windows10.0.18362.0</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
-    <Version>4.1.1-beta</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\ApplicationIcon.ico</ApplicationIcon>
+    <Version>4.2.0-beta</Version>
     <Authors>FreeEcho</Authors>
     <Product>Swindom</Product>
-    <Copyright>© 2022 FreeEcho</Copyright>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>Resource\ApplicationIcon.ico</ApplicationIcon>
+    <Copyright>© 2023 FreeEcho</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Settings\**" />
-    <EmbeddedResource Remove="Settings\**" />
-    <None Remove="Settings\**" />
-    <Page Remove="Settings\**" />
+    <Compile Remove="Languages\**" />
+    <EmbeddedResource Remove="Languages\**" />
+    <None Remove="Languages\**" />
+    <Page Remove="Languages\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Resource\ApplicationIcon.ico" />
-    <None Remove="Resource\ApplicationIconInvalid.ico" />
+    <None Remove="Resources\AdditionDark.png" />
+    <None Remove="Resources\AdditionWhite.png" />
+    <None Remove="Resources\ApplicationIcon.ico" />
+    <None Remove="Resources\ApplicationIconInvalid.ico" />
+    <None Remove="Resources\CloseSettingsDark.png" />
+    <None Remove="Resources\CloseSettingsWhite.png" />
+    <None Remove="Resources\CopyDark.png" />
+    <None Remove="Resources\CopyWhite.png" />
+    <None Remove="Resources\DeleteDark.png" />
+    <None Remove="Resources\DeleteWhite.png" />
+    <None Remove="Resources\DownDark.png" />
+    <None Remove="Resources\DownWhite.png" />
+    <None Remove="Resources\HotkeyProcessingDark.png" />
+    <None Remove="Resources\HotkeyProcessingWhite.png" />
+    <None Remove="Resources\InformationDark.png" />
+    <None Remove="Resources\InformationWhite.png" />
+    <None Remove="Resources\LinkedChainDark.png" />
+    <None Remove="Resources\LinkedChainWhite.png" />
+    <None Remove="Resources\MagnetProcessingDark.png" />
+    <None Remove="Resources\MagnetProcessingWhite.png" />
+    <None Remove="Resources\ModifyDark.png" />
+    <None Remove="Resources\ModifyWhite.png" />
+    <None Remove="Resources\SettingsDark.png" />
+    <None Remove="Resources\SettingsWhite.png" />
+    <None Remove="Resources\SpecifyWindowProcessingDark.png" />
+    <None Remove="Resources\SpecifyWindowProcessingWhite.png" />
+    <None Remove="Resources\TargetDark.png" />
+    <None Remove="Resources\TargetWhite.png" />
+    <None Remove="Resources\UnattachedChainDark.png" />
+    <None Remove="Resources\UnattachedChainWhite.png" />
+    <None Remove="Resources\UpDark.png" />
+    <None Remove="Resources\UpWhite.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <COMReference Include="IWshRuntimeLibrary">
-      <WrapperTool>tlbimp</WrapperTool>
-      <VersionMinor>0</VersionMinor>
-      <VersionMajor>1</VersionMajor>
-      <Guid>f935dc20-1cf0-11d0-adb9-00c04fd58a0b</Guid>
-      <Lcid>0</Lcid>
-      <Isolated>false</Isolated>
-      <EmbedInteropTypes>true</EmbedInteropTypes>
-    </COMReference>
     <COMReference Include="TaskScheduler">
       <WrapperTool>tlbimp</WrapperTool>
       <VersionMinor>0</VersionMinor>
@@ -44,50 +65,150 @@
       <Isolated>false</Isolated>
       <EmbedInteropTypes>true</EmbedInteropTypes>
     </COMReference>
+    <COMReference Include="IWshRuntimeLibrary">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>f935dc20-1cf0-11d0-adb9-00c04fd58a0b</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resource\ApplicationIcon.ico" />
+    <EmbeddedResource Include="Resources\ApplicationIcon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\ApplicationIconInvalid.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <Resource Include="Resources\SettingsWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="ControlsStyle">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\ControlsStyle.dll</HintPath>
-    </Reference>
+    <Resource Include="Resources\MagnetProcessingWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\HotkeyProcessingWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\AdditionDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AdditionWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloseSettingsDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CloseSettingsWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CopyDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\CopyWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DeleteDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DeleteWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DownDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DownWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\HotkeyProcessingDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\InformationDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\InformationWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\LinkedChainDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\LinkedChainWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\MagnetProcessingDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ModifyDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\ModifyWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\SettingsDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\SpecifyWindowProcessingDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\SpecifyWindowProcessingWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TargetDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\TargetWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\UnattachedChainDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\UnattachedChainWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\UpDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\UpWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
+    <PackageReference Include="ModernWpfUI" Version="0.9.6" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="FECheckForUpdate">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FECheckForUpdate.dll</HintPath>
-    </Reference>
-    <Reference Include="FEControls">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEControls.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FECheckForUpdate.dll</HintPath>
     </Reference>
     <Reference Include="FEHotKeyWPF">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEHotKeyWPF.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FEHotKeyWPF.dll</HintPath>
     </Reference>
     <Reference Include="FEWindowEvent">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowEvent.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FEWindowEvent.dll</HintPath>
     </Reference>
     <Reference Include="FEWindowMoveDetectionMouse">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowMoveDetectionMouse.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FEWindowMoveDetectionMouse.dll</HintPath>
     </Reference>
     <Reference Include="FEWindowSelectionMouse">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6\FEWindowSelectionMouse.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FEWindowSelectionMouse.dll</HintPath>
     </Reference>
-    <Reference Include="SwindomImage">
-      <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net6 (Swindom)\SwindomImage.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Resource\ApplicationIcon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resource\ApplicationIconInvalid.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>

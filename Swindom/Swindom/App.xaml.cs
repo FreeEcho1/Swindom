@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows;
-
-namespace Swindom
+﻿namespace Swindom
 {
     /// <summary>
     /// Interaction logic for App.xaml
@@ -14,17 +6,13 @@ namespace Swindom
     public partial class App : Application
     {
         /// <summary>
-        /// NotifyIconWindow
+        /// システムトレイアイコンの処理
         /// </summary>
-        NotifyIconWindow? NotifyIconWindow;
+        NotifyIconProcessing NotifyIconProcessing;
         /// <summary>
         /// 多重起動を防止する為のミューテックス
         /// </summary>
         private System.Threading.Mutex? Mutex = null;
-        /// <summary>
-        /// タスク登録確認の「ExitCode」 (確認ではない「0」/登録されている「Common.RegisteredTask」/登録されていない「Common.NotRegisteredTask」)
-        /// </summary>
-        private int CheckTaskRegisteredExitCode = 0;
 
         /// <summary>
         /// /Application.Startupイベント
@@ -39,21 +27,18 @@ namespace Swindom
             {
                 switch (nowCommand)
                 {
-                    case Common.CreateTask:
+                    case StartupProcessing.CreateTaskString:
                         taskCheck = true;
-                        TaskSchedulerProcessing.CreateTask();
-                        Current.Shutdown();
-                        break;
-                    case Common.DeleteTask:
+                        StartupProcessing.RegisterTask();
+                        Shutdown();
+                        Environment.Exit(0);
+                        return;
+                    case StartupProcessing.DeleteTaskString:
                         taskCheck = true;
-                        TaskSchedulerProcessing.DeleteTask();
-                        Current.Shutdown();
-                        break;
-                    case Common.CheckRegistered:
-                        taskCheck = true;
-                        CheckTaskRegisteredExitCode = TaskSchedulerProcessing.CheckRegistered() ? Common.RegisteredTask : Common.NotRegisteredTask;
-                        Current.Shutdown();
-                        break;
+                        StartupProcessing.DeleteTask();
+                        Shutdown();
+                        Environment.Exit(0);
+                        return;
                 }
             }
 
@@ -80,10 +65,23 @@ namespace Swindom
 
                 base.OnStartup(e);
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
-                NotifyIconWindow = new NotifyIconWindow();
-                NotifyIconWindow.CloseEvent += NotifyIconWindow_CloseEvent;
-                NotifyIconWindow.Show();
+
+                NotifyIconProcessing = new();
+                NotifyIconProcessing.CloseEvent += NoWindow_CloseEvent;
             }
+        }
+
+        /// <summary>
+        /// 「閉じる」イベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NoWindow_CloseEvent(
+            object? sender,
+            CloseEventArgs e
+            )
+        {
+            Shutdown();
         }
 
         /// <summary>
@@ -96,7 +94,7 @@ namespace Swindom
             CloseEventArgs e
             )
         {
-            Current.Shutdown();
+            Shutdown();
         }
 
         /// <summary>
@@ -115,11 +113,6 @@ namespace Swindom
                     Mutex.ReleaseMutex();
                     Mutex.Close();
                     Mutex = null;
-                }
-
-                if (CheckTaskRegisteredExitCode != 0)
-                {
-                    Environment.ExitCode = CheckTaskRegisteredExitCode;
                 }
             }
             catch
