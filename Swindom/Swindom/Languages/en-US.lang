@@ -1,72 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+ <ChangeSettingToNewVersion>Change settings to new version "Yes" / Change manually "No" / Disable process "Cancel</ChangeSettingToNewVersion>
  <ChangeVersion>Version has been changed</ChangeVersion>
  <Check>Confirmation</Check>
- <DifferentVersionSettingMessage>Change settings to new version "Yes" / Disable processing "No</DifferentVersionSettingMessage>
  <ErrorOccurred>An error has occurred.</ErrorOccurred>
  <LanguageName>English</LanguageName>
  <LanguagesWindow>
-  <Active>Active</Active>
   <ActiveWindowOnly>Active window only</ActiveWindowOnly>
-  <Add>Add</Add>
-  <AddItem>Item added</AddItem>
-  <Added>Added</Added>
+  <Add>Added</Add>
+  <Added>Added.</Added>
   <AllWindow>All windows</AllWindow>
-  <AllowDelete>Can I delete them?</AllowDelete>
-  <AlwaysCancelForefront>Always release frontmost</AlwaysCancelForefront>
-  <AlwaysForefront>Always foremost</AlwaysForefront>
+  <AllowDelete>Do you want to delete?</AllowDelete>
+  <AlwaysCancelForefront>Always Remove Topmost</AlwaysCancelForefront>
+  <AlwaysForefront>Always frontmost</AlwaysForefront>
   <AlwaysShowOrCancelOnTop>Always bring to foremost/unmove</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>Movement</AmountOfMovement>
   <Announce>Notify</Announce>
   <AutomaticUpdateCheck>Automatic update confirmation at runtime</AutomaticUpdateCheck>
   <BackwardMatch>Backward match</BackwardMatch>
-  <BatchProcessingOfEvent>Batch processing of "Event</BatchProcessingOfEvent>
-  <BatchProcessingOfTimer>Batch processing of "timer</BatchProcessingOfTimer>
-  <BottomEdge>lower end</BottomEdge>
+  <BatchProcessingOfSpecifyWindow>Batch processing of "specified window</BatchProcessingOfSpecifyWindow>
+  <BottomEdge>Bottom edge</BottomEdge>
   <Cancel>Cancel</Cancel>
   <CaseSensitiveWindowQueries>Case sensitive in window determination</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Check for updates, including beta version</CheckBetaVersion>
-  <ClassName>Class name</ClassName>
+  <CheckBetaVersion>Check for updates, including beta versions</CheckBetaVersion>
+  <CheckReadme>See "Readme (Instructions)" for how to specify</CheckReadme>
+  <ClassName>Class Name</ClassName>
   <ClientArea>Target client area</ClientArea>
   <CloseWindow>Close window</CloseWindow>
   <ConditionsThatDoNotProcess>Condition not to process</ConditionsThatDoNotProcess>
+  <Coordinate>Coordinates</Coordinate>
   <CoordinateSpecification>Coordinate specification</CoordinateSpecification>
-  <CoordinateSpecificationMethod>Coordinate specification method</CoordinateSpecificationMethod>
   <Copy>Copy</Copy>
   <Create>Created</Create>
-  <DecisionDistanceToPaste>Decision distance to paste</DecisionDistanceToPaste>
-  <Delete>Delete</Delete>
-  <DeleteItem>Item Deleted</DeleteItem>
+  <CurrentDisplay>Current display</CurrentDisplay>
+  <DarkMode>Dark mode</DarkMode>
+  <DecisionDistanceToPaste>Paste Decision Distance</DecisionDistanceToPaste>
+  <Delete>Deleted</Delete>
   <Deleted>Deleted</Deleted>
-  <DifferentVersion>Wrong version</DifferentVersion>
-  <Disabling>Disable</Disabling>
   <Display>Display</Display>
-  <DisplayCoordinates>Display Coordinates</DisplayCoordinates>
   <DisplayInformationUpdate>Display Information Update</DisplayInformationUpdate>
-  <DisplayItem>Display Item</DisplayItem>
-  <DisplayToUseAsStandard>Display to be referenced</DisplayToUseAsStandard>
-  <DisplayWithWindow>Display with window</DisplayWithWindow>
+  <DisplayToUseAsStandard>Display to be used as a reference</DisplayToUseAsStandard>
   <DoNotChange>Do not change</DoNotChange>
   <DoNotChangePositionSizeOutOfScreen>Do not change position or size if out of screen</DoNotChangePositionSizeOutOfScreen>
-  <DoNotIncludePath>Does not include paths</DoNotIncludePath>
-  <DoNotProcessingUntitledWindow>Do not process windows with no title</DoNotProcessingUntitledWindow>
-  <DoNotProcessingWindowWithTitle>Do not process window with title</DoNotProcessingWindowWithTitle>
   <DoNotSpecify>Not specified</DoNotSpecify>
-  <Enabling>Enable</Enabling>
-  <End>Exit</End>
+  <EachDisplay>x=0, y=0" in the upper left corner of each display</EachDisplay>
+  <End>End</End>
   <Event>Event</Event>
-  <ExactMatch>Exact Match</ExactMatch>
-  <ExplanationOfTheEvent>You can specify a window to be processed automatically. If you want to process only with hot keys without automatic processing, uncheck the checkbox to disable it.</ExplanationOfTheEvent>
-  <ExplanationOfTheTimer>You can specify a window to be processed automatically. If you want to process only with hot keys without automatic processing, uncheck this checkbox and disable it. The "Interval" is the interval between when all windows are processed and when the next window is processed.</ExplanationOfTheTimer>
+  <ExactMatch>Exact match</ExactMatch>
+  <ExplanationOfSpecifyWindow>You can specify a window to be processed automatically. If you wish to have it processed only by hot keys without automatic processing, uncheck the box to disable it.</ExplanationOfSpecifyWindow>
   <FileName>File Name</FileName>
   <FileSelection>File Selection</FileSelection>
-  <Forefront>Frontmost</Forefront>
-  <ForwardMatch>Front match</ForwardMatch>
+  <Forefront>foreground</Forefront>
+  <Foregrounded>Foregrounded</Foregrounded>
+  <ForwardMatch>Foreground Match</ForwardMatch>
   <General>general</General>
-  <GetItemWindowInformationOnly>Get only window information for an item</GetItemWindowInformationOnly>
   <GetWindowInformation>Get Window Info</GetWindowInformation>
-  <GlobalCoordinates>Global Coordinates</GlobalCoordinates>
-  <Height>Height</Height>
+  <Height>height</Height>
   <HeightSpecification>Specify height</HeightSpecification>
   <HoldDownMouseCursorMoveToSelectWindow>Move mouse cursor to window to select while holding down</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Hot Keys</Hotkey>
@@ -77,12 +66,12 @@
   <IncreaseDecreaseWidth>Increase or decrease width</IncreaseDecreaseWidth>
   <IncreaseDecreaseWidthAndHeight>Increase/decrease width and height</IncreaseDecreaseWidthAndHeight>
   <Information>Information</Information>
-  <Item>Item</Item>
-  <ItemModification>Item Modification</ItemModification>
+  <InformationToBeObtained>Information to be retrieved</InformationToBeObtained>
   <Language>Language</Language>
   <LatestVersion>Latest version.</LatestVersion>
   <LeftEdge>Left end</LeftEdge>
   <Library>Library</Library>
+  <LimitedToSpecifiedDisplay>Limited to the specified display</LimitedToSpecifiedDisplay>
   <Magnet>Magnet</Magnet>
   <MagnetExplanation>Attaches to the edge of the screen or another window when the window is being moved with the mouse.</MagnetExplanation>
   <Manual>Description</Manual>
@@ -93,38 +82,35 @@
   <MinimizeStart>Minimization started</MinimizeStart>
   <Modified>Fixed</Modified>
   <Modify>Fixed</Modify>
-  <MoveDown>Move Down</MoveDown>
-  <MoveSizeChangeEnd>Move and resize finished</MoveSizeChangeEnd>
-  <MoveThePastePosition>Shift the position to paste</MoveThePastePosition>
+  <MoveDown>Shift down</MoveDown>
+  <MovePastePosition>Shift the position to paste</MovePastePosition>
+  <MoveSizeChangeEnd>Finished moving and resizing</MoveSizeChangeEnd>
   <MoveUp>Move Up</MoveUp>
   <MoveXCoordinate>Move X coordinate</MoveXCoordinate>
   <MoveYCoordinate>Move Y coordinate</MoveYCoordinate>
-  <NameChanged>Name has been changed</NameChanged>
-  <No>No, the name has been changed</No>
+  <No>Move Y coordinate</No>
   <NormalExecution>Normal execution? (without administrator rights - "Yes" / with administrator rights - "No")</NormalExecution>
   <NormalWindow>Normal window</NormalWindow>
+  <NotIncludePath>No paths included</NotIncludePath>
   <NumberOfTimesNotToProcessingFirst>Number of times not processed first (delays processing immediately after execution)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Numeric calculation</NumericCalculation>
-  <Ok>Ok</Ok>
+  <NumericCalculation>Numeric</NumericCalculation>
+  <Ok>OK</Ok>
   <OnceWhileItIsRunning>While this software is running</OnceWhileItIsRunning>
   <OnceWindowOpen>When a window is opened</OnceWindowOpen>
-  <OnlyActiveWindowEvent>Process only the active window of "Event</OnlyActiveWindowEvent>
-  <OnlyActiveWindowTimer>Only the active window of a "timer" is processed</OnlyActiveWindowTimer>
-  <OnlyIfItIsOnTheSpecifiedDisplay>Only if on the specified display</OnlyIfItIsOnTheSpecifiedDisplay>
+  <OnlyActiveWindowSpecifyWindow>Process only the active window of the "specified window</OnlyActiveWindowSpecifyWindow>
   <Open>Open</Open>
+  <OtherThanSpecifiedVersion>Other than the specified version (e.g. up to minor is possible)</OtherThanSpecifiedVersion>
   <PartialMatch>Partial match</PartialMatch>
   <PasteIntoAnotherWindow>Paste to another window</PasteIntoAnotherWindow>
-  <PasteToTheEdgeOfScreen>Paste to edge of screen</PasteToTheEdgeOfScreen>
-  <PasteWithTheCtrlKeyPressed>Paste with Ctrl key pressed</PasteWithTheCtrlKeyPressed>
+  <PasteToEdgeOfScreen>Paste to edge of screen</PasteToEdgeOfScreen>
+  <PasteWithCtrlKeyPressed>Paste with Ctrl key pressed</PasteWithCtrlKeyPressed>
   <Percent>% (for example, %%)</Percent>
   <Pixel>px</Pixel>
-  <PositionAndSize>Position and size</PositionAndSize>
+  <PrimaryDisplay>x=0, y=0" in the upper left corner of the primary display</PrimaryDisplay>
   <ProcessOnlyOnce>Process only once</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Process only when in "Normal Window</ProcessOnlyWhenNormalWindow>
-  <Processing>Processing</Processing>
+  <ProcessOnlyWhenNormalWindow>Process only when in "normal window</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Processing interval (milliseconds)</ProcessingInterval>
   <ProcessingName>Processing name</ProcessingName>
-  <ProcessingPositionAndSizeTwice>Process position and size twice</ProcessingPositionAndSizeTwice>
   <ProcessingSettings>Processing setting</ProcessingSettings>
   <ProcessingState>Processing status</ProcessingState>
   <ProcessingType>Type of processing</ProcessingType>
@@ -139,49 +125,50 @@
   <RunAtWindowsStartupAdministrator>Run at Windows startup (administrator privileges)</RunAtWindowsStartupAdministrator>
   <Select>Selected</Select>
   <SelectionComplete>Selected</SelectionComplete>
-  <Setting>Configuration</Setting>
+  <Setting>Setting</Setting>
+  <SettingsValue>Value set</SettingsValue>
   <ShareSettings>Do you want to share configuration information with all users?</ShareSettings>
   <Show>Displayed</Show>
   <Size>Size</Size>
-  <SizeChangeAmount>Resize Amount</SizeChangeAmount>
-  <SoftwareName>Software name</SoftwareName>
+  <SizeChangeAmount>Amount of resizing</SizeChangeAmount>
+  <SoftwareName>Software Name</SoftwareName>
+  <SpecifiedDisplay>Specified display</SpecifiedDisplay>
   <SpecifyCancelTransparency>Specify/release transparency</SpecifyCancelTransparency>
   <SpecifyPositionAndSize>Specify position and size</SpecifyPositionAndSize>
   <SpecifyTransparency>Specify transparency</SpecifyTransparency>
-  <StartStopProcessingOfEvent>Start/Stop "Event" processing</StartStopProcessingOfEvent>
+  <SpecifyWindow>Specify window</SpecifyWindow>
   <StartStopProcessingOfMagnet>Start/Stop processing of "Magnet</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfTimer>Start/Stop processing of "Timer</StartStopProcessingOfTimer>
-  <StopProcessingShowAddModify>Stop processing if add/modify window is displayed</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Stop processing if there is a full screen window</StopProcessingWhenWindowIsFullScreen>
+  <StartStopProcessingOfSpecifyWindow>Start/Stop processing of "Designation Window</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Stop processing when "Add/Modify" window is displayed</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Processing stop when window is full screen</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>Stop time when stuck (milliseconds)</StopTimeWhenPasting>
-  <TheForegroundHasBeenChanged>Foreground changed</TheForegroundHasBeenChanged>
-  <TheSpecifiedDisplay>Specified display</TheSpecifiedDisplay>
-  <ThereAreDuplicateItems>There are duplicate items.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>There are duplicate process names.</ThereIsADuplicateProcessingName>
+  <ThereAreDuplicateItems>There are duplicated items.</ThereAreDuplicateItems>
+  <ThereIsADuplicateProcessingName>There are duplicated process names.</ThereIsADuplicateProcessingName>
   <ThereIsADuplicateRegistrationName>Duplicate registration name exists.</ThereIsADuplicateRegistrationName>
-  <ThereIsTheLatestVersion>There is the latest version.</ThereIsTheLatestVersion>
+  <ThereIsLatestVersion>There is the latest version.</ThereIsLatestVersion>
   <Timer>Timer</Timer>
+  <TimerProcessing>Timer processing</TimerProcessing>
   <TitleName>Title name</TitleName>
-  <TitleNameExclusionString>Excluded string of title name</TitleNameExclusionString>
-  <TitleProcessingConditions>Processing conditions for title</TitleProcessingConditions>
+  <TitleNameChanged>Title name has been changed.</TitleNameChanged>
+  <TitleNameExclusionString>String contained in title name</TitleNameExclusionString>
+  <TitleNameRequirements>Title name processing conditions</TitleNameRequirements>
   <TopEdge>top end</TopEdge>
-  <Translators>Translator: DeepL</Translators>
+  <Translators>Translator: DeepL Translation</Translators>
   <Transparency>Transparency</Transparency>
-  <TypesOfEventsToEnable>Type of event to enable</TypesOfEventsToEnable>
   <UpdateCheck>Update confirmation</UpdateCheck>
   <UpdateCheckFailed>Update confirmation failed.</UpdateCheckFailed>
   <UpdateHistory>Update History</UpdateHistory>
   <Version>Version</Version>
-  <WaitTimeToProcessingNextWindow>Wait time to process next window (in milliseconds)</WaitTimeToProcessingNextWindow>
+  <WaitTimeToProcessingNextWindow>Latency to process next window (milliseconds)</WaitTimeToProcessingNextWindow>
   <Website>Website</Website>
-  <WhenToProcessing>Timing to process</WhenToProcessing>
   <Width>Width</Width>
   <WidthSpecification>Width specification</WidthSpecification>
   <WindowDecide>Window determination</WindowDecide>
-  <WindowInformationToGet>Window information to be acquired</WindowInformationToGet>
-  <WindowMoveOutsideToInside>If window is outside the screen, move to inside the screen</WindowMoveOutsideToInside>
-  <WindowProcessing>Window processing</WindowProcessing>
+  <WindowInformation>Window information</WindowInformation>
+  <WindowMoveOutsideToInside>If window is off-screen, move to on-screen</WindowMoveOutsideToInside>
   <WindowState>Window status</WindowState>
+  <WindowWithTitleName>Window with title name</WindowWithTitleName>
+  <WindowWithoutTitleName>Window without title name</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>
   <Yes>Yes</Yes>

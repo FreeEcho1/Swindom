@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+ <ChangeSettingToNewVersion>設定を新しいバージョンに変更「はい」 / 手動で変更「いいえ」/処理を無効にする「キャンセル」</ChangeSettingToNewVersion>
  <ChangeVersion>バージョンが変更されました</ChangeVersion>
  <Check>確認</Check>
- <DifferentVersionSettingMessage>設定を新しいバージョンに変更「はい」 / 処理を無効にする「いいえ」</DifferentVersionSettingMessage>
  <ErrorOccurred>エラーが発生しました。</ErrorOccurred>
  <LanguageName>日本語</LanguageName>
  <LanguagesWindow>
-  <Active>アクティブ</Active>
   <ActiveWindowOnly>アクティブウィンドウのみ</ActiveWindowOnly>
   <Add>追加</Add>
-  <AddItem>項目追加</AddItem>
   <Added>追加しました。</Added>
   <AllWindow>全てのウィンドウ</AllWindow>
-  <AllowDelete>削除していいですか？</AllowDelete>
+  <AllowDelete>削除しますか？</AllowDelete>
   <AlwaysCancelForefront>常に最前面解除</AlwaysCancelForefront>
   <AlwaysForefront>常に最前面</AlwaysForefront>
   <AlwaysShowOrCancelOnTop>常に最前面に表示/解除</AlwaysShowOrCancelOnTop>
@@ -20,52 +18,43 @@
   <Announce>知らせる</Announce>
   <AutomaticUpdateCheck>実行時に自動で更新確認</AutomaticUpdateCheck>
   <BackwardMatch>後方一致</BackwardMatch>
-  <BatchProcessingOfEvent>「イベント」の一括処理</BatchProcessingOfEvent>
-  <BatchProcessingOfTimer>「タイマー」の一括処理</BatchProcessingOfTimer>
+  <BatchProcessingOfSpecifyWindow>「指定ウィンドウ」の一括処理</BatchProcessingOfSpecifyWindow>
   <BottomEdge>下端</BottomEdge>
   <Cancel>キャンセル</Cancel>
   <CaseSensitiveWindowQueries>ウィンドウ判定で大文字と小文字を区別する</CaseSensitiveWindowQueries>
   <CheckBetaVersion>ベータバージョンを含めて更新確認</CheckBetaVersion>
+  <CheckReadme>指定方法は「Readme (説明書)」で確認してください。</CheckReadme>
   <ClassName>クラス名</ClassName>
   <ClientArea>クライアントエリアを対象とする</ClientArea>
   <CloseWindow>ウィンドウを閉じる</CloseWindow>
   <ConditionsThatDoNotProcess>処理しない条件</ConditionsThatDoNotProcess>
+  <Coordinate>座標</Coordinate>
   <CoordinateSpecification>座標指定</CoordinateSpecification>
-  <CoordinateSpecificationMethod>座標指定の方法</CoordinateSpecificationMethod>
   <Copy>コピー</Copy>
   <Create>作成された</Create>
+  <CurrentDisplay>現在のディスプレイ</CurrentDisplay>
+  <DarkMode>ダークモード</DarkMode>
   <DecisionDistanceToPaste>貼り付ける判定距離</DecisionDistanceToPaste>
   <Delete>削除</Delete>
-  <DeleteItem>項目削除</DeleteItem>
   <Deleted>削除しました。</Deleted>
-  <DifferentVersion>バージョンが違う</DifferentVersion>
-  <Disabling>無効化</Disabling>
   <Display>ディスプレイ</Display>
-  <DisplayCoordinates>ディスプレイ座標</DisplayCoordinates>
   <DisplayInformationUpdate>ディスプレイ情報更新</DisplayInformationUpdate>
-  <DisplayItem>表示項目</DisplayItem>
   <DisplayToUseAsStandard>基準にするディスプレイ</DisplayToUseAsStandard>
-  <DisplayWithWindow>ウィンドウがあるディスプレイ</DisplayWithWindow>
   <DoNotChange>変更しない</DoNotChange>
   <DoNotChangePositionSizeOutOfScreen>画面外に出る場合は位置やサイズを変更しない</DoNotChangePositionSizeOutOfScreen>
-  <DoNotIncludePath>パスを含まない</DoNotIncludePath>
-  <DoNotProcessingUntitledWindow>タイトルがないウィンドウは処理しない</DoNotProcessingUntitledWindow>
-  <DoNotProcessingWindowWithTitle>タイトルがあるウィンドウは処理しない</DoNotProcessingWindowWithTitle>
   <DoNotSpecify>指定しない</DoNotSpecify>
-  <Enabling>有効化</Enabling>
+  <EachDisplay>各ディスプレイの左上を「x=0, y=0」</EachDisplay>
   <End>終了</End>
   <Event>イベント</Event>
   <ExactMatch>完全一致</ExactMatch>
-  <ExplanationOfTheEvent>ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。</ExplanationOfTheEvent>
-  <ExplanationOfTheTimer>ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。「処理間隔」は全てのウィンドウ処理が終わってから、次に処理を開始するまでの間隔です。</ExplanationOfTheTimer>
+  <ExplanationOfSpecifyWindow>ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。</ExplanationOfSpecifyWindow>
   <FileName>ファイル名</FileName>
   <FileSelection>ファイル選択</FileSelection>
   <Forefront>最前面</Forefront>
+  <Foregrounded>フォアグラウンドになった</Foregrounded>
   <ForwardMatch>前方一致</ForwardMatch>
   <General>全般</General>
-  <GetItemWindowInformationOnly>項目のウィンドウ情報のみ取得</GetItemWindowInformationOnly>
   <GetWindowInformation>ウィンドウ情報取得</GetWindowInformation>
-  <GlobalCoordinates>グローバル座標</GlobalCoordinates>
   <Height>高さ</Height>
   <HeightSpecification>高さ指定</HeightSpecification>
   <HoldDownMouseCursorMoveToSelectWindow>押したまま選択するウィンドウにマウスカーソルを移動</HoldDownMouseCursorMoveToSelectWindow>
@@ -77,12 +66,12 @@
   <IncreaseDecreaseWidth>幅を増減</IncreaseDecreaseWidth>
   <IncreaseDecreaseWidthAndHeight>幅と高さを増減</IncreaseDecreaseWidthAndHeight>
   <Information>情報</Information>
-  <Item>項目</Item>
-  <ItemModification>項目修正</ItemModification>
+  <InformationToBeObtained>取得する情報</InformationToBeObtained>
   <Language>言語</Language>
   <LatestVersion>最新バージョンです。</LatestVersion>
   <LeftEdge>左端</LeftEdge>
   <Library>ライブラリ</Library>
+  <LimitedToSpecifiedDisplay>指定したディスプレイ限定</LimitedToSpecifiedDisplay>
   <Magnet>マグネット</Magnet>
   <MagnetExplanation>マウスでウィンドウを移動させている場合に、画面端や別のウィンドウに貼り付けます。</MagnetExplanation>
   <Manual>説明書</Manual>
@@ -94,37 +83,34 @@
   <Modified>修正しました。</Modified>
   <Modify>修正</Modify>
   <MoveDown>下に移動</MoveDown>
+  <MovePastePosition>貼り付ける位置をずらす</MovePastePosition>
   <MoveSizeChangeEnd>移動及びサイズの変更が終了された</MoveSizeChangeEnd>
-  <MoveThePastePosition>貼り付ける位置をずらす</MoveThePastePosition>
   <MoveUp>上に移動</MoveUp>
   <MoveXCoordinate>X座標を移動</MoveXCoordinate>
   <MoveYCoordinate>Y座標を移動</MoveYCoordinate>
-  <NameChanged>名前が変更された</NameChanged>
   <No>いいえ</No>
   <NormalExecution>通常実行ですか？ (管理者権限なし - 「はい」 / 管理者権限あり - 「いいえ」)</NormalExecution>
   <NormalWindow>通常のウィンドウ</NormalWindow>
+  <NotIncludePath>パスを含まない</NotIncludePath>
   <NumberOfTimesNotToProcessingFirst>最初に処理しない回数 (実行直後の処理を遅らせる)</NumberOfTimesNotToProcessingFirst>
   <NumericCalculation>数値計算</NumericCalculation>
-  <Ok>Ok</Ok>
+  <Ok>OK</Ok>
   <OnceWhileItIsRunning>このソフトウェアが実行されている間</OnceWhileItIsRunning>
   <OnceWindowOpen>ウィンドウが開かれた時</OnceWindowOpen>
-  <OnlyActiveWindowEvent>「イベント」のアクティブウィンドウのみ処理</OnlyActiveWindowEvent>
-  <OnlyActiveWindowTimer>「タイマー」のアクティブウィンドウのみ処理</OnlyActiveWindowTimer>
-  <OnlyIfItIsOnTheSpecifiedDisplay>指定したディスプレイにある場合のみ</OnlyIfItIsOnTheSpecifiedDisplay>
+  <OnlyActiveWindowSpecifyWindow>「指定ウィンドウ」のアクティブウィンドウのみ処理</OnlyActiveWindowSpecifyWindow>
   <Open>開く</Open>
+  <OtherThanSpecifiedVersion>指定したバージョン以外 (マイナーまでなど可能)</OtherThanSpecifiedVersion>
   <PartialMatch>部分一致</PartialMatch>
   <PasteIntoAnotherWindow>別のウィンドウに貼り付ける</PasteIntoAnotherWindow>
-  <PasteToTheEdgeOfScreen>画面端に貼り付ける</PasteToTheEdgeOfScreen>
-  <PasteWithTheCtrlKeyPressed>Ctrlキーを押した状態で貼り付ける</PasteWithTheCtrlKeyPressed>
+  <PasteToEdgeOfScreen>画面端に貼り付ける</PasteToEdgeOfScreen>
+  <PasteWithCtrlKeyPressed>Ctrlキーを押した状態で貼り付ける</PasteWithCtrlKeyPressed>
   <Percent>%</Percent>
   <Pixel>px</Pixel>
-  <PositionAndSize>位置とサイズ</PositionAndSize>
-  <ProcessOnlyOnce>1度だけ処理</ProcessOnlyOnce>
+  <PrimaryDisplay>プライマリディスプレイの左上を「x=0, y=0」</PrimaryDisplay>
+  <ProcessOnlyOnce>一度だけ処理</ProcessOnlyOnce>
   <ProcessOnlyWhenNormalWindow>「通常のウィンドウ」の時だけ処理する</ProcessOnlyWhenNormalWindow>
-  <Processing>処理</Processing>
   <ProcessingInterval>処理間隔 (ミリ秒)</ProcessingInterval>
   <ProcessingName>処理名</ProcessingName>
-  <ProcessingPositionAndSizeTwice>位置とサイズを2回処理</ProcessingPositionAndSizeTwice>
   <ProcessingSettings>処理設定</ProcessingSettings>
   <ProcessingState>処理状態</ProcessingState>
   <ProcessingType>処理の種類</ProcessingType>
@@ -140,48 +126,49 @@
   <Select>選択</Select>
   <SelectionComplete>選択しました。</SelectionComplete>
   <Setting>設定</Setting>
+  <SettingsValue>設定している値</SettingsValue>
   <ShareSettings>全てのユーザーで設定情報を共有しますか？</ShareSettings>
   <Show>表示された</Show>
   <Size>サイズ</Size>
   <SizeChangeAmount>サイズ変更量</SizeChangeAmount>
   <SoftwareName>ソフトウェア名</SoftwareName>
+  <SpecifiedDisplay>指定したディスプレイ</SpecifiedDisplay>
   <SpecifyCancelTransparency>透明度を指定/解除</SpecifyCancelTransparency>
   <SpecifyPositionAndSize>位置とサイズを指定</SpecifyPositionAndSize>
   <SpecifyTransparency>透明度指定</SpecifyTransparency>
-  <StartStopProcessingOfEvent>「イベント」の処理開始/停止</StartStopProcessingOfEvent>
+  <SpecifyWindow>指定ウィンドウ</SpecifyWindow>
   <StartStopProcessingOfMagnet>「マグネット」の処理開始/停止</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfTimer>「タイマー」の処理開始/停止</StartStopProcessingOfTimer>
+  <StartStopProcessingOfSpecifyWindow>「指定ウィンドウ」の処理開始/停止</StartStopProcessingOfSpecifyWindow>
   <StopProcessingShowAddModify>追加/修正のウィンドウが表示されている場合は処理停止</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>全画面ウィンドウがある場合は処理停止</StopProcessingWhenWindowIsFullScreen>
+  <StopProcessingWhenWindowIsFullScreen>ウィンドウが全画面表示の場合は処理停止</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>貼り付いた時の停止時間 (ミリ秒)</StopTimeWhenPasting>
-  <TheForegroundHasBeenChanged>フォアグラウンドが変更された</TheForegroundHasBeenChanged>
-  <TheSpecifiedDisplay>指定したディスプレイ</TheSpecifiedDisplay>
   <ThereAreDuplicateItems>重複した項目があります。</ThereAreDuplicateItems>
   <ThereIsADuplicateProcessingName>重複した処理名があります。</ThereIsADuplicateProcessingName>
   <ThereIsADuplicateRegistrationName>重複した登録名があります。</ThereIsADuplicateRegistrationName>
-  <ThereIsTheLatestVersion>最新バージョンがあります。</ThereIsTheLatestVersion>
+  <ThereIsLatestVersion>最新バージョンがあります。</ThereIsLatestVersion>
   <Timer>タイマー</Timer>
+  <TimerProcessing>タイマー処理</TimerProcessing>
   <TitleName>タイトル名</TitleName>
-  <TitleNameExclusionString>タイトル名の除外文字列</TitleNameExclusionString>
-  <TitleProcessingConditions>タイトルの処理条件</TitleProcessingConditions>
+  <TitleNameChanged>タイトル名が変更された</TitleNameChanged>
+  <TitleNameExclusionString>タイトル名に含まれる文字列</TitleNameExclusionString>
+  <TitleNameRequirements>タイトル名の処理条件</TitleNameRequirements>
   <TopEdge>上端</TopEdge>
   <Translators>翻訳者：FreeEcho</Translators>
   <Transparency>透明度</Transparency>
-  <TypesOfEventsToEnable>有効にするイベントの種類</TypesOfEventsToEnable>
   <UpdateCheck>更新確認</UpdateCheck>
   <UpdateCheckFailed>更新確認に失敗しました。</UpdateCheckFailed>
   <UpdateHistory>更新履歴</UpdateHistory>
   <Version>バージョン</Version>
   <WaitTimeToProcessingNextWindow>次のウィンドウを処理する待ち時間 (ミリ秒)</WaitTimeToProcessingNextWindow>
   <Website>ウェブサイト</Website>
-  <WhenToProcessing>処理するタイミング</WhenToProcessing>
   <Width>幅</Width>
   <WidthSpecification>幅指定</WidthSpecification>
   <WindowDecide>ウィンドウ判定</WindowDecide>
-  <WindowInformationToGet>取得するウィンドウ情報</WindowInformationToGet>
+  <WindowInformation>ウィンドウの情報</WindowInformation>
   <WindowMoveOutsideToInside>ウィンドウが画面外の場合は画面内に移動</WindowMoveOutsideToInside>
-  <WindowProcessing>ウィンドウ処理</WindowProcessing>
   <WindowState>ウィンドウの状態</WindowState>
+  <WindowWithTitleName>タイトル名があるウィンドウ</WindowWithTitleName>
+  <WindowWithoutTitleName>タイトル名がないウィンドウ</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>
   <Yes>はい</Yes>

@@ -1,74 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeVersion>Version geändert</ChangeVersion>
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+ <ChangeSettingToNewVersion>Einstellungen auf neue Version ändern 'Ja' / manuell ändern 'Nein' / Prozess deaktivieren 'Abbrechen'.</ChangeSettingToNewVersion>
+ <ChangeVersion>Die Version wurde geändert</ChangeVersion>
  <Check>Bestätigung.</Check>
- <DifferentVersionSettingMessage>Einstellungen auf neue Version ändern 'Ja' / Verarbeitung deaktivieren 'Nein'</DifferentVersionSettingMessage>
  <ErrorOccurred>Es ist ein Fehler aufgetreten.</ErrorOccurred>
  <LanguageName>Deutsch</LanguageName>
  <LanguagesWindow>
-  <Active>Aktiv</Active>
   <ActiveWindowOnly>Nur aktives Fenster</ActiveWindowOnly>
-  <Add>hinzufügen</Add>
-  <AddItem>Artikel hinzugefügt.</AddItem>
-  <Added>Hinzugefügt zu.</Added>
+  <Add>Hinzugefügt.</Add>
+  <Added>Hinzugefügt.</Added>
   <AllWindow>Alle Fenster</AllWindow>
-  <AllowDelete>Kann ich sie löschen?</AllowDelete>
-  <AlwaysCancelForefront>Immer ganz vorne loslassen</AlwaysCancelForefront>
+  <AllowDelete>Möchten Sie löschen?</AllowDelete>
+  <AlwaysCancelForefront>Vorrangig immer freigeben</AlwaysCancelForefront>
   <AlwaysForefront>Immer an erster Stelle</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Immer an vorderster Front/unmontiert</AlwaysShowOrCancelOnTop>
+  <AlwaysShowOrCancelOnTop>Immer nach vorne/unten bringen</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>Bewegung</AmountOfMovement>
-  <Announce>Informieren Sie</Announce>
+  <Announce>benachrichtigen.</Announce>
   <AutomaticUpdateCheck>Automatische Update-Bestätigung zur Laufzeit</AutomaticUpdateCheck>
   <BackwardMatch>Rückwärtsspiel</BackwardMatch>
-  <BatchProcessingOfEvent>Stapelverarbeitung von 'Ereignissen'</BatchProcessingOfEvent>
-  <BatchProcessingOfTimer>Stapelverarbeitung von "Timern</BatchProcessingOfTimer>
+  <BatchProcessingOfSpecifyWindow>Stapelverarbeitung von "bestimmten Fenstern</BatchProcessingOfSpecifyWindow>
   <BottomEdge>Unteres Ende</BottomEdge>
   <Cancel>Abbrechen</Cancel>
   <CaseSensitiveWindowQueries>Groß- und Kleinschreibung bei der Fensterbestimmung beachten</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Suche nach Updates, einschließlich Beta-Versionen</CheckBetaVersion>
+  <CheckBetaVersion>Suchen Sie nach Aktualisierungen, auch nach Beta-Versionen.</CheckBetaVersion>
+  <CheckReadme>Siehe 'Liesmich (Anweisungen)' für weitere Informationen.</CheckReadme>
   <ClassName>Name der Klasse</ClassName>
   <ClientArea>Zielkundenbereich</ClientArea>
   <CloseWindow>Fenster schließen</CloseWindow>
-  <ConditionsThatDoNotProcess>Nicht bearbeitete Bedingungen</ConditionsThatDoNotProcess>
+  <ConditionsThatDoNotProcess>Bedingung, nicht zu verarbeiten</ConditionsThatDoNotProcess>
+  <Coordinate>Koordinaten</Coordinate>
   <CoordinateSpecification>Koordinatenspezifikation</CoordinateSpecification>
-  <CoordinateSpecificationMethod>Koordinatenbestimmungsmethode</CoordinateSpecificationMethod>
   <Copy>Kopieren</Copy>
   <Create>Erstellt</Create>
+  <CurrentDisplay>Aktuelle Anzeige</CurrentDisplay>
+  <DarkMode>Dunkler Modus</DarkMode>
   <DecisionDistanceToPaste>Entscheidungsabstand zum Einfügen</DecisionDistanceToPaste>
-  <Delete>Löschen</Delete>
-  <DeleteItem>Artikel gelöscht</DeleteItem>
+  <Delete>Gelöscht</Delete>
   <Deleted>Gelöscht.</Deleted>
-  <DifferentVersion>Falsche Version.</DifferentVersion>
-  <Disabling>Behinderte</Disabling>
   <Display>Anzeige</Display>
-  <DisplayCoordinates>Koordinaten anzeigen</DisplayCoordinates>
-  <DisplayInformationUpdate>Aktualisierung der Anzeigeinformationen</DisplayInformationUpdate>
-  <DisplayItem>Artikel anzeigen</DisplayItem>
-  <DisplayToUseAsStandard>Anzeige als Referenz</DisplayToUseAsStandard>
-  <DisplayWithWindow>Display mit Fenster</DisplayWithWindow>
+  <DisplayInformationUpdate>Anzeige der aktualisierten Informationen</DisplayInformationUpdate>
+  <DisplayToUseAsStandard>Anzeige, die als Referenz verwendet wird</DisplayToUseAsStandard>
   <DoNotChange>Nicht ändern</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Ändert weder Position noch Größe, wenn es sich außerhalb des Bildschirms befindet</DoNotChangePositionSizeOutOfScreen>
-  <DoNotIncludePath>Enthält keine Pfade</DoNotIncludePath>
-  <DoNotProcessingUntitledWindow>Fenster ohne Titel wird nicht verarbeitet</DoNotProcessingUntitledWindow>
-  <DoNotProcessingWindowWithTitle>Fenster mit Titel nicht verarbeitet</DoNotProcessingWindowWithTitle>
+  <DoNotChangePositionSizeOutOfScreen>Position oder Größe nicht ändern, wenn der Bildschirm nicht angezeigt wird</DoNotChangePositionSizeOutOfScreen>
   <DoNotSpecify>Keine Angaben</DoNotSpecify>
-  <Enabling>Aktivieren Sie</Enabling>
+  <EachDisplay>Linke obere Ecke jeder Anzeige "x=0, y=0"</EachDisplay>
   <End>Ende</End>
   <Event>Veranstaltung</Event>
-  <ExactMatch>Genaue Übereinstimmung</ExactMatch>
-  <ExplanationOfTheEvent>Sie können ein Fenster angeben, das automatisch bearbeitet werden soll. Wenn Sie Ereignisse nur mit Hotkeys ohne automatische Verarbeitung bearbeiten möchten, deaktivieren Sie diese Option.</ExplanationOfTheEvent>
-  <ExplanationOfTheTimer>Sie können ein Fenster angeben, das automatisch bearbeitet werden soll. Wenn Sie nur mit Hotkeys und ohne automatische Verarbeitung arbeiten möchten, deaktivieren Sie das Kontrollkästchen und schalten Sie diese Option aus. Das "Verarbeitungsintervall" ist das Intervall zwischen dem Ende der gesamten Fensterverarbeitung und dem Beginn der nächsten Verarbeitung.</ExplanationOfTheTimer>
+  <ExactMatch>Genaue Übereinstimmung.</ExactMatch>
+  <ExplanationOfSpecifyWindow>Sie können ein Fenster angeben, das automatisch bearbeitet werden soll. Wenn Sie die automatische Verarbeitung nicht wünschen und nur Hotkeys verwenden möchten, deaktivieren Sie das Kontrollkästchen, um sie zu deaktivieren.</ExplanationOfSpecifyWindow>
   <FileName>Name der Datei</FileName>
   <FileSelection>Auswahl der Datei</FileSelection>
-  <Forefront>Ganz vorne</Forefront>
-  <ForwardMatch>Vorderseite Spiel</ForwardMatch>
+  <Forefront>Vorrangig</Forefront>
+  <Foregrounded>In den Vordergrund gestellt.</Foregrounded>
+  <ForwardMatch>Vordergrund anpassen</ForwardMatch>
   <General>Allgemein</General>
-  <GetItemWindowInformationOnly>Erhalten Sie nur die Fensterinformationen des Artikels</GetItemWindowInformationOnly>
-  <GetWindowInformation>Fensterinformationen abrufen</GetWindowInformation>
-  <GlobalCoordinates>Globale Koordinaten</GlobalCoordinates>
+  <GetWindowInformation>Erfassung von Fensterinformationen</GetWindowInformation>
   <Height>Höhe</Height>
   <HeightSpecification>Höhe angeben</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Bewegen Sie den Mauszeiger auf das zu wählende Fenster, indem Sie die Taste</HoldDownMouseCursorMoveToSelectWindow>
+  <HoldDownMouseCursorMoveToSelectWindow>Bewegen Sie den Mauszeiger auf das auszuwählende Fenster, während Sie die Taste</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Tastenkombinationen</Hotkey>
   <HotkeyExplanation>Hotkeys können verwendet werden, um das aktive Fenster zu bearbeiten (Eingaben entgegenzunehmen). Mit der Schaltfläche "Auswählen" können Sie das zu bearbeitende Fenster auswählen, ohne einen Hotkey zu verwenden.</HotkeyExplanation>
   <HotkeysDoNotStop>Hotkeys werden nicht angehalten (wenn ein Vollbildfenster vorhanden ist).</HotkeysDoNotStop>
@@ -77,15 +66,15 @@
   <IncreaseDecreaseWidth>Breite vergrößern/verkleinern</IncreaseDecreaseWidth>
   <IncreaseDecreaseWidthAndHeight>Breite und Höhe vergrößern/verkleinern</IncreaseDecreaseWidthAndHeight>
   <Information>Infos.</Information>
-  <Item>Artikel</Item>
-  <ItemModification>Änderung des Gegenstands</ItemModification>
+  <InformationToBeObtained>Abzufragende Informationen</InformationToBeObtained>
   <Language>Sprache.</Language>
   <LatestVersion>Neueste Version.</LatestVersion>
-  <LeftEdge>Linkes Ende</LeftEdge>
-  <Library>Bibliothek</Library>
+  <LeftEdge>Ganz links</LeftEdge>
+  <Library>Bibliothek.</Library>
+  <LimitedToSpecifiedDisplay>Begrenzt auf die angegebene Anzeige</LimitedToSpecifiedDisplay>
   <Magnet>Magnet.</Magnet>
   <MagnetExplanation>Hängt sich an den Rand des Bildschirms oder eines anderen Fensters, wenn das Fenster mit der Maus bewegt wird.</MagnetExplanation>
-  <Manual>Beschreibung.</Manual>
+  <Manual>Beschreibung</Manual>
   <Maximize>Maximieren Sie</Maximize>
   <Middle>Zentrum</Middle>
   <Minimize>Minimiert</Minimize>
@@ -93,42 +82,39 @@
   <MinimizeStart>Minimierung begonnen</MinimizeStart>
   <Modified>Behoben.</Modified>
   <Modify>Festgelegt</Modify>
-  <MoveDown>Nach unten verschoben</MoveDown>
+  <MoveDown>Abwärts schalten</MoveDown>
+  <MovePastePosition>Einfügeposition verschoben</MovePastePosition>
   <MoveSizeChangeEnd>Verschieben und Größe ändern beendet</MoveSizeChangeEnd>
-  <MoveThePastePosition>Einfügeposition verschoben</MoveThePastePosition>
   <MoveUp>Nachrücken</MoveUp>
   <MoveXCoordinate>X-Koordinate verschieben</MoveXCoordinate>
   <MoveYCoordinate>Y-Koordinate verschieben</MoveYCoordinate>
-  <NameChanged>Name geändert</NameChanged>
-  <No>Nein, der Name ist geändert worden.</No>
+  <No>Nein Nein</No>
   <NormalExecution>Normale Ausführung? (ohne Administratorrechte - 'Ja' / mit Administratorrechten - 'Nein')</NormalExecution>
   <NormalWindow>Normales Fenster</NormalWindow>
+  <NotIncludePath>Enthält keine Pfade</NotIncludePath>
   <NumberOfTimesNotToProcessingFirst>Anzahl der Male, die nicht zuerst verarbeitet wurden (verzögert die Verarbeitung unmittelbar nach der Ausführung)</NumberOfTimesNotToProcessingFirst>
   <NumericCalculation>Numerische Berechnung</NumericCalculation>
-  <Ok>Gut.</Ok>
+  <Ok>OK - 'Ja' / 'Nein'</Ok>
   <OnceWhileItIsRunning>Während diese Software läuft</OnceWhileItIsRunning>
   <OnceWindowOpen>Wenn ein Fenster geöffnet wird</OnceWindowOpen>
-  <OnlyActiveWindowEvent>Nur das aktive Fenster eines "Events" wird verarbeitet</OnlyActiveWindowEvent>
-  <OnlyActiveWindowTimer>Nur das aktive Fenster des "Timers" wird bearbeitet</OnlyActiveWindowTimer>
-  <OnlyIfItIsOnTheSpecifiedDisplay>Nur wenn auf dem angegebenen Display</OnlyIfItIsOnTheSpecifiedDisplay>
+  <OnlyActiveWindowSpecifyWindow>Nur das aktive Fenster des "angegebenen Fensters" wird verarbeitet</OnlyActiveWindowSpecifyWindow>
   <Open>Öffnen Sie</Open>
+  <OtherThanSpecifiedVersion>Andere Version als die angegebene (z.B. bis zur Minor-Version möglich)</OtherThanSpecifiedVersion>
   <PartialMatch>Teilweise Übereinstimmung</PartialMatch>
   <PasteIntoAnotherWindow>In ein anderes Fenster einfügen</PasteIntoAnotherWindow>
-  <PasteToTheEdgeOfScreen>Einfügen am Bildschirmrand</PasteToTheEdgeOfScreen>
-  <PasteWithTheCtrlKeyPressed>Einfügen mit gedrückter Strg-Taste</PasteWithTheCtrlKeyPressed>
-  <Percent>%, %, %, %, %, %, %, %, %, %, %.</Percent>
-  <Pixel>px</Pixel>
-  <PositionAndSize>Position und Größe</PositionAndSize>
+  <PasteToEdgeOfScreen>Einfügen am Bildschirmrand</PasteToEdgeOfScreen>
+  <PasteWithCtrlKeyPressed>Einfügen mit gedrückter Strg-Taste</PasteWithCtrlKeyPressed>
+  <Percent>% (z. B. %)</Percent>
+  <Pixel>px.</Pixel>
+  <PrimaryDisplay>x=0, y=0" in der oberen linken Ecke der Primäranzeige</PrimaryDisplay>
   <ProcessOnlyOnce>Nur einmal verarbeiten</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Verarbeitung nur im 'Normalen Fenster'</ProcessOnlyWhenNormalWindow>
-  <Processing>Verarbeitung</Processing>
+  <ProcessOnlyWhenNormalWindow>Verarbeitung nur im 'normalen Fenster'</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Verarbeitungsintervall (Millisekunden)</ProcessingInterval>
   <ProcessingName>Name der Verarbeitung</ProcessingName>
-  <ProcessingPositionAndSizeTwice>Position und Größe zweimal verarbeiten</ProcessingPositionAndSizeTwice>
   <ProcessingSettings>Einstellung der Verarbeitung</ProcessingSettings>
   <ProcessingState>Bearbeitungsstatus</ProcessingState>
   <ProcessingType>Art der Verarbeitung</ProcessingType>
-  <ProcessingWindowRange>Bereich des zu bearbeitenden Fensters</ProcessingWindowRange>
+  <ProcessingWindowRange>Bereich der zu bearbeitenden Fenster</ProcessingWindowRange>
   <Ratio>Ratio</Ratio>
   <RegisterMultipleWindowActions>Mehrere Fensterbehandlungen registrieren</RegisterMultipleWindowActions>
   <RegisteredName>Name der Registrierung</RegisteredName>
@@ -140,48 +126,49 @@
   <Select>Auswahl.</Select>
   <SelectionComplete>Ausgewählt.</SelectionComplete>
   <Setting>Einstellungen</Setting>
-  <ShareSettings>Möchten Sie Konfigurationsinformationen für alle Benutzer freigeben?</ShareSettings>
+  <SettingsValue>Wert gesetzt.</SettingsValue>
+  <ShareSettings>Möchten Sie die Konfigurationsinformationen für alle Benutzer freigeben?</ShareSettings>
   <Show>Angezeigt</Show>
   <Size>Größe</Size>
   <SizeChangeAmount>Ausmaß der Größenänderung</SizeChangeAmount>
   <SoftwareName>Name der Software</SoftwareName>
+  <SpecifiedDisplay>Spezifizierte Anzeige</SpecifiedDisplay>
   <SpecifyCancelTransparency>Transparenz spezifizieren/freigeben</SpecifyCancelTransparency>
   <SpecifyPositionAndSize>Angabe von Position und Größe</SpecifyPositionAndSize>
   <SpecifyTransparency>Transparenz spezifizieren</SpecifyTransparency>
-  <StartStopProcessingOfEvent>Start/Stopp der "Ereignis"-Verarbeitung</StartStopProcessingOfEvent>
-  <StartStopProcessingOfMagnet>Start/Stopp der Verarbeitung von 'Magneten</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfTimer>Start/Stopp der Verarbeitung von "Timer".</StartStopProcessingOfTimer>
-  <StopProcessingShowAddModify>Stoppen Sie die Verarbeitung, wenn ein Fenster zum Hinzufügen/Ändern angezeigt wird.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Die Verarbeitung wird angehalten, wenn ein Vollbildfenster vorhanden ist.</StopProcessingWhenWindowIsFullScreen>
+  <SpecifyWindow>Angegebenes Fenster</SpecifyWindow>
+  <StartStopProcessingOfMagnet>Start/Stopp der Verarbeitung von 'Magnet</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>Start/Stopp der Verarbeitung des Fensters "Benennung</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Stoppen Sie die Verarbeitung, wenn das Fenster zum Hinzufügen/Ändern angezeigt wird.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Verarbeitungsstopp, wenn das Fenster im Vollbildmodus angezeigt wird</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>Stoppzeit beim Steckenbleiben (Millisekunden)</StopTimeWhenPasting>
-  <TheForegroundHasBeenChanged>Vordergrund geändert</TheForegroundHasBeenChanged>
-  <TheSpecifiedDisplay>Spezifizierte Anzeige</TheSpecifiedDisplay>
   <ThereAreDuplicateItems>Es gibt doppelte Einträge.</ThereAreDuplicateItems>
   <ThereIsADuplicateProcessingName>Es gibt doppelte Prozessnamen.</ThereIsADuplicateProcessingName>
   <ThereIsADuplicateRegistrationName>Es gibt doppelte Registrierungsnamen.</ThereIsADuplicateRegistrationName>
-  <ThereIsTheLatestVersion>Das ist die neueste Version.</ThereIsTheLatestVersion>
+  <ThereIsLatestVersion>Das ist die neueste Version.</ThereIsLatestVersion>
   <Timer>Zeitschaltuhr</Timer>
+  <TimerProcessing>Timer-Prozess</TimerProcessing>
   <TitleName>Name des Titels.</TitleName>
-  <TitleNameExclusionString>Ausschlusszeichenfolge für den Titelnamen.</TitleNameExclusionString>
-  <TitleProcessingConditions>Bedingungen für die Titelverarbeitung</TitleProcessingConditions>
+  <TitleNameChanged>Der Name des Titels wurde geändert.</TitleNameChanged>
+  <TitleNameExclusionString>Im Titelnamen enthaltene Zeichenfolge</TitleNameExclusionString>
+  <TitleNameRequirements>Titelbezeichnung Verarbeitungsbedingungen</TitleNameRequirements>
   <TopEdge>Oberes Ende</TopEdge>
-  <Translators>Übersetzer: DeepL</Translators>
+  <Translators>Übersetzer: DeepL Übersetzung</Translators>
   <Transparency>Transparenz</Transparency>
-  <TypesOfEventsToEnable>Art des zu aktivierenden Ereignisses</TypesOfEventsToEnable>
   <UpdateCheck>Bestätigung aktualisieren</UpdateCheck>
   <UpdateCheckFailed>Update-Bestätigung fehlgeschlagen.</UpdateCheckFailed>
   <UpdateHistory>Geschichte aktualisieren</UpdateHistory>
-  <Version>Version.</Version>
-  <WaitTimeToProcessingNextWindow>Wartezeit bis zur Verarbeitung des nächsten Fensters (Millisekunden)</WaitTimeToProcessingNextWindow>
+  <Version>Version</Version>
+  <WaitTimeToProcessingNextWindow>Latenzzeit für die Verarbeitung des nächsten Fensters (Millisekunden)</WaitTimeToProcessingNextWindow>
   <Website>Website</Website>
-  <WhenToProcessing>Wann zu verarbeiten</WhenToProcessing>
   <Width>Breite</Width>
   <WidthSpecification>Spezifikation der Breite</WidthSpecification>
   <WindowDecide>Fensterbestimmung</WindowDecide>
-  <WindowInformationToGet>Zu erfassende Fensterinformationen</WindowInformationToGet>
-  <WindowMoveOutsideToInside>Befindet sich das Fenster außerhalb des Bildschirms, wird es an die Innenseite des Bildschirms verschoben.</WindowMoveOutsideToInside>
-  <WindowProcessing>Fensterbearbeitung</WindowProcessing>
+  <WindowInformation>Informationen zum Fenster</WindowInformation>
+  <WindowMoveOutsideToInside>Wenn sich das Fenster außerhalb des Bildschirms befindet, verschieben Sie es in das Innere des Bildschirms.</WindowMoveOutsideToInside>
   <WindowState>Status des Fensters</WindowState>
+  <WindowWithTitleName>Fenster mit Titelname</WindowWithTitleName>
+  <WindowWithoutTitleName>Fenster ohne Titelnamen</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>
   <Yes>Ja Nein</Yes>
