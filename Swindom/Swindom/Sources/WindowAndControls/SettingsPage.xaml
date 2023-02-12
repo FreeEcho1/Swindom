@@ -1,0 +1,51 @@
+﻿<Page x:Class="Swindom.Sources.WindowAndControls.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Swindom.Sources.WindowAndControls"
+      mc:Ignorable="d" 
+      xmlns:ui="http://schemas.modernwpf.com/2019"
+      HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+      Title="SettingsPage">
+
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="SettingsGeneralTabItem" Header="全般">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="False">
+                    <StackPanel Margin="10">
+                        <Label x:Name="LanguageLabel" Content="言語"/>
+                        <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                            <ComboBox x:Name="LanguageComboBox" SelectedIndex="0" MinWidth="200"/>
+                            <Label x:Name="TranslatorsLabel" Margin="5,0,0,0" VerticalAlignment="Center" Content="翻訳者："/>
+                        </StackPanel>
+                        <ui:ToggleSwitch x:Name="DarkModeToggleSwitch" OffContent="ダークモード" OnContent="ダークモード" Margin="0,5,0,0"/>
+                        <ui:ToggleSwitch x:Name="StartupToggleSwitch" OffContent="Windows起動時に実行" OnContent="Windows起動時に実行" Margin="0,5,0,0"/>
+                        <ui:ToggleSwitch x:Name="CheckForUpdatesIncludingBetaVersionToggleSwitch" OffContent="ベータバージョンを含めて更新確認" OnContent="ベータバージョンを含めて更新確認" Margin="0,5,0,0"/>
+                        <ui:ToggleSwitch x:Name="AutomaticallyCheckForUpdatesWhenRunToggleSwitch" OffContent="実行時に自動で更新確認" OnContent="実行時に自動で更新確認" Margin="0,5,0,0"/>
+                        <Label x:Name="CoordinateLabel" Content="座標" Margin="0,5,0,0"/>
+                        <ComboBox x:Name="CoordinateComboBox" MinWidth="250" Margin="0,5,0,0" SelectedIndex="0">
+                            <ComboBoxItem Content="各ディスプレイの左上を「x=0, y=0」"/>
+                            <ComboBoxItem Content="プライマリディスプレイの左上を「x=0, y=0」"/>
+                        </ComboBox>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+            <TabItem x:Name="SettingsMoveThePastePositionTabItem" Header="貼り付ける位置をずらす">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" CanContentScroll="False">
+                    <StackPanel Margin="10">
+                        <ui:ToggleSwitch x:Name="MoveThePastePositionToggleSwitch" OffContent="貼り付ける位置をずらす" OnContent="貼り付ける位置をずらす"/>
+                        <Label x:Name="LeftEdgeLabel" Content="左端" Margin="0,5,0,0"/>
+                        <ui:NumberBox x:Name="LeftEdgeNumberBox" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Maximum="100" Minimum="-100" Value="0" SpinButtonPlacementMode="Inline"/>
+                        <Label x:Name="TopEdgeLabel" Content="上端" Margin="0,5,0,0"/>
+                        <ui:NumberBox x:Name="TopEdgeNumberBox" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Maximum="100" Minimum="-100" Value="0" SpinButtonPlacementMode="Inline"/>
+                        <Label x:Name="RightEdgeLabel" Content="右端" Margin="0,5,0,0"/>
+                        <ui:NumberBox x:Name="RightEdgeNumberBox" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Maximum="100" Minimum="-100" Value="0" SpinButtonPlacementMode="Inline"/>
+                        <Label x:Name="BottomEdgeLabel" Content="下端" Margin="0,5,0,0"/>
+                        <ui:NumberBox x:Name="BottomEdgeNumberBox" Margin="0,5,0,0" HorizontalAlignment="Left" Width="150" Maximum="100" Minimum="-100" Value="0" SpinButtonPlacementMode="Inline"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>
