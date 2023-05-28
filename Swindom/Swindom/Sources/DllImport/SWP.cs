@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.DllImport;
+﻿namespace Swindom;
 
 [Flags]
 public enum SWP : int

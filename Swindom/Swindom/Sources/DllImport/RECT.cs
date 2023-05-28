@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.DllImport;
+﻿namespace Swindom;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct RECT

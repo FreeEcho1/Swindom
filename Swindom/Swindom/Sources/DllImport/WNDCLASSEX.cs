@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.DllImport;
+﻿namespace Swindom;
 
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
 public class WNDCLASSEX

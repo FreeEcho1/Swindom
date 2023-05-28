@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.DllImport;
+﻿namespace Swindom;
 
 public enum HwndInsertAfter : int
 {

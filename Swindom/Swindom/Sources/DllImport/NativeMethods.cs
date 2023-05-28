@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.DllImport;
+﻿namespace Swindom;
 
 /// <summary>
 /// NativeMethods
@@ -284,10 +284,10 @@ internal static partial class NativeMethods
         IntPtr lpRect
         );
 
-    //[DllImport("user32.dll", ExactSpelling = true)]
-    //public static extern IntPtr GetParent(
-    //    IntPtr hWnd
-    //    );
+    [DllImport("user32.dll", ExactSpelling = true)]
+    public static extern IntPtr GetParent(
+        IntPtr hWnd
+        );
     [DllImport("user32.dll")]
     public static extern IntPtr GetAncestor(
         IntPtr hwnd,
