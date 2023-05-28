@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウの処理情報

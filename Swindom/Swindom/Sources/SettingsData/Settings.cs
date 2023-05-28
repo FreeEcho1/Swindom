@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 設定
@@ -47,6 +47,10 @@ public class Settings
     /// </summary>
     public SpecifyWindowInformation SpecifyWindowInformation;
     /// <summary>
+    /// 「全てのウィンドウ」機能の設定情報
+    /// </summary>
+    public AllWindowInformation AllWindowInformation;
+    /// <summary>
     /// 「マグネット」機能の設定情報
     /// </summary>
     public MagnetInformation MagnetInformation;
@@ -54,6 +58,10 @@ public class Settings
     /// 「ホットキー」機能の設定情報
     /// </summary>
     public HotkeyInformation HotkeyInformation;
+    /// <summary>
+    /// プラグイン情報
+    /// </summary>
+    public PluginInformation PluginInformation;
 
     /// <summary>
     /// コンストラクタ
@@ -70,7 +78,9 @@ public class Settings
         UseLongPath = false;
         ShiftPastePosition = new();
         SpecifyWindowInformation = new();
+        AllWindowInformation = new();
         MagnetInformation = new();
         HotkeyInformation = new();
+        PluginInformation = new();
     }
 }

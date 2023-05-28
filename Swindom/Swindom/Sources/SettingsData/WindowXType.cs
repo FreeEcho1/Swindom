@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウのX位置指定の種類

@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「ホットキー」機能の情報

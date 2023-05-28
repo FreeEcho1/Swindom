@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウのサイズ指定の種類

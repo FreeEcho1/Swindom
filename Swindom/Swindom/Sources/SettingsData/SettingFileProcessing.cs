@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 設定ファイルの処理
@@ -91,7 +91,7 @@ public static class SettingFileProcessing
                         break;
                 }
 
-                settingDirectoryPath = VariousProcessing.GetApplicationDirectoryPath(false) + Path.DirectorySeparatorChar + Common.SettingsDirectoryName;
+                settingDirectoryPath = VariousProcessing.GetApplicationDirectory(false) + Path.DirectorySeparatorChar + Common.SettingsDirectoryName;
             }
 
             // 設定ディレクトリがない場合は作成
@@ -135,10 +135,10 @@ public static class SettingFileProcessing
     }
 
     /// <summary>
-    /// 設定ディレクトリのパスを取得
+    /// 設定ディレクトリを取得
     /// </summary>
-    /// <returns>設定ディレクトリのパス (ディレクトリがない「""」)</returns>
-    private static string GetSettingsDirectoryPath()
+    /// <returns>設定ディレクトリ (ディレクトリがない「""」)</returns>
+    public static string GetSettingsDirectory()
     {
         string path = "";     // パス
 
@@ -161,7 +161,7 @@ public static class SettingFileProcessing
             }
             else
             {
-                if (Directory.Exists(tempPath = VariousProcessing.GetApplicationDirectoryPath(false) + Path.DirectorySeparatorChar + Common.SettingsDirectoryName))
+                if (Directory.Exists(tempPath = VariousProcessing.GetApplicationDirectory(false) + Path.DirectorySeparatorChar + Common.SettingsDirectoryName))
                 {
                     path = tempPath;
                 }
@@ -185,7 +185,7 @@ public static class SettingFileProcessing
 
         if (string.IsNullOrEmpty(ApplicationData.SpecifySettingsFilePath))
         {
-            string directoryPath = GetSettingsDirectoryPath();      // ディレクトリのパス
+            string directoryPath = GetSettingsDirectory();      // ディレクトリのパス
 
             if (string.IsNullOrEmpty(directoryPath) == false)
             {
@@ -301,7 +301,6 @@ public static class SettingFileProcessing
                 element5.Add(new XElement("MoveSizeEnd", nowItem.WindowEventData.MoveSizeEnd.ToString()));
                 element5.Add(new XElement("MinimizeStart", nowItem.WindowEventData.MinimizeStart.ToString()));
                 element5.Add(new XElement("MinimizeEnd", nowItem.WindowEventData.MinimizeEnd.ToString()));
-                element5.Add(new XElement("Create", nowItem.WindowEventData.Create.ToString()));
                 element5.Add(new XElement("Show", nowItem.WindowEventData.Show.ToString()));
                 element5.Add(new XElement("NameChange", nowItem.WindowEventData.NameChange.ToString()));
                 element4.Add(element5);
@@ -379,6 +378,51 @@ public static class SettingFileProcessing
             element2.Add(element3);
             element1.Add(element2);
             // End SpecifyWindowInformation
+            // Start AllWindowInformation
+            element2 = new("AllWindowInformation");
+            element2.Add(new XElement("Enabled", ApplicationData.Settings.AllWindowInformation.Enabled.ToString()));
+            element2.Add(new XElement("CaseSensitive", ApplicationData.Settings.AllWindowInformation.CaseSensitive.ToString()));
+            element2.Add(new XElement("StopProcessingFullScreen", ApplicationData.Settings.AllWindowInformation.StopProcessingFullScreen.ToString()));
+            element2.Add(new XElement("StandardDisplay", Enum.GetName(typeof(StandardDisplay), ApplicationData.Settings.AllWindowInformation.StandardDisplay)));
+            // Start PositionSize
+            element3 = new("PositionSize");
+            element3.Add(new XElement("Display", ApplicationData.Settings.AllWindowInformation.PositionSize.Display));
+            element3.Add(new XElement("X", ApplicationData.Settings.AllWindowInformation.PositionSize.X.ToString()));
+            element3.Add(new XElement("Y", ApplicationData.Settings.AllWindowInformation.PositionSize.Y.ToString()));
+            element3.Add(new XElement("XType", Enum.GetName(typeof(WindowXType), ApplicationData.Settings.AllWindowInformation.PositionSize.XType)));
+            element3.Add(new XElement("YType", Enum.GetName(typeof(WindowYType), ApplicationData.Settings.AllWindowInformation.PositionSize.YType)));
+            element3.Add(new XElement("XValueType", Enum.GetName(typeof(PositionSizeValueType), ApplicationData.Settings.AllWindowInformation.PositionSize.XValueType)));
+            element3.Add(new XElement("YValueType", Enum.GetName(typeof(PositionSizeValueType), ApplicationData.Settings.AllWindowInformation.PositionSize.YValueType)));
+            element2.Add(element3);
+            // End PositionSize
+            element3 = new("AddModifyWindowSize");
+            element3.Add(new XElement("Width", ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Width.ToString()));
+            element3.Add(new XElement("Height", ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Height.ToString()));
+            element2.Add(element3);
+            // Start AllWindowPositionSizeWindowEventData
+            element3 = new("AllWindowPositionSizeWindowEventData");
+            element3.Add(new XElement("MoveSizeEnd", ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.MoveSizeEnd.ToString()));
+            element3.Add(new XElement("Show", ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.Show.ToString()));
+            element2.Add(element3);
+            // End AllWindowPositionSizeWindowEventData
+            // Start CancelAllWindowPositionSize
+            element3 = new("CancelAllWindowPositionSize");
+            foreach (WindowJudgementInformation nowItem in ApplicationData.Settings.AllWindowInformation.CancelAllWindowPositionSize)
+            {
+                element4 = new("Item");
+                element4.Add(new XElement("RegisteredName", nowItem.RegisteredName));
+                element4.Add(new XElement("TitleName", nowItem.TitleName));
+                element4.Add(new XElement("TitleNameMatchCondition", Enum.GetName(typeof(NameMatchCondition), nowItem.TitleNameMatchCondition)));
+                element4.Add(new XElement("ClassName", nowItem.ClassName));
+                element4.Add(new XElement("ClassNameMatchCondition", Enum.GetName(typeof(NameMatchCondition), nowItem.ClassNameMatchCondition)));
+                element4.Add(new XElement("FileName", nowItem.FileName));
+                element4.Add(new XElement("FileNameMatchCondition", Enum.GetName(typeof(FileNameMatchCondition), nowItem.FileNameMatchCondition)));
+                element3.Add(element4);
+            }
+            element2.Add(element3);
+            /// End CancelAllWindowPositionSize
+            element1.Add(element2);
+            // End AllWindowInformation
             // Start MagnetInformation
             element2 = new("MagnetInformation");
             element2.Add(new XElement("Enabled", ApplicationData.Settings.MagnetInformation.Enabled.ToString()));
@@ -436,6 +480,19 @@ public static class SettingFileProcessing
             element2.Add(element3);
             element1.Add(element2);
             // End HotkeyInformation
+            // Start PluginInformation
+            element2 = new("PluginInformation");
+            element2.Add(new XElement("Enabled", ApplicationData.Settings.PluginInformation.Enabled.ToString()));
+            element3 = new("Items");
+            foreach (PluginItemInformation nowItem in ApplicationData.Settings.PluginInformation.Items)
+            {
+                element4 = new("Item");
+                element4.Add(new XElement("PluginFileName", nowItem.PluginFileName));
+                element3.Add(element4);
+            }
+            element2.Add(element3);
+            element1.Add(element2);
+            // End PluginInformation
 
             document.Add(element1);
 
@@ -557,7 +614,6 @@ public static class SettingFileProcessing
                                 newEII.WindowEventData.MoveSizeEnd = VariousProcessing.GetBoolXElement(elementNode4, "MoveSizeEnd", newEII.WindowEventData.MoveSizeEnd);
                                 newEII.WindowEventData.MinimizeStart = VariousProcessing.GetBoolXElement(elementNode4, "MinimizeStart", newEII.WindowEventData.MinimizeStart);
                                 newEII.WindowEventData.MinimizeEnd = VariousProcessing.GetBoolXElement(elementNode4, "MinimizeEnd", newEII.WindowEventData.MinimizeEnd);
-                                newEII.WindowEventData.Create = VariousProcessing.GetBoolXElement(elementNode4, "Create", newEII.WindowEventData.Create);
                                 newEII.WindowEventData.Show = VariousProcessing.GetBoolXElement(elementNode4, "Show", newEII.WindowEventData.Show);
                                 newEII.WindowEventData.NameChange = VariousProcessing.GetBoolXElement(elementNode4, "NameChange", newEII.WindowEventData.NameChange);
                             }
@@ -653,6 +709,67 @@ public static class SettingFileProcessing
                     }
                 }
                 // End SpecifyWindowInformation
+                // Start AllWindowInformation
+                elementNode1 = element.Element("AllWindowInformation");
+                if (elementNode1 != null)
+                {
+                    XElement? elementNode2;
+                    ApplicationData.Settings.AllWindowInformation.Enabled = VariousProcessing.GetBoolXElement(elementNode1, "Enabled", ApplicationData.Settings.AllWindowInformation.Enabled);
+                    ApplicationData.Settings.AllWindowInformation.CaseSensitive = VariousProcessing.GetBoolXElement(elementNode1, "CaseSensitive", ApplicationData.Settings.AllWindowInformation.CaseSensitive);
+                    ApplicationData.Settings.AllWindowInformation.StopProcessingFullScreen = VariousProcessing.GetBoolXElement(elementNode1, "StopProcessingFullScreen", ApplicationData.Settings.AllWindowInformation.StopProcessingFullScreen);
+                    _ = Enum.TryParse(VariousProcessing.GetStringXElement(elementNode1, "StandardDisplay", Enum.GetName(typeof(StandardDisplay), ApplicationData.Settings.AllWindowInformation.StandardDisplay) ?? ""), out ApplicationData.Settings.AllWindowInformation.StandardDisplay);
+                    // Start PositionSize
+                    elementNode2 = elementNode1.Element("PositionSize");
+                    if (elementNode2 != null)
+                    {
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.Display = VariousProcessing.GetStringXElement(elementNode2, "Display", ApplicationData.Settings.AllWindowInformation.PositionSize.Display);
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.X = VariousProcessing.GetDoubleXElement(elementNode2, "X", ApplicationData.Settings.AllWindowInformation.PositionSize.X);
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.Y = VariousProcessing.GetDoubleXElement(elementNode2, "Y", ApplicationData.Settings.AllWindowInformation.PositionSize.Y);
+                        _ = Enum.TryParse(VariousProcessing.GetStringXElement(elementNode2, "XType", Enum.GetName(typeof(WindowXType), ApplicationData.Settings.AllWindowInformation.PositionSize.XType) ?? ""), out ApplicationData.Settings.AllWindowInformation.PositionSize.XType);
+                        _ = Enum.TryParse(VariousProcessing.GetStringXElement(elementNode2, "YType", Enum.GetName(typeof(WindowYType), ApplicationData.Settings.AllWindowInformation.PositionSize.YType) ?? ""), out ApplicationData.Settings.AllWindowInformation.PositionSize.YType);
+                        PositionSizeValueType value;
+                        _ = Enum.TryParse(VariousProcessing.GetStringXElement(elementNode2, "XValueType", Enum.GetName(typeof(PositionSizeValueType), ApplicationData.Settings.AllWindowInformation.PositionSize.XValueType) ?? ""), out value);
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.XValueType = value;
+                        _ = Enum.TryParse(VariousProcessing.GetStringXElement(elementNode2, "YValueType", Enum.GetName(typeof(PositionSizeValueType), ApplicationData.Settings.AllWindowInformation.PositionSize.YValueType) ?? ""), out value);
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.YValueType = value;
+                    }
+                    // End PositionSize
+                    elementNode2 = elementNode1.Element("AddModifyWindowSize");
+                    if (elementNode2 != null)
+                    {
+                        ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Width = VariousProcessing.GetIntXElement(elementNode2, "Width", ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Width);
+                        ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Height = VariousProcessing.GetIntXElement(elementNode2, "Height", ApplicationData.Settings.AllWindowInformation.AddModifyWindowSize.Height);
+                    }
+                    // Start AllWindowPositionSizeWindowEventData
+                    elementNode2 = elementNode1.Element("AllWindowPositionSizeWindowEventData");
+                    if (elementNode2 != null)
+                    {
+                        ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.MoveSizeEnd = VariousProcessing.GetBoolXElement(elementNode2, "MoveSizeEnd", ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.MoveSizeEnd);
+                        ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.Show = VariousProcessing.GetBoolXElement(elementNode2, "Show", ApplicationData.Settings.AllWindowInformation.AllWindowPositionSizeWindowEventData.Show);
+                    }
+                    // End AllWindowPositionSizeWindowEventData
+                    // Start CancelAllWindowPositionSize
+                    elementNode2 = elementNode1.Element("CancelAllWindowPositionSize");
+                    if (elementNode2 != null)
+                    {
+                        foreach (XElement nowElementWJI in elementNode2.Elements("Item"))
+                        {
+                            WindowJudgementInformation newWJI = new();
+
+                            newWJI.RegisteredName = VariousProcessing.GetStringXElement(nowElementWJI, "RegisteredName", newWJI.RegisteredName);
+                            newWJI.TitleName = VariousProcessing.GetStringXElement(nowElementWJI, "TitleName", newWJI.TitleName);
+                            _ = Enum.TryParse(VariousProcessing.GetStringXElement(nowElementWJI, "TitleNameMatchCondition", Enum.GetName(typeof(NameMatchCondition), newWJI.TitleNameMatchCondition) ?? ""), out newWJI.TitleNameMatchCondition);
+                            newWJI.ClassName = VariousProcessing.GetStringXElement(nowElementWJI, "ClassName", newWJI.ClassName);
+                            _ = Enum.TryParse(VariousProcessing.GetStringXElement(nowElementWJI, "ClassNameMatchCondition", Enum.GetName(typeof(NameMatchCondition), newWJI.ClassNameMatchCondition) ?? ""), out newWJI.ClassNameMatchCondition);
+                            newWJI.FileName = VariousProcessing.GetStringXElement(nowElementWJI, "FileName", newWJI.FileName);
+                            _ = Enum.TryParse(VariousProcessing.GetStringXElement(nowElementWJI, "FileNameMatchCondition", Enum.GetName(typeof(FileNameMatchCondition), newWJI.FileNameMatchCondition) ?? ""), out newWJI.FileNameMatchCondition);
+
+                            ApplicationData.Settings.AllWindowInformation.CancelAllWindowPositionSize.Add(newWJI);
+                        }
+                    }
+                    // End CancelAllWindowPositionSize
+                }
+                // End AllWindowInformation
                 // Start MagnetInformation
                 elementNode1 = element.Element("MagnetInformation");
                 if (elementNode1 != null)
@@ -733,6 +850,27 @@ public static class SettingFileProcessing
                     // End Items
                 }
                 // End HotkeyInformation
+                // Start PluginInformation
+                elementNode1 = element.Element("PluginInformation");
+                if (elementNode1 != null)
+                {
+                    ApplicationData.Settings.PluginInformation.Enabled = VariousProcessing.GetBoolXElement(elementNode1, "Enabled", ApplicationData.Settings.PluginInformation.Enabled);
+                    // Start Items
+                    XElement? elementNode2 = elementNode1.Element("Items");
+                    if (elementNode2 != null)
+                    {
+                        foreach (XElement nowElementPII in elementNode2.Elements("Item"))
+                        {
+                            PluginItemInformation newItem = new();
+
+                            newItem.PluginFileName = VariousProcessing.GetStringXElement(nowElementPII, "PluginFileName", newItem.PluginFileName);
+
+                            ApplicationData.Settings.PluginInformation.Items.Add(newItem);
+                        }
+                    }
+                    // End Items
+                }
+                // End PluginInformation
 
                 result = true;
             }

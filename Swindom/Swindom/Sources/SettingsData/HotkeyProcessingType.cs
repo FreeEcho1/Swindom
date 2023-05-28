@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「ホットキー」機能の処理の種類
@@ -61,8 +61,18 @@ public enum HotkeyProcessingType : int
     [XmlEnum(Name = "OnlyActiveWindowSpecifyWindow")]
     OnlyActiveWindowSpecifyWindow,
     /// <summary>
+    /// 「全てのウィンドウ」の処理開始/停止
+    /// </summary>
+    [XmlEnum(Name = "StartStopAllWindow")]
+    StartStopAllWindow,
+    /// <summary>
     /// 「マグネット」の処理開始/停止
     /// </summary>
     [XmlEnum(Name = "StartStopMagnet")]
     StartStopMagnet,
+    /// <summary>
+    /// このアプリケーションのウィンドウを表示
+    /// </summary>
+    [XmlEnum(Name = "ShowThisApplicationWindow")]
+    ShowThisApplicationWindow,
 }

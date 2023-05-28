@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.SettingsData;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウイベントのデータ
@@ -10,7 +10,7 @@ public class WindowEventData
     /// </summary>
     public bool Foreground;
     /// <summary>
-    /// 移動及びサイズの変更が終了された
+    /// 移動及びサイズの変更が終了した
     /// </summary>
     public bool MoveSizeEnd;
     /// <summary>
@@ -18,13 +18,9 @@ public class WindowEventData
     /// </summary>
     public bool MinimizeStart;
     /// <summary>
-    /// 最小化が終了された
+    /// 最小化が終了した
     /// </summary>
     public bool MinimizeEnd;
-    /// <summary>
-    /// 作成された
-    /// </summary>
-    public bool Create;
     /// <summary>
     /// 表示された
     /// </summary>
@@ -43,7 +39,6 @@ public class WindowEventData
         MoveSizeEnd = false;
         MinimizeStart = false;
         MinimizeEnd = false;
-        Create = false;
         Show = false;
         NameChange = false;
     }
@@ -60,7 +55,6 @@ public class WindowEventData
         MoveSizeEnd = windowEventData.MoveSizeEnd;
         MinimizeStart = windowEventData.MinimizeStart;
         MinimizeEnd = windowEventData.MinimizeEnd;
-        Create = windowEventData.Create;
         Show = windowEventData.Show;
         NameChange = windowEventData.NameChange;
     }
