@@ -1,172 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
- <ChangeSettingToNewVersion>Zmiana ustawień na nową wersję 'Tak' / Zmiana ręczna 'Nie' / Wyłączenie procesu 'Anuluj'.</ChangeSettingToNewVersion>
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
+ <ChangeSettingToNewVersion>Zmień ustawienia na nową wersję "Tak" / Zmień ręcznie "Nie" / Wyłącz proces "Anuluj".</ChangeSettingToNewVersion>
  <ChangeVersion>Wersja została zmieniona</ChangeVersion>
  <Check>Potwierdzenie.</Check>
  <ErrorOccurred>Wystąpił błąd.</ErrorOccurred>
- <LanguageName>Polska</LanguageName>
+ <LanguageName>Polski</LanguageName>
  <LanguagesWindow>
   <ActiveWindowOnly>Tylko aktywne okno</ActiveWindowOnly>
   <Add>Dodano</Add>
   <Added>Dodano.</Added>
   <AllWindow>Wszystkie okna</AllWindow>
-  <AllowDelete>Chcesz usunąć?</AllowDelete>
+  <AllowDelete>Czy chcesz usunąć?</AllowDelete>
   <AlwaysCancelForefront>Zawsze zwalniaj przede wszystkim</AlwaysCancelForefront>
-  <AlwaysForefront>Zawsze przede wszystkim</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Zawsze doprowadzaj do czołówki/niech się rusza</AlwaysShowOrCancelOnTop>
+  <AlwaysForefront>Zawsze na pierwszym miejscu</AlwaysForefront>
+  <AlwaysShowOrCancelOnTop>Zawsze przesuwaj do przodu/usuń</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>Ruch</AmountOfMovement>
   <Announce>Powiadomienie</Announce>
-  <AutomaticUpdateCheck>Automatyczne potwierdzenie aktualizacji w czasie pracy</AutomaticUpdateCheck>
-  <BackwardMatch>Mecz wsteczny</BackwardMatch>
+  <AutomaticUpdateCheck>Automatyczne potwierdzenie aktualizacji w czasie działania</AutomaticUpdateCheck>
+  <BackwardMatch>Dopasowanie wsteczne</BackwardMatch>
   <BatchProcessingOfSpecifyWindow>Przetwarzanie wsadowe "wyznaczonych okien</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Dolny koniec</BottomEdge>
+  <BottomEdge>Niższy koniec</BottomEdge>
   <Cancel>Anuluj</Cancel>
-  <CaseSensitiveWindowQueries>Rozróżnianie wielkości liter w określaniu okien</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Sprawdź aktualizacje, w tym wersje beta.</CheckBetaVersion>
-  <CheckReadme>Zobacz "Readme (instrukcje)", aby dowiedzieć się, jak określić.</CheckReadme>
+  <CancelMoveWindow>Okna, które się nie poruszają</CancelMoveWindow>
+  <CaseSensitiveWindowQueries>Określanie okien z uwzględnieniem wielkości liter</CaseSensitiveWindowQueries>
+  <CheckBetaVersion>Sprawdzanie aktualizacji, w tym wersji beta.</CheckBetaVersion>
+  <CheckReadme>Zobacz "Readme (instrukcje)", aby uzyskać informacje na temat sposobu określania.</CheckReadme>
   <ClassName>Nazwa klasy</ClassName>
-  <ClientArea>Obszar klienta docelowego</ClientArea>
+  <ClientArea>Docelowy obszar klienta</ClientArea>
   <CloseWindow>Zamknij okno</CloseWindow>
   <ConditionsThatDoNotProcess>Warunek nieprzetwarzania</ConditionsThatDoNotProcess>
   <Coordinate>Współrzędne</Coordinate>
   <CoordinateSpecification>Specyfikacja współrzędnych</CoordinateSpecification>
-  <Copy>Kopia</Copy>
-  <Create>Utworzony</Create>
-  <CurrentDisplay>Aktualny wyświetlacz</CurrentDisplay>
+  <Copy>Kopiuj</Copy>
+  <CurrentDisplay>Bieżące wyświetlanie</CurrentDisplay>
   <DarkMode>Tryb ciemny</DarkMode>
-  <DecisionDistanceToPaste>Odległość decyzyjna do wklejenia</DecisionDistanceToPaste>
+  <DecisionDistanceToPaste>Odległość decyzji wklejania</DecisionDistanceToPaste>
   <Delete>Usunięto</Delete>
   <Deleted>Usunięto.</Deleted>
-  <Display>Wyświetl</Display>
-  <DisplayInformationUpdate>Aktualizacja informacji na wyświetlaczu</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Wyświetlacz do wykorzystania jako odniesienie</DisplayToUseAsStandard>
-  <DoNotChange>Nie zmieniać</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Nie zmieniaj pozycji ani rozmiaru, jeśli nie ma ekranu.</DoNotChangePositionSizeOutOfScreen>
+  <Display>Wyświetlacz</Display>
+  <DisplayInformationUpdate>Zaktualizowano informacje na wyświetlaczu</DisplayInformationUpdate>
+  <DisplayToUseAsStandard>Wyświetlacz używany jako odniesienie</DisplayToUseAsStandard>
+  <DoNotChange>Nie zmieniaj</DoNotChange>
+  <DoNotChangePositionSizeOutOfScreen>Nie zmieniaj pozycji ani rozmiaru, jeśli poza ekranem</DoNotChangePositionSizeOutOfScreen>
   <DoNotSpecify>Nie określono</DoNotSpecify>
   <EachDisplay>Lewy górny róg każdego wyświetlacza "x=0, y=0"</EachDisplay>
   <End>Koniec</End>
-  <Event>Wydarzenie</Event>
+  <Event>Zdarzenie</Event>
   <ExactMatch>Dokładne dopasowanie.</ExactMatch>
-  <ExplanationOfSpecifyWindow>Można określić okno, które ma być przetwarzane automatycznie. Jeśli nie chcesz, aby okno było przetwarzane automatycznie i chcesz je przetwarzać używając tylko klawiszy skrótu, odznacz pole, aby wyłączyć tę funkcję.</ExplanationOfSpecifyWindow>
+  <ExplanationOfAllWindow>Wszystkie okna mogą być przetwarzane z wyjątkiem określonego okna. Okna określone w polu "Określone okno" są również wykluczone.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>Określone okno może być przetwarzane automatycznie. Jeśli chcesz przetwarzać tylko za pomocą skrótów klawiszowych bez automatycznego przetwarzania, odznacz pole, aby wyłączyć tę opcję.</ExplanationOfSpecifyWindow>
   <FileName>Nazwa pliku</FileName>
   <FileSelection>Wybór pliku</FileSelection>
-  <Forefront>Foremost</Forefront>
-  <Foregrounded>Przedziwne.</Foregrounded>
-  <ForwardMatch>Dopasuj pierwszą warstwę</ForwardMatch>
+  <Forefront>Na pierwszym planie</Forefront>
+  <Foregrounded>Na pierwszym planie.</Foregrounded>
+  <ForwardMatch>Dopasuj pierwszy plan</ForwardMatch>
   <General>Ogólne</General>
-  <GetWindowInformation>Pozyskiwanie informacji o oknach</GetWindowInformation>
+  <GetWindowInformation>Pozyskiwanie informacji o oknie</GetWindowInformation>
   <Height>Wysokość</Height>
-  <HeightSpecification>Podać wysokość</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Przesuń kursor myszy do okna, które chcesz wybrać, trzymając wciśnięty przycisk</HoldDownMouseCursorMoveToSelectWindow>
+  <HeightSpecification>Określa wysokość</HeightSpecification>
+  <HoldDownMouseCursorMoveToSelectWindow>Przesuń kursor myszy do okna, które chcesz wybrać, przytrzymując go</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Klawisze skrótu</Hotkey>
-  <HotkeyExplanation>Skróty klawiszowe mogą być używane do przetwarzania aktywnego okna (akceptującego dane wejściowe). Przycisk "Wybierz" umożliwia wybranie okna, które ma zostać przetworzone bez użycia klawisza skrótu.</HotkeyExplanation>
-  <HotkeysDoNotStop>Skróty klawiszowe nie zatrzymują się (jeśli obecne jest okno pełnoekranowe).</HotkeysDoNotStop>
-  <IncludePath>Uwzględnić ścieżki</IncludePath>
+  <HotkeyExplanation>Klawisze skrótu mogą być używane do przetwarzania aktywnego okna (akceptowania danych wejściowych). Przycisk "Wybierz" umożliwia wybranie okna, które ma zostać przetworzone bez użycia klawisza skrótu.</HotkeyExplanation>
+  <HotkeysDoNotStop>Klawisze skrótu nie zatrzymują się (jeśli obecne jest okno pełnoekranowe).</HotkeysDoNotStop>
+  <IncludePath>Dołącz ścieżki</IncludePath>
   <IncreaseDecreaseHeight>Zwiększanie/zmniejszanie wysokości</IncreaseDecreaseHeight>
   <IncreaseDecreaseWidth>Zwiększanie/zmniejszanie szerokości</IncreaseDecreaseWidth>
   <IncreaseDecreaseWidthAndHeight>Zwiększanie/zmniejszanie szerokości i wysokości</IncreaseDecreaseWidthAndHeight>
   <Information>Info.</Information>
-  <InformationToBeObtained>Informacje, które mają zostać wyszukane</InformationToBeObtained>
+  <InformationToBeObtained>Informacje do pobrania</InformationToBeObtained>
   <Language>Język.</Language>
   <LatestVersion>Najnowsza wersja.</LatestVersion>
-  <LeftEdge>Najdalej w lewo</LeftEdge>
+  <LeftEdge>Leftmost</LeftEdge>
   <Library>Biblioteka.</Library>
-  <LimitedToSpecifiedDisplay>Ograniczenie do określonego wyświetlacza</LimitedToSpecifiedDisplay>
+  <LimitedToSpecifiedDisplay>Ograniczone do określonego wyświetlacza</LimitedToSpecifiedDisplay>
   <Magnet>Magnes.</Magnet>
   <MagnetExplanation>Przyczepia się do krawędzi ekranu lub innego okna, gdy okno jest przesuwane za pomocą myszy.</MagnetExplanation>
   <Manual>Opis</Manual>
-  <Maximize>Maksymalnie wykorzystaj</Maximize>
-  <Middle>Centrum</Middle>
-  <Minimize>Zminimalizowana</Minimize>
+  <Maximize>Maksymalizuj</Maximize>
+  <Middle>Wyśrodkowany</Middle>
+  <Minimize>Zminimalizowany</Minimize>
   <MinimizeEnd>Minimalizacja została zakończona</MinimizeEnd>
-  <MinimizeStart>Rozpoczęta minimalizacja</MinimizeStart>
+  <MinimizeStart>Rozpoczęto minimalizację.</MinimizeStart>
   <Modified>Naprawiono.</Modified>
-  <Modify>Naprawiono</Modify>
-  <MoveDown>Przesunięcie w dół</MoveDown>
-  <MovePastePosition>Przesunięcie pozycji wklejania</MovePastePosition>
-  <MoveSizeChangeEnd>Przesuwanie i zmiana rozmiaru gotowych</MoveSizeChangeEnd>
-  <MoveUp>Przesuń się w górę</MoveUp>
-  <MoveXCoordinate>Przesuń współrzędną X</MoveXCoordinate>
-  <MoveYCoordinate>Przesunięcie Współrzędna Y</MoveYCoordinate>
+  <Modify>Naprawiono.</Modify>
+  <MoveAllWindowToSpecifiedPosition>Przenieś wszystkie okna do określonej pozycji</MoveAllWindowToSpecifiedPosition>
+  <MoveDown>Przesunięto w dół</MoveDown>
+  <MovePastePosition>Pozycja wklejania przesunięta</MovePastePosition>
+  <MoveSizeChangeEnd>Zakończono przenoszenie i zmianę rozmiaru</MoveSizeChangeEnd>
+  <MoveUp>Przesunięcie w górę</MoveUp>
+  <MoveXCoordinate>Przesunięcie współrzędnej X</MoveXCoordinate>
+  <MoveYCoordinate>Przesunięcie współrzędnej Y</MoveYCoordinate>
+  <NeedRestart>Swindom musi zostać ponownie uruchomiony.</NeedRestart>
   <No>Nie.</No>
-  <NormalExecution>Normalne wykonanie? (bez uprawnień administratora - 'Tak' / z uprawnieniami administratora - 'Nie')</NormalExecution>
+  <NormalExecution>Normalne wykonanie? (bez uprawnień administratora - "Tak" / z uprawnieniami administratora - "Nie")</NormalExecution>
   <NormalWindow>Normalne okno</NormalWindow>
   <NotIncludePath>Nie zawiera ścieżek</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Ilość razy nie przetworzona jako pierwsza (opóźnia przetwarzanie bezpośrednio po wykonaniu)</NumberOfTimesNotToProcessingFirst>
+  <NumberOfTimesNotToProcessingFirst>Liczba przypadków nieprzetworzonych w pierwszej kolejności (opóźnia przetwarzanie natychmiast po wykonaniu)</NumberOfTimesNotToProcessingFirst>
   <NumericCalculation>Obliczenia numeryczne</NumericCalculation>
-  <Ok>OK - "Tak" / "Nie</Ok>
-  <OnceWhileItIsRunning>Podczas gdy to oprogramowanie jest uruchomione</OnceWhileItIsRunning>
-  <OnceWindowOpen>Gdy okno jest otwarte</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Przetwarzane jest tylko aktywne okno "określonego okna</OnlyActiveWindowSpecifyWindow>
-  <Open>Otwórz</Open>
-  <OtherThanSpecifiedVersion>Wersja inna niż podana (np. możliwa wersja do minor)</OtherThanSpecifiedVersion>
-  <PartialMatch>Częściowa zgodność</PartialMatch>
+  <Ok>OK - 'Tak' / 'Nie'</Ok>
+  <OnceWhileItIsRunning>Gdy oprogramowanie jest uruchomione</OnceWhileItIsRunning>
+  <OnceWindowOpen>Gdy otwarte jest okno</OnceWindowOpen>
+  <OnlyActiveWindowSpecifyWindow>Przetwarzane jest tylko aktywne okno "określonego okna".</OnlyActiveWindowSpecifyWindow>
+  <Open>Otwarte</Open>
+  <OtherThanSpecifiedVersion>Inne niż określona wersja (np. możliwe do wersji minor)</OtherThanSpecifiedVersion>
+  <PartialMatch>Częściowe dopasowanie</PartialMatch>
   <PasteIntoAnotherWindow>Wklej do innego okna</PasteIntoAnotherWindow>
   <PasteToEdgeOfScreen>Wklej do krawędzi ekranu</PasteToEdgeOfScreen>
   <PasteWithCtrlKeyPressed>Wklej z wciśniętym klawiszem Ctrl</PasteWithCtrlKeyPressed>
-  <Percent>% (np.)</Percent>
-  <Pixel>px.</Pixel>
-  <PrimaryDisplay>x=0, y=0" w lewym górnym rogu ekranu głównego</PrimaryDisplay>
-  <ProcessOnlyOnce>Przetwarzać tylko raz</ProcessOnlyOnce>
+  <Percent>% (np. %)</Percent>
+  <Pixel>px</Pixel>
+  <Plugin>Wtyczki</Plugin>
+  <PluginExplanation>Wtyczki mogą dodawać dodatkowe funkcje. Szczegółowe instrukcje znajdują się w "Readme (instrukcje)".</PluginExplanation>
+  <PluginSettings>Konfiguracja wtyczki</PluginSettings>
+  <PluginTestMessage>Ta funkcja jest w fazie testów i może być niestabilna, np.</PluginTestMessage>
+  <Position>Pozycja.</Position>
+  <PrimaryDisplay>Lewy górny róg głównego wyświetlacza "x=0, y=0</PrimaryDisplay>
+  <ProcessOnlyOnce>Przetwarzane tylko raz</ProcessOnlyOnce>
   <ProcessOnlyWhenNormalWindow>Przetwarzanie tylko w "normalnym oknie</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Interwał przetwarzania (milisekundy)</ProcessingInterval>
   <ProcessingName>Nazwa przetwarzania</ProcessingName>
   <ProcessingSettings>Ustawienie przetwarzania</ProcessingSettings>
   <ProcessingState>Status przetwarzania</ProcessingState>
-  <ProcessingType>Rodzaj przetwarzania</ProcessingType>
+  <ProcessingType>Typ przetwarzania</ProcessingType>
   <ProcessingWindowRange>Zakres przetwarzanych okien</ProcessingWindowRange>
   <Ratio>Współczynnik</Ratio>
-  <RegisterMultipleWindowActions>Rejestrowanie wielu zabiegów okiennych</RegisterMultipleWindowActions>
+  <RegisterMultipleWindowActions>Rejestrowanie przetwarzania wielu okien</RegisterMultipleWindowActions>
   <RegisteredName>Nazwa rejestracji</RegisteredName>
-  <ReportsAndRequests>Sprawozdanie, wniosek</ReportsAndRequests>
-  <RetrievedAfterFiveSeconds>Informacje o oknie są pobierane po 5 sekundach, proszę aktywować okno, dla którego chcesz pobrać informacje w ciągu 5 sekund.</RetrievedAfterFiveSeconds>
+  <ReportsAndRequests>Raport, żądanie</ReportsAndRequests>
+  <Restart>Reaktywacja.</Restart>
+  <RetrievedAfterFiveSeconds>Informacje o oknie są pobierane po 5 sekundach, aktywuj okno, dla którego chcesz pobrać informacje w ciągu 5 sekund.</RetrievedAfterFiveSeconds>
   <RightEdge>Prawy koniec</RightEdge>
-  <RunAtWindowsStartup>Wykonaj przy starcie systemu Windows</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Uruchom przy starcie systemu Windows (prawa administratora)</RunAtWindowsStartupAdministrator>
+  <RunAtWindowsStartup>Uruchom przy starcie systemu Windows</RunAtWindowsStartup>
+  <RunAtWindowsStartupAdministrator>Uruchom przy starcie systemu Windows (uprawnienia administratora)</RunAtWindowsStartupAdministrator>
   <Select>Wybór.</Select>
   <SelectionComplete>Wybrane.</SelectionComplete>
   <Setting>Ustawienia</Setting>
   <SettingsValue>Zestaw wartości.</SettingsValue>
   <ShareSettings>Czy chcesz udostępnić informacje o konfiguracji wszystkim użytkownikom?</ShareSettings>
-  <Show>Wyświetlane</Show>
+  <Show>Wyświetlane.</Show>
+  <ShowThisApplicationWindow>Pokaż to okno aplikacji</ShowThisApplicationWindow>
   <Size>Rozmiar</Size>
   <SizeChangeAmount>Wielkość zmiany rozmiaru</SizeChangeAmount>
   <SoftwareName>Nazwa oprogramowania</SoftwareName>
   <SpecifiedDisplay>Określony wyświetlacz</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Określenie/zwolnienie przejrzystości</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Określenie pozycji i rozmiaru</SpecifyPositionAndSize>
-  <SpecifyTransparency>Określenie przejrzystości</SpecifyTransparency>
-  <SpecifyWindow>Wyznaczone okno</SpecifyWindow>
-  <StartStopProcessingOfMagnet>Rozpoczęcie/zatrzymanie przetwarzania "Magnesu</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Rozpoczęcie/zatrzymanie przetwarzania "Okna desygnacji</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Zatrzymaj przetwarzanie, jeśli wyświetlone zostanie okno dodawania/modyfikacji.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Zatrzymanie przetwarzania, jeśli okno jest wyświetlane na pełnym ekranie</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Czas zatrzymania po zatrzymaniu (milisekundy)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Istnieją zdublowane pozycje.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Występują zduplikowane nazwy procesów.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Występują zdublowane nazwy rejestracyjne.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>Jest najnowsza wersja.</ThereIsLatestVersion>
+  <SpecifyCancelTransparency>Określanie/zwalnianie przezroczystości</SpecifyCancelTransparency>
+  <SpecifyPositionAndSize>Określanie pozycji i rozmiaru</SpecifyPositionAndSize>
+  <SpecifyTransparency>Określanie przezroczystości</SpecifyTransparency>
+  <SpecifyWindow>Określone okno</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>Rozpoczęcie/zatrzymanie przetwarzania "Wszystkie okna</StartStopProcessingOfAllWindow>
+  <StartStopProcessingOfMagnet>Rozpoczęcie/zatrzymanie przetwarzania "Magnesu".</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>Rozpoczęcie/zatrzymanie przetwarzania "Wyznaczonych okien".</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Zatrzymanie przetwarzania w przypadku wyświetlenia okna dodawania/modyfikacji.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Zatrzymanie przetwarzania, gdy okno jest wyświetlane na pełnym ekranie</StopProcessingWhenWindowIsFullScreen>
+  <StopTimeWhenPasting>Czas zatrzymania po zablokowaniu (milisekundy)</StopTimeWhenPasting>
+  <ThereAreDuplicateItems>Istnieją zduplikowane elementy.</ThereAreDuplicateItems>
+  <ThereIsADuplicateProcessingName>Istnieją zduplikowane nazwy procesów.</ThereIsADuplicateProcessingName>
+  <ThereIsADuplicateRegistrationName>Istnieją zduplikowane nazwy rejestracji.</ThereIsADuplicateRegistrationName>
+  <ThereIsLatestVersion>Istnieje najnowsza wersja.</ThereIsLatestVersion>
   <Timer>Timer</Timer>
-  <TimerProcessing>Proces zegarowy</TimerProcessing>
+  <TimerProcessing>Proces timera</TimerProcessing>
   <TitleName>Nazwa tytułu.</TitleName>
   <TitleNameChanged>Nazwa tytułu została zmieniona.</TitleNameChanged>
-  <TitleNameExclusionString>String zawarty w nazwie tytułu</TitleNameExclusionString>
-  <TitleNameRequirements>Nazwa tytułu warunki przetwarzania</TitleNameRequirements>
+  <TitleNameExclusionString>Ciąg znaków zawarty w nazwie tytułu</TitleNameExclusionString>
+  <TitleNameRequirements>Warunki przetwarzania nazwy tytułu</TitleNameRequirements>
   <TopEdge>Górny koniec</TopEdge>
-  <Translators>Tłumacz: DeepL Tłumaczenie</Translators>
+  <Translators>Translator: DeepL</Translators>
   <Transparency>Przejrzystość</Transparency>
   <UpdateCheck>Potwierdzenie aktualizacji</UpdateCheck>
   <UpdateCheckFailed>Potwierdzenie aktualizacji nie powiodło się.</UpdateCheckFailed>
   <UpdateHistory>Historia aktualizacji</UpdateHistory>
-  <Version>Wersja</Version>
+  <Version>Wersja.</Version>
   <WaitTimeToProcessingNextWindow>Opóźnienie do przetworzenia następnego okna (milisekundy)</WaitTimeToProcessingNextWindow>
   <Website>Strona internetowa</Website>
   <Width>Szerokość</Width>
   <WidthSpecification>Specyfikacja szerokości</WidthSpecification>
-  <WindowDecide>Określenie okna</WindowDecide>
-  <WindowInformation>Informacje o oknach</WindowInformation>
-  <WindowMoveOutsideToInside>Jeśli okno jest poza ekranem, przenieś je do środka ekranu</WindowMoveOutsideToInside>
-  <WindowState>Status okna</WindowState>
+  <WindowDecide>Określanie okna</WindowDecide>
+  <WindowDesignateMethod>Jak określić ocenę okna</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>Okna można oceniać, określając "nazwę tytułu", "nazwę klasy" i "nazwę pliku".
+To, co należy, a czego nie należy określać, jest różne dla każdego okna.
+Jeśli określisz wszystko, okno może nie zostać przetworzone.
+W przypadku oprogramowania, w którym "nazwa klasy" zmienia się za każdym razem, gdy okno jest wyświetlane, Nie należy określać "nazwy klasy".
+W przypadku aplikacji UWP "nazwa klasy" i "nazwa pliku" są takie same dla wszystkich aplikacji z wyjątkiem kilku, Jeśli nie ma "nazwy tytułu", nie można go poprawnie zidentyfikować, a okna z innych aplikacji będą przetwarzane.
+Zaleca się określenie wszystkich "Nazwy tytułu", "Nazwy klasy" i "Nazwy pliku".
+Nazwa klasy to "ApplicationFrameWindow", a nazwa pliku to "C:\WINDOWS\system32\ApplicationFrameHost.exe", (może się ona zmienić wraz z aktualizacjami systemu Windows).</WindowDesignateMethodExplain>
+  <WindowInformation>Informacje o oknie.</WindowInformation>
+  <WindowMoveOutsideToInside>Jeśli okno znajduje się poza ekranem, przenieś je na ekran</WindowMoveOutsideToInside>
+  <WindowState>Stan okna</WindowState>
   <WindowWithTitleName>Okno z nazwą tytułu</WindowWithTitleName>
   <WindowWithoutTitleName>Okno bez nazwy tytułu</WindowWithoutTitleName>
   <X>X</X>

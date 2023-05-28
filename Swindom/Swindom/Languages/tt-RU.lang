@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>Изменить настройки на новую версию 'Да' / Изменить вручную 'Нет' / Отключить процесс 'Отмена'.</ChangeSettingToNewVersion>
- <ChangeVersion>Версия была изменена</ChangeVersion>
+ <ChangeVersion>Версия изменена</ChangeVersion>
  <Check>Подтверждение.</Check>
  <ErrorOccurred>Произошла ошибка.</ErrorOccurred>
  <LanguageName>Русский</LanguageName>
@@ -11,164 +11,183 @@
   <Added>Добавлено.</Added>
   <AllWindow>Все окна</AllWindow>
   <AllowDelete>Вы хотите удалить?</AllowDelete>
-  <AlwaysCancelForefront>Всегда освобождайте в первую очередь</AlwaysCancelForefront>
+  <AlwaysCancelForefront>Всегда выпускать в первую очередь</AlwaysCancelForefront>
   <AlwaysForefront>Всегда на первом месте</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Всегда приводите на первый план/не перемещайте</AlwaysShowOrCancelOnTop>
+  <AlwaysShowOrCancelOnTop>Всегда выводить на передний план/отпускать</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>Движение</AmountOfMovement>
-  <Announce>Уведомить</Announce>
+  <Announce>Уведомлять</Announce>
   <AutomaticUpdateCheck>Автоматическое подтверждение обновления во время выполнения</AutomaticUpdateCheck>
   <BackwardMatch>Обратное соответствие</BackwardMatch>
   <BatchProcessingOfSpecifyWindow>Пакетная обработка "назначенных окон</BatchProcessingOfSpecifyWindow>
   <BottomEdge>Нижний конец</BottomEdge>
-  <Cancel>Отмена</Cancel>
-  <CaseSensitiveWindowQueries>Чувствительность к регистру при определении окна</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Проверьте наличие обновлений, включая бета-версии.</CheckBetaVersion>
-  <CheckReadme>О том, как указать, см. в разделе "Readme (инструкции)".</CheckReadme>
-  <ClassName>Название класса</ClassName>
-  <ClientArea>Целевая клиентская зона</ClientArea>
+  <Cancel>Отменить</Cancel>
+  <CancelMoveWindow>Окна, которые не перемещаются</CancelMoveWindow>
+  <CaseSensitiveWindowQueries>Определение окон с учетом регистра</CaseSensitiveWindowQueries>
+  <CheckBetaVersion>Проверка наличия обновлений, включая бета-версии.</CheckBetaVersion>
+  <CheckReadme>Информацию о том, как указать, см. в разделе 'Readme (инструкции)'.</CheckReadme>
+  <ClassName>Имя класса</ClassName>
+  <ClientArea>Целевая клиентская область</ClientArea>
   <CloseWindow>Закрыть окно</CloseWindow>
   <ConditionsThatDoNotProcess>Условие не обрабатывать</ConditionsThatDoNotProcess>
   <Coordinate>Координаты</Coordinate>
-  <CoordinateSpecification>Согласование спецификации</CoordinateSpecification>
+  <CoordinateSpecification>Спецификация координат</CoordinateSpecification>
   <Copy>Копировать</Copy>
-  <Create>Создано</Create>
-  <CurrentDisplay>Текущий дисплей</CurrentDisplay>
+  <CurrentDisplay>Текущее отображение</CurrentDisplay>
   <DarkMode>Темный режим</DarkMode>
-  <DecisionDistanceToPaste>Расстояние принятия решения для вставки</DecisionDistanceToPaste>
+  <DecisionDistanceToPaste>Расстояние принятия решения о вставке</DecisionDistanceToPaste>
   <Delete>Удалено</Delete>
   <Deleted>Удалено.</Deleted>
   <Display>Дисплей</Display>
   <DisplayInformationUpdate>Обновление информации на дисплее</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Дисплей для использования в качестве справочника</DisplayToUseAsStandard>
-  <DoNotChange>Не менять</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Не меняйте положение или размер, если вы находитесь за пределами экрана</DoNotChangePositionSizeOutOfScreen>
+  <DisplayToUseAsStandard>Дисплей будет использоваться в качестве эталона</DisplayToUseAsStandard>
+  <DoNotChange>Не изменять</DoNotChange>
+  <DoNotChangePositionSizeOutOfScreen>Не изменять положение или размер, если он находится вне экрана</DoNotChangePositionSizeOutOfScreen>
   <DoNotSpecify>Не указано</DoNotSpecify>
   <EachDisplay>Верхний левый угол каждого дисплея "x=0, y=0"</EachDisplay>
   <End>Конец</End>
   <Event>Событие</Event>
   <ExactMatch>Точное совпадение.</ExactMatch>
-  <ExplanationOfSpecifyWindow>Вы можете указать окно, которое будет обрабатываться автоматически. Если вы не хотите, чтобы окно обрабатывалось автоматически, и желаете обрабатывать его, используя только горячие клавиши, снимите флажок, чтобы отключить эту функцию.</ExplanationOfSpecifyWindow>
+  <ExplanationOfAllWindow>Можно заставить обрабатываться все окна, кроме указанного окна. Окна, указанные в 'Указанное окно', также исключаются.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>Вы можете указать окно и заставить его обрабатываться автоматически. Если вы хотите обрабатывать только горячие клавиши без автоматической обработки, снимите флажок, чтобы отключить эту опцию.</ExplanationOfSpecifyWindow>
   <FileName>Имя файла</FileName>
   <FileSelection>Выбор файла</FileSelection>
-  <Forefront>Foremost</Forefront>
-  <Foregrounded>На переднем плане.</Foregrounded>
-  <ForwardMatch>Соответствие переднего плана</ForwardMatch>
+  <Forefront>Передний план</Forefront>
+  <Foregrounded>Передний план.</Foregrounded>
+  <ForwardMatch>Соответствовать переднему плану</ForwardMatch>
   <General>Общий</General>
   <GetWindowInformation>Получение информации об окне</GetWindowInformation>
   <Height>Высота</Height>
-  <HeightSpecification>Укажите высоту</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Переместите курсор мыши в окно для выбора, удерживая нажатой кнопку</HoldDownMouseCursorMoveToSelectWindow>
+  <HeightSpecification>Указать высоту</HeightSpecification>
+  <HoldDownMouseCursorMoveToSelectWindow>Переместите курсор мыши на окно для выбора, удерживая нажатой кнопку</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Горячие клавиши</Hotkey>
-  <HotkeyExplanation>Горячие клавиши можно использовать для обработки активного окна (принимающего ввод). Кнопка 'Выбрать' позволяет выбрать окно, которое вы хотите обработать, без использования горячей клавиши.</HotkeyExplanation>
-  <HotkeysDoNotStop>Горячие клавиши не останавливаются (при наличии полноэкранного окна).</HotkeysDoNotStop>
+  <HotkeyExplanation>Горячие клавиши можно использовать для обработки активного окна (приема ввода). Кнопка 'Выбрать' позволяет выбрать окно, которое вы хотите обработать без использования горячей клавиши.</HotkeyExplanation>
+  <HotkeysDoNotStop>Горячие клавиши не останавливаются (если присутствует полноэкранное окно).</HotkeysDoNotStop>
   <IncludePath>Включить пути</IncludePath>
   <IncreaseDecreaseHeight>Увеличение/уменьшение высоты</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Увеличение/уменьшение ширины</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Увеличение/уменьшение ширины и высоты</IncreaseDecreaseWidthAndHeight>
+  <IncreaseDecreaseWidth>Увеличить/уменьшить ширину</IncreaseDecreaseWidth>
+  <IncreaseDecreaseWidthAndHeight>Увеличить/уменьшить ширину и высоту</IncreaseDecreaseWidthAndHeight>
   <Information>Информация.</Information>
-  <InformationToBeObtained>Информация, которую необходимо получить</InformationToBeObtained>
+  <InformationToBeObtained>Информация, которая будет извлечена</InformationToBeObtained>
   <Language>Язык.</Language>
   <LatestVersion>Последняя версия.</LatestVersion>
   <LeftEdge>Самый левый</LeftEdge>
   <Library>Библиотека.</Library>
-  <LimitedToSpecifiedDisplay>Ограничивается указанным дисплеем</LimitedToSpecifiedDisplay>
+  <LimitedToSpecifiedDisplay>Ограничена указанным дисплеем</LimitedToSpecifiedDisplay>
   <Magnet>Магнит.</Magnet>
   <MagnetExplanation>Прикрепляется к краю экрана или другого окна при перемещении окна с помощью мыши.</MagnetExplanation>
   <Manual>Описание</Manual>
   <Maximize>Максимизировать</Maximize>
-  <Middle>Центр</Middle>
-  <Minimize>Минимизация</Minimize>
-  <MinimizeEnd>Минимизация была прекращена</MinimizeEnd>
-  <MinimizeStart>Начата минимизация</MinimizeStart>
+  <Middle>Центрировать</Middle>
+  <Minimize>Минимизировано</Minimize>
+  <MinimizeEnd>Минимизация завершена</MinimizeEnd>
+  <MinimizeStart>Минимизация началась.</MinimizeStart>
   <Modified>Исправлено.</Modified>
-  <Modify>Исправлено</Modify>
-  <MoveDown>Сдвиг вниз</MoveDown>
+  <Modify>Исправлено.</Modify>
+  <MoveAllWindowToSpecifiedPosition>Переместить все окна в указанное положение</MoveAllWindowToSpecifiedPosition>
+  <MoveDown>Перемещено вниз</MoveDown>
   <MovePastePosition>Смещение позиции вставки</MovePastePosition>
-  <MoveSizeChangeEnd>Перемещение и изменение размера готовой</MoveSizeChangeEnd>
-  <MoveUp>Поднимайтесь</MoveUp>
+  <MoveSizeChangeEnd>Закончено перемещение и изменение размера</MoveSizeChangeEnd>
+  <MoveUp>Переместить вверх</MoveUp>
   <MoveXCoordinate>Переместить координату X</MoveXCoordinate>
-  <MoveYCoordinate>Перемещение по координате Y</MoveYCoordinate>
-  <No>Нет Нет</No>
-  <NormalExecution>Нормальное исполнение? (без прав администратора - 'Да' / с правами администратора - 'Нет')</NormalExecution>
-  <NormalWindow>Обычное окно</NormalWindow>
-  <NotIncludePath>Не содержит путей</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Количество раз, не обработанных первыми (задерживает обработку сразу после выполнения)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Численное вычисление</NumericCalculation>
+  <MoveYCoordinate>Переместить координату Y</MoveYCoordinate>
+  <NeedRestart>Swindom необходимо перезапустить.</NeedRestart>
+  <No>Нет.</No>
+  <NormalExecution>Нормальное выполнение? (без прав администратора - 'Да' / с правами администратора - 'Нет')</NormalExecution>
+  <NormalWindow>Нормальное окно</NormalWindow>
+  <NotIncludePath>Не включает пути</NotIncludePath>
+  <NumberOfTimesNotToProcessingFirst>Количество раз не обработанных сначала (задерживает обработку сразу после выполнения)</NumberOfTimesNotToProcessingFirst>
+  <NumericCalculation>Числовой расчет</NumericCalculation>
   <Ok>OK - 'Да' / 'Нет'</Ok>
-  <OnceWhileItIsRunning>Во время работы этого программного обеспечения</OnceWhileItIsRunning>
+  <OnceWhileItIsRunning>Во время работы данного программного обеспечения</OnceWhileItIsRunning>
   <OnceWindowOpen>При открытии окна</OnceWindowOpen>
   <OnlyActiveWindowSpecifyWindow>Обрабатывается только активное окно "указанного окна</OnlyActiveWindowSpecifyWindow>
   <Open>Открыть</Open>
-  <OtherThanSpecifiedVersion>Версия, отличная от указанной (например, возможна версия до младшей)</OtherThanSpecifiedVersion>
+  <OtherThanSpecifiedVersion>Отличная от указанной версия (например, возможна версия до младшей)</OtherThanSpecifiedVersion>
   <PartialMatch>Частичное совпадение</PartialMatch>
   <PasteIntoAnotherWindow>Вставить в другое окно</PasteIntoAnotherWindow>
   <PasteToEdgeOfScreen>Вставить к краю экрана</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Вставка с нажатой клавишей Ctrl</PasteWithCtrlKeyPressed>
+  <PasteWithCtrlKeyPressed>Вставить с нажатой клавишей Ctrl</PasteWithCtrlKeyPressed>
   <Percent>% (например, %)</Percent>
-  <Pixel>px.</Pixel>
-  <PrimaryDisplay>x=0, y=0" в левом верхнем углу основного дисплея</PrimaryDisplay>
-  <ProcessOnlyOnce>Обработка только один раз</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Обработка только в "нормальном окне</ProcessOnlyWhenNormalWindow>
+  <Pixel>px</Pixel>
+  <Plugin>Плагины</Plugin>
+  <PluginExplanation>Плагины могут добавить дополнительную функциональность. Подробные инструкции см. в разделе "Readme (инструкции)".</PluginExplanation>
+  <PluginSettings>Конфигурация подключаемого модуля</PluginSettings>
+  <PluginTestMessage>Эта функция находится в стадии тестирования и может быть нестабильной, например.</PluginTestMessage>
+  <Position>Положение.</Position>
+  <PrimaryDisplay>Верхняя левая часть основного дисплея 'x=0, y=0'.</PrimaryDisplay>
+  <ProcessOnlyOnce>Обрабатывается только один раз</ProcessOnlyOnce>
+  <ProcessOnlyWhenNormalWindow>Обрабатывается только в "обычном окне</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Интервал обработки (миллисекунды)</ProcessingInterval>
-  <ProcessingName>Название обработки</ProcessingName>
+  <ProcessingName>Имя обработки</ProcessingName>
   <ProcessingSettings>Настройка обработки</ProcessingSettings>
   <ProcessingState>Статус обработки</ProcessingState>
   <ProcessingType>Тип обработки</ProcessingType>
   <ProcessingWindowRange>Диапазон обрабатываемых окон</ProcessingWindowRange>
   <Ratio>Соотношение</Ratio>
-  <RegisterMultipleWindowActions>Зарегистрируйте несколько видов обработки окон</RegisterMultipleWindowActions>
-  <RegisteredName>Регистрационное имя</RegisteredName>
+  <RegisterMultipleWindowActions>Регистрация нескольких видов обработки окон</RegisterMultipleWindowActions>
+  <RegisteredName>Имя регистрации</RegisteredName>
   <ReportsAndRequests>Отчет, запрос</ReportsAndRequests>
-  <RetrievedAfterFiveSeconds>Информация об окне извлекается через 5 секунд, пожалуйста, активируйте окно, для которого вы хотите получить информацию в течение 5 секунд.</RetrievedAfterFiveSeconds>
+  <Restart>Реактивация.</Restart>
+  <RetrievedAfterFiveSeconds>Информация об окне извлекается через 5 секунд, пожалуйста, активируйте окно, для которого вы хотите извлечь информацию в течение 5 секунд.</RetrievedAfterFiveSeconds>
   <RightEdge>Правый конец</RightEdge>
-  <RunAtWindowsStartup>Выполняется при запуске Windows</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Запуск при загрузке Windows (с правами администратора)</RunAtWindowsStartupAdministrator>
+  <RunAtWindowsStartup>Запуск при запуске Windows</RunAtWindowsStartup>
+  <RunAtWindowsStartupAdministrator>Запуск при запуске Windows (с правами администратора)</RunAtWindowsStartupAdministrator>
   <Select>Выбор.</Select>
-  <SelectionComplete>Избранные.</SelectionComplete>
-  <Setting>Настройки</Setting>
-  <SettingsValue>Набор ценностей.</SettingsValue>
+  <SelectionComplete>Выбрано.</SelectionComplete>
+  <Setting>Параметры</Setting>
+  <SettingsValue>Набор значений.</SettingsValue>
   <ShareSettings>Хотите ли вы поделиться информацией о конфигурации со всеми пользователями?</ShareSettings>
-  <Show>Отображается</Show>
+  <Show>Отображается.</Show>
+  <ShowThisApplicationWindow>Показывать это окно приложения</ShowThisApplicationWindow>
   <Size>Размер</Size>
   <SizeChangeAmount>Величина изменения размера</SizeChangeAmount>
-  <SoftwareName>Название программного обеспечения</SoftwareName>
+  <SoftwareName>Имя программного обеспечения</SoftwareName>
   <SpecifiedDisplay>Указанный дисплей</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Уточнить/отпустить прозрачность</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Укажите положение и размер</SpecifyPositionAndSize>
-  <SpecifyTransparency>Укажите прозрачность</SpecifyTransparency>
-  <SpecifyWindow>Выделенное окно</SpecifyWindow>
-  <StartStopProcessingOfMagnet>Запуск/остановка обработки 'Магнит</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Запуск/остановка обработки 'Окно обозначения</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Остановите обработку, если отображается окно добавления/изменения.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Остановка обработки, если окно отображается в полноэкранном режиме</StopProcessingWhenWindowIsFullScreen>
+  <SpecifyCancelTransparency>Указать/ослабить прозрачность</SpecifyCancelTransparency>
+  <SpecifyPositionAndSize>Указать положение и размер</SpecifyPositionAndSize>
+  <SpecifyTransparency>Указать прозрачность</SpecifyTransparency>
+  <SpecifyWindow>Указанное окно</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>Запуск/остановка обработки 'Все окна'</StartStopProcessingOfAllWindow>
+  <StartStopProcessingOfMagnet>Запуск/остановка обработки "Магнит".</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>Запуск/остановка обработки "Назначенные окна".</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Остановить обработку, если отображается окно добавления/изменения.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Остановка обработки при отображении окна на весь экран</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>Время остановки при застревании (миллисекунды)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Есть дублирующие элементы.</ThereAreDuplicateItems>
+  <ThereAreDuplicateItems>Имеются дубликаты элементов.</ThereAreDuplicateItems>
   <ThereIsADuplicateProcessingName>Имеются дублирующиеся имена процессов.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Имеются дубликаты регистрационных имен.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>Существует последняя версия.</ThereIsLatestVersion>
+  <ThereIsADuplicateRegistrationName>Имеются дублирующиеся имена регистрации.</ThereIsADuplicateRegistrationName>
+  <ThereIsLatestVersion>Есть последняя версия.</ThereIsLatestVersion>
   <Timer>Таймер</Timer>
   <TimerProcessing>Процесс таймера</TimerProcessing>
-  <TitleName>Титульное имя.</TitleName>
-  <TitleNameChanged>Название титула было изменено.</TitleNameChanged>
+  <TitleName>Название.</TitleName>
+  <TitleNameChanged>Название заголовка было изменено.</TitleNameChanged>
   <TitleNameExclusionString>Строка, содержащаяся в названии заголовка</TitleNameExclusionString>
-  <TitleNameRequirements>Название название условия обработки</TitleNameRequirements>
-  <TopEdge>Верхняя часть</TopEdge>
-  <Translators>Переводчик: DeepL Перевод</Translators>
+  <TitleNameRequirements>Условия обработки названия заголовка</TitleNameRequirements>
+  <TopEdge>Верхний конец</TopEdge>
+  <Translators>Переводчик: DeepL</Translators>
   <Transparency>Прозрачность</Transparency>
   <UpdateCheck>Подтверждение обновления</UpdateCheck>
   <UpdateCheckFailed>Подтверждение обновления не удалось.</UpdateCheckFailed>
-  <UpdateHistory>История обновления</UpdateHistory>
-  <Version>Версия</Version>
+  <UpdateHistory>История обновлений</UpdateHistory>
+  <Version>Версия.</Version>
   <WaitTimeToProcessingNextWindow>Задержка обработки следующего окна (миллисекунды)</WaitTimeToProcessingNextWindow>
   <Website>Сайт</Website>
   <Width>Ширина</Width>
   <WidthSpecification>Спецификация ширины</WidthSpecification>
   <WindowDecide>Определение окна</WindowDecide>
-  <WindowInformation>Информация об окнах</WindowInformation>
-  <WindowMoveOutsideToInside>Если окно находится за пределами экрана, переместите его на внутреннюю сторону экрана</WindowMoveOutsideToInside>
+  <WindowDesignateMethod>Как указать суждение об окне</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>Окна можно оценивать, указывая "имя заголовка", "имя класса" и "имя файла".
+Что следует и что не следует указывать, для каждого окна по-разному.
+Если указать все, окно может быть не обработано.
+Для программ, в которых "имя класса" меняется при каждом отображении окна, Не указывайте "имя класса".
+Для приложений UWP 'имя класса' и 'имя файла' одинаковы для всех приложений, за исключением некоторых, Если 'имя класса' не указано, оно не может быть правильно идентифицировано, и будут обрабатываться окна из других приложений.
+Рекомендуется указывать все "Имя заголовка", "Имя класса" и "Имя файла".
+Имя класса - "ApplicationFrameWindow", а имя файла - "C:\WINDOWS\system32\ApplicationFrameHost.exe", (оно может измениться с обновлением Windows).</WindowDesignateMethodExplain>
+  <WindowInformation>Информация об окне.</WindowInformation>
+  <WindowMoveOutsideToInside>Если окно находится за пределами экрана, переместите его на экран</WindowMoveOutsideToInside>
   <WindowState>Состояние окна</WindowState>
-  <WindowWithTitleName>Окно с названием заголовка</WindowWithTitleName>
-  <WindowWithoutTitleName>Окно без названия заголовка</WindowWithoutTitleName>
+  <WindowWithTitleName>Окно с названием</WindowWithTitleName>
+  <WindowWithoutTitleName>Окно без названия</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>
   <Yes>Да Нет</Yes>

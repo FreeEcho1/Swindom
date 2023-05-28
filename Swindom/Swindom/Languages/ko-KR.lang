@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>새 버전으로 설정 변경 "예" / 수동으로 변경 "아니오" / 처리 비활성화 "취소"</ChangeSettingToNewVersion>
  <ChangeVersion>버전이 변경되었습니다.</ChangeVersion>
  <Check>확인</Check>
@@ -21,20 +21,20 @@
   <BatchProcessingOfSpecifyWindow>'지정창' 일괄 처리</BatchProcessingOfSpecifyWindow>
   <BottomEdge>하단</BottomEdge>
   <Cancel>취소</Cancel>
+  <CancelMoveWindow>이동하지 않는 창</CancelMoveWindow>
   <CaseSensitiveWindowQueries>창 판정에서 대/소문자 구분하기</CaseSensitiveWindowQueries>
   <CheckBetaVersion>베타 버전 포함 업데이트 확인</CheckBetaVersion>
   <CheckReadme>지정 방법은 'Readme(설명서)'에서 확인하시기 바랍니다.</CheckReadme>
   <ClassName>클래스 이름</ClassName>
-  <ClientArea>클라이언트 영역 대상</ClientArea>
+  <ClientArea>클라이언트 영역을 대상으로 한다</ClientArea>
   <CloseWindow>창 닫기</CloseWindow>
   <ConditionsThatDoNotProcess>처리하지 않는 조건</ConditionsThatDoNotProcess>
   <Coordinate>좌표</Coordinate>
   <CoordinateSpecification>좌표 지정</CoordinateSpecification>
   <Copy>복사</Copy>
-  <Create>생성된</Create>
   <CurrentDisplay>현재 디스플레이</CurrentDisplay>
   <DarkMode>다크 모드</DarkMode>
-  <DecisionDistanceToPaste>붙여넣기 판정 거리</DecisionDistanceToPaste>
+  <DecisionDistanceToPaste>붙여넣기 판단 거리</DecisionDistanceToPaste>
   <Delete>삭제</Delete>
   <Deleted>삭제했습니다.</Deleted>
   <Display>디스플레이</Display>
@@ -43,11 +43,12 @@
   <DoNotChange>변경하지 않음</DoNotChange>
   <DoNotChangePositionSizeOutOfScreen>화면 밖으로 나올 경우 위치나 크기를 변경하지 않음</DoNotChangePositionSizeOutOfScreen>
   <DoNotSpecify>지정하지 않음</DoNotSpecify>
-  <EachDisplay>각 디스플레이의 왼쪽 상단을 'x=0, y=0'</EachDisplay>
+  <EachDisplay>각 디스플레이의 왼쪽 위를 'x=0, y=0'</EachDisplay>
   <End>종료</End>
   <Event>이벤트</Event>
   <ExactMatch>완전 일치</ExactMatch>
-  <ExplanationOfSpecifyWindow>창을 지정하여 자동으로 처리할 수 있습니다. 자동 처리하지 않고 단축키만으로 처리하고 싶다면, 체크를 해제하여 비활성화 상태로 설정하십시오.</ExplanationOfSpecifyWindow>
+  <ExplanationOfAllWindow>지정한 창을 제외한 모든 창을 처리할 수 있습니다. '지정 창'에서 지정한 창도 제외됩니다.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>창을 지정하여 자동으로 처리할 수 있습니다. 자동 처리하지 않고 단축키만으로 처리하고 싶다면 체크를 해제하여 비활성 상태로 설정하십시오.</ExplanationOfSpecifyWindow>
   <FileName>파일 이름</FileName>
   <FileSelection>파일 선택</FileSelection>
   <Forefront>최전방</Forefront>
@@ -57,7 +58,7 @@
   <GetWindowInformation>창 정보 가져오기</GetWindowInformation>
   <Height>높이</Height>
   <HeightSpecification>높이 지정</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>누른 채로 선택할 창에 마우스 커서 이동하기.</HoldDownMouseCursorMoveToSelectWindow>
+  <HoldDownMouseCursorMoveToSelectWindow>누른 채로 선택할 창에 마우스 커서를 이동합니다.</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>단축키</Hotkey>
   <HotkeyExplanation>단축키로 활성 창(입력을 받고 있는 상태)을 처리할 수 있습니다. '선택' 버튼에서는 단축키를 사용하지 않고도 처리할 창을 선택하여 처리할 수 있습니다.</HotkeyExplanation>
   <HotkeysDoNotStop>단축키는 정지시키지 않는다(전체 화면 창이 있는 경우).</HotkeysDoNotStop>
@@ -82,14 +83,16 @@
   <MinimizeStart>최소화 시작됨</MinimizeStart>
   <Modified>수정되었습니다.</Modified>
   <Modify>수정</Modify>
+  <MoveAllWindowToSpecifiedPosition>모든 창을 지정한 위치로 이동</MoveAllWindowToSpecifiedPosition>
   <MoveDown>아래로 이동</MoveDown>
   <MovePastePosition>붙여넣기 위치 이동</MovePastePosition>
   <MoveSizeChangeEnd>이동 및 크기 변경이 완료되었습니다.</MoveSizeChangeEnd>
   <MoveUp>위로 이동</MoveUp>
   <MoveXCoordinate>X좌표 이동</MoveXCoordinate>
   <MoveYCoordinate>Y좌표 이동</MoveYCoordinate>
+  <NeedRestart>Swindom을 재시작해야 합니다.</NeedRestart>
   <No>아니요</No>
-  <NormalExecution>정상 실행인가요? (관리자 권한 없음 - '예' / 관리자 권한 있음 - '아니오')</NormalExecution>
+  <NormalExecution>정상 실행인가요? (관리자 권한 없음 - '예' / 관리자 권한 있음 - '아니요')</NormalExecution>
   <NormalWindow>일반 창</NormalWindow>
   <NotIncludePath>경로를 포함하지 않음</NotIncludePath>
   <NumberOfTimesNotToProcessingFirst>처음 처리하지 않는 횟수 (실행 직후 처리 지연)</NumberOfTimesNotToProcessingFirst>
@@ -106,6 +109,11 @@
   <PasteWithCtrlKeyPressed>Ctrl 키를 누른 상태에서 붙여넣기</PasteWithCtrlKeyPressed>
   <Percent>%로</Percent>
   <Pixel>px</Pixel>
+  <Plugin>플러그인</Plugin>
+  <PluginExplanation>플러그인은 기능을 추가할 수 있습니다. 자세한 설명은 'Readme(설명서)'에서 확인하시기 바랍니다.</PluginExplanation>
+  <PluginSettings>플러그인 설정</PluginSettings>
+  <PluginTestMessage>테스트 중인 기능이기 때문에 동작이 불안정할 수 있습니다.</PluginTestMessage>
+  <Position>위치</Position>
   <PrimaryDisplay>기본 디스플레이의 왼쪽 상단을 'x=0, y=0'</PrimaryDisplay>
   <ProcessOnlyOnce>한 번만 처리</ProcessOnlyOnce>
   <ProcessOnlyWhenNormalWindow>'일반 창'일 때만 처리한다.</ProcessOnlyWhenNormalWindow>
@@ -119,7 +127,8 @@
   <RegisterMultipleWindowActions>창 처리를 여러 개 등록</RegisterMultipleWindowActions>
   <RegisteredName>등록명</RegisteredName>
   <ReportsAndRequests>보고, 요청</ReportsAndRequests>
-  <RetrievedAfterFiveSeconds>5초 후에 창 정보가 수집되므로, 5초 이내에 정보를 수집하는 창을 활성화하세요.</RetrievedAfterFiveSeconds>
+  <Restart>재시작</Restart>
+  <RetrievedAfterFiveSeconds>5초 후에 창 정보가 조회되므로, 5초 이내에 정보를 조회하는 창을 활성화해 주세요.</RetrievedAfterFiveSeconds>
   <RightEdge>맨 오른쪽</RightEdge>
   <RunAtWindowsStartup>Windows 시작 시 실행</RunAtWindowsStartup>
   <RunAtWindowsStartupAdministrator>Windows 시작 시 실행 (관리자 권한)</RunAtWindowsStartupAdministrator>
@@ -129,6 +138,7 @@
   <SettingsValue>설정한 값</SettingsValue>
   <ShareSettings>모든 사용자에게 설정 정보를 공유하시겠습니까?</ShareSettings>
   <Show>표시됨</Show>
+  <ShowThisApplicationWindow>이 애플리케이션의 창을 표시합니다.</ShowThisApplicationWindow>
   <Size>크기</Size>
   <SizeChangeAmount>크기 변경량</SizeChangeAmount>
   <SoftwareName>소프트웨어 이름</SoftwareName>
@@ -137,8 +147,9 @@
   <SpecifyPositionAndSize>위치 및 크기 지정</SpecifyPositionAndSize>
   <SpecifyTransparency>투명도 지정</SpecifyTransparency>
   <SpecifyWindow>지정 창 지정</SpecifyWindow>
-  <StartStopProcessingOfMagnet>"자석」처리 시작/정지</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>"지정창의 처리 시작/정지</StartStopProcessingOfSpecifyWindow>
+  <StartStopProcessingOfAllWindow>'모든 창' 처리 시작/정지</StartStopProcessingOfAllWindow>
+  <StartStopProcessingOfMagnet>'자석' 처리 시작/정지</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>'지정 창'의 처리 시작/정지</StartStopProcessingOfSpecifyWindow>
   <StopProcessingShowAddModify>추가/수정 창이 표시되어 있는 경우 처리 정지</StopProcessingShowAddModify>
   <StopProcessingWhenWindowIsFullScreen>창이 전체화면일 경우 처리 정지</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>붙여넣기 시 정지 시간 (밀리초)</StopTimeWhenPasting>
@@ -153,7 +164,7 @@
   <TitleNameExclusionString>타이틀 이름에 포함된 문자열</TitleNameExclusionString>
   <TitleNameRequirements>제목명 처리 조건</TitleNameRequirements>
   <TopEdge>상단</TopEdge>
-  <Translators>번역자 : DeepL 번역</Translators>
+  <Translators>번역자 : DeepL</Translators>
   <Transparency>투명도</Transparency>
   <UpdateCheck>업데이트 확인</UpdateCheck>
   <UpdateCheckFailed>업데이트 확인에 실패했습니다.</UpdateCheckFailed>
@@ -163,12 +174,20 @@
   <Website>웹 사이트</Website>
   <Width>너비</Width>
   <WidthSpecification>너비 지정</WidthSpecification>
-  <WindowDecide>창 판단</WindowDecide>
+  <WindowDecide>창 판정</WindowDecide>
+  <WindowDesignateMethod>창 판정 지정 방법</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>창의 판단은 '제목명', '클래스명', '파일명'을 지정할 수 있습니다.
+무엇을 지정하고, 무엇을 지정하지 말아야 하는지는 각 창마다 다릅니다.
+모두 지정하면 창이 처리되지 않을 수 있습니다.
+창이 표시될 때마다 '클래스명'이 변경되는 소프트웨어의 경우,'클래스명'은 지정하지 마십시오.
+UWP 앱은 '클래스명'과 '파일명'은 일부를 제외하고는 모든 앱이 동일하기 때문입니다,'제목명'이 없으면 제대로 판별하지 못하고 다른 앱의 창도 함께 처리됩니다.
+'제목명', '클래스명', '파일명'을 모두 지정하는 것이 좋습니다.
+클래스 이름은 'ApplicationFrameWindow', 파일 이름은 'C:\WINDOWS\system32\ApplicationFrameHost.exe'입니다,입니다(Windows 업데이트에 따라 변경될 수 있습니다).</WindowDesignateMethodExplain>
   <WindowInformation>창 정보</WindowInformation>
-  <WindowMoveOutsideToInside>창이 화면 밖이면 화면 내로 이동</WindowMoveOutsideToInside>
+  <WindowMoveOutsideToInside>창이 화면 밖에 있으면 화면 내로 이동</WindowMoveOutsideToInside>
   <WindowState>창 상태</WindowState>
-  <WindowWithTitleName>제목명이 있는 창</WindowWithTitleName>
-  <WindowWithoutTitleName>제목명이 없는 창</WindowWithoutTitleName>
+  <WindowWithTitleName>제목이 있는 창</WindowWithTitleName>
+  <WindowWithoutTitleName>제목이 없는 창</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>
   <Yes>예</Yes>

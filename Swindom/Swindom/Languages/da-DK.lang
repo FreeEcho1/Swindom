@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>Ændre indstillingerne til den nye version "Ja" / Ændre manuelt "Nej" / Deaktiver processen "Annuller".</ChangeSettingToNewVersion>
  <ChangeVersion>Version er blevet ændret</ChangeVersion>
  <Check>Bekræftelse.</Check>
@@ -11,60 +11,61 @@
   <Added>Tilføjet.</Added>
   <AllWindow>Alle vinduer</AllWindow>
   <AllowDelete>Ønsker du at slette?</AllowDelete>
-  <AlwaysCancelForefront>Altid frigive først og fremmest</AlwaysCancelForefront>
-  <AlwaysForefront>Altid først og fremmest</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Altid bringe til forreste/afskaffe</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Bevægelse</AmountOfMovement>
+  <AlwaysCancelForefront>Altid frigive forrest</AlwaysCancelForefront>
+  <AlwaysForefront>Altid forreste</AlwaysForefront>
+  <AlwaysShowOrCancelOnTop>Altid bringe til forreste/fjernelse</AlwaysShowOrCancelOnTop>
+  <AmountOfMovement>Flytning</AmountOfMovement>
   <Announce>Meddel</Announce>
   <AutomaticUpdateCheck>Automatisk opdateringsbekræftelse ved kørselstid</AutomaticUpdateCheck>
-  <BackwardMatch>Bagudrettet match</BackwardMatch>
+  <BackwardMatch>Tilbagevendende match</BackwardMatch>
   <BatchProcessingOfSpecifyWindow>Batchbehandling af "udpegede vinduer</BatchProcessingOfSpecifyWindow>
   <BottomEdge>Nederste ende</BottomEdge>
   <Cancel>Annuller</Cancel>
-  <CaseSensitiveWindowQueries>Skrivefølsom i vinduesbestemmelse</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Tjek for opdateringer, herunder betaversioner.</CheckBetaVersion>
-  <CheckReadme>Se "Readme (instruktioner)" for at se, hvordan du angiver det.</CheckReadme>
+  <CancelMoveWindow>Vinduer, der ikke bevæger sig</CancelMoveWindow>
+  <CaseSensitiveWindowQueries>Bestemmelse af vinduer med hensyn til store og små bogstaver</CaseSensitiveWindowQueries>
+  <CheckBetaVersion>Kontrol for opdateringer, herunder betaversioner.</CheckBetaVersion>
+  <CheckReadme>Se "Readme (instruktioner)" for oplysninger om, hvordan du skal angive.</CheckReadme>
   <ClassName>Klassens navn</ClassName>
-  <ClientArea>Målområde for kunderne</ClientArea>
+  <ClientArea>Målklientområde</ClientArea>
   <CloseWindow>Luk vindue</CloseWindow>
-  <ConditionsThatDoNotProcess>Betingelse for ikke at behandle</ConditionsThatDoNotProcess>
+  <ConditionsThatDoNotProcess>Betingelse, der ikke skal behandles</ConditionsThatDoNotProcess>
   <Coordinate>Koordinater</Coordinate>
   <CoordinateSpecification>Koordinatspecifikation</CoordinateSpecification>
   <Copy>Kopier</Copy>
-  <Create>Oprettet</Create>
-  <CurrentDisplay>Aktuel visning</CurrentDisplay>
+  <CurrentDisplay>Nuværende visning</CurrentDisplay>
   <DarkMode>Mørk tilstand</DarkMode>
-  <DecisionDistanceToPaste>Afgørelse afstand til indsættelse</DecisionDistanceToPaste>
+  <DecisionDistanceToPaste>Indsæt beslutningsafstand</DecisionDistanceToPaste>
   <Delete>Slettet</Delete>
   <Deleted>Slettet.</Deleted>
-  <Display>Vis</Display>
+  <Display>Visning</Display>
   <DisplayInformationUpdate>Visningsoplysninger opdateret</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Display, der skal bruges som reference</DisplayToUseAsStandard>
+  <DisplayToUseAsStandard>Visning, der skal anvendes som reference</DisplayToUseAsStandard>
   <DoNotChange>Må ikke ændres</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Ændr ikke position eller størrelse, hvis den ikke er på skærmen</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Ikke specificeret</DoNotSpecify>
+  <DoNotChangePositionSizeOutOfScreen>Ændrer ikke position eller størrelse, hvis den ikke vises på skærmen</DoNotChangePositionSizeOutOfScreen>
+  <DoNotSpecify>Ikke angivet</DoNotSpecify>
   <EachDisplay>Øverste venstre hjørne af hvert display "x=0, y=0"</EachDisplay>
   <End>Slut</End>
   <Event>Begivenhed</Event>
-  <ExactMatch>Præcist matchende.</ExactMatch>
-  <ExplanationOfSpecifyWindow>Du kan angive et vindue, der skal behandles automatisk. Hvis du ikke ønsker at få den behandlet automatisk og kun vil bruge genvejstaster, skal du fjerne markeringen for at deaktivere den.</ExplanationOfSpecifyWindow>
+  <ExactMatch>Præcis overensstemmelse.</ExactMatch>
+  <ExplanationOfAllWindow>Alle vinduer kan behandles undtagen det angivne vindue. De vinduer, der er angivet i "Specificeret vindue", er også udelukket.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>Du kan angive et vindue og få det behandlet automatisk. Hvis du kun vil behandle med genvejstaster uden automatisk behandling, skal du fjerne markeringen for at deaktivere denne indstilling.</ExplanationOfSpecifyWindow>
   <FileName>Filnavn</FileName>
   <FileSelection>Valg af fil</FileSelection>
   <Forefront>Foremost</Forefront>
-  <Foregrounded>I forgrunden.</Foregrounded>
-  <ForwardMatch>Match forgrund</ForwardMatch>
+  <Foregrounded>Forrest i forgrunden.</Foregrounded>
+  <ForwardMatch>Match forgrunds</ForwardMatch>
   <General>Generelt</General>
   <GetWindowInformation>Indsamling af vinduesoplysninger</GetWindowInformation>
   <Height>Højde</Height>
   <HeightSpecification>Angiv højde</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Flyt musemarkøren til det vindue, der skal vælges, mens du holder nede</HoldDownMouseCursorMoveToSelectWindow>
+  <HoldDownMouseCursorMoveToSelectWindow>Flyt musemarkøren til det vindue, der skal vælges, mens du holder musen nede</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Genvejstaster</Hotkey>
   <HotkeyExplanation>Genvejstaster kan bruges til at behandle det aktive vindue (acceptere input). Med knappen "Select" (Vælg) kan du vælge det vindue, du vil behandle, uden at bruge en genvejstast.</HotkeyExplanation>
   <HotkeysDoNotStop>Genvejstaster stopper ikke (hvis der er et fuldskærmsvindue).</HotkeysDoNotStop>
   <IncludePath>Medtag stier</IncludePath>
   <IncreaseDecreaseHeight>Forøgelse/formindskelse af højden</IncreaseDecreaseHeight>
   <IncreaseDecreaseWidth>Forøgelse/formindskelse af bredden</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Forøg/formindsk bredden og højden</IncreaseDecreaseWidthAndHeight>
+  <IncreaseDecreaseWidthAndHeight>Forøg/formindsk bredde og højde</IncreaseDecreaseWidthAndHeight>
   <Information>Info.</Information>
   <InformationToBeObtained>Oplysninger, der skal hentes</InformationToBeObtained>
   <Language>Sprog.</Language>
@@ -75,20 +76,22 @@
   <Magnet>Magnet.</Magnet>
   <MagnetExplanation>Fastgøres til kanten af skærmen eller et andet vindue, når vinduet flyttes med musen.</MagnetExplanation>
   <Manual>Beskrivelse</Manual>
-  <Maximize>Maksimer</Maximize>
-  <Middle>Center</Middle>
+  <Maximize>Maximere</Maximize>
+  <Middle>Centreret</Middle>
   <Minimize>Minimeret</Minimize>
-  <MinimizeEnd>Minimeringen er blevet afsluttet</MinimizeEnd>
-  <MinimizeStart>Minimering påbegyndt</MinimizeStart>
+  <MinimizeEnd>Minimering er afsluttet</MinimizeEnd>
+  <MinimizeStart>Minimering er påbegyndt.</MinimizeStart>
   <Modified>Rettet.</Modified>
-  <Modify>Rettet</Modify>
-  <MoveDown>Skift ned</MoveDown>
+  <Modify>Rettet.</Modify>
+  <MoveAllWindowToSpecifiedPosition>Flyt alle vinduer til den angivne position</MoveAllWindowToSpecifiedPosition>
+  <MoveDown>Flyttet ned</MoveDown>
   <MovePastePosition>Indsæt position flyttet</MovePastePosition>
-  <MoveSizeChangeEnd>Flyt og ændre størrelse færdig</MoveSizeChangeEnd>
-  <MoveUp>Flyt dig op</MoveUp>
+  <MoveSizeChangeEnd>Færdig med at flytte og ændre størrelse</MoveSizeChangeEnd>
+  <MoveUp>Flytte op</MoveUp>
   <MoveXCoordinate>Flyt X-koordinat</MoveXCoordinate>
   <MoveYCoordinate>Flyt Y-koordinat</MoveYCoordinate>
-  <No>Nej Nej Nej</No>
+  <NeedRestart>Swindom skal genstartes.</NeedRestart>
+  <No>Nej.</No>
   <NormalExecution>Normal udførelse? (uden administratorrettigheder - "Ja" / med administratorrettigheder - "Nej")</NormalExecution>
   <NormalWindow>Normalt vindue</NormalWindow>
   <NotIncludePath>Indeholder ikke stier</NotIncludePath>
@@ -99,74 +102,90 @@
   <OnceWindowOpen>Når et vindue åbnes</OnceWindowOpen>
   <OnlyActiveWindowSpecifyWindow>Kun det aktive vindue i det "angivne vindue" behandles</OnlyActiveWindowSpecifyWindow>
   <Open>Åbn</Open>
-  <OtherThanSpecifiedVersion>En anden version end den angivne version (f.eks. op til minor er muligt)</OtherThanSpecifiedVersion>
-  <PartialMatch>Delvis match</PartialMatch>
+  <OtherThanSpecifiedVersion>Anden end den angivne version (f.eks. op til mindre version mulig)</OtherThanSpecifiedVersion>
+  <PartialMatch>Delvis overensstemmelse</PartialMatch>
   <PasteIntoAnotherWindow>Indsæt til et andet vindue</PasteIntoAnotherWindow>
   <PasteToEdgeOfScreen>Indsæt til kanten af skærmen</PasteToEdgeOfScreen>
   <PasteWithCtrlKeyPressed>Indsæt med Ctrl-tasten trykket ned</PasteWithCtrlKeyPressed>
   <Percent>% (f.eks. %)</Percent>
-  <Pixel>px.</Pixel>
-  <PrimaryDisplay>x=0, y=0" i øverste venstre hjørne af det primære display</PrimaryDisplay>
+  <Pixel>px</Pixel>
+  <Plugin>Indsætningsmuligheder</Plugin>
+  <PluginExplanation>Plug-ins kan tilføje yderligere funktionalitet. Se "Readme (instruktioner)" for detaljerede instruktioner.</PluginExplanation>
+  <PluginSettings>Konfiguration af plug-ins</PluginSettings>
+  <PluginTestMessage>Dette er en funktion under afprøvning og kan være ustabil, f.eks.</PluginTestMessage>
+  <Position>Position.</Position>
+  <PrimaryDisplay>Øverst til venstre på primærskærmen 'x=0, y=0'</PrimaryDisplay>
   <ProcessOnlyOnce>Behandles kun én gang</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Behandles kun i "normalt vindue</ProcessOnlyWhenNormalWindow>
+  <ProcessOnlyWhenNormalWindow>Behandles kun, når den er i "normalt vindue</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Behandlingsinterval (millisekunder)</ProcessingInterval>
-  <ProcessingName>Navn på forarbejdning</ProcessingName>
-  <ProcessingSettings>Indstilling af forarbejdningen</ProcessingSettings>
+  <ProcessingName>Navn på behandling</ProcessingName>
+  <ProcessingSettings>Indstilling for behandling</ProcessingSettings>
   <ProcessingState>Status for behandling</ProcessingState>
-  <ProcessingType>Type af forarbejdning</ProcessingType>
-  <ProcessingWindowRange>Rækkevidde af vinduer, der skal behandles</ProcessingWindowRange>
+  <ProcessingType>Type af behandling</ProcessingType>
+  <ProcessingWindowRange>Område af vinduer, der skal behandles</ProcessingWindowRange>
   <Ratio>Forhold</Ratio>
   <RegisterMultipleWindowActions>Registrer flere vinduesbehandlinger</RegisterMultipleWindowActions>
   <RegisteredName>Navn på registrering</RegisteredName>
   <ReportsAndRequests>Rapport, anmodning</ReportsAndRequests>
+  <Restart>Reaktivering.</Restart>
   <RetrievedAfterFiveSeconds>Vinduesoplysninger hentes efter 5 sekunder, aktiver venligst det vindue, som du ønsker at hente oplysninger om, inden for 5 sekunder.</RetrievedAfterFiveSeconds>
   <RightEdge>Højre ende</RightEdge>
-  <RunAtWindowsStartup>Udføres ved opstart af Windows</RunAtWindowsStartup>
+  <RunAtWindowsStartup>Køres ved opstart af Windows</RunAtWindowsStartup>
   <RunAtWindowsStartupAdministrator>Køres ved opstart af Windows (administratorrettigheder)</RunAtWindowsStartupAdministrator>
-  <Select>Udvælgelse.</Select>
-  <SelectionComplete>Udvalgt.</SelectionComplete>
+  <Select>Valg.</Select>
+  <SelectionComplete>Valgt.</SelectionComplete>
   <Setting>Indstillinger</Setting>
-  <SettingsValue>Værdisæt.</SettingsValue>
+  <SettingsValue>Indstillet værdi.</SettingsValue>
   <ShareSettings>Ønsker du at dele konfigurationsoplysningerne med alle brugere?</ShareSettings>
-  <Show>Vises</Show>
+  <Show>Vises.</Show>
+  <ShowThisApplicationWindow>Vis dette programvindue</ShowThisApplicationWindow>
   <Size>Størrelse</Size>
-  <SizeChangeAmount>Størrelsesændringens omfang</SizeChangeAmount>
-  <SoftwareName>Navn på software</SoftwareName>
-  <SpecifiedDisplay>Angivet display</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Angiv/frigivelse af gennemsigtighed</SpecifyCancelTransparency>
+  <SizeChangeAmount>Omfanget af størrelsesændring</SizeChangeAmount>
+  <SoftwareName>Softwarens navn</SoftwareName>
+  <SpecifiedDisplay>Angivne skærm</SpecifiedDisplay>
+  <SpecifyCancelTransparency>Angiv/frigør gennemsigtighed</SpecifyCancelTransparency>
   <SpecifyPositionAndSize>Angiv position og størrelse</SpecifyPositionAndSize>
-  <SpecifyTransparency>Angiv gennemsigtighed</SpecifyTransparency>
-  <SpecifyWindow>Udpeget vindue</SpecifyWindow>
-  <StartStopProcessingOfMagnet>Start/stop af behandling af "magneter</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Start/stop af behandling af "Vindue til udpegning</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Stop behandlingen, hvis vinduet Tilføj/ændre vises.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Behandling stopper, hvis vinduet vises i fuld skærm</StopProcessingWhenWindowIsFullScreen>
+  <SpecifyTransparency>Angivelse af gennemsigtighed</SpecifyTransparency>
+  <SpecifyWindow>Angivet vindue</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>Start/stop behandling af "Alle vinduer</StartStopProcessingOfAllWindow>
+  <StartStopProcessingOfMagnet>Start/stop behandling af "Magnet".</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>Start/stop behandling af "udpegede vinduer".</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Stop behandling, hvis der vises et tilføj/ændringsvindue.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Stop for behandling, når et vindue vises i fuld skærm</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>Stoptid, når den sidder fast (millisekunder)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Der er dobbeltposter.</ThereAreDuplicateItems>
+  <ThereAreDuplicateItems>Der er dublerede punkter.</ThereAreDuplicateItems>
   <ThereIsADuplicateProcessingName>Der er dobbelte procesnavne.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Der er dobbeltregistrerede navne.</ThereIsADuplicateRegistrationName>
+  <ThereIsADuplicateRegistrationName>Der er dobbelte registreringsnavne.</ThereIsADuplicateRegistrationName>
   <ThereIsLatestVersion>Der er den seneste version.</ThereIsLatestVersion>
   <Timer>Timer</Timer>
   <TimerProcessing>Timer-proces</TimerProcessing>
-  <TitleName>Navn på titel.</TitleName>
-  <TitleNameChanged>Navnet på titlen er blevet ændret.</TitleNameChanged>
+  <TitleName>Titelnavn.</TitleName>
+  <TitleNameChanged>Titelnavnet er blevet ændret.</TitleNameChanged>
   <TitleNameExclusionString>Streng indeholdt i titelnavn</TitleNameExclusionString>
-  <TitleNameRequirements>Betegnelse navn forarbejdningsbetingelser</TitleNameRequirements>
-  <TopEdge>Øverste ende</TopEdge>
-  <Translators>Oversætter: DeepL Oversættelse</Translators>
+  <TitleNameRequirements>Betingelser for behandling af titelnavn</TitleNameRequirements>
+  <TopEdge>Top end</TopEdge>
+  <Translators>Oversætter: DeepL</Translators>
   <Transparency>Gennemsigtighed</Transparency>
   <UpdateCheck>Bekræftelse af opdatering</UpdateCheck>
   <UpdateCheckFailed>Opdateringsbekræftelse mislykkedes.</UpdateCheckFailed>
-  <UpdateHistory>Opdatering af historik</UpdateHistory>
-  <Version>Version</Version>
+  <UpdateHistory>Opdateringshistorik</UpdateHistory>
+  <Version>Version.</Version>
   <WaitTimeToProcessingNextWindow>Latency til behandling af næste vindue (millisekunder)</WaitTimeToProcessingNextWindow>
   <Website>Websted</Website>
   <Width>Bredde</Width>
-  <WidthSpecification>Breddespecifikation</WidthSpecification>
-  <WindowDecide>Bestemmelse af vinduer</WindowDecide>
-  <WindowInformation>Oplysninger om vinduer</WindowInformation>
-  <WindowMoveOutsideToInside>Hvis vinduet er uden for skærmen, skal du flytte det til indersiden af skærmen</WindowMoveOutsideToInside>
-  <WindowState>Status for vinduer</WindowState>
+  <WidthSpecification>Specifikation af bredden</WidthSpecification>
+  <WindowDecide>Fastsættelse af vindue</WindowDecide>
+  <WindowDesignateMethod>Sådan angives vinduesbedømmelse</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>Vinduer kan vurderes ved at angive "titelnavn", "klassens navn" og "filnavn".
+Hvad der skal og ikke skal angives, er forskelligt for hvert vindue.
+Hvis du angiver alt, bliver vinduet måske ikke behandlet.
+For software, hvor "klassens navn" ændres hver gang vinduet vises, Angiv ikke et "klassens navn".
+For UWP-apps er "klassens navn" og "filnavnet" det samme for alle apps undtagen for nogle få, Hvis der ikke er noget "titelnavn", kan det ikke identificeres korrekt, og vinduer fra andre apps vil blive behandlet.
+Det anbefales at angive alle "Titelnavn", "Klassens navn" og "Filnavn".
+Klassens navn er "ApplicationFrameWindow", og filnavnet er "C:\WINDOWS\system32\ApplicationFrameHost.exe", (dette kan ændre sig med Windows-opdateringer).</WindowDesignateMethodExplain>
+  <WindowInformation>Oplysninger om vinduet.</WindowInformation>
+  <WindowMoveOutsideToInside>Hvis vinduet er uden for skærmen, skal du flytte det ind på skærmen</WindowMoveOutsideToInside>
+  <WindowState>Status for vinduet</WindowState>
   <WindowWithTitleName>Vindue med titelnavn</WindowWithTitleName>
   <WindowWithoutTitleName>Vindue uden titelnavn</WindowWithoutTitleName>
   <X>X</X>

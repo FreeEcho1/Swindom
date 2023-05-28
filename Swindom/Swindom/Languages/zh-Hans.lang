@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>将设置更改为新版本“是”/手动更改“否”/禁用处理“取消”</ChangeSettingToNewVersion>
  <ChangeVersion>版本改变</ChangeVersion>
  <Check>确认</Check>
@@ -21,6 +21,7 @@
   <BatchProcessingOfSpecifyWindow>“指定窗口”的批处理</BatchProcessingOfSpecifyWindow>
   <BottomEdge>低端</BottomEdge>
   <Cancel>取消</Cancel>
+  <CancelMoveWindow>不动窗</CancelMoveWindow>
   <CaseSensitiveWindowQueries>使窗口判断区分大小写</CaseSensitiveWindowQueries>
   <CheckBetaVersion>检查更新，包括测试版</CheckBetaVersion>
   <CheckReadme>检查“自述文件”以了解如何指定它。</CheckReadme>
@@ -31,7 +32,6 @@
   <Coordinate>协调</Coordinate>
   <CoordinateSpecification>指定坐标</CoordinateSpecification>
   <Copy>复制</Copy>
-  <Create>创建</Create>
   <CurrentDisplay>当前显示</CurrentDisplay>
   <DarkMode>黑暗模式</DarkMode>
   <DecisionDistanceToPaste>判断粘贴距离</DecisionDistanceToPaste>
@@ -47,6 +47,7 @@
   <End>结尾</End>
   <Event>事件</Event>
   <ExactMatch>完美匹配</ExactMatch>
+  <ExplanationOfAllWindow>可以处理除指定窗口之外的所有窗口。 “指定窗口”中指定的窗口也被排除在外。</ExplanationOfAllWindow>
   <ExplanationOfSpecifyWindow>您可以指定一个窗口并自动处理它。 如果您只想使用热键处理而不自动处理，请取消选中并禁用它。</ExplanationOfSpecifyWindow>
   <FileName>文件名</FileName>
   <FileSelection>文件选择</FileSelection>
@@ -78,16 +79,18 @@
   <Maximize>最大化</Maximize>
   <Middle>中心</Middle>
   <Minimize>最小化</Minimize>
-  <MinimizeEnd>最小化完成</MinimizeEnd>
+  <MinimizeEnd>完成最小化</MinimizeEnd>
   <MinimizeStart>最小化开始</MinimizeStart>
   <Modified>固定的。</Modified>
   <Modify>使固定</Modify>
+  <MoveAllWindowToSpecifiedPosition>将所有窗口移动到指定位置</MoveAllWindowToSpecifiedPosition>
   <MoveDown>向下移动</MoveDown>
   <MovePastePosition>移动粘贴位置</MovePastePosition>
   <MoveSizeChangeEnd>完成移动和调整大小</MoveSizeChangeEnd>
   <MoveUp>提升</MoveUp>
   <MoveXCoordinate>移动 X 坐标</MoveXCoordinate>
   <MoveYCoordinate>移动 Y 坐标</MoveYCoordinate>
+  <NeedRestart>应该重新启动 Swindom。</NeedRestart>
   <No>不</No>
   <NormalExecution>是否正常运行？ （没有管理员权限 - '是'/有管理员权限 - '否'）</NormalExecution>
   <NormalWindow>普通窗口</NormalWindow>
@@ -106,9 +109,14 @@
   <PasteWithCtrlKeyPressed>按住 Ctrl 键粘贴</PasteWithCtrlKeyPressed>
   <Percent>%</Percent>
   <Pixel>像素</Pixel>
+  <Plugin>插入</Plugin>
+  <PluginExplanation>插件可以添加功能。 查看自述文件以获取详细说明。</PluginExplanation>
+  <PluginSettings>插件设置</PluginSettings>
+  <PluginTestMessage>由于这是一个正在测试的功能，因此有可能运行不稳定。</PluginTestMessage>
+  <Position>位置</Position>
   <PrimaryDisplay>主显示屏左上角的“x=0, y=0”</PrimaryDisplay>
   <ProcessOnlyOnce>只处理一次</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>仅处理“普通窗口”</ProcessOnlyWhenNormalWindow>
+  <ProcessOnlyWhenNormalWindow>只有当它是“普通窗口”时才处理</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>处理间隔（毫秒）</ProcessingInterval>
   <ProcessingName>进程名称</ProcessingName>
   <ProcessingSettings>处理设置</ProcessingSettings>
@@ -119,6 +127,7 @@
   <RegisterMultipleWindowActions>注册多个窗口进程</RegisterMultipleWindowActions>
   <RegisteredName>注册名称</RegisteredName>
   <ReportsAndRequests>报告，请求</ReportsAndRequests>
+  <Restart>重启</Restart>
   <RetrievedAfterFiveSeconds>窗口信息将在 5 秒后检索，因此请在 5 秒内激活窗口以检索信息。</RetrievedAfterFiveSeconds>
   <RightEdge>右端</RightEdge>
   <RunAtWindowsStartup>Windows 启动时运行</RunAtWindowsStartup>
@@ -129,6 +138,7 @@
   <SettingsValue>设定值</SettingsValue>
   <ShareSettings>您想与所有用户共享设置信息吗？</ShareSettings>
   <Show>显示</Show>
+  <ShowThisApplicationWindow>显示此应用程序的窗口</ShowThisApplicationWindow>
   <Size>尺寸</Size>
   <SizeChangeAmount>调整量</SizeChangeAmount>
   <SoftwareName>软件名称</SoftwareName>
@@ -137,6 +147,7 @@
   <SpecifyPositionAndSize>指定位置和大小</SpecifyPositionAndSize>
   <SpecifyTransparency>指定透明度</SpecifyTransparency>
   <SpecifyWindow>指定窗口</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>开始/停止处理“所有窗口”</StartStopProcessingOfAllWindow>
   <StartStopProcessingOfMagnet>“磁铁”加工开始/停止</StartStopProcessingOfMagnet>
   <StartStopProcessingOfSpecifyWindow>“指定窗口”的处理开始/停止</StartStopProcessingOfSpecifyWindow>
   <StopProcessingShowAddModify>如果显示添加/修改窗口，则停止处理</StopProcessingShowAddModify>
@@ -164,6 +175,14 @@
   <Width>宽度</Width>
   <WidthSpecification>宽度规格</WidthSpecification>
   <WindowDecide>窗口判断</WindowDecide>
+  <WindowDesignateMethod>如何指定窗口判断</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>可以指定“标题名”、“类名”和“文件名”来判断窗口。
+每个窗口指定什么和不指定什么是不同的。
+如果全部指定，则可能不会处理窗口。
+对于每次显示窗口时更改“类名”的软件，不要指定“类名”。
+UWP 应用程序具有相同的“类名”和“文件名”，除了一些，所以如果没有“标题名称”，则无法正确判断，其他应用的窗口也会被处理。
+最好指定所有“标题名”、“类名”和“文件名”。
+类名为“ApplicationFrameWindow”，文件名为“C:\WINDOWS\system32\ApplicationFrameHost.exe”，（可能随 Windows 更新而改变）。</WindowDesignateMethodExplain>
   <WindowInformation>窗口信息</WindowInformation>
   <WindowMoveOutsideToInside>如果窗口不在屏幕上，则将其移入</WindowMoveOutsideToInside>
   <WindowState>窗口状态</WindowState>

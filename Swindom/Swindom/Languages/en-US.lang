@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>Change settings to new version "Yes" / Change manually "No" / Disable process "Cancel</ChangeSettingToNewVersion>
  <ChangeVersion>Version has been changed</ChangeVersion>
  <Check>Confirmation</Check>
@@ -10,7 +10,7 @@
   <Add>Added</Add>
   <Added>Added.</Added>
   <AllWindow>All windows</AllWindow>
-  <AllowDelete>Do you want to delete?</AllowDelete>
+  <AllowDelete>Delete?</AllowDelete>
   <AlwaysCancelForefront>Always Remove Topmost</AlwaysCancelForefront>
   <AlwaysForefront>Always frontmost</AlwaysForefront>
   <AlwaysShowOrCancelOnTop>Always bring to foremost/unmove</AlwaysShowOrCancelOnTop>
@@ -21,9 +21,10 @@
   <BatchProcessingOfSpecifyWindow>Batch processing of "specified window</BatchProcessingOfSpecifyWindow>
   <BottomEdge>Bottom edge</BottomEdge>
   <Cancel>Cancel</Cancel>
+  <CancelMoveWindow>Windows that do not move</CancelMoveWindow>
   <CaseSensitiveWindowQueries>Case sensitive in window determination</CaseSensitiveWindowQueries>
   <CheckBetaVersion>Check for updates, including beta versions</CheckBetaVersion>
-  <CheckReadme>See "Readme (Instructions)" for how to specify</CheckReadme>
+  <CheckReadme>See "Readme (Instructions)" for instructions on how to specify</CheckReadme>
   <ClassName>Class Name</ClassName>
   <ClientArea>Target client area</ClientArea>
   <CloseWindow>Close window</CloseWindow>
@@ -31,11 +32,10 @@
   <Coordinate>Coordinates</Coordinate>
   <CoordinateSpecification>Coordinate specification</CoordinateSpecification>
   <Copy>Copy</Copy>
-  <Create>Created</Create>
   <CurrentDisplay>Current display</CurrentDisplay>
   <DarkMode>Dark mode</DarkMode>
   <DecisionDistanceToPaste>Paste Decision Distance</DecisionDistanceToPaste>
-  <Delete>Deleted</Delete>
+  <Delete>Delete</Delete>
   <Deleted>Deleted</Deleted>
   <Display>Display</Display>
   <DisplayInformationUpdate>Display Information Update</DisplayInformationUpdate>
@@ -47,7 +47,8 @@
   <End>End</End>
   <Event>Event</Event>
   <ExactMatch>Exact match</ExactMatch>
-  <ExplanationOfSpecifyWindow>You can specify a window to be processed automatically. If you wish to have it processed only by hot keys without automatic processing, uncheck the box to disable it.</ExplanationOfSpecifyWindow>
+  <ExplanationOfAllWindow>All windows except the specified window can be made to process. Windows specified in "Specified Window" are also excluded.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>You can specify a window to be processed automatically. If you want to process only with hotkeys without automatic processing, uncheck this checkbox to disable it.</ExplanationOfSpecifyWindow>
   <FileName>File Name</FileName>
   <FileSelection>File Selection</FileSelection>
   <Forefront>foreground</Forefront>
@@ -78,17 +79,19 @@
   <Maximize>Maximize</Maximize>
   <Middle>Center</Middle>
   <Minimize>Minimize</Minimize>
-  <MinimizeEnd>Minimization has been finished</MinimizeEnd>
+  <MinimizeEnd>Minimization finished</MinimizeEnd>
   <MinimizeStart>Minimization started</MinimizeStart>
   <Modified>Fixed</Modified>
   <Modify>Fixed</Modify>
-  <MoveDown>Shift down</MoveDown>
-  <MovePastePosition>Shift the position to paste</MovePastePosition>
+  <MoveAllWindowToSpecifiedPosition>Move all windows to specified position</MoveAllWindowToSpecifiedPosition>
+  <MoveDown>Move down</MoveDown>
+  <MovePastePosition>Shifted the position to paste</MovePastePosition>
   <MoveSizeChangeEnd>Finished moving and resizing</MoveSizeChangeEnd>
   <MoveUp>Move Up</MoveUp>
   <MoveXCoordinate>Move X coordinate</MoveXCoordinate>
   <MoveYCoordinate>Move Y coordinate</MoveYCoordinate>
-  <No>Move Y coordinate</No>
+  <NeedRestart>Swindom must be restarted.</NeedRestart>
+  <No>No, I need to restart Swindom.</No>
   <NormalExecution>Normal execution? (without administrator rights - "Yes" / with administrator rights - "No")</NormalExecution>
   <NormalWindow>Normal window</NormalWindow>
   <NotIncludePath>No paths included</NotIncludePath>
@@ -99,15 +102,20 @@
   <OnceWindowOpen>When a window is opened</OnceWindowOpen>
   <OnlyActiveWindowSpecifyWindow>Process only the active window of the "specified window</OnlyActiveWindowSpecifyWindow>
   <Open>Open</Open>
-  <OtherThanSpecifiedVersion>Other than the specified version (e.g. up to minor is possible)</OtherThanSpecifiedVersion>
+  <OtherThanSpecifiedVersion>Other than the specified version (can be up to minor, etc.)</OtherThanSpecifiedVersion>
   <PartialMatch>Partial match</PartialMatch>
   <PasteIntoAnotherWindow>Paste to another window</PasteIntoAnotherWindow>
   <PasteToEdgeOfScreen>Paste to edge of screen</PasteToEdgeOfScreen>
   <PasteWithCtrlKeyPressed>Paste with Ctrl key pressed</PasteWithCtrlKeyPressed>
-  <Percent>% (for example, %%)</Percent>
+  <Percent>%</Percent>
   <Pixel>px</Pixel>
+  <Plugin>Plug-ins</Plugin>
+  <PluginExplanation>Plug-ins can add functionality. See "Readme (Instructions)" for detailed instructions.</PluginExplanation>
+  <PluginSettings>Plugin Settings</PluginSettings>
+  <PluginTestMessage>This is a function under testing, so there is a possibility of unstable operation, etc.</PluginTestMessage>
+  <Position>Position</Position>
   <PrimaryDisplay>x=0, y=0" in the upper left corner of the primary display</PrimaryDisplay>
-  <ProcessOnlyOnce>Process only once</ProcessOnlyOnce>
+  <ProcessOnlyOnce>Processed only once</ProcessOnlyOnce>
   <ProcessOnlyWhenNormalWindow>Process only when in "normal window</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Processing interval (milliseconds)</ProcessingInterval>
   <ProcessingName>Processing name</ProcessingName>
@@ -119,9 +127,10 @@
   <RegisterMultipleWindowActions>Register multiple window processing</RegisterMultipleWindowActions>
   <RegisteredName>Registration name</RegisteredName>
   <ReportsAndRequests>Report, Request</ReportsAndRequests>
-  <RetrievedAfterFiveSeconds>Window information will be retrieved in 5 seconds, so please activate the window for which you want to retrieve information within 5 seconds.</RetrievedAfterFiveSeconds>
+  <Restart>Restart</Restart>
+  <RetrievedAfterFiveSeconds>Window information will be retrieved after 5 seconds, please activate the window to retrieve the information within 5 seconds.</RetrievedAfterFiveSeconds>
   <RightEdge>Right end</RightEdge>
-  <RunAtWindowsStartup>Execute at Windows startup</RunAtWindowsStartup>
+  <RunAtWindowsStartup>Run at Windows startup</RunAtWindowsStartup>
   <RunAtWindowsStartupAdministrator>Run at Windows startup (administrator privileges)</RunAtWindowsStartupAdministrator>
   <Select>Selected</Select>
   <SelectionComplete>Selected</SelectionComplete>
@@ -129,6 +138,7 @@
   <SettingsValue>Value set</SettingsValue>
   <ShareSettings>Do you want to share configuration information with all users?</ShareSettings>
   <Show>Displayed</Show>
+  <ShowThisApplicationWindow>Show this application window</ShowThisApplicationWindow>
   <Size>Size</Size>
   <SizeChangeAmount>Amount of resizing</SizeChangeAmount>
   <SoftwareName>Software Name</SoftwareName>
@@ -137,10 +147,11 @@
   <SpecifyPositionAndSize>Specify position and size</SpecifyPositionAndSize>
   <SpecifyTransparency>Specify transparency</SpecifyTransparency>
   <SpecifyWindow>Specify window</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>Start/stop processing of "All windows</StartStopProcessingOfAllWindow>
   <StartStopProcessingOfMagnet>Start/Stop processing of "Magnet</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Start/Stop processing of "Designation Window</StartStopProcessingOfSpecifyWindow>
+  <StartStopProcessingOfSpecifyWindow>Start/Stop processing of "Designated Window</StartStopProcessingOfSpecifyWindow>
   <StopProcessingShowAddModify>Stop processing when "Add/Modify" window is displayed</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Processing stop when window is full screen</StopProcessingWhenWindowIsFullScreen>
+  <StopProcessingWhenWindowIsFullScreen>Stop processing when a window is displayed in full screen</StopProcessingWhenWindowIsFullScreen>
   <StopTimeWhenPasting>Stop time when stuck (milliseconds)</StopTimeWhenPasting>
   <ThereAreDuplicateItems>There are duplicated items.</ThereAreDuplicateItems>
   <ThereIsADuplicateProcessingName>There are duplicated process names.</ThereIsADuplicateProcessingName>
@@ -153,7 +164,7 @@
   <TitleNameExclusionString>String contained in title name</TitleNameExclusionString>
   <TitleNameRequirements>Title name processing conditions</TitleNameRequirements>
   <TopEdge>top end</TopEdge>
-  <Translators>Translator: DeepL Translation</Translators>
+  <Translators>Translator: DeepL</Translators>
   <Transparency>Transparency</Transparency>
   <UpdateCheck>Update confirmation</UpdateCheck>
   <UpdateCheckFailed>Update confirmation failed.</UpdateCheckFailed>
@@ -163,9 +174,17 @@
   <Website>Website</Website>
   <Width>Width</Width>
   <WidthSpecification>Width specification</WidthSpecification>
-  <WindowDecide>Window determination</WindowDecide>
-  <WindowInformation>Window information</WindowInformation>
-  <WindowMoveOutsideToInside>If window is off-screen, move to on-screen</WindowMoveOutsideToInside>
+  <WindowDecide>Window Judgment</WindowDecide>
+  <WindowDesignateMethod>How to specify window judgment</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>You can specify "Title Name", "Class Name", and "File Name" to determine the window.
+What to specify and what not to specify is different for each window.
+If you specify all of them, the window may not be processed.
+For software that changes the "class name" each time the window is displayed, Do not specify a "class name" if the software changes the "class name" each time a window is displayed.
+For UWP applications, the "class name" and "file name" are the same for all applications except for a few, If the "Title Name" is not specified, it will not be correctly identified and windows of other apps will be processed.
+It is recommended to specify all of "Title Name", "Class Name" and "File Name".
+The class name is "ApplicationFrameWindow" and the file name is "C:\WINDOWS\system32\ApplicationFrameHost.exe", (This may change with Windows updates).</WindowDesignateMethodExplain>
+  <WindowInformation>Window Information</WindowInformation>
+  <WindowMoveOutsideToInside>If the window is off-screen, move it inside the screen</WindowMoveOutsideToInside>
   <WindowState>Window status</WindowState>
   <WindowWithTitleName>Window with title name</WindowWithTitleName>
   <WindowWithoutTitleName>Window without title name</WindowWithoutTitleName>

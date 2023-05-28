@@ -1,70 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>Vaihda asetukset uuteen versioon 'Kyllä' / Vaihda manuaalisesti 'Ei' / Poista prosessi käytöstä 'Peruuta'.</ChangeSettingToNewVersion>
  <ChangeVersion>Versiota on muutettu</ChangeVersion>
  <Check>Vahvistus.</Check>
  <ErrorOccurred>On tapahtunut virhe.</ErrorOccurred>
- <LanguageName>Suomalainen</LanguageName>
+ <LanguageName>Suomenkielinen</LanguageName>
  <LanguagesWindow>
   <ActiveWindowOnly>Vain aktiivinen ikkuna</ActiveWindowOnly>
   <Add>Lisätty.</Add>
   <Added>Lisätty.</Added>
   <AllWindow>Kaikki ikkunat</AllWindow>
   <AllowDelete>Haluatko poistaa?</AllowDelete>
-  <AlwaysCancelForefront>Vapauta aina ensisijaisesti</AlwaysCancelForefront>
+  <AlwaysCancelForefront>Vapauta aina etusijalla</AlwaysCancelForefront>
   <AlwaysForefront>Aina etusijalla</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Tuo aina etusijalle/irrota aina</AlwaysShowOrCancelOnTop>
+  <AlwaysShowOrCancelOnTop>Tuo aina etummaiseen/irrota aina</AlwaysShowOrCancelOnTop>
   <AmountOfMovement>Liike</AmountOfMovement>
   <Announce>Ilmoita</Announce>
   <AutomaticUpdateCheck>Automaattinen päivitysvahvistus ajonaikana</AutomaticUpdateCheck>
   <BackwardMatch>Takaisinpäin ottelu</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>Nimettyjen ikkunoiden eräkäsittely</BatchProcessingOfSpecifyWindow>
+  <BatchProcessingOfSpecifyWindow>'Nimettyjen ikkunoiden' eräkäsittely</BatchProcessingOfSpecifyWindow>
   <BottomEdge>Alempi pää</BottomEdge>
   <Cancel>Peruuta</Cancel>
-  <CaseSensitiveWindowQueries>Case-sensitive ikkunan määrityksessä</CaseSensitiveWindowQueries>
+  <CancelMoveWindow>Ikkunat, jotka eivät liiku</CancelMoveWindow>
+  <CaseSensitiveWindowQueries>Ikkunan määrittäminen tapauskohtaisesti</CaseSensitiveWindowQueries>
   <CheckBetaVersion>Tarkista päivitykset, myös beta-versiot.</CheckBetaVersion>
-  <CheckReadme>Katso 'Readme (ohjeet)', miten määrittäminen tapahtuu.</CheckReadme>
+  <CheckReadme>Katso 'Readme (ohjeet)' saadaksesi tietoa siitä, miten määritetään.</CheckReadme>
   <ClassName>Luokan nimi</ClassName>
   <ClientArea>Kohdeasiakasalue</ClientArea>
   <CloseWindow>Sulje ikkuna</CloseWindow>
-  <ConditionsThatDoNotProcess>Ehto ei käsitellä</ConditionsThatDoNotProcess>
+  <ConditionsThatDoNotProcess>Ehto, jota ei käsitellä</ConditionsThatDoNotProcess>
   <Coordinate>Koordinaatit</Coordinate>
-  <CoordinateSpecification>Koordinaattispesifikaatio</CoordinateSpecification>
+  <CoordinateSpecification>Koordinaattien määrittely</CoordinateSpecification>
   <Copy>Kopioi</Copy>
-  <Create>Luotu</Create>
   <CurrentDisplay>Nykyinen näyttö</CurrentDisplay>
   <DarkMode>Tumma tila</DarkMode>
-  <DecisionDistanceToPaste>Päätöksen etäisyys liittämiseen</DecisionDistanceToPaste>
+  <DecisionDistanceToPaste>Liitä päätösetäisyys</DecisionDistanceToPaste>
   <Delete>Poistettu</Delete>
   <Deleted>Poistettu.</Deleted>
   <Display>Näyttö</Display>
   <DisplayInformationUpdate>Näytön tiedot päivitetty</DisplayInformationUpdate>
   <DisplayToUseAsStandard>Viitteenä käytettävä näyttö</DisplayToUseAsStandard>
   <DoNotChange>Älä muuta</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Älä muuta sijaintia tai kokoa, jos se on ruudun ulkopuolella.</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Ei määritelty</DoNotSpecify>
+  <DoNotChangePositionSizeOutOfScreen>Älä muuta sijaintia tai kokoa, jos se on näytön ulkopuolella.</DoNotChangePositionSizeOutOfScreen>
+  <DoNotSpecify>Ei määritetty</DoNotSpecify>
   <EachDisplay>Kunkin näytön vasen yläkulma "x=0, y=0".</EachDisplay>
-  <End>End</End>
+  <End>Loppu</End>
   <Event>Tapahtuma</Event>
-  <ExactMatch>Täsmälleen.</ExactMatch>
-  <ExplanationOfSpecifyWindow>Voit määrittää automaattisesti käsiteltävän ikkunan. Jos et halua, että sitä käsitellään automaattisesti, vaan haluat käyttää vain pikanäppäimiä, poista valintaruutu käytöstä.</ExplanationOfSpecifyWindow>
+  <ExactMatch>Tarkka vastaavuus.</ExactMatch>
+  <ExplanationOfAllWindow>Kaikkia ikkunoita voidaan käsitellä, paitsi määritettyä ikkunaa. Myös kohdassa 'Määritetty ikkuna' määritetyt ikkunat jätetään pois.</ExplanationOfAllWindow>
+  <ExplanationOfSpecifyWindow>Voit määrittää ikkunan ja antaa sen käsiteltäväksi automaattisesti. Jos haluat käsitellä vain pikanäppäimillä ilman automaattista käsittelyä, poista tämä vaihtoehto käytöstä.</ExplanationOfSpecifyWindow>
   <FileName>Tiedoston nimi</FileName>
   <FileSelection>Tiedoston valinta</FileSelection>
   <Forefront>Foremost</Forefront>
-  <Foregrounded>Etualalla.</Foregrounded>
-  <ForwardMatch>Ottelu etualalla</ForwardMatch>
-  <General>Yleistä</General>
-  <GetWindowInformation>Ikkunatietojen hankinta</GetWindowInformation>
+  <Foregrounded>Etualalle.</Foregrounded>
+  <ForwardMatch>Match etual.</ForwardMatch>
+  <General>General</General>
+  <GetWindowInformation>Ikkunan tietojen hankinta</GetWindowInformation>
   <Height>Korkeus</Height>
   <HeightSpecification>Määritä korkeus</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Siirrä hiiren kursori valittavaan ikkunaan ja pidä samalla hiiren kursoria alhaalla.</HoldDownMouseCursorMoveToSelectWindow>
+  <HoldDownMouseCursorMoveToSelectWindow>Siirrä hiiren kursori valittavaan ikkunaan ja pidä hiiren kursoria alhaalla.</HoldDownMouseCursorMoveToSelectWindow>
   <Hotkey>Pikanäppäimet</Hotkey>
   <HotkeyExplanation>Pikanäppäimiä voidaan käyttää aktiivisen ikkunan käsittelyyn (syötteen hyväksyminen). Valitse-painikkeella voit valita ikkunan, jota haluat käsitellä ilman pikanäppäintä.</HotkeyExplanation>
-  <HotkeysDoNotStop>Pikanäppäimet eivät pysähdy (jos koko näytön kokoinen ikkuna on käytössä).</HotkeysDoNotStop>
+  <HotkeysDoNotStop>Pikanäppäimet eivät pysäytä (jos koko näytön ikkuna on läsnä).</HotkeysDoNotStop>
   <IncludePath>Sisällytä polut</IncludePath>
-  <IncreaseDecreaseHeight>Korkeuden kasvattaminen/vähentäminen</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Leveyden kasvattaminen/vähentäminen</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Suurentaa/ pienentää leveyttä ja korkeutta</IncreaseDecreaseWidthAndHeight>
+  <IncreaseDecreaseHeight>Korkeuden lisääminen/vähentäminen</IncreaseDecreaseHeight>
+  <IncreaseDecreaseWidth>Leveyden lisääminen/vähentäminen</IncreaseDecreaseWidth>
+  <IncreaseDecreaseWidthAndHeight>Leveyden ja korkeuden kasvattaminen/vähentäminen</IncreaseDecreaseWidthAndHeight>
   <Information>Tietoja.</Information>
   <InformationToBeObtained>Haettavat tiedot</InformationToBeObtained>
   <Language>Kieli.</Language>
@@ -76,49 +77,57 @@
   <MagnetExplanation>Kiinnittyy näytön tai toisen ikkunan reunaan, kun ikkunaa siirretään hiirellä.</MagnetExplanation>
   <Manual>Kuvaus</Manual>
   <Maximize>Maksimoi</Maximize>
-  <Middle>Keskus</Middle>
+  <Middle>Keskitetty</Middle>
   <Minimize>Minimoitu</Minimize>
-  <MinimizeEnd>Minimointi on lopetettu</MinimizeEnd>
-  <MinimizeStart>Minimointi aloitettu</MinimizeStart>
+  <MinimizeEnd>Minimointi on päättynyt</MinimizeEnd>
+  <MinimizeStart>Minimointi aloitettu.</MinimizeStart>
   <Modified>Korjattu.</Modified>
-  <Modify>Korjattu</Modify>
-  <MoveDown>Vaihda alaspäin</MoveDown>
-  <MovePastePosition>Liitä sijainti siirretty</MovePastePosition>
-  <MoveSizeChangeEnd>Siirrä ja muuta kokoa valmiiksi</MoveSizeChangeEnd>
-  <MoveUp>Siirry ylöspäin</MoveUp>
+  <Modify>Korjattu.</Modify>
+  <MoveAllWindowToSpecifiedPosition>Siirrä kaikki ikkunat määritettyyn sijaintiin</MoveAllWindowToSpecifiedPosition>
+  <MoveDown>Siirretty alaspäin</MoveDown>
+  <MovePastePosition>Liitä sijaintia siirretty</MovePastePosition>
+  <MoveSizeChangeEnd>Siirto ja koon muuttaminen suoritettu loppuun</MoveSizeChangeEnd>
+  <MoveUp>Siirrä ylöspäin</MoveUp>
   <MoveXCoordinate>Siirrä X-koordinaatti</MoveXCoordinate>
   <MoveYCoordinate>Siirrä Y-koordinaatti</MoveYCoordinate>
-  <No>Ei Ei Ei</No>
-  <NormalExecution>Normaali toteutus? (ilman järjestelmänvalvojan oikeuksia - 'Kyllä' / järjestelmänvalvojan oikeuksilla - 'Ei')</NormalExecution>
+  <NeedRestart>Swindom on käynnistettävä uudelleen.</NeedRestart>
+  <No>Ei.</No>
+  <NormalExecution>Normaali suoritus? (ilman järjestelmänvalvojan oikeuksia - 'Kyllä' / järjestelmänvalvojan oikeuksin - 'Ei').</NormalExecution>
   <NormalWindow>Normaali ikkuna</NormalWindow>
   <NotIncludePath>Ei sisällä polkuja</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Kertojen lukumäärä, joita ei ole käsitelty ensin (viivästyttää käsittelyä välittömästi suorituksen jälkeen).</NumberOfTimesNotToProcessingFirst>
+  <NumberOfTimesNotToProcessingFirst>Kertojen määrä, joita ei ole käsitelty ensin (viivästyttää käsittelyä heti suorituksen jälkeen).</NumberOfTimesNotToProcessingFirst>
   <NumericCalculation>Numeerinen laskenta</NumericCalculation>
   <Ok>OK - 'Kyllä' / 'Ei'</Ok>
   <OnceWhileItIsRunning>Ohjelmiston ollessa käynnissä</OnceWhileItIsRunning>
   <OnceWindowOpen>Kun ikkuna avataan</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Vain 'määritetyn ikkunan' aktiivinen ikkuna käsitellään.</OnlyActiveWindowSpecifyWindow>
+  <OnlyActiveWindowSpecifyWindow>Vain "määritetyn ikkunan" aktiivinen ikkuna käsitellään.</OnlyActiveWindowSpecifyWindow>
   <Open>Avaa</Open>
-  <OtherThanSpecifiedVersion>Muu kuin määritetty versio (esim. pienempään versioon asti mahdollista).</OtherThanSpecifiedVersion>
+  <OtherThanSpecifiedVersion>Muuta kuin määritettyä versiota (esim. pienempään versioon asti mahdollista).</OtherThanSpecifiedVersion>
   <PartialMatch>Osittainen vastaavuus</PartialMatch>
   <PasteIntoAnotherWindow>Liitä toiseen ikkunaan</PasteIntoAnotherWindow>
   <PasteToEdgeOfScreen>Liitä näytön reunaan</PasteToEdgeOfScreen>
   <PasteWithCtrlKeyPressed>Liitä Ctrl-näppäin painettuna</PasteWithCtrlKeyPressed>
   <Percent>% (esim. %)</Percent>
-  <Pixel>px.</Pixel>
-  <PrimaryDisplay>x=0, y=0" ensisijaisen näytön vasemmassa yläkulmassa.</PrimaryDisplay>
-  <ProcessOnlyOnce>Käsittele vain kerran</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Käsittele vain 'normaalissa ikkunassa'</ProcessOnlyWhenNormalWindow>
+  <Pixel>px</Pixel>
+  <Plugin>Lisäosat</Plugin>
+  <PluginExplanation>Liitännäiset voivat lisätä lisätoimintoja. Katso yksityiskohtaiset ohjeet Readme-tiedostosta (ohjeet).</PluginExplanation>
+  <PluginSettings>Liitännäisen konfigurointi</PluginSettings>
+  <PluginTestMessage>Tämä toiminto on testattavana ja voi olla epävakaa, esim.</PluginTestMessage>
+  <Position>Sijainti.</Position>
+  <PrimaryDisplay>Ensisijaisen näytön vasen yläkulma 'x=0, y=0'.</PrimaryDisplay>
+  <ProcessOnlyOnce>Käsitellään vain kerran</ProcessOnlyOnce>
+  <ProcessOnlyWhenNormalWindow>Käsitellään vain 'normaalissa ikkunassa'.</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>Käsittelyväli (millisekuntia)</ProcessingInterval>
   <ProcessingName>Käsittelyn nimi</ProcessingName>
-  <ProcessingSettings>Jalostusasetus</ProcessingSettings>
+  <ProcessingSettings>Käsittelyn asetus</ProcessingSettings>
   <ProcessingState>Käsittelyn tila</ProcessingState>
-  <ProcessingType>Jalostustyyppi</ProcessingType>
+  <ProcessingType>Käsittelyn tyyppi</ProcessingType>
   <ProcessingWindowRange>Käsiteltävien ikkunoiden alue</ProcessingWindowRange>
   <Ratio>Suhde</Ratio>
-  <RegisterMultipleWindowActions>Rekisteröi useita ikkunankäsittelyjä</RegisterMultipleWindowActions>
+  <RegisterMultipleWindowActions>Rekisteröi useita ikkunoiden käsittelyjä</RegisterMultipleWindowActions>
   <RegisteredName>Rekisteröinnin nimi</RegisteredName>
   <ReportsAndRequests>Raportti, pyyntö</ReportsAndRequests>
+  <Restart>Reaktivointi.</Restart>
   <RetrievedAfterFiveSeconds>Ikkunan tiedot haetaan 5 sekunnin kuluttua, aktivoi ikkuna, jonka tiedot haluat hakea 5 sekunnin kuluessa.</RetrievedAfterFiveSeconds>
   <RightEdge>Oikea pää</RightEdge>
   <RunAtWindowsStartup>Suorita Windowsin käynnistyksen yhteydessä</RunAtWindowsStartup>
@@ -126,48 +135,58 @@
   <Select>Valinta.</Select>
   <SelectionComplete>Valittu.</SelectionComplete>
   <Setting>Asetukset</Setting>
-  <SettingsValue>Arvojoukko.</SettingsValue>
-  <ShareSettings>Haluatko jakaa asetustiedot kaikkien käyttäjien kanssa?</ShareSettings>
-  <Show>Näytetään</Show>
+  <SettingsValue>Asetettu arvo.</SettingsValue>
+  <ShareSettings>Haluatko jakaa asetustiedot kaikille käyttäjille?</ShareSettings>
+  <Show>Näytetään.</Show>
+  <ShowThisApplicationWindow>Näytä tämä sovellusikkuna</ShowThisApplicationWindow>
   <Size>Koko</Size>
-  <SizeChangeAmount>Koon muutoksen määrä</SizeChangeAmount>
+  <SizeChangeAmount>Koon muuttamisen määrä</SizeChangeAmount>
   <SoftwareName>Ohjelmiston nimi</SoftwareName>
-  <SpecifiedDisplay>Määritelty näyttö</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Avoimuuden määrittäminen/julkaiseminen</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Määritä sijainti ja koko</SpecifyPositionAndSize>
+  <SpecifiedDisplay>Määritetty näyttö</SpecifiedDisplay>
+  <SpecifyCancelTransparency>Läpinäkyvyyden määrittäminen/vapauttaminen</SpecifyCancelTransparency>
+  <SpecifyPositionAndSize>Aseman ja koon määrittäminen</SpecifyPositionAndSize>
   <SpecifyTransparency>Läpinäkyvyyden määrittäminen</SpecifyTransparency>
   <SpecifyWindow>Määritelty ikkuna</SpecifyWindow>
-  <StartStopProcessingOfMagnet>Magneettien käsittelyn käynnistys/pysäytys</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Käynnistää/katkaista "Nimeämisikkunan" käsittely</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Lopeta käsittely, jos lisäys/muutosikkuna tulee näkyviin.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Käsittely pysähtyy, jos ikkuna näytetään koko näytön kokoisena</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Pysäytysaika juuttuessa (millisekuntia)</StopTimeWhenPasting>
+  <StartStopProcessingOfAllWindow>'Kaikkien ikkunoiden' käsittelyn käynnistäminen/seis</StartStopProcessingOfAllWindow>
+  <StartStopProcessingOfMagnet>Käynnistää/pysäyttää 'Magneetin' käsittelyn.</StartStopProcessingOfMagnet>
+  <StartStopProcessingOfSpecifyWindow>Käynnistää/katkaisee 'Nimettyjen ikkunoiden' käsittelyn.</StartStopProcessingOfSpecifyWindow>
+  <StopProcessingShowAddModify>Lopeta käsittely, jos näkyvissä on lisäys/muutosikkuna.</StopProcessingShowAddModify>
+  <StopProcessingWhenWindowIsFullScreen>Käsittely pysäytetään, kun ikkuna näytetään koko näytön kokoisena.</StopProcessingWhenWindowIsFullScreen>
+  <StopTimeWhenPasting>Pysäytysaika, kun käsittely on jumissa (millisekuntia).</StopTimeWhenPasting>
   <ThereAreDuplicateItems>On päällekkäisiä kohteita.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Prosessien nimet ovat päällekkäisiä.</ThereIsADuplicateProcessingName>
+  <ThereIsADuplicateProcessingName>Prosessin nimiä on päällekkäin.</ThereIsADuplicateProcessingName>
   <ThereIsADuplicateRegistrationName>Rekisteröintinimiä on päällekkäin.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>Tuossa on uusin versio.</ThereIsLatestVersion>
+  <ThereIsLatestVersion>On uusin versio.</ThereIsLatestVersion>
   <Timer>Ajastin</Timer>
   <TimerProcessing>Ajastinprosessi</TimerProcessing>
-  <TitleName>Nimi.</TitleName>
+  <TitleName>Otsikon nimi.</TitleName>
   <TitleNameChanged>Otsikon nimi on muutettu.</TitleNameChanged>
   <TitleNameExclusionString>Otsikon nimen sisältämä merkkijono</TitleNameExclusionString>
-  <TitleNameRequirements>Nimike nimi käsittelyedellytykset</TitleNameRequirements>
-  <TopEdge>Yläpää</TopEdge>
-  <Translators>Kääntäjä: DeepL Käännös</Translators>
-  <Transparency>Avoimuus</Transparency>
+  <TitleNameRequirements>Otsikon nimen käsittelyolosuhteet</TitleNameRequirements>
+  <TopEdge>Ylin loppu</TopEdge>
+  <Translators>Kääntäjä: DeepL</Translators>
+  <Transparency>Läpinäkyvyys</Transparency>
   <UpdateCheck>Päivitysvahvistus</UpdateCheck>
-  <UpdateCheckFailed>Päivityksen vahvistus epäonnistui.</UpdateCheckFailed>
+  <UpdateCheckFailed>Päivitysvahvistus epäonnistui.</UpdateCheckFailed>
   <UpdateHistory>Päivityshistoria</UpdateHistory>
-  <Version>Versio</Version>
+  <Version>Versio.</Version>
   <WaitTimeToProcessingNextWindow>Viive seuraavan ikkunan käsittelyyn (millisekuntia)</WaitTimeToProcessingNextWindow>
   <Website>Verkkosivusto</Website>
   <Width>Leveys</Width>
-  <WidthSpecification>Leveyserittely</WidthSpecification>
-  <WindowDecide>Ikkunan määrittäminen</WindowDecide>
-  <WindowInformation>Ikkunan tiedot</WindowInformation>
-  <WindowMoveOutsideToInside>Jos ikkuna on ruudun ulkopuolella, siirrä se ruudun sisäpuolelle.</WindowMoveOutsideToInside>
+  <WidthSpecification>Leveyden määrittely</WidthSpecification>
+  <WindowDecide>Ikkunan määritys</WindowDecide>
+  <WindowDesignateMethod>Miten määritetään ikkunan tuomio</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>Ikkunoita voidaan arvioida määrittelemällä 'otsikon nimi', 'luokan nimi' ja 'tiedoston nimi'.
+Se, mitä pitäisi ja mitä ei pitäisi määritellä, on erilainen jokaisessa ikkunassa.
+Jos määrität kaiken, ikkunaa ei ehkä käsitellä.
+Ohjelmistoissa, joissa 'class name' muuttuu joka kerta, kun ikkuna näytetään, Älä määritä luokan nimeä.
+UWP-sovelluksissa 'class name' ja 'file name' ovat samat kaikissa sovelluksissa muutamaa lukuun ottamatta, Jos 'otsikon nimeä' ei ole, sitä ei voida tunnistaa oikein ja muiden sovellusten ikkunoita käsitellään.
+On suositeltavaa määrittää kaikki "Title Name", "Class Name" ja "File Name".
+Luokan nimi on "ApplicationFrameWindow" ja tiedoston nimi on "C:\WINDOWS\system32\ApplicationFrameHost.exe", (tämä saattaa muuttua Windows-päivitysten myötä).</WindowDesignateMethodExplain>
+  <WindowInformation>Ikkunan tiedot.</WindowInformation>
+  <WindowMoveOutsideToInside>Jos ikkuna on ruudun ulkopuolella, siirrä se ruudulle.</WindowMoveOutsideToInside>
   <WindowState>Ikkunan tila</WindowState>
-  <WindowWithTitleName>Ikkuna otsikon nimellä</WindowWithTitleName>
+  <WindowWithTitleName>Ikkunan otsikon nimi</WindowWithTitleName>
   <WindowWithoutTitleName>Ikkuna ilman otsikon nimeä</WindowWithoutTitleName>
   <X>X</X>
   <Y>Y</Y>

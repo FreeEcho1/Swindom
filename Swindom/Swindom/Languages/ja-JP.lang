@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom.Sources.LanguagesData">
+<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
  <ChangeSettingToNewVersion>設定を新しいバージョンに変更「はい」 / 手動で変更「いいえ」/処理を無効にする「キャンセル」</ChangeSettingToNewVersion>
  <ChangeVersion>バージョンが変更されました</ChangeVersion>
  <Check>確認</Check>
@@ -21,6 +21,7 @@
   <BatchProcessingOfSpecifyWindow>「指定ウィンドウ」の一括処理</BatchProcessingOfSpecifyWindow>
   <BottomEdge>下端</BottomEdge>
   <Cancel>キャンセル</Cancel>
+  <CancelMoveWindow>移動しないウィンドウ</CancelMoveWindow>
   <CaseSensitiveWindowQueries>ウィンドウ判定で大文字と小文字を区別する</CaseSensitiveWindowQueries>
   <CheckBetaVersion>ベータバージョンを含めて更新確認</CheckBetaVersion>
   <CheckReadme>指定方法は「Readme (説明書)」で確認してください。</CheckReadme>
@@ -31,7 +32,6 @@
   <Coordinate>座標</Coordinate>
   <CoordinateSpecification>座標指定</CoordinateSpecification>
   <Copy>コピー</Copy>
-  <Create>作成された</Create>
   <CurrentDisplay>現在のディスプレイ</CurrentDisplay>
   <DarkMode>ダークモード</DarkMode>
   <DecisionDistanceToPaste>貼り付ける判定距離</DecisionDistanceToPaste>
@@ -47,6 +47,7 @@
   <End>終了</End>
   <Event>イベント</Event>
   <ExactMatch>完全一致</ExactMatch>
+  <ExplanationOfAllWindow>指定したウィンドウを除く全てのウィンドウを処理させることができます。「指定ウィンドウ」で指定しているウィンドウも除外されます。</ExplanationOfAllWindow>
   <ExplanationOfSpecifyWindow>ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。</ExplanationOfSpecifyWindow>
   <FileName>ファイル名</FileName>
   <FileSelection>ファイル選択</FileSelection>
@@ -78,16 +79,18 @@
   <Maximize>最大化</Maximize>
   <Middle>中央</Middle>
   <Minimize>最小化</Minimize>
-  <MinimizeEnd>最小化が終了された</MinimizeEnd>
+  <MinimizeEnd>最小化が終了した</MinimizeEnd>
   <MinimizeStart>最小化が開始された</MinimizeStart>
   <Modified>修正しました。</Modified>
   <Modify>修正</Modify>
+  <MoveAllWindowToSpecifiedPosition>全てのウィンドウを指定した位置に移動</MoveAllWindowToSpecifiedPosition>
   <MoveDown>下に移動</MoveDown>
   <MovePastePosition>貼り付ける位置をずらす</MovePastePosition>
-  <MoveSizeChangeEnd>移動及びサイズの変更が終了された</MoveSizeChangeEnd>
+  <MoveSizeChangeEnd>移動及びサイズの変更が終了した</MoveSizeChangeEnd>
   <MoveUp>上に移動</MoveUp>
   <MoveXCoordinate>X座標を移動</MoveXCoordinate>
   <MoveYCoordinate>Y座標を移動</MoveYCoordinate>
+  <NeedRestart>Swindomを再起動する必要があります。</NeedRestart>
   <No>いいえ</No>
   <NormalExecution>通常実行ですか？ (管理者権限なし - 「はい」 / 管理者権限あり - 「いいえ」)</NormalExecution>
   <NormalWindow>通常のウィンドウ</NormalWindow>
@@ -106,9 +109,14 @@
   <PasteWithCtrlKeyPressed>Ctrlキーを押した状態で貼り付ける</PasteWithCtrlKeyPressed>
   <Percent>%</Percent>
   <Pixel>px</Pixel>
+  <Plugin>プラグイン</Plugin>
+  <PluginExplanation>プラグインは機能を追加することができます。詳しい説明は「Readme (説明書)」で確認してください。</PluginExplanation>
+  <PluginSettings>プラグイン設定</PluginSettings>
+  <PluginTestMessage>テスト中の機能なので、動作が不安定などの可能性があります。</PluginTestMessage>
+  <Position>位置</Position>
   <PrimaryDisplay>プライマリディスプレイの左上を「x=0, y=0」</PrimaryDisplay>
   <ProcessOnlyOnce>一度だけ処理</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>「通常のウィンドウ」の時だけ処理する</ProcessOnlyWhenNormalWindow>
+  <ProcessOnlyWhenNormalWindow>「通常のウィンドウ」の時のみ処理する</ProcessOnlyWhenNormalWindow>
   <ProcessingInterval>処理間隔 (ミリ秒)</ProcessingInterval>
   <ProcessingName>処理名</ProcessingName>
   <ProcessingSettings>処理設定</ProcessingSettings>
@@ -119,6 +127,7 @@
   <RegisterMultipleWindowActions>ウィンドウ処理を複数登録</RegisterMultipleWindowActions>
   <RegisteredName>登録名</RegisteredName>
   <ReportsAndRequests>報告、要望</ReportsAndRequests>
+  <Restart>再起動</Restart>
   <RetrievedAfterFiveSeconds>5秒後にウィンドウ情報が取得されるので、5秒以内に情報を取得するウィンドウをアクティブにしてください。</RetrievedAfterFiveSeconds>
   <RightEdge>右端</RightEdge>
   <RunAtWindowsStartup>Windows起動時に実行</RunAtWindowsStartup>
@@ -129,6 +138,7 @@
   <SettingsValue>設定している値</SettingsValue>
   <ShareSettings>全てのユーザーで設定情報を共有しますか？</ShareSettings>
   <Show>表示された</Show>
+  <ShowThisApplicationWindow>このアプリケーションのウィンドウを表示</ShowThisApplicationWindow>
   <Size>サイズ</Size>
   <SizeChangeAmount>サイズ変更量</SizeChangeAmount>
   <SoftwareName>ソフトウェア名</SoftwareName>
@@ -137,6 +147,7 @@
   <SpecifyPositionAndSize>位置とサイズを指定</SpecifyPositionAndSize>
   <SpecifyTransparency>透明度指定</SpecifyTransparency>
   <SpecifyWindow>指定ウィンドウ</SpecifyWindow>
+  <StartStopProcessingOfAllWindow>「全てのウィンドウ」の処理開始/停止</StartStopProcessingOfAllWindow>
   <StartStopProcessingOfMagnet>「マグネット」の処理開始/停止</StartStopProcessingOfMagnet>
   <StartStopProcessingOfSpecifyWindow>「指定ウィンドウ」の処理開始/停止</StartStopProcessingOfSpecifyWindow>
   <StopProcessingShowAddModify>追加/修正のウィンドウが表示されている場合は処理停止</StopProcessingShowAddModify>
@@ -164,6 +175,14 @@
   <Width>幅</Width>
   <WidthSpecification>幅指定</WidthSpecification>
   <WindowDecide>ウィンドウ判定</WindowDecide>
+  <WindowDesignateMethod>ウィンドウ判定の指定方法</WindowDesignateMethod>
+  <WindowDesignateMethodExplain>ウィンドウの判定は「タイトル名」「クラス名」「ファイル名」を指定できます。
+何を指定して、何を指定してはいけないのか、それぞれのウィンドウで違います。
+全てを指定するとウィンドウが処理されない場合があります。
+ウィンドウが表示される度に「クラス名」が変更されるソフトウェアの場合は、「クラス名」は指定しないでください。
+UWPアプリは「クラス名」と「ファイル名」は一部を除いてどのアプリも同じなので、「タイトル名」がない場合は正しく判別できず、他のアプリのウィンドウも処理されてしまいます。
+「タイトル名」「クラス名」「ファイル名」の全てを指定すると良いでしょう。
+クラス名は「ApplicationFrameWindow」、ファイル名は「C:\WINDOWS\system32\ApplicationFrameHost.exe」、です (Windowsのアップデートで変更される可能性があります)。</WindowDesignateMethodExplain>
   <WindowInformation>ウィンドウの情報</WindowInformation>
   <WindowMoveOutsideToInside>ウィンドウが画面外の場合は画面内に移動</WindowMoveOutsideToInside>
   <WindowState>ウィンドウの状態</WindowState>
