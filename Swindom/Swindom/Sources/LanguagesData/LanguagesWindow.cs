@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.LanguagesData;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウで使用する言語情報
@@ -91,6 +91,16 @@ public class LanguagesWindow : IExtensibleDataObject
     /// </summary>
     [DataMember]
     public string Magnet = "マグネット";
+    /// <summary>
+    /// プラグイン
+    /// </summary>
+    [DataMember]
+    public string Plugin = "プラグイン";
+    /// <summary>
+    /// プラグイン設定
+    /// </summary>
+    [DataMember]
+    public string PluginSettings = "プラグイン設定";
     /// <summary>
     /// 設定
     /// </summary>
@@ -397,10 +407,20 @@ public class LanguagesWindow : IExtensibleDataObject
     [DataMember]
     public string StartStopProcessingOfSpecifyWindow = "「指定ウィンドウ」の処理開始/停止";
     /// <summary>
+    /// 「全てのウィンドウ」の処理開始/停止
+    /// </summary>
+    [DataMember]
+    public string StartStopProcessingOfAllWindow = "「全てのウィンドウ」の処理開始/停止";
+    /// <summary>
     /// 「マグネット」の処理開始/停止
     /// </summary>
     [DataMember]
     public string StartStopProcessingOfMagnet = "「マグネット」の処理開始/停止";
+    /// <summary>
+    /// このアプリケーションのウィンドウを表示
+    /// </summary>
+    [DataMember]
+    public string ShowThisApplicationWindow = "このアプリケーションのウィンドウを表示";
     /// <summary>
     /// 常に最前面に表示/解除
     /// </summary>
@@ -597,25 +617,20 @@ public class LanguagesWindow : IExtensibleDataObject
     [DataMember]
     public string Foregrounded = "フォアグラウンドになった";
     /// <summary>
-    /// 移動及びサイズの変更が終了された
+    /// 移動及びサイズの変更が終了した
     /// </summary>
     [DataMember]
-    public string MoveSizeChangeEnd = "移動及びサイズの変更が終了された";
+    public string MoveSizeChangeEnd = "移動及びサイズの変更が終了した";
     /// <summary>
     /// 最小化が開始された
     /// </summary>
     [DataMember]
     public string MinimizeStart = "最小化が開始された";
     /// <summary>
-    /// 最小化が終了された
+    /// 最小化が終了した
     /// </summary>
     [DataMember]
-    public string MinimizeEnd = "最小化が終了された";
-    /// <summary>
-    /// 作成された
-    /// </summary>
-    [DataMember]
-    public string Create = "作成された";
+    public string MinimizeEnd = "最小化が終了した";
     /// <summary>
     /// 表示された
     /// </summary>
@@ -682,10 +697,10 @@ public class LanguagesWindow : IExtensibleDataObject
     [DataMember]
     public string Minimize = "最小化";
     /// <summary>
-    /// 「通常のウィンドウ」の時だけ処理する
+    /// 「通常のウィンドウ」の時のみ処理する
     /// </summary>
     [DataMember]
-    public string ProcessOnlyWhenNormalWindow = "「通常のウィンドウ」の時だけ処理する";
+    public string ProcessOnlyWhenNormalWindow = "「通常のウィンドウ」の時のみ処理する";
     /// <summary>
     /// 座標指定
     /// </summary>
@@ -817,15 +832,30 @@ public class LanguagesWindow : IExtensibleDataObject
     [DataMember]
     public string ExplanationOfSpecifyWindow = "ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。";
     /// <summary>
-    /// ホットキーの説明
+    /// 「全てのウィンドウ」の説明
+    /// </summary>
+    [DataMember]
+    public string ExplanationOfAllWindow = "指定したウィンドウを除く全てのウィンドウを処理させることができます。「指定ウィンドウ」で指定しているウィンドウも除外されます。";
+    /// <summary>
+    /// 「ホットキー」の説明
     /// </summary>
     [DataMember]
     public string HotkeyExplanation = "ホットキーでアクティブウィンドウ(入力を受け付けている状態)を処理させることができます。「選択」ボタンではホットキーを使用しなくても、処理させたいウィンドウを選択して処理させることができます。";
     /// <summary>
-    /// マグネットの説明
+    /// 「マグネット」の説明
     /// </summary>
     [DataMember]
     public string MagnetExplanation = "マウスでウィンドウを移動させている場合に、画面端や別のウィンドウに貼り付けます。";
+    /// <summary>
+    /// テスト中の機能なので、動作が不安定などの可能性があります。
+    /// </summary>
+    [DataMember]
+    public string PluginTestMessage = "テスト中の機能なので、動作が不安定などの可能性があります。";
+    /// <summary>
+    /// プラグインの説明
+    /// </summary>
+    [DataMember]
+    public string PluginExplanation = "プラグインは機能を追加することができます。詳しい説明は「Readme (説明書)」で確認してください。";
     /// <summary>
     /// 設定している値
     /// </summary>
@@ -836,6 +866,41 @@ public class LanguagesWindow : IExtensibleDataObject
     /// </summary>
     [DataMember]
     public string WindowInformation = "ウィンドウの情報";
+    /// <summary>
+    /// 全てのウィンドウを指定した位置に移動
+    /// </summary>
+    [DataMember]
+    public string MoveAllWindowToSpecifiedPosition = "全てのウィンドウを指定した位置に移動";
+    /// <summary>
+    /// 移動しないウィンドウ
+    /// </summary>
+    [DataMember]
+    public string CancelMoveWindow = "移動しないウィンドウ";
+    /// <summary>
+    /// 位置
+    /// </summary>
+    [DataMember]
+    public string Position = "位置";
+    /// <summary>
+    /// 再起動
+    /// </summary>
+    [DataMember]
+    public string Restart = "再起動";
+    /// <summary>
+    /// Swindomを再起動する必要があります。
+    /// </summary>
+    [DataMember]
+    public string NeedRestart = "Swindomを再起動する必要があります。";
+    /// <summary>
+    /// ウィンドウ判定の指定方法
+    /// </summary>
+    [DataMember]
+    public string WindowDesignateMethod = "ウィンドウ判定の指定方法";
+    /// <summary>
+    /// ウィンドウ判定の指定方法の説明
+    /// </summary>
+    [DataMember]
+    public string WindowDesignateMethodExplain = "ウィンドウの判定は「タイトル名」「クラス名」「ファイル名」を指定できます。\r\n何を指定して、何を指定してはいけないのか、それぞれのウィンドウで違います。\r\n全てを指定するとウィンドウが処理されない場合があります。\r\nウィンドウが表示される度に「クラス名」が変更されるソフトウェアの場合は、\r\n「クラス名」は指定しないでください。\r\nUWPアプリは「クラス名」と「ファイル名」は一部を除いてどのアプリも同じなので、\r\n「タイトル名」がない場合は正しく判別できず、他のアプリのウィンドウも処理されてしまいます。\r\n「タイトル名」「クラス名」「ファイル名」の全てを指定すると良いでしょう。\r\nクラス名は「ApplicationFrameWindow」、ファイル名は「C:\\WINDOWS\\system32\\ApplicationFrameHost.exe」、\r\nです (Windowsのアップデートで変更される可能性があります)。";
 
     [OnDeserializing]
     public void DefaultDeserializing(
@@ -859,6 +924,8 @@ public class LanguagesWindow : IExtensibleDataObject
         Timer = "タイマー";
         SpecifyWindow = "指定ウィンドウ";
         Magnet = "マグネット";
+        Plugin = "プラグイン";
+        PluginSettings = "プラグイン設定";
         Setting = "設定";
         Information = "情報";
         Add = "追加";
@@ -920,7 +987,9 @@ public class LanguagesWindow : IExtensibleDataObject
         IncreaseDecreaseHeight = "高さを増減";
         IncreaseDecreaseWidthAndHeight = "幅と高さを増減";
         StartStopProcessingOfSpecifyWindow = "「指定ウィンドウ」の処理開始/停止";
+        StartStopProcessingOfAllWindow = "「全てのウィンドウ」の処理開始/停止";
         StartStopProcessingOfMagnet = "「マグネット」の処理開始/停止";
+        ShowThisApplicationWindow = "このアプリケーションのウィンドウを表示";
         AlwaysShowOrCancelOnTop = "常に最前面に表示/解除";
         SpecifyCancelTransparency = "透明度を指定/解除";
         LeftEdge = "左端";
@@ -960,10 +1029,9 @@ public class LanguagesWindow : IExtensibleDataObject
         OnceWindowOpen = "ウィンドウが開かれた時";
         OnceWhileItIsRunning = "このソフトウェアが実行されている間";
         Foregrounded = "フォアグラウンドになった";
-        MoveSizeChangeEnd = "移動及びサイズの変更が終了された";
+        MoveSizeChangeEnd = "移動及びサイズの変更が終了した";
         MinimizeStart = "最小化が開始された";
-        MinimizeEnd = "最小化が終了された";
-        Create = "作成された";
+        MinimizeEnd = "最小化が終了した";
         Show = "表示された";
         TitleNameChanged = "タイトル名が変更された";
         Forefront = "最前面";
@@ -1006,8 +1074,17 @@ public class LanguagesWindow : IExtensibleDataObject
         ExplanationOfSpecifyWindow = "ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。";
         HotkeyExplanation = "ホットキーでアクティブウィンドウ(入力を受け付けている状態)を処理させることができます。「選択」ボタンではホットキーを使用しなくても、処理させたいウィンドウを選択して処理させることができます。";
         MagnetExplanation = "マウスでウィンドウを移動させている場合に、画面端や別のウィンドウに貼り付けます。";
+        PluginTestMessage = "テスト中の機能なので、動作が不安定などの可能性があります。";
+        PluginExplanation = "プラグインの機能です。";
         SettingsValue = "設定している値";
         WindowInformation = "ウィンドウの情報";
+        MoveAllWindowToSpecifiedPosition = "全てのウィンドウを指定した位置に移動";
+        CancelMoveWindow = "移動しないウィンドウ";
+        Position = "位置";
+        Restart = "再起動";
+        NeedRestart = "Swindomを再起動する必要があります。";
+        WindowDesignateMethod = "ウィンドウ判定の指定方法";
+        WindowDesignateMethodExplain = "ウィンドウの判定は「タイトル名」「クラス名」「ファイル名」を指定できます。\r\n何を指定して、何を指定してはいけないのか、それぞれのウィンドウで違います。\r\n全てを指定するとウィンドウが処理されない場合があります。\r\nウィンドウが表示される度に「クラス名」が変更されるソフトウェアの場合は、\r\n「クラス名」は指定しないでください。\r\nUWPアプリは「クラス名」と「ファイル名」は一部を除いてどのアプリも同じなので、\r\n「タイトル名」がない場合は正しく判別できず、他のアプリのウィンドウも処理されてしまいます。\r\n「タイトル名」「クラス名」「ファイル名」の全てを指定すると良いでしょう。\r\nクラス名は「ApplicationFrameWindow」、ファイル名は「C:\\WINDOWS\\system32\\ApplicationFrameHost.exe」、\r\nです (Windowsのアップデートで変更される可能性があります)。";
     }
 
     public ExtensionDataObject? ExtensionData { get; set; }

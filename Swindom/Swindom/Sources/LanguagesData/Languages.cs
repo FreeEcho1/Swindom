@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.LanguagesData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 言語
