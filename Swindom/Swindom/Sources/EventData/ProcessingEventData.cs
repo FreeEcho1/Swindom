@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.EventData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 処理イベント

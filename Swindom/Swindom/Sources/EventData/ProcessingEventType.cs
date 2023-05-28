@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.EventData;
+﻿namespace Swindom;
 
 /// <summary>
 /// 処理イベントの種類
@@ -13,6 +13,10 @@ public enum ProcessingEventType : int
     /// テーマが変更された
     /// </summary>
     ThemeChanged,
+    /// <summary>
+    /// 座標が変更された
+    /// </summary>
+    CoordinateChanged,
     /// <summary>
     /// 「全画面ウィンドウがある場合は処理停止」の有効状態が変更された
     /// </summary>
@@ -41,31 +45,36 @@ public enum ProcessingEventType : int
     /// <summary>
     /// 「指定ウィンドウ」の一括実行
     /// </summary>
-    BatchProcessingOfSpecifyWindow,
+    SpecifyWindowBatchProcessing,
     /// <summary>
     /// 「指定ウィンドウ」のアクティブウィンドウのみ処理
     /// </summary>
-    OnlyActiveWindowSpecifyWindow,
+    SpecifyWindowOnlyActiveWindow,
     /// <summary>
-    /// 「指定ウィンドウ」の処理を一時停止
+    /// 「指定ウィンドウ」の追加/修正ウィンドウ表示時の処理停止
     /// </summary>
-    SpecifyWindowPause,
+    SpecifyWindowShowWindowPause,
     /// <summary>
-    /// 「指定ウィンドウ」の処理の一時停止を解除
+    /// 「指定ウィンドウ」の追加/修正ウィンドウ表示時の処理停止を解除
     /// </summary>
-    SpecifyWindowUnpause,
+    SpecifyWindowShowWindowUnpause,
     /// <summary>
     /// 「指定ウィンドウ」の「タイマー」の「処理間隔」が変更された
     /// </summary>
-    TimerProcessingInterval,
+    SpecifyWindowChangeTimerProcessingInterval,
     /// <summary>
     /// 「指定ウィンドウ」の「追加/修正」ウィンドウが閉じられた
     /// </summary>
-    CloseSpecifyWindowItemWindow,
+    SpecifyWindowCloseItemWindow,
     /// <summary>
     /// 「指定ウィンドウ」のリストボックスを更新
     /// </summary>
-    UpdateListBoxSpecifyWindow,
+    SpecifyWindowUpdateListBox,
+
+    /// <summary>
+    /// 「全てのウィンドウ」の処理状態が変更された
+    /// </summary>
+    AllWindowProcessingStateChanged,
 
     /// <summary>
     /// 「マグネット」の処理状態が変更された
@@ -73,7 +82,25 @@ public enum ProcessingEventType : int
     MagnetProcessingStateChanged,
 
     /// <summary>
+    /// 「プラグイン」の処理状態が変更された
+    /// </summary>
+    PluginProcessingStateChanged,
+
+    /// <summary>
     /// 「ホットキー」の処理状態が変更された
     /// </summary>
-    HotkeyValidState,
+    HotkeyProcessingStateChanged,
+
+    /// <summary>
+    /// このアプリケーションのウィンドウを表示
+    /// </summary>
+    ShowThisApplicationWindow,
+    /// <summary>
+    /// 再起動処理
+    /// </summary>
+    RestartProcessing,
+    /// <summary>
+    /// アプリケーションを閉じる
+    /// </summary>
+    CloseApplication,
 }
