@@ -61,22 +61,42 @@ namespace Swindom.Properties {
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] AdditionDark {
+        internal static System.Drawing.Bitmap AdditionDark {
             get {
                 object obj = ResourceManager.GetObject("AdditionDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] AdditionWhite {
+        internal static System.Drawing.Bitmap AdditionWhite {
             get {
                 object obj = ResourceManager.GetObject("AdditionWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap AllWindowProcessingDark {
+            get {
+                object obj = ResourceManager.GetObject("AllWindowProcessingDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap AllWindowProcessingWhite {
+            get {
+                object obj = ResourceManager.GetObject("AllWindowProcessingWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -101,202 +121,222 @@ namespace Swindom.Properties {
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] CloseSettingsDark {
+        internal static System.Drawing.Bitmap CloseSettingsDark {
             get {
                 object obj = ResourceManager.GetObject("CloseSettingsDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] CloseSettingsWhite {
+        internal static System.Drawing.Bitmap CloseSettingsWhite {
             get {
                 object obj = ResourceManager.GetObject("CloseSettingsWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] CopyDark {
+        internal static System.Drawing.Bitmap CopyDark {
             get {
                 object obj = ResourceManager.GetObject("CopyDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] CopyWhite {
+        internal static System.Drawing.Bitmap CopyWhite {
             get {
                 object obj = ResourceManager.GetObject("CopyWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] DeleteDark {
+        internal static System.Drawing.Bitmap DeleteDark {
             get {
                 object obj = ResourceManager.GetObject("DeleteDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] DeleteWhite {
+        internal static System.Drawing.Bitmap DeleteWhite {
             get {
                 object obj = ResourceManager.GetObject("DeleteWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] DownDark {
+        internal static System.Drawing.Bitmap DownDark {
             get {
                 object obj = ResourceManager.GetObject("DownDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] DownWhite {
+        internal static System.Drawing.Bitmap DownWhite {
             get {
                 object obj = ResourceManager.GetObject("DownWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] HotkeyProcessingDark {
+        internal static System.Drawing.Bitmap HotkeyProcessingDark {
             get {
                 object obj = ResourceManager.GetObject("HotkeyProcessingDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] HotkeyProcessingWhite {
+        internal static System.Drawing.Bitmap HotkeyProcessingWhite {
             get {
                 object obj = ResourceManager.GetObject("HotkeyProcessingWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] InformationDark {
+        internal static System.Drawing.Bitmap InformationDark {
             get {
                 object obj = ResourceManager.GetObject("InformationDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] InformationWhite {
+        internal static System.Drawing.Bitmap InformationWhite {
             get {
                 object obj = ResourceManager.GetObject("InformationWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] LinkedChainDark {
+        internal static System.Drawing.Bitmap LinkedChainDark {
             get {
                 object obj = ResourceManager.GetObject("LinkedChainDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] LinkedChainWhite {
+        internal static System.Drawing.Bitmap LinkedChainWhite {
             get {
                 object obj = ResourceManager.GetObject("LinkedChainWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] MagnetProcessingDark {
+        internal static System.Drawing.Bitmap MagnetProcessingDark {
             get {
                 object obj = ResourceManager.GetObject("MagnetProcessingDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] MagnetProcessingWhite {
+        internal static System.Drawing.Bitmap MagnetProcessingWhite {
             get {
                 object obj = ResourceManager.GetObject("MagnetProcessingWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] ModifyDark {
+        internal static System.Drawing.Bitmap ModifyDark {
             get {
                 object obj = ResourceManager.GetObject("ModifyDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] ModifyWhite {
+        internal static System.Drawing.Bitmap ModifyWhite {
             get {
                 object obj = ResourceManager.GetObject("ModifyWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] SettingsDark {
+        internal static System.Drawing.Bitmap PluginProcessingDark {
+            get {
+                object obj = ResourceManager.GetObject("PluginProcessingDark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap PluginProcessingWhite {
+            get {
+                object obj = ResourceManager.GetObject("PluginProcessingWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap SettingsDark {
             get {
                 object obj = ResourceManager.GetObject("SettingsDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] SettingsWhite {
+        internal static System.Drawing.Bitmap SettingsWhite {
             get {
                 object obj = ResourceManager.GetObject("SettingsWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -321,62 +361,62 @@ namespace Swindom.Properties {
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] TargetDark {
+        internal static System.Drawing.Bitmap TargetDark {
             get {
                 object obj = ResourceManager.GetObject("TargetDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] TargetWhite {
+        internal static System.Drawing.Bitmap TargetWhite {
             get {
                 object obj = ResourceManager.GetObject("TargetWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] UnattachedChainDark {
+        internal static System.Drawing.Bitmap UnattachedChainDark {
             get {
                 object obj = ResourceManager.GetObject("UnattachedChainDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] UnattachedChainWhite {
+        internal static System.Drawing.Bitmap UnattachedChainWhite {
             get {
                 object obj = ResourceManager.GetObject("UnattachedChainWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] UpDark {
+        internal static System.Drawing.Bitmap UpDark {
             get {
                 object obj = ResourceManager.GetObject("UpDark", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
         /// <summary>
-        ///   型 System.Byte[] のローカライズされたリソースを検索します。
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
-        internal static byte[] UpWhite {
+        internal static System.Drawing.Bitmap UpWhite {
             get {
                 object obj = ResourceManager.GetObject("UpWhite", resourceCulture);
-                return ((byte[])(obj));
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
