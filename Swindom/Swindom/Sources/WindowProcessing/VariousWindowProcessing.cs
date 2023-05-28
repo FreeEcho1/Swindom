@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowProcessing;
+﻿namespace Swindom;
 
 /// <summary>
 /// 様々なウィンドウ処理
@@ -26,14 +26,14 @@ public class VariousWindowProcessing
                 {
                     if (nowMonitorInfo.DeviceName == displayName)
                     {
-                        return new(nowMonitorInfo.WorkArea.Left, nowMonitorInfo.WorkArea.Top, nowMonitorInfo.WorkArea.Right - nowMonitorInfo.WorkArea.Left, nowMonitorInfo.WorkArea.Bottom - nowMonitorInfo.WorkArea.Top);
+                        return new(nowMonitorInfo.WorkArea.Left, nowMonitorInfo.WorkArea.Top, nowMonitorInfo.WorkArea.Right, nowMonitorInfo.WorkArea.Bottom);
                     }
                 }
             }
             else
             {
                 MonitorInformation.GetMonitorInformationOnWindowShown(rectangle, out MonitorInfoEx monitorInfo);
-                return new(monitorInfo.WorkArea.Left, monitorInfo.WorkArea.Top, monitorInfo.WorkArea.Right - monitorInfo.WorkArea.Left, monitorInfo.WorkArea.Bottom - monitorInfo.WorkArea.Top);
+                return new(monitorInfo.WorkArea.Left, monitorInfo.WorkArea.Top, monitorInfo.WorkArea.Right, monitorInfo.WorkArea.Bottom);
             }
         }
         else
@@ -80,9 +80,11 @@ public class VariousWindowProcessing
     /// <para>全画面ウィンドウが表示されたり無くなった場合はイベント「ProcessingEventType.FullScreenWindowShowClose」発生。</para>
     /// </summary>
     /// <param name="hwndList">ウィンドウハンドルのリスト (ない「null」)</param>
+    /// <param name="doEventFullScreenWindowClose">全画面ウィンドウが閉じられた時はイベントを発生させる (発生させない「false」/発生させる「true」)</param>
     /// <returns>全画面ウィンドウがあるかの値 (いいえ「false」/はい「true」)</returns>
     public static bool CheckFullScreenWindow(
-        HwndList? hwndList
+        HwndList? hwndList,
+        bool doEventFullScreenWindowClose = false
         )
     {
         bool fullScreen = false;       // 全画面ウィンドウがあるかの値
@@ -118,7 +120,7 @@ public class VariousWindowProcessing
             }
             else
             {
-                if (ApplicationData.FullScreenExists)
+                if (ApplicationData.FullScreenExists && doEventFullScreenWindowClose)
                 {
                     ApplicationData.FullScreenExists = false;
                     ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.FullScreenWindowShowClose);

@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowProcessing;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「ホットキー」処理
@@ -186,11 +186,22 @@ public class HotkeyProcessing : IDisposable
         HotkeyItemInformation hotkeyItemInformation
         )
     {
+        HwndList hwndList = new();
+        hwndList.Hwnd.Add(hwnd);
+        if (ApplicationData.Settings.HotkeyInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
+        {
+            return;
+        }
+
         switch (hotkeyItemInformation.ProcessingType)
         {
             case HotkeyProcessingType.StartStopSpecifyWindow:
                 ApplicationData.Settings.SpecifyWindowInformation.Enabled = !ApplicationData.Settings.SpecifyWindowInformation.Enabled;
                 ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowProcessingStateChanged);
+                break;
+            case HotkeyProcessingType.StartStopAllWindow:
+                ApplicationData.Settings.AllWindowInformation.Enabled = !ApplicationData.Settings.AllWindowInformation.Enabled;
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.AllWindowProcessingStateChanged);
                 break;
             case HotkeyProcessingType.StartStopMagnet:
                 ApplicationData.Settings.MagnetInformation.Enabled = !ApplicationData.Settings.MagnetInformation.Enabled;
@@ -219,10 +230,13 @@ public class HotkeyProcessing : IDisposable
                 }
                 break;
             case HotkeyProcessingType.BatchSpecifyWindow:
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.BatchProcessingOfSpecifyWindow);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowBatchProcessing);
                 break;
             case HotkeyProcessingType.OnlyActiveWindowSpecifyWindow:
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.OnlyActiveWindowSpecifyWindow);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowOnlyActiveWindow);
+                break;
+            case HotkeyProcessingType.ShowThisApplicationWindow:
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.ShowThisApplicationWindow);
                 break;
             default:
                 WindowInformation windowInformation = VariousWindowProcessing.GetWindowInformationPositionSizeFromHandle(hwnd);

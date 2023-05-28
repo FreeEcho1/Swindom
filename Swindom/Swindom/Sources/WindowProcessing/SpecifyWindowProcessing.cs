@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowProcessing;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「指定ウィンドウ」処理
@@ -31,9 +31,13 @@ public class SpecifyWindowProcessing : IDisposable
     /// </summary>
     private System.Windows.Threading.DispatcherTimer? ProcessingTimer;
     /// <summary>
-    /// 処理が一時停止しているかの値 (停止していない「false」/停止している「true」)
+    /// ウィンドウが移動中かの値 (移動中ではない「false」/移動中「true」)
     /// </summary>
-    private bool PauseProcessing;
+    private bool MovingWindow;
+    /// <summary>
+    /// 追加/修正のウィンドウが表示されている場合は処理停止 (無効「false」/有効「true」)
+    /// </summary>
+    private bool PauseProcessingShowAddModifyWindow;
     /// <summary>
     /// ウィンドウ情報のバッファ
     /// </summary>
@@ -151,15 +155,7 @@ public class SpecifyWindowProcessing : IDisposable
         if (ApplicationData.Settings.SpecifyWindowInformation.Enabled
             && (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen == false || ApplicationData.FullScreenExists == false))
         {
-            if (WindowEvent == null)
-            {
-                WindowEvent = new();
-                WindowEvent.WindowEventOccurrence += WindowEvent_WindowEventOccurrence;
-            }
-            else
-            {
-                WindowEvent.Unhook();
-            }
+            // イベントを設定
             FreeEcho.FEWindowEvent.HookWindowEventType type = 0;
             // 「1度だけ処理が終わっている」を終わってないにするために「Destroy」イベントを受け取れるようにする
             foreach (SpecifyWindowItemInformation nowItem in ApplicationData.Settings.SpecifyWindowInformation.Items)
@@ -188,10 +184,6 @@ public class SpecifyWindowProcessing : IDisposable
                 {
                     type |= FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeEnd;
                 }
-                if (nowItem.WindowEventData.Create)
-                {
-                    type |= FreeEcho.FEWindowEvent.HookWindowEventType.Create;
-                }
                 if (nowItem.WindowEventData.Show)
                 {
                     type |= FreeEcho.FEWindowEvent.HookWindowEventType.Show;
@@ -201,11 +193,25 @@ public class SpecifyWindowProcessing : IDisposable
                     type |= FreeEcho.FEWindowEvent.HookWindowEventType.NameChange;
                 }
             }
-            if (type != 0)
+            if (type == 0)
             {
+                DisposeWindowEvent();
+            }
+            else
+            {
+                if (WindowEvent == null)
+                {
+                    WindowEvent = new();
+                    WindowEvent.WindowEventOccurrence += WindowEvent_WindowEventOccurrence;
+                }
+                else
+                {
+                    WindowEvent.Unhook();
+                }
                 WindowEvent.Hook(type);
             }
 
+            // タイマーを設定
             bool checkTimerProcessing = false;      // タイマー処理が有効かの値
             foreach (SpecifyWindowItemInformation nowItem in ApplicationData.Settings.SpecifyWindowInformation.Items)
             {
@@ -289,17 +295,13 @@ public class SpecifyWindowProcessing : IDisposable
         {
             switch (e.ProcessingEventType)
             {
-                case ProcessingEventType.SpecifyWindowPause:
-                    PauseProcessing = true;
-                    ProcessingTimer?.Stop();
-                    MouseMoveWindowDetection?.Stop();
+                case ProcessingEventType.SpecifyWindowShowWindowPause:
+                    PauseProcessingShowAddModifyWindow = true;
                     break;
-                case ProcessingEventType.SpecifyWindowUnpause:
-                    PauseProcessing = false;
-                    ProcessingTimer?.Start();
-                    MouseMoveWindowDetection?.Start();
+                case ProcessingEventType.SpecifyWindowShowWindowUnpause:
+                    PauseProcessingShowAddModifyWindow = false;
                     break;
-                case ProcessingEventType.TimerProcessingInterval:
+                case ProcessingEventType.SpecifyWindowChangeTimerProcessingInterval:
                     if (ProcessingTimer != null)
                     {
                         ProcessingTimer.Interval = new(0, 0, 0, 0, ApplicationData.Settings.SpecifyWindowInformation.ProcessingInterval);
@@ -311,12 +313,12 @@ public class SpecifyWindowProcessing : IDisposable
                 case ProcessingEventType.UnpauseHotkeyProcessing:
                     DoHotkeyProcessing = true;
                     break;
-                case ProcessingEventType.CloseSpecifyWindowItemWindow:
+                case ProcessingEventType.SpecifyWindowCloseItemWindow:
                     if (IndexOfItemBeingProcessed != -1)
                     {
                         ApplicationData.Settings.SpecifyWindowInformation.Items[IndexOfItemBeingProcessed].Enabled = true;
                         IndexOfItemBeingProcessed = -1;
-                        ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.UpdateListBoxSpecifyWindow);
+                        ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowUpdateListBox);
                     }
                     break;
             }
@@ -339,13 +341,14 @@ public class SpecifyWindowProcessing : IDisposable
         try
         {
             // ウィンドウが閉じている場合は「1度だけ処理が終わっている」を解除
-            if (e.WindowEventType == FreeEcho.FEWindowEvent.WindowEventType.Destroy)
+            if (e.EventType == FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_DESTROY)
             {
                 foreach (SpecifyWindowItemInformation nowEII in ApplicationData.Settings.SpecifyWindowInformation.Items)
                 {
                     if (nowEII.Hwnd == e.Hwnd && nowEII.ProcessingOnlyOnce == ProcessingOnlyOnce.WindowOpen)
                     {
                         nowEII.EndedProcessingOnlyOnce = false;
+                        nowEII.CountNumberOfTimesNotToProcessingFirst = 0;
                         nowEII.Hwnd = IntPtr.Zero;
                         break;
                     }
@@ -353,10 +356,7 @@ public class SpecifyWindowProcessing : IDisposable
                 return;
             }
 
-            if (PauseProcessing == false)
-            {
-                DecisionAndWindowProcessing(e);
-            }
+            DecisionAndWindowProcessing(e);
         }
         catch
         {
@@ -376,10 +376,7 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
-            if (PauseProcessing == false)
-            {
-                DecisionAndWindowProcessing();
-            }
+            DecisionAndWindowProcessing();
         }
         catch
         {
@@ -398,7 +395,7 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
-            PauseProcessing = true;
+            MovingWindow = true;
         }
         catch
         {
@@ -417,7 +414,7 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
-            PauseProcessing = false;
+            MovingWindow = false;
         }
         catch
         {
@@ -434,67 +431,72 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
-            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(null))
+            if (MovingWindow || PauseProcessingShowAddModifyWindow)
             {
                 return;
             }
 
-            //IntPtr hwnd = NativeMethods.GetAncestor(e.Hwnd, GetAncestorFlags.GetRootOwner);
-            IntPtr hwnd = e.Hwnd;
-            //if (hwnd == IntPtr.Zero)
-            //{
-            //    return;
-            //}
-
-            WindowInformation windowInformation = VariousWindowProcessing.GetWindowInformationFromHandle(hwnd, WindowInformationBuffer);
+            IntPtr hwnd = FreeEcho.FEWindowEvent.WindowEvent.GetWindowHwnd(e.Hwnd, e.EventType);
+            if (FreeEcho.FEWindowEvent.WindowEvent.ConfirmWindowVisible(hwnd, e.EventType) == false)
+            {
+                return;
+            }
+            HwndList hwndList = new();
+            hwndList.Hwnd.Add(hwnd);
+            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
+            {
+                return;
+            }
+            WindowInformation windowInformation = VariousWindowProcessing.GetWindowInformationFromHandle(hwnd, WindowInformationBuffer);      // ウィンドウの情報
 
             foreach (SpecifyWindowItemInformation nowEII in ApplicationData.Settings.SpecifyWindowInformation.Items)
             {
                 if (nowEII.Enabled
                     && (nowEII.ProcessingOnlyOnce == ProcessingOnlyOnce.NotSpecified || nowEII.EndedProcessingOnlyOnce == false))
                 {
-                    bool checkEvent = false;       // イベントの有効確認
-
-                    checkEvent = e.WindowEventType switch
+                    if (CheckWindowToProcessing(nowEII, windowInformation)
+                        && ExclusionDecision(nowEII, windowInformation))
                     {
-                        FreeEcho.FEWindowEvent.WindowEventType.Foreground => nowEII.WindowEventData.Foreground,
-                        FreeEcho.FEWindowEvent.WindowEventType.MoveSizeEnd => nowEII.WindowEventData.MoveSizeEnd,
-                        FreeEcho.FEWindowEvent.WindowEventType.MinimizeStart => nowEII.WindowEventData.MinimizeStart,
-                        FreeEcho.FEWindowEvent.WindowEventType.MinimizeEnd => nowEII.WindowEventData.MinimizeEnd,
-                        FreeEcho.FEWindowEvent.WindowEventType.Create => nowEII.WindowEventData.Create,
-                        FreeEcho.FEWindowEvent.WindowEventType.Show => nowEII.WindowEventData.Show,
-                        FreeEcho.FEWindowEvent.WindowEventType.NameChange => nowEII.WindowEventData.NameChange,
-                        _ => false
-                    };
-
-                    if (checkEvent
-                        && CheckWindowToProcessing(nowEII, windowInformation))
-                    {
-                        foreach (WindowProcessingInformation nowWPI in nowEII.WindowProcessingInformation)
+                        bool checkEvent = false;       // イベントの有効確認
+                        checkEvent = e.EventType switch
                         {
-                            if (VersionChangeShowMessage(nowEII, nowWPI, windowInformation)
-                                && nowWPI.Active
-                                && CheckDisplayToProcessing(nowEII, nowWPI, windowInformation))
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_FOREGROUND => nowEII.WindowEventData.Foreground,
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MOVESIZEEND => nowEII.WindowEventData.MoveSizeEnd,
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZESTART => nowEII.WindowEventData.MinimizeStart,
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZEEND => nowEII.WindowEventData.MinimizeEnd,
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_SHOW => nowEII.WindowEventData.Show,
+                            FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_NAMECHANGE => nowEII.WindowEventData.NameChange,
+                            _ => false
+                        };
+
+                        if (checkEvent)
+                        {
+                            foreach (WindowProcessingInformation nowWPI in nowEII.WindowProcessingInformation)
                             {
-                                if (nowWPI.CloseWindow)
+                                if (VersionChangeShowMessage(nowEII, nowWPI, windowInformation)
+                                    && nowWPI.Active
+                                    && CheckDisplayToProcessing(nowEII, nowWPI, windowInformation))
                                 {
-                                    if (nowEII.ProcessingOnlyOnce != ProcessingOnlyOnce.NotSpecified)
+                                    if (nowWPI.CloseWindow)
                                     {
-                                        nowEII.EndedProcessingOnlyOnce = true;
+                                        if (nowEII.ProcessingOnlyOnce != ProcessingOnlyOnce.NotSpecified)
+                                        {
+                                            nowEII.EndedProcessingOnlyOnce = true;
+                                        }
+                                        nowEII.Hwnd = hwnd;
+                                        NativeMethods.PostMessage(hwnd, (uint)WM.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                                        break;
                                     }
-                                    nowEII.Hwnd = hwnd;
-                                    NativeMethods.PostMessage(hwnd, (uint)WM.WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
-                                    break;
-                                }
-                                else if (nowWPI.NormalWindowOnly == false || windowInformation.ShowCmd == (int)SW.SW_SHOWNORMAL)
-                                {
-                                    if (nowEII.ProcessingOnlyOnce != ProcessingOnlyOnce.NotSpecified)
+                                    else if (nowWPI.NormalWindowOnly == false || windowInformation.ShowCmd == (int)SW.SW_SHOWNORMAL)
                                     {
-                                        nowEII.EndedProcessingOnlyOnce = true;
+                                        if (nowEII.ProcessingOnlyOnce != ProcessingOnlyOnce.NotSpecified)
+                                        {
+                                            nowEII.EndedProcessingOnlyOnce = true;
+                                        }
+                                        nowEII.Hwnd = hwnd;
+                                        ProcessingWindow(nowEII, nowWPI, hwnd, windowInformation);
+                                        break;
                                     }
-                                    nowEII.Hwnd = hwnd;
-                                    ProcessingWindow(nowEII, nowWPI, hwnd, windowInformation);
-                                    break;
                                 }
                             }
                         }
@@ -515,10 +517,14 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
+            if (MovingWindow || PauseProcessingShowAddModifyWindow)
+            {
+                return;
+            }
+
             ProcessingTimer?.Stop();
 
             HwndList hwndList;        // ウィンドウハンドルのリスト
-            bool activeWindowOnly = true;     // アクティブウィンドウのみ処理するかの値
             switch (ApplicationData.Settings.SpecifyWindowInformation.ProcessingWindowRange)
             {
                 case ProcessingWindowRange.ActiveOnly:
@@ -527,11 +533,10 @@ public class SpecifyWindowProcessing : IDisposable
                     break;
                 default:
                     hwndList = HwndList.GetWindowHandleList();
-                    activeWindowOnly = false;
                     break;
             }
 
-            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(activeWindowOnly ? null : hwndList))
+            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
             {
                 return;
             }
@@ -547,7 +552,8 @@ public class SpecifyWindowProcessing : IDisposable
                         && nowEII.TimerProcessing
                         && (nowEII.ProcessingOnlyOnce == ProcessingOnlyOnce.NotSpecified || nowEII.EndedProcessingOnlyOnce == false))
                     {
-                        if (CheckWindowToProcessing(nowEII, windowInformation))
+                        if (CheckWindowToProcessing(nowEII, windowInformation)
+                            && ExclusionDecision(nowEII, windowInformation))
                         {
                             if (nowEII.CountNumberOfTimesNotToProcessingFirst < nowEII.NumberOfTimesNotToProcessingFirst)
                             {
@@ -639,7 +645,7 @@ public class SpecifyWindowProcessing : IDisposable
             }
             WindowInformationBuffer windowInformationBuffer = new();
 
-            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(processingType ? null : hwndList))
+            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
             {
                 return;
             }
@@ -650,7 +656,8 @@ public class SpecifyWindowProcessing : IDisposable
 
                 foreach (SpecifyWindowItemInformation nowEII in ApplicationData.Settings.SpecifyWindowInformation.Items)
                 {
-                    if (CheckWindowToProcessing(nowEII, windowInformation))
+                    if (CheckWindowToProcessing(nowEII, windowInformation)
+                        && ExclusionDecision(nowEII, windowInformation))
                     {
                         foreach (WindowProcessingInformation nowWPI in nowEII.WindowProcessingInformation)
                         {
@@ -710,13 +717,21 @@ public class SpecifyWindowProcessing : IDisposable
         {
             HwndList hwndList = HwndList.GetWindowHandleList();        // ウィンドウハンドルのリスト
 
+            if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen
+                && ApplicationData.Settings.SpecifyWindowInformation.HotkeysDoNotStopFullScreen == false
+                && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
+            {
+                return;
+            }
+
             foreach (IntPtr nowHwnd in hwndList.Hwnd)
             {
                 WindowInformation windowInformation = VariousWindowProcessing.GetWindowInformationFromHandle(nowHwnd, WindowInformationBuffer);
 
                 foreach (SpecifyWindowItemInformation nowEII in ApplicationData.Settings.SpecifyWindowInformation.Items)
                 {
-                    if (CheckWindowToProcessing(nowEII, windowInformation))
+                    if (CheckWindowToProcessing(nowEII, windowInformation)
+                        && ExclusionDecision(nowEII, windowInformation))
                     {
                         foreach (WindowProcessingInformation nowWPI in nowEII.WindowProcessingInformation)
                         {
@@ -797,7 +812,7 @@ public class SpecifyWindowProcessing : IDisposable
     /// <param name="specifyWindowItemInformation">「指定ウィンドウ」機能の項目情報</param>
     /// <param name="windowInformation">ウィンドウの情報</param>
     /// <returns>処理するウィンドウかの値 (いいえ「false」/はい「true」)</returns>
-    private static bool CheckWindowToProcessing(
+    public static bool CheckWindowToProcessing(
         SpecifyWindowItemInformation specifyWindowItemInformation,
         WindowInformation windowInformation
         )
@@ -965,44 +980,58 @@ public class SpecifyWindowProcessing : IDisposable
                         break;
                 }
             }
-
-            // 処理しない条件のサイズ判定
-            if (specifyWindowItemInformation.DoNotProcessingSize.Count != 0)
-            {
-                System.Windows.Size windowSize = new()
-                {
-                    Width = windowInformation.Rectangle.Right - windowInformation.Rectangle.Left,
-                    Height = windowInformation.Rectangle.Bottom - windowInformation.Rectangle.Top
-                };      // ウィンドウサイズ
-                foreach (System.Drawing.Size nowSize in specifyWindowItemInformation.DoNotProcessingSize)
-                {
-                    if (windowSize.Width == nowSize.Width && windowSize.Height == nowSize.Height)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            // 指定バージョン以外は処理しない
-            if (string.IsNullOrEmpty(specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion) == false)
-            {
-                VersionNumber targetWindowVersionNumber = VariousProcessing.SplitVersionNumber(windowInformation.Version);
-                VersionNumber checkVersionNumber = VariousProcessing.SplitVersionNumber(specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion);
-                if (VariousProcessing.VersionComparison(targetWindowVersionNumber, checkVersionNumber) == false)
-                {
-                    if (specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersionAnnounce)
-                    {
-                        CheckShowMessageVersion = true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-            }
         }
         catch
         {
+        }
+
+        return true;
+    }
+
+    /// <summary>
+    /// 除外判定
+    /// </summary>
+    /// <param name="specifyWindowItemInformation">「指定ウィンドウ」機能の項目情報</param>
+    /// <param name="windowInformation">ウィンドウの情報</param>
+    /// <returns>処理するかの値 (いいえ「false」/はい「true」)</returns>
+    private static bool ExclusionDecision(
+        SpecifyWindowItemInformation specifyWindowItemInformation,
+        WindowInformation windowInformation
+        )
+    {
+        // 処理しない条件のサイズ判定
+        if (specifyWindowItemInformation.DoNotProcessingSize.Count != 0)
+        {
+            System.Windows.Size windowSize = new()
+            {
+                Width = windowInformation.Rectangle.Right - windowInformation.Rectangle.Left,
+                Height = windowInformation.Rectangle.Bottom - windowInformation.Rectangle.Top
+            };      // ウィンドウサイズ
+            foreach (System.Drawing.Size nowSize in specifyWindowItemInformation.DoNotProcessingSize)
+            {
+                if (windowSize.Width == nowSize.Width && windowSize.Height == nowSize.Height)
+                {
+                    return false;
+                }
+            }
+        }
+
+        // 指定バージョン以外は処理しない
+        if (string.IsNullOrEmpty(specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion) == false)
+        {
+            VersionNumber targetWindowVersionNumber = VariousProcessing.SplitVersionNumber(windowInformation.Version);
+            VersionNumber checkVersionNumber = VariousProcessing.SplitVersionNumber(specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion);
+            if (VariousProcessing.VersionComparison(targetWindowVersionNumber, checkVersionNumber) == false)
+            {
+                if (specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersionAnnounce)
+                {
+                    CheckShowMessageVersion = true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
 
         return true;
@@ -1084,7 +1113,8 @@ public class SpecifyWindowProcessing : IDisposable
                             specifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion = setVersionString;
                         }
                     }
-                    ApplicationData.Languages.LanguagesWindow = null;
+                    ApplicationData.WindowManagement.UnnecessaryLanguageDataDelete();
+                    ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowUpdateListBox);
                     break;
                 case MessageBoxResult.No:
                     specifyWindowItemInformation.Enabled = false;
@@ -1093,11 +1123,11 @@ public class SpecifyWindowProcessing : IDisposable
                     return false;
                 case MessageBoxResult.Cancel:
                     specifyWindowItemInformation.Enabled = false;
-                    ApplicationData.Languages.LanguagesWindow = null;
+                    ApplicationData.WindowManagement.UnnecessaryLanguageDataDelete();
                     break;
                 default:
                     specifyWindowItemInformation.Enabled = false;
-                    ApplicationData.Languages.LanguagesWindow = null;
+                    ApplicationData.WindowManagement.UnnecessaryLanguageDataDelete();
                     break;
             }
 
@@ -1347,7 +1377,7 @@ public class SpecifyWindowProcessing : IDisposable
         {
             if (SpecifyWindowItemWindow?.Owner == null)
             {
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.CloseSpecifyWindowItemWindow);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowCloseItemWindow);
             }
             SpecifyWindowItemWindow = null;
             ApplicationData.WindowManagement.UnnecessaryLanguageDataDelete();

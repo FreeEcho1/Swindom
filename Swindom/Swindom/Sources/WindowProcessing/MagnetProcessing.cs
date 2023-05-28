@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowProcessing;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「マグネット」処理
@@ -114,6 +114,13 @@ public class MagnetProcessing : IDisposable
     {
         try
         {
+            HwndList hwndList = new();
+            hwndList.Hwnd.Add(NativeMethods.GetForegroundWindow());
+            if (ApplicationData.Settings.MagnetInformation.StopProcessingFullScreen && VariousWindowProcessing.CheckFullScreenWindow(hwndList))
+            {
+                return;
+            }
+
             NativeMethods.GetCursorPos(out POINT cursorPosition);       // マウスカーソルの位置
             PreviousCursorPosition = new(cursorPosition.x, cursorPosition.y);
             MovingHwnd = NativeMethods.GetForegroundWindow();     // 移動中のウィンドウのハンドル

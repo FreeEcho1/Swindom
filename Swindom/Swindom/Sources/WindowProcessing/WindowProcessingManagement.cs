@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowProcessing;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウ処理の管理
@@ -10,7 +10,7 @@ public class WindowProcessingManagement : IDisposable
     /// </summary>
     private bool Disposed;
     /// <summary>
-    /// 指定ウィンドウでウィンドウ処理
+    /// 「指定ウィンドウ」処理
     /// </summary>
     public SpecifyWindowProcessing? SpecifyWindowProcessing
     {
@@ -18,17 +18,33 @@ public class WindowProcessingManagement : IDisposable
         private set;
     }
     /// <summary>
-    /// マグネット
+    /// 「全てのウィンドウ」処理
     /// </summary>
-    public MagnetProcessing? Magnet
+    public AllWindowProcessing? AllWindowProcessing
     {
         get;
         private set;
     }
     /// <summary>
-    /// ホットキー
+    /// 「マグネット」処理
     /// </summary>
-    public HotkeyProcessing? Hotkey
+    public MagnetProcessing? MagnetProcessing
+    {
+        get;
+        private set;
+    }
+    /// <summary>
+    /// 「ホットキー」処理
+    /// </summary>
+    public HotkeyProcessing? HotkeyProcessing
+    {
+        get;
+        private set;
+    }
+    /// <summary>
+    /// 「プラグイン」処理
+    /// </summary>
+    public PluginProcessing? PluginProcessing
     {
         get;
         private set;
@@ -83,9 +99,11 @@ public class WindowProcessingManagement : IDisposable
         {
             ApplicationData.EventData.ProcessingEvent -= ApplicationData_ProcessingEvent;
             DisposeSpecifyWindowProcessing();
-            DisposeMagnet();
-            DisposeHotkey();
+            DisposeAllWindowProcessing();
+            DisposeMagnetProcessing();
+            DisposeHotkeyProcessing();
             DisposeTimerForFullScreenJudgement();
+            DisposePluginProcessing();
         }
         Disposed = true;
     }
@@ -103,26 +121,38 @@ public class WindowProcessingManagement : IDisposable
     }
 
     /// <summary>
-    /// 「Magnet」を破棄
+    /// 「AllWindowProcessing」を破棄
     /// </summary>
-    private void DisposeMagnet()
+    private void DisposeAllWindowProcessing()
     {
-        if (Magnet != null)
+        if (AllWindowProcessing != null)
         {
-            Magnet.Dispose();
-            Magnet = null;
+            AllWindowProcessing.Dispose();
+            AllWindowProcessing = null;
         }
     }
 
     /// <summary>
-    /// 「Hotkey」を破棄
+    /// 「MagnetProcessing」を破棄
     /// </summary>
-    private void DisposeHotkey()
+    private void DisposeMagnetProcessing()
     {
-        if (Hotkey != null)
+        if (MagnetProcessing != null)
         {
-            Hotkey.Dispose();
-            Hotkey = null;
+            MagnetProcessing.Dispose();
+            MagnetProcessing = null;
+        }
+    }
+
+    /// <summary>
+    /// 「HotkeyProcessing」を破棄
+    /// </summary>
+    private void DisposeHotkeyProcessing()
+    {
+        if (HotkeyProcessing != null)
+        {
+            HotkeyProcessing.Dispose();
+            HotkeyProcessing = null;
         }
     }
 
@@ -136,6 +166,17 @@ public class WindowProcessingManagement : IDisposable
             TimerForFullScreenJudgement.Stop();
             TimerForFullScreenJudgement.Dispose();
             TimerForFullScreenJudgement = null;
+        }
+    }
+
+    /// <summary>
+    /// 「PluginProcessing」を破棄
+    /// </summary>
+    private void DisposePluginProcessing()
+    {
+        if (PluginProcessing != null)
+        {
+            PluginProcessing.Dispose();
         }
     }
 
@@ -170,18 +211,24 @@ public class WindowProcessingManagement : IDisposable
                     SettingsTheProcessingStateOfEachFunction();
                     break;
                 case ProcessingEventType.SpecifyWindowProcessingStateChanged:
-                    SettingEventWindowProcessing();
+                    SettingSpecifyWindowProcessing();
+                    break;
+                case ProcessingEventType.AllWindowProcessingStateChanged:
+                    SettingAllWindowProcessing();
                     break;
                 case ProcessingEventType.MagnetProcessingStateChanged:
                     SettingMagnet();
                     break;
-                case ProcessingEventType.HotkeyValidState:
+                case ProcessingEventType.HotkeyProcessingStateChanged:
                     SettingHotkey();
                     break;
-                case ProcessingEventType.BatchProcessingOfSpecifyWindow:
+                case ProcessingEventType.PluginProcessingStateChanged:
+                    SettingPlugin();
+                    break;
+                case ProcessingEventType.SpecifyWindowBatchProcessing:
                     SpecifyWindowProcessing.DecisionAndWindowProcessing(false);
                     break;
-                case ProcessingEventType.OnlyActiveWindowSpecifyWindow:
+                case ProcessingEventType.SpecifyWindowOnlyActiveWindow:
                     SpecifyWindowProcessing.DecisionAndWindowProcessing(true);
                     break;
                 case ProcessingEventType.FullScreenWindowShowClose:
@@ -200,12 +247,13 @@ public class WindowProcessingManagement : IDisposable
     private void SettingTimerFullScreen()
     {
         if (ApplicationData.Settings.SpecifyWindowInformation.Enabled && ApplicationData.Settings.SpecifyWindowInformation.StopProcessingFullScreen
+            || ApplicationData.Settings.AllWindowInformation.Enabled && ApplicationData.Settings.AllWindowInformation.StopProcessingFullScreen
             || ApplicationData.Settings.MagnetInformation.Enabled && ApplicationData.Settings.MagnetInformation.StopProcessingFullScreen
             || ApplicationData.Settings.HotkeyInformation.Enabled && ApplicationData.Settings.HotkeyInformation.StopProcessingFullScreen)
         {
             if (TimerForFullScreenJudgement == null)
             {
-                VariousWindowProcessing.CheckFullScreenWindow(null);
+                VariousWindowProcessing.CheckFullScreenWindow(null, true);
                 TimerForFullScreenJudgement = new()
                 {
                     Interval = FullScreenWindowDecisionTimerInterval
@@ -214,7 +262,7 @@ public class WindowProcessingManagement : IDisposable
                 {
                     Application.Current.Dispatcher.Invoke(new Action(() =>
                     {
-                        VariousWindowProcessing.CheckFullScreenWindow(null);
+                        VariousWindowProcessing.CheckFullScreenWindow(null, true);
                     }));
                 };
             }
@@ -232,15 +280,17 @@ public class WindowProcessingManagement : IDisposable
     /// </summary>
     private void SettingsTheProcessingStateOfEachFunction()
     {
-        SettingEventWindowProcessing();
+        SettingSpecifyWindowProcessing();
+        SettingAllWindowProcessing();
         SettingMagnet();
         SettingHotkey();
+        SettingPlugin();
     }
 
     /// <summary>
     /// 「指定ウィンドウ」の設定
     /// </summary>
-    private void SettingEventWindowProcessing()
+    private void SettingSpecifyWindowProcessing()
     {
         if (SpecifyWindowProcessing.CheckIfTheProcessingIsValid())
         {
@@ -260,17 +310,39 @@ public class WindowProcessingManagement : IDisposable
     }
 
     /// <summary>
+    /// 「全てのウィンドウ」の設定
+    /// </summary>
+    private void SettingAllWindowProcessing()
+    {
+        if (AllWindowProcessing.CheckIfTheProcessingIsValid())
+        {
+            if (AllWindowProcessing == null)
+            {
+                AllWindowProcessing = new();
+            }
+            else
+            {
+                AllWindowProcessing.ProcessingSettings();
+            }
+        }
+        else
+        {
+            DisposeAllWindowProcessing();
+        }
+    }
+
+    /// <summary>
     /// 「マグネット」の設定
     /// </summary>
     private void SettingMagnet()
     {
         if (MagnetProcessing.CheckIfTheProcessingIsValid())
         {
-            Magnet ??= new();
+            MagnetProcessing ??= new();
         }
         else
         {
-            DisposeMagnet();
+            DisposeMagnetProcessing();
         }
     }
 
@@ -281,11 +353,22 @@ public class WindowProcessingManagement : IDisposable
     {
         if (HotkeyProcessing.CheckIfTheProcessingIsValid())
         {
-            Hotkey ??= new();
+            HotkeyProcessing ??= new();
         }
         else
         {
-            DisposeHotkey();
+            DisposeHotkeyProcessing();
+        }
+    }
+
+    /// <summary>
+    /// 「プラグイン」の設定
+    /// </summary>
+    private void SettingPlugin()
+    {
+        if (PluginProcessing.CheckIfTheProcessingIsValid())
+        {
+            PluginProcessing ??= new();
         }
     }
 }
