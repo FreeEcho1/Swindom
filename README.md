@@ -39,18 +39,23 @@ OSやOSのバージョンで違いますが、標準で対応しているバー�
 <br>
 [使用しているもの]<br>
 .NET Runtime<br>
-https://github.com/dotnet/runtime
-ModernWpf
-https://github.com/Kinnara/ModernWpf
-Hardcodet NotifyIcon for WPF
-https://github.com/hardcodet/wpf-notifyicon
-FreeEcho Window Event
-https://github.com/FreeEcho1/FreeEcho-Window-Event
-FreeEcho HotKey WPF
-https://github.com/FreeEcho1/FreeEcho-HotKey-WPF
-FreeEcho Window Selection Mouse
-https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse
-FreeEcho Window Move Detection Mouse
-https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse
-FreeEcho Check For Update
-https://github.com/FreeEcho1/FreeEcho-Check-For-Update
+https://github.com/dotnet/runtime<br>
+ModernWpf<br>
+https://github.com/Kinnara/ModernWpf<br>
+Hardcodet NotifyIcon for WPF<br>
+https://github.com/hardcodet/wpf-notifyicon<br>
+FreeEcho Window Event<br>
+https://github.com/FreeEcho1/FreeEcho-Window-Event<br>
+FreeEcho HotKey WPF<br>
+https://github.com/FreeEcho1/FreeEcho-HotKey-WPF<br>
+FreeEcho Window Selection Mouse<br>
+https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse<br>
+FreeEcho Window Move Detection Mouse<br>
+https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse<br>
+FreeEcho Check For Update<br>
+https://github.com/FreeEcho1/FreeEcho-Check-For-Update<br>
+<br>
+IPluginSwindom<br>
+https://github.com/FreeEcho1/IPluginSwindom<br>
+GetPluginInformation<br>
+https://github.com/FreeEcho1/GetPluginInformation<br>
