@@ -1,8 +1,4 @@
-﻿using Swindom.Sources.Data;
-using System.Windows.Interop;
-using System.Windows.Media;
-
-namespace Swindom.Sources.Processing;
+﻿namespace Swindom;
 
 /// <summary>
 /// 処理
@@ -13,14 +9,14 @@ public static class VariousProcessing
     /// このアプリケーションのパスを取得
     /// </summary>
     /// <returns>パス</returns>
-    public static string OwnApplicationPath() => Path.GetFullPath(Process.GetCurrentProcess()?.MainModule?.FileName ?? Common.ApplicationName + ".exe");
+    public static string OwnApplicationPath() => Path.GetFullPath(Process.GetCurrentProcess().MainModule?.FileName ?? Common.ApplicationFileName);
 
     /// <summary>
-    /// このアプリケーションのディレクトリのパスを取得
+    /// このアプリケーションのディレクトリを取得
     /// </summary>
     /// <param name="changePath">デバッグの場合にパスを変更するかの値 (変更しない「false」/変更する「true」)</param>
     /// <returns>パス</returns>
-    public static string GetApplicationDirectoryPath(
+    public static string GetApplicationDirectory(
         bool changePath = true
         )
     {
@@ -35,10 +31,19 @@ public static class VariousProcessing
     }
 
     /// <summary>
+    /// このアプリケーションのファイル名を取得
+    /// </summary>
+    /// <returns>このアプリケーションのファイル名</returns>
+    public static string GetApplicationFileName()
+    {
+        return Path.GetFileName(OwnApplicationPath());
+    }
+
+    /// <summary>
     /// 言語ディレクトリのパスを取得
     /// </summary>
     /// <returns>パス</returns>
-    public static string GetLanguageDirectoryPath() => (GetApplicationDirectoryPath() + Path.DirectorySeparatorChar + Common.LanguagesDirectoryName + Path.DirectorySeparatorChar);
+    public static string GetLanguageDirectoryPath() => (GetApplicationDirectory() + Path.DirectorySeparatorChar + Common.LanguagesDirectoryName + Path.DirectorySeparatorChar);
 
     /// <summary>
     /// インストールされているか確認

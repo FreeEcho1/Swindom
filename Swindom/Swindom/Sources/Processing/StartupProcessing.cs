@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.Processing;
+﻿namespace Swindom;
 
 /// <summary>
 /// スタートアップ処理
