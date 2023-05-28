@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.Data;
+﻿namespace Swindom;
 
 /// <summary>
 /// int型のRectangle

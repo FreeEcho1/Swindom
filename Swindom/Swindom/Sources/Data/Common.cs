@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.Data;
+﻿namespace Swindom;
 
 /// <summary>
 /// 共通データ
@@ -9,6 +9,10 @@ public class Common
     /// アプリケーション名
     /// </summary>
     public const string ApplicationName = "Swindom";
+    /// <summary>
+    /// アプリケーションのファイル名
+    /// </summary>
+    public const string ApplicationFileName = "Swindom.exe";
     /// <summary>
     /// 設定ファイル指定の判定用のの文字列
     /// </summary>
@@ -34,6 +38,10 @@ public class Common
     /// </summary>
     public const string LanguageFileExtension = ".lang";
     /// <summary>
+    /// プラグインディレクトリ名
+    /// </summary>
+    public const string PluginsDirectoryName = "Plugins";
+    /// <summary>
     /// Readmeファイル名
     /// </summary>
     public const string ReadmeFileName = "Readme.txt";
@@ -41,6 +49,14 @@ public class Common
     /// 更新履歴ファイル名
     /// </summary>
     public const string UpdateHistoryFileName = "UpdateHistory.txt";
+    /// <summary>
+    /// プラグインパスを取得するexeファイル名
+    /// </summary>
+    public const string GetPluginPathsFileName = "GetPluginInformation.exe";
+    /// <summary>
+    /// リスタート用のバッチファイル名
+    /// </summary>
+    public const string RestartBatchFileName = "RestartBat.bat";
     /// <summary>
     /// 設定コントロールの最小の高さ
     /// </summary>

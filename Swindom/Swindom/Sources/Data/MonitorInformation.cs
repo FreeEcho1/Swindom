@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.Data;
+﻿namespace Swindom;
 
 /// <summary>
 /// モニター情報
@@ -67,8 +67,8 @@ public class MonitorInformation
         System.Drawing.Point centerPositionOfTheWindow = new(rectangle.Left + (rectangle.Right - rectangle.Left) / 2, rectangle.Top + (rectangle.Bottom - rectangle.Top) / 2);     // ウィンドウの中央の位置
         foreach (MonitorInfoEx nowMonitorInfo in ApplicationData.MonitorInformation.MonitorInfo)
         {
-            if (nowMonitorInfo.Monitor.Left < centerPositionOfTheWindow.X
-                && nowMonitorInfo.Monitor.Top < centerPositionOfTheWindow.Y
+            if (nowMonitorInfo.Monitor.Left <= centerPositionOfTheWindow.X
+                && nowMonitorInfo.Monitor.Top <= centerPositionOfTheWindow.Y
                 && centerPositionOfTheWindow.X < nowMonitorInfo.Monitor.Right
                 && centerPositionOfTheWindow.Y < nowMonitorInfo.Monitor.Bottom)
             {
