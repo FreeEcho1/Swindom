@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Swindom.Sources.WindowAndControls;
+namespace Swindom;
 
 /// <summary>
 /// MessageBox

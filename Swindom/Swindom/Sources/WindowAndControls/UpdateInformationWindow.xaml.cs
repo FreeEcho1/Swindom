@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「更新情報」ウィンドウ

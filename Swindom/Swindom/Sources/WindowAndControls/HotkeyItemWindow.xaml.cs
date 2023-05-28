@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「ホットキー」の「追加/修正」ウィンドウ
@@ -98,7 +98,9 @@ public partial class HotkeyItemWindow : Window
         ((ComboBoxItem)TypeOfProcessingComboBox.Items[8]).Content = ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfSpecifyWindow;
         ((ComboBoxItem)TypeOfProcessingComboBox.Items[9]).Content = ApplicationData.Languages.LanguagesWindow.BatchProcessingOfSpecifyWindow;
         ((ComboBoxItem)TypeOfProcessingComboBox.Items[10]).Content = ApplicationData.Languages.LanguagesWindow.OnlyActiveWindowSpecifyWindow;
-        ((ComboBoxItem)TypeOfProcessingComboBox.Items[11]).Content = ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfMagnet;
+        ((ComboBoxItem)TypeOfProcessingComboBox.Items[11]).Content = ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfAllWindow;
+        ((ComboBoxItem)TypeOfProcessingComboBox.Items[12]).Content = ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfMagnet;
+        ((ComboBoxItem)TypeOfProcessingComboBox.Items[13]).Content = ApplicationData.Languages.LanguagesWindow.ShowThisApplicationWindow;
         StandardDisplayLabel.Content = ApplicationData.Languages.LanguagesWindow.DisplayToUseAsStandard;
         ((ComboBoxItem)StandardDisplayComboBox.Items[0]).Content = ApplicationData.Languages.LanguagesWindow.CurrentDisplay;
         ((ComboBoxItem)StandardDisplayComboBox.Items[1]).Content = ApplicationData.Languages.LanguagesWindow.SpecifiedDisplay;
@@ -158,7 +160,9 @@ public partial class HotkeyItemWindow : Window
             HotkeyProcessingType.StartStopSpecifyWindow => ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfSpecifyWindow,
             HotkeyProcessingType.BatchSpecifyWindow => ApplicationData.Languages.LanguagesWindow.BatchProcessingOfSpecifyWindow,
             HotkeyProcessingType.OnlyActiveWindowSpecifyWindow => ApplicationData.Languages.LanguagesWindow.OnlyActiveWindowSpecifyWindow,
+            HotkeyProcessingType.StartStopAllWindow => ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfAllWindow,
             HotkeyProcessingType.StartStopMagnet => ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfMagnet,
+            HotkeyProcessingType.ShowThisApplicationWindow => ApplicationData.Languages.LanguagesWindow.ShowThisApplicationWindow,
             _ => ApplicationData.Languages.LanguagesWindow.SpecifyPositionAndSize
         };
         VariousProcessing.SelectComboBoxItem(TypeOfProcessingComboBox, stringData);
@@ -304,7 +308,6 @@ public partial class HotkeyItemWindow : Window
             ApplicationData.Settings.HotkeyInformation.AddModifyWindowSize.Width = (int)Width;
             ApplicationData.Settings.HotkeyInformation.AddModifyWindowSize.Height = (int)Height;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.UnpauseHotkeyProcessing);
-            SettingFileProcessing.WriteSettings();
         }
         catch
         {
@@ -666,7 +669,7 @@ public partial class HotkeyItemWindow : Window
             string? resultString = CheckValueHotkeyItemInformation();
             if (resultString == null)
             {
-                ApplicationData.WindowProcessingManagement.Hotkey?.UnregisterHotkeys();
+                ApplicationData.WindowProcessingManagement.HotkeyProcessing?.UnregisterHotkeys();
                 try
                 {
                     if (IndexOfItemToBeModified == -1)
@@ -685,7 +688,7 @@ public partial class HotkeyItemWindow : Window
                 {
                     FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
                 }
-                ApplicationData.WindowProcessingManagement.Hotkey?.RegisterHotkeys();
+                ApplicationData.WindowProcessingManagement.HotkeyProcessing?.RegisterHotkeys();
                 Close();
             }
             else
@@ -939,9 +942,17 @@ public partial class HotkeyItemWindow : Window
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.OnlyActiveWindowSpecifyWindow;
         }
+        else if (stringData == ApplicationData.Languages.LanguagesWindow?.StartStopProcessingOfAllWindow)
+        {
+            HotkeyItemInformation.ProcessingType = HotkeyProcessingType.StartStopAllWindow;
+        }
         else if (stringData == ApplicationData.Languages.LanguagesWindow?.StartStopProcessingOfMagnet)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.StartStopMagnet;
+        }
+        else if (stringData == ApplicationData.Languages.LanguagesWindow?.ShowThisApplicationWindow)
+        {
+            HotkeyItemInformation.ProcessingType = HotkeyProcessingType.ShowThisApplicationWindow;
         }
         switch (HotkeyItemInformation.ProcessingType)
         {

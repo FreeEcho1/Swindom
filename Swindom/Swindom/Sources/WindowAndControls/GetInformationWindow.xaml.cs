@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウ情報取得ウィンドウ
@@ -31,7 +31,7 @@ public partial class GetInformationWindow : Window
         }
         if (ApplicationData.Settings.DarkMode)
         {
-            TargetImage.Source = new BitmapImage(new("/Resources/TargetDark.png", UriKind.Relative));
+            TargetImage.Source = new BitmapImage(new("/Resources/TargetWhite.png", UriKind.Relative));
         }
 
         Title = ApplicationData.Languages.LanguagesWindow?.GetWindowInformation;

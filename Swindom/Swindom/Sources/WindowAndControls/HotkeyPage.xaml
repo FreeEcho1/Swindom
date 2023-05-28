@@ -1,9 +1,9 @@
-﻿<Page x:Class="Swindom.Sources.WindowAndControls.HotkeyPage"
+﻿<Page x:Class="Swindom.HotkeyPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Swindom.Sources.WindowAndControls"
+      xmlns:local="clr-namespace:Swindom"
       mc:Ignorable="d" 
       xmlns:ui="http://schemas.modernwpf.com/2019"
       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
@@ -25,7 +25,7 @@
                     <RowDefinition x:Name="SettingsRowDefinition" Height="*"/>
                 </Grid.RowDefinitions>
                 <ListBox x:Name="HotkeyListBox" Grid.Row="0"/>
-                <ScrollViewer x:Name="SettingsScrollViewer" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <ScrollViewer x:Name="SettingsScrollViewer" Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                     <StackPanel Margin="10">
                         <ui:ToggleSwitch x:Name="ProcessingStateToggleSwitch" OffContent="処理状態" OnContent="処理状態"/>
                         <ui:ToggleSwitch x:Name="DoNotChangeOutOfScreenToggleSwitch" OffContent="画面外に出る場合は位置やサイズを変更しない" OnContent="画面外に出る場合は位置やサイズを変更しない" Margin="0,5,0,0"/>
@@ -36,43 +36,43 @@
             <StackPanel Grid.Column="1" MaxWidth="170" VerticalAlignment="Top">
                 <Button x:Name="AddButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="AddImage" Source="/Resources/AdditionWhite.png"/>
+                        <Image x:Name="AddImage" Source="/Resources/AdditionDark.png"/>
                         <Label x:Name="AddLabel" Content="追加" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="ModifyButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="ModifyImage" Source="/Resources/ModifyWhite.png"/>
+                        <Image x:Name="ModifyImage" Source="/Resources/ModifyDark.png"/>
                         <Label x:Name="ModifyLabel" Content="修正" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="DeleteButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="DeleteImage" Source="/Resources/DeleteWhite.png"/>
+                        <Image x:Name="DeleteImage" Source="/Resources/DeleteDark.png"/>
                         <Label x:Name="DeleteLabel" Content="削除" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="MoveUpButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="MoveUpImage" Source="/Resources/UpWhite.png"/>
+                        <Image x:Name="MoveUpImage" Source="/Resources/UpDark.png"/>
                         <Label x:Name="MoveUpLabel" Content="上に移動" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="MoveDownButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="MoveDownImage" Source="/Resources/DownWhite.png"/>
+                        <Image x:Name="MoveDownImage" Source="/Resources/DownDark.png"/>
                         <Label x:Name="MoveDownLabel" Content="下に移動" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="SelectWindowTargetButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="SelectWindowTargetImage" Source="/Resources/TargetWhite.png"/>
+                        <Image x:Name="SelectWindowTargetImage" Source="/Resources/TargetDark.png"/>
                         <Label x:Name="SelectWindowTargetLabel" Content="選択" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button x:Name="SettingsButton" Style="{StaticResource MyImageButton}">
                     <StackPanel Orientation="Horizontal">
-                        <Image x:Name="SettingsImage" Source="/Resources/SettingsWhite.png"/>
+                        <Image x:Name="SettingsImage" Source="/Resources/SettingsDark.png"/>
                         <Label x:Name="SettingsLabel" Content="設定" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>

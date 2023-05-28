@@ -1,0 +1,14 @@
+﻿<Window x:Class="Swindom.DesignateMethodWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="ウィンドウ判定の指定方法" MinHeight="300" MinWidth="400"  Height="400" Width="550" ShowInTaskbar="False" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <TextBox x:Name="DesignateMethodExplainTextBox" TextWrapping="Wrap" IsReadOnly="True"/>
+    </Grid>
+</Window>

@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「マグネット」ページ
@@ -52,7 +52,7 @@ public partial class MagnetPage : Page
     }
 
     /// <summary>
-    /// 「マグネット」ToggleSwitchの「Toggled」イベント
+    /// 「処理状態」ToggleSwitchの「Toggled」イベント
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>

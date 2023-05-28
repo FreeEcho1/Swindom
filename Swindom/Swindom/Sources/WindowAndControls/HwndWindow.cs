@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウハンドル用のウィンドウ

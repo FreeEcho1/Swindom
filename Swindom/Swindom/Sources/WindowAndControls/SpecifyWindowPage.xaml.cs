@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「指定ウィンドウ」ページ
@@ -9,10 +9,6 @@ public partial class SpecifyWindowPage : Page
     /// 「指定ウィンドウ」の「追加/修正」ウィンドウ
     /// </summary>
     private SpecifyWindowItemWindow? SpecifyWindowItemWindow;
-    /// <summary>
-    /// ListBoxItemの高さ
-    /// </summary>
-    private const int ListBoxItemHeight = 30;
     /// <summary>
     /// 次のイベントをキャンセル
     /// </summary>
@@ -30,9 +26,9 @@ public partial class SpecifyWindowPage : Page
             throw new Exception("Languages value is null. - SpecifyWindowPage()");
         }
 
-        SettingsControlsImage();
         SettingsRowDefinition.Height = new(Common.SettingsRowDefinitionMinimize);
         SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
+        SettingsControlsImage();
         SetTextOnControls();
         UpdateSpecifyWindowListBoxItems();
         SettingsSideButtonEnabled();
@@ -342,7 +338,7 @@ public partial class SpecifyWindowPage : Page
                 case ProcessingEventType.ThemeChanged:
                     SettingsControlsImage();
                     break;
-                case ProcessingEventType.UpdateListBoxSpecifyWindow:
+                case ProcessingEventType.SpecifyWindowUpdateListBox:
                     UpdateSpecifyWindowListBoxItems();
                     break;
             }
@@ -423,14 +419,14 @@ public partial class SpecifyWindowPage : Page
             {
                 ItemsRowDefinition.Height = new(0);
                 SettingsRowDefinition.Height = new(1, GridUnitType.Star);
-                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/CloseSettingsDark.png" : "/Resources/CloseSettingsWhite.png", UriKind.Relative));
+                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/CloseSettingsWhite.png" : "/Resources/CloseSettingsDark.png", UriKind.Relative));
                 SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             }
             else
             {
                 ItemsRowDefinition.Height = new(1, GridUnitType.Star);
                 SettingsRowDefinition.Height = new(Common.SettingsRowDefinitionMinimize);
-                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/SettingsDark.png" : "/Resources/SettingsWhite.png", UriKind.Relative));
+                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/SettingsWhite.png" : "/Resources/SettingsDark.png", UriKind.Relative));
                 SettingsScrollViewer.ScrollToVerticalOffset(0);
                 SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
             }
@@ -567,7 +563,7 @@ public partial class SpecifyWindowPage : Page
         )
     {
         ApplicationData.Settings.SpecifyWindowInformation.ProcessingInterval = (int)ProcessingIntervalNumberBox.Value;
-        ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.TimerProcessingInterval);
+        ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowChangeTimerProcessingInterval);
     }
 
     /// <summary>
@@ -675,7 +671,6 @@ public partial class SpecifyWindowPage : Page
                 CheckListBoxItem newItem = new()
                 {
                     Text = nowEII.RegisteredName,
-                    Height = ListBoxItemHeight,
                     IsChecked = nowEII.Enabled
                 };
                 newItem.CheckStateChanged += SpecifyWindowCheckListBoxItem_CheckStateChanged;
@@ -714,23 +709,23 @@ public partial class SpecifyWindowPage : Page
     {
         if (ApplicationData.Settings.DarkMode)
         {
-            AddImage.Source = new BitmapImage(new("/Resources/AdditionDark.png", UriKind.Relative));
-            ModifyImage.Source = new BitmapImage(new("/Resources/ModifyDark.png", UriKind.Relative));
-            DeleteImage.Source = new BitmapImage(new("/Resources/DeleteDark.png", UriKind.Relative));
-            CopyImage.Source = new BitmapImage(new("/Resources/CopyDark.png", UriKind.Relative));
-            MoveUpImage.Source = new BitmapImage(new("/Resources/UpDark.png", UriKind.Relative));
-            MoveDownImage.Source = new BitmapImage(new("/Resources/DownDark.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsDark.png", UriKind.Relative));
-        }
-        else
-        {
             AddImage.Source = new BitmapImage(new("/Resources/AdditionWhite.png", UriKind.Relative));
             ModifyImage.Source = new BitmapImage(new("/Resources/ModifyWhite.png", UriKind.Relative));
             DeleteImage.Source = new BitmapImage(new("/Resources/DeleteWhite.png", UriKind.Relative));
             CopyImage.Source = new BitmapImage(new("/Resources/CopyWhite.png", UriKind.Relative));
             MoveUpImage.Source = new BitmapImage(new("/Resources/UpWhite.png", UriKind.Relative));
             MoveDownImage.Source = new BitmapImage(new("/Resources/DownWhite.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsWhite.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new((int)SettingsRowDefinition.Height.Value == Common.SettingsRowDefinitionMinimize ? "/Resources/SettingsWhite.png" : "/Resources/CloseSettingsWhite.png", UriKind.Relative));
+        }
+        else
+        {
+            AddImage.Source = new BitmapImage(new("/Resources/AdditionDark.png", UriKind.Relative));
+            ModifyImage.Source = new BitmapImage(new("/Resources/ModifyDark.png", UriKind.Relative));
+            DeleteImage.Source = new BitmapImage(new("/Resources/DeleteDark.png", UriKind.Relative));
+            CopyImage.Source = new BitmapImage(new("/Resources/CopyDark.png", UriKind.Relative));
+            MoveUpImage.Source = new BitmapImage(new("/Resources/UpDark.png", UriKind.Relative));
+            MoveDownImage.Source = new BitmapImage(new("/Resources/DownDark.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new((int)SettingsRowDefinition.Height.Value == Common.SettingsRowDefinitionMinimize ? "/Resources/SettingsDark.png" : "/Resources/CloseSettingsDark.png", UriKind.Relative));
         }
     }
 }

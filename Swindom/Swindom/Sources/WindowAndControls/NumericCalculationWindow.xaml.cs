@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「数値計算」ウィンドウ
@@ -36,7 +36,7 @@ public partial class NumericCalculationWindow : Window
 
         if (ApplicationData.Settings.DarkMode)
         {
-            ChainImage.Source = new BitmapImage(new("/Resources/UnattachedChainDark.png", UriKind.Relative));
+            ChainImage.Source = new BitmapImage(new("/Resources/UnattachedChainWhite.png", UriKind.Relative));
         }
 
         Title = ApplicationData.Languages.LanguagesWindow.NumericCalculation;
@@ -92,14 +92,26 @@ public partial class NumericCalculationWindow : Window
     {
         try
         {
-            if (LinkingRatioValues == false)
+            if (Ratio1NumberBox.Value < 0)
+            {
+                Ratio1NumberBox.Value = 0;
+            }
+            else if (LinkingRatioValues == false)
             {
                 LinkingRatioValues = true;
             }
             else if (RatioChainState)
             {
-                LinkingRatioValues = false;
-                Ratio2NumberBox.Value = Ratio1NumberBox.Value / PreviousRatio1Value * Ratio2NumberBox.Value;
+                if (0 < PreviousRatio1Value)
+                {
+                    LinkingRatioValues = false;
+                    double setValue = Ratio1NumberBox.Value / PreviousRatio1Value * Ratio2NumberBox.Value;
+                    if (setValue < 0)
+                    {
+                        setValue = 0;
+                    }
+                    Ratio2NumberBox.Value = setValue;
+                }
             }
             PreviousRatio1Value = Ratio1NumberBox.Value;
         }
@@ -120,14 +132,26 @@ public partial class NumericCalculationWindow : Window
     {
         try
         {
-            if (LinkingRatioValues == false)
+            if (Ratio2NumberBox.Value < 0)
+            {
+                Ratio2NumberBox.Value = 0;
+            }
+            else if (LinkingRatioValues == false)
             {
                 LinkingRatioValues = true;
             }
             else if (RatioChainState)
             {
-                LinkingRatioValues = false;
-                Ratio1NumberBox.Value = Ratio2NumberBox.Value / PreviousRatio2Value * Ratio1NumberBox.Value;
+                if (0 < PreviousRatio2Value)
+                {
+                    LinkingRatioValues = false;
+                    double setValue = Ratio2NumberBox.Value / PreviousRatio2Value * Ratio1NumberBox.Value;
+                    if (setValue < 0)
+                    {
+                        setValue = 0;
+                    }
+                    Ratio1NumberBox.Value = setValue;
+                }
             }
             PreviousRatio2Value = Ratio2NumberBox.Value;
         }
@@ -150,8 +174,8 @@ public partial class NumericCalculationWindow : Window
         {
             RatioChainState = !RatioChainState;
             ChainImage.Source = ApplicationData.Settings.DarkMode
-                ? new BitmapImage(new(RatioChainState ? "/Resources/LinkedChainDark.png" : "/Resources/UnattachedChainDark.png", UriKind.Relative))
-                : ChainImage.Source = new BitmapImage(new(RatioChainState ? "/Resources/LinkedChainWhite.png" : "/Resources/UnattachedChainWhite.png", UriKind.Relative));
+                ? new BitmapImage(new(RatioChainState ? "/Resources/LinkedChainWhite.png" : "/Resources/UnattachedChainWhite.png", UriKind.Relative))
+                : ChainImage.Source = new BitmapImage(new(RatioChainState ? "/Resources/LinkedChainDark.png" : "/Resources/UnattachedChainDark.png", UriKind.Relative));
         }
         catch
         {

@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「指定ウィンドウ」の「追加/修正」ウィンドウ
@@ -47,11 +47,6 @@ public partial class SpecifyWindowItemWindow : Window
     /// ウィンドウ情報のバッファ
     /// </summary>
     private readonly WindowInformationBuffer WindowInformationBuffer = new();
-
-    /// <summary>
-    /// ListBoxItemの高さ
-    /// </summary>
-    private const int ListBoxItemHeight = 30;
 
     /// <summary>
     /// コンストラクタ (使用しない)
@@ -116,7 +111,7 @@ public partial class SpecifyWindowItemWindow : Window
         DisplayComboBox.SelectedIndex = 0;
         if (ApplicationData.Settings.DarkMode)
         {
-            HoldDownMouseCursorMoveToSelectWindowImage.Source = new BitmapImage(new("/Resources/TargetDark.png", UriKind.Relative));
+            TargetImage.Source = new BitmapImage(new("/Resources/TargetWhite.png", UriKind.Relative));
         }
         TransparencyNumberBox.Minimum = WindowProcessingInformation.MinimumTransparency;
         TransparencyNumberBox.Maximum = WindowProcessingInformation.MaximumTransparency;
@@ -144,9 +139,9 @@ public partial class SpecifyWindowItemWindow : Window
         HeightCheckBox.Content = ApplicationData.Languages.LanguagesWindow.Height;
         VersionCheckBox.Content = ApplicationData.Languages.LanguagesWindow.Version;
         GetWindowInformationButton.Content = ApplicationData.Languages.LanguagesWindow.GetWindowInformation;
-        HoldDownMouseCursorMoveToSelectWindowButton.ToolTip = ApplicationData.Languages.LanguagesWindow.HoldDownMouseCursorMoveToSelectWindow;
+        TargetButton.ToolTip = ApplicationData.Languages.LanguagesWindow.HoldDownMouseCursorMoveToSelectWindow;
         WindowJudgmentTabItem.Header = ApplicationData.Languages.LanguagesWindow.WindowDecide;
-        CheckReadmeTextBlock.Text = ApplicationData.Languages.LanguagesWindow.CheckReadme;
+        WindowDesignateMethodButton.Content = ApplicationData.Languages.LanguagesWindow.WindowDesignateMethod;
         TitleNameLabel.Content = ApplicationData.Languages.LanguagesWindow.TitleName;
         ((ComboBoxItem)TitleNameMatchingConditionComboBox.Items[0]).Content = ApplicationData.Languages.LanguagesWindow.ExactMatch;
         ((ComboBoxItem)TitleNameMatchingConditionComboBox.Items[1]).Content = ApplicationData.Languages.LanguagesWindow.PartialMatch;
@@ -175,7 +170,6 @@ public partial class SpecifyWindowItemWindow : Window
         MoveSizeEndToggleSwitch.OffContent = MoveSizeEndToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.MoveSizeChangeEnd;
         MinimizeStartToggleSwitch.OffContent = MinimizeStartToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.MinimizeStart;
         MinimizeEndToggleSwitch.OffContent = MinimizeEndToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.MinimizeEnd;
-        CreateToggleSwitch.OffContent = CreateToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.Create;
         ShowToggleSwitch.OffContent = ShowToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.Show;
         NameChangeToggleSwitch.OffContent = NameChangeToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.TitleNameChanged;
         ProcessingJudgmentTimerGroupBox.Header = ApplicationData.Languages.LanguagesWindow.Timer;
@@ -302,7 +296,6 @@ public partial class SpecifyWindowItemWindow : Window
         MoveSizeEndToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.MoveSizeEnd;
         MinimizeStartToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.MinimizeStart;
         MinimizeEndToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.MinimizeEnd;
-        CreateToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.Create;
         ShowToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.Show;
         NameChangeToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.NameChange;
         TimerProcessingToggleSwitch.IsOn = SpecifyWindowItemInformation.TimerProcessing;
@@ -339,7 +332,6 @@ public partial class SpecifyWindowItemWindow : Window
             CheckListBoxItem newItem = new()
             {
                 Text = nowWPI.ProcessingName,
-                Height = ListBoxItemHeight,
                 IsChecked = nowWPI.Active
             };
             newItem.CheckStateChanged += WindowProcessingListBox_CheckStateChanged;
@@ -365,7 +357,8 @@ public partial class SpecifyWindowItemWindow : Window
         Loaded += AddModifyWindowSpecifiedWindow_Loaded;
         Closed += SpecifiedWindowAddModifyWindow_Closed;
         GetWindowInformationButton.Click += GetWindowInformationButton_Click;
-        HoldDownMouseCursorMoveToSelectWindowButton.PreviewMouseDown += HoldDownMouseCursorMoveToSelectWindowButton_PreviewMouseDown;
+        TargetButton.PreviewMouseDown += TargetButton_PreviewMouseDown;
+        WindowDesignateMethodButton.Click += WindowDesignateMethodButton_Click;
         TitleNameTextBox.TextChanged += TitleNameTextBox_TextChanged;
         ClassNameTextBox.TextChanged += ClassNameTextBox_TextChanged;
         FileNameTextBox.TextChanged += FileNameTextBox_TextChanged;
@@ -420,7 +413,7 @@ public partial class SpecifyWindowItemWindow : Window
         {
             if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingShowAddModifyWindow)
             {
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowPause);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowShowWindowPause);
             }
         }
         catch
@@ -458,9 +451,8 @@ public partial class SpecifyWindowItemWindow : Window
 
             if (ApplicationData.Settings.SpecifyWindowInformation.StopProcessingShowAddModifyWindow)
             {
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowUnpause);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowShowWindowUnpause);
             }
-            SettingFileProcessing.WriteSettings();
         }
         catch
         {
@@ -525,7 +517,7 @@ public partial class SpecifyWindowItemWindow : Window
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void HoldDownMouseCursorMoveToSelectWindowButton_PreviewMouseDown(
+    private void TargetButton_PreviewMouseDown(
         object sender,
         MouseButtonEventArgs e
         )
@@ -564,6 +556,25 @@ public partial class SpecifyWindowItemWindow : Window
         catch
         {
             FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+        }
+    }
+
+    /// <summary>
+    /// 「ウィンドウ判定の指定方法」Buttonの「Click」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void WindowDesignateMethodButton_Click(
+        object sender,
+        RoutedEventArgs e
+        )
+    {
+        try
+        {
+            ApplicationData.WindowManagement.ShowDesignateMethodWindow(this);
+        }
+        catch
+        {
         }
     }
 
@@ -1378,7 +1389,6 @@ public partial class SpecifyWindowItemWindow : Window
             CheckListBoxItem newItem = new()
             {
                 Text = newWPI.ProcessingName,
-                Height = ListBoxItemHeight,
                 IsChecked = newWPI.Active
             };
             newItem.CheckStateChanged += WindowProcessingListBox_CheckStateChanged;
@@ -1643,7 +1653,6 @@ public partial class SpecifyWindowItemWindow : Window
         SpecifyWindowItemInformation.WindowEventData.MoveSizeEnd = MoveSizeEndToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.MinimizeStart = MinimizeStartToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.MinimizeEnd = MinimizeEndToggleSwitch.IsOn;
-        SpecifyWindowItemInformation.WindowEventData.Create = CreateToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.Show = ShowToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.NameChange = NameChangeToggleSwitch.IsOn;
         SpecifyWindowItemInformation.TimerProcessing = TimerProcessingToggleSwitch.IsOn;
@@ -1682,7 +1691,6 @@ public partial class SpecifyWindowItemWindow : Window
             CheckListBoxItem newItem = new()
             {
                 Text = newWPI.ProcessingName,
-                Height = ListBoxItemHeight,
                 IsChecked = newWPI.Active
             };      // 新しいListBoxの項目
             newItem.CheckStateChanged += WindowProcessingListBox_CheckStateChanged;

@@ -1,16 +1,16 @@
-﻿<Page x:Class="Swindom.Sources.WindowAndControls.InformationPage"
+﻿<Page x:Class="Swindom.InformationPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Swindom.Sources.WindowAndControls"
+      xmlns:local="clr-namespace:Swindom"
       mc:Ignorable="d" 
       xmlns:ui="http://schemas.modernwpf.com/2019"
       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
       Title="InformationPage">
 
     <Grid>
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="10">
                 <Label x:Name="ApplicationNameLabel" Content="アプリケーション名：Swindom" HorizontalAlignment="Left"/>
                 <Label x:Name="VersionLabel" Content="バージョン：1.0" HorizontalAlignment="Left"/>
@@ -22,22 +22,22 @@
                 <Button x:Name="ReportsRequestsButton" Content="報告、要望" HorizontalAlignment="Left" Width="200" Margin="0,5,0,0"/>
                 <GroupBox x:Name="LicenseGroupBox" Header="Library" Margin="0,10,0,0">
                     <TextBlock x:Name="LicenseTextBlock">
-                    .NET Runtime : Copyright (c) .NET Foundation and Contributors<LineBreak/>
-                    <Hyperlink x:Name="DotNetHyperlink" NavigateUri="https://github.com/dotnet/runtime">https://github.com/dotnet/runtime</Hyperlink><LineBreak/>
-                    ModernWpf : Copyright (c) 2019 Yimeng Wu<LineBreak/>
-                    <Hyperlink x:Name="ModernWpfHyperlink" NavigateUri="https://github.com/Kinnara/ModernWpf">https://github.com/Kinnara/ModernWpf</Hyperlink><LineBreak/>
-                    Hardcodet NotifyIcon for WPF : Copyright (c) 2009-2021 PhilippSumi<LineBreak/>
-                    <Hyperlink x:Name="HardcodetNotifyIconForWPFHyperlink" NavigateUri="https://github.com/hardcodet/wpf-notifyicon">https://github.com/hardcodet/wpf-notifyicon</Hyperlink><LineBreak/>
-                    FreeEcho Window Event : Copyright (c) FreeEcho<LineBreak/>
-                    <Hyperlink x:Name="FreeEchoWindowEventHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Event">https://github.com/FreeEcho1/FreeEcho-Window-Event</Hyperlink><LineBreak/>
-                    FreeEcho HotKey WPF : Copyright (c) FreeEcho<LineBreak/>
-                    <Hyperlink x:Name="FreeEchoHotKeyWPFHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-HotKey-WPF">https://github.com/FreeEcho1/FreeEcho-HotKey-WPF</Hyperlink><LineBreak/>
-                    FreeEcho Window Selection Mouse : Copyright (c) FreeEcho<LineBreak/>
-                    <Hyperlink x:Name="FreeEchoWindowSelectionMouseHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse">https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse</Hyperlink><LineBreak/>
-                    FreeEcho Window Move Detection Mouse : Copyright (c) FreeEcho<LineBreak/>
-                    <Hyperlink x:Name="FreeEchoWindowMoveDetectionMouseHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse">https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse</Hyperlink><LineBreak/>
-                    FreeEcho Check For Update : Copyright (c) FreeEcho<LineBreak/>
-                    <Hyperlink x:Name="FreeEchoCheckForUpdateHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Check-For-Update">https://github.com/FreeEcho1/FreeEcho-Check-For-Update</Hyperlink><LineBreak/>
+                        .NET Runtime : Copyright (c) .NET Foundation and Contributors<LineBreak/>
+                        <Hyperlink x:Name="DotNetHyperlink" NavigateUri="https://github.com/dotnet/runtime">https://github.com/dotnet/runtime</Hyperlink><LineBreak/>
+                        ModernWpf : Copyright (c) 2019 Yimeng Wu<LineBreak/>
+                        <Hyperlink x:Name="ModernWpfHyperlink" NavigateUri="https://github.com/Kinnara/ModernWpf">https://github.com/Kinnara/ModernWpf</Hyperlink><LineBreak/>
+                        Hardcodet NotifyIcon for WPF : Copyright (c) 2009-2021 PhilippSumi<LineBreak/>
+                        <Hyperlink x:Name="HardcodetNotifyIconForWPFHyperlink" NavigateUri="https://github.com/hardcodet/wpf-notifyicon">https://github.com/hardcodet/wpf-notifyicon</Hyperlink><LineBreak/>
+                        FreeEcho Window Event : Copyright (c) FreeEcho<LineBreak/>
+                        <Hyperlink x:Name="FreeEchoWindowEventHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Event">https://github.com/FreeEcho1/FreeEcho-Window-Event</Hyperlink><LineBreak/>
+                        FreeEcho HotKey WPF : Copyright (c) FreeEcho<LineBreak/>
+                        <Hyperlink x:Name="FreeEchoHotKeyWPFHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-HotKey-WPF">https://github.com/FreeEcho1/FreeEcho-HotKey-WPF</Hyperlink><LineBreak/>
+                        FreeEcho Window Selection Mouse : Copyright (c) FreeEcho<LineBreak/>
+                        <Hyperlink x:Name="FreeEchoWindowSelectionMouseHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse">https://github.com/FreeEcho1/FreeEcho-Window-Selection-Mouse</Hyperlink><LineBreak/>
+                        FreeEcho Window Move Detection Mouse : Copyright (c) FreeEcho<LineBreak/>
+                        <Hyperlink x:Name="FreeEchoWindowMoveDetectionMouseHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse">https://github.com/FreeEcho1/FreeEcho-Window-Move-Detection-Mouse</Hyperlink><LineBreak/>
+                        FreeEcho Check For Update : Copyright (c) FreeEcho<LineBreak/>
+                        <Hyperlink x:Name="FreeEchoCheckForUpdateHyperlink" NavigateUri="https://github.com/FreeEcho1/FreeEcho-Check-For-Update">https://github.com/FreeEcho1/FreeEcho-Check-For-Update</Hyperlink><LineBreak/>
                     </TextBlock>
                 </GroupBox>
             </StackPanel>

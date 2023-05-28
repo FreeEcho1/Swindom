@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// メインウィンドウ
@@ -9,6 +9,8 @@ public partial class MainWindow : Window
     /// SpecifyWindowPage
     /// </summary>
     private SpecifyWindowPage? SpecifyWindowPage;
+
+    private AllWindowPage? AllWindowPage;
     /// <summary>
     /// MagnetPage
     /// </summary>
@@ -17,6 +19,10 @@ public partial class MainWindow : Window
     /// HotkeyPage
     /// </summary>
     private HotkeyPage? HotkeyPage;
+    /// <summary>
+    /// PluginPage
+    /// </summary>
+    private PluginPage? PluginPage;
     /// <summary>
     /// SettingsPage
     /// </summary>
@@ -61,7 +67,7 @@ public partial class MainWindow : Window
         SetTextOnControls();
 
         MainNavigationView.SelectionChanged += MainNavigationView_SelectionChanged;
-        MainNavigationView.SelectedItem = EventNavigationViewItem;
+        MainNavigationView.SelectedItem = SpecifyWindowNavigationViewItem;
 
         Loaded += MainWindow_Loaded;
         Closed += MainWindow_Closed;
@@ -81,10 +87,51 @@ public partial class MainWindow : Window
         try
         {
             Activate();
+
+            SettingMainNavigationViewOpenPaleLength();
         }
         catch
         {
         }
+    }
+
+    /// <summary>
+    /// メインのNavigationViewの「OpenPaleLength」を設定
+    /// </summary>
+    private void SettingMainNavigationViewOpenPaleLength()
+    {
+        double width = 0;
+
+        if (width < SpecifyWindowLabel.ActualWidth)
+        {
+            width = SpecifyWindowLabel.ActualWidth;
+        }
+        if (width < AllWindowLabel.ActualWidth)
+        {
+            width = AllWindowLabel.ActualWidth;
+        }
+        if (width < MagnetLabel.ActualWidth)
+        {
+            width = MagnetLabel.ActualWidth;
+        }
+        if (width < HotkeyLabel.ActualWidth)
+        {
+            width = HotkeyLabel.ActualWidth;
+        }
+        if (width < PluginLabel.ActualWidth)
+        {
+            width = PluginLabel.ActualWidth;
+        }
+        if (width < SettingsLabel.ActualWidth)
+        {
+            width = SettingsLabel.ActualWidth;
+        }
+        if (width < InformationLabel.ActualWidth)
+        {
+            width = InformationLabel.ActualWidth;
+        }
+
+        MainNavigationView.OpenPaneLength = SpecifyWindowImage.Width + width + 50;
     }
 
     /// <summary>
@@ -102,6 +149,7 @@ public partial class MainWindow : Window
             SpecifyWindowPage?.Release();
             MagnetPage?.Release();
             HotkeyPage?.Release();
+            PluginPage?.Release();
             SettingsPage?.Release();
             InformationPage?.Release();
             ApplicationData.EventData.ProcessingEvent -= EventData_ProcessingEvent;
@@ -132,10 +180,15 @@ public partial class MainWindow : Window
         {
             string tag = (string)((ModernWpf.Controls.NavigationViewItem)args.SelectedItem).Tag;
 
-            if (tag == (string)EventNavigationViewItem.Tag)
+            if (tag == (string)SpecifyWindowNavigationViewItem.Tag)
             {
                 SpecifyWindowPage ??= new();
                 MainNavigationViewFrame.Navigate(SpecifyWindowPage);
+            }
+            else if (tag == (string)AllWindowNavigationViewItem.Tag)
+            {
+                AllWindowPage??= new();
+                MainNavigationViewFrame.Navigate(AllWindowPage);
             }
             else if (tag == (string)MagnetNavigationViewItem.Tag)
             {
@@ -146,6 +199,11 @@ public partial class MainWindow : Window
             {
                 HotkeyPage ??= new();
                 MainNavigationViewFrame.Navigate(HotkeyPage);
+            }
+            else if (tag == (string)PluginNavigationViewItem.Tag)
+            {
+                PluginPage ??= new();
+                MainNavigationViewFrame.Navigate(PluginPage);
             }
             else if (tag == (string)SettingsNavigationViewItem.Tag)
             {
@@ -203,8 +261,10 @@ public partial class MainWindow : Window
             }
 
             SpecifyWindowLabel.Content = ApplicationData.Languages.LanguagesWindow.SpecifyWindow;
+            AllWindowLabel.Content = ApplicationData.Languages.LanguagesWindow.AllWindow;
             MagnetLabel.Content = ApplicationData.Languages.LanguagesWindow.Magnet;
             HotkeyLabel.Content = ApplicationData.Languages.LanguagesWindow.Hotkey;
+            PluginLabel.Content = ApplicationData.Languages.LanguagesWindow.Plugin;
             SettingsLabel.Content = ApplicationData.Languages.LanguagesWindow.Setting;
             InformationLabel.Content = ApplicationData.Languages.LanguagesWindow.Information;
         }
@@ -220,19 +280,23 @@ public partial class MainWindow : Window
     {
         if (ApplicationData.Settings.DarkMode)
         {
-            SpecifyWindowImage.Source = new BitmapImage(new("/Resources/SpecifyWindowProcessingDark.png", UriKind.Relative));
-            MagnetImage.Source = new BitmapImage(new("/Resources/MagnetProcessingDark.png", UriKind.Relative));
-            HotkeyImage.Source = new BitmapImage(new("/Resources/HotkeyProcessingDark.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsDark.png", UriKind.Relative));
-            InformationImage.Source = new BitmapImage(new("/Resources/InformationDark.png", UriKind.Relative));
+            SpecifyWindowImage.Source = new BitmapImage(new("/Resources/SpecifyWindowProcessingWhite.png", UriKind.Relative));
+            AllWindowImage.Source = new BitmapImage(new("/Resources/AllWindowProcessingWhite.png", UriKind.Relative));
+            MagnetImage.Source = new BitmapImage(new("/Resources/MagnetProcessingWhite.png", UriKind.Relative));
+            HotkeyImage.Source = new BitmapImage(new("/Resources/HotkeyProcessingWhite.png", UriKind.Relative));
+            PluginImage.Source = new BitmapImage(new("/Resources/PluginProcessingWhite.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsWhite.png", UriKind.Relative));
+            InformationImage.Source = new BitmapImage(new("/Resources/InformationWhite.png", UriKind.Relative));
         }
         else
         {
-            SpecifyWindowImage.Source = new BitmapImage(new("/Resources/SpecifyWindowProcessingWhite.png", UriKind.Relative));
-            MagnetImage.Source = new BitmapImage(new("/Resources/MagnetProcessingWhite.png", UriKind.Relative));
-            HotkeyImage.Source = new BitmapImage(new("/Resources/HotkeyProcessingWhite.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsWhite.png", UriKind.Relative));
-            InformationImage.Source = new BitmapImage(new("/Resources/InformationWhite.png", UriKind.Relative));
+            SpecifyWindowImage.Source = new BitmapImage(new("/Resources/SpecifyWindowProcessingDark.png", UriKind.Relative));
+            AllWindowImage.Source = new BitmapImage(new("/Resources/AllWindowProcessingDark.png", UriKind.Relative));
+            MagnetImage.Source = new BitmapImage(new("/Resources/MagnetProcessingDark.png", UriKind.Relative));
+            HotkeyImage.Source = new BitmapImage(new("/Resources/HotkeyProcessingDark.png", UriKind.Relative));
+            PluginImage.Source = new BitmapImage(new("/Resources/PluginProcessingDark.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsDark.png", UriKind.Relative));
+            InformationImage.Source = new BitmapImage(new("/Resources/InformationDark.png", UriKind.Relative));
         }
     }
 }

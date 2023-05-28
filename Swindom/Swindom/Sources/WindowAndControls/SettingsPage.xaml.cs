@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「設定」ページ
@@ -55,7 +55,7 @@ public partial class SettingsPage : Page
         if (StartupProcessing.CheckTaskRegistered())
         {
             StartupToggleSwitch.IsOn = true;
-            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow?.RunAtWindowsStartupAdministrator;
+            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Languages.LanguagesWindow.RunAtWindowsStartupAdministrator;
         }
         else if (StartupProcessing.CheckStartup())
         {
@@ -339,6 +339,7 @@ public partial class SettingsPage : Page
             {
                 ApplicationData.Settings.CoordinateType = CoordinateType.EachDisplay;
             }
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.CoordinateChanged);
         }
         catch
         {

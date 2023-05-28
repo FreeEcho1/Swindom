@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「情報」ページ
@@ -81,7 +81,7 @@ public partial class InformationPage : Page
     {
         try
         {
-            VariousProcessing.OpenFileAndWebPage(VariousProcessing.GetApplicationDirectoryPath() + Path.DirectorySeparatorChar + Common.ReadmeFileName);
+            VariousProcessing.OpenFileAndWebPage(VariousProcessing.GetApplicationDirectory() + Path.DirectorySeparatorChar + Common.ReadmeFileName);
         }
         catch
         {
@@ -101,7 +101,7 @@ public partial class InformationPage : Page
     {
         try
         {
-            VariousProcessing.OpenFileAndWebPage(VariousProcessing.GetApplicationDirectoryPath() + Path.DirectorySeparatorChar + Common.UpdateHistoryFileName);
+            VariousProcessing.OpenFileAndWebPage(VariousProcessing.GetApplicationDirectory() + Path.DirectorySeparatorChar + Common.UpdateHistoryFileName);
         }
         catch
         {

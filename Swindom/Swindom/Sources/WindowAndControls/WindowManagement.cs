@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// ウィンドウ管理
@@ -21,6 +21,10 @@ public class WindowManagement
     /// 「更新確認」ウィンドウ
     /// </summary>
     private UpdateInformationWindow? UpdateInformationWindow;
+    /// <summary>
+    /// 「ウィンドウ判定の指定方法」ウィンドウ
+    /// </summary>
+    private DesignateMethodWindow? DesignateMethodWindow;
 
     /// <summary>
     /// 全てのウィンドウを閉じる
@@ -35,6 +39,8 @@ public class WindowManagement
         NumericCalculationWindow = null;
         UpdateInformationWindow?.Close();
         UpdateInformationWindow = null;
+        DesignateMethodWindow?.Close();
+        DesignateMethodWindow = null;
     }
 
     /// <summary>
@@ -196,6 +202,48 @@ public class WindowManagement
     }
 
     /// <summary>
+    /// 「ウィンドウ判定の指定方法」ウィンドウを表示
+    /// </summary>
+    /// <param name="parentWindow">親ウィンドウ (なし「null」)</param>
+    public void ShowDesignateMethodWindow(
+        Window? parentWindow = null
+        )
+    {
+        if (DesignateMethodWindow == null)
+        {
+            ReadLanguage();
+            DesignateMethodWindow = new(parentWindow);
+            DesignateMethodWindow.Closed += DesignateMethodWindow_Closed;
+            DesignateMethodWindow.Show();
+        }
+        else
+        {
+            DesignateMethodWindow.Activate();
+        }
+    }
+
+    /// <summary>
+    /// 「ウィンドウ判定の指定方法」ウィンドウの「Closed」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    private void DesignateMethodWindow_Closed(
+        object? sender,
+        EventArgs e
+        )
+    {
+        try
+        {
+            DesignateMethodWindow = null;
+            UnnecessaryLanguageDataDelete();
+        }
+        catch
+        {
+        }
+    }
+
+    /// <summary>
     /// ウィンドウで使用する言語情報がない場合は読み込む
     /// </summary>
     private static void ReadLanguage()
@@ -214,7 +262,8 @@ public class WindowManagement
         if (MainWindow == null
             && GetInformationWindow == null
             && UpdateInformationWindow == null
-            && NumericCalculationWindow == null)
+            && NumericCalculationWindow == null
+            && DesignateMethodWindow == null)
         {
             ApplicationData.Languages.LanguagesWindow = null;
         }

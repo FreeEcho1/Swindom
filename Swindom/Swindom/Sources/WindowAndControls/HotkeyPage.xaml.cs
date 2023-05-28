@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// 「ホットキー」ページ
@@ -26,18 +26,12 @@ public partial class HotkeyPage : Page
     private bool CancelNextEvent;
 
     /// <summary>
-    /// ListBoxItemの高さ
-    /// </summary>
-    private const int ListBoxItemHeight = 80;
-
-    /// <summary>
     /// コンストラクタ
     /// </summary>
     public HotkeyPage()
     {
         InitializeComponent();
 
-        SettingsControlsImage();
         SettingsRowDefinition.Height = new(Common.SettingsRowDefinitionMinimize);
         SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
         ModifyButton.IsEnabled = false;
@@ -45,6 +39,7 @@ public partial class HotkeyPage : Page
         MoveUpButton.IsEnabled = false;
         MoveDownButton.IsEnabled = false;
         SelectWindowTargetButton.IsEnabled = false;
+        SettingsControlsImage();
         SetTextOnControls();
 
         HotkeyListBox.SelectionChanged += HotkeyListBox_SelectionChanged;
@@ -212,7 +207,7 @@ public partial class HotkeyPage : Page
         {
             if (FEMessageBox.Show(ApplicationData.Languages.LanguagesWindow?.AllowDelete ?? "", ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                ApplicationData.WindowProcessingManagement.Hotkey?.UnregisterHotkeys();
+                ApplicationData.WindowProcessingManagement.HotkeyProcessing?.UnregisterHotkeys();
                 try
                 {
                     ApplicationData.Settings.HotkeyInformation.Items.RemoveAt(HotkeyListBox.SelectedIndex);
@@ -223,7 +218,7 @@ public partial class HotkeyPage : Page
                 {
                     FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
                 }
-                ApplicationData.WindowProcessingManagement.Hotkey?.RegisterHotkeys();
+                ApplicationData.WindowProcessingManagement.HotkeyProcessing?.RegisterHotkeys();
             }
         }
         catch
@@ -314,7 +309,7 @@ public partial class HotkeyPage : Page
         try
         {
             WindowSelectionMouse.StopWindowSelection();
-            ApplicationData.WindowProcessingManagement.Hotkey?.PerformHotkeyProcessing(WindowSelectionMouse.SelectedHwnd, ApplicationData.Settings.HotkeyInformation.Items[HotkeyListBox.SelectedIndex]);
+            ApplicationData.WindowProcessingManagement.HotkeyProcessing?.PerformHotkeyProcessing(WindowSelectionMouse.SelectedHwnd, ApplicationData.Settings.HotkeyInformation.Items[HotkeyListBox.SelectedIndex]);
             Window.GetWindow(this).WindowState = BeforeWindowState;
         }
         catch
@@ -339,14 +334,14 @@ public partial class HotkeyPage : Page
             {
                 ItemsRowDefinition.Height = new(0);
                 SettingsRowDefinition.Height = new(1, GridUnitType.Star);
-                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/CloseSettingsDark.png" : "/Resources/CloseSettingsWhite.png", UriKind.Relative));
+                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/CloseSettingsWhite.png" : "/Resources/CloseSettingsDark.png", UriKind.Relative));
                 SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Auto;
             }
             else
             {
                 ItemsRowDefinition.Height = new(1, GridUnitType.Star);
                 SettingsRowDefinition.Height = new(Common.SettingsRowDefinitionMinimize);
-                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/SettingsDark.png" : "/Resources/SettingsWhite.png", UriKind.Relative));
+                SettingsImage.Source = new BitmapImage(new(ApplicationData.Settings.DarkMode ? "/Resources/SettingsWhite.png" : "/Resources/SettingsDark.png", UriKind.Relative));
                 SettingsScrollViewer.ScrollToVerticalOffset(0);
                 SettingsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Disabled;
             }
@@ -377,7 +372,7 @@ public partial class HotkeyPage : Page
                 CancelNextEvent = true;
                 ApplicationData.Settings.HotkeyInformation.Enabled = ProcessingStateToggleSwitch.IsOn;
                 SelectWindowTargetButton.IsEnabled = (HotkeyListBox.SelectedItems.Count == 1) && ApplicationData.Settings.HotkeyInformation.Enabled;
-                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.HotkeyValidState);
+                ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.HotkeyProcessingStateChanged);
             }
         }
         catch
@@ -438,7 +433,7 @@ public partial class HotkeyPage : Page
         {
             switch (e.ProcessingEventType)
             {
-                case ProcessingEventType.HotkeyValidState:
+                case ProcessingEventType.HotkeyProcessingStateChanged:
                     if (CancelNextEvent)
                     {
                         CancelNextEvent = false;
@@ -509,8 +504,7 @@ public partial class HotkeyPage : Page
             {
                 ListBoxItem newItem = new()
                 {
-                    Content = GetStringHotkeyInformation(nowHII),
-                    Height = ListBoxItemHeight
+                    Content = GetStringHotkeyInformation(nowHII)
                 };
                 HotkeyListBox.Items.Add(newItem);
             }
@@ -613,6 +607,9 @@ public partial class HotkeyPage : Page
                 case HotkeyProcessingType.StartStopSpecifyWindow:
                     stringData += ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfSpecifyWindow;
                     break;
+                case HotkeyProcessingType.StartStopAllWindow:
+                    stringData += ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfAllWindow;
+                    break;
                 case HotkeyProcessingType.StartStopMagnet:
                     stringData += ApplicationData.Languages.LanguagesWindow.StartStopProcessingOfMagnet;
                     break;
@@ -627,6 +624,9 @@ public partial class HotkeyPage : Page
                     break;
                 case HotkeyProcessingType.OnlyActiveWindowSpecifyWindow:
                     stringData += ApplicationData.Languages.LanguagesWindow.OnlyActiveWindowSpecifyWindow;
+                    break;
+                case HotkeyProcessingType.ShowThisApplicationWindow:
+                    stringData += ApplicationData.Languages.LanguagesWindow.ShowThisApplicationWindow;
                     break;
             }
             stringData += Environment.NewLine + "  " + FreeEcho.FEHotKeyWPF.HotKeyWPF.GetHotKeyString(hotkeyItemInformation.Hotkey);
@@ -645,23 +645,23 @@ public partial class HotkeyPage : Page
     {
         if (ApplicationData.Settings.DarkMode)
         {
-            AddImage.Source = new BitmapImage(new("/Resources/AdditionDark.png", UriKind.Relative));
-            ModifyImage.Source = new BitmapImage(new("/Resources/ModifyDark.png", UriKind.Relative));
-            DeleteImage.Source = new BitmapImage(new("/Resources/DeleteDark.png", UriKind.Relative));
-            MoveUpImage.Source = new BitmapImage(new("/Resources/UpDark.png", UriKind.Relative));
-            MoveDownImage.Source = new BitmapImage(new("/Resources/DownDark.png", UriKind.Relative));
-            SelectWindowTargetImage.Source = new BitmapImage(new("/Resources/TargetDark.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsDark.png", UriKind.Relative));
-        }
-        else
-        {
             AddImage.Source = new BitmapImage(new("/Resources/AdditionWhite.png", UriKind.Relative));
             ModifyImage.Source = new BitmapImage(new("/Resources/ModifyWhite.png", UriKind.Relative));
             DeleteImage.Source = new BitmapImage(new("/Resources/DeleteWhite.png", UriKind.Relative));
             MoveUpImage.Source = new BitmapImage(new("/Resources/UpWhite.png", UriKind.Relative));
             MoveDownImage.Source = new BitmapImage(new("/Resources/DownWhite.png", UriKind.Relative));
             SelectWindowTargetImage.Source = new BitmapImage(new("/Resources/TargetWhite.png", UriKind.Relative));
-            SettingsImage.Source = new BitmapImage(new("/Resources/SettingsWhite.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new((int)SettingsRowDefinition.Height.Value == Common.SettingsRowDefinitionMinimize ? "/Resources/SettingsWhite.png" : "/Resources/CloseSettingsWhite.png", UriKind.Relative));
+        }
+        else
+        {
+            AddImage.Source = new BitmapImage(new("/Resources/AdditionDark.png", UriKind.Relative));
+            ModifyImage.Source = new BitmapImage(new("/Resources/ModifyDark.png", UriKind.Relative));
+            DeleteImage.Source = new BitmapImage(new("/Resources/DeleteDark.png", UriKind.Relative));
+            MoveUpImage.Source = new BitmapImage(new("/Resources/UpDark.png", UriKind.Relative));
+            MoveDownImage.Source = new BitmapImage(new("/Resources/DownDark.png", UriKind.Relative));
+            SelectWindowTargetImage.Source = new BitmapImage(new("/Resources/TargetDark.png", UriKind.Relative));
+            SettingsImage.Source = new BitmapImage(new((int)SettingsRowDefinition.Height.Value == Common.SettingsRowDefinitionMinimize ? "/Resources/SettingsDark.png" : "/Resources/CloseSettingsDark.png", UriKind.Relative));
         }
     }
 }

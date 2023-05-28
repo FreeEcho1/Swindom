@@ -1,4 +1,4 @@
-﻿namespace Swindom.Sources.WindowAndControls;
+﻿namespace Swindom;
 
 /// <summary>
 /// システムトレイアイコンの処理
@@ -34,6 +34,13 @@ public class NotifyIconProcessing
     /// 「指定ウィンドウ」MenuItem
     /// </summary>
     private readonly MenuItem SpecifyWindowMenuItem = new()
+    {
+        IsCheckable = true,
+    };
+    /// <summary>
+    /// 「全てのウィンドウ」MenuItem
+    /// </summary>
+    private readonly MenuItem AllWindowMenuItem = new()
     {
         IsCheckable = true,
     };
@@ -85,7 +92,7 @@ public class NotifyIconProcessing
         {
             // 言語ファイルを作成する処理 (必要ないときはコメントアウト)
             //LanguageFileProcessing.ReadLanguage();
-            //string tempPath = VariousProcessing.GetApplicationDirectoryPath() + "Languages/ja-JP.lang";
+            //string tempPath = VariousProcessing.GetApplicationDirectory() + "Languages/ja-JP.lang";
             //LanguageFileProcessing.WriteLanguages(tempPath);
 
             // システムで設定されている言語を読み込む (言語ファイルが無い場合は英語。言語ファイルが無い場合は読み込まない。)
@@ -154,6 +161,22 @@ public class NotifyIconProcessing
                 }
             }
 
+            // プラグインのフォルダがない場合は作成
+            try
+            {
+                if (VariousProcessing.CheckInstalled() == false)
+                {
+                    string settingDirectory = VariousProcessing.GetApplicationDirectory(false) + Path.DirectorySeparatorChar + Common.PluginsDirectoryName;     // プラグインのディレクトリ
+                    if (Directory.Exists(settingDirectory) == false)
+                    {
+                        Directory.CreateDirectory(settingDirectory);
+                    }
+                }
+            }
+            catch
+            {
+            }
+
             if (ApplicationData.Settings.DarkMode)
             {
                 ThemeManager.Current.ApplicationTheme = ApplicationTheme.Dark;
@@ -166,10 +189,12 @@ public class NotifyIconProcessing
             SetTextOnControls();
 
             SpecifyWindowMenuItem.IsChecked = ApplicationData.Settings.SpecifyWindowInformation.Enabled;
+            AllWindowMenuItem.IsChecked = ApplicationData.Settings.AllWindowInformation.Enabled;
             MagnetMenuItem.IsChecked = ApplicationData.Settings.MagnetInformation.Enabled;
             HotkeyMenuItem.IsChecked = ApplicationData.Settings.HotkeyInformation.Enabled;
             OpenMenuItem.Click += OpenMenuItem_Click;
             SpecifyWindowMenuItem.Click += SpecifyWindowMenuItem_Click;
+            AllWindowMenuItem.Click += AllWindowMenuItem_Click;
             MagnetMenuItem.Click += MagnetMenuItem_Click;
             HotkeyMenuItem.Click += HotkeyMenuItem_Click;
             BatchProcessingOfSpecifyWindowMenuItem.Click += BatchProcessingOfSpecifyWindowMenuItem_Click;
@@ -222,10 +247,6 @@ public class NotifyIconProcessing
 
             // 更新確認ウィンドウの動作確認処理 (必要ないときはコメントアウト)
             //ApplicationData.WindowManagement.ShowUpdateCheckWindow();
-
-            //FEMessageBox.Show("あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこかきくけこ", ApplicationData.Languages.Check + Common.CopySeparateString + Common.ApplicationName, MessageBoxButton.OK);
-            //FEMessageBox.Show("あ", "あいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえおあいうえお" + Common.CopySeparateString + Common.ApplicationName, MessageBoxButton.OK);
-            //FEMessageBox.Show("メッセージ表示 - Google", "メッセージ", MessageBoxButton.OK);
         }
         catch
         {
@@ -288,6 +309,30 @@ public class NotifyIconProcessing
             ApplicationData.Settings.SpecifyWindowInformation.Enabled = !ApplicationData.Settings.SpecifyWindowInformation.Enabled;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowProcessingStateChanged);
             SpecifyWindowMenuItem.IsChecked = ApplicationData.Settings.SpecifyWindowInformation.Enabled;
+            SettingFileProcessing.WriteSettings();
+        }
+        catch
+        {
+            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + Common.CopySeparateString + Common.ApplicationName, MessageBoxButton.OK);
+        }
+    }
+
+    /// <summary>
+    /// 「全てのウィンドウ」MenuItemの「Click」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void AllWindowMenuItem_Click(
+        object sender,
+        RoutedEventArgs e
+        )
+    {
+        try
+        {
+            ApplicationData.Settings.AllWindowInformation.Enabled = !ApplicationData.Settings.AllWindowInformation.Enabled;
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.AllWindowProcessingStateChanged);
+            AllWindowMenuItem.IsChecked = ApplicationData.Settings.AllWindowInformation.Enabled;
+            SettingFileProcessing.WriteSettings();
         }
         catch
         {
@@ -310,6 +355,7 @@ public class NotifyIconProcessing
             ApplicationData.Settings.MagnetInformation.Enabled = !ApplicationData.Settings.MagnetInformation.Enabled;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.MagnetProcessingStateChanged);
             MagnetMenuItem.IsChecked = ApplicationData.Settings.MagnetInformation.Enabled;
+            SettingFileProcessing.WriteSettings();
         }
         catch
         {
@@ -330,8 +376,9 @@ public class NotifyIconProcessing
         try
         {
             ApplicationData.Settings.HotkeyInformation.Enabled = !ApplicationData.Settings.HotkeyInformation.Enabled;
-            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.HotkeyValidState);
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.HotkeyProcessingStateChanged);
             HotkeyMenuItem.IsChecked = ApplicationData.Settings.HotkeyInformation.Enabled;
+            SettingFileProcessing.WriteSettings();
         }
         catch
         {
@@ -351,7 +398,7 @@ public class NotifyIconProcessing
     {
         try
         {
-            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.BatchProcessingOfSpecifyWindow);
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowBatchProcessing);
         }
         catch
         {
@@ -448,10 +495,7 @@ public class NotifyIconProcessing
     {
         try
         {
-            ApplicationData.Release();
-            ApplicationData.WindowManagement.CloseAll();
-            HwndWindow.Destroy();
-            DoClose();
+            EndProcessing();
         }
         catch
         {
@@ -473,18 +517,22 @@ public class NotifyIconProcessing
             switch (e.ProcessingEventType)
             {
                 case ProcessingEventType.SpecifyWindowProcessingStateChanged:
-                    SettingFileProcessing.WriteSettings();
                     SpecifyWindowMenuItem.IsChecked = ApplicationData.Settings.SpecifyWindowInformation.Enabled;
                     SetIconOnSystemTrayIcon();
                     break;
+                case ProcessingEventType.AllWindowProcessingStateChanged:
+                    AllWindowMenuItem.IsChecked = ApplicationData.Settings.AllWindowInformation.Enabled;
+                    SetIconOnSystemTrayIcon();
+                    break;
                 case ProcessingEventType.MagnetProcessingStateChanged:
-                    SettingFileProcessing.WriteSettings();
                     MagnetMenuItem.IsChecked = ApplicationData.Settings.MagnetInformation.Enabled;
                     SetIconOnSystemTrayIcon();
                     break;
-                case ProcessingEventType.HotkeyValidState:
-                    SettingFileProcessing.WriteSettings();
+                case ProcessingEventType.HotkeyProcessingStateChanged:
                     HotkeyMenuItem.IsChecked = ApplicationData.Settings.HotkeyInformation.Enabled;
+                    SetIconOnSystemTrayIcon();
+                    break;
+                case ProcessingEventType.PluginProcessingStateChanged:
                     SetIconOnSystemTrayIcon();
                     break;
                 case ProcessingEventType.LanguageChanged:
@@ -492,6 +540,15 @@ public class NotifyIconProcessing
                     break;
                 case ProcessingEventType.ThemeChanged:
                     SettingsContextMenu();
+                    break;
+                case ProcessingEventType.ShowThisApplicationWindow:
+                    ApplicationData.WindowManagement.ShowMainWindow();
+                    break;
+                case ProcessingEventType.RestartProcessing:
+                    RestartProcessing();
+                    break;
+                case ProcessingEventType.CloseApplication:
+                    EndProcessing();
                     break;
             }
         }
@@ -501,13 +558,51 @@ public class NotifyIconProcessing
     }
 
     /// <summary>
+    /// 終了処理
+    /// </summary>
+    private void EndProcessing()
+    {
+        ApplicationData.Release();
+        ApplicationData.WindowManagement.CloseAll();
+        HwndWindow.Destroy();
+        DoClose();
+    }
+
+    /// <summary>
+    /// 再起動処理
+    /// </summary>
+    private void RestartProcessing()
+    {
+        string batFilePath = VariousProcessing.GetApplicationDirectory(false) + Path.DirectorySeparatorChar + Common.RestartBatchFileName;       // バッチファイルのパス
+
+        string batString = "";
+        batString += "taskkill /f /im \"" + VariousProcessing.GetApplicationFileName() + "\"" + Environment.NewLine;       // プロセスを停止
+        batString += "timeout /t 2" + Environment.NewLine;      // 指定時間待機
+        batString += "pushd \"" + VariousProcessing.GetApplicationDirectory() + "\"" + Environment.NewLine;        // ディレクトリを移動
+        batString += "start \"\" \"" + VariousProcessing.GetApplicationFileName() + "\"" + Environment.NewLine;        // アプリケーションを実行
+        batString += "del /f \"" + Common.RestartBatchFileName + "\"" + Environment.NewLine;      // バッチファイルを削除
+        batString += "exit /b" + Environment.NewLine;
+        File.WriteAllText(batFilePath, batString);
+
+        Process process = new();
+        process.StartInfo.FileName = batFilePath;
+        process.StartInfo.Verb = "open";
+        process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+        process.StartInfo.CreateNoWindow = true;
+        process.StartInfo.UseShellExecute = false;
+        process.Start();
+    }
+
+    /// <summary>
     /// システムトレイアイコンにアイコンを設定
     /// </summary>
     private void SetIconOnSystemTrayIcon()
     {
         TaskbarIcon.Icon = ApplicationData.Settings.SpecifyWindowInformation.Enabled
+            || ApplicationData.Settings.AllWindowInformation.Enabled
             || ApplicationData.Settings.MagnetInformation.Enabled
             || ApplicationData.Settings.HotkeyInformation.Enabled
+            || ApplicationData.Settings.PluginInformation.Enabled
             ? Properties.Resources.ApplicationIcon : Properties.Resources.ApplicationIconInvalid;
     }
 
@@ -529,7 +624,8 @@ public class NotifyIconProcessing
             FEMessageBoxWindow.Cancel = ApplicationData.Languages.LanguagesWindow.Cancel;
 
             OpenMenuItem.Header = ApplicationData.Languages.LanguagesWindow.Open;
-            SpecifyWindowMenuItem.Header = ApplicationData.Languages.LanguagesWindow.Event;
+            SpecifyWindowMenuItem.Header = ApplicationData.Languages.LanguagesWindow.SpecifyWindow;
+            AllWindowMenuItem.Header = ApplicationData.Languages.LanguagesWindow.AllWindow;
             MagnetMenuItem.Header = ApplicationData.Languages.LanguagesWindow.Magnet;
             HotkeyMenuItem.Header = ApplicationData.Languages.LanguagesWindow.Hotkey;
             BatchProcessingOfSpecifyWindowMenuItem.Header = ApplicationData.Languages.LanguagesWindow.BatchProcessingOfSpecifyWindow;
@@ -555,6 +651,7 @@ public class NotifyIconProcessing
 
         TaskbarIconContextMenu.Items.Add(OpenMenuItem);
         TaskbarIconContextMenu.Items.Add(SpecifyWindowMenuItem);
+        TaskbarIconContextMenu.Items.Add(AllWindowMenuItem);
         TaskbarIconContextMenu.Items.Add(MagnetMenuItem);
         TaskbarIconContextMenu.Items.Add(HotkeyMenuItem);
         TaskbarIconContextMenu.Items.Add(BatchProcessingOfSpecifyWindowMenuItem);
