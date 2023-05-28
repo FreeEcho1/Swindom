@@ -21,11 +21,4 @@ global using System.Xml.Linq;
 global using ModernWpf;
 global using Hardcodet.Wpf.TaskbarNotification;
 
-global using Swindom.Sources.Data;
-global using Swindom.Sources.EventData;
-global using Swindom.Sources.LanguagesData;
-global using Swindom.Sources.DllImport;
-global using Swindom.Sources.Processing;
-global using Swindom.Sources.SettingsData;
-global using Swindom.Sources.WindowAndControls;
-global using Swindom.Sources.WindowProcessing;
+global using Swindom.IPluginSwindom;
