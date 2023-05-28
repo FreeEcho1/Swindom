@@ -7,10 +7,10 @@
     <UseWPF>true</UseWPF>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Resources\ApplicationIcon.ico</ApplicationIcon>
-    <Version>4.2.0-beta</Version>
+    <Version>4.3.0-beta</Version>
     <Authors>FreeEcho</Authors>
     <Product>Swindom</Product>
-    <Copyright>© 2023 FreeEcho</Copyright>
+    <Copyright>© 2021 FreeEcho</Copyright>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,6 +23,8 @@
   <ItemGroup>
     <None Remove="Resources\AdditionDark.png" />
     <None Remove="Resources\AdditionWhite.png" />
+    <None Remove="Resources\AllWindowProcessingDark.png" />
+    <None Remove="Resources\AllWindowProcessingWhite.png" />
     <None Remove="Resources\ApplicationIcon.ico" />
     <None Remove="Resources\ApplicationIconInvalid.ico" />
     <None Remove="Resources\CloseSettingsDark.png" />
@@ -43,6 +45,8 @@
     <None Remove="Resources\MagnetProcessingWhite.png" />
     <None Remove="Resources\ModifyDark.png" />
     <None Remove="Resources\ModifyWhite.png" />
+    <None Remove="Resources\PluginProcessingDark.png" />
+    <None Remove="Resources\PluginProcessingWhite.png" />
     <None Remove="Resources\SettingsDark.png" />
     <None Remove="Resources\SettingsWhite.png" />
     <None Remove="Resources\SpecifyWindowProcessingDark.png" />
@@ -86,6 +90,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\AllWindowProcessingDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\AllWindowProcessingWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PluginProcessingDark.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\PluginProcessingWhite.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\SettingsWhite.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -208,6 +224,9 @@
     </Reference>
     <Reference Include="FEWindowSelectionMouse">
       <HintPath>..\..\..\..\..\..\..\Library\FreeEcho\.Net\.Net7\FEWindowSelectionMouse.dll</HintPath>
+    </Reference>
+    <Reference Include="IPluginSwindom">
+      <HintPath>..\..\IPluginSwindom\IPluginSwindom\bin\Release\net7.0\IPluginSwindom.dll</HintPath>
     </Reference>
   </ItemGroup>
 
