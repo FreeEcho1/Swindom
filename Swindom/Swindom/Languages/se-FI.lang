@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>Vaihda asetukset uuteen versioon 'Kyllä' / Vaihda manuaalisesti 'Ei' / Poista prosessi käytöstä 'Peruuta'.</ChangeSettingToNewVersion>
- <ChangeVersion>Versiota on muutettu</ChangeVersion>
- <Check>Vahvistus.</Check>
- <ErrorOccurred>On tapahtunut virhe.</ErrorOccurred>
- <LanguageName>Suomenkielinen</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>Vain aktiivinen ikkuna</ActiveWindowOnly>
-  <Add>Lisätty.</Add>
-  <Added>Lisätty.</Added>
-  <AllWindow>Kaikki ikkunat</AllWindow>
-  <AllowDelete>Haluatko poistaa?</AllowDelete>
-  <AlwaysCancelForefront>Vapauta aina etusijalla</AlwaysCancelForefront>
-  <AlwaysForefront>Aina etusijalla</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Tuo aina etummaiseen/irrota aina</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Liike</AmountOfMovement>
-  <Announce>Ilmoita</Announce>
-  <AutomaticUpdateCheck>Automaattinen päivitysvahvistus ajonaikana</AutomaticUpdateCheck>
-  <BackwardMatch>Takaisinpäin ottelu</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>'Nimettyjen ikkunoiden' eräkäsittely</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Alempi pää</BottomEdge>
-  <Cancel>Peruuta</Cancel>
-  <CancelMoveWindow>Ikkunat, jotka eivät liiku</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>Ikkunan määrittäminen tapauskohtaisesti</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Tarkista päivitykset, myös beta-versiot.</CheckBetaVersion>
-  <CheckReadme>Katso 'Readme (ohjeet)' saadaksesi tietoa siitä, miten määritetään.</CheckReadme>
-  <ClassName>Luokan nimi</ClassName>
-  <ClientArea>Kohdeasiakasalue</ClientArea>
-  <CloseWindow>Sulje ikkuna</CloseWindow>
-  <ConditionsThatDoNotProcess>Ehto, jota ei käsitellä</ConditionsThatDoNotProcess>
-  <Coordinate>Koordinaatit</Coordinate>
-  <CoordinateSpecification>Koordinaattien määrittely</CoordinateSpecification>
-  <Copy>Kopioi</Copy>
-  <CurrentDisplay>Nykyinen näyttö</CurrentDisplay>
-  <DarkMode>Tumma tila</DarkMode>
-  <DecisionDistanceToPaste>Liitä päätösetäisyys</DecisionDistanceToPaste>
-  <Delete>Poistettu</Delete>
-  <Deleted>Poistettu.</Deleted>
-  <Display>Näyttö</Display>
-  <DisplayInformationUpdate>Näytön tiedot päivitetty</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Viitteenä käytettävä näyttö</DisplayToUseAsStandard>
-  <DoNotChange>Älä muuta</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Älä muuta sijaintia tai kokoa, jos se on näytön ulkopuolella.</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Ei määritetty</DoNotSpecify>
-  <EachDisplay>Kunkin näytön vasen yläkulma "x=0, y=0".</EachDisplay>
-  <End>Loppu</End>
-  <Event>Tapahtuma</Event>
-  <ExactMatch>Tarkka vastaavuus.</ExactMatch>
-  <ExplanationOfAllWindow>Kaikkia ikkunoita voidaan käsitellä, paitsi määritettyä ikkunaa. Myös kohdassa 'Määritetty ikkuna' määritetyt ikkunat jätetään pois.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>Voit määrittää ikkunan ja antaa sen käsiteltäväksi automaattisesti. Jos haluat käsitellä vain pikanäppäimillä ilman automaattista käsittelyä, poista tämä vaihtoehto käytöstä.</ExplanationOfSpecifyWindow>
-  <FileName>Tiedoston nimi</FileName>
-  <FileSelection>Tiedoston valinta</FileSelection>
-  <Forefront>Foremost</Forefront>
-  <Foregrounded>Etualalle.</Foregrounded>
-  <ForwardMatch>Match etual.</ForwardMatch>
-  <General>General</General>
-  <GetWindowInformation>Ikkunan tietojen hankinta</GetWindowInformation>
-  <Height>Korkeus</Height>
-  <HeightSpecification>Määritä korkeus</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Siirrä hiiren kursori valittavaan ikkunaan ja pidä hiiren kursoria alhaalla.</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>Pikanäppäimet</Hotkey>
-  <HotkeyExplanation>Pikanäppäimiä voidaan käyttää aktiivisen ikkunan käsittelyyn (syötteen hyväksyminen). Valitse-painikkeella voit valita ikkunan, jota haluat käsitellä ilman pikanäppäintä.</HotkeyExplanation>
-  <HotkeysDoNotStop>Pikanäppäimet eivät pysäytä (jos koko näytön ikkuna on läsnä).</HotkeysDoNotStop>
-  <IncludePath>Sisällytä polut</IncludePath>
-  <IncreaseDecreaseHeight>Korkeuden lisääminen/vähentäminen</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Leveyden lisääminen/vähentäminen</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Leveyden ja korkeuden kasvattaminen/vähentäminen</IncreaseDecreaseWidthAndHeight>
-  <Information>Tietoja.</Information>
-  <InformationToBeObtained>Haettavat tiedot</InformationToBeObtained>
-  <Language>Kieli.</Language>
-  <LatestVersion>Uusin versio.</LatestVersion>
-  <LeftEdge>Vasemmalla</LeftEdge>
-  <Library>Kirjasto.</Library>
-  <LimitedToSpecifiedDisplay>Rajoitettu määritettyyn näyttöön</LimitedToSpecifiedDisplay>
-  <Magnet>Magneetti.</Magnet>
-  <MagnetExplanation>Kiinnittyy näytön tai toisen ikkunan reunaan, kun ikkunaa siirretään hiirellä.</MagnetExplanation>
-  <Manual>Kuvaus</Manual>
-  <Maximize>Maksimoi</Maximize>
-  <Middle>Keskitetty</Middle>
-  <Minimize>Minimoitu</Minimize>
-  <MinimizeEnd>Minimointi on päättynyt</MinimizeEnd>
-  <MinimizeStart>Minimointi aloitettu.</MinimizeStart>
-  <Modified>Korjattu.</Modified>
-  <Modify>Korjattu.</Modify>
-  <MoveAllWindowToSpecifiedPosition>Siirrä kaikki ikkunat määritettyyn sijaintiin</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>Siirretty alaspäin</MoveDown>
-  <MovePastePosition>Liitä sijaintia siirretty</MovePastePosition>
-  <MoveSizeChangeEnd>Siirto ja koon muuttaminen suoritettu loppuun</MoveSizeChangeEnd>
-  <MoveUp>Siirrä ylöspäin</MoveUp>
-  <MoveXCoordinate>Siirrä X-koordinaatti</MoveXCoordinate>
-  <MoveYCoordinate>Siirrä Y-koordinaatti</MoveYCoordinate>
-  <NeedRestart>Swindom on käynnistettävä uudelleen.</NeedRestart>
-  <No>Ei.</No>
-  <NormalExecution>Normaali suoritus? (ilman järjestelmänvalvojan oikeuksia - 'Kyllä' / järjestelmänvalvojan oikeuksin - 'Ei').</NormalExecution>
-  <NormalWindow>Normaali ikkuna</NormalWindow>
-  <NotIncludePath>Ei sisällä polkuja</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Kertojen määrä, joita ei ole käsitelty ensin (viivästyttää käsittelyä heti suorituksen jälkeen).</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Numeerinen laskenta</NumericCalculation>
-  <Ok>OK - 'Kyllä' / 'Ei'</Ok>
-  <OnceWhileItIsRunning>Ohjelmiston ollessa käynnissä</OnceWhileItIsRunning>
-  <OnceWindowOpen>Kun ikkuna avataan</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Vain "määritetyn ikkunan" aktiivinen ikkuna käsitellään.</OnlyActiveWindowSpecifyWindow>
-  <Open>Avaa</Open>
-  <OtherThanSpecifiedVersion>Muuta kuin määritettyä versiota (esim. pienempään versioon asti mahdollista).</OtherThanSpecifiedVersion>
-  <PartialMatch>Osittainen vastaavuus</PartialMatch>
-  <PasteIntoAnotherWindow>Liitä toiseen ikkunaan</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>Liitä näytön reunaan</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Liitä Ctrl-näppäin painettuna</PasteWithCtrlKeyPressed>
-  <Percent>% (esim. %)</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>Lisäosat</Plugin>
-  <PluginExplanation>Liitännäiset voivat lisätä lisätoimintoja. Katso yksityiskohtaiset ohjeet Readme-tiedostosta (ohjeet).</PluginExplanation>
-  <PluginSettings>Liitännäisen konfigurointi</PluginSettings>
-  <PluginTestMessage>Tämä toiminto on testattavana ja voi olla epävakaa, esim.</PluginTestMessage>
-  <Position>Sijainti.</Position>
-  <PrimaryDisplay>Ensisijaisen näytön vasen yläkulma 'x=0, y=0'.</PrimaryDisplay>
-  <ProcessOnlyOnce>Käsitellään vain kerran</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Käsitellään vain 'normaalissa ikkunassa'.</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>Käsittelyväli (millisekuntia)</ProcessingInterval>
-  <ProcessingName>Käsittelyn nimi</ProcessingName>
-  <ProcessingSettings>Käsittelyn asetus</ProcessingSettings>
-  <ProcessingState>Käsittelyn tila</ProcessingState>
-  <ProcessingType>Käsittelyn tyyppi</ProcessingType>
-  <ProcessingWindowRange>Käsiteltävien ikkunoiden alue</ProcessingWindowRange>
-  <Ratio>Suhde</Ratio>
-  <RegisterMultipleWindowActions>Rekisteröi useita ikkunoiden käsittelyjä</RegisterMultipleWindowActions>
-  <RegisteredName>Rekisteröinnin nimi</RegisteredName>
-  <ReportsAndRequests>Raportti, pyyntö</ReportsAndRequests>
-  <Restart>Reaktivointi.</Restart>
-  <RetrievedAfterFiveSeconds>Ikkunan tiedot haetaan 5 sekunnin kuluttua, aktivoi ikkuna, jonka tiedot haluat hakea 5 sekunnin kuluessa.</RetrievedAfterFiveSeconds>
-  <RightEdge>Oikea pää</RightEdge>
-  <RunAtWindowsStartup>Suorita Windowsin käynnistyksen yhteydessä</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Suorita Windowsin käynnistyksen yhteydessä (järjestelmänvalvojan oikeudet).</RunAtWindowsStartupAdministrator>
-  <Select>Valinta.</Select>
-  <SelectionComplete>Valittu.</SelectionComplete>
-  <Setting>Asetukset</Setting>
-  <SettingsValue>Asetettu arvo.</SettingsValue>
-  <ShareSettings>Haluatko jakaa asetustiedot kaikille käyttäjille?</ShareSettings>
-  <Show>Näytetään.</Show>
-  <ShowThisApplicationWindow>Näytä tämä sovellusikkuna</ShowThisApplicationWindow>
-  <Size>Koko</Size>
-  <SizeChangeAmount>Koon muuttamisen määrä</SizeChangeAmount>
-  <SoftwareName>Ohjelmiston nimi</SoftwareName>
-  <SpecifiedDisplay>Määritetty näyttö</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Läpinäkyvyyden määrittäminen/vapauttaminen</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Aseman ja koon määrittäminen</SpecifyPositionAndSize>
-  <SpecifyTransparency>Läpinäkyvyyden määrittäminen</SpecifyTransparency>
-  <SpecifyWindow>Määritelty ikkuna</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>'Kaikkien ikkunoiden' käsittelyn käynnistäminen/seis</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>Käynnistää/pysäyttää 'Magneetin' käsittelyn.</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Käynnistää/katkaisee 'Nimettyjen ikkunoiden' käsittelyn.</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Lopeta käsittely, jos näkyvissä on lisäys/muutosikkuna.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Käsittely pysäytetään, kun ikkuna näytetään koko näytön kokoisena.</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Pysäytysaika, kun käsittely on jumissa (millisekuntia).</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>On päällekkäisiä kohteita.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Prosessin nimiä on päällekkäin.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Rekisteröintinimiä on päällekkäin.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>On uusin versio.</ThereIsLatestVersion>
-  <Timer>Ajastin</Timer>
-  <TimerProcessing>Ajastinprosessi</TimerProcessing>
-  <TitleName>Otsikon nimi.</TitleName>
-  <TitleNameChanged>Otsikon nimi on muutettu.</TitleNameChanged>
-  <TitleNameExclusionString>Otsikon nimen sisältämä merkkijono</TitleNameExclusionString>
-  <TitleNameRequirements>Otsikon nimen käsittelyolosuhteet</TitleNameRequirements>
-  <TopEdge>Ylin loppu</TopEdge>
-  <Translators>Kääntäjä: DeepL</Translators>
-  <Transparency>Läpinäkyvyys</Transparency>
-  <UpdateCheck>Päivitysvahvistus</UpdateCheck>
-  <UpdateCheckFailed>Päivitysvahvistus epäonnistui.</UpdateCheckFailed>
-  <UpdateHistory>Päivityshistoria</UpdateHistory>
-  <Version>Versio.</Version>
-  <WaitTimeToProcessingNextWindow>Viive seuraavan ikkunan käsittelyyn (millisekuntia)</WaitTimeToProcessingNextWindow>
-  <Website>Verkkosivusto</Website>
-  <Width>Leveys</Width>
-  <WidthSpecification>Leveyden määrittely</WidthSpecification>
-  <WindowDecide>Ikkunan määritys</WindowDecide>
-  <WindowDesignateMethod>Miten määritetään ikkunan tuomio</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>Ikkunoita voidaan arvioida määrittelemällä 'otsikon nimi', 'luokan nimi' ja 'tiedoston nimi'.
-Se, mitä pitäisi ja mitä ei pitäisi määritellä, on erilainen jokaisessa ikkunassa.
-Jos määrität kaiken, ikkunaa ei ehkä käsitellä.
-Ohjelmistoissa, joissa 'class name' muuttuu joka kerta, kun ikkuna näytetään, Älä määritä luokan nimeä.
-UWP-sovelluksissa 'class name' ja 'file name' ovat samat kaikissa sovelluksissa muutamaa lukuun ottamatta, Jos 'otsikon nimeä' ei ole, sitä ei voida tunnistaa oikein ja muiden sovellusten ikkunoita käsitellään.
-On suositeltavaa määrittää kaikki "Title Name", "Class Name" ja "File Name".
-Luokan nimi on "ApplicationFrameWindow" ja tiedoston nimi on "C:\WINDOWS\system32\ApplicationFrameHost.exe", (tämä saattaa muuttua Windows-päivitysten myötä).</WindowDesignateMethodExplain>
-  <WindowInformation>Ikkunan tiedot.</WindowInformation>
-  <WindowMoveOutsideToInside>Jos ikkuna on ruudun ulkopuolella, siirrä se ruudulle.</WindowMoveOutsideToInside>
-  <WindowState>Ikkunan tila</WindowState>
-  <WindowWithTitleName>Ikkunan otsikon nimi</WindowWithTitleName>
-  <WindowWithoutTitleName>Ikkuna ilman otsikon nimeä</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>Kyllä Ei</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "Suomalainen.",
+  "errorOccurred": "Virhe.",
+  "check": "Vahvistus.",
+  "changeVersion": "Versio muutettu.",
+  "changeSettingToNewVersion": "Vaihda asetukset uuteen versioon 'Kyllä' / Vaihda manuaalisesti 'Ei' / Poista prosessi käytöstä 'Peruuta'.",
+  "ok": "OK",
+  "yes": "Kyllä / Ei",
+  "no": "Ei / Ei",
+  "cancel": "Peruuta.",
+  "shareSettings": "Haluatko jakaa asetustiedot kaikille käyttäjille?",
+  "open": "Avaa",
+  "batchProcessingOfSpecifyWindow": "'Nimettyjen ikkunoiden' eräkäsittely",
+  "windowMoveOutsideToInside": "Jos ikkuna on ruudun ulkopuolella, siirrä se näytölle",
+  "displayInformationUpdate": "Päivitä näytön tiedot",
+  "end": "Lopeta",
+  "updateCheckFailed": "Päivityksen vahvistus epäonnistui.",
+  "latestVersion": "Viimeisin versio.",
+  "thereIsLatestVersion": "Uusin versio on käytettävissä.",
+  "event": "Tapahtuma",
+  "timer": "Ajastin",
+  "specifyWindow": "Nimetty ikkuna",
+  "magnet": "Magneetit",
+  "plugin": "Liitännäiset",
+  "pluginSettings": "Liitännäisasetukset",
+  "setting": "Asetukset",
+  "information": "Tiedot",
+  "add": "Lisää",
+  "modify": "Muokkaa",
+  "delete": "Poista",
+  "select": "Valitse",
+  "moveUp": "Siirry ylöspäin",
+  "moveDown": "Siirry alas",
+  "copy": "Kopioi",
+  "processingState": "Käsittelyn tila",
+  "deleted": "Poistettu.",
+  "allowDelete": "Haluatko poistaa?",
+  "version": "Versio",
+  "updateCheck": "Päivityksen vahvistus",
+  "readme": "Tiedot (Readme)",
+  "updateHistory": "Päivityshistoria",
+  "website": "Verkkosivusto",
+  "reportsAndRequests": "Raportit, pyynnöt",
+  "library": "Kirjasto",
+  "general": "Yleinen",
+  "hotkey": "Pikanäppäimet",
+  "language": "Kielet",
+  "translators": "Kääntäjä: DeepL",
+  "darkMode": "Tumma tila",
+  "automaticUpdateCheck": "Automaattinen päivityksen tarkistus ajonaikana",
+  "checkBetaVersion": "Tarkista päivitykset, myös beta-versiot",
+  "registerMultipleWindowActions": "Rekisteröi useita ikkunaprosesseja",
+  "coordinate": "Koordinaatit",
+  "eachDisplay": "x=0, y=0” kunkin näytön vasemman yläreunan kohdalla.",
+  "primaryDisplay": "x=0, y=0 ensisijaisen näytön vasemmassa yläkulmassa.",
+  "fullScreenWindowAdditionDecision": "Koko näytön ikkunoiden lisäämisen määrittäminen (vain jos se on määritetty väärin).",
+  "processingInterval": "Käsittelyväli (millisekuntia)",
+  "runAtWindowsStartup": "Suoritetaan Windowsin käynnistyksen yhteydessä",
+  "runAtWindowsStartupAdministrator": "Suorita Windowsin käynnistyksen yhteydessä (järjestelmänvalvojan oikeudet)",
+  "normalExecution": "Normaali suoritus? (ilman järjestelmänvalvojan oikeuksia - ”Kyllä” / järjestelmänvalvojan oikeuksilla - ”Ei”)",
+  "waitTimeToProcessingNextWindow": "Odotusaika seuraavan ikkunan käsittelyyn (millisekuntia)",
+  "stopProcessingWhenWindowIsFullScreen": "Käsittely pysähtyy, jos ikkuna on täynnä",
+  "caseSensitiveWindowQueries": "Isojen ja pienten kirjainten herkkyys ikkunan määrityksessä",
+  "doNotChangePositionSizeOutOfScreen": "Älä muuta sijaintia tai kokoa, kun siirryt pois ruudulta.",
+  "stopProcessingShowAddModify": "Käsittely pysähtyy, jos näyttöön tulee lisäys-/muutosikkuna.",
+  "hotkeysDoNotStop": "Pikanäppäimiä ei oteta huomioon",
+  "movePastePosition": "Liittämisen paikan siirtäminen",
+  "pasteToEdgeOfScreen": "Liitä näytön reunaan",
+  "pasteIntoAnotherWindow": "Liitä toiseen ikkunaan",
+  "pasteWithCtrlKeyPressed": "Liitä pitämällä Ctrl-näppäintä painettuna.",
+  "keepPasteUntilKeyUp": "Liittäminen pysyy paikallaan, kunnes näppäin vapautetaan.",
+  "pastingTime": "Liittämisaika (millisekuntia)",
+  "decisionDistanceToPaste": "Liittämisen etäisyys",
+  "checkReadme": "Katso 'Readme (ohjeet)', jossa kerrotaan, miten tämä määritetään.",
+  "titleName": "Otsikon nimi",
+  "className": "Luokan nimi",
+  "fileName": "Tiedoston nimi",
+  "display": "Näyttö",
+  "windowState": "Ikkunan tila",
+  "processingType": "Käsittelyn tyyppi",
+  "specifyPositionAndSize": "Aseman ja koon määrittäminen",
+  "moveXCoordinate": "Siirrä X-koordinaatti",
+  "moveYCoordinate": "Siirrä Y-koordinaatti",
+  "increaseDecreaseWidth": "Lisää tai vähennä leveyttä",
+  "increaseDecreaseHeight": "Suurenna/ pienennä korkeutta",
+  "increaseDecreaseWidthAndHeight": "Suurentaa/ pienentää leveyttä ja korkeutta",
+  "startStopProcessingOfSpecifyWindow": "Määritellyn ikkunan käsittelyn aloittaminen/seis.",
+  "startStopProcessingOfAllWindow": "Kaikkien ikkunoiden käsittelyn aloittaminen/seis.",
+  "startStopProcessingOfMagnet": "Käynnistää/pysäyttää 'Magneetin' käsittelyn.",
+  "showThisApplicationWindow": "Näytä tämän sovelluksen ikkunat",
+  "showSystemTrayIconMenu": "Näytä valikko järjestelmän lokeron kuvakkeesta",
+  "alwaysShowOrCancelOnTop": "Aina etualalla/valitsematta.",
+  "specifyCancelTransparency": "Läpinäkyvyyden määrittäminen/vapauttaminen",
+  "leftEdge": "Vasen reuna",
+  "middle": "Keskellä",
+  "rightEdge": "Oikea reuna",
+  "topEdge": "Yläreuna",
+  "bottomEdge": "Alareuna",
+  "x": "X",
+  "y": "Y",
+  "width": "Leveys",
+  "height": "Korkeus",
+  "pixel": "px",
+  "percent": "% (%)",
+  "registeredName": "Rekisteröinnin nimi",
+  "windowDecide": "Ikkunan määritys",
+  "processingSettings": "Käsittelyasetukset",
+  "holdDownMousePointerMoveToSelectWindow": "Siirrä hiiren osoitin valittavaan ikkunaan painamalla ja pitämällä sitä painettuna ja vapauttamalla se sitten",
+  "getWindowInformation": "Ikkunan tietojen hankinta",
+  "informationToBeObtained": "Hankittavat tiedot",
+  "fileSelection": "Tiedoston valinta",
+  "folderSelection": "Kansion valinta",
+  "exactMatch": "Tarkka vastaavuus",
+  "partialMatch": "Osittainen vastaavuus",
+  "forwardMatch": "Eteenpäin täsmääminen",
+  "backwardMatch": "Takautuva vastaavuus",
+  "includePath": "Sisällytä polut",
+  "notIncludePath": "Ei sisällä polkua",
+  "doNotSpecify": "Ei määritetty",
+  "childWindow": "Lapsi-ikkuna",
+  "titleNameRequirements": "Otsikon nimi ehto",
+  "windowWithoutTitleName": "Ikkuna ilman otsikon nimeä",
+  "windowWithTitleName": "Ikkuna, jolla on otsikon nimi",
+  "processingName": "Prosessin nimi",
+  "displayToUseAsStandard": "Näyttö, johon perustetaan",
+  "currentDisplay": "Nykyinen näyttö",
+  "specifiedDisplay": "Määritelty näyttö",
+  "limitedToSpecifiedDisplay": "Vain määritetty näyttö",
+  "processOnlyOnce": "Käsitellään vain kerran",
+  "onceWindowOpen": "Kun ikkuna avataan",
+  "onceWhileItIsRunning": "Kun tämä ohjelmisto on käynnissä",
+  "foregrounded": "Ikkuna tuodaan etualalle",
+  "moveSizeChangeEnd": "Siirtäminen tai koon muuttaminen on päättynyt",
+  "minimizeStart": "Minimoinnin aloittaminen",
+  "minimizeEnd": "Minimoinnin lopettaminen",
+  "show": "Näytetään",
+  "titleNameChanged": "Otsikon nimi muutettu",
+  "eventDelayTime": "Odotusaika käsittelyyn (millisekuntia) (vain 'Näytetään').",
+  "forefront": "Etummainen",
+  "doNotChange": "Ei muutettu",
+  "alwaysForefront": "Aina etummainen",
+  "alwaysCancelForefront": "Aina etummainen",
+  "specifyTransparency": "Määritä läpinäkyvyys",
+  "closeWindow": "Sulje ikkuna",
+  "timerProcessing": "Ajastimen käsittely",
+  "numberOfTimesNotToProcessingFirst": "Kertojen määrä, joita ei käsitellä ensin (viivästyttää käsittelyä heti suorituksen jälkeen).",
+  "normalWindow": "Normaali ikkuna",
+  "maximize": "Maksimoi",
+  "minimize": "Minimoi",
+  "processOnlyWhenNormalWindow": "Käsittele vain ”normaalin ikkunan” tilassa",
+  "coordinateSpecification": "Koordinaattien määrittely",
+  "widthSpecification": "Leveysmäärittely",
+  "heightSpecification": "Korkeusmäärittely",
+  "conditionsNotProcess": "Olosuhteet, joita ei käsitellä",
+  "clientArea": "Kohdeasiakasalue",
+  "titleNameExclusionString": "Otsikon nimen sisältämä merkkijono",
+  "size": "Koko",
+  "otherThanSpecifiedSize": "Muu kuin määritetty koko",
+  "otherThanSpecifiedVersion": "Muu kuin määritetty versio (esim. enintään minor-versio mahdollinen).",
+  "notification": "Ilmoitus",
+  "synchronizationOtherThanSpecifiedVersion": "Synkronoitu kohdan ”Edellytykset olla käsittelemättä” kohdan ”muu kuin määritetty versio” kanssa.",
+  "retrievedAfterFiveSeconds": "Ikkunan tiedot haetaan 5 s kuluttua. Aktivoi ikkuna, josta tiedot haetaan 5 s kuluessa.",
+  "obtained": "Haettu.",
+  "thereAreDuplicateItems": "On päällekkäisiä merkintöjä.",
+  "thereIsADuplicateRegistrationName": "Rekisteröintinimiä on päällekkäin.",
+  "thereIsADuplicateProcessingName": "Prosessin nimiä on päällekkäin.",
+  "conditionsNotToBeProcessed": "Määritä ikkunaehdot, joita ei käsitellä.",
+  "added": "Lisätty.",
+  "modified": "Korjattu.",
+  "processingWindowRange": "Käsiteltävien ikkunoiden valikoima.",
+  "activeWindowOnly": "Vain aktiivinen ikkuna.",
+  "allWindow": "Kaikki ikkunat",
+  "onlyActiveWindowSpecifyWindow": "Vain 'määritetyn ikkunan' aktiivinen ikkuna käsitellään.",
+  "amountOfMovement": "Liikkeen määrä",
+  "sizeChangeAmount": "Koon muuttamisen määrä",
+  "transparency": "Läpinäkyvyys",
+  "numericCalculation": "Numeerinen laskenta",
+  "ratio": "Suhde",
+  "explanationOfSpecifyWindow": "Tämä toiminto käsittelee ehtoja vastaavat ikkunat. Käytettävissä on automaattinen käsittely tapahtumien ja ajastimien avulla sekä manuaalinen käsittely pikanäppäimillä.",
+  "explanationOfAllWindow": "Käsittelee kaikki ikkunat. Käsitellään, kun aktivoitu tapahtuma tapahtuu. Ikkunat, jotka vastaavat ”Kaikki ikkunat” tai ”Määritetyt ikkunat” -kohdissa rekisteröityjen kohteiden ehtoja, jätetään pois (mukaan lukien käytöstä poistetut kohteet), mutta liitännäisten käsittelemiä ikkunoita ei jätetä.",
+  "hotkeyExplanation": "Tämä toiminto käsittelee aktiivisen ikkunan pikanäppäimellä. Kun kohde on valittu, 'Valitse'-painiketta voidaan käyttää valitun ikkunan käsittelyyn.",
+  "magnetExplanation": "Mahdollisuus liittää ikkuna näytön reunaan tai toiseen ikkunaan siirtämällä ikkunaa hiirellä.",
+  "pluginExplanation": "Liitännäisohjelmat voivat lisätä lisätoimintoja.",
+  "settingsValue": "Arvojoukko",
+  "windowInformation": "Ikkunan tiedot.",
+  "moveAllWindowToSpecifiedPosition": "Siirrä kaikki ikkunat määritettyyn sijaintiin",
+  "cancelMoveWindow": "Ikkunoita ei siirretä",
+  "position": "Sijainti",
+  "restart": "Käynnistä uudelleen.",
+  "needRestart": "Ohjelmisto on käynnistettävä uudelleen.",
+  "help": "Ohje.",
+  "newSettingFile": "Määritystiedoston muoto on muuttunut. Haluatko poistaa konfigurointitiedoston sen aiemmassa muodossa?",
+  "pluginFolder": "Liitännäiskansiot",
+  "eventTimer": "Tapahtumat, ajastimet",
+  "activeWindow": "Aktiivinen ikkuna.",
+  "question": "?",
+  "coordinateDetailedExplanation": " - Tietoja koordinaateista \r\n Näytön vasemmassa yläkulmassa on ”x=0,y=0”, arvot kasvavat oikealle alareunaan mentäessä ja pienenevät vasemmalle yläkulmaan mentäessä. Tämä on sama kuin Windowsin määrittely. \r\n\r\n - Tietoja ”Koordinaatit” kohdassa ”Asetukset” \r\n\r\nTämä voidaan asettaa, kun käytössä on useita näyttöjä. \r\n\r\n - ”x=0, y=0” kunkin näytön vasemman yläkulman koordinaatit” ovat koordinaatteja, joissa on ‘x=0, y=0’ kunkin näytön vasemman yläkulman koordinaatit. ”x=0, y=0” ensisijaisen näytön vasemmanpuoleista yläkulmaa varten” ovat koordinaatit, joiden ”x=0, y=0” on vertailunäytön vasemmanpuoleista yläkulmaa varten. Jos näyttö asetetaan ensisijaisen näytön vasemmalle puolelle tai yläpuolelle, ensisijaisen näytön vasemmalla puolella tai yläpuolella olevan näytön koordinaattien arvot ovat negatiivisia.",
+  "windowDecisionDetailedExplanation": "Ikkunan voi arvioida määrittelemällä 'title name', 'class name' tai 'file name'. \r\nMitä pitäisi ja mitä ei pitäisi määrittää, on erilainen jokaiselle ikkunalle. \r\nJos määrität kaiken, ikkunaa ei ehkä käsitellä. \r\nÄlä määritä 'luokan nimeä', jos ohjelmistolla on eri 'luokan nimi' joka kerta, kun ikkuna näytetään. Koska \r\nUWP-sovellusten 'luokkanimi' ja 'tiedostonimi' ovat samat kaikille sovelluksille, jos et määritä 'otsikkonimeä', kaikki UWP-sovellusten ikkunat käsitellään. On parempi määrittää kaikki 'Otsikon nimi', 'Luokan nimi' ja 'Tiedoston nimi'.",
+  "eventTimerDetailedExplanation": " - Tapahtuma \r\nKäsittelee, kun ikkuna näytetään, siirretään jne. \r\nAluksi pois käytöstä, joten vain tarvittavat tapahtumat otetaan käyttöön. \r\nOhjelmistopuolen käsittelystä riippuen jotkin tapahtumat saattavat esiintyä eri tavalla kuin tavallisesti, jotkin tapahtumat saattavat jäädä esiintymättä jne., eikä niitä välttämättä käsitellä oikein. \r\n\r\n - Ajastin \r\nKäsittelee säännöllisin väliajoin. \r\nPitemmät käsittelyvälit johtavat pienempään kuormitukseen, mutta niitä ei ehkä käsitellä välittömästi. Jos käsittelyväliä lyhennetään, kuormitus on suurempi, mutta se käsitellään välittömästi.",
+  "clientAreaDetailedExplanation": "Asiakasalue on alue otsikkopalkkia ja ikkunan kehystä lukuun ottamatta. Asiakasalue voidaan tunnistaa \r\nstandardin mukaisille otsikkoriville ja kehyksille. \r\nJos ohjelmisto piirtää oman otsikkopalkin tai kehyksen, asiakasaluetta ei ehkä tunnisteta oikein eikä se ehkä ole määritetyssä asennossa tai koossa.",
+  "activeWindowDetailedExplanation": " - Aktiivinen ikkuna \r\nAktiivinen ikkuna on valittu ikkuna. \r\nTekstieditoreissa voit esimerkiksi syöttää näppäimistösyötteen, mutta tila, jossa voit syöttää, on aktiivinen ja tila, jossa et voi syöttää, on inaktiivinen.",
+  "pluginDetailedExplanation": "Liitännäisiä voidaan käyttää toiminnallisuuden lisäämiseen. Jos et löydä tarvitsemaasi toimintoa vakiotoiminnoista, voit etsiä lisäosan. \r\nKuka tahansa voi vapaasti kehittää niitä. Huomaa, että lisäosia voi olla sekä hyödyllisiä että haitallisia. \r\n\r\n - Lisäosien lisääminen ja käyttäminen \r\n1. : Etsi ja lataa lisäosa. \r\n2. : Lisää lisäosa 'Plugins'-kansioon, jossa ohjelmisto sijaitsee. \r\n\r\n3. : Ota lisäosa käyttöön. \r\n\r\n - Lisäosan poistaminen käytöstä \r\n\r\n Poistamisen jälkeen tämä ohjelmisto on käynnistettävä uudelleen (kohteet poistettava, 'käsittelytila' poistettu käytöstä). \r\n\r\n - Liitännäisen poistaminen \r\n\r\n - Poista liitännäistiedosto. Jos poistettava liitännäinen ei ole käynnissä, voit poistaa sen tämän ohjelmiston ollessa käynnissä. Jos se on käynnissä, sinun on pysäytettävä tämä ohjelmisto, jotta voit poistaa sen. \r\n\r\n - Tietoja 'Liitännäisohjelman asetuksista' \r\n\r\n Näyttöön tulee liitännäisohjelman tarjoama ikkuna. Jos ikkunaa ei ole käytettävissä, lisäosa on poistettu käytöstä eikä se ole käynnissä tai mikään lisäosan kohde ei ole valittuna, et voi painaa painiketta. \r\nTä ohjelmisto-asetusta ei käytetä liitännäisessä.",
+  "childWindowExplanation": "Toisen ikkunan omistama ikkuna on lapsi-ikkuna ja lapsi-ikkunan omistava ikkuna on vanhempi-ikkuna. \r\nIkkunat, kuten 'Asetukset' ja 'Tietoja', ovat lapsi-ikkunoita (ellei niitä ole luotu lapsi-ikkunoina). \r\n”Otsikon nimi” ja ”Luokan nimi” ovat periaatteessa erilaisia kuin vanhempien ikkunoiden, joten jos ne on määritetty, lapsi-ikkunaa ei käsitellä. Jos vain \r\n”Tiedoston nimi” on määritetty, ei käsitellä ainoastaan vanhempaa ikkunaa vaan myös lapsi-ikkunoita, joten ottamalla se käyttöön voidaan käsitellä vain vanhempaa ikkunaa."
+}

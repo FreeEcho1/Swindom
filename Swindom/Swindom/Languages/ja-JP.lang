@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>設定を新しいバージョンに変更「はい」 / 手動で変更「いいえ」/処理を無効にする「キャンセル」</ChangeSettingToNewVersion>
- <ChangeVersion>バージョンが変更されました</ChangeVersion>
- <Check>確認</Check>
- <ErrorOccurred>エラーが発生しました。</ErrorOccurred>
- <LanguageName>日本語</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>アクティブウィンドウのみ</ActiveWindowOnly>
-  <Add>追加</Add>
-  <Added>追加しました。</Added>
-  <AllWindow>全てのウィンドウ</AllWindow>
-  <AllowDelete>削除しますか？</AllowDelete>
-  <AlwaysCancelForefront>常に最前面解除</AlwaysCancelForefront>
-  <AlwaysForefront>常に最前面</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>常に最前面に表示/解除</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>移動量</AmountOfMovement>
-  <Announce>知らせる</Announce>
-  <AutomaticUpdateCheck>実行時に自動で更新確認</AutomaticUpdateCheck>
-  <BackwardMatch>後方一致</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>「指定ウィンドウ」の一括処理</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>下端</BottomEdge>
-  <Cancel>キャンセル</Cancel>
-  <CancelMoveWindow>移動しないウィンドウ</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>ウィンドウ判定で大文字と小文字を区別する</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>ベータバージョンを含めて更新確認</CheckBetaVersion>
-  <CheckReadme>指定方法は「Readme (説明書)」で確認してください。</CheckReadme>
-  <ClassName>クラス名</ClassName>
-  <ClientArea>クライアントエリアを対象とする</ClientArea>
-  <CloseWindow>ウィンドウを閉じる</CloseWindow>
-  <ConditionsThatDoNotProcess>処理しない条件</ConditionsThatDoNotProcess>
-  <Coordinate>座標</Coordinate>
-  <CoordinateSpecification>座標指定</CoordinateSpecification>
-  <Copy>コピー</Copy>
-  <CurrentDisplay>現在のディスプレイ</CurrentDisplay>
-  <DarkMode>ダークモード</DarkMode>
-  <DecisionDistanceToPaste>貼り付ける判定距離</DecisionDistanceToPaste>
-  <Delete>削除</Delete>
-  <Deleted>削除しました。</Deleted>
-  <Display>ディスプレイ</Display>
-  <DisplayInformationUpdate>ディスプレイ情報更新</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>基準にするディスプレイ</DisplayToUseAsStandard>
-  <DoNotChange>変更しない</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>画面外に出る場合は位置やサイズを変更しない</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>指定しない</DoNotSpecify>
-  <EachDisplay>各ディスプレイの左上を「x=0, y=0」</EachDisplay>
-  <End>終了</End>
-  <Event>イベント</Event>
-  <ExactMatch>完全一致</ExactMatch>
-  <ExplanationOfAllWindow>指定したウィンドウを除く全てのウィンドウを処理させることができます。「指定ウィンドウ」で指定しているウィンドウも除外されます。</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>ウィンドウを指定して自動で処理させることができます。自動処理させずにホットキーだけで処理したい場合は、チェックを外して無効状態にしてください。</ExplanationOfSpecifyWindow>
-  <FileName>ファイル名</FileName>
-  <FileSelection>ファイル選択</FileSelection>
-  <Forefront>最前面</Forefront>
-  <Foregrounded>フォアグラウンドになった</Foregrounded>
-  <ForwardMatch>前方一致</ForwardMatch>
-  <General>全般</General>
-  <GetWindowInformation>ウィンドウ情報取得</GetWindowInformation>
-  <Height>高さ</Height>
-  <HeightSpecification>高さ指定</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>押したまま選択するウィンドウにマウスカーソルを移動</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>ホットキー</Hotkey>
-  <HotkeyExplanation>ホットキーでアクティブウィンドウ(入力を受け付けている状態)を処理させることができます。「選択」ボタンではホットキーを使用しなくても、処理させたいウィンドウを選択して処理させることができます。</HotkeyExplanation>
-  <HotkeysDoNotStop>ホットキーは停止させない (全画面ウィンドウがある場合)</HotkeysDoNotStop>
-  <IncludePath>パスを含む</IncludePath>
-  <IncreaseDecreaseHeight>高さを増減</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>幅を増減</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>幅と高さを増減</IncreaseDecreaseWidthAndHeight>
-  <Information>情報</Information>
-  <InformationToBeObtained>取得する情報</InformationToBeObtained>
-  <Language>言語</Language>
-  <LatestVersion>最新バージョンです。</LatestVersion>
-  <LeftEdge>左端</LeftEdge>
-  <Library>ライブラリ</Library>
-  <LimitedToSpecifiedDisplay>指定したディスプレイ限定</LimitedToSpecifiedDisplay>
-  <Magnet>マグネット</Magnet>
-  <MagnetExplanation>マウスでウィンドウを移動させている場合に、画面端や別のウィンドウに貼り付けます。</MagnetExplanation>
-  <Manual>説明書</Manual>
-  <Maximize>最大化</Maximize>
-  <Middle>中央</Middle>
-  <Minimize>最小化</Minimize>
-  <MinimizeEnd>最小化が終了した</MinimizeEnd>
-  <MinimizeStart>最小化が開始された</MinimizeStart>
-  <Modified>修正しました。</Modified>
-  <Modify>修正</Modify>
-  <MoveAllWindowToSpecifiedPosition>全てのウィンドウを指定した位置に移動</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>下に移動</MoveDown>
-  <MovePastePosition>貼り付ける位置をずらす</MovePastePosition>
-  <MoveSizeChangeEnd>移動及びサイズの変更が終了した</MoveSizeChangeEnd>
-  <MoveUp>上に移動</MoveUp>
-  <MoveXCoordinate>X座標を移動</MoveXCoordinate>
-  <MoveYCoordinate>Y座標を移動</MoveYCoordinate>
-  <NeedRestart>Swindomを再起動する必要があります。</NeedRestart>
-  <No>いいえ</No>
-  <NormalExecution>通常実行ですか？ (管理者権限なし - 「はい」 / 管理者権限あり - 「いいえ」)</NormalExecution>
-  <NormalWindow>通常のウィンドウ</NormalWindow>
-  <NotIncludePath>パスを含まない</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>最初に処理しない回数 (実行直後の処理を遅らせる)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>数値計算</NumericCalculation>
-  <Ok>OK</Ok>
-  <OnceWhileItIsRunning>このソフトウェアが実行されている間</OnceWhileItIsRunning>
-  <OnceWindowOpen>ウィンドウが開かれた時</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>「指定ウィンドウ」のアクティブウィンドウのみ処理</OnlyActiveWindowSpecifyWindow>
-  <Open>開く</Open>
-  <OtherThanSpecifiedVersion>指定したバージョン以外 (マイナーまでなど可能)</OtherThanSpecifiedVersion>
-  <PartialMatch>部分一致</PartialMatch>
-  <PasteIntoAnotherWindow>別のウィンドウに貼り付ける</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>画面端に貼り付ける</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Ctrlキーを押した状態で貼り付ける</PasteWithCtrlKeyPressed>
-  <Percent>%</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>プラグイン</Plugin>
-  <PluginExplanation>プラグインは機能を追加することができます。詳しい説明は「Readme (説明書)」で確認してください。</PluginExplanation>
-  <PluginSettings>プラグイン設定</PluginSettings>
-  <PluginTestMessage>テスト中の機能なので、動作が不安定などの可能性があります。</PluginTestMessage>
-  <Position>位置</Position>
-  <PrimaryDisplay>プライマリディスプレイの左上を「x=0, y=0」</PrimaryDisplay>
-  <ProcessOnlyOnce>一度だけ処理</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>「通常のウィンドウ」の時のみ処理する</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>処理間隔 (ミリ秒)</ProcessingInterval>
-  <ProcessingName>処理名</ProcessingName>
-  <ProcessingSettings>処理設定</ProcessingSettings>
-  <ProcessingState>処理状態</ProcessingState>
-  <ProcessingType>処理の種類</ProcessingType>
-  <ProcessingWindowRange>処理するウィンドウの範囲</ProcessingWindowRange>
-  <Ratio>比率</Ratio>
-  <RegisterMultipleWindowActions>ウィンドウ処理を複数登録</RegisterMultipleWindowActions>
-  <RegisteredName>登録名</RegisteredName>
-  <ReportsAndRequests>報告、要望</ReportsAndRequests>
-  <Restart>再起動</Restart>
-  <RetrievedAfterFiveSeconds>5秒後にウィンドウ情報が取得されるので、5秒以内に情報を取得するウィンドウをアクティブにしてください。</RetrievedAfterFiveSeconds>
-  <RightEdge>右端</RightEdge>
-  <RunAtWindowsStartup>Windows起動時に実行</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Windows起動時に実行 (管理者権限)</RunAtWindowsStartupAdministrator>
-  <Select>選択</Select>
-  <SelectionComplete>選択しました。</SelectionComplete>
-  <Setting>設定</Setting>
-  <SettingsValue>設定している値</SettingsValue>
-  <ShareSettings>全てのユーザーで設定情報を共有しますか？</ShareSettings>
-  <Show>表示された</Show>
-  <ShowThisApplicationWindow>このアプリケーションのウィンドウを表示</ShowThisApplicationWindow>
-  <Size>サイズ</Size>
-  <SizeChangeAmount>サイズ変更量</SizeChangeAmount>
-  <SoftwareName>ソフトウェア名</SoftwareName>
-  <SpecifiedDisplay>指定したディスプレイ</SpecifiedDisplay>
-  <SpecifyCancelTransparency>透明度を指定/解除</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>位置とサイズを指定</SpecifyPositionAndSize>
-  <SpecifyTransparency>透明度指定</SpecifyTransparency>
-  <SpecifyWindow>指定ウィンドウ</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>「全てのウィンドウ」の処理開始/停止</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>「マグネット」の処理開始/停止</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>「指定ウィンドウ」の処理開始/停止</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>追加/修正のウィンドウが表示されている場合は処理停止</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>ウィンドウが全画面表示の場合は処理停止</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>貼り付いた時の停止時間 (ミリ秒)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>重複した項目があります。</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>重複した処理名があります。</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>重複した登録名があります。</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>最新バージョンがあります。</ThereIsLatestVersion>
-  <Timer>タイマー</Timer>
-  <TimerProcessing>タイマー処理</TimerProcessing>
-  <TitleName>タイトル名</TitleName>
-  <TitleNameChanged>タイトル名が変更された</TitleNameChanged>
-  <TitleNameExclusionString>タイトル名に含まれる文字列</TitleNameExclusionString>
-  <TitleNameRequirements>タイトル名の処理条件</TitleNameRequirements>
-  <TopEdge>上端</TopEdge>
-  <Translators>翻訳者：FreeEcho</Translators>
-  <Transparency>透明度</Transparency>
-  <UpdateCheck>更新確認</UpdateCheck>
-  <UpdateCheckFailed>更新確認に失敗しました。</UpdateCheckFailed>
-  <UpdateHistory>更新履歴</UpdateHistory>
-  <Version>バージョン</Version>
-  <WaitTimeToProcessingNextWindow>次のウィンドウを処理する待ち時間 (ミリ秒)</WaitTimeToProcessingNextWindow>
-  <Website>ウェブサイト</Website>
-  <Width>幅</Width>
-  <WidthSpecification>幅指定</WidthSpecification>
-  <WindowDecide>ウィンドウ判定</WindowDecide>
-  <WindowDesignateMethod>ウィンドウ判定の指定方法</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>ウィンドウの判定は「タイトル名」「クラス名」「ファイル名」を指定できます。
-何を指定して、何を指定してはいけないのか、それぞれのウィンドウで違います。
-全てを指定するとウィンドウが処理されない場合があります。
-ウィンドウが表示される度に「クラス名」が変更されるソフトウェアの場合は、「クラス名」は指定しないでください。
-UWPアプリは「クラス名」と「ファイル名」は一部を除いてどのアプリも同じなので、「タイトル名」がない場合は正しく判別できず、他のアプリのウィンドウも処理されてしまいます。
-「タイトル名」「クラス名」「ファイル名」の全てを指定すると良いでしょう。
-クラス名は「ApplicationFrameWindow」、ファイル名は「C:\WINDOWS\system32\ApplicationFrameHost.exe」、です (Windowsのアップデートで変更される可能性があります)。</WindowDesignateMethodExplain>
-  <WindowInformation>ウィンドウの情報</WindowInformation>
-  <WindowMoveOutsideToInside>ウィンドウが画面外の場合は画面内に移動</WindowMoveOutsideToInside>
-  <WindowState>ウィンドウの状態</WindowState>
-  <WindowWithTitleName>タイトル名があるウィンドウ</WindowWithTitleName>
-  <WindowWithoutTitleName>タイトル名がないウィンドウ</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>はい</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "日本語",
+  "errorOccurred": "エラーが発生しました。",
+  "check": "確認",
+  "changeVersion": "バージョンが変更されました",
+  "changeSettingToNewVersion": "設定を新しいバージョンに変更「はい」 / 手動で変更「いいえ」/処理を無効にする「キャンセル」",
+  "ok": "OK",
+  "yes": "はい",
+  "no": "いいえ",
+  "cancel": "キャンセル",
+  "shareSettings": "全てのユーザーで設定情報を共有しますか？",
+  "open": "開く",
+  "batchProcessingOfSpecifyWindow": "「指定ウィンドウ」の一括処理",
+  "windowMoveOutsideToInside": "ウィンドウが画面外の場合は画面内に移動",
+  "displayInformationUpdate": "ディスプレイ情報更新",
+  "end": "終了",
+  "updateCheckFailed": "更新確認に失敗しました。",
+  "latestVersion": "最新バージョンです。",
+  "thereIsLatestVersion": "最新バージョンがあります。",
+  "event": "イベント",
+  "timer": "タイマー",
+  "specifyWindow": "指定ウィンドウ",
+  "magnet": "マグネット",
+  "plugin": "プラグイン",
+  "pluginSettings": "プラグイン設定",
+  "setting": "設定",
+  "information": "情報",
+  "add": "追加",
+  "modify": "修正",
+  "delete": "削除",
+  "select": "選択",
+  "moveUp": "上に移動",
+  "moveDown": "下に移動",
+  "copy": "コピー",
+  "processingState": "処理状態",
+  "deleted": "削除しました。",
+  "allowDelete": "削除しますか？",
+  "version": "バージョン",
+  "updateCheck": "更新確認",
+  "readme": "情報 (Readme)",
+  "updateHistory": "更新履歴",
+  "website": "ウェブサイト",
+  "reportsAndRequests": "報告、要望",
+  "library": "ライブラリ",
+  "general": "全般",
+  "hotkey": "ホットキー",
+  "language": "言語",
+  "translators": "翻訳者：FreeEcho",
+  "darkMode": "ダークモード",
+  "automaticUpdateCheck": "実行時に自動で更新確認",
+  "checkBetaVersion": "ベータバージョンを含めて更新確認",
+  "registerMultipleWindowActions": "ウィンドウ処理を複数登録",
+  "coordinate": "座標",
+  "eachDisplay": "各ディスプレイの左上を「x=0, y=0」",
+  "primaryDisplay": "プライマリディスプレイの左上を「x=0, y=0」",
+  "fullScreenWindowAdditionDecision": "全画面ウィンドウの追加判定 (正しく判定されない場合のみ)",
+  "processingInterval": "処理間隔 (ミリ秒)",
+  "runAtWindowsStartup": "Windows起動時に実行",
+  "runAtWindowsStartupAdministrator": "Windows起動時に実行 (管理者権限)",
+  "normalExecution": "通常実行ですか？ (管理者権限なし - 「はい」 / 管理者権限あり - 「いいえ」)",
+  "waitTimeToProcessingNextWindow": "次のウィンドウを処理する待ち時間 (ミリ秒)",
+  "stopProcessingWhenWindowIsFullScreen": "全画面のウィンドウが存在する場合は処理停止",
+  "caseSensitiveWindowQueries": "ウィンドウ判定で大文字と小文字を区別する",
+  "doNotChangePositionSizeOutOfScreen": "画面外に出る場合は位置やサイズを変更しない",
+  "stopProcessingShowAddModify": "追加/修正ウィンドウが表示されている場合は処理停止",
+  "hotkeysDoNotStop": "ホットキーは除外",
+  "movePastePosition": "貼り付ける位置をずらす",
+  "pasteToEdgeOfScreen": "画面端に貼り付ける",
+  "pasteIntoAnotherWindow": "別のウィンドウに貼り付ける",
+  "pasteWithCtrlKeyPressed": "「Ctrl」キーを押した状態で貼り付ける",
+  "keepPasteUntilKeyUp": "キーを離すまで貼り付いた状態にする",
+  "pastingTime": "貼り付く時間 (ミリ秒)",
+  "decisionDistanceToPaste": "貼り付ける判定距離",
+  "checkReadme": "指定方法は「Readme (説明書)」で確認してください。",
+  "titleName": "タイトル名",
+  "className": "クラス名",
+  "fileName": "ファイル名",
+  "display": "ディスプレイ",
+  "windowState": "ウィンドウの状態",
+  "processingType": "処理の種類",
+  "specifyPositionAndSize": "位置とサイズを指定",
+  "moveXCoordinate": "X座標を移動",
+  "moveYCoordinate": "Y座標を移動",
+  "increaseDecreaseWidth": "幅を増減",
+  "increaseDecreaseHeight": "高さを増減",
+  "increaseDecreaseWidthAndHeight": "幅と高さを増減",
+  "startStopProcessingOfSpecifyWindow": "「指定ウィンドウ」の処理開始/停止",
+  "startStopProcessingOfAllWindow": "「全てのウィンドウ」の処理開始/停止",
+  "startStopProcessingOfMagnet": "「マグネット」の処理開始/停止",
+  "showThisApplicationWindow": "このアプリケーションのウィンドウを表示",
+  "showSystemTrayIconMenu": "システムトレイアイコンのメニューを表示",
+  "alwaysShowOrCancelOnTop": "常に最前面に表示/解除",
+  "specifyCancelTransparency": "透明度を指定/解除",
+  "leftEdge": "左端",
+  "middle": "中央",
+  "rightEdge": "右端",
+  "topEdge": "上端",
+  "bottomEdge": "下端",
+  "x": "X",
+  "y": "Y",
+  "width": "幅",
+  "height": "高さ",
+  "pixel": "px",
+  "percent": "%",
+  "registeredName": "登録名",
+  "windowDecide": "ウィンドウ判定",
+  "processingSettings": "処理設定",
+  "holdDownMousePointerMoveToSelectWindow": "押したまま選択するウィンドウにマウスポインターを移動させて放す",
+  "getWindowInformation": "ウィンドウ情報取得",
+  "informationToBeObtained": "取得する情報",
+  "fileSelection": "ファイル選択",
+  "folderSelection": "フォルダー選択",
+  "exactMatch": "完全一致",
+  "partialMatch": "部分一致",
+  "forwardMatch": "前方一致",
+  "backwardMatch": "後方一致",
+  "includePath": "パスを含む",
+  "notIncludePath": "パスを含まない",
+  "doNotSpecify": "指定しない",
+  "childWindow": "子ウィンドウ",
+  "titleNameRequirements": "タイトル名の条件",
+  "windowWithoutTitleName": "タイトル名がないウィンドウ",
+  "windowWithTitleName": "タイトル名があるウィンドウ",
+  "processingName": "処理名",
+  "displayToUseAsStandard": "基準にするディスプレイ",
+  "currentDisplay": "現在のディスプレイ",
+  "specifiedDisplay": "指定したディスプレイ",
+  "limitedToSpecifiedDisplay": "指定したディスプレイ限定",
+  "processOnlyOnce": "一度だけ処理",
+  "onceWindowOpen": "ウィンドウが開かれた時",
+  "onceWhileItIsRunning": "このソフトウェアが実行されている間",
+  "foregrounded": "フォアグラウンドになった",
+  "moveSizeChangeEnd": "移動及びサイズの変更が終了した",
+  "minimizeStart": "最小化が開始された",
+  "minimizeEnd": "最小化が終了した",
+  "show": "表示された",
+  "titleNameChanged": "タイトル名が変更された",
+  "eventDelayTime": "処理の待ち時間 (ミリ秒) (「表示された」のみ)",
+  "forefront": "最前面",
+  "doNotChange": "変更しない",
+  "alwaysForefront": "常に最前面",
+  "alwaysCancelForefront": "常に最前面解除",
+  "specifyTransparency": "透明度指定",
+  "closeWindow": "ウィンドウを閉じる",
+  "timerProcessing": "タイマー処理",
+  "numberOfTimesNotToProcessingFirst": "最初に処理しない回数 (実行直後の処理を遅らせる)",
+  "normalWindow": "通常のウィンドウ",
+  "maximize": "最大化",
+  "minimize": "最小化",
+  "processOnlyWhenNormalWindow": "「通常のウィンドウ」の状態のみ処理する",
+  "coordinateSpecification": "座標指定",
+  "widthSpecification": "幅指定",
+  "heightSpecification": "高さ指定",
+  "conditionsNotProcess": "処理しない条件",
+  "clientArea": "クライアントエリアを対象とする",
+  "titleNameExclusionString": "タイトル名に含まれる文字列",
+  "size": "サイズ",
+  "otherThanSpecifiedSize": "指定したサイズ以外",
+  "otherThanSpecifiedVersion": "指定したバージョン以外 (マイナーまでなど可能)",
+  "notification": "通知",
+  "synchronizationOtherThanSpecifiedVersion": "「処理しない条件」の「指定したバージョン以外」と同期",
+  "retrievedAfterFiveSeconds": "5秒後にウィンドウ情報が取得されるので、5秒以内に情報を取得するウィンドウをアクティブにしてください。",
+  "obtained": "取得しました。",
+  "thereAreDuplicateItems": "重複した項目があります。",
+  "thereIsADuplicateRegistrationName": "重複した登録名があります。",
+  "thereIsADuplicateProcessingName": "重複した処理名があります。",
+  "conditionsNotToBeProcessed": "処理しないウィンドウの条件を指定してください。",
+  "added": "追加しました。",
+  "modified": "修正しました。",
+  "processingWindowRange": "処理するウィンドウの範囲",
+  "activeWindowOnly": "アクティブウィンドウのみ",
+  "allWindow": "全てのウィンドウ",
+  "onlyActiveWindowSpecifyWindow": "「指定ウィンドウ」のアクティブウィンドウのみ処理",
+  "amountOfMovement": "移動量",
+  "sizeChangeAmount": "サイズ変更量",
+  "transparency": "透明度",
+  "numericCalculation": "数値計算",
+  "ratio": "比率",
+  "explanationOfSpecifyWindow": "条件に一致するウィンドウを処理する機能です。イベントやタイマーによる自動処理とホットキーによる手動処理の方法があります。",
+  "explanationOfAllWindow": "全てのウィンドウを処理する機能です。有効にしているイベントが発生した時に処理されます。「全てのウィンドウ」や「指定ウィンドウ」に登録している項目の条件に一致するウィンドウは除外されますが (無効状態の項目も含む)、プラグインで処理されるウィンドウは除外されません。",
+  "hotkeyExplanation": "ホットキーでアクティブウィンドウを処理する機能です。項目を選択した状態で「選択」ボタンを使用すると、選択したウィンドウを処理することができます。",
+  "magnetExplanation": "マウスでウィンドウを移動中に、画面端や別のウィンドウに貼り付ける機能です。",
+  "pluginExplanation": "プラグインは機能を追加することができます。",
+  "settingsValue": "設定している値",
+  "windowInformation": "ウィンドウの情報",
+  "moveAllWindowToSpecifiedPosition": "全てのウィンドウを指定した位置に移動",
+  "cancelMoveWindow": "移動しないウィンドウ",
+  "position": "位置",
+  "restart": "再起動",
+  "needRestart": "このソフトウェアを再起動する必要があります。",
+  "help": "ヘルプ",
+  "newSettingFile": "設定ファイルの形式が変更されました。以前の形式の設定ファイルを削除しますか？",
+  "pluginFolder": "プラグインのフォルダー",
+  "eventTimer": "イベント、タイマー",
+  "activeWindow": "アクティブウィンドウ",
+  "question": "?",
+  "coordinateDetailedExplanation": " - 座標について\r\nディスプレイの左上が「x=0,y=0」、右下に行くと数値が大きくなり、左上に行くと数値が小さくなります。これはWindowsの仕様と同じです。\r\n\r\n - 「設定」の「座標」について\r\nディスプレイが複数ある場合に設定できます。\r\n「各ディスプレイの左上を「x=0, y=0」」は、各ディスプレイの左上を「x=0,y=0」とした座標です。「プライマリディスプレイの左上を「x=0, y=0」」は、基準となるディスプレイの左上を「x=0, y=0」とした座標です。プライマリディスプレイの左や上にディスプレイが設定されている場合、プライマリディスプレイの左や上のディスプレイの座標の数値はマイナスになります。",
+  "windowDecisionDetailedExplanation": "ウィンドウの判定は「タイトル名」「クラス名」「ファイル名」を指定できます。\r\n何を指定して、何を指定してはいけないのか、それぞれのウィンドウで違います。\r\n全てを指定するとウィンドウが処理されない場合があります。\r\nウィンドウが表示される度に「クラス名」が違うソフトウェアの場合は、「クラス名」は指定しないでください。\r\nUWPアプリの「クラス名」と「ファイル名」は全てのアプリで同じなので、「タイトル名」を指定しない場合は全てのUWPアプリのウィンドウが処理されてしまいます。「タイトル名」「クラス名」「ファイル名」の全てを指定すると良いでしょう。",
+  "eventTimerDetailedExplanation": " - イベント\r\nウィンドウが表示されたり移動したなどの場合に処理を行います。\r\n初期状態では無効になっているので、必要なイベントのみを有効にします。\r\nソフトウェア側の処理によっては、通常とは違うイベントが発生する、イベントが発生しない、などがあり、正しく処理されない場合があります。\r\n\r\n - タイマー\r\n一定間隔で処理を行います。\r\n処理間隔を長くすると負荷は少ないですが、すぐに処理されない場合があります。処理間隔を短くすると負荷は高くなりますが、すぐに処理されます。",
+  "clientAreaDetailedExplanation": "クライアントエリアはタイトルバーやウィンドウの枠を除いた領域です。\r\n標準のタイトルバーや枠の場合は、クライアントエリアを認識できます。\r\nソフトウェア側で独自にタイトルバーや枠を描画している場合は、クライアントエリアを正しく認識できず、指定した位置やサイズにならない場合があります。",
+  "activeWindowDetailedExplanation": " - アクティブウィンドウ\r\nアクティブウィンドウは選択されているウィンドウです。\r\nテキストエディタなどではキーボード入力をすると入力できますが、入力できる状態がアクティブ、入力できない状態が非アクティブです。",
+  "pluginDetailedExplanation": "プラグインを使用することで機能を追加することができます。標準の機能に必要な機能がない場合、プラグインを探してみると良いでしょう。\r\n誰でも自由に開発できます。便利なプラグインだけでなく、悪意のあるプラグインが存在する可能性があるので注意してください。\r\n\r\n - プラグインの追加、使用方法\r\n1. : プラグインを探してダウンロードします。\r\n2. : ソフトウェアが存在する場所に「Plugins」フォルダがあるのでプラグインを入れます。\r\n3. : 動作させるプラグインを有効にします。\r\n\r\n - プラグインの無効方法\r\n無効化操作を行った後はこのソフトウェアを再起動する必要があります (項目のチェックを外した、「処理状態」を無効にした)。\r\n\r\n - プラグインの削除方法\r\nプラグインのファイルを削除します。削除しようとしているプラグインが動作していない状態ならこのソフトウェアが動作中でも削除できます。動作している状態ならこのソフトウェアを停止させて削除する必要があります。\r\n\r\n - 「プラグイン設定」について\r\nプラグイン側で用意されているウィンドウが表示されます。ウィンドウが用意されていない、プラグインが無効の状態で動作していない、プラグイン項目が選択されていない、場合は押せない状態になります。\r\nこのソフトウェアの設定はプラグインでは使用されません。",
+  "childWindowExplanation": "他のウィンドウに所有されているウィンドウが子ウィンドウ、子ウィンドウを所有しているウィンドウが親ウィンドウです。\r\n「オプション」や「バージョン情報」などのウィンドウが子ウィンドウになります (子ウィンドウとして作成されていない場合を除く)。\r\n「タイトル名」や「クラス名」は基本的に親ウィンドウと違うので、指定している場合は子ウィンドウが処理されることはありません。\r\n「ファイル名」のみ指定している場合は、親ウィンドウだけでなく子ウィンドウも処理されてしまうので、有効にすることで親ウィンドウのみ処理することができます。"
+}

@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>새 버전으로 설정 변경 "예" / 수동으로 변경 "아니오" / 처리 비활성화 "취소"</ChangeSettingToNewVersion>
- <ChangeVersion>버전이 변경되었습니다.</ChangeVersion>
- <Check>확인</Check>
- <ErrorOccurred>오류가 발생했습니다.</ErrorOccurred>
- <LanguageName>한국어</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>활성 창만</ActiveWindowOnly>
-  <Add>추가</Add>
-  <Added>추가되었습니다.</Added>
-  <AllWindow>모든 창을</AllWindow>
-  <AllowDelete>삭제하시겠습니까?</AllowDelete>
-  <AlwaysCancelForefront>항상 전면 해제</AlwaysCancelForefront>
-  <AlwaysForefront>항상 전면</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>항상 전면에 표시/해제</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>이동량</AmountOfMovement>
-  <Announce>알림</Announce>
-  <AutomaticUpdateCheck>실행 시 자동 업데이트 확인</AutomaticUpdateCheck>
-  <BackwardMatch>후방 일치</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>'지정창' 일괄 처리</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>하단</BottomEdge>
-  <Cancel>취소</Cancel>
-  <CancelMoveWindow>이동하지 않는 창</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>창 판정에서 대/소문자 구분하기</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>베타 버전 포함 업데이트 확인</CheckBetaVersion>
-  <CheckReadme>지정 방법은 'Readme(설명서)'에서 확인하시기 바랍니다.</CheckReadme>
-  <ClassName>클래스 이름</ClassName>
-  <ClientArea>클라이언트 영역을 대상으로 한다</ClientArea>
-  <CloseWindow>창 닫기</CloseWindow>
-  <ConditionsThatDoNotProcess>처리하지 않는 조건</ConditionsThatDoNotProcess>
-  <Coordinate>좌표</Coordinate>
-  <CoordinateSpecification>좌표 지정</CoordinateSpecification>
-  <Copy>복사</Copy>
-  <CurrentDisplay>현재 디스플레이</CurrentDisplay>
-  <DarkMode>다크 모드</DarkMode>
-  <DecisionDistanceToPaste>붙여넣기 판단 거리</DecisionDistanceToPaste>
-  <Delete>삭제</Delete>
-  <Deleted>삭제했습니다.</Deleted>
-  <Display>디스플레이</Display>
-  <DisplayInformationUpdate>디스플레이 정보 업데이트</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>기준으로 삼을 디스플레이</DisplayToUseAsStandard>
-  <DoNotChange>변경하지 않음</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>화면 밖으로 나올 경우 위치나 크기를 변경하지 않음</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>지정하지 않음</DoNotSpecify>
-  <EachDisplay>각 디스플레이의 왼쪽 위를 'x=0, y=0'</EachDisplay>
-  <End>종료</End>
-  <Event>이벤트</Event>
-  <ExactMatch>완전 일치</ExactMatch>
-  <ExplanationOfAllWindow>지정한 창을 제외한 모든 창을 처리할 수 있습니다. '지정 창'에서 지정한 창도 제외됩니다.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>창을 지정하여 자동으로 처리할 수 있습니다. 자동 처리하지 않고 단축키만으로 처리하고 싶다면 체크를 해제하여 비활성 상태로 설정하십시오.</ExplanationOfSpecifyWindow>
-  <FileName>파일 이름</FileName>
-  <FileSelection>파일 선택</FileSelection>
-  <Forefront>최전방</Forefront>
-  <Foregrounded>포어그라운드가 된</Foregrounded>
-  <ForwardMatch>전방 일치</ForwardMatch>
-  <General>일반</General>
-  <GetWindowInformation>창 정보 가져오기</GetWindowInformation>
-  <Height>높이</Height>
-  <HeightSpecification>높이 지정</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>누른 채로 선택할 창에 마우스 커서를 이동합니다.</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>단축키</Hotkey>
-  <HotkeyExplanation>단축키로 활성 창(입력을 받고 있는 상태)을 처리할 수 있습니다. '선택' 버튼에서는 단축키를 사용하지 않고도 처리할 창을 선택하여 처리할 수 있습니다.</HotkeyExplanation>
-  <HotkeysDoNotStop>단축키는 정지시키지 않는다(전체 화면 창이 있는 경우).</HotkeysDoNotStop>
-  <IncludePath>경로 포함</IncludePath>
-  <IncreaseDecreaseHeight>높이 증가/감소</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>폭을 늘리거나 줄임</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>폭과 높이 증가/감소</IncreaseDecreaseWidthAndHeight>
-  <Information>정보</Information>
-  <InformationToBeObtained>획득할 정보</InformationToBeObtained>
-  <Language>언어</Language>
-  <LatestVersion>최신 버전입니다.</LatestVersion>
-  <LeftEdge>왼쪽 끝</LeftEdge>
-  <Library>라이브러리</Library>
-  <LimitedToSpecifiedDisplay>지정한 디스플레이 한정</LimitedToSpecifiedDisplay>
-  <Magnet>자석</Magnet>
-  <MagnetExplanation>마우스로 창을 이동하고 있을 때 화면 가장자리나 다른 창에 붙여 넣습니다.</MagnetExplanation>
-  <Manual>설명서</Manual>
-  <Maximize>최대화</Maximize>
-  <Middle>중앙</Middle>
-  <Minimize>최소화</Minimize>
-  <MinimizeEnd>최소화 종료됨</MinimizeEnd>
-  <MinimizeStart>최소화 시작됨</MinimizeStart>
-  <Modified>수정되었습니다.</Modified>
-  <Modify>수정</Modify>
-  <MoveAllWindowToSpecifiedPosition>모든 창을 지정한 위치로 이동</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>아래로 이동</MoveDown>
-  <MovePastePosition>붙여넣기 위치 이동</MovePastePosition>
-  <MoveSizeChangeEnd>이동 및 크기 변경이 완료되었습니다.</MoveSizeChangeEnd>
-  <MoveUp>위로 이동</MoveUp>
-  <MoveXCoordinate>X좌표 이동</MoveXCoordinate>
-  <MoveYCoordinate>Y좌표 이동</MoveYCoordinate>
-  <NeedRestart>Swindom을 재시작해야 합니다.</NeedRestart>
-  <No>아니요</No>
-  <NormalExecution>정상 실행인가요? (관리자 권한 없음 - '예' / 관리자 권한 있음 - '아니요')</NormalExecution>
-  <NormalWindow>일반 창</NormalWindow>
-  <NotIncludePath>경로를 포함하지 않음</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>처음 처리하지 않는 횟수 (실행 직후 처리 지연)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>수치 계산</NumericCalculation>
-  <Ok>OK</Ok>
-  <OnceWhileItIsRunning>이 소프트웨어가 실행되는 동안</OnceWhileItIsRunning>
-  <OnceWindowOpen>창이 열렸을 때</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>"지정창」의 활성 창만 처리</OnlyActiveWindowSpecifyWindow>
-  <Open>열기</Open>
-  <OtherThanSpecifiedVersion>지정한 버전 이외 (마이너까지 등 가능)</OtherThanSpecifiedVersion>
-  <PartialMatch>부분 일치</PartialMatch>
-  <PasteIntoAnotherWindow>다른 창에 붙여넣기</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>화면 가장자리에 붙여넣기</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Ctrl 키를 누른 상태에서 붙여넣기</PasteWithCtrlKeyPressed>
-  <Percent>%로</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>플러그인</Plugin>
-  <PluginExplanation>플러그인은 기능을 추가할 수 있습니다. 자세한 설명은 'Readme(설명서)'에서 확인하시기 바랍니다.</PluginExplanation>
-  <PluginSettings>플러그인 설정</PluginSettings>
-  <PluginTestMessage>테스트 중인 기능이기 때문에 동작이 불안정할 수 있습니다.</PluginTestMessage>
-  <Position>위치</Position>
-  <PrimaryDisplay>기본 디스플레이의 왼쪽 상단을 'x=0, y=0'</PrimaryDisplay>
-  <ProcessOnlyOnce>한 번만 처리</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>'일반 창'일 때만 처리한다.</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>처리 간격 (밀리초)</ProcessingInterval>
-  <ProcessingName>처리명</ProcessingName>
-  <ProcessingSettings>처리 설정</ProcessingSettings>
-  <ProcessingState>처리 상태</ProcessingState>
-  <ProcessingType>처리 종류</ProcessingType>
-  <ProcessingWindowRange>처리할 창 범위</ProcessingWindowRange>
-  <Ratio>비율</Ratio>
-  <RegisterMultipleWindowActions>창 처리를 여러 개 등록</RegisterMultipleWindowActions>
-  <RegisteredName>등록명</RegisteredName>
-  <ReportsAndRequests>보고, 요청</ReportsAndRequests>
-  <Restart>재시작</Restart>
-  <RetrievedAfterFiveSeconds>5초 후에 창 정보가 조회되므로, 5초 이내에 정보를 조회하는 창을 활성화해 주세요.</RetrievedAfterFiveSeconds>
-  <RightEdge>맨 오른쪽</RightEdge>
-  <RunAtWindowsStartup>Windows 시작 시 실행</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Windows 시작 시 실행 (관리자 권한)</RunAtWindowsStartupAdministrator>
-  <Select>선택</Select>
-  <SelectionComplete>선택했습니다.</SelectionComplete>
-  <Setting>설정</Setting>
-  <SettingsValue>설정한 값</SettingsValue>
-  <ShareSettings>모든 사용자에게 설정 정보를 공유하시겠습니까?</ShareSettings>
-  <Show>표시됨</Show>
-  <ShowThisApplicationWindow>이 애플리케이션의 창을 표시합니다.</ShowThisApplicationWindow>
-  <Size>크기</Size>
-  <SizeChangeAmount>크기 변경량</SizeChangeAmount>
-  <SoftwareName>소프트웨어 이름</SoftwareName>
-  <SpecifiedDisplay>지정한 디스플레이</SpecifiedDisplay>
-  <SpecifyCancelTransparency>투명도 지정/해제</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>위치 및 크기 지정</SpecifyPositionAndSize>
-  <SpecifyTransparency>투명도 지정</SpecifyTransparency>
-  <SpecifyWindow>지정 창 지정</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>'모든 창' 처리 시작/정지</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>'자석' 처리 시작/정지</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>'지정 창'의 처리 시작/정지</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>추가/수정 창이 표시되어 있는 경우 처리 정지</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>창이 전체화면일 경우 처리 정지</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>붙여넣기 시 정지 시간 (밀리초)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>중복된 항목이 있습니다.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>중복된 처리명이 있습니다.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>중복된 등록명이 있습니다.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>최신 버전이 있습니다.</ThereIsLatestVersion>
-  <Timer>타이머</Timer>
-  <TimerProcessing>타이머 처리</TimerProcessing>
-  <TitleName>타이틀 이름</TitleName>
-  <TitleNameChanged>타이틀 이름이 변경되었습니다.</TitleNameChanged>
-  <TitleNameExclusionString>타이틀 이름에 포함된 문자열</TitleNameExclusionString>
-  <TitleNameRequirements>제목명 처리 조건</TitleNameRequirements>
-  <TopEdge>상단</TopEdge>
-  <Translators>번역자 : DeepL</Translators>
-  <Transparency>투명도</Transparency>
-  <UpdateCheck>업데이트 확인</UpdateCheck>
-  <UpdateCheckFailed>업데이트 확인에 실패했습니다.</UpdateCheckFailed>
-  <UpdateHistory>업데이트 내역</UpdateHistory>
-  <Version>버전</Version>
-  <WaitTimeToProcessingNextWindow>다음 창 처리 대기 시간 (밀리초)</WaitTimeToProcessingNextWindow>
-  <Website>웹 사이트</Website>
-  <Width>너비</Width>
-  <WidthSpecification>너비 지정</WidthSpecification>
-  <WindowDecide>창 판정</WindowDecide>
-  <WindowDesignateMethod>창 판정 지정 방법</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>창의 판단은 '제목명', '클래스명', '파일명'을 지정할 수 있습니다.
-무엇을 지정하고, 무엇을 지정하지 말아야 하는지는 각 창마다 다릅니다.
-모두 지정하면 창이 처리되지 않을 수 있습니다.
-창이 표시될 때마다 '클래스명'이 변경되는 소프트웨어의 경우,'클래스명'은 지정하지 마십시오.
-UWP 앱은 '클래스명'과 '파일명'은 일부를 제외하고는 모든 앱이 동일하기 때문입니다,'제목명'이 없으면 제대로 판별하지 못하고 다른 앱의 창도 함께 처리됩니다.
-'제목명', '클래스명', '파일명'을 모두 지정하는 것이 좋습니다.
-클래스 이름은 'ApplicationFrameWindow', 파일 이름은 'C:\WINDOWS\system32\ApplicationFrameHost.exe'입니다,입니다(Windows 업데이트에 따라 변경될 수 있습니다).</WindowDesignateMethodExplain>
-  <WindowInformation>창 정보</WindowInformation>
-  <WindowMoveOutsideToInside>창이 화면 밖에 있으면 화면 내로 이동</WindowMoveOutsideToInside>
-  <WindowState>창 상태</WindowState>
-  <WindowWithTitleName>제목이 있는 창</WindowWithTitleName>
-  <WindowWithoutTitleName>제목이 없는 창</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>예</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "한국어",
+  "errorOccurred": "오류가 발생했습니다.",
+  "check": "확인",
+  "changeVersion": "버전이 변경되었습니다.",
+  "changeSettingToNewVersion": "새 버전으로 설정 변경 “예” / 수동으로 변경 “아니오” / 처리 비활성화 “취소”",
+  "ok": "OK",
+  "yes": "예",
+  "no": "아니요",
+  "cancel": "취소 취소",
+  "shareSettings": "모든 사용자에게 설정 정보를 공유하시겠습니까?",
+  "open": "열기",
+  "batchProcessingOfSpecifyWindow": "'지정 창' 일괄 처리",
+  "windowMoveOutsideToInside": "창이 화면 밖에 있을 경우 화면 내로 이동",
+  "displayInformationUpdate": "디스플레이 정보 업데이트",
+  "end": "종료",
+  "updateCheckFailed": "업데이트 확인에 실패했습니다.",
+  "latestVersion": "최신 버전입니다.",
+  "thereIsLatestVersion": "최신 버전이 있습니다.",
+  "event": "이벤트",
+  "timer": "타이머",
+  "specifyWindow": "지정 창",
+  "magnet": "자석",
+  "plugin": "플러그인",
+  "pluginSettings": "플러그인 설정",
+  "setting": "설정",
+  "information": "정보",
+  "add": "추가",
+  "modify": "수정",
+  "delete": "삭제",
+  "select": "선택",
+  "moveUp": "위로 이동",
+  "moveDown": "아래로 이동",
+  "copy": "복사",
+  "processingState": "처리 상태",
+  "deleted": "삭제되었습니다.",
+  "allowDelete": "삭제하시겠습니까?",
+  "version": "버전",
+  "updateCheck": "업데이트 확인",
+  "readme": "정보 (Readme)",
+  "updateHistory": "업데이트 내역",
+  "website": "웹 사이트",
+  "reportsAndRequests": "보고, 요청",
+  "library": "라이브러리",
+  "general": "일반",
+  "hotkey": "단축키",
+  "language": "언어",
+  "translators": "번역자 : DeepL",
+  "darkMode": "다크 모드",
+  "automaticUpdateCheck": "실행 시 자동 업데이트 확인",
+  "checkBetaVersion": "베타 버전 포함 업데이트 확인",
+  "registerMultipleWindowActions": "창 처리 여러 개 등록",
+  "coordinate": "좌표",
+  "eachDisplay": "각 디스플레이의 왼쪽 위를 'x=0, y=0'",
+  "primaryDisplay": "기본 디스플레이의 왼쪽 위를 'x=0, y=0'",
+  "fullScreenWindowAdditionDecision": "전체화면 창 추가 판정 (제대로 판정되지 않은 경우에만)",
+  "processingInterval": "처리 간격 (밀리초)",
+  "runAtWindowsStartup": "Windows 시작 시 실행",
+  "runAtWindowsStartupAdministrator": "Windows 시작 시 실행 (관리자 권한)",
+  "normalExecution": "일반 실행인가요? (관리자 권한 없음 - '예' / 관리자 권한 있음 - '아니오')",
+  "waitTimeToProcessingNextWindow": "다음 창을 처리하기 위한 대기 시간 (밀리초)",
+  "stopProcessingWhenWindowIsFullScreen": "전체 화면의 창이 존재할 경우 처리 중지",
+  "caseSensitiveWindowQueries": "창 판정에서 대/소문자 구분하기",
+  "doNotChangePositionSizeOutOfScreen": "화면 밖으로 나갈 경우 위치 및 크기 변경하지 않음",
+  "stopProcessingShowAddModify": "추가/수정 창이 표시되는 경우 처리 중지",
+  "hotkeysDoNotStop": "단축키 제외",
+  "movePastePosition": "붙여넣기 위치 이동",
+  "pasteToEdgeOfScreen": "화면 가장자리에 붙여넣기",
+  "pasteIntoAnotherWindow": "다른 창에 붙여넣기",
+  "pasteWithCtrlKeyPressed": "'Ctrl' 키를 누른 상태에서 붙여넣기",
+  "keepPasteUntilKeyUp": "키에서 손을 뗄 때까지 붙여넣기",
+  "pastingTime": "붙여넣기 시간 (밀리초)",
+  "decisionDistanceToPaste": "붙여넣기 판단 거리",
+  "checkReadme": "지정 방법은 'Readme(설명서)'에서 확인하시기 바랍니다.",
+  "titleName": "타이틀 이름",
+  "className": "클래스명",
+  "fileName": "파일명",
+  "display": "디스플레이",
+  "windowState": "창 상태",
+  "processingType": "처리 종류",
+  "specifyPositionAndSize": "위치 및 크기 지정",
+  "moveXCoordinate": "X좌표 이동",
+  "moveYCoordinate": "Y좌표 이동",
+  "increaseDecreaseWidth": "너비 증감",
+  "increaseDecreaseHeight": "높이 증감",
+  "increaseDecreaseWidthAndHeight": "폭과 높이 증감",
+  "startStopProcessingOfSpecifyWindow": "'지정 창' 처리 시작/정지",
+  "startStopProcessingOfAllWindow": "“모든 창' 처리 시작/정지",
+  "startStopProcessingOfMagnet": "“자석」의 처리 시작/정지",
+  "showThisApplicationWindow": "이 응용 프로그램의 창을 표시합니다.",
+  "showSystemTrayIconMenu": "시스템 트레이 아이콘 메뉴 표시",
+  "alwaysShowOrCancelOnTop": "항상 맨 앞에 표시/해제",
+  "specifyCancelTransparency": "투명도 지정/해제",
+  "leftEdge": "왼쪽 끝",
+  "middle": "중앙",
+  "rightEdge": "오른쪽 끝",
+  "topEdge": "상단",
+  "bottomEdge": "하단",
+  "x": "X",
+  "y": "Y",
+  "width": "폭",
+  "height": "높이",
+  "pixel": "px",
+  "percent": "px",
+  "registeredName": "등록명",
+  "windowDecide": "창 판정",
+  "processingSettings": "처리 설정",
+  "holdDownMousePointerMoveToSelectWindow": "마우스 포인터를 누른 채로 선택하려는 창에 마우스 포인터를 이동한 후 놓기",
+  "getWindowInformation": "창 정보 가져오기",
+  "informationToBeObtained": "획득할 정보",
+  "fileSelection": "파일 선택",
+  "folderSelection": "폴더 선택",
+  "exactMatch": "완전 일치",
+  "partialMatch": "부분 일치",
+  "forwardMatch": "앞쪽 일치",
+  "backwardMatch": "후방 일치",
+  "includePath": "경로 포함",
+  "notIncludePath": "경로를 포함하지 않음",
+  "doNotSpecify": "지정하지 않음",
+  "childWindow": "자식 창",
+  "titleNameRequirements": "제목명 조건",
+  "windowWithoutTitleName": "제목명이 없는 창",
+  "windowWithTitleName": "제목명이 있는 창",
+  "processingName": "처리명",
+  "displayToUseAsStandard": "참조할 디스플레이",
+  "currentDisplay": "현재 디스플레이",
+  "specifiedDisplay": "지정한 디스플레이",
+  "limitedToSpecifiedDisplay": "지정한 디스플레이 한정",
+  "processOnlyOnce": "한 번만 처리",
+  "onceWindowOpen": "창이 열렸을 때",
+  "onceWhileItIsRunning": "이 소프트웨어가 실행되는 동안",
+  "foregrounded": "포어그라운드가 되었을 때",
+  "moveSizeChangeEnd": "이동 및 크기 변경이 완료된 경우",
+  "minimizeStart": "최소화 시작됨",
+  "minimizeEnd": "최소화 완료",
+  "show": "표시됨",
+  "titleNameChanged": "제목 이름 변경됨",
+  "eventDelayTime": "처리 대기 시간 (밀리초) ('표시됨'만 해당)",
+  "forefront": "맨 앞면",
+  "doNotChange": "변경하지 않음",
+  "alwaysForefront": "항상 맨 앞",
+  "alwaysCancelForefront": "항상 전면 해제",
+  "specifyTransparency": "투명도 지정",
+  "closeWindow": "창 닫기",
+  "timerProcessing": "타이머 처리",
+  "numberOfTimesNotToProcessingFirst": "처음 처리하지 않는 횟수 (실행 직후 처리 지연)",
+  "normalWindow": "일반 창",
+  "maximize": "최대화",
+  "minimize": "최소화",
+  "processOnlyWhenNormalWindow": "'일반 창' 상태만 처리한다.",
+  "coordinateSpecification": "좌표 지정",
+  "widthSpecification": "너비 지정",
+  "heightSpecification": "높이 지정",
+  "conditionsNotProcess": "처리하지 않는 조건",
+  "clientArea": "클라이언트 영역을 대상으로 하는",
+  "titleNameExclusionString": "타이틀 이름에 포함된 문자열",
+  "size": "크기",
+  "otherThanSpecifiedSize": "지정한 크기 이외",
+  "otherThanSpecifiedVersion": "지정한 버전 이외 (마이너까지 등 가능)",
+  "notification": "알림",
+  "synchronizationOtherThanSpecifiedVersion": "'처리하지 않는 조건'의 '지정한 버전 외'와 동기화",
+  "retrievedAfterFiveSeconds": "5초 후에 창 정보가 검색되므로, 5초 이내에 정보를 검색할 창을 활성화해 주세요.",
+  "obtained": "획득했습니다.",
+  "thereAreDuplicateItems": "중복된 항목이 있습니다.",
+  "thereIsADuplicateRegistrationName": "중복된 등록명이 있습니다.",
+  "thereIsADuplicateProcessingName": "중복된 처리명이 있습니다.",
+  "conditionsNotToBeProcessed": "처리하지 않을 창 조건을 지정해 주세요.",
+  "added": "추가하였습니다.",
+  "modified": "수정했습니다.",
+  "processingWindowRange": "처리할 창 범위",
+  "activeWindowOnly": "활성 창만 처리",
+  "allWindow": "모든 창",
+  "onlyActiveWindowSpecifyWindow": "'지정 창'의 활성 창만 처리",
+  "amountOfMovement": "이동량",
+  "sizeChangeAmount": "크기 변경량",
+  "transparency": "투명도",
+  "numericCalculation": "수치 계산",
+  "ratio": "비율",
+  "explanationOfSpecifyWindow": "조건에 일치하는 창을 처리하는 기능입니다. 이벤트나 타이머를 통한 자동 처리와 단축키를 통한 수동 처리 방법이 있습니다.",
+  "explanationOfAllWindow": "모든 창을 처리하는 기능입니다. 활성화한 이벤트가 발생했을 때 처리됩니다. '모든 창'이나 '지정 창'에 등록한 항목의 조건에 일치하는 창은 제외되지만(비활성화 상태의 항목도 포함), 플러그인에서 처리되는 창은 제외되지 않습니다.",
+  "hotkeyExplanation": "단축키로 활성 창을 처리하는 기능입니다. 항목을 선택한 상태에서 '선택' 버튼을 사용하면 선택한 창을 처리할 수 있습니다.",
+  "magnetExplanation": "마우스로 창을 이동 중에 화면 가장자리나 다른 창에 붙여넣기 기능입니다.",
+  "pluginExplanation": "플러그인은 기능을 추가할 수 있습니다.",
+  "settingsValue": "설정한 값",
+  "windowInformation": "창 정보",
+  "moveAllWindowToSpecifiedPosition": "모든 창을 지정한 위치로 이동",
+  "cancelMoveWindow": "이동하지 않는 창",
+  "position": "위치",
+  "restart": "재시작",
+  "needRestart": "이 소프트웨어를 다시 시작해야 합니다.",
+  "help": "재시작이 필요합니다.",
+  "newSettingFile": "설정 파일 형식이 변경되었습니다. 이전 형식의 설정 파일을 삭제하시겠습니까?",
+  "pluginFolder": "플러그인 폴더",
+  "eventTimer": "이벤트, 타이머",
+  "activeWindow": "활성 창",
+  "question": "?",
+  "coordinateDetailedExplanation": " - 좌표에 대해 \r\n 디스플레이의 왼쪽 상단이 “x=0,y=0”, 오른쪽 하단으로 갈수록 수치가 커지고, 왼쪽 상단으로 갈수록 수치가 작아집니다. 이는 Windows의 사양과 동일합니다. \r\n\r\n - '설정'의 '좌표'에 대해 \r\n디스플레이가 여러 개 있는 경우 설정할 수 있습니다. '각 디스플레이의 왼쪽 위를 'x=0, y=0'으로 설정'은 각 디스플레이의 왼쪽 위를 'x=0, y=0'으로 설정한 좌표입니다. '기본 디스플레이의 왼쪽 상단을 'x=0, y=0'으로 설정'은 기준 디스플레이의 왼쪽 상단을 'x=0, y=0'으로 설정한 좌표입니다. 기본 디스플레이의 왼쪽이나 위에 디스플레이가 설정되어 있는 경우, 기본 디스플레이의 왼쪽이나 위에 있는 디스플레이의 좌표 값은 마이너스가 됩니다.",
+  "windowDecisionDetailedExplanation": "윈도우의 판단은 '타이틀명', '클래스명', '파일명'을 지정할 수 있습니다. \r\n 무엇을 지정하고, 무엇을 지정하지 말아야 하는지는 각 창마다 다릅니다. 모든 것을 지정하면 창이 처리되지 않을 수 있습니다. \r\n창이 표시될 때마다 '클래스명'이 다른 소프트웨어의 경우 '클래스명'을 지정하지 마십시오. UWP 앱의 '클래스명'과 '파일명'은 모든 앱에서 동일하므로, '제목명'을 지정하지 않으면 모든 UWP 앱의 창이 처리됩니다. '타이틀명', '클래스명', '파일명'을 모두 지정하는 것이 좋습니다.",
+  "eventTimerDetailedExplanation": " - 이벤트\r\n 창이 표시되거나 이동하는 등의 경우에 처리합니다. \r\n 초기 상태에서는 비활성화되어 있으므로 필요한 이벤트만 활성화합니다. 소프트웨어 측의 처리에 따라 정상과 다른 이벤트가 발생하거나, 이벤트가 발생하지 않는 등 제대로 처리되지 않을 수 있습니다. \r\n\r\n - 타이머\r\n 일정 간격으로 처리를 수행합니다. 처리 간격을 길게 설정하면 부하가 적지만 즉시 처리되지 않을 수 있습니다. 처리 간격을 짧게 하면 부하가 높지만 빠르게 처리됩니다.",
+  "clientAreaDetailedExplanation": "클라이언트 영역은 제목 표시줄과 창 테두리를 제외한 영역입니다. 표준 제목 표시줄이나 테두리인 경우 클라이언트 영역을 인식할 수 있습니다. 소프트웨어 측에서 자체적으로 제목 표시줄이나 테두리를 그리는 경우, 클라이언트 영역을 제대로 인식하지 못하여 지정한 위치나 크기로 표시되지 않을 수 있습니다.",
+  "activeWindowDetailedExplanation": " - 활성 창 \r\n 활성 창은 선택된 창을 의미합니다. 텍스트 편집기 등에서는 키보드 입력을 하면 입력이 가능한 상태가 활성, 입력할 수 없는 상태가 비활성입니다.",
+  "pluginDetailedExplanation": "플러그인을 사용하여 기능을 추가할 수 있습니다. 표준 기능에 필요한 기능이 없다면 플러그인을 찾아보는 것도 좋은 방법입니다. 누구나 자유롭게 개발할 수 있습니다. 유용한 플러그인뿐만 아니라 악성 플러그인도 존재할 수 있으니 주의해야 한다. 플러그인 추가, 사용 방법 \r\n\r\n - 플러그인 추가, 사용 방법 \r\n1. : 플러그인을 찾아 다운로드한다. 2. : 소프트웨어가 있는 곳에 'Plugins' 폴더가 있으므로 플러그인을 넣는다. 3. : 작동시키고자 하는 플러그인을 활성화한다. \r\n\r\n - 플러그인 비활성화 방법 \r\n 비활성화 작업을 수행한 후에는 이 소프트웨어를 재부팅해야 합니다 (항목의 체크를 해제하고 '처리 상태'를 비활성화). \r\n\r\n - 플러그인 삭제 방법 \r\n 플러그인 파일을 삭제합니다. 삭제하려는 플러그인이 작동하지 않는 상태라면 이 소프트웨어가 작동 중일 때에도 삭제할 수 있습니다. 작동 중인 상태라면 이 소프트웨어를 정지시킨 후 삭제해야 합니다. 플러그인 설정'에 대해 \r\n플러그인 측에서 제공하는 창이 표시됩니다. 창이 준비되어 있지 않거나, 플러그인이 비활성화되어 있거나, 플러그인 항목이 선택되어 있지 않거나, 플러그인 항목이 선택되어 있지 않은 경우에는 누를 수 없는 상태가 됩니다. 이 소프트웨어의 설정은 플러그인에서 사용되지 않습니다.",
+  "childWindowExplanation": "다른 창이 소유하고 있는 창이 자식 창, 자식 창을 소유하고 있는 창이 부모 창입니다. '옵션'이나 '버전 정보' 등의 창이 자식 창이 됩니다(자식 창으로 생성되지 않은 경우 제외). '제목 이름'이나 '클래스 이름'은 기본적으로 부모 창과 다르기 때문에 지정한 경우 자식 창이 처리되지 않습니다. '파일명'만 지정한 경우, 부모 창뿐만 아니라 자식 창도 처리되므로 활성화하면 부모 창만 처리할 수 있습니다."
+}

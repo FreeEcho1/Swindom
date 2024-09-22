@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>Zmień ustawienia na nową wersję "Tak" / Zmień ręcznie "Nie" / Wyłącz proces "Anuluj".</ChangeSettingToNewVersion>
- <ChangeVersion>Wersja została zmieniona</ChangeVersion>
- <Check>Potwierdzenie.</Check>
- <ErrorOccurred>Wystąpił błąd.</ErrorOccurred>
- <LanguageName>Polski</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>Tylko aktywne okno</ActiveWindowOnly>
-  <Add>Dodano</Add>
-  <Added>Dodano.</Added>
-  <AllWindow>Wszystkie okna</AllWindow>
-  <AllowDelete>Czy chcesz usunąć?</AllowDelete>
-  <AlwaysCancelForefront>Zawsze zwalniaj przede wszystkim</AlwaysCancelForefront>
-  <AlwaysForefront>Zawsze na pierwszym miejscu</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Zawsze przesuwaj do przodu/usuń</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Ruch</AmountOfMovement>
-  <Announce>Powiadomienie</Announce>
-  <AutomaticUpdateCheck>Automatyczne potwierdzenie aktualizacji w czasie działania</AutomaticUpdateCheck>
-  <BackwardMatch>Dopasowanie wsteczne</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>Przetwarzanie wsadowe "wyznaczonych okien</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Niższy koniec</BottomEdge>
-  <Cancel>Anuluj</Cancel>
-  <CancelMoveWindow>Okna, które się nie poruszają</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>Określanie okien z uwzględnieniem wielkości liter</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Sprawdzanie aktualizacji, w tym wersji beta.</CheckBetaVersion>
-  <CheckReadme>Zobacz "Readme (instrukcje)", aby uzyskać informacje na temat sposobu określania.</CheckReadme>
-  <ClassName>Nazwa klasy</ClassName>
-  <ClientArea>Docelowy obszar klienta</ClientArea>
-  <CloseWindow>Zamknij okno</CloseWindow>
-  <ConditionsThatDoNotProcess>Warunek nieprzetwarzania</ConditionsThatDoNotProcess>
-  <Coordinate>Współrzędne</Coordinate>
-  <CoordinateSpecification>Specyfikacja współrzędnych</CoordinateSpecification>
-  <Copy>Kopiuj</Copy>
-  <CurrentDisplay>Bieżące wyświetlanie</CurrentDisplay>
-  <DarkMode>Tryb ciemny</DarkMode>
-  <DecisionDistanceToPaste>Odległość decyzji wklejania</DecisionDistanceToPaste>
-  <Delete>Usunięto</Delete>
-  <Deleted>Usunięto.</Deleted>
-  <Display>Wyświetlacz</Display>
-  <DisplayInformationUpdate>Zaktualizowano informacje na wyświetlaczu</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Wyświetlacz używany jako odniesienie</DisplayToUseAsStandard>
-  <DoNotChange>Nie zmieniaj</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Nie zmieniaj pozycji ani rozmiaru, jeśli poza ekranem</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Nie określono</DoNotSpecify>
-  <EachDisplay>Lewy górny róg każdego wyświetlacza "x=0, y=0"</EachDisplay>
-  <End>Koniec</End>
-  <Event>Zdarzenie</Event>
-  <ExactMatch>Dokładne dopasowanie.</ExactMatch>
-  <ExplanationOfAllWindow>Wszystkie okna mogą być przetwarzane z wyjątkiem określonego okna. Okna określone w polu "Określone okno" są również wykluczone.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>Określone okno może być przetwarzane automatycznie. Jeśli chcesz przetwarzać tylko za pomocą skrótów klawiszowych bez automatycznego przetwarzania, odznacz pole, aby wyłączyć tę opcję.</ExplanationOfSpecifyWindow>
-  <FileName>Nazwa pliku</FileName>
-  <FileSelection>Wybór pliku</FileSelection>
-  <Forefront>Na pierwszym planie</Forefront>
-  <Foregrounded>Na pierwszym planie.</Foregrounded>
-  <ForwardMatch>Dopasuj pierwszy plan</ForwardMatch>
-  <General>Ogólne</General>
-  <GetWindowInformation>Pozyskiwanie informacji o oknie</GetWindowInformation>
-  <Height>Wysokość</Height>
-  <HeightSpecification>Określa wysokość</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Przesuń kursor myszy do okna, które chcesz wybrać, przytrzymując go</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>Klawisze skrótu</Hotkey>
-  <HotkeyExplanation>Klawisze skrótu mogą być używane do przetwarzania aktywnego okna (akceptowania danych wejściowych). Przycisk "Wybierz" umożliwia wybranie okna, które ma zostać przetworzone bez użycia klawisza skrótu.</HotkeyExplanation>
-  <HotkeysDoNotStop>Klawisze skrótu nie zatrzymują się (jeśli obecne jest okno pełnoekranowe).</HotkeysDoNotStop>
-  <IncludePath>Dołącz ścieżki</IncludePath>
-  <IncreaseDecreaseHeight>Zwiększanie/zmniejszanie wysokości</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Zwiększanie/zmniejszanie szerokości</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Zwiększanie/zmniejszanie szerokości i wysokości</IncreaseDecreaseWidthAndHeight>
-  <Information>Info.</Information>
-  <InformationToBeObtained>Informacje do pobrania</InformationToBeObtained>
-  <Language>Język.</Language>
-  <LatestVersion>Najnowsza wersja.</LatestVersion>
-  <LeftEdge>Leftmost</LeftEdge>
-  <Library>Biblioteka.</Library>
-  <LimitedToSpecifiedDisplay>Ograniczone do określonego wyświetlacza</LimitedToSpecifiedDisplay>
-  <Magnet>Magnes.</Magnet>
-  <MagnetExplanation>Przyczepia się do krawędzi ekranu lub innego okna, gdy okno jest przesuwane za pomocą myszy.</MagnetExplanation>
-  <Manual>Opis</Manual>
-  <Maximize>Maksymalizuj</Maximize>
-  <Middle>Wyśrodkowany</Middle>
-  <Minimize>Zminimalizowany</Minimize>
-  <MinimizeEnd>Minimalizacja została zakończona</MinimizeEnd>
-  <MinimizeStart>Rozpoczęto minimalizację.</MinimizeStart>
-  <Modified>Naprawiono.</Modified>
-  <Modify>Naprawiono.</Modify>
-  <MoveAllWindowToSpecifiedPosition>Przenieś wszystkie okna do określonej pozycji</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>Przesunięto w dół</MoveDown>
-  <MovePastePosition>Pozycja wklejania przesunięta</MovePastePosition>
-  <MoveSizeChangeEnd>Zakończono przenoszenie i zmianę rozmiaru</MoveSizeChangeEnd>
-  <MoveUp>Przesunięcie w górę</MoveUp>
-  <MoveXCoordinate>Przesunięcie współrzędnej X</MoveXCoordinate>
-  <MoveYCoordinate>Przesunięcie współrzędnej Y</MoveYCoordinate>
-  <NeedRestart>Swindom musi zostać ponownie uruchomiony.</NeedRestart>
-  <No>Nie.</No>
-  <NormalExecution>Normalne wykonanie? (bez uprawnień administratora - "Tak" / z uprawnieniami administratora - "Nie")</NormalExecution>
-  <NormalWindow>Normalne okno</NormalWindow>
-  <NotIncludePath>Nie zawiera ścieżek</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Liczba przypadków nieprzetworzonych w pierwszej kolejności (opóźnia przetwarzanie natychmiast po wykonaniu)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Obliczenia numeryczne</NumericCalculation>
-  <Ok>OK - 'Tak' / 'Nie'</Ok>
-  <OnceWhileItIsRunning>Gdy oprogramowanie jest uruchomione</OnceWhileItIsRunning>
-  <OnceWindowOpen>Gdy otwarte jest okno</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Przetwarzane jest tylko aktywne okno "określonego okna".</OnlyActiveWindowSpecifyWindow>
-  <Open>Otwarte</Open>
-  <OtherThanSpecifiedVersion>Inne niż określona wersja (np. możliwe do wersji minor)</OtherThanSpecifiedVersion>
-  <PartialMatch>Częściowe dopasowanie</PartialMatch>
-  <PasteIntoAnotherWindow>Wklej do innego okna</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>Wklej do krawędzi ekranu</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Wklej z wciśniętym klawiszem Ctrl</PasteWithCtrlKeyPressed>
-  <Percent>% (np. %)</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>Wtyczki</Plugin>
-  <PluginExplanation>Wtyczki mogą dodawać dodatkowe funkcje. Szczegółowe instrukcje znajdują się w "Readme (instrukcje)".</PluginExplanation>
-  <PluginSettings>Konfiguracja wtyczki</PluginSettings>
-  <PluginTestMessage>Ta funkcja jest w fazie testów i może być niestabilna, np.</PluginTestMessage>
-  <Position>Pozycja.</Position>
-  <PrimaryDisplay>Lewy górny róg głównego wyświetlacza "x=0, y=0</PrimaryDisplay>
-  <ProcessOnlyOnce>Przetwarzane tylko raz</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Przetwarzanie tylko w "normalnym oknie</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>Interwał przetwarzania (milisekundy)</ProcessingInterval>
-  <ProcessingName>Nazwa przetwarzania</ProcessingName>
-  <ProcessingSettings>Ustawienie przetwarzania</ProcessingSettings>
-  <ProcessingState>Status przetwarzania</ProcessingState>
-  <ProcessingType>Typ przetwarzania</ProcessingType>
-  <ProcessingWindowRange>Zakres przetwarzanych okien</ProcessingWindowRange>
-  <Ratio>Współczynnik</Ratio>
-  <RegisterMultipleWindowActions>Rejestrowanie przetwarzania wielu okien</RegisterMultipleWindowActions>
-  <RegisteredName>Nazwa rejestracji</RegisteredName>
-  <ReportsAndRequests>Raport, żądanie</ReportsAndRequests>
-  <Restart>Reaktywacja.</Restart>
-  <RetrievedAfterFiveSeconds>Informacje o oknie są pobierane po 5 sekundach, aktywuj okno, dla którego chcesz pobrać informacje w ciągu 5 sekund.</RetrievedAfterFiveSeconds>
-  <RightEdge>Prawy koniec</RightEdge>
-  <RunAtWindowsStartup>Uruchom przy starcie systemu Windows</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Uruchom przy starcie systemu Windows (uprawnienia administratora)</RunAtWindowsStartupAdministrator>
-  <Select>Wybór.</Select>
-  <SelectionComplete>Wybrane.</SelectionComplete>
-  <Setting>Ustawienia</Setting>
-  <SettingsValue>Zestaw wartości.</SettingsValue>
-  <ShareSettings>Czy chcesz udostępnić informacje o konfiguracji wszystkim użytkownikom?</ShareSettings>
-  <Show>Wyświetlane.</Show>
-  <ShowThisApplicationWindow>Pokaż to okno aplikacji</ShowThisApplicationWindow>
-  <Size>Rozmiar</Size>
-  <SizeChangeAmount>Wielkość zmiany rozmiaru</SizeChangeAmount>
-  <SoftwareName>Nazwa oprogramowania</SoftwareName>
-  <SpecifiedDisplay>Określony wyświetlacz</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Określanie/zwalnianie przezroczystości</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Określanie pozycji i rozmiaru</SpecifyPositionAndSize>
-  <SpecifyTransparency>Określanie przezroczystości</SpecifyTransparency>
-  <SpecifyWindow>Określone okno</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>Rozpoczęcie/zatrzymanie przetwarzania "Wszystkie okna</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>Rozpoczęcie/zatrzymanie przetwarzania "Magnesu".</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Rozpoczęcie/zatrzymanie przetwarzania "Wyznaczonych okien".</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Zatrzymanie przetwarzania w przypadku wyświetlenia okna dodawania/modyfikacji.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Zatrzymanie przetwarzania, gdy okno jest wyświetlane na pełnym ekranie</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Czas zatrzymania po zablokowaniu (milisekundy)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Istnieją zduplikowane elementy.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Istnieją zduplikowane nazwy procesów.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Istnieją zduplikowane nazwy rejestracji.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>Istnieje najnowsza wersja.</ThereIsLatestVersion>
-  <Timer>Timer</Timer>
-  <TimerProcessing>Proces timera</TimerProcessing>
-  <TitleName>Nazwa tytułu.</TitleName>
-  <TitleNameChanged>Nazwa tytułu została zmieniona.</TitleNameChanged>
-  <TitleNameExclusionString>Ciąg znaków zawarty w nazwie tytułu</TitleNameExclusionString>
-  <TitleNameRequirements>Warunki przetwarzania nazwy tytułu</TitleNameRequirements>
-  <TopEdge>Górny koniec</TopEdge>
-  <Translators>Translator: DeepL</Translators>
-  <Transparency>Przejrzystość</Transparency>
-  <UpdateCheck>Potwierdzenie aktualizacji</UpdateCheck>
-  <UpdateCheckFailed>Potwierdzenie aktualizacji nie powiodło się.</UpdateCheckFailed>
-  <UpdateHistory>Historia aktualizacji</UpdateHistory>
-  <Version>Wersja.</Version>
-  <WaitTimeToProcessingNextWindow>Opóźnienie do przetworzenia następnego okna (milisekundy)</WaitTimeToProcessingNextWindow>
-  <Website>Strona internetowa</Website>
-  <Width>Szerokość</Width>
-  <WidthSpecification>Specyfikacja szerokości</WidthSpecification>
-  <WindowDecide>Określanie okna</WindowDecide>
-  <WindowDesignateMethod>Jak określić ocenę okna</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>Okna można oceniać, określając "nazwę tytułu", "nazwę klasy" i "nazwę pliku".
-To, co należy, a czego nie należy określać, jest różne dla każdego okna.
-Jeśli określisz wszystko, okno może nie zostać przetworzone.
-W przypadku oprogramowania, w którym "nazwa klasy" zmienia się za każdym razem, gdy okno jest wyświetlane, Nie należy określać "nazwy klasy".
-W przypadku aplikacji UWP "nazwa klasy" i "nazwa pliku" są takie same dla wszystkich aplikacji z wyjątkiem kilku, Jeśli nie ma "nazwy tytułu", nie można go poprawnie zidentyfikować, a okna z innych aplikacji będą przetwarzane.
-Zaleca się określenie wszystkich "Nazwy tytułu", "Nazwy klasy" i "Nazwy pliku".
-Nazwa klasy to "ApplicationFrameWindow", a nazwa pliku to "C:\WINDOWS\system32\ApplicationFrameHost.exe", (może się ona zmienić wraz z aktualizacjami systemu Windows).</WindowDesignateMethodExplain>
-  <WindowInformation>Informacje o oknie.</WindowInformation>
-  <WindowMoveOutsideToInside>Jeśli okno znajduje się poza ekranem, przenieś je na ekran</WindowMoveOutsideToInside>
-  <WindowState>Stan okna</WindowState>
-  <WindowWithTitleName>Okno z nazwą tytułu</WindowWithTitleName>
-  <WindowWithoutTitleName>Okno bez nazwy tytułu</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>Tak Nie</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "Polski.",
+  "errorOccurred": "Błąd.",
+  "check": "Potwierdzenie",
+  "changeVersion": "Wersja została zmieniona.",
+  "changeSettingToNewVersion": "Zmień ustawienia na nową wersję 'Tak' / Zmień ręcznie 'Nie' / Wyłącz proces 'Anuluj'",
+  "ok": "OK",
+  "yes": "Tak / Nie",
+  "no": "Nie / Nie",
+  "cancel": "Anuluj.",
+  "shareSettings": "Czy chcesz udostępnić informacje o konfiguracji wszystkim użytkownikom?",
+  "open": "Otwórz",
+  "batchProcessingOfSpecifyWindow": "Przetwarzanie wsadowe „Wyznaczonych okien",
+  "windowMoveOutsideToInside": "Jeśli okno znajduje się poza ekranem, przenieś je na ekran",
+  "displayInformationUpdate": "Zaktualizuj informacje wyświetlane",
+  "end": "Koniec",
+  "updateCheckFailed": "Potwierdzenie aktualizacji nie powiodło się.",
+  "latestVersion": "Najnowsza wersja.",
+  "thereIsLatestVersion": "Dostępna jest najnowsza wersja.",
+  "event": "Zdarzenie",
+  "timer": "Timer",
+  "specifyWindow": "Wyznaczone okno",
+  "magnet": "Magnesy",
+  "plugin": "Wtyczki",
+  "pluginSettings": "Ustawienia wtyczek",
+  "setting": "Ustawienia",
+  "information": "Informacje",
+  "add": "Dodaj",
+  "modify": "Modyfikuj",
+  "delete": "Usuń",
+  "select": "Wybierz",
+  "moveUp": "Przenieś w górę",
+  "moveDown": "Przesuń w dół",
+  "copy": "Kopiowanie",
+  "processingState": "Status przetwarzania",
+  "deleted": "Usunięto.",
+  "allowDelete": "Czy chcesz usunąć?",
+  "version": "Wersja",
+  "updateCheck": "Potwierdzenie aktualizacji",
+  "readme": "Informacje (Readme)",
+  "updateHistory": "Historia aktualizacji",
+  "website": "Strona internetowa",
+  "reportsAndRequests": "Raporty, prośby",
+  "library": "Biblioteka",
+  "general": "Ogólne",
+  "hotkey": "Skróty klawiszowe",
+  "language": "Języki",
+  "translators": "Tłumacz: DeepL",
+  "darkMode": "Tryb ciemny",
+  "automaticUpdateCheck": "Automatyczne sprawdzanie aktualizacji w czasie działania",
+  "checkBetaVersion": "Sprawdzanie aktualizacji, w tym wersji beta",
+  "registerMultipleWindowActions": "Rejestrowanie procesów wielu okien",
+  "coordinate": "Współrzędne",
+  "eachDisplay": "x=0, y=0” dla lewego górnego rogu każdego wyświetlacza",
+  "primaryDisplay": "x=0, y=0 w lewym górnym rogu głównego wyświetlacza",
+  "fullScreenWindowAdditionDecision": "Określenie dodania okien pełnoekranowych (tylko w przypadku nieprawidłowego określenia)",
+  "processingInterval": "Interwał przetwarzania (milisekundy)",
+  "runAtWindowsStartup": "Uruchom przy starcie systemu Windows",
+  "runAtWindowsStartupAdministrator": "Uruchom przy starcie systemu Windows (uprawnienia administratora)",
+  "normalExecution": "Normalne wykonanie? (bez uprawnień administratora - „Tak” / z uprawnieniami administratora - „Nie”)",
+  "waitTimeToProcessingNextWindow": "Czas oczekiwania na przetworzenie następnego okna (milisekundy)",
+  "stopProcessingWhenWindowIsFullScreen": "Przetwarzanie zatrzymuje się, jeśli istnieje pełne okno",
+  "caseSensitiveWindowQueries": "Wrażliwość na wielkość liter w określaniu okna",
+  "doNotChangePositionSizeOutOfScreen": "Nie zmieniaj pozycji ani rozmiaru po wyjściu poza ekran",
+  "stopProcessingShowAddModify": "Przetwarzanie zatrzymuje się, jeśli wyświetlane jest okno dodawania/modyfikacji",
+  "hotkeysDoNotStop": "Skróty klawiszowe są wykluczone",
+  "movePastePosition": "Przesunięcie pozycji wklejania",
+  "pasteToEdgeOfScreen": "Wklejanie do krawędzi ekranu",
+  "pasteIntoAnotherWindow": "Wklejanie do innego okna",
+  "pasteWithCtrlKeyPressed": "Wklejanie z wciśniętym klawiszem Ctrl.",
+  "keepPasteUntilKeyUp": "Wklejanie pozostaje na miejscu do momentu zwolnienia klawisza.",
+  "pastingTime": "Czas wklejania (milisekundy)",
+  "decisionDistanceToPaste": "Odległość wklejania",
+  "checkReadme": "Patrz „Readme (instrukcje)”, aby uzyskać instrukcje dotyczące sposobu określania.",
+  "titleName": "Nazwa tytułu",
+  "className": "Nazwa klasy",
+  "fileName": "Nazwa pliku",
+  "display": "Wyświetlacz",
+  "windowState": "Stan okna",
+  "processingType": "Rodzaj przetwarzania",
+  "specifyPositionAndSize": "Określanie pozycji i rozmiaru",
+  "moveXCoordinate": "Przesuń współrzędną X",
+  "moveYCoordinate": "Przesunięcie współrzędnej Y",
+  "increaseDecreaseWidth": "Zwiększenie lub zmniejszenie szerokości",
+  "increaseDecreaseHeight": "Zwiększanie/zmniejszanie wysokości",
+  "increaseDecreaseWidthAndHeight": "Zwiększanie/zmniejszanie szerokości i wysokości",
+  "startStopProcessingOfSpecifyWindow": "Rozpoczęcie/zatrzymanie przetwarzania „określonego okna”.",
+  "startStopProcessingOfAllWindow": "Rozpoczęcie/zatrzymanie przetwarzania „wszystkich okien”.",
+  "startStopProcessingOfMagnet": "Rozpoczęcie/zatrzymanie przetwarzania „Magnet”.",
+  "showThisApplicationWindow": "Pokaż okna tej aplikacji",
+  "showSystemTrayIconMenu": "Wyświetlanie menu ikony zasobnika systemowego",
+  "alwaysShowOrCancelOnTop": "Zawsze na pierwszym planie/niewybrane",
+  "specifyCancelTransparency": "Określanie/zwalnianie przezroczystości",
+  "leftEdge": "Lewa krawędź",
+  "middle": "Środek",
+  "rightEdge": "Prawa krawędź",
+  "topEdge": "Górna krawędź",
+  "bottomEdge": "Dolna krawędź",
+  "x": "X",
+  "y": "Y",
+  "width": "Szerokość",
+  "height": "Wysokość",
+  "pixel": "px",
+  "percent": "% (%)",
+  "registeredName": "Nazwa rejestracji",
+  "windowDecide": "Określenie okna",
+  "processingSettings": "Ustawienia przetwarzania",
+  "holdDownMousePointerMoveToSelectWindow": "Naciśnij i przytrzymaj, aby przesunąć wskaźnik myszy do okna, które ma zostać wybrane, a następnie zwolnij go.",
+  "getWindowInformation": "Pozyskiwanie informacji o oknie",
+  "informationToBeObtained": "Informacje do pozyskania",
+  "fileSelection": "Wybór pliku",
+  "folderSelection": "Wybór folderu",
+  "exactMatch": "Dokładne dopasowanie",
+  "partialMatch": "Częściowe dopasowanie",
+  "forwardMatch": "Dopasowanie do przodu",
+  "backwardMatch": "Dopasowanie wsteczne",
+  "includePath": "Uwzględnia ścieżki",
+  "notIncludePath": "Nie zawiera ścieżki",
+  "doNotSpecify": "Nie określono",
+  "childWindow": "Okno podrzędne",
+  "titleNameRequirements": "Warunek nazwy tytułu",
+  "windowWithoutTitleName": "Okno bez nazwy tytułu",
+  "windowWithTitleName": "Okno z nazwą tytułu",
+  "processingName": "Nazwa procesu",
+  "displayToUseAsStandard": "Wyświetlacz, na którym ma się opierać",
+  "currentDisplay": "Bieżący wyświetlacz",
+  "specifiedDisplay": "Określony wyświetlacz",
+  "limitedToSpecifiedDisplay": "Tylko określony wyświetlacz",
+  "processOnlyOnce": "Przetwarzane tylko raz",
+  "onceWindowOpen": "Gdy okno jest otwarte",
+  "onceWhileItIsRunning": "Podczas działania tego oprogramowania",
+  "foregrounded": "Okno jest przenoszone na pierwszy plan",
+  "moveSizeChangeEnd": "Zakończono przenoszenie lub zmianę rozmiaru",
+  "minimizeStart": "Rozpoczęto minimalizację",
+  "minimizeEnd": "Minimalizacja zakończona",
+  "show": "Wyświetlono",
+  "titleNameChanged": "Nazwa tytułu została zmieniona",
+  "eventDelayTime": "Czas oczekiwania na przetworzenie (milisekundy) (tylko dla „Wyświetlono”)",
+  "forefront": "Najbardziej z przodu",
+  "doNotChange": "Nie zmieniono",
+  "alwaysForefront": "Zawsze na pierwszym miejscu",
+  "alwaysCancelForefront": "Zawsze na pierwszym miejscu",
+  "specifyTransparency": "Określ przezroczystość",
+  "closeWindow": "Zamknij okno",
+  "timerProcessing": "Przetwarzanie timera",
+  "numberOfTimesNotToProcessingFirst": "Ile razy nie zostało przetworzone jako pierwsze (opóźnia przetwarzanie natychmiast po wykonaniu)",
+  "normalWindow": "Normalne okno",
+  "maximize": "Maksymalizuj",
+  "minimize": "Minimalizuj",
+  "processOnlyWhenNormalWindow": "Przetwarzanie tylko w stanie „normalnego okna",
+  "coordinateSpecification": "Specyfikacja współrzędnych",
+  "widthSpecification": "Specyfikacja szerokości",
+  "heightSpecification": "Specyfikacja wysokości",
+  "conditionsNotProcess": "Warunki, które nie są przetwarzane",
+  "clientArea": "Docelowy obszar klienta",
+  "titleNameExclusionString": "Ciąg znaków zawarty w nazwie tytułu",
+  "size": "Rozmiar",
+  "otherThanSpecifiedSize": "Inny niż określony rozmiar",
+  "otherThanSpecifiedVersion": "Inna niż określona wersja (np. możliwa wersja minor)",
+  "notification": "Powiadomienie",
+  "synchronizationOtherThanSpecifiedVersion": "Zsynchronizowane z „inną niż określona wersja” w „Warunkach nieprzetwarzania”.",
+  "retrievedAfterFiveSeconds": "Informacje z okna są pobierane po 5 s. Aktywuj okno, z którego informacje mają zostać pobrane w ciągu 5 s.",
+  "obtained": "Odzyskane.",
+  "thereAreDuplicateItems": "Istnieją zduplikowane wpisy.",
+  "thereIsADuplicateRegistrationName": "Istnieją zduplikowane nazwy rejestracji.",
+  "thereIsADuplicateProcessingName": "Istnieją zduplikowane nazwy procesów.",
+  "conditionsNotToBeProcessed": "Określa warunki okna, które nie mają być przetwarzane.",
+  "added": "Dodano.",
+  "modified": "Poprawiono.",
+  "processingWindowRange": "Zakres okien do przetworzenia.",
+  "activeWindowOnly": "Tylko aktywne okno.",
+  "allWindow": "Wszystkie okna",
+  "onlyActiveWindowSpecifyWindow": "Przetwarzane jest tylko aktywne okno „określonego okna”.",
+  "amountOfMovement": "Ilość ruchu",
+  "sizeChangeAmount": "Wielkość zmiany rozmiaru",
+  "transparency": "Przezroczystość",
+  "numericCalculation": "Obliczenia numeryczne",
+  "ratio": "Współczynnik",
+  "explanationOfSpecifyWindow": "Ta funkcja przetwarza okna spełniające określony warunek. Dostępne jest automatyczne przetwarzanie za pomocą zdarzeń i timerów oraz ręczne przetwarzanie za pomocą skrótów klawiszowych.",
+  "explanationOfAllWindow": "Przetwarza wszystkie okna. Przetwarzane po wystąpieniu włączonego zdarzenia. Okna spełniające warunki elementów zarejestrowanych w sekcji „Wszystkie okna” lub „Określone okna” są wykluczane (w tym elementy wyłączone), ale okna przetwarzane przez wtyczki nie są.",
+  "hotkeyExplanation": "Ta funkcja przetwarza aktywne okno za pomocą klawisza skrótu. Po wybraniu elementu przycisk „Wybierz” może być użyty do przetworzenia wybranego okna.",
+  "magnetExplanation": "Możliwość wklejenia okna do krawędzi ekranu lub innego okna podczas przesuwania okna za pomocą myszy.",
+  "pluginExplanation": "Wtyczki mogą dodawać dodatkowe funkcje.",
+  "settingsValue": "Zestaw wartości",
+  "windowInformation": "Informacje o oknie.",
+  "moveAllWindowToSpecifiedPosition": "Przesunięcie wszystkich okien do określonej pozycji",
+  "cancelMoveWindow": "Okna nie zostały przesunięte",
+  "position": "Pozycja",
+  "restart": "Uruchom ponownie.",
+  "needRestart": "Oprogramowanie musi zostać uruchomione ponownie.",
+  "help": "Pomoc.",
+  "newSettingFile": "Format pliku konfiguracyjnego uległ zmianie. Czy chcesz usunąć plik konfiguracyjny w poprzednim formacie?",
+  "pluginFolder": "Foldery wtyczek",
+  "eventTimer": "Zdarzenia, liczniki czasu",
+  "activeWindow": "Aktywne okno.",
+  "question": "?",
+  "coordinateDetailedExplanation": " - O współrzędnych \r\n W lewym górnym rogu wyświetlacza znajduje się „x=0,y=0”, wartości zwiększają się w miarę przechodzenia do prawego dolnego rogu i zmniejszają się w miarę przechodzenia do lewego górnego rogu. To jest to samo, co specyfikacja Windows. \r\n\r\n - Informacje o „Współrzędnych” w „Ustawieniach” \r\n\r\n Można to ustawić, gdy istnieje wiele wyświetlaczy. Współrzędne „x=0, y=0” dla lewego górnego rogu każdego wyświetlacza to współrzędne „x=0, y=0” dla lewego górnego rogu każdego wyświetlacza. „x=0, y=0” dla lewego górnego rogu głównego wyświetlacza to współrzędne »x=0, y=0« dla lewego górnego rogu wyświetlacza odniesienia. Jeśli wyświetlacz jest ustawiony po lewej stronie lub powyżej wyświetlacza głównego, wartości współrzędnych wyświetlacza po lewej stronie lub powyżej wyświetlacza głównego będą ujemne.",
+  "windowDecisionDetailedExplanation": "Okno można ocenić, określając „nazwę tytułu”, „nazwę klasy” lub „nazwę pliku”. To, co należy, a czego nie należy określać, jest różne dla każdego okna. Jeśli określisz wszystko, okno może nie zostać przetworzone. Nie należy określać „nazwy klasy”, jeśli oprogramowanie ma inną „nazwę klasy” za każdym razem, gdy wyświetlane jest okno. Ponieważ „nazwa klasy” i „nazwa pliku” aplikacji \r\nUWP są takie same dla wszystkich aplikacji, jeśli nie określisz „nazwy tytułu”, wszystkie okna aplikacji UWP zostaną przetworzone. Lepiej jest określić wszystkie „Title Name”, „Class Name” i „File Name”.",
+  "eventTimerDetailedExplanation": " - Zdarzenie \r\nPrzetwarza, gdy okno jest wyświetlane, przenoszone itp. Początkowo wyłączone, więc tylko niezbędne zdarzenia są włączone. W zależności od przetwarzania po stronie oprogramowania, niektóre zdarzenia mogą wystąpić inaczej niż zwykle, niektóre zdarzenia mogą nie wystąpić itp. i mogą nie zostać poprawnie przetworzone. \r\n\r\n - Timer \r\nPrzetwarzanie w regularnych odstępach czasu. Dłuższe interwały przetwarzania powodują mniejsze obciążenie, ale mogą nie być przetwarzane natychmiast. Jeśli interwał przetwarzania zostanie skrócony, obciążenie będzie większe, ale dane zostaną przetworzone natychmiast.",
+  "clientAreaDetailedExplanation": "Obszar klienta to obszar z wyłączeniem paska tytułu i ramki okna. Obszar klienta może być rozpoznawany dla \r\nstandardowych pasków tytułu i ramek. Jeśli oprogramowanie narysuje własny pasek tytułu lub ramkę, obszar klienta może nie zostać poprawnie rozpoznany i może nie znajdować się w określonym położeniu lub rozmiarze.",
+  "activeWindowDetailedExplanation": " - Aktywne okno \r\nAktywne okno to okno, które jest zaznaczone. Na przykład w edytorach tekstu można wprowadzać dane z klawiatury, ale stan, w którym można je wprowadzać, jest aktywny, a stan, w którym nie można ich wprowadzać, jest nieaktywny.",
+  "pluginDetailedExplanation": "Wtyczki mogą być używane do dodawania funkcji. Jeśli nie znajdziesz potrzebnej funkcji w standardowych funkcjach, możesz poszukać wtyczki. Każdy może je tworzyć. Należy pamiętać, że mogą istnieć zarówno przydatne, jak i złośliwe wtyczki. \r\n\r\n - Jak dodawać i używać wtyczek \r\n1. : Znajdź i pobierz wtyczkę. \r\n2. : Umieść wtyczkę w folderze „Wtyczki”, w którym znajduje się oprogramowanie. \r\n\r\n3. : Włącz wtyczkę, aby działała. \r\n\r\n - Jak wyłączyć wtyczkę \r\n\r\n Po wykonaniu operacji wyłączenia należy ponownie uruchomić oprogramowanie (elementy odznaczone, „stan przetwarzania” wyłączony). \r\n\r\n - Jak usunąć wtyczkę \r\n\r\n - Usuń plik wtyczki. Jeśli usuwana wtyczka nie jest uruchomiona, można ją usunąć, gdy oprogramowanie jest uruchomione. Jeśli jest uruchomiona, musisz zatrzymać to oprogramowanie, aby ją usunąć. \r\n\r\n - Informacje o „Ustawieniach wtyczki” \r\n\r\n Wyświetlane jest okno udostępniane przez wtyczkę. Jeśli okno nie jest dostępne, wtyczka jest wyłączona i nie jest uruchomiona lub żaden element wtyczki nie jest wybrany, naciśnięcie przycisku nie będzie możliwe. To ustawienie oprogramowania nie jest używane przez wtyczkę.",
+  "childWindowExplanation": "Okno należące do innego okna jest oknem podrzędnym, a okno należące do okna podrzędnego jest oknem nadrzędnym. Okna takie jak „Opcje” i „Informacje” są oknami podrzędnymi (chyba że nie zostały utworzone jako okna podrzędne). \r\n„Nazwa tytułu” i „Nazwa klasy” zasadniczo różnią się od okna nadrzędnego, więc jeśli zostaną określone, okno podrzędne nie zostanie przetworzone. Jeśli określono tylko \r\n„File name”, przetwarzane będzie nie tylko okno nadrzędne, ale także okna podrzędne, więc włączenie tej opcji umożliwia przetwarzanie tylko okna nadrzędnego."
+}

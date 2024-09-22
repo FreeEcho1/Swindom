@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>Cambiar la configuración a la nueva versión 'Sí' / Cambiar manualmente 'No' / Desactivar el proceso 'Cancelar'.</ChangeSettingToNewVersion>
- <ChangeVersion>Se ha cambiado la versión</ChangeVersion>
- <Check>Confirmación.</Check>
- <ErrorOccurred>Se ha producido un error.</ErrorOccurred>
- <LanguageName>Español</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>Sólo ventana activa</ActiveWindowOnly>
-  <Add>Añadido</Add>
-  <Added>Añadido.</Added>
-  <AllWindow>Todas las ventanas</AllWindow>
-  <AllowDelete>¿Desea borrar?</AllowDelete>
-  <AlwaysCancelForefront>Liberar siempre antes</AlwaysCancelForefront>
-  <AlwaysForefront>Siempre en primer plano</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Siempre llevar a primer plano/desplazar</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Movimiento</AmountOfMovement>
-  <Announce>Notificar a</Announce>
-  <AutomaticUpdateCheck>Confirmación automática de actualización en tiempo de ejecución</AutomaticUpdateCheck>
-  <BackwardMatch>Coincidencia hacia atrás</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>Procesamiento por lotes de "ventanas designadas</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Fin inferior</BottomEdge>
-  <Cancel>Cancelar</Cancel>
-  <CancelMoveWindow>Ventanas que no se mueven</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>Determinación de ventanas sensibles a mayúsculas y minúsculas</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Comprobación de actualizaciones, incluidas las versiones beta.</CheckBetaVersion>
-  <CheckReadme>Consulte 'Léame (instrucciones)' para obtener información sobre cómo especificar.</CheckReadme>
-  <ClassName>Nombre de clase</ClassName>
-  <ClientArea>Área cliente de destino</ClientArea>
-  <CloseWindow>Cerrar ventana</CloseWindow>
-  <ConditionsThatDoNotProcess>Condición no procesar</ConditionsThatDoNotProcess>
-  <Coordinate>Coordenadas</Coordinate>
-  <CoordinateSpecification>Especificación de coordenadas</CoordinateSpecification>
-  <Copy>Copiar</Copy>
-  <CurrentDisplay>Visualización actual</CurrentDisplay>
-  <DarkMode>Modo oscuro</DarkMode>
-  <DecisionDistanceToPaste>Pegar distancia de decisión</DecisionDistanceToPaste>
-  <Delete>Suprimido</Delete>
-  <Deleted>Suprimido</Deleted>
-  <Display>Visualización</Display>
-  <DisplayInformationUpdate>Información de pantalla actualizada</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Visualización a utilizar como referencia</DisplayToUseAsStandard>
-  <DoNotChange>No modificar</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>No cambiar posición o tamaño si está fuera de pantalla</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>No especificado</DoNotSpecify>
-  <EachDisplay>Esquina superior izquierda de cada visualización "x=0, y=0"</EachDisplay>
-  <End>Fin</End>
-  <Event>Evento</Event>
-  <ExactMatch>Coincidencia exacta.</ExactMatch>
-  <ExplanationOfAllWindow>Se puede hacer que se procesen todas las ventanas excepto la ventana especificada. Las ventanas especificadas en 'Ventana especificada' también se excluyen.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>Puede especificar una ventana y hacer que se procese automáticamente. Si desea procesar sólo con teclas de acceso rápido sin procesamiento automático, desmarque la casilla para desactivar esta opción.</ExplanationOfSpecifyWindow>
-  <FileName>Nombre de fichero</FileName>
-  <FileSelection>Selección de archivo</FileSelection>
-  <Forefront>En primer plano</Forefront>
-  <Foregrounded>En primer plano.</Foregrounded>
-  <ForwardMatch>Coincidir con primer plano</ForwardMatch>
-  <General>General</General>
-  <GetWindowInformation>Adquisición de información de la ventana</GetWindowInformation>
-  <Height>Altura</Height>
-  <HeightSpecification>Especificar la altura</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Mover el cursor del ratón a la ventana a seleccionar mientras se mantiene pulsado</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>Teclas de acceso rápido</Hotkey>
-  <HotkeyExplanation>Las teclas de acceso rápido se pueden utilizar para procesar la ventana activa (aceptando la entrada). El botón "Seleccionar" permite seleccionar la ventana que se desea procesar sin utilizar una tecla de acceso rápido.</HotkeyExplanation>
-  <HotkeysDoNotStop>Las teclas de acceso rápido no se detienen (si hay una ventana a pantalla completa).</HotkeysDoNotStop>
-  <IncludePath>Incluir rutas</IncludePath>
-  <IncreaseDecreaseHeight>Aumentar/disminuir la altura</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Aumentar/disminuir anchura</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Aumentar/disminuir anchura y altura</IncreaseDecreaseWidthAndHeight>
-  <Information>Info.</Information>
-  <InformationToBeObtained>Información a recuperar</InformationToBeObtained>
-  <Language>Idioma.</Language>
-  <LatestVersion>Última versión.</LatestVersion>
-  <LeftEdge>Más a la izquierda</LeftEdge>
-  <Library>Biblioteca.</Library>
-  <LimitedToSpecifiedDisplay>Limitado a la pantalla especificada</LimitedToSpecifiedDisplay>
-  <Magnet>Imán.</Magnet>
-  <MagnetExplanation>Se adhiere al borde de la pantalla o a otra ventana cuando ésta se mueve con el ratón.</MagnetExplanation>
-  <Manual>Descripción</Manual>
-  <Maximize>Maximizar</Maximize>
-  <Middle>Centrado</Middle>
-  <Minimize>Minimizado</Minimize>
-  <MinimizeEnd>La minimización ha finalizado</MinimizeEnd>
-  <MinimizeStart>Minimización iniciada.</MinimizeStart>
-  <Modified>Corregido.</Modified>
-  <Modify>Corregido.</Modify>
-  <MoveAllWindowToSpecifiedPosition>Mover todas las ventanas a la posición especificada</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>Mover hacia abajo</MoveDown>
-  <MovePastePosition>Posición de pegado desplazada</MovePastePosition>
-  <MoveSizeChangeEnd>Terminado de mover y redimensionar</MoveSizeChangeEnd>
-  <MoveUp>Mover arriba</MoveUp>
-  <MoveXCoordinate>Mover coordenada X</MoveXCoordinate>
-  <MoveYCoordinate>Mover coordenada Y</MoveYCoordinate>
-  <NeedRestart>Swindom necesita ser reiniciado.</NeedRestart>
-  <No>No.</No>
-  <NormalExecution>¿Ejecución normal? (sin derechos de administrador - 'Sí' / con derechos de administrador - 'No')</NormalExecution>
-  <NormalWindow>Ventana normal</NormalWindow>
-  <NotIncludePath>No incluye rutas</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Número de veces que no se procesa primero (retrasa el procesamiento inmediatamente después de la ejecución)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Cálculo numérico</NumericCalculation>
-  <Ok>OK - 'Sí' / 'No</Ok>
-  <OnceWhileItIsRunning>Mientras se ejecuta el software</OnceWhileItIsRunning>
-  <OnceWindowOpen>Cuando se abre una ventana</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Sólo se procesa la ventana activa de la 'ventana especificada</OnlyActiveWindowSpecifyWindow>
-  <Open>Abrir</Open>
-  <OtherThanSpecifiedVersion>Versión distinta de la especificada (por ejemplo, hasta la versión menor posible)</OtherThanSpecifiedVersion>
-  <PartialMatch>Coincidencia parcial</PartialMatch>
-  <PasteIntoAnotherWindow>Pegar en otra ventana</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>Pegar en el borde de la pantalla</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Pegar con la tecla Ctrl pulsada</PasteWithCtrlKeyPressed>
-  <Percent>% (por ejemplo, %)</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>Plug-ins</Plugin>
-  <PluginExplanation>Los plug-ins pueden añadir funciones adicionales. Consulte el "Léame (instrucciones)" para obtener instrucciones detalladas.</PluginExplanation>
-  <PluginSettings>Configuración de plug-ins</PluginSettings>
-  <PluginTestMessage>Se trata de una función en pruebas y puede ser inestable, por ejemplo.</PluginTestMessage>
-  <Position>Posición.</Position>
-  <PrimaryDisplay>Arriba a la izquierda de la pantalla primaria 'x=0, y=0'</PrimaryDisplay>
-  <ProcessOnlyOnce>Sólo se procesa una vez</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Procesado sólo cuando está en 'ventana normal</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>Intervalo de procesamiento (milisegundos)</ProcessingInterval>
-  <ProcessingName>Nombre del proceso</ProcessingName>
-  <ProcessingSettings>Ajuste de procesamiento</ProcessingSettings>
-  <ProcessingState>Estado de procesamiento</ProcessingState>
-  <ProcessingType>Tipo de procesamiento</ProcessingType>
-  <ProcessingWindowRange>Intervalo de ventanas a procesar</ProcessingWindowRange>
-  <Ratio>Relación</Ratio>
-  <RegisterMultipleWindowActions>Registrar varios tratamientos de ventana</RegisterMultipleWindowActions>
-  <RegisteredName>Nombre del registro</RegisteredName>
-  <ReportsAndRequests>Informe, solicitud</ReportsAndRequests>
-  <Restart>Reactivación.</Restart>
-  <RetrievedAfterFiveSeconds>La información de la ventana se recupera después de 5 segundos, por favor, active la ventana para la que desea recuperar la información dentro de los 5 segundos.</RetrievedAfterFiveSeconds>
-  <RightEdge>Extremo derecho</RightEdge>
-  <RunAtWindowsStartup>Ejecutar al iniciar Windows</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Ejecutar al inicio de Windows (derechos de administrador)</RunAtWindowsStartupAdministrator>
-  <Select>Selección.</Select>
-  <SelectionComplete>Seleccionar.</SelectionComplete>
-  <Setting>Configuración</Setting>
-  <SettingsValue>Valor establecido.</SettingsValue>
-  <ShareSettings>¿Desea compartir la información de configuración con todos los usuarios?</ShareSettings>
-  <Show>Mostrar.</Show>
-  <ShowThisApplicationWindow>Mostrar esta ventana de aplicación</ShowThisApplicationWindow>
-  <Size>Tamaño</Size>
-  <SizeChangeAmount>Cantidad de cambio de tamaño</SizeChangeAmount>
-  <SoftwareName>Nombre de la aplicación</SoftwareName>
-  <SpecifiedDisplay>Pantalla especificada</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Especificar/liberar transparencia</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Especificar posición y tamaño</SpecifyPositionAndSize>
-  <SpecifyTransparency>Especificar transparencia</SpecifyTransparency>
-  <SpecifyWindow>Ventana especificada</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>Iniciar/detener procesamiento de 'Todas las ventanas</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>Iniciar/detener procesamiento de 'Imán'.</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Iniciar/detener el procesamiento de 'Ventanas designadas'.</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Detener el procesamiento si se muestra una ventana de añadir/modificar.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Parada del procesamiento cuando se muestra una ventana a pantalla completa.</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Tiempo de parada cuando se atasca (milisegundos)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Hay elementos duplicados.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Hay nombres de proceso duplicados.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Hay nombres de registro duplicados.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>Existe la última versión.</ThereIsLatestVersion>
-  <Timer>Temporizador</Timer>
-  <TimerProcessing>Proceso temporizador</TimerProcessing>
-  <TitleName>Nombre del título.</TitleName>
-  <TitleNameChanged>Se ha modificado el nombre del título.</TitleNameChanged>
-  <TitleNameExclusionString>Cadena contenida en el nombre del título</TitleNameExclusionString>
-  <TitleNameRequirements>Condiciones de procesamiento del nombre del título</TitleNameRequirements>
-  <TopEdge>Fin superior</TopEdge>
-  <Translators>Traductor: DeepL</Translators>
-  <Transparency>Transparencia</Transparency>
-  <UpdateCheck>Confirmación de actualización</UpdateCheck>
-  <UpdateCheckFailed>Confirmación de actualización fallida.</UpdateCheckFailed>
-  <UpdateHistory>Historial de actualización</UpdateHistory>
-  <Version>Versión.</Version>
-  <WaitTimeToProcessingNextWindow>Latencia para procesar la siguiente ventana (milisegundos)</WaitTimeToProcessingNextWindow>
-  <Website>Página web</Website>
-  <Width>Anchura</Width>
-  <WidthSpecification>Especificación de anchura</WidthSpecification>
-  <WindowDecide>Determinación de la ventana</WindowDecide>
-  <WindowDesignateMethod>Cómo especificar el juicio de ventana</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>Las ventanas pueden juzgarse especificando "nombre del título", "nombre de la clase" y "nombre del archivo".
-Lo que debe y no debe especificarse es diferente para cada ventana.
-Si se especifica todo, es posible que la ventana no se procese.
-Para software en el que el "nombre de clase" cambia cada vez que se muestra la ventana, No especifique un "nombre de clase".
-Para las aplicaciones UWP, el "nombre de clase" y el "nombre de archivo" son los mismos para todas las aplicaciones excepto para unas pocas, Si no hay un 'nombre de título', no se podrá identificar correctamente y se procesarán las ventanas de otras apps.
-Se recomienda especificar todos los "Title Name", "Class Name" y "File Name".
-El nombre de clase es "ApplicationFrameWindow" y el nombre de archivo es "C:\WINDOWS\system32\ApplicationFrameHost.exe", (esto puede cambiar con las actualizaciones de Windows).</WindowDesignateMethodExplain>
-  <WindowInformation>Información sobre la ventana.</WindowInformation>
-  <WindowMoveOutsideToInside>Si la ventana está fuera de la pantalla, muévala a la pantalla</WindowMoveOutsideToInside>
-  <WindowState>Estado de la ventana</WindowState>
-  <WindowWithTitleName>Ventana con nombre de título</WindowWithTitleName>
-  <WindowWithoutTitleName>Ventana sin nombre de título</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>Sí No</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "Español.",
+  "errorOccurred": "Error.",
+  "check": "Confirmación",
+  "changeVersion": "Versión cambiada.",
+  "changeSettingToNewVersion": "Cambiar configuración a nueva versión 'Sí' / Cambiar manualmente 'No' / Desactivar proceso 'Cancelar'",
+  "ok": "OK",
+  "yes": "Sí / No",
+  "no": "No / No",
+  "cancel": "Cancelar.",
+  "shareSettings": "¿Desea compartir la información de configuración con todos los usuarios?",
+  "open": "Abrir",
+  "batchProcessingOfSpecifyWindow": "Procesamiento por lotes de «Ventanas designadas",
+  "windowMoveOutsideToInside": "Si la ventana está fuera de la pantalla, moverla a la pantalla",
+  "displayInformationUpdate": "Actualizar la información de la pantalla",
+  "end": "Finalizar",
+  "updateCheckFailed": "Confirmación de actualización fallida.",
+  "latestVersion": "Última versión.",
+  "thereIsLatestVersion": "La última versión está disponible.",
+  "event": "Evento",
+  "timer": "Temporizador",
+  "specifyWindow": "Ventana designada",
+  "magnet": "Imanes",
+  "plugin": "Plug-ins",
+  "pluginSettings": "Configuración de los plug-ins",
+  "setting": "Ajustes",
+  "information": "Información",
+  "add": "Añadir",
+  "modify": "Modificar",
+  "delete": "Borrar",
+  "select": "Seleccionar",
+  "moveUp": "Subir",
+  "moveDown": "Bajar",
+  "copy": "Copiar",
+  "processingState": "Estado de procesamiento",
+  "deleted": "Borrado.",
+  "allowDelete": "¿Desea borrar?",
+  "version": "Versión",
+  "updateCheck": "Confirmación de actualización",
+  "readme": "Información (Léame)",
+  "updateHistory": "Historial de actualizaciones",
+  "website": "Página web",
+  "reportsAndRequests": "Informes, solicitudes",
+  "library": "Biblioteca",
+  "general": "General",
+  "hotkey": "Teclas de acceso rápido",
+  "language": "Idiomas",
+  "translators": "Traductor: DeepL",
+  "darkMode": "Modo oscuro",
+  "automaticUpdateCheck": "Comprobación automática de actualizaciones en tiempo de ejecución",
+  "checkBetaVersion": "Comprobación de actualizaciones, incluidas las versiones beta",
+  "registerMultipleWindowActions": "Registro de múltiples procesos de ventana",
+  "coordinate": "Coordenadas",
+  "eachDisplay": "x=0, y=0» para la esquina superior izquierda de cada pantalla",
+  "primaryDisplay": "x=0, y=0 en la esquina superior izquierda de la pantalla principal",
+  "fullScreenWindowAdditionDecision": "Determinación de la adición de ventanas a pantalla completa (sólo si se determina incorrectamente)",
+  "processingInterval": "Intervalo de procesamiento (milisegundos)",
+  "runAtWindowsStartup": "Ejecutar al iniciar Windows",
+  "runAtWindowsStartupAdministrator": "Ejecutar al inicio de Windows (derechos de administrador)",
+  "normalExecution": "¿Ejecución normal? (sin derechos de administrador - 'Sí' / con derechos de administrador - 'No')",
+  "waitTimeToProcessingNextWindow": "Tiempo de espera para procesar la siguiente ventana (milisegundos)",
+  "stopProcessingWhenWindowIsFullScreen": "El procesamiento se detiene si existe una ventana completa",
+  "caseSensitiveWindowQueries": "Sensibilidad a mayúsculas y minúsculas en la determinación de ventanas",
+  "doNotChangePositionSizeOutOfScreen": "No cambiar posición o tamaño al salir de pantalla",
+  "stopProcessingShowAddModify": "El procesamiento se detiene si se muestra una ventana de añadir/modificar",
+  "hotkeysDoNotStop": "Se excluyen las teclas de acceso rápido",
+  "movePastePosition": "Desplazar la posición de pegado",
+  "pasteToEdgeOfScreen": "Pegar en el borde de la pantalla",
+  "pasteIntoAnotherWindow": "Pegar en otra ventana",
+  "pasteWithCtrlKeyPressed": "Pegar manteniendo pulsada la tecla Ctrl.",
+  "keepPasteUntilKeyUp": "El pegado se mantiene hasta que se suelta la tecla.",
+  "pastingTime": "Tiempo de pegado (milisegundos)",
+  "decisionDistanceToPaste": "Distancia de pegado",
+  "checkReadme": "Consulte 'Léame (instrucciones)' para obtener instrucciones sobre cómo especificar.",
+  "titleName": "Nombre del título",
+  "className": "Nombre de clase",
+  "fileName": "Nombre de archivo",
+  "display": "Visualización",
+  "windowState": "Estado de la ventana",
+  "processingType": "Tipo de procesamiento",
+  "specifyPositionAndSize": "Especificar posición y tamaño",
+  "moveXCoordinate": "Mover coordenada X",
+  "moveYCoordinate": "Mover coordenada Y",
+  "increaseDecreaseWidth": "Aumentar o disminuir la anchura",
+  "increaseDecreaseHeight": "Aumentar o reducir la altura",
+  "increaseDecreaseWidthAndHeight": "Aumentar/disminuir anchura y altura",
+  "startStopProcessingOfSpecifyWindow": "Iniciar/detener el procesamiento de la «ventana especificada».",
+  "startStopProcessingOfAllWindow": "Iniciar/detener el procesamiento de 'Todas las ventanas'.",
+  "startStopProcessingOfMagnet": "Iniciar/detener el procesamiento de «Imán».",
+  "showThisApplicationWindow": "Mostrar ventanas de esta aplicación",
+  "showSystemTrayIconMenu": "Mostrar el menú del icono de la bandeja del sistema",
+  "alwaysShowOrCancelOnTop": "Siempre en primer plano/sin seleccionar",
+  "specifyCancelTransparency": "Especificar/liberar transparencia",
+  "leftEdge": "Borde izquierdo",
+  "middle": "Centro",
+  "rightEdge": "Borde derecho",
+  "topEdge": "Borde superior",
+  "bottomEdge": "Borde inferior",
+  "x": "X",
+  "y": "Y",
+  "width": "Anchura",
+  "height": "Altura",
+  "pixel": "px",
+  "percent": "% (%)",
+  "registeredName": "Nombre de registro",
+  "windowDecide": "Determinación de la ventana",
+  "processingSettings": "Ajustes de procesamiento",
+  "holdDownMousePointerMoveToSelectWindow": "Mantenga pulsado para mover el puntero del ratón a la ventana que desea seleccionar y suéltelo.",
+  "getWindowInformation": "Adquisición de información de la ventana",
+  "informationToBeObtained": "Información a obtener",
+  "fileSelection": "Selección de archivos",
+  "folderSelection": "Selección de carpetas",
+  "exactMatch": "Coincidencia exacta",
+  "partialMatch": "Coincidencia parcial",
+  "forwardMatch": "Coincidencia directa",
+  "backwardMatch": "Coincidencia hacia atrás",
+  "includePath": "Incluye rutas",
+  "notIncludePath": "No incluye ruta",
+  "doNotSpecify": "No especificado",
+  "childWindow": "Ventana secundaria",
+  "titleNameRequirements": "Condición del nombre del título",
+  "windowWithoutTitleName": "Ventana sin nombre de título",
+  "windowWithTitleName": "Ventana con nombre de título",
+  "processingName": "Nombre del proceso",
+  "displayToUseAsStandard": "Visualización en la que basarse",
+  "currentDisplay": "Visualización actual",
+  "specifiedDisplay": "Visualización especificada",
+  "limitedToSpecifiedDisplay": "Sólo visualización especificada",
+  "processOnlyOnce": "Sólo se procesa una vez",
+  "onceWindowOpen": "Al abrir una ventana",
+  "onceWhileItIsRunning": "Mientras se ejecuta este software",
+  "foregrounded": "La ventana pasa a primer plano",
+  "moveSizeChangeEnd": "Se termina de mover o redimensionar",
+  "minimizeStart": "Minimización iniciada",
+  "minimizeEnd": "Minimización finalizada",
+  "show": "Se muestra",
+  "titleNameChanged": "Se ha cambiado el nombre del título",
+  "eventDelayTime": "Tiempo de espera para el procesamiento (milisegundos) (sólo para «Visualizado»)",
+  "forefront": "En primer plano",
+  "doNotChange": "No cambiado",
+  "alwaysForefront": "Siempre el primero",
+  "alwaysCancelForefront": "Siempre en primer plano",
+  "specifyTransparency": "Especificar transparencia",
+  "closeWindow": "Cerrar ventana",
+  "timerProcessing": "Temporizador de procesamiento",
+  "numberOfTimesNotToProcessingFirst": "Número de veces que no se procesa primero (retrasa el procesamiento inmediatamente después de la ejecución)",
+  "normalWindow": "Ventana normal",
+  "maximize": "Maximizar",
+  "minimize": "Minimizar",
+  "processOnlyWhenNormalWindow": "Procesar sólo en estado «ventana normal",
+  "coordinateSpecification": "Especificación de coordenadas",
+  "widthSpecification": "Especificación de anchura",
+  "heightSpecification": "Especificación de altura",
+  "conditionsNotProcess": "Condiciones no procesadas",
+  "clientArea": "Área cliente de destino",
+  "titleNameExclusionString": "Cadena contenida en el nombre del título",
+  "size": "Tamaño",
+  "otherThanSpecifiedSize": "Tamaño distinto del especificado",
+  "otherThanSpecifiedVersion": "Versión distinta de la especificada (por ejemplo, posible hasta menor)",
+  "notification": "Notificación",
+  "synchronizationOtherThanSpecifiedVersion": "Sincronizado con «versión distinta de la especificada» en «Condiciones para no tramitar».",
+  "retrievedAfterFiveSeconds": "La información de la ventana se recupera al cabo de 5 s. Active la ventana de la que debe recuperarse la información antes de 5 s.",
+  "obtained": "Recuperada.",
+  "thereAreDuplicateItems": "Hay registros duplicados.",
+  "thereIsADuplicateRegistrationName": "Hay nombres de registro duplicados.",
+  "thereIsADuplicateProcessingName": "Hay nombres de procesos duplicados.",
+  "conditionsNotToBeProcessed": "Especifique las condiciones de ventana que no deben procesarse.",
+  "added": "Añadido.",
+  "modified": "Corregido.",
+  "processingWindowRange": "Rango de ventanas a procesar.",
+  "activeWindowOnly": "Sólo ventana activa.",
+  "allWindow": "Todas las ventanas",
+  "onlyActiveWindowSpecifyWindow": "Sólo se procesa la ventana activa de la «ventana especificada».",
+  "amountOfMovement": "Cantidad de movimiento",
+  "sizeChangeAmount": "Cantidad de redimensionamiento",
+  "transparency": "Transparencia",
+  "numericCalculation": "Cálculo numérico",
+  "ratio": "Relación",
+  "explanationOfSpecifyWindow": "Esta función procesa las ventanas que cumplen una condición. Está disponible el procesamiento automático mediante eventos y temporizadores y el procesamiento manual mediante teclas de acceso rápido.",
+  "explanationOfAllWindow": "Procesa todas las ventanas. Se procesa cuando se produce un evento activado. Se excluyen las ventanas que coinciden con las condiciones de los elementos registrados en «Todas las ventanas» o «Ventanas especificadas» (incluidos los elementos desactivados), pero no las ventanas procesadas por plug-ins.",
+  "hotkeyExplanation": "Esta función procesa la ventana activa con una tecla de acceso directo. Cuando se selecciona un elemento, se puede utilizar el botón «Seleccionar» para procesar la ventana seleccionada.",
+  "magnetExplanation": "La capacidad de pegar una ventana al borde de la pantalla o a otra ventana mientras se mueve la ventana con el ratón.",
+  "pluginExplanation": "Los plug-ins pueden añadir funciones adicionales.",
+  "settingsValue": "Conjunto de valores",
+  "windowInformation": "Información de la ventana.",
+  "moveAllWindowToSpecifiedPosition": "Mover todas las ventanas a la posición especificada",
+  "cancelMoveWindow": "Ventanas no movidas",
+  "position": "Posición",
+  "restart": "Reiniciar.",
+  "needRestart": "El software debe reiniciarse.",
+  "help": "Ayuda.",
+  "newSettingFile": "El formato del fichero de configuración ha cambiado. ¿Desea borrar el archivo de configuración en su formato anterior?",
+  "pluginFolder": "Carpetas de plug-in",
+  "eventTimer": "Eventos, temporizadores",
+  "activeWindow": "Ventana activa.",
+  "question": "?",
+  "coordinateDetailedExplanation": " - Acerca de las coordenadas \r\n La parte superior izquierda de la pantalla es «x=0,y=0», los valores aumentan a medida que se avanza hacia la parte inferior derecha y disminuyen a medida que se avanza hacia la parte superior izquierda. Esto es lo mismo que la especificación de Windows. \r\n\r\n - Acerca de «Coordenadas» en «Configuración» \r\n\r\nEsto se puede establecer cuando hay múltiples pantallas. \r\n\r\n - «x=0, y=0» para la parte superior izquierda de cada pantalla» son las coordenadas con “x=0, y=0” para la parte superior izquierda de cada pantalla. x=0, y=0« para la parte superior izquierda de la pantalla principal» son las coordenadas con «x=0, y=0» para la parte superior izquierda de la pantalla de referencia. Si una pantalla se sitúa a la izquierda o por encima de la pantalla primaria, los valores de las coordenadas de la pantalla situada a la izquierda o por encima de la pantalla primaria serán negativos.",
+  "windowDecisionDetailedExplanation": "La ventana se puede juzgar especificando el \r\nnombre del título, el \r\nnombre de la clase o el \r\nnombre del archivo. \r\nLo que se debe y no se debe especificar es diferente para cada ventana. \r\nSi se especifica todo, puede que la ventana no se procese. \r\nNo especifique un 'nombre de clase' si el software tiene un 'nombre de clase' diferente cada vez que se muestra la ventana. Dado que el «nombre de clase» y el «nombre de archivo» de las aplicaciones \r\nUWP son los mismos para todas las aplicaciones, si no especifica un «nombre de título», se procesarán todas las ventanas de las aplicaciones UWP. Es mejor especificar todos los 'Title Name', 'Class Name' y 'File Name'.",
+  "eventTimerDetailedExplanation": " - Evento \r\nProcesa cuando una ventana se muestra, se mueve, etc. \r\nInicialmente desactivado, por lo que sólo se activan los eventos necesarios. \r\nDependiendo del procesamiento en el lado del software, algunos eventos pueden ocurrir de forma diferente a la habitual, algunos eventos pueden no ocurrir, etc., y pueden no ser procesados correctamente. \r\n\r\n - Temporizador \r\nProcesa a intervalos regulares. \r\nLos intervalos de procesamiento más largos producen menos carga, pero puede que no se procesen inmediatamente. Si se acorta el intervalo de procesamiento, la carga es mayor, pero se procesa inmediatamente.",
+  "clientAreaDetailedExplanation": "El área de cliente es el área que excluye la barra de título y el marco de la ventana. El área de cliente puede reconocerse para \r\nbarras de título y marcos estándar. \r\nSi el software dibuja su propia barra de título o marco, es posible que el área de cliente no se reconozca correctamente y que no esté en la posición o tamaño especificados.",
+  "activeWindowDetailedExplanation": " - Ventana activa \r\nLa ventana activa es la ventana que está seleccionada. \r\nEn los editores de texto, por ejemplo, se puede introducir información con el teclado, pero el estado en el que se puede introducir es activo y el estado en el que no se puede es inactivo.",
+  "pluginDetailedExplanation": "Los plug-ins se pueden utilizar para añadir funcionalidad. Si no encuentras una función que necesitas en la funcionalidad estándar, puedes buscar un plugin. \r\nTodo el mundo es libre de desarrollarlos. Ten en cuenta que puede haber plugins tanto útiles como maliciosos. \r\n\r\n - Cómo añadir y utilizar plug-ins \r\n1. : Busca y descarga el plug-in. \r\n2. : Inserte el plug-in en la carpeta 'Plugins' donde reside el software. \r\n\r\n3. : Active el plug-in para que funcione. \r\n\r\n - Cómo desactivar un plugin \r\n\r\n Después de realizar la operación de desactivación, este software debe reiniciarse (elementos desmarcados, 'estado de procesamiento' desactivado). \r\n\r\n - Cómo eliminar un plug-in \r\n\r\n - Elimine el archivo del plug-in. Si el plug-in que está borrando no está en ejecución, puede borrarlo mientras este software está en ejecución. Si se está ejecutando, es necesario detener este software para eliminarlo. \r\n\r\n - Acerca de 'Configuración del complemento' \r\n\r\nSe muestra una ventana que proporciona el complemento. Si no hay ninguna ventana disponible, el plugin está desactivado y no se está ejecutando, o no hay ningún elemento del plugin seleccionado, no podrá pulsar el botón. \r\nEste ajuste de software no es utilizado por el plug-in.",
+  "childWindowExplanation": "Una ventana que pertenece a otra ventana es una ventana hija y la ventana que pertenece a la ventana hija es la ventana padre. \r\nVentanas como «Opciones» y «Acerca de» son ventanas hijas (a menos que no se hayan creado como ventanas hijas). \r\n«Nombre de título» y «Nombre de clase» son básicamente diferentes de la ventana padre, por lo que si se especifican, la ventana hija no será procesada. Si sólo se especifica \r\n«Nombre de archivo», no sólo se procesará la ventana padre, sino también las ventanas hijas, por lo que habilitándolo, sólo se podrá procesar la ventana padre."
+}

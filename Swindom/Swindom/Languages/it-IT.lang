@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>Modifica delle impostazioni alla nuova versione 'Sì' / Modifica manuale 'No' / Disattiva il processo 'Annulla'.</ChangeSettingToNewVersion>
- <ChangeVersion>La versione è stata modificata</ChangeVersion>
- <Check>Conferma.</Check>
- <ErrorOccurred>Si è verificato un errore.</ErrorOccurred>
- <LanguageName>Italiano</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>Solo finestra attiva</ActiveWindowOnly>
-  <Add>Aggiunto</Add>
-  <Added>Aggiunto.</Added>
-  <AllWindow>Tutte le finestre</AllWindow>
-  <AllowDelete>Si desidera eliminare?</AllowDelete>
-  <AlwaysCancelForefront>Rilascio sempre in primo piano</AlwaysCancelForefront>
-  <AlwaysForefront>Sempre in primo piano</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Portare sempre in primo piano/scaricare</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Movimento</AmountOfMovement>
-  <Announce>Notifica</Announce>
-  <AutomaticUpdateCheck>Conferma automatica dell'aggiornamento in fase di esecuzione</AutomaticUpdateCheck>
-  <BackwardMatch>Corrispondenza a ritroso</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>Elaborazione in batch di "finestre designate</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Fine inferiore</BottomEdge>
-  <Cancel>Annullamento</Cancel>
-  <CancelMoveWindow>Finestre che non si spostano</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>Determinazione della finestra sensibile alle maiuscole</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Controlla gli aggiornamenti, comprese le versioni beta.</CheckBetaVersion>
-  <CheckReadme>Vedere "Readme (istruzioni)" per informazioni su come specificare.</CheckReadme>
-  <ClassName>Nome della classe</ClassName>
-  <ClientArea>Area client di destinazione</ClientArea>
-  <CloseWindow>Chiudere la finestra</CloseWindow>
-  <ConditionsThatDoNotProcess>Condizione da non elaborare</ConditionsThatDoNotProcess>
-  <Coordinate>Coordinate</Coordinate>
-  <CoordinateSpecification>Specifica delle coordinate</CoordinateSpecification>
-  <Copy>Copia</Copy>
-  <CurrentDisplay>Visualizzazione corrente</CurrentDisplay>
-  <DarkMode>Modalità scura</DarkMode>
-  <DecisionDistanceToPaste>Incolla distanza di decisione</DecisionDistanceToPaste>
-  <Delete>Soppresso</Delete>
-  <Deleted>Eliminato.</Deleted>
-  <Display>Display</Display>
-  <DisplayInformationUpdate>Informazioni sul display aggiornate</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Display da utilizzare come riferimento</DisplayToUseAsStandard>
-  <DoNotChange>Non modificare</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Non cambia la posizione o la dimensione se fuori dallo schermo.</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Non specificato</DoNotSpecify>
-  <EachDisplay>Angolo superiore sinistro di ciascun display "x=0, y=0".</EachDisplay>
-  <End>Fine</End>
-  <Event>Evento</Event>
-  <ExactMatch>Corrispondenza esatta.</ExactMatch>
-  <ExplanationOfAllWindow>Tutte le finestre possono essere elaborate, tranne quella specificata. Anche le finestre specificate in 'Finestra specificata' vengono escluse.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>È possibile specificare una finestra e farla elaborare automaticamente. Se si desidera elaborare solo con i tasti di scelta rapida senza elaborazione automatica, deselezionare la casella per disattivare questa opzione.</ExplanationOfSpecifyWindow>
-  <FileName>Nome del file</FileName>
-  <FileSelection>Selezione del file</FileSelection>
-  <Forefront>In primo piano</Forefront>
-  <Foregrounded>In primo piano.</Foregrounded>
-  <ForwardMatch>Corrisponde al primo piano</ForwardMatch>
-  <General>Generale</General>
-  <GetWindowInformation>Acquisizione delle informazioni della finestra</GetWindowInformation>
-  <Height>Altezza</Height>
-  <HeightSpecification>Specifica l'altezza</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Spostare il cursore del mouse sulla finestra da selezionare tenendo premuto</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>Tasti di scelta rapida</Hotkey>
-  <HotkeyExplanation>I tasti di scelta rapida possono essere utilizzati per elaborare la finestra attiva (accettando l'input). Il pulsante 'Seleziona' consente di selezionare la finestra da elaborare senza utilizzare un tasto di scelta rapida.</HotkeyExplanation>
-  <HotkeysDoNotStop>I tasti di scelta rapida non si fermano (se è presente una finestra a schermo intero).</HotkeysDoNotStop>
-  <IncludePath>Includi percorsi</IncludePath>
-  <IncreaseDecreaseHeight>Aumenta/diminuisce l'altezza</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Aumento/diminuzione della larghezza</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Aumenta/diminuisce la larghezza e l'altezza</IncreaseDecreaseWidthAndHeight>
-  <Information>Info.</Information>
-  <InformationToBeObtained>Informazioni da recuperare</InformationToBeObtained>
-  <Language>Lingua.</Language>
-  <LatestVersion>Ultima versione.</LatestVersion>
-  <LeftEdge>Più a sinistra</LeftEdge>
-  <Library>Biblioteca.</Library>
-  <LimitedToSpecifiedDisplay>Limitata al display specificato</LimitedToSpecifiedDisplay>
-  <Magnet>Magnete.</Magnet>
-  <MagnetExplanation>Si attacca al bordo dello schermo o a un'altra finestra quando questa viene spostata con il mouse.</MagnetExplanation>
-  <Manual>Descrizione</Manual>
-  <Maximize>Massimizza</Maximize>
-  <Middle>Centrato</Middle>
-  <Minimize>Ridotto al minimo</Minimize>
-  <MinimizeEnd>La minimizzazione è terminata</MinimizeEnd>
-  <MinimizeStart>La minimizzazione è iniziata.</MinimizeStart>
-  <Modified>Fissato.</Modified>
-  <Modify>Corretto.</Modify>
-  <MoveAllWindowToSpecifiedPosition>Sposta tutte le finestre nella posizione specificata</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>Spostata in basso</MoveDown>
-  <MovePastePosition>Posizione dell'incollamento spostata</MovePastePosition>
-  <MoveSizeChangeEnd>Finito di spostare e ridimensionare</MoveSizeChangeEnd>
-  <MoveUp>Sposta in alto</MoveUp>
-  <MoveXCoordinate>Sposta la coordinata X</MoveXCoordinate>
-  <MoveYCoordinate>Spostare la coordinata Y</MoveYCoordinate>
-  <NeedRestart>Swindom deve essere riavviato.</NeedRestart>
-  <No>No, non è possibile.</No>
-  <NormalExecution>Esecuzione normale? (senza diritti di amministratore - 'Sì' / con diritti di amministratore - 'No')</NormalExecution>
-  <NormalWindow>Finestra normale</NormalWindow>
-  <NotIncludePath>Non include i percorsi</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Numero di volte non elaborate per prime (ritarda l'elaborazione subito dopo l'esecuzione)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Calcolo numerico</NumericCalculation>
-  <Ok>OK - 'Sì' / 'No'</Ok>
-  <OnceWhileItIsRunning>Mentre questo software è in esecuzione</OnceWhileItIsRunning>
-  <OnceWindowOpen>Quando viene aperta una finestra</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Viene elaborata solo la finestra attiva della "finestra specificata".</OnlyActiveWindowSpecifyWindow>
-  <Open>Aprire</Open>
-  <OtherThanSpecifiedVersion>Diversa dalla versione specificata (ad esempio, è possibile fino alla versione minore)</OtherThanSpecifiedVersion>
-  <PartialMatch>Corrispondenza parziale</PartialMatch>
-  <PasteIntoAnotherWindow>Incolla in un'altra finestra</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>Incolla sul bordo dello schermo</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Incolla con il tasto Ctrl premuto</PasteWithCtrlKeyPressed>
-  <Percent>% (ad es. %)</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>Plug-in</Plugin>
-  <PluginExplanation>I plug-in possono aggiungere ulteriori funzionalità. Per istruzioni dettagliate, consultare il "Readme (istruzioni)".</PluginExplanation>
-  <PluginSettings>Configurazione dei plug-in</PluginSettings>
-  <PluginTestMessage>Questa è una funzione in fase di test e potrebbe essere instabile, ad esempio.</PluginTestMessage>
-  <Position>Posizione.</Position>
-  <PrimaryDisplay>In alto a sinistra del display primario 'x=0, y=0'.</PrimaryDisplay>
-  <ProcessOnlyOnce>Elaborato solo una volta</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Elabora solo quando si trova nella "finestra normale".</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>Intervallo di elaborazione (millisecondi)</ProcessingInterval>
-  <ProcessingName>Nome dell'elaborazione</ProcessingName>
-  <ProcessingSettings>Impostazione dell'elaborazione</ProcessingSettings>
-  <ProcessingState>Stato dell'elaborazione</ProcessingState>
-  <ProcessingType>Tipo di elaborazione</ProcessingType>
-  <ProcessingWindowRange>Intervallo di finestre da elaborare</ProcessingWindowRange>
-  <Ratio>Rapporto</Ratio>
-  <RegisterMultipleWindowActions>Registrazione di più trattamenti delle finestre</RegisterMultipleWindowActions>
-  <RegisteredName>Nome della registrazione</RegisteredName>
-  <ReportsAndRequests>Rapporto, richiesta</ReportsAndRequests>
-  <Restart>Riattivazione.</Restart>
-  <RetrievedAfterFiveSeconds>Le informazioni sulla finestra vengono recuperate dopo 5 secondi; attivare la finestra per la quale si desidera recuperare le informazioni entro 5 secondi.</RetrievedAfterFiveSeconds>
-  <RightEdge>Fine destra</RightEdge>
-  <RunAtWindowsStartup>Esegui all'avvio di Windows</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Esegui all'avvio di Windows (diritti di amministratore)</RunAtWindowsStartupAdministrator>
-  <Select>Selezione.</Select>
-  <SelectionComplete>Selezionato.</SelectionComplete>
-  <Setting>Impostazioni</Setting>
-  <SettingsValue>Valore impostato.</SettingsValue>
-  <ShareSettings>Si desidera condividere le informazioni di configurazione con tutti gli utenti?</ShareSettings>
-  <Show>Visualizzato.</Show>
-  <ShowThisApplicationWindow>Mostra questa finestra dell'applicazione</ShowThisApplicationWindow>
-  <Size>Dimensione</Size>
-  <SizeChangeAmount>Quantità di ridimensionamento</SizeChangeAmount>
-  <SoftwareName>Nome del software</SoftwareName>
-  <SpecifiedDisplay>Visualizzazione specificata</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Specificare/rilasciare la trasparenza</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Specificare posizione e dimensione</SpecifyPositionAndSize>
-  <SpecifyTransparency>Specificare la trasparenza</SpecifyTransparency>
-  <SpecifyWindow>Finestra specificata</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>Avvio/arresto dell'elaborazione di "Tutte le finestre".</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>Avvio/arresto dell'elaborazione di "Magnete".</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Avvio/arresto dell'elaborazione di "Finestre designate".</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Interrompere l'elaborazione se viene visualizzata una finestra di aggiunta/modifica.</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Interruzione dell'elaborazione quando una finestra viene visualizzata a schermo intero.</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Tempo di arresto quando è bloccata (millisecondi)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>Ci sono elementi duplicati.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>Ci sono nomi di processi duplicati.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Ci sono nomi di registrazione duplicati.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>È presente l'ultima versione.</ThereIsLatestVersion>
-  <Timer>Timer</Timer>
-  <TimerProcessing>Processo Timer</TimerProcessing>
-  <TitleName>Nome del titolo.</TitleName>
-  <TitleNameChanged>Il nome del titolo è stato modificato.</TitleNameChanged>
-  <TitleNameExclusionString>Stringa contenuta nel nome del titolo</TitleNameExclusionString>
-  <TitleNameRequirements>Condizioni di elaborazione del nome del titolo</TitleNameRequirements>
-  <TopEdge>Fine superiore</TopEdge>
-  <Translators>Traduttore: DeepL</Translators>
-  <Transparency>Trasparenza</Transparency>
-  <UpdateCheck>Conferma dell'aggiornamento</UpdateCheck>
-  <UpdateCheckFailed>La conferma dell'aggiornamento non è riuscita.</UpdateCheckFailed>
-  <UpdateHistory>Cronologia aggiornamenti</UpdateHistory>
-  <Version>Versione.</Version>
-  <WaitTimeToProcessingNextWindow>Latenza per l'elaborazione della finestra successiva (millisecondi)</WaitTimeToProcessingNextWindow>
-  <Website>Sito web</Website>
-  <Width>Larghezza</Width>
-  <WidthSpecification>Specifica della larghezza</WidthSpecification>
-  <WindowDecide>Determinazione della finestra</WindowDecide>
-  <WindowDesignateMethod>Come specificare il giudizio della finestra</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>Le finestre possono essere giudicate specificando 'nome del titolo', 'nome della classe' e 'nome del file'.
-Ciò che deve o non deve essere specificato è diverso per ogni finestra.
-Se si specifica tutto, la finestra potrebbe non essere elaborata.
-Per i software in cui il 'nome della classe' cambia ogni volta che la finestra viene visualizzata, non specificare un 'nome di classe'.
-Per le applicazioni UWP, il 'nome della classe' e il 'nome del file' sono gli stessi per tutte le applicazioni, tranne alcune, Se non c'è un 'nome titolo', non è possibile identificarla correttamente e le finestre di altre app verranno elaborate.
-Si consiglia di specificare tutti i "Nome titolo", "Nome classe" e "Nome file".
-Il nome della classe è "ApplicationFrameWindow" e il nome del file è "C:\WINDOWS\system32ApplicationFrameHost.exe", (questo potrebbe cambiare con gli aggiornamenti di Windows).</WindowDesignateMethodExplain>
-  <WindowInformation>Informazioni sulla finestra.</WindowInformation>
-  <WindowMoveOutsideToInside>Se la finestra è fuori dallo schermo, spostarla nello schermo.</WindowMoveOutsideToInside>
-  <WindowState>Stato della finestra</WindowState>
-  <WindowWithTitleName>Finestra con nome del titolo</WindowWithTitleName>
-  <WindowWithoutTitleName>Finestra senza titolo</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>Sì No</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "Italiano.",
+  "errorOccurred": "Errore.",
+  "check": "Conferma",
+  "changeVersion": "Versione modificata.",
+  "changeSettingToNewVersion": "Modificare le impostazioni alla nuova versione 'Sì' / Modificare manualmente 'No' / Disattivare il processo 'Annulla'.",
+  "ok": "OK",
+  "yes": "Sì / No",
+  "no": "No / No",
+  "cancel": "Annulla.",
+  "shareSettings": "Si desidera condividere le informazioni di configurazione con tutti gli utenti?",
+  "open": "Aprire",
+  "batchProcessingOfSpecifyWindow": "Elaborazione in batch delle “Finestre designate",
+  "windowMoveOutsideToInside": "Se la finestra è fuori dallo schermo, spostatela nello schermo.",
+  "displayInformationUpdate": "Aggiornare le informazioni di visualizzazione",
+  "end": "Fine",
+  "updateCheckFailed": "Conferma dell'aggiornamento non riuscita.",
+  "latestVersion": "Ultima versione.",
+  "thereIsLatestVersion": "È disponibile l'ultima versione.",
+  "event": "Evento",
+  "timer": "Timer",
+  "specifyWindow": "Finestra designata",
+  "magnet": "Magneti",
+  "plugin": "Plug-in",
+  "pluginSettings": "Impostazioni dei plug-in",
+  "setting": "Impostazioni",
+  "information": "Informazioni",
+  "add": "Aggiungere",
+  "modify": "Modificare",
+  "delete": "Eliminare",
+  "select": "Selezionare",
+  "moveUp": "Sposta in alto",
+  "moveDown": "Muoversi verso il basso",
+  "copy": "Copia",
+  "processingState": "Stato di elaborazione",
+  "deleted": "Eliminato.",
+  "allowDelete": "Si desidera eliminare?",
+  "version": "Versione",
+  "updateCheck": "Conferma dell'aggiornamento",
+  "readme": "Informazioni (Readme)",
+  "updateHistory": "Cronologia degli aggiornamenti",
+  "website": "Sito web",
+  "reportsAndRequests": "Rapporti, richieste",
+  "library": "Biblioteca",
+  "general": "Generale",
+  "hotkey": "Tasti di scelta rapida",
+  "language": "Lingue",
+  "translators": "Traduttore: DeepL",
+  "darkMode": "Modalità scura",
+  "automaticUpdateCheck": "Controllo automatico degli aggiornamenti in fase di esecuzione",
+  "checkBetaVersion": "Controllo degli aggiornamenti, comprese le versioni beta",
+  "registerMultipleWindowActions": "Registrazione di processi a finestre multiple",
+  "coordinate": "Coordinate",
+  "eachDisplay": "x=0, y=0” per l'angolo in alto a sinistra di ogni display",
+  "primaryDisplay": "x=0, y=0 nell'angolo in alto a sinistra del display primario",
+  "fullScreenWindowAdditionDecision": "Determinazione dell'aggiunta di finestre a schermo intero (solo se determinata in modo errato)",
+  "processingInterval": "Intervallo di elaborazione (millisecondi)",
+  "runAtWindowsStartup": "Eseguire all'avvio di Windows",
+  "runAtWindowsStartupAdministrator": "Esecuzione all'avvio di Windows (diritti di amministratore)",
+  "normalExecution": "Esecuzione normale? (senza diritti di amministratore - 'Sì' / con diritti di amministratore - 'No')",
+  "waitTimeToProcessingNextWindow": "Tempo di attesa per l'elaborazione della finestra successiva (millisecondi)",
+  "stopProcessingWhenWindowIsFullScreen": "L'elaborazione si interrompe se esiste una finestra piena",
+  "caseSensitiveWindowQueries": "Sensibilità alle maiuscole nella determinazione delle finestre",
+  "doNotChangePositionSizeOutOfScreen": "Non cambiare posizione o dimensione quando si esce dallo schermo",
+  "stopProcessingShowAddModify": "L'elaborazione si interrompe se viene visualizzata una finestra di aggiunta/modifica",
+  "hotkeysDoNotStop": "I tasti di scelta rapida sono esclusi",
+  "movePastePosition": "Spostare la posizione dell'incollamento",
+  "pasteToEdgeOfScreen": "Incolla sul bordo dello schermo",
+  "pasteIntoAnotherWindow": "Incolla in un'altra finestra",
+  "pasteWithCtrlKeyPressed": "Incollare tenendo premuto il tasto Ctrl.",
+  "keepPasteUntilKeyUp": "L'incollamento rimane in posizione fino al rilascio del tasto.",
+  "pastingTime": "Tempo di incollamento (millisecondi)",
+  "decisionDistanceToPaste": "Distanza di incollamento",
+  "checkReadme": "Vedere “Readme (istruzioni)” per le istruzioni su come specificare.",
+  "titleName": "Nome del titolo",
+  "className": "Nome della classe",
+  "fileName": "Nome del file",
+  "display": "Visualizzazione",
+  "windowState": "Stato della finestra",
+  "processingType": "Tipo di elaborazione",
+  "specifyPositionAndSize": "Specificare posizione e dimensione",
+  "moveXCoordinate": "Spostare la coordinata X",
+  "moveYCoordinate": "Spostare la coordinata Y",
+  "increaseDecreaseWidth": "Aumentare o diminuire la larghezza",
+  "increaseDecreaseHeight": "Aumentare/diminuire l'altezza",
+  "increaseDecreaseWidthAndHeight": "Aumenta/diminuisce la larghezza e l'altezza",
+  "startStopProcessingOfSpecifyWindow": "Avvio/arresto dell'elaborazione della “finestra specificata”.",
+  "startStopProcessingOfAllWindow": "Avvio/arresto dell'elaborazione di 'Tutte le finestre'.",
+  "startStopProcessingOfMagnet": "Avvio/arresto dell'elaborazione di 'Magnete'.",
+  "showThisApplicationWindow": "Mostra le finestre di questa applicazione",
+  "showSystemTrayIconMenu": "Visualizzare il menu dell'icona della barra delle applicazioni",
+  "alwaysShowOrCancelOnTop": "Sempre in primo piano/non selezionato",
+  "specifyCancelTransparency": "Specificare/rilasciare la trasparenza",
+  "leftEdge": "Bordo sinistro",
+  "middle": "Centro",
+  "rightEdge": "Bordo destro",
+  "topEdge": "Bordo superiore",
+  "bottomEdge": "Bordo inferiore",
+  "x": "X",
+  "y": "Y",
+  "width": "Larghezza",
+  "height": "Altezza",
+  "pixel": "px",
+  "percent": "% (%)",
+  "registeredName": "Nome della registrazione",
+  "windowDecide": "Determinazione della finestra",
+  "processingSettings": "Impostazioni di elaborazione",
+  "holdDownMousePointerMoveToSelectWindow": "Tenere premuto per spostare il puntatore del mouse sulla finestra da selezionare e rilasciare.",
+  "getWindowInformation": "Acquisizione delle informazioni della finestra",
+  "informationToBeObtained": "Informazioni da acquisire",
+  "fileSelection": "Selezione del file",
+  "folderSelection": "Selezione della cartella",
+  "exactMatch": "Corrispondenza esatta",
+  "partialMatch": "Corrispondenza parziale",
+  "forwardMatch": "Corrispondenza in avanti",
+  "backwardMatch": "Corrispondenza all'indietro",
+  "includePath": "Include i percorsi",
+  "notIncludePath": "Non include il percorso",
+  "doNotSpecify": "Non specificato",
+  "childWindow": "Finestra figlio",
+  "titleNameRequirements": "Condizione del nome del titolo",
+  "windowWithoutTitleName": "Finestra senza nome del titolo",
+  "windowWithTitleName": "Finestra con nome del titolo",
+  "processingName": "Nome del processo",
+  "displayToUseAsStandard": "Visualizzazione su cui basarsi",
+  "currentDisplay": "Visualizzazione corrente",
+  "specifiedDisplay": "Visualizzazione specificata",
+  "limitedToSpecifiedDisplay": "Solo la visualizzazione specificata",
+  "processOnlyOnce": "Elaborato solo una volta",
+  "onceWindowOpen": "Quando viene aperta una finestra",
+  "onceWhileItIsRunning": "Mentre questo software è in esecuzione",
+  "foregrounded": "La finestra viene portata in primo piano",
+  "moveSizeChangeEnd": "Finito lo spostamento o il ridimensionamento",
+  "minimizeStart": "Minimizzazione avviata",
+  "minimizeEnd": "Minimizzazione terminata",
+  "show": "Visualizzato",
+  "titleNameChanged": "Nome del titolo modificato",
+  "eventDelayTime": "Tempo di attesa per l'elaborazione (millisecondi) (solo per 'Visualizzato')",
+  "forefront": "Più in alto",
+  "doNotChange": "Non modificato",
+  "alwaysForefront": "Sempre in primo piano",
+  "alwaysCancelForefront": "Sempre in primo piano",
+  "specifyTransparency": "Specificare la trasparenza",
+  "closeWindow": "Chiudere la finestra",
+  "timerProcessing": "Elaborazione del timer",
+  "numberOfTimesNotToProcessingFirst": "Numero di volte non elaborate per prime (ritarda l'elaborazione subito dopo l'esecuzione)",
+  "normalWindow": "Finestra normale",
+  "maximize": "Massimizzare",
+  "minimize": "Riduci al minimo",
+  "processOnlyWhenNormalWindow": "Elaborazione solo nello stato di “finestra normale”.",
+  "coordinateSpecification": "Specifica delle coordinate",
+  "widthSpecification": "Specifica della larghezza",
+  "heightSpecification": "Specifica dell'altezza",
+  "conditionsNotProcess": "Condizioni non elaborate",
+  "clientArea": "Area client di destinazione",
+  "titleNameExclusionString": "Stringa contenuta nel nome del titolo",
+  "size": "Dimensione",
+  "otherThanSpecifiedSize": "Dimensione diversa da quella specificata",
+  "otherThanSpecifiedVersion": "Versione diversa da quella specificata (ad es. fino alla versione minore possibile)",
+  "notification": "Notifica",
+  "synchronizationOtherThanSpecifiedVersion": "Sincronizzato con “versione diversa da quella specificata” in “Condizioni per non elaborare”.",
+  "retrievedAfterFiveSeconds": "Le informazioni della finestra vengono recuperate dopo 5 s. Attivare la finestra da cui si vogliono recuperare le informazioni entro 5 s.",
+  "obtained": "Recuperato.",
+  "thereAreDuplicateItems": "Ci sono voci duplicate.",
+  "thereIsADuplicateRegistrationName": "Ci sono nomi di registrazione duplicati.",
+  "thereIsADuplicateProcessingName": "Ci sono nomi di processi duplicati.",
+  "conditionsNotToBeProcessed": "Specificare le condizioni della finestra che non devono essere elaborate.",
+  "added": "Aggiunto.",
+  "modified": "Corretto.",
+  "processingWindowRange": "Gamma di finestre da elaborare.",
+  "activeWindowOnly": "Solo la finestra attiva.",
+  "allWindow": "Tutte le finestre",
+  "onlyActiveWindowSpecifyWindow": "Viene elaborata solo la finestra attiva della “finestra specificata”.",
+  "amountOfMovement": "Quantità di movimento",
+  "sizeChangeAmount": "Quantità di ridimensionamento",
+  "transparency": "Trasparenza",
+  "numericCalculation": "Calcolo numerico",
+  "ratio": "Rapporto",
+  "explanationOfSpecifyWindow": "Questa funzione elabora le finestre che corrispondono a una condizione. Sono disponibili l'elaborazione automatica tramite eventi e timer e l'elaborazione manuale tramite tasti di scelta rapida.",
+  "explanationOfAllWindow": "Elabora tutte le finestre. Viene elaborata quando si verifica un evento abilitato. Le finestre che corrispondono alle condizioni delle voci registrate in “Tutte le finestre” o “Finestre specificate” sono escluse (compresi gli elementi disabilitati), ma non le finestre elaborate dai plug-in.",
+  "hotkeyExplanation": "Questa funzione elabora la finestra attiva con un tasto di scelta rapida. Quando si seleziona un elemento, il pulsante 'Seleziona' può essere utilizzato per elaborare la finestra selezionata.",
+  "magnetExplanation": "La possibilità di incollare una finestra sul bordo dello schermo o su un'altra finestra spostandola con il mouse.",
+  "pluginExplanation": "I plug-in possono aggiungere ulteriori funzioni.",
+  "settingsValue": "Set di valori",
+  "windowInformation": "Informazioni sulla finestra.",
+  "moveAllWindowToSpecifiedPosition": "Sposta tutte le finestre nella posizione specificata",
+  "cancelMoveWindow": "Finestre non spostate",
+  "position": "Posizione",
+  "restart": "Riavvia.",
+  "needRestart": "Il software deve essere riavviato.",
+  "help": "Aiuto.",
+  "newSettingFile": "Il formato del file di configurazione è cambiato. Si desidera eliminare il file di configurazione nel formato precedente?",
+  "pluginFolder": "Cartelle dei plug-in",
+  "eventTimer": "Eventi, timer",
+  "activeWindow": "Finestra attiva.",
+  "question": "?",
+  "coordinateDetailedExplanation": " - Informazioni sulle coordinate \r\n La visualizzazione in alto a sinistra è “x=0,y=0”, i valori aumentano man mano che ci si sposta in basso a destra e diminuiscono man mano che ci si sposta in alto a sinistra. Questo corrisponde alle specifiche di Windows. \r\n\r\n - Informazioni su “Coordinate” in “Impostazioni” \r\n\r\nQuesto può essere impostato quando ci sono più display. \r\n\r\n - “x=0, y=0” per la parte superiore sinistra di ogni display” sono le coordinate con ‘x=0, y=0’ per la parte superiore sinistra di ogni display. x=0, y=0“ per la parte superiore sinistra del display primario” sono le coordinate con “x=0, y=0” per la parte superiore sinistra del display di riferimento. Se un display è impostato a sinistra o sopra il display primario, i valori delle coordinate del display a sinistra o sopra il display primario saranno negativi.",
+  "windowDecisionDetailedExplanation": "La finestra può essere giudicata specificando il 'nome del titolo', il 'nome della classe' o il 'nome del file'. Ciò che deve o non deve essere specificato è diverso per ogni finestra. Se si specifica tutto, la finestra potrebbe non essere elaborata. Non specificare un “nome di classe” se il software ha un “nome di classe” diverso ogni volta che la finestra viene visualizzata. Poiché il 'nome della classe' e il 'nome del file' delle applicazioni \r\nUWP sono gli stessi per tutte le applicazioni, se non si specifica un 'nome del titolo', tutte le finestre delle applicazioni UWP verranno elaborate. È meglio specificare tutti i 'Nome titolo', 'Nome classe' e 'Nome file'.",
+  "eventTimerDetailedExplanation": " - Evento \r\nEsegue quando una finestra viene visualizzata, spostata, ecc. \r\nInizialmente disattivato, quindi vengono attivati solo gli eventi necessari. A seconda dell'elaborazione da parte del software, alcuni eventi potrebbero verificarsi in modo diverso dal solito, alcuni eventi potrebbero non verificarsi, ecc. \r\n\r\n - Timer \r\nElabora a intervalli regolari. Intervalli di elaborazione più lunghi comportano un carico minore, ma potrebbero non essere elaborati immediatamente. Se l'intervallo di elaborazione è ridotto, il carico è maggiore, ma viene elaborato immediatamente.",
+  "clientAreaDetailedExplanation": "L'area client è l'area che esclude la barra del titolo e la cornice della finestra. L'area client può essere riconosciuta per le barre del titolo e le cornici \r\nstandard. Se il software disegna la propria barra del titolo o la propria cornice, l'area client potrebbe non essere riconosciuta correttamente e potrebbe non avere la posizione o le dimensioni specificate.",
+  "activeWindowDetailedExplanation": " - Finestra attiva \r\nLa finestra attiva è la finestra selezionata. Negli editor di testo, ad esempio, è possibile immettere dati da tastiera, ma lo stato in cui si può immettere è attivo e quello in cui non si può immettere è inattivo.",
+  "pluginDetailedExplanation": "I plug-in possono essere utilizzati per aggiungere funzionalità. Se non si trova una funzione necessaria nelle funzioni standard, si può cercare un plugin. \r\nOgnuno è libero di svilupparli. Siate consapevoli che possono esistere sia plugin utili che dannosi. \r\n\r\n - Come aggiungere e utilizzare i plug-in \r\n1. : Trovare e scaricare il plug-in. \r\n2. : Inserire il plug-in nella cartella “Plugins” in cui risiede il software. \r\n\r\n3. : Attivare il plug-in per farlo funzionare. \r\n\r\n - Come disabilitare un plug-in \r\n\r\n Dopo aver eseguito l'operazione di disabilitazione, questo software deve essere riavviato (voci deselezionate, “stato di elaborazione” disabilitato). \r\n\r\n - Come eliminare un plug-in \r\n\r\n - Cancellare il file del plug-in. Se il plug-in da eliminare non è in esecuzione, è possibile eliminarlo mentre questo software è in funzione. Se è in esecuzione, è necessario interrompere il software per eliminarlo. \r\n\r\n - Informazioni su 'Impostazioni del plug-in' \r\n\r\nViene visualizzata una finestra fornita dal plug-in. Se non è disponibile alcuna finestra, se il plugin è disattivato e non è in esecuzione o se non è selezionata alcuna voce del plugin, non sarà possibile premere il pulsante. Questa impostazione software non viene utilizzata dal plug-in.",
+  "childWindowExplanation": "Una finestra posseduta da un'altra finestra è una finestra figlio e la finestra che possiede la finestra figlio è la finestra genitore. Finestre come “Opzioni” e “Informazioni su” sono finestre figlio (a meno che non siano state create come finestre figlio). I termini \r\n“Nome titolo” e “Nome classe” sono fondamentalmente diversi da quelli della finestra padre, pertanto se vengono specificati, la finestra figlio non verrà elaborata. Se si specifica solo \r\n“Nome file”, verranno elaborate non solo la finestra madre ma anche le finestre figlie."
+}

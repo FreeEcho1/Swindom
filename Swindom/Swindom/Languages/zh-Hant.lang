@@ -1,195 +1,204 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>將設置更改為新版本“是”/手動更改“否”/禁用處理“取消”</ChangeSettingToNewVersion>
- <ChangeVersion>版本改變</ChangeVersion>
- <Check>確認</Check>
- <ErrorOccurred>發生了錯誤</ErrorOccurred>
- <LanguageName>繁體中文</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>僅活動窗口</ActiveWindowOnly>
-  <Add>添加</Add>
-  <Added>添加。</Added>
-  <AllWindow>所有窗口</AllWindow>
-  <AllowDelete>刪除？</AllowDelete>
-  <AlwaysCancelForefront>總在最前面</AlwaysCancelForefront>
-  <AlwaysForefront>總在最前面</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>始終在最前面/刪除</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>運動量</AmountOfMovement>
-  <Announce>通知</Announce>
-  <AutomaticUpdateCheck>在運行時自動檢查更新</AutomaticUpdateCheck>
-  <BackwardMatch>向後匹配</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>“指定窗口”的批處理</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>低端</BottomEdge>
-  <Cancel>取消</Cancel>
-  <CancelMoveWindow>不動窗</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>使窗口判斷區分大小寫</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>檢查更新，包括測試版</CheckBetaVersion>
-  <CheckReadme>檢查“自述文件”以了解如何指定它。</CheckReadme>
-  <ClassName>班級名稱</ClassName>
-  <ClientArea>目標客戶區</ClientArea>
-  <CloseWindow>關上窗戶</CloseWindow>
-  <ConditionsThatDoNotProcess>不處理的條件</ConditionsThatDoNotProcess>
-  <Coordinate>協調</Coordinate>
-  <CoordinateSpecification>指定坐標</CoordinateSpecification>
-  <Copy>複製</Copy>
-  <CurrentDisplay>當前顯示</CurrentDisplay>
-  <DarkMode>黑暗模式</DarkMode>
-  <DecisionDistanceToPaste>判斷粘貼距離</DecisionDistanceToPaste>
-  <Delete>刪除</Delete>
-  <Deleted>它已被刪除。</Deleted>
-  <Display>展示</Display>
-  <DisplayInformationUpdate>顯示信息更新</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>參考顯示</DisplayToUseAsStandard>
-  <DoNotChange>它沒有改變</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>如果它離開屏幕，不要改變位置或大小</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>未指定</DoNotSpecify>
-  <EachDisplay>每個顯示器左上角的“x=0, y=0”</EachDisplay>
-  <End>結尾</End>
-  <Event>事件</Event>
-  <ExactMatch>完美匹配</ExactMatch>
-  <ExplanationOfAllWindow>可以處理除指定窗口之外的所有窗口。 “指定窗口”中指定的窗口也被排除在外。</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>您可以指定一個窗口並自動處理它。 如果您只想使用熱鍵處理而不自動處理，請取消選中並禁用它。</ExplanationOfSpecifyWindow>
-  <FileName>文件名</FileName>
-  <FileSelection>文件選擇</FileSelection>
-  <Forefront>正面</Forefront>
-  <Foregrounded>成為前景</Foregrounded>
-  <ForwardMatch>前綴匹配</ForwardMatch>
-  <General>一般的</General>
-  <GetWindowInformation>獲取窗口信息</GetWindowInformation>
-  <Height>高度</Height>
-  <HeightSpecification>指定高度</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>將鼠標光標移動到要選擇的窗口，同時按住</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>熱鍵</Hotkey>
-  <HotkeyExplanation>您可以使用熱鍵處理活動窗口（接受輸入的狀態）。 “選擇”按鈕允許您在不使用熱鍵的情況下選擇和處理要處理的窗口。</HotkeyExplanation>
-  <HotkeysDoNotStop>熱鍵不會停止（如果你有一個全屏窗口）</HotkeysDoNotStop>
-  <IncludePath>包括路徑</IncludePath>
-  <IncreaseDecreaseHeight>增加/減少高度</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>增加/減少寬度</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>增加/減少寬度和高度</IncreaseDecreaseWidthAndHeight>
-  <Information>信息</Information>
-  <InformationToBeObtained>獲取信息</InformationToBeObtained>
-  <Language>語言</Language>
-  <LatestVersion>最新版本。</LatestVersion>
-  <LeftEdge>左邊緣</LeftEdge>
-  <Library>圖書館</Library>
-  <LimitedToSpecifiedDisplay>限於指定顯示</LimitedToSpecifiedDisplay>
-  <Magnet>磁鐵</Magnet>
-  <MagnetExplanation>用鼠標移動窗口時粘貼到屏幕邊緣或另一個窗口。</MagnetExplanation>
-  <Manual>指示</Manual>
-  <Maximize>最大化</Maximize>
-  <Middle>中心</Middle>
-  <Minimize>最小化</Minimize>
-  <MinimizeEnd>完成最小化</MinimizeEnd>
-  <MinimizeStart>最小化開始</MinimizeStart>
-  <Modified>固定的。</Modified>
-  <Modify>使固定</Modify>
-  <MoveAllWindowToSpecifiedPosition>將所有窗口移動到指定位置</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>向下移動</MoveDown>
-  <MovePastePosition>移動粘貼位置</MovePastePosition>
-  <MoveSizeChangeEnd>完成移動和調整大小</MoveSizeChangeEnd>
-  <MoveUp>提升</MoveUp>
-  <MoveXCoordinate>移動 X 坐標</MoveXCoordinate>
-  <MoveYCoordinate>移動 Y 坐標</MoveYCoordinate>
-  <NeedRestart>應該重新啟動 Swindom。</NeedRestart>
-  <No>不</No>
-  <NormalExecution>是否正常運行？ （沒有管理員權限 - '是'/有管理員權限 - '否'）</NormalExecution>
-  <NormalWindow>普通窗口</NormalWindow>
-  <NotIncludePath>不包含路徑</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>不先處理的次數（執行後立即延遲處理）</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>數值計算</NumericCalculation>
-  <Ok>好的</Ok>
-  <OnceWhileItIsRunning>當這個軟件正在運行時</OnceWhileItIsRunning>
-  <OnceWindowOpen>當窗戶打開時</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>只處理“指定窗口”的活動窗口</OnlyActiveWindowSpecifyWindow>
-  <Open>打開</Open>
-  <OtherThanSpecifiedVersion>除了指定的版本（可能達到次要等）</OtherThanSpecifiedVersion>
-  <PartialMatch>部分匹配</PartialMatch>
-  <PasteIntoAnotherWindow>粘貼到另一個窗口</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>粘貼到屏幕邊緣</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>按住 Ctrl 鍵粘貼</PasteWithCtrlKeyPressed>
-  <Percent>%</Percent>
-  <Pixel>像素</Pixel>
-  <Plugin>插入</Plugin>
-  <PluginExplanation>插件可以添加功能。 查看自述文件以獲取詳細說明。</PluginExplanation>
-  <PluginSettings>插件設置</PluginSettings>
-  <PluginTestMessage>由於這是一個正在測試的功能，因此有可能運行不穩定。</PluginTestMessage>
-  <Position>位置</Position>
-  <PrimaryDisplay>主顯示屏左上角的“x=0, y=0”</PrimaryDisplay>
-  <ProcessOnlyOnce>只處理一次</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>只有當它是“普通窗口”時才處理</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>處理間隔（毫秒）</ProcessingInterval>
-  <ProcessingName>進程名稱</ProcessingName>
-  <ProcessingSettings>處理設置</ProcessingSettings>
-  <ProcessingState>加工狀態</ProcessingState>
-  <ProcessingType>加工類型</ProcessingType>
-  <ProcessingWindowRange>要處理的窗口範圍</ProcessingWindowRange>
-  <Ratio>比率</Ratio>
-  <RegisterMultipleWindowActions>註冊多個窗口進程</RegisterMultipleWindowActions>
-  <RegisteredName>註冊名稱</RegisteredName>
-  <ReportsAndRequests>報告，請求</ReportsAndRequests>
-  <Restart>重啟</Restart>
-  <RetrievedAfterFiveSeconds>窗口信息將在 5 秒後檢索，因此請在 5 秒內激活窗口以檢索信息。</RetrievedAfterFiveSeconds>
-  <RightEdge>右端</RightEdge>
-  <RunAtWindowsStartup>Windows 啟動時運行</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>在 Windows 啟動時運行（管理員權限）</RunAtWindowsStartupAdministrator>
-  <Select>選擇</Select>
-  <SelectionComplete>選擇。</SelectionComplete>
-  <Setting>環境</Setting>
-  <SettingsValue>設定值</SettingsValue>
-  <ShareSettings>您想與所有用戶共享設置信息嗎？</ShareSettings>
-  <Show>顯示</Show>
-  <ShowThisApplicationWindow>顯示此應用程序的窗口</ShowThisApplicationWindow>
-  <Size>尺寸</Size>
-  <SizeChangeAmount>調整量</SizeChangeAmount>
-  <SoftwareName>軟件名稱</SoftwareName>
-  <SpecifiedDisplay>指定顯示</SpecifiedDisplay>
-  <SpecifyCancelTransparency>指定/釋放透明度</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>指定位置和大小</SpecifyPositionAndSize>
-  <SpecifyTransparency>指定透明度</SpecifyTransparency>
-  <SpecifyWindow>指定窗口</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>開始/停止處理“所有窗口”</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>“磁鐵”加工開始/停止</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>“指定窗口”的處理開始/停止</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>如果顯示添加/修改窗口，則停止處理</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>如果窗口是全屏則停止處理</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>卡住停止時間（ms）</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>有重複的項目。</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>存在重複的操作名稱。</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>有重複的註冊名稱。</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>我有最新版本。</ThereIsLatestVersion>
-  <Timer>定時器</Timer>
-  <TimerProcessing>定時器處理</TimerProcessing>
-  <TitleName>標題名稱</TitleName>
-  <TitleNameChanged>標題名稱已更改</TitleNameChanged>
-  <TitleNameExclusionString>標題名稱中包含的字符串</TitleNameExclusionString>
-  <TitleNameRequirements>標題名稱處理條件</TitleNameRequirements>
-  <TopEdge>頂邊</TopEdge>
-  <Translators>譯者：谷歌翻譯</Translators>
-  <Transparency>透明度</Transparency>
-  <UpdateCheck>更新確認</UpdateCheck>
-  <UpdateCheckFailed>檢查更新失敗。</UpdateCheckFailed>
-  <UpdateHistory>更改日誌</UpdateHistory>
-  <Version>版本</Version>
-  <WaitTimeToProcessingNextWindow>等待處理下一個窗口的時間（以毫秒為單位）</WaitTimeToProcessingNextWindow>
-  <Website>網站</Website>
-  <Width>寬度</Width>
-  <WidthSpecification>寬度規格</WidthSpecification>
-  <WindowDecide>窗口判斷</WindowDecide>
-  <WindowDesignateMethod>如何指定窗口判斷</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>可以指定“標題名”、“類名”和“文件名”來判斷窗口。
-每個窗口指定什麼和不指定什麼是不同的。
-如果全部指定，則可能不會處理窗口。
-對於每次顯示窗口時更改“類名”的軟件，不要指定“類名”。
-UWP 應用程序具有相同的“類名”和“文件名”，除了一些，所以如果沒有“標題名稱”，則無法正確判斷，其他應用的窗口也會被處理。
-最好指定所有“標題名”、“類名”和“文件名”。
-類名為“ApplicationFrameWindow”，文件名為“C:\WINDOWS\system32\ApplicationFrameHost.exe”，（可能隨 Windows 更新而改變）。</WindowDesignateMethodExplain>
-  <WindowInformation>窗口信息</WindowInformation>
-  <WindowMoveOutsideToInside>如果窗口不在屏幕上，則將其移入</WindowMoveOutsideToInside>
-  <WindowState>窗口狀態</WindowState>
-  <WindowWithTitleName>帶有標題名稱的窗口</WindowWithTitleName>
-  <WindowWithoutTitleName>沒有標題的窗口</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>是</Y>
-  <Yes>是的</Yes>
- </LanguagesWindow>
-</Languages>
+{
+  "languageName": "繁体中文",
+  "errorOccurred": "发生了错误。",
+  "check": "确认",
+  "changeVersion": "版本已更改",
+  "changeSettingToNewVersion": "将设置更改为新版本“是”/手动更改“否”/禁用处理“取消”",
+  "ok": "好的",
+  "yes": "是的",
+  "no": "不",
+  "cancel": "取消",
+  "shareSettings": "您想与所有用户共享配置信息吗？",
+  "open": "打开",
+  "batchProcessingOfSpecifyWindow": "“指定窗口”的批处理",
+  "windowMoveOutsideToInside": "如果窗口在屏幕外，请将其移至屏幕内",
+  "displayInformationUpdate": "显示信息更新",
+  "end": "结尾",
+  "updateCheckFailed": "更新确认失败。",
+  "latestVersion": "这是最新版本。",
+  "thereIsLatestVersion": "我有最新版本。",
+  "event": "事件",
+  "timer": "计时器",
+  "specifyWindow": "指定窗口",
+  "magnet": "磁铁",
+  "plugin": "插入",
+  "pluginSettings": "插件设置",
+  "setting": "环境",
+  "information": "信息",
+  "add": "添加",
+  "modify": "更正",
+  "delete": "删除",
+  "select": "选择",
+  "moveUp": "提升",
+  "moveDown": "向下移动",
+  "copy": "复制",
+  "processingState": "加工状态",
+  "deleted": "它已被删除。",
+  "allowDelete": "您想删除它吗？",
+  "version": "版本",
+  "updateCheck": "更新确认",
+  "readme": "信息（自述文件）",
+  "updateHistory": "变更日志",
+  "website": "网站",
+  "reportsAndRequests": "报告、请求",
+  "library": "图书馆",
+  "general": "一般的",
+  "hotkey": "热键",
+  "language": "语言",
+  "translators": "翻译：谷歌翻译",
+  "darkMode": "深色模式",
+  "automaticUpdateCheck": "运行时自动检查更新",
+  "checkBetaVersion": "检查更新，包括测试版",
+  "registerMultipleWindowActions": "注册多个窗口进程",
+  "coordinate": "协调",
+  "eachDisplay": "将每个显示的左上角设置为“x=0, y=0”",
+  "primaryDisplay": "将主显示屏的左上角设置为“x=0, y=0”",
+  "fullScreenWindowAdditionDecision": "全屏窗口的附加判定（仅当未正确判定时）",
+  "processingInterval": "处理间隔（毫秒）",
+  "runAtWindowsStartup": "Windows 启动时运行",
+  "runAtWindowsStartupAdministrator": "Windows 启动时运行（管理员权限）",
+  "normalExecution": "运行正常吗？ （没有管理员权限 - “是”/有管理员权限 - “否”）",
+  "waitTimeToProcessingNextWindow": "等待处理下一个窗口的时间（以毫秒为单位）",
+  "stopProcessingWhenWindowIsFullScreen": "如果存在全屏窗口，处理将停止",
+  "caseSensitiveWindowQueries": "窗口检测中区分大小写字母",
+  "doNotChangePositionSizeOutOfScreen": "如果超出屏幕，请勿更改位置或大小",
+  "stopProcessingShowAddModify": "如果显示“添加/修改”窗口，则停止处理",
+  "hotkeysDoNotStop": "排除热键",
+  "movePastePosition": "移动粘贴位置",
+  "pasteToEdgeOfScreen": "粘贴到屏幕边缘",
+  "pasteIntoAnotherWindow": "粘贴到另一个窗口",
+  "pasteWithCtrlKeyPressed": "按住“Ctrl”键进行粘贴",
+  "keepPasteUntilKeyUp": "坚持直到松开钥匙",
+  "pastingTime": "粘着时间（毫秒）",
+  "decisionDistanceToPaste": "粘贴判断距离",
+  "checkReadme": "指定方法请查看“Readme”。",
+  "titleName": "标题名称",
+  "className": "班级名称",
+  "fileName": "文件名",
+  "display": "展示",
+  "windowState": "窗口状态",
+  "processingType": "加工类型",
+  "specifyPositionAndSize": "指定位置和大小",
+  "moveXCoordinate": "移动X坐标",
+  "moveYCoordinate": "移动Y坐标",
+  "increaseDecreaseWidth": "增加/减少宽度",
+  "increaseDecreaseHeight": "增加/减少高度",
+  "increaseDecreaseWidthAndHeight": "增加/减少宽度和高度",
+  "startStopProcessingOfSpecifyWindow": "开始/停止“指定窗口”的处理",
+  "startStopProcessingOfAllWindow": "开始/停止“所有窗口”的处理",
+  "startStopProcessingOfMagnet": "开始/停止“磁铁”处理",
+  "showThisApplicationWindow": "显示此应用程序的窗口",
+  "showSystemTrayIconMenu": "显示系统托盘图标菜单",
+  "alwaysShowOrCancelOnTop": "始终位于顶部/取消",
+  "specifyCancelTransparency": "指定/取消透明度",
+  "leftEdge": "左端",
+  "middle": "中心",
+  "rightEdge": "右端",
+  "topEdge": "高端",
+  "bottomEdge": "下端",
+  "x": "X",
+  "y": "是",
+  "width": "宽度",
+  "height": "高度",
+  "pixel": "像素",
+  "percent": "%",
+  "registeredName": "注册名称",
+  "windowDecide": "窗口判断",
+  "processingSettings": "处理设置",
+  "holdDownMousePointerMoveToSelectWindow": "按住，将鼠标指针移动到要选择的窗口，然后松开",
+  "getWindowInformation": "获取窗口信息",
+  "informationToBeObtained": "获取信息",
+  "fileSelection": "文件选择",
+  "folderSelection": "文件夹选择",
+  "exactMatch": "完美搭配",
+  "partialMatch": "部分匹配",
+  "forwardMatch": "前缀匹配",
+  "backwardMatch": "向后匹配",
+  "includePath": "包含路径",
+  "notIncludePath": "不包括路径",
+  "doNotSpecify": "未指定",
+  "childWindow": "子窗口",
+  "titleNameRequirements": "标题名称条件",
+  "windowWithoutTitleName": "没有标题名称的窗口",
+  "windowWithTitleName": "带有标题名称的窗口",
+  "processingName": "加工名称",
+  "displayToUseAsStandard": "参考显示",
+  "currentDisplay": "当前显示",
+  "specifiedDisplay": "指定显示",
+  "limitedToSpecifiedDisplay": "仅限指定显示器",
+  "processOnlyOnce": "仅处理一次",
+  "onceWindowOpen": "当窗户打开时",
+  "onceWhileItIsRunning": "当该软件运行时",
+  "foregrounded": "成为了前景",
+  "moveSizeChangeEnd": "移动并调整大小已完成",
+  "minimizeStart": "最小化开始",
+  "minimizeEnd": "最小化完成",
+  "show": "显示的",
+  "titleNameChanged": "标题名称已更改",
+  "eventDelayTime": "处理延迟（毫秒）（仅“可见”）",
+  "forefront": "最前面的",
+  "doNotChange": "它没有改变",
+  "alwaysForefront": "永远在前面",
+  "alwaysCancelForefront": "总在最前面",
+  "specifyTransparency": "透明度规格",
+  "closeWindow": "关上窗户",
+  "timerProcessing": "定时器处理",
+  "numberOfTimesNotToProcessingFirst": "不先处理的次数（执行后立即延迟处理）",
+  "normalWindow": "普通窗口",
+  "maximize": "最大化",
+  "minimize": "最小化",
+  "processOnlyWhenNormalWindow": "仅处理“正常窗口”状态",
+  "coordinateSpecification": "指定坐标",
+  "widthSpecification": "宽度规格",
+  "heightSpecification": "高度规格",
+  "conditionsNotProcess": "不予处理的条件",
+  "clientArea": "目标客户区",
+  "titleNameExclusionString": "标题名称中包含的字符串",
+  "size": "尺寸",
+  "otherThanSpecifiedSize": "指定尺寸以外",
+  "otherThanSpecifiedVersion": "指定版本以外的版本（最高可能是次要版本）",
+  "notification": "通知",
+  "synchronizationOtherThanSpecifiedVersion": "與「不處理的條件」的「指定版本以外」同步",
+  "retrievedAfterFiveSeconds": "窗口信息将在5秒后检索，因此请在5秒内激活您要检索信息的窗口。",
+  "obtained": "获得。",
+  "thereAreDuplicateItems": "有重复的项目。",
+  "thereIsADuplicateRegistrationName": "注册名称重复。",
+  "thereIsADuplicateProcessingName": "存在重复的进程名称。",
+  "conditionsNotToBeProcessed": "請指定不被處理的視窗條件。",
+  "added": "添加。",
+  "modified": "固定的。",
+  "processingWindowRange": "要处理的窗口范围",
+  "activeWindowOnly": "仅活动窗口",
+  "allWindow": "所有窗口",
+  "onlyActiveWindowSpecifyWindow": "只处理“指定窗口”的活动窗口",
+  "amountOfMovement": "移动量",
+  "sizeChangeAmount": "尺寸变化量",
+  "transparency": "透明度",
+  "numericCalculation": "数值计算",
+  "ratio": "比率",
+  "explanationOfSpecifyWindow": "该函数处理符合条件的窗口。有使用事件和定时器的自动处理方法，以及使用热键的手动处理方法。",
+  "explanationOfAllWindow": "这是一个处理所有窗口的函数。当启用的事件发生时进行处理。排除与“所有窗口”和“指定窗口”中注册的项目条件匹配的窗口（包括禁用的项目），但不排除由插件处理的窗口。",
+  "hotkeyExplanation": "这是一个使用热键处理活动窗口的函数。选择一个项目后，使用“选择”按钮处理选定的窗口。",
+  "magnetExplanation": "此功能允许您在使用鼠标移动窗口时粘贴到屏幕边缘或另一个窗口。",
+  "pluginExplanation": "插件可以添加功能。",
+  "settingsValue": "设定值",
+  "windowInformation": "窗口信息",
+  "moveAllWindowToSpecifiedPosition": "将所有窗口移动到指定位置",
+  "cancelMoveWindow": "不动的窗户",
+  "position": "位置",
+  "restart": "重启",
+  "needRestart": "该软件必须重新启动。",
+  "help": "帮助",
+  "newSettingFile": "配置文件格式已更改。是否要删除之前格式的配置文件？",
+  "pluginFolder": "插件文件夹",
+  "eventTimer": "事件、计时器",
+  "activeWindow": "活动窗口",
+  "question": "？",
+  "coordinateDetailedExplanation": " - 关于坐标 \r\n显示屏的左上角是“x=0,y=0”，到右下角数字变大，到左上角数字变小。这与 Windows 规范相同。 \r\n\r\n - 当有多个显示器时，可以在“设置”\r\n中的“坐标”中进行设置。 \r\n“每个显示器的左上角为“x=0，y=0””是每个显示器的左上角为“x=0，y=0”时的坐标。 “主显示器的左上角为‘x=0, y=0’”是参考显示器的左上角为‘x=0, y=0’的坐标。如果显示器设置在主显示器的左侧或上方，则主显示器左侧或上方的显示器的坐标将为负值。",
+  "windowDecisionDetailedExplanation": "可以指定窗口判断的“标题名”、“类名”、“文件名”。 \r\n指定的内容和不指定的内容因窗口而异。如果指定\r\nall，则可能不会处理该窗口。 \r\n如果软件每次显示窗口时都使用不同的“类名”，则不要指定“类名”。 \r\nUWP应用程序的“类名”和“文件名”对于所有应用程序都是相同的，因此如果不指定“标题名称”，则将处理所有UWP应用程序窗口。最好指定所有“标题名称”、“类名称”和“文件名称”。",
+  "eventTimerDetailedExplanation": "- 显示或移动窗口时的Event\r\nProcesses。 \r\n它最初是禁用的，因此仅启用您需要的事件。 \r\n根据软件端的处理，可能会发生异常事件，也可能不会发生事件，并且可能无法正确处理。 \r\n\r\n - Timer\r\n定期执行处理。 \r\n较长的处理间隔可以减少负载，但可能不会立即处理。处理间隔越短，负载越高，但处理速度会更快。",
+  "clientAreaDetailedExplanation": "客户区是指不包括标题栏和窗口框架的区域。 \r\n如果您有标准的标题栏或框架，您可以识别客户区。 \r\n如果软件单独绘制标题栏或框架，则可能无法正确识别客户区，并且可能无法达到指定的位置或大小。",
+  "activeWindowDetailedExplanation": " - 活动窗口 \r\nActive 窗口是选定的窗口。 \r\n可以在文本编辑器等中使用键盘输入文本，但可以输入的状态为活动状态，不能输入的状态为非活动状态。",
+  "pluginDetailedExplanation": "您可以使用插件添加功能。如果标准功能没有您需要的功能，您可能需要寻找插件。 \r\n任何人都可以自由开发。请小心，因为可能存在有用的插件，也可能存在恶意的插件。 \r\n\r\n - 如何添加和使用插件\r\n1.：查找并下载插件。 \r\n2.：软件所在的地方有一个“Plugins”文件夹，所以插入插件。 \r\n3. ：启用插件。 \r\n\r\n - 如何禁用插件\r\n您必须在执行禁用操作（取消选中某个项目、禁用“处理状态”）后重新启动该软件。 \r\n\r\n - 如何删除插件 \r\nDeletes 插件文件。如果您尝试删除的插件未运行，您可以在该软件运行时将其删除。如果它正在运行，您将需要停止并删除该软件。 \r\n\r\n - 显示 \r\nplugin 提供的有关“插件设置”的窗口。如果窗口未准备好，插件被禁用且无法工作，或者插件项未被选择，则插件将被禁用。 \r\n该软件配置不被插件使用。",
+  "childWindowExplanation": "被另一个窗口拥有的窗口是子窗口，拥有子窗口的窗口是父窗口。 \r\nWindows 例如“Options”和“About”是子窗口（除非它们是作为子窗口创建的）。 \r\n“标题名”和“类名”与父窗口基本不同，所以如果指定了，子窗口将不会被处理。 \r\n如果只指定“文件名”，则不仅会处理父窗口，还会处理子窗口，因此启用它后可以仅处理父窗口。"
+}

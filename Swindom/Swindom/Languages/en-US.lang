@@ -1,195 +1,204 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Languages xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/Swindom">
- <ChangeSettingToNewVersion>Change settings to new version "Yes" / Change manually "No" / Disable process "Cancel</ChangeSettingToNewVersion>
- <ChangeVersion>Version has been changed</ChangeVersion>
- <Check>Confirmation</Check>
- <ErrorOccurred>An error has occurred.</ErrorOccurred>
- <LanguageName>English</LanguageName>
- <LanguagesWindow>
-  <ActiveWindowOnly>Active window only</ActiveWindowOnly>
-  <Add>Added</Add>
-  <Added>Added.</Added>
-  <AllWindow>All windows</AllWindow>
-  <AllowDelete>Delete?</AllowDelete>
-  <AlwaysCancelForefront>Always Remove Topmost</AlwaysCancelForefront>
-  <AlwaysForefront>Always frontmost</AlwaysForefront>
-  <AlwaysShowOrCancelOnTop>Always bring to foremost/unmove</AlwaysShowOrCancelOnTop>
-  <AmountOfMovement>Movement</AmountOfMovement>
-  <Announce>Notify</Announce>
-  <AutomaticUpdateCheck>Automatic update confirmation at runtime</AutomaticUpdateCheck>
-  <BackwardMatch>Backward match</BackwardMatch>
-  <BatchProcessingOfSpecifyWindow>Batch processing of "specified window</BatchProcessingOfSpecifyWindow>
-  <BottomEdge>Bottom edge</BottomEdge>
-  <Cancel>Cancel</Cancel>
-  <CancelMoveWindow>Windows that do not move</CancelMoveWindow>
-  <CaseSensitiveWindowQueries>Case sensitive in window determination</CaseSensitiveWindowQueries>
-  <CheckBetaVersion>Check for updates, including beta versions</CheckBetaVersion>
-  <CheckReadme>See "Readme (Instructions)" for instructions on how to specify</CheckReadme>
-  <ClassName>Class Name</ClassName>
-  <ClientArea>Target client area</ClientArea>
-  <CloseWindow>Close window</CloseWindow>
-  <ConditionsThatDoNotProcess>Condition not to process</ConditionsThatDoNotProcess>
-  <Coordinate>Coordinates</Coordinate>
-  <CoordinateSpecification>Coordinate specification</CoordinateSpecification>
-  <Copy>Copy</Copy>
-  <CurrentDisplay>Current display</CurrentDisplay>
-  <DarkMode>Dark mode</DarkMode>
-  <DecisionDistanceToPaste>Paste Decision Distance</DecisionDistanceToPaste>
-  <Delete>Delete</Delete>
-  <Deleted>Deleted</Deleted>
-  <Display>Display</Display>
-  <DisplayInformationUpdate>Display Information Update</DisplayInformationUpdate>
-  <DisplayToUseAsStandard>Display to be used as a reference</DisplayToUseAsStandard>
-  <DoNotChange>Do not change</DoNotChange>
-  <DoNotChangePositionSizeOutOfScreen>Do not change position or size if out of screen</DoNotChangePositionSizeOutOfScreen>
-  <DoNotSpecify>Not specified</DoNotSpecify>
-  <EachDisplay>x=0, y=0" in the upper left corner of each display</EachDisplay>
-  <End>End</End>
-  <Event>Event</Event>
-  <ExactMatch>Exact match</ExactMatch>
-  <ExplanationOfAllWindow>All windows except the specified window can be made to process. Windows specified in "Specified Window" are also excluded.</ExplanationOfAllWindow>
-  <ExplanationOfSpecifyWindow>You can specify a window to be processed automatically. If you want to process only with hotkeys without automatic processing, uncheck this checkbox to disable it.</ExplanationOfSpecifyWindow>
-  <FileName>File Name</FileName>
-  <FileSelection>File Selection</FileSelection>
-  <Forefront>foreground</Forefront>
-  <Foregrounded>Foregrounded</Foregrounded>
-  <ForwardMatch>Foreground Match</ForwardMatch>
-  <General>general</General>
-  <GetWindowInformation>Get Window Info</GetWindowInformation>
-  <Height>height</Height>
-  <HeightSpecification>Specify height</HeightSpecification>
-  <HoldDownMouseCursorMoveToSelectWindow>Move mouse cursor to window to select while holding down</HoldDownMouseCursorMoveToSelectWindow>
-  <Hotkey>Hot Keys</Hotkey>
-  <HotkeyExplanation>Hotkeys can be used to process the active window (i.e., the window that is accepting input). The "Select" button allows you to select a window to be processed without using a hotkey.</HotkeyExplanation>
-  <HotkeysDoNotStop>Hotkeys do not stop (if a full screen window is present)</HotkeysDoNotStop>
-  <IncludePath>Include path</IncludePath>
-  <IncreaseDecreaseHeight>Increase/decrease height</IncreaseDecreaseHeight>
-  <IncreaseDecreaseWidth>Increase or decrease width</IncreaseDecreaseWidth>
-  <IncreaseDecreaseWidthAndHeight>Increase/decrease width and height</IncreaseDecreaseWidthAndHeight>
-  <Information>Information</Information>
-  <InformationToBeObtained>Information to be retrieved</InformationToBeObtained>
-  <Language>Language</Language>
-  <LatestVersion>Latest version.</LatestVersion>
-  <LeftEdge>Left end</LeftEdge>
-  <Library>Library</Library>
-  <LimitedToSpecifiedDisplay>Limited to the specified display</LimitedToSpecifiedDisplay>
-  <Magnet>Magnet</Magnet>
-  <MagnetExplanation>Attaches to the edge of the screen or another window when the window is being moved with the mouse.</MagnetExplanation>
-  <Manual>Description</Manual>
-  <Maximize>Maximize</Maximize>
-  <Middle>Center</Middle>
-  <Minimize>Minimize</Minimize>
-  <MinimizeEnd>Minimization finished</MinimizeEnd>
-  <MinimizeStart>Minimization started</MinimizeStart>
-  <Modified>Fixed</Modified>
-  <Modify>Fixed</Modify>
-  <MoveAllWindowToSpecifiedPosition>Move all windows to specified position</MoveAllWindowToSpecifiedPosition>
-  <MoveDown>Move down</MoveDown>
-  <MovePastePosition>Shifted the position to paste</MovePastePosition>
-  <MoveSizeChangeEnd>Finished moving and resizing</MoveSizeChangeEnd>
-  <MoveUp>Move Up</MoveUp>
-  <MoveXCoordinate>Move X coordinate</MoveXCoordinate>
-  <MoveYCoordinate>Move Y coordinate</MoveYCoordinate>
-  <NeedRestart>Swindom must be restarted.</NeedRestart>
-  <No>No, I need to restart Swindom.</No>
-  <NormalExecution>Normal execution? (without administrator rights - "Yes" / with administrator rights - "No")</NormalExecution>
-  <NormalWindow>Normal window</NormalWindow>
-  <NotIncludePath>No paths included</NotIncludePath>
-  <NumberOfTimesNotToProcessingFirst>Number of times not processed first (delays processing immediately after execution)</NumberOfTimesNotToProcessingFirst>
-  <NumericCalculation>Numeric</NumericCalculation>
-  <Ok>OK</Ok>
-  <OnceWhileItIsRunning>While this software is running</OnceWhileItIsRunning>
-  <OnceWindowOpen>When a window is opened</OnceWindowOpen>
-  <OnlyActiveWindowSpecifyWindow>Process only the active window of the "specified window</OnlyActiveWindowSpecifyWindow>
-  <Open>Open</Open>
-  <OtherThanSpecifiedVersion>Other than the specified version (can be up to minor, etc.)</OtherThanSpecifiedVersion>
-  <PartialMatch>Partial match</PartialMatch>
-  <PasteIntoAnotherWindow>Paste to another window</PasteIntoAnotherWindow>
-  <PasteToEdgeOfScreen>Paste to edge of screen</PasteToEdgeOfScreen>
-  <PasteWithCtrlKeyPressed>Paste with Ctrl key pressed</PasteWithCtrlKeyPressed>
-  <Percent>%</Percent>
-  <Pixel>px</Pixel>
-  <Plugin>Plug-ins</Plugin>
-  <PluginExplanation>Plug-ins can add functionality. See "Readme (Instructions)" for detailed instructions.</PluginExplanation>
-  <PluginSettings>Plugin Settings</PluginSettings>
-  <PluginTestMessage>This is a function under testing, so there is a possibility of unstable operation, etc.</PluginTestMessage>
-  <Position>Position</Position>
-  <PrimaryDisplay>x=0, y=0" in the upper left corner of the primary display</PrimaryDisplay>
-  <ProcessOnlyOnce>Processed only once</ProcessOnlyOnce>
-  <ProcessOnlyWhenNormalWindow>Process only when in "normal window</ProcessOnlyWhenNormalWindow>
-  <ProcessingInterval>Processing interval (milliseconds)</ProcessingInterval>
-  <ProcessingName>Processing name</ProcessingName>
-  <ProcessingSettings>Processing setting</ProcessingSettings>
-  <ProcessingState>Processing status</ProcessingState>
-  <ProcessingType>Type of processing</ProcessingType>
-  <ProcessingWindowRange>Range of windows to process</ProcessingWindowRange>
-  <Ratio>Ratio</Ratio>
-  <RegisterMultipleWindowActions>Register multiple window processing</RegisterMultipleWindowActions>
-  <RegisteredName>Registration name</RegisteredName>
-  <ReportsAndRequests>Report, Request</ReportsAndRequests>
-  <Restart>Restart</Restart>
-  <RetrievedAfterFiveSeconds>Window information will be retrieved after 5 seconds, please activate the window to retrieve the information within 5 seconds.</RetrievedAfterFiveSeconds>
-  <RightEdge>Right end</RightEdge>
-  <RunAtWindowsStartup>Run at Windows startup</RunAtWindowsStartup>
-  <RunAtWindowsStartupAdministrator>Run at Windows startup (administrator privileges)</RunAtWindowsStartupAdministrator>
-  <Select>Selected</Select>
-  <SelectionComplete>Selected</SelectionComplete>
-  <Setting>Setting</Setting>
-  <SettingsValue>Value set</SettingsValue>
-  <ShareSettings>Do you want to share configuration information with all users?</ShareSettings>
-  <Show>Displayed</Show>
-  <ShowThisApplicationWindow>Show this application window</ShowThisApplicationWindow>
-  <Size>Size</Size>
-  <SizeChangeAmount>Amount of resizing</SizeChangeAmount>
-  <SoftwareName>Software Name</SoftwareName>
-  <SpecifiedDisplay>Specified display</SpecifiedDisplay>
-  <SpecifyCancelTransparency>Specify/release transparency</SpecifyCancelTransparency>
-  <SpecifyPositionAndSize>Specify position and size</SpecifyPositionAndSize>
-  <SpecifyTransparency>Specify transparency</SpecifyTransparency>
-  <SpecifyWindow>Specify window</SpecifyWindow>
-  <StartStopProcessingOfAllWindow>Start/stop processing of "All windows</StartStopProcessingOfAllWindow>
-  <StartStopProcessingOfMagnet>Start/Stop processing of "Magnet</StartStopProcessingOfMagnet>
-  <StartStopProcessingOfSpecifyWindow>Start/Stop processing of "Designated Window</StartStopProcessingOfSpecifyWindow>
-  <StopProcessingShowAddModify>Stop processing when "Add/Modify" window is displayed</StopProcessingShowAddModify>
-  <StopProcessingWhenWindowIsFullScreen>Stop processing when a window is displayed in full screen</StopProcessingWhenWindowIsFullScreen>
-  <StopTimeWhenPasting>Stop time when stuck (milliseconds)</StopTimeWhenPasting>
-  <ThereAreDuplicateItems>There are duplicated items.</ThereAreDuplicateItems>
-  <ThereIsADuplicateProcessingName>There are duplicated process names.</ThereIsADuplicateProcessingName>
-  <ThereIsADuplicateRegistrationName>Duplicate registration name exists.</ThereIsADuplicateRegistrationName>
-  <ThereIsLatestVersion>There is the latest version.</ThereIsLatestVersion>
-  <Timer>Timer</Timer>
-  <TimerProcessing>Timer processing</TimerProcessing>
-  <TitleName>Title name</TitleName>
-  <TitleNameChanged>Title name has been changed.</TitleNameChanged>
-  <TitleNameExclusionString>String contained in title name</TitleNameExclusionString>
-  <TitleNameRequirements>Title name processing conditions</TitleNameRequirements>
-  <TopEdge>top end</TopEdge>
-  <Translators>Translator: DeepL</Translators>
-  <Transparency>Transparency</Transparency>
-  <UpdateCheck>Update confirmation</UpdateCheck>
-  <UpdateCheckFailed>Update confirmation failed.</UpdateCheckFailed>
-  <UpdateHistory>Update History</UpdateHistory>
-  <Version>Version</Version>
-  <WaitTimeToProcessingNextWindow>Latency to process next window (milliseconds)</WaitTimeToProcessingNextWindow>
-  <Website>Website</Website>
-  <Width>Width</Width>
-  <WidthSpecification>Width specification</WidthSpecification>
-  <WindowDecide>Window Judgment</WindowDecide>
-  <WindowDesignateMethod>How to specify window judgment</WindowDesignateMethod>
-  <WindowDesignateMethodExplain>You can specify "Title Name", "Class Name", and "File Name" to determine the window.
-What to specify and what not to specify is different for each window.
-If you specify all of them, the window may not be processed.
-For software that changes the "class name" each time the window is displayed, Do not specify a "class name" if the software changes the "class name" each time a window is displayed.
-For UWP applications, the "class name" and "file name" are the same for all applications except for a few, If the "Title Name" is not specified, it will not be correctly identified and windows of other apps will be processed.
-It is recommended to specify all of "Title Name", "Class Name" and "File Name".
-The class name is "ApplicationFrameWindow" and the file name is "C:\WINDOWS\system32\ApplicationFrameHost.exe", (This may change with Windows updates).</WindowDesignateMethodExplain>
-  <WindowInformation>Window Information</WindowInformation>
-  <WindowMoveOutsideToInside>If the window is off-screen, move it inside the screen</WindowMoveOutsideToInside>
-  <WindowState>Window status</WindowState>
-  <WindowWithTitleName>Window with title name</WindowWithTitleName>
-  <WindowWithoutTitleName>Window without title name</WindowWithoutTitleName>
-  <X>X</X>
-  <Y>Y</Y>
-  <Yes>Yes</Yes>
- </LanguagesWindow>
-</Languages>
+﻿{
+  "languageName": "English",
+  "errorOccurred": "An error has occurred.",
+  "check": "Confirmation",
+  "changeVersion": "Version has been changed",
+  "changeSettingToNewVersion": "Change settings to new version “Yes” / Change manually “No” / Disable process “Cancel",
+  "ok": "OK",
+  "yes": "Yes",
+  "no": "No",
+  "cancel": "Cancel",
+  "shareSettings": "Do you want to share the configuration information with all users?",
+  "open": "Open",
+  "batchProcessingOfSpecifyWindow": "Batch processing of “Designated Window",
+  "windowMoveOutsideToInside": "If window is off-screen, move it to on-screen",
+  "displayInformationUpdate": "Update display information",
+  "end": "End",
+  "updateCheckFailed": "Update confirmation failed.",
+  "latestVersion": "The latest version is available.",
+  "thereIsLatestVersion": "The latest version is available.",
+  "event": "Event",
+  "timer": "Timer",
+  "specifyWindow": "Designation Window",
+  "magnet": "Magnets",
+  "plugin": "Plug-in",
+  "pluginSettings": "Plug-in Settings",
+  "setting": "Settings",
+  "information": "Information",
+  "add": "Add",
+  "modify": "Modify",
+  "delete": "Delete",
+  "select": "Select",
+  "moveUp": "Move Up",
+  "moveDown": "Move Down",
+  "copy": "Copy",
+  "processingState": "Process Status",
+  "deleted": "Deleted.",
+  "allowDelete": "Do you want to delete?",
+  "version": "Version",
+  "updateCheck": "Update Confirmation",
+  "readme": "Information (Readme)",
+  "updateHistory": "Update History",
+  "website": "Website",
+  "reportsAndRequests": "Report, Request",
+  "library": "Library",
+  "general": "General",
+  "hotkey": "Hot Keys",
+  "language": "Languages",
+  "translators": "Translator: DeepL",
+  "darkMode": "Dark mode",
+  "automaticUpdateCheck": "Automatic update check at runtime",
+  "checkBetaVersion": "Check for updates, including beta versions",
+  "registerMultipleWindowActions": "Register multiple window processes",
+  "coordinate": "Coordinates",
+  "eachDisplay": "x=0, y=0 at the upper left of each display",
+  "primaryDisplay": "x=0, y=0 in the upper left corner of the primary display",
+  "fullScreenWindowAdditionDecision": "Full screen window add determination (only if not determined correctly)",
+  "processingInterval": "Processing interval (milliseconds)",
+  "runAtWindowsStartup": "Run at Windows startup",
+  "runAtWindowsStartupAdministrator": "Run at Windows startup (administrator privileges)",
+  "normalExecution": "Normal execution? (without administrator rights - “Yes” / with administrator rights - “No”)",
+  "waitTimeToProcessingNextWindow": "Wait time to process next window (milliseconds)",
+  "stopProcessingWhenWindowIsFullScreen": "Stop processing if a full window exists",
+  "caseSensitiveWindowQueries": "Case sensitivity in window determination",
+  "doNotChangePositionSizeOutOfScreen": "Do not change position or size when going off screen",
+  "stopProcessingShowAddModify": "Stop processing if add/modify window is visible",
+  "hotkeysDoNotStop": "Hotkeys are excluded",
+  "movePastePosition": "Shift the paste position",
+  "pasteToEdgeOfScreen": "Paste to edge of screen",
+  "pasteIntoAnotherWindow": "Paste to another window",
+  "pasteWithCtrlKeyPressed": "Paste while holding down the “Ctrl” key",
+  "keepPasteUntilKeyUp": "Paste will remain in place until the key is released",
+  "pastingTime": "Paste time (milliseconds)",
+  "decisionDistanceToPaste": "Paste distance",
+  "checkReadme": "Please refer to the “Readme (Instructions)” to see how to specify.",
+  "titleName": "Title Name",
+  "className": "Class name",
+  "fileName": "File name",
+  "display": "Display",
+  "windowState": "Window Status",
+  "processingType": "Processing type",
+  "specifyPositionAndSize": "Specify position and size",
+  "moveXCoordinate": "Move X coordinate",
+  "moveYCoordinate": "Move the Y coordinate",
+  "increaseDecreaseWidth": "Increase or decrease the width",
+  "increaseDecreaseHeight": "Increase or decrease the height",
+  "increaseDecreaseWidthAndHeight": "Increase/decrease width and height",
+  "startStopProcessingOfSpecifyWindow": "Start/Stop processing of “Specified Window",
+  "startStopProcessingOfAllWindow": "Start/Stop processing “All Windows",
+  "startStopProcessingOfMagnet": "Start/Stop processing “Magnet",
+  "showThisApplicationWindow": "Show windows of this application",
+  "showSystemTrayIconMenu": "Show menu of system tray icon",
+  "alwaysShowOrCancelOnTop": "Always show/show at the top of the screen",
+  "specifyCancelTransparency": "Specify/release transparency",
+  "leftEdge": "Left edge",
+  "middle": "Center",
+  "rightEdge": "Rightmost",
+  "topEdge": "Top",
+  "bottomEdge": "Bottom",
+  "x": "X",
+  "y": "Y",
+  "width": "Width",
+  "height": "Height",
+  "pixel": "px",
+  "percent": "% (%)",
+  "registeredName": "Registration Name",
+  "windowDecide": "Window Judgment",
+  "processingSettings": "Processing Settings",
+  "holdDownMousePointerMoveToSelectWindow": "Press and hold to move the mouse pointer to the window to be selected and release",
+  "getWindowInformation": "Window information acquisition",
+  "informationToBeObtained": "Information to be obtained",
+  "fileSelection": "File selection",
+  "folderSelection": "Folder selection",
+  "exactMatch": "Exact match",
+  "partialMatch": "Partial match",
+  "forwardMatch": "Forward Match",
+  "backwardMatch": "Backward Match",
+  "includePath": "Include paths",
+  "notIncludePath": "Does not include path",
+  "doNotSpecify": "Not specified",
+  "childWindow": "Child Window",
+  "titleNameRequirements": "Title name condition",
+  "windowWithoutTitleName": "Window without title name",
+  "windowWithTitleName": "Window with title name",
+  "processingName": "Process name",
+  "displayToUseAsStandard": "Display to be used as criteria",
+  "currentDisplay": "Current display",
+  "specifiedDisplay": "Specified display",
+  "limitedToSpecifiedDisplay": "Limited to specified display",
+  "processOnlyOnce": "Processed only once",
+  "onceWindowOpen": "When a window is opened",
+  "onceWhileItIsRunning": "While this software is running",
+  "foregrounded": "When the window goes to the foreground",
+  "moveSizeChangeEnd": "Finished moving or resizing",
+  "minimizeStart": "Minimization started",
+  "minimizeEnd": "Minimization finished",
+  "show": "Displayed",
+  "titleNameChanged": "Title name changed",
+  "eventDelayTime": "Waiting time for processing (milliseconds) (only for “Displayed”)",
+  "forefront": "foremost",
+  "doNotChange": "Never change",
+  "alwaysForefront": "Always foremost",
+  "alwaysCancelForefront": "Always release foremost",
+  "specifyTransparency": "Specify transparency",
+  "closeWindow": "Close window",
+  "timerProcessing": "Timer processing",
+  "numberOfTimesNotToProcessingFirst": "Number of times not processed first (delays processing immediately after execution)",
+  "normalWindow": "Normal window",
+  "maximize": "Maximize",
+  "minimize": "Minimize",
+  "processOnlyWhenNormalWindow": "Process only the “normal window” state",
+  "coordinateSpecification": "Specify coordinates",
+  "widthSpecification": "Width",
+  "heightSpecification": "Specify height",
+  "conditionsNotProcess": "Condition not to process",
+  "clientArea": "Target client area",
+  "titleNameExclusionString": "String included in title name",
+  "size": "Size",
+  "otherThanSpecifiedSize": "Other than specified size",
+  "otherThanSpecifiedVersion": "Other than the specified version (up to minor, etc. possible)",
+  "notification": "Notification",
+  "synchronizationOtherThanSpecifiedVersion": "Synchronized with “other than the specified version” in “Conditions not to process”.",
+  "retrievedAfterFiveSeconds": "Window information will be retrieved after 5 seconds, so please activate the window from which you want to retrieve information within 5 seconds.",
+  "obtained": "Retrieved.",
+  "thereAreDuplicateItems": "There are duplicate entries.",
+  "thereIsADuplicateRegistrationName": "There are duplicate registration names.",
+  "thereIsADuplicateProcessingName": "There are duplicate process names.",
+  "conditionsNotToBeProcessed": "Specify the window condition not to be processed.",
+  "added": "Added.",
+  "modified": "Corrected.",
+  "processingWindowRange": "Range of windows to process",
+  "activeWindowOnly": "Active window only",
+  "allWindow": "All windows",
+  "onlyActiveWindowSpecifyWindow": "Only active window of “specified window” is processed",
+  "amountOfMovement": "Amount of movement",
+  "sizeChangeAmount": "Amount of resizing",
+  "transparency": "Transparency",
+  "numericCalculation": "Numeric calculation",
+  "ratio": "Ratio",
+  "explanationOfSpecifyWindow": "This function processes windows that match a condition. There are two methods: automatic processing by events and timers, and manual processing by hot keys.",
+  "explanationOfAllWindow": "Process all windows. This function is executed when an event that has been enabled occurs. Windows that match the conditions of “All windows” or “Specified windows” are excluded (including disabled items), but windows processed by plug-ins are not excluded.",
+  "hotkeyExplanation": "This function handles active windows with hot keys. Using the “Select” button while an item is selected, the selected window can be processed.",
+  "magnetExplanation": "The ability to paste a window to the edge of the screen or another window while moving it with the mouse.",
+  "pluginExplanation": "Plug-ins can be added for additional functionality.",
+  "settingsValue": "Value set",
+  "windowInformation": "Window information",
+  "moveAllWindowToSpecifiedPosition": "Move all windows to the specified position",
+  "cancelMoveWindow": "Windows not moved",
+  "position": "Position",
+  "restart": "Restart",
+  "needRestart": "You must restart this software.",
+  "help": "Help",
+  "newSettingFile": "The format of the configuration file has changed. Do you want to delete the configuration file in its previous format?",
+  "pluginFolder": "Plug-in Folders",
+  "eventTimer": "Events, Timers",
+  "activeWindow": "Active Window",
+  "question": "?",
+  "coordinateDetailedExplanation": " - About coordinates\r\nThe upper left corner of the display is “x=0,y=0”, the value increases as you go to the lower right corner, and the value decreases as you go to the upper left corner. This is the same as the Windows specification. \r\n\r\n - About “Coordinates” in “Settings” \r\n\r\nThis can be set when there are multiple displays. \r\n\r\n“x=0, y=0” for the upper left corner of each display” is the coordinate with ‘x=0, y=0’ for the upper left corner of each display. \r\n“x=0, y=0” for the upper left of the primary display” are the coordinates with ‘x=0, y=0’ for the upper left of the reference display. If a display is set to the left or above the primary display, the numeric value of the coordinates of the display to the left or above the primary display will be negative.",
+  "windowDecisionDetailedExplanation": "The window can be judged by specifying “title name,” “class name,” or “file name. \r\nWhat to specify and what not to specify is different for each window. \r\nIf you specify all, the window may not be processed. \r\nDo not specify a “class name” if the software has a different “class name” each time the window is displayed. Since the “class name” and “file name” of \r\nUWP apps are the same for all apps, if you do not specify a “title name,” all UWP app windows will be processed. It is better to specify all of “Title Name”, “Class Name” and “File Name”.",
+  "eventTimerDetailedExplanation": " - Events\r\nProcesses events when a window is displayed, moved, etc. \r\nInitially disabled, so only necessary events are enabled. \r\nDepending on the processing on the software side, some events may occur differently than usual, some events may not occur, etc., and may not be processed correctly. \r\n\r\n - Timer \r\nProcesses at regular intervals. \r\nLonger processing intervals result in less load, but may not be processed immediately. If the processing interval is shortened, the load is higher, but it will be processed immediately.",
+  "clientAreaDetailedExplanation": "The client area is the area excluding the title bar and window frame. \r\nThe client area can be recognized for standard title bars and frames. \r\nIf the software draws its own title bar or frame, the client area may not be recognized correctly and may not be at the specified position or size.",
+  "activeWindowDetailedExplanation": " - Active Window\r\nThe active window is the window that is selected. \r\nIn text editors, for example, you can input keyboard input, but the state in which you can input is active and the state in which you cannot input is inactive.",
+  "pluginDetailedExplanation": "You can add functionality by using plug-ins. If you do not find a function you need in the standard functions, you may want to look for a plug-in. \r\nEveryone is free to develop them. Be aware that there may be malicious plug-ins as well as useful ones. \r\n\r\n - How to add and use plug-ins \r\n1. : Find and download the plug-in. \r\n2. : Find the “Plugins” folder in the location where the software resides and add the plug-in. \r\n\r\n3. : Enable the plugin to work. \r\n\r\n - How to disable a plugin \r\n\r\n : After performing the disable operation, you must restart this software (items unchecked, “processing state” disabled). \r\n\r\n - How to delete a plugin \r\n\r\n - Delete the plugin file. If the plugin you are deleting is not running, you can delete it even while this software is running. If it is running, you need to stop this software and delete it. \r\n\r\n - About “Plug-in Settings” \r\n\r\nA window prepared by the plug-in will be displayed. If there is no window, the plugin is disabled and not running, or the plugin item is not selected, you will not be able to press the button. \r\nThis software setting is not used by the plug-in.",
+  "childWindowExplanation": "A window owned by another window is a child window, and the window that owns the child window is the parent window. \r\nWindows such as “Options” and “About” are child windows (unless they are not created as child windows). \r\n“Title name” and “Class name” are basically different from the parent window, so if they are specified, the child window will not be processed. If only \r\n“File name” is specified, not only the parent window but also the child windows will be processed, so by enabling it, only the parent window can be processed."
+}
