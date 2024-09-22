@@ -8,7 +8,6 @@
             <ResourceDictionary.MergedDictionaries>
                 <ui:XamlControlsResources />
                 <ui:ThemeResources RequestedTheme="Light"/>
-                <ResourceDictionary Source="Sources/Style/MyStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

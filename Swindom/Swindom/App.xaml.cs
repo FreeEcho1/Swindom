@@ -6,9 +6,9 @@
     public partial class App : Application
     {
         /// <summary>
-        /// システムトレイアイコンの処理
+        /// システムトレイアイコンのウィンドウ
         /// </summary>
-        NotifyIconProcessing NotifyIconProcessing;
+        private MainProcessing MainProcessing;
         /// <summary>
         /// 多重起動を防止する為のミューテックス
         /// </summary>
@@ -25,20 +25,21 @@
             bool taskCheck = false;     // タスクスケジューラ処理かの値
             foreach (string nowCommand in Environment.GetCommandLineArgs())
             {
-                switch (nowCommand)
+                if (nowCommand == ApplicationStartup.CreateTaskString)
                 {
-                    case StartupProcessing.CreateTaskString:
-                        taskCheck = true;
-                        StartupProcessing.RegisterTask();
-                        Shutdown();
-                        Environment.Exit(0);
-                        return;
-                    case StartupProcessing.DeleteTaskString:
-                        taskCheck = true;
-                        StartupProcessing.DeleteTask();
-                        Shutdown();
-                        Environment.Exit(0);
-                        return;
+                    taskCheck = true;
+                    ApplicationStartup.RegisterTask();
+                    Shutdown();
+                    Environment.Exit(0);
+                    return;
+                }
+                else if (nowCommand == ApplicationStartup.DeleteTaskString)
+                {
+                    taskCheck = true;
+                    ApplicationStartup.DeleteTask();
+                    Shutdown();
+                    Environment.Exit(0);
+                    return;
                 }
             }
 
@@ -66,8 +67,8 @@
                 base.OnStartup(e);
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
-                NotifyIconProcessing = new();
-                NotifyIconProcessing.CloseEvent += NoWindow_CloseEvent;
+                MainProcessing = new();
+                MainProcessing.CloseEvent += NotifyIconWindow_CloseEvent;
             }
         }
 
@@ -76,22 +77,9 @@
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void NoWindow_CloseEvent(
-            object? sender,
-            CloseEventArgs e
-            )
-        {
-            Shutdown();
-        }
-
-        /// <summary>
-        /// NotifyIconWindowが閉じられた
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void NotifyIconWindow_CloseEvent(
             object? sender,
-            CloseEventArgs e
+            EventArgs e
             )
         {
             Shutdown();

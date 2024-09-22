@@ -7,13 +7,8 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Sources\WindowAndControls\CheckListBoxItem.xaml.cs">
-      <SubType>Code</SubType>
+    <Compile Update="Sources\WindowAndControls\NotifyIcon\NotifyIconWindow.cs">
+      <SubType>Form</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Sources\WindowAndControls\CheckListBoxItem.xaml">
-      <SubType>Designer</SubType>
-    </Page>
   </ItemGroup>
 </Project>
