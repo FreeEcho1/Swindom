@@ -23,10 +23,10 @@ Windows 10 (Windows 10 May 2019 Update (Version 1903) 以降)<br>
 Windows 11<br>
 <br>
 [必要なもの]<br>
- - .NET 7<br>
-「.NET 7」がインストールされていない場合はインストールしてください。<br>
-インストールされていない場合はメッセージが表示されます。<br>
-OSやOSのバージョンで違いますが、標準で対応しているバージョンが含まれている場合があります。<br>
+ - .NET 8<br>
+.NET 8で開発されたソフトウェアを動かすために必要です。<br>
+「.NET 8」がインストールされていない場合はインストールしてください。<br>
+インストールされていない場合は実行できず、メッセージが表示されてダウンロードページを開くことができます。<br>
 <br>
 [機能]<br>
  - ウィンドウの位置やサイズの変更<br>
@@ -38,12 +38,8 @@ OSやOSのバージョンで違いますが、標準で対応しているバー�
  - マルチディスプレイに対応<br>
 <br>
 [使用しているもの]<br>
-.NET Runtime<br>
-https://github.com/dotnet/runtime<br>
 ModernWpf<br>
 https://github.com/Kinnara/ModernWpf<br>
-Hardcodet NotifyIcon for WPF<br>
-https://github.com/hardcodet/wpf-notifyicon<br>
 FreeEcho Window Event<br>
 https://github.com/FreeEcho1/FreeEcho-Window-Event<br>
 FreeEcho HotKey WPF<br>
