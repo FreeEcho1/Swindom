@@ -1,0 +1,27 @@
+﻿<Window x:Class="Swindom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="Swindom" Height="500" Width="700" MinWidth="400" MinHeight="300">
+    <Grid>
+        <ui:NavigationView x:Name="MainNavigationView" SelectionFollowsFocus="Enabled" IsPaneToggleButtonVisible="False" OpenPaneLength="160" IsSettingsVisible="False" IsBackButtonVisible="Collapsed" PaneDisplayMode="Left" IsTitleBarAutoPaddingEnabled="False">
+            <ui:NavigationView.MenuItems>
+                <local:ImageNavigationViewItem x:Name="SpecifyWindowNavigationViewItem" Image="/Resources/SpecifyWindowProcessingDark.png" Text="指定ウィンドウ" Tag="Event"/>
+                <local:ImageNavigationViewItem x:Name="AllWindowNavigationViewItem" Image="/Resources/AllWindowProcessingDark.png" Text="全てのウィンドウ" Tag="AllWindow"/>
+                <local:ImageNavigationViewItem x:Name="MagnetNavigationViewItem" Image="/Resources/MagnetProcessingDark.png" Text="マグネット" Tag="Magnet"/>
+                <local:ImageNavigationViewItem x:Name="HotkeyNavigationViewItem" Image="/Resources/HotkeyProcessingDark.png" Text="ホットキー" Tag="Hotkey"/>
+                <local:ImageNavigationViewItem x:Name="PluginNavigationViewItem" Image="/Resources/PluginProcessingDark.png" Text="プラグイン" Tag="Plugin"/>
+            </ui:NavigationView.MenuItems>
+            <ui:NavigationView.FooterMenuItems>
+                <local:ImageNavigationViewItem x:Name="SettingsNavigationViewItem" Image="/Resources/SettingsDark.png" Text="設定" Tag="Settings"/>
+                <local:ImageNavigationViewItem x:Name="InformationNavigationViewItem" Image="/Resources/InformationDark.png" Text="情報" Tag="Information"/>
+            </ui:NavigationView.FooterMenuItems>
+            <ui:Frame x:Name="MainNavigationViewFrame"/>
+        </ui:NavigationView>
+    </Grid>
+</Window>

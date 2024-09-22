@@ -1,0 +1,315 @@
+﻿<Window x:Class="Swindom.SpecifyWindowItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="追加" MinWidth="490" MaxWidth="800" MinHeight="300" MaxHeight="1800" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" HorizontalAlignment="Left" Margin="10">
+            <Label x:Name="RegisteredNameLabel" Content="登録名"/>
+            <TextBox x:Name="RegisteredNameTextBox" TextWrapping="NoWrap" Width="400" Margin="0,5,0,0"/>
+            <StackPanel x:Name="GetWindowInformationStackPanel" Orientation="Horizontal" Margin="0,5,0,0">
+                <Button x:Name="GetWindowInformationButton" Content="ウィンドウ情報取得" MinWidth="320" MaxWidth="380"/>
+                <Button x:Name="TargetButton" ToolTip="押したまま選択するウィンドウにマウスポインターを移動させて放す" Width="32" Margin="5,0,0,0" Padding="2">
+                    <Image x:Name="TargetImage" Source="/Resources/TargetDark.png"/>
+                </Button>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TabControl TabStripPlacement="Left" Grid.Row="1" Margin="0,10,0,0">
+                <TabItem x:Name="InformationToBeObtainedTabItem" Header="取得する情報">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <CheckBox x:Name="GetInformationTitleNameCheckBox" Content="タイトル名"/>
+                            <CheckBox x:Name="GetInformationClassNameCheckBox" Content="クラス名" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationFileNameCheckBox" Content="ファイル名" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationDisplayCheckBox" Content="ディスプレイ" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationWindowStateCheckBox" Content="ウィンドウの状態" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationXCheckBox" Content="X" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationYCheckBox" Content="Y" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationWidthCheckBox" Content="幅" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationHeightCheckBox" Content="高さ" Margin="0,5,0,0"/>
+                            <CheckBox x:Name="GetInformationVersionCheckBox" Content="バージョン" Margin="0,5,0,0"/>
+                            <Label x:Name="GetInformationVersionLabel" Content="バージョン" Margin="0,5,0,0"/>
+                            <TextBox x:Name="GetInformationVersionTextBox" Margin="0,5,0,0" IsReadOnly="True"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="WindowDecisionTabItem" Header="ウィンドウ判定">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <Button x:Name="WindowDecisionExplanationButton" Content="?" ToolTip="ヘルプ"/>
+                            <Label x:Name="DecisionTitleNameLabel" Content="タイトル名" Margin="0,5,0,0"/>
+                            <TextBox x:Name="DecisionTitleNameTextBox" TextWrapping="NoWrap" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="DecisionTitleNameMatchingConditionComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="DecisionTitleNameMatchingConditionExactMatchComboBoxItem" Content="完全一致"/>
+                                <ComboBoxItem x:Name="DecisionTitleNameMatchingConditionPartialMatchComboBoxItem" Content="部分一致"/>
+                                <ComboBoxItem x:Name="DecisionTitleNameMatchingConditionForwardMatchComboBoxItem" Content="前方一致"/>
+                                <ComboBoxItem x:Name="DecisionTitleNameMatchingConditionBackwardMatchComboBoxItem" Content="後方一致"/>
+                            </ComboBox>
+                            <Label x:Name="DecisionClassNameLabel" Content="クラス名" Margin="0,5,0,0"/>
+                            <TextBox x:Name="DecisionClassNameTextBox" Margin="0,5,0,0" TextWrapping="NoWrap"/>
+                            <ComboBox x:Name="DecisionClassNameMatchingConditionComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="DecisionClassNameMatchingConditionExactMatchComboBoxItem" Content="完全一致"/>
+                                <ComboBoxItem x:Name="DecisionClassNameMatchingConditionPartialMatchComboBoxItem" Content="部分一致"/>
+                                <ComboBoxItem x:Name="DecisionClassNameMatchingConditionForwardMatchComboBoxItem" Content="前方一致"/>
+                                <ComboBoxItem x:Name="DecisionClassNameMatchingConditionBackwardMatchComboBoxItem" Content="後方一致"/>
+                            </ComboBox>
+                            <Label x:Name="DecisionFileNameLabel" Content="ファイル名" Margin="0,5,0,0"/>
+                            <Grid Margin="0,5,0,0">
+                                <TextBox x:Name="DecisionFileNameTextBox" Margin="0,0,39,0" TextWrapping="NoWrap"/>
+                                <Button x:Name="DecisionFileNameFileSelectionButton" Content="..." ToolTip="ファイル選択" HorizontalAlignment="Right" Width="34"/>
+                            </Grid>
+                            <ComboBox x:Name="DecisionFileNameMatchingConditionComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="DecisionFileNameMatchingConditionIncludePathComboBoxItem" Content="パスを含む"/>
+                                <ComboBoxItem x:Name="DecisionFileNameMatchingConditionNotIncludePathComboBoxItem" Content="パスを含まない"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="ProcessingSettingsTabItem" Header="処理設定">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <Label x:Name="ProcessingSettingsStandardDisplayLabel" Content="基準にするディスプレイ"/>
+                            <ComboBox x:Name="ProcessingSettingsStandardDisplayComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="ProcessingSettingsStandardDisplayCurrentDisplayComboBoxItem" Content="現在のディスプレイ"/>
+                                <ComboBoxItem x:Name="ProcessingSettingsStandardDisplaySpecifiedDisplayComboBoxItem" Content="指定したディスプレイ"/>
+                                <ComboBoxItem x:Name="ProcessingSettingsStandardDisplayLimitedToSpecifiedDisplayComboBoxItem" Content="指定したディスプレイ限定"/>
+                            </ComboBox>
+                            <Label x:Name="ProcessingSettingsOneTimeProcessingLabel" Content="一度だけ処理" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="ProcessingSettingsOneTimeProcessingComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="ProcessingSettingsOneTimeProcessingDoNotSpecifyComboBoxItem" Content="指定しない"/>
+                                <ComboBoxItem x:Name="ProcessingSettingsOneTimeProcessingOnceWindowOpenComboBoxItem" Content="ウィンドウが開かれた時"/>
+                                <ComboBoxItem x:Name="ProcessingSettingsOneTimeProcessingOnceWhileItIsRunningComboBoxItem" Content="このソフトウェアが実行されている間"/>
+                            </ComboBox>
+                            <GroupBox x:Name="ProcessingSettingsEventGroupBox" Header="イベント" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button x:Name="EventExplanationButton" Content="?" ToolTip="ヘルプ"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsForegroundToggleSwitch" OffContent="フォアグラウンドになった" OnContent="フォアグラウンドになった" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsMoveSizeEndToggleSwitch" OffContent="移動及びサイズの変更が終了した" OnContent="移動及びサイズの変更が終了した" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsMinimizeStartToggleSwitch" OffContent="最小化が開始された" OnContent="最小化が開始された" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsMinimizeEndToggleSwitch" OffContent="最小化が終了した" OnContent="最小化が終了した" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsShowToggleSwitch" OffContent="表示された" OnContent="表示された" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsNameChangeToggleSwitch" OffContent="タイトル名が変更された" OnContent="タイトル名が変更された" Margin="0,5,0,0"/>
+                                    <Label x:Name="ProcessingSettingsEventDelayTimeLabel" Content="処理の待ち時間 (ミリ秒) (「表示された」のみ)" Margin="0,5,0,0"/>
+                                    <ui:NumberBox x:Name="ProcessingSettingsEventDelayTimeNumberBox" HorizontalAlignment="Left" Width="150" Margin="0,5,0,0" Maximum="10000" Minimum="0" SpinButtonPlacementMode="Inline"/>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox x:Name="ProcessingSettingsTimerGroupBox" Header="タイマー" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <Button x:Name="TimerExplanationButton" Content="?" ToolTip="ヘルプ"/>
+                                    <ui:ToggleSwitch x:Name="ProcessingSettingsTimerProcessingToggleSwitch" OffContent="タイマー処理" OnContent="タイマー処理" Margin="0,5,0,0"/>
+                                    <Label x:Name="ProcessingSettingsDelayLabel" Content="最初に処理しない回数 (実行直後の処理を遅らせる)" Margin="0,5,0,0"/>
+                                    <ui:NumberBox x:Name="ProcessingSettingsDelayNumberBox" HorizontalAlignment="Left" Width="150" Margin="0,5,0,0" Maximum="1000" Minimum="0" SpinButtonPlacementMode="Inline"/>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="WindowProcessingTabItem" Header="ウィンドウ処理">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <Label x:Name="WindowProcessingProcessNameLabel" Content="処理名"/>
+                            <TextBox x:Name="WindowProcessingProcessNameTextBox" Margin="0,5,0,0" TextWrapping="NoWrap"/>
+                            <Label x:Name="WindowProcessingDisplayLabel" Content="ディスプレイ" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="WindowProcessingDisplayComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0"/>
+                            <StackPanel x:Name="WindowProcessingDisableIfCloseIsEnabledStackPanel">
+                                <Label x:Name="WindowProcessingWindowStateLabel" Content="ウィンドウの状態" Margin="0,5,0,0"/>
+                                <ComboBox x:Name="WindowProcessingWindowStateComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                    <ComboBoxItem x:Name="WindowProcessingWindowStateDoNotChangeComboBoxItem" Content="変更しない"/>
+                                    <ComboBoxItem x:Name="WindowProcessingWindowStateNormalWindowComboBoxItem" Content="通常のウィンドウ"/>
+                                    <ComboBoxItem x:Name="WindowProcessingWindowStateMaximizeComboBoxItem" Content="最大化"/>
+                                    <ComboBoxItem x:Name="WindowProcessingWindowStateMinimizeComboBoxItem" Content="最小化"/>
+                                </ComboBox>
+                                <Label x:Name="WindowProcessingXLabel" Content="X" Margin="0,5,0,0"/>
+                                <StackPanel x:Name="WindowProcessingXStackPanel">
+                                    <ComboBox x:Name="WindowProcessingXComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                        <ComboBoxItem x:Name="WindowProcessingXDoNotChangeComboBoxItem" Content="変更しない"/>
+                                        <ComboBoxItem x:Name="WindowProcessingXLeftEdgeComboBoxItem" Content="左端"/>
+                                        <ComboBoxItem x:Name="WindowProcessingXMiddleComboBoxItem" Content="中央"/>
+                                        <ComboBoxItem x:Name="WindowProcessingXRightEdgeComboBoxItem" Content="右端"/>
+                                        <ComboBoxItem x:Name="WindowProcessingXCoordinateSpecificationComboBoxItem" Content="座標指定"/>
+                                    </ComboBox>
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <ui:NumberBox x:Name="WindowProcessingXNumberBox" Width="180" SpinButtonPlacementMode="Inline"/>
+                                        <ComboBox x:Name="WindowProcessingXTypeComboBox" MinWidth="70" Margin="5,0,0,0" SelectedIndex="0">
+                                            <ComboBoxItem x:Name="WindowProcessingXTypePixelComboBoxItem" Content="px"/>
+                                            <ComboBoxItem x:Name="WindowProcessingXTypePercentComboBoxItem" Content="%"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Label x:Name="WindowProcessingYLabel" Content="Y" Margin="0,5,0,0"/>
+                                <StackPanel x:Name="WindowProcessingYStackPanel">
+                                    <ComboBox x:Name="WindowProcessingYComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                        <ComboBoxItem x:Name="WindowProcessingYDoNotChangeComboBoxItem" Content="変更しない"/>
+                                        <ComboBoxItem x:Name="WindowProcessingYTopEdgeComboBoxItem" Content="上端"/>
+                                        <ComboBoxItem x:Name="WindowProcessingYMiddleComboBoxItem" Content="中央"/>
+                                        <ComboBoxItem x:Name="WindowProcessingYBottomEdgeComboBoxItem" Content="下端"/>
+                                        <ComboBoxItem x:Name="WindowProcessingYCoordinateSpecificationComboBoxItem" Content="座標指定"/>
+                                    </ComboBox>
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <ui:NumberBox x:Name="WindowProcessingYNumberBox" Width="180" SpinButtonPlacementMode="Inline"/>
+                                        <ComboBox x:Name="WindowProcessingYTypeComboBox" MinWidth="70" Margin="5,0,0,0" SelectedIndex="0">
+                                            <ComboBoxItem x:Name="WindowProcessingYTypePixelComboBoxItem" Content="px"/>
+                                            <ComboBoxItem x:Name="WindowProcessingYTypePercentComboBoxItem" Content="%"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Label x:Name="WindowProcessingWidthLabel" Content="幅" Margin="0,5,0,0"/>
+                                <StackPanel x:Name="WindowProcessingWidthStackPanel" Margin="0,5,0,0">
+                                    <ComboBox x:Name="WindowProcessingWidthComboBox" HorizontalAlignment="Stretch" SelectedIndex="0">
+                                        <ComboBoxItem x:Name="WindowProcessingWidthDoNotChangeComboBoxItem" Content="変更しない"/>
+                                        <ComboBoxItem x:Name="WindowProcessingWidthWidthSpecificationComboBoxItem" Content="幅指定"/>
+                                    </ComboBox>
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <ui:NumberBox x:Name="WindowProcessingWidthNumberBox" Width="180" Minimum="0" SpinButtonPlacementMode="Inline"/>
+                                        <ComboBox x:Name="WindowProcessingWidthTypeComboBox" MinWidth="70" Margin="5,0,0,0" SelectedIndex="0">
+                                            <ComboBoxItem x:Name="WindowProcessingWidthTypePixelComboBoxItem" Content="px"/>
+                                            <ComboBoxItem x:Name="WindowProcessingWidthTypePercentComboBoxItem" Content="%"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Label x:Name="WindowProcessingHeightLabel" Content="高さ" Margin="0,5,0,0"/>
+                                <StackPanel x:Name="WindowProcessingHeightStackPanel" Margin="0,5,0,0">
+                                    <ComboBox x:Name="WindowProcessingHeightComboBox" HorizontalAlignment="Stretch" SelectedIndex="0">
+                                        <ComboBoxItem x:Name="WindowProcessingHeightDoNotChangeComboBoxItem" Content="変更しない"/>
+                                        <ComboBoxItem x:Name="WindowProcessingHeightHeightSpecificationComboBoxItem" Content="高さ指定"/>
+                                    </ComboBox>
+                                    <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                        <ui:NumberBox x:Name="WindowProcessingHeightNumberBox" Width="180" Minimum="0" SpinButtonPlacementMode="Inline"/>
+                                        <ComboBox x:Name="WindowProcessingHeightTypeComboBox" MinWidth="70" Margin="5,0,0,0" SelectedIndex="0">
+                                            <ComboBoxItem x:Name="WindowProcessingHeightTypePixelComboBoxItem" Content="px"/>
+                                            <ComboBoxItem x:Name="WindowProcessingHeightTypePercentComboBoxItem" Content="%"/>
+                                        </ComboBox>
+                                    </StackPanel>
+                                </StackPanel>
+                                <ui:ToggleSwitch x:Name="WindowProcessingNormalWindowOnlyToggleSwitch" OffContent="「通常のウィンドウ」の状態のみ処理する" OnContent="「通常のウィンドウ」の時のみ処理する" Margin="0,5,0,0"/>
+                                <ui:ToggleSwitch x:Name="WindowProcessingClientAreaToggleSwitch" OffContent="クライアントエリアを対象とする" OnContent="クライアントエリアを対象とする" Margin="0,5,0,0"/>
+                                <Label x:Name="WindowProcessingForefrontLabel" Content="最前面" Margin="0,5,0,0"/>
+                                <ComboBox x:Name="WindowProcessingForefrontComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                    <ComboBoxItem x:Name="WindowProcessingForefrontDoNotChangeComboBoxItem" Content="変更しない"/>
+                                    <ComboBoxItem x:Name="WindowProcessingForefrontAlwaysForefrontComboBoxItem" Content="常に最前面"/>
+                                    <ComboBoxItem x:Name="WindowProcessingForefrontAlwaysCancelForefrontComboBoxItem" Content="常に最前面解除"/>
+                                    <ComboBoxItem x:Name="WindowProcessingForefrontForefrontComboBoxItem" Content="最前面"/>
+                                </ComboBox>
+                                <Grid Margin="0,5,0,0">
+                                    <ui:ToggleSwitch x:Name="WindowProcessingSpecifyTransparencyToggleSwitch" OffContent="透明度指定" OnContent="透明度指定"/>
+                                    <ui:NumberBox x:Name="WindowProcessingTransparencyNumberBox" HorizontalAlignment="Right" Width="140" Maximum="255" Value="255" SpinButtonPlacementMode="Inline"/>
+                                </Grid>
+                            </StackPanel>
+                            <ui:ToggleSwitch x:Name="WindowProcessingCloseWindowToggleSwitch" OffContent="ウィンドウを閉じる" OnContent="ウィンドウを閉じる" Margin="0,5,0,0"/>
+                            <Label x:Name="WindowProcessingHotkeyLabel" Content="ホットキー" Margin="0,5,0,0"/>
+                            <TextBox x:Name="WindowProcessingHotkeyTextBox" Margin="0,5,0,0" TextWrapping="NoWrap"/>
+                            <StackPanel x:Name="WindowProcessingAddModifyStackPanel" Orientation="Horizontal" Margin="0,10,0,0">
+                                <Button x:Name="WindowProcessingAddProcessingButton" Content="追加" Width="150"/>
+                                <Button x:Name="WindowProcessingModifyProcessingButton" Content="修正" Width="150" Margin="5,0,0,0"/>
+                            </StackPanel>
+                            <ListBox x:Name="WindowProcessingListBox" Height="200" Margin="0,10,0,0"/>
+                            <StackPanel x:Name="WindowProcessingCopyDeleteStackPanel" Orientation="Horizontal" Grid.Row="1" Margin="0,10,0,0">
+                                <Button x:Name="WindowProcessingCopyProcessingButton" Content="コピー" Width="150"/>
+                                <Button x:Name="WindowProcessingDeleteProcessingButton" Content="削除" Width="150" Margin="5,0,5,0"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="ConditionsNotProcessTabItem" Header="処理しない条件">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <ui:ToggleSwitch x:Name="ConditionsNotProcessChildWindowToggleSwitch" OffContent="子ウィンドウ" OnContent="子ウィンドウ"/>
+                                <Button x:Name="ChildWindowExplanationButton" Content="?" ToolTip="ヘルプ" Margin="5,0,0,0"/>
+                            </StackPanel>
+                            <Label x:Name="ConditionsNotProcessTitleNameRequirementsLabel" Content="タイトル名の条件" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="ConditionsNotProcessTitleNameRequirementsComboBox" HorizontalAlignment="Stretch" Margin="0,5,0,0" SelectedIndex="0">
+                                <ComboBoxItem x:Name="ConditionsNotProcessTitleNameRequirementsDoNotSpecifyComboBoxItem" Content="指定しない"/>
+                                <ComboBoxItem x:Name="ConditionsNotProcessTitleNameRequirementsWindowWithoutTitleNameComboBoxItem" Content="タイトル名がないウィンドウ"/>
+                                <ComboBoxItem x:Name="ConditionsNotProcessTitleNameRequirementsWindowWithTitleNameComboBoxItem" Content="タイトル名があるウィンドウ"/>
+                            </ComboBox>
+                            <Label x:Name="ConditionsNotProcessOtherThanSpecifiedVersionLabel" Content="指定したバージョン以外 (マイナーまでなど可能)" Margin="0,5,0,0"/>
+                            <TextBox x:Name="ConditionsNotProcessOtherThanSpecifiedVersionTextBox" Margin="0,5,0,0"/>
+                            <GroupBox x:Name="ConditionsNotProcessTitleNameExclusionStringGroupBox" Header="タイトル名に含まれる文字列" Margin="0,5,0,0">
+                                <StackPanel>
+                                    <ListBox x:Name="ConditionsNotProcessExclusionTitleNameStringListBox" Height="150"/>
+                                    <TextBox x:Name="ConditionsNotProcessTitleNameExclusionStringTextBox" Margin="0,5,0,0"/>
+                                    <StackPanel Margin="0,10,0,10" Orientation="Horizontal">
+                                        <Button x:Name="ConditionsNotProcessAddTitleNameExclusionStringButton" Content="追加" Width="150"/>
+                                        <Button x:Name="ConditionsNotProcessDeleteTitleNameExclusionStringButton" Content="削除" Width="150" Margin="5,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox x:Name="ConditionsNotProcessSizeGroupBox" Header="サイズ" Margin="0,10,0,0">
+                                <StackPanel>
+                                    <ListBox x:Name="ConditionsNotProcessSizeListBox" Height="150"/>
+                                    <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                        <StackPanel Width="170">
+                                            <Label x:Name="ConditionsNotProcessSizeWidthLabel" Content="幅"/>
+                                            <ui:NumberBox x:Name="ConditionsNotProcessSizeWidthNumberBox" Value="0" Minimum="0" Margin="0,5,0,0" SpinButtonPlacementMode="Inline"/>
+                                        </StackPanel>
+                                        <StackPanel Width="170" Margin="5,0,0,0">
+                                            <Label x:Name="ConditionsNotProcessSizeHeightLabel" Content="高さ"/>
+                                            <ui:NumberBox x:Name="ConditionsNotProcessSizeHeightNumberBox" Value="0" Minimum="0" Margin="0,5,0,0" SpinButtonPlacementMode="Inline"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                        <Button x:Name="ConditionsNotProcessSizeAddButton" Content="追加" Width="150"/>
+                                        <Button x:Name="ConditionsNotProcessSizeDeleteButton" Content="削除" Width="150" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+                            <GroupBox x:Name="ConditionsNotProcessOtherThanSpecifiedSizeGroupBox" Header="指定したサイズ以外" Margin="0,10,0,0">
+                                <StackPanel>
+                                    <ListBox x:Name="ConditionsNotProcessOtherThanSpecifiedSizeListBox" Height="150"/>
+                                    <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                        <StackPanel Width="170">
+                                            <Label x:Name="ConditionsNotProcessOtherThanSpecifiedSizeWidthLabel" Content="幅"/>
+                                            <ui:NumberBox x:Name="ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox" Value="0" Minimum="0" Margin="0,5,0,0" SpinButtonPlacementMode="Inline"/>
+                                        </StackPanel>
+                                        <StackPanel Width="170" Margin="5,0,0,0">
+                                            <Label x:Name="ConditionsNotProcessOtherThanSpecifiedSizeHeightLabel" Content="高さ"/>
+                                            <ui:NumberBox x:Name="ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox" Value="0" Minimum="0" Margin="0,5,0,0" SpinButtonPlacementMode="Inline"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal">
+                                        <Button x:Name="ConditionsNotProcessOtherThanSpecifiedSizeAddButton" Content="追加" Width="150"/>
+                                        <Button x:Name="ConditionsNotProcessOtherThanSpecifiedSizeDeleteButton" Content="削除" Width="150" Margin="10,0,0,0"/>
+                                    </StackPanel>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem x:Name="NotificationTabItem" Header="通知">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel Margin="10,10,20,10">
+                            <GroupBox x:Name="NotificationVersionGroupBox" Header="バージョン" Margin="0,10,0,0">
+                                <StackPanel>
+                                    <ui:ToggleSwitch x:Name="NotificationVersionAnnounceToggleSwitch" OffContent="通知" OnContent="通知" Margin="0,5,0,0"/>
+                                    <Label x:Name="NotificationOtherThanSpecifiedVersionLabel" Content="指定したバージョン以外 (マイナーまでなど可能)" Margin="0,5,0,0"/>
+                                    <TextBox x:Name="NotificationOtherThanSpecifiedVersionTextBox" Margin="0,5,0,0"/>
+                                    <ui:ToggleSwitch x:Name="NotificationSynchronizationVersionToggleSwitch" OffContent="「処理しない条件」の「指定したバージョン以外」と同期" OnContent="「処理しない条件」の「指定したバージョン以外」と同期" Margin="0,5,0,0"/>
+                                </StackPanel>
+                            </GroupBox>
+                        </StackPanel>
+                    </ScrollViewer>
+                </TabItem>
+            </TabControl>
+        </Grid>
+        <StackPanel Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,10,10" Orientation="Horizontal">
+            <Button x:Name="AddOrModifyButton" Content="追加" Width="150" IsDefault="True"/>
+            <Button x:Name="CancelButton" Content="キャンセル" Width="150" Margin="5,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

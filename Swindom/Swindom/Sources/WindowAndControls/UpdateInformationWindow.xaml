@@ -1,0 +1,16 @@
+﻿<Window x:Class="Swindom.UpdateInformationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        xmlns:ui="http://schemas.modernwpf.com/2019"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        Title="確認" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+    <StackPanel>
+        <Label x:Name="ThereIsTheLatestVersionLabel" Content="最新バージョンがあります。" Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+        <TextBox x:Name="UpdateHistoryTextBox" Margin="0,5,0,0" Width="500" Height="260" TextWrapping="NoWrap" AcceptsReturn="True" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+        <Button x:Name="OpenWebsiteButton" Content="ウェブサイト" HorizontalAlignment="Center" Width="150" Margin="0,5,0,10"/>
+    </StackPanel>
+</Window>
