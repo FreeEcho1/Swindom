@@ -1,9 +1,5 @@
 # Swindom
 
-[アップデートに関することなどについて]<br>
-アップデートに関する情報や予定などはブログに書いています。<br>
-<a href="https://kaciyapp.wixsite.com/freeecho/blog">ブログ</a><br>
-<br>
 [ソフトウェアのダウンロード方法]<br>
 右側の「Release」からダウンロードできます。<br>
 ファイル名に「no_dpi」が入っているファイルは、DPI非対応版です。<br>
