@@ -7,7 +7,7 @@ DPIに対応させるとヘルプファイル(hh.exe)のウィンドウで不具
 「Source code」はソースコードです。ソフトウェアではありません。<br>
 <br>
 [「Swindom」用プラグイン]<br>
-<a href="https://github.com/FreeEcho1/SwindomPlugin/tree/main">https://github.com/FreeEcho1/SwindomPlugin/tree/main</a><br>
+<a href="https://github.com/FreeEcho1/SwindomPlugin">https://github.com/FreeEcho1/SwindomPlugin</a><br>
 <br>
 [ソフトウェアの説明]<br>
 ウィンドウの位置やサイズを変更するなど、ウィンドウに関する処理を自動及びホットキーで処理することができます。<br>
