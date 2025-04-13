@@ -6,6 +6,9 @@
 DPIに対応させるとヘルプファイル(hh.exe)のウィンドウで不具合が発生するので、ヘルプファイルのウィンドウを処理させたい場合は、DPI非対応版を使用してください。<br>
 「Source code」はソースコードです。ソフトウェアではありません。<br>
 <br>
+[「Swindom」用プラグイン]<br>
+<a href="https://github.com/FreeEcho1/SwindomPlugin/tree/main">https://github.com/FreeEcho1/SwindomPlugin/tree/main</a><br>
+<br>
 [ソフトウェアの説明]<br>
 ウィンドウの位置やサイズを変更するなど、ウィンドウに関する処理を自動及びホットキーで処理することができます。<br>
 <br>
