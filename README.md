@@ -8,7 +8,7 @@ DPIに対応させるとヘルプファイル(hh.exe)のウィンドウで不具
 <br>
 「Kaciy Window Operation」の設定を「Swindom」に引き継ぐことができるソフトウェアを公開しました。<br>
 「Kaciy Window Operation」の設定ファイルを「Swindom」の設定ファイルに変換します。<br>
-<a href="https://github.com/FreeEcho1/SwindomSettingConverter">https://github.com/FreeEcho1/SwindomSettingConverter</a>
+<a href="https://github.com/FreeEcho1/SwindomSettingConverter">https://github.com/FreeEcho1/SwindomSettingConverter</a><br>
 <br>
 [「Swindom」用プラグイン]<br>
 <a href="https://github.com/FreeEcho1/SwindomPlugin">https://github.com/FreeEcho1/SwindomPlugin</a><br>
