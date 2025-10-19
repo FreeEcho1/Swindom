@@ -15,8 +15,10 @@ DPIに対応させるとヘルプファイル(hh.exe)のウィンドウで不具
 フリーソフトウェア (商用利用可能)<br>
 <br>
 [動作環境]<br>
-Windows 10 (Windows 10 May 2019 Update (Version 1903) 以降)<br>
 Windows 11<br>
+<br>
+ - 未検証<br>
+Windows 10 (Windows 10 May 2019 Update (Version 1903) 以降)<br>
 <br>
 [必要なもの]<br>
  - .NET 8<br>
