@@ -1,5 +1,8 @@
 ﻿namespace Swindom;
 
+/// <summary>
+/// アプリケーションで使用する値
+/// </summary>
 public static class ApplicationValue
 {
     /// <summary>

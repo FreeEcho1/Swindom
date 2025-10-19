@@ -39,7 +39,7 @@ public class MagnetInformation
     /// 貼り付ける判定距離
     /// </summary>
     [JsonIgnore]
-    private int PrivatePastingDecisionDistance;
+    private int _pastingDecisionDistance;
     /// <summary>
     /// 貼り付ける判定距離
     /// </summary>
@@ -47,21 +47,21 @@ public class MagnetInformation
     {
         get
         {
-            return PrivatePastingDecisionDistance;
+            return _pastingDecisionDistance;
         }
         set
         {
             if (value < MinimumPastingDecisionDistance)
             {
-                PrivatePastingDecisionDistance = MinimumPastingDecisionDistance;
+                _pastingDecisionDistance = MinimumPastingDecisionDistance;
             }
             else if (MaximumPastingDecisionDistance < value)
             {
-                PrivatePastingDecisionDistance = MaximumPastingDecisionDistance;
+                _pastingDecisionDistance = MaximumPastingDecisionDistance;
             }
             else
             {
-                PrivatePastingDecisionDistance = value;
+                _pastingDecisionDistance = value;
             }
         }
     }
@@ -79,7 +79,7 @@ public class MagnetInformation
     /// 貼り付く時間 (ミリ秒)
     /// </summary>
     [JsonIgnore]
-    private int PrivatePastingTime;
+    private int _pastingTime;
     /// <summary>
     /// 貼り付く時間 (ミリ秒)
     /// </summary>
@@ -87,21 +87,21 @@ public class MagnetInformation
     {
         get
         {
-            return PrivatePastingTime;
+            return _pastingTime;
         }
         set
         {
             if (value < MinimumPastingTime)
             {
-                PrivatePastingTime = MinimumPastingTime;
+                _pastingTime = MinimumPastingTime;
             }
             else if (MaximumPastingTime < value)
             {
-                PrivatePastingTime = MaximumPastingTime;
+                _pastingTime = MaximumPastingTime;
             }
             else
             {
-                PrivatePastingTime = value;
+                _pastingTime = value;
             }
         }
     }

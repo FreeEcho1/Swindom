@@ -122,6 +122,107 @@ public class HotkeyProcessing : IDisposable
     }
 
     /// <summary>
+    /// ディスプレイの設定を変更
+    /// </summary>
+    /// <param name="changeDisplaySettingsData">設定しているディスプレイが存在しなくなった場合に設定するデータ</param>
+    /// <returns>設定を変更したかの値 (「false」変更していない/「true」変更した)</returns>
+    public static bool ChangeDisplaySettings(
+        ChangeDisplaySettingsData changeDisplaySettingsData
+        )
+    {
+        bool result = false;        // 設定を変更したかの値
+
+        try
+        {
+            foreach (HotkeyItemInformation nowHII in ApplicationData.Settings.HotkeyInformation.Items)
+            {
+                bool checkMatch = false;        // 一致確認
+
+                foreach (MonitorInfoEx nowMIE in ApplicationData.MonitorInformation.MonitorInfo)
+                {
+                    if (nowMIE.DeviceName == nowHII.PositionSize.Display)
+                    {
+                        checkMatch = true;
+                        break;
+                    }
+                }
+
+                // 登録しているディスプレイが存在しない場合は、通知と存在するディスプレイに変更する
+                if (checkMatch == false)
+                {
+                    if (changeDisplaySettingsData.ApplySameSettingToRemaining)
+                    {
+                        if (changeDisplaySettingsData.IsModified)
+                        {
+                            nowHII.PositionSize.Display = changeDisplaySettingsData.AutoSettingDisplayName;
+                            result = true;
+                        }
+                    }
+                    else
+                    {
+                        SelectDisplayWindow window = new(ApplicationData.Strings.Hotkey, nowHII.RegisteredName);
+
+                        window.ShowDialog();
+                        changeDisplaySettingsData.ApplySameSettingToRemaining = window.ApplySameSettingToRemaining;
+                        if (window.ApplySameSettingToRemaining)
+                        {
+                            changeDisplaySettingsData.AutoSettingDisplayName = window.SelectedDisplay;
+                        }
+                        if (window.IsModified)
+                        {
+                            changeDisplaySettingsData.IsModified = true;
+                            nowHII.PositionSize.Display = window.SelectedDisplay;
+                            result = true;
+                        }
+                    }
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 登録された全項目で、設定されているディスプレイが存在するかを確認
+    /// </summary>
+    /// <param name="newMonitorInformation">新しいモニター情報</param>
+    /// <returns>全て存在するかの値 (「false」存在しない項目がある/「true」全て存在する)</returns>
+    public static bool CheckSettingDisplaysExist(
+        MonitorInformation newMonitorInformation
+        )
+    {
+        try
+        {
+            foreach (HotkeyItemInformation nowHII in ApplicationData.Settings.HotkeyInformation.Items)
+            {
+                bool checkMatch = false;        // 一致確認
+
+                foreach (MonitorInfoEx nowMIE in newMonitorInformation.MonitorInfo)
+                {
+                    if (nowMIE.DeviceName == nowHII.PositionSize.Display)
+                    {
+                        checkMatch = true;
+                        break;
+                    }
+                }
+
+                if (checkMatch == false)
+                {
+                    return false;
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// 処理が有効か確認
     /// </summary>
     /// <returns>処理が有効かの値 (無効「false」/有効「true」)</returns>
@@ -216,12 +317,26 @@ public class HotkeyProcessing : IDisposable
                 if ((NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) & (int)WS_EX.WS_EX_LAYERED) == (int)WS_EX.WS_EX_LAYERED)
                 {
                     NativeMethods.SetLayeredWindowAttributes(hwnd, 0, 255, (uint)LWA.LWA_ALPHA);
-                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (int)(NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
+                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
                 }
                 else
                 {
-                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (int)(NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
+                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
                     NativeMethods.SetLayeredWindowAttributes(hwnd, 0, (byte)hotkeyItemInformation.ProcessingValue, (uint)LWA.LWA_ALPHA);
+                }
+                break;
+            case HotkeyProcessingType.TitleBarAndBorderShowAndHidden:
+                {
+                    long style = NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_STYLE);      // スタイル
+                    const long setRemoveStyle = (long)(WS.WS_CAPTION | WS.WS_THICKFRAME);      // set/removeするスタイル
+
+                    // タイトルバーと枠が表示されている場合は非表示、表示されていない場合は表示する
+                    // 非表示にすると表示が乱れるので、強制的に再描画させるためにサイズを変更して戻す処理をする
+                    style = (style & setRemoveStyle) == setRemoveStyle ? style & ~setRemoveStyle : style | setRemoveStyle;
+                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_STYLE, style);
+                    NativeMethods.GetWindowRect(hwnd, out RECT rect);
+                    NativeMethods.SetWindowPos(hwnd, 0, 0, 0, rect.Right - rect.Left + 1, rect.Bottom - rect.Top + 1, (int)(SWP.SWP_NOMOVE | SWP.SWP_NOZORDER));
+                    NativeMethods.SetWindowPos(hwnd, 0, 0, 0, rect.Right - rect.Left, rect.Bottom - rect.Top, (int)(SWP.SWP_NOMOVE | SWP.SWP_NOZORDER));
                 }
                 break;
             case HotkeyProcessingType.BatchSpecifyWindow:
@@ -237,64 +352,66 @@ public class HotkeyProcessing : IDisposable
                 ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.ShowNotifyIconContextMenu);
                 break;
             default:
-                WindowInformation windowInformation = WindowProcessing.GetWindowRectangleAndStateFromHandle(hwnd);
-
-                if (windowInformation.ShowCmd != (int)SW.SW_SHOWNORMAL)
                 {
-                    NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWNORMAL);
-                }
+                    WindowInformation windowInformation = WindowProcessing.GetWindowRectangleAndStateFromHandle(hwnd);
 
-                switch (hotkeyItemInformation.ProcessingType)
-                {
-                    case HotkeyProcessingType.PositionSize:
-                        {
-                            Rect windowRectangle = WindowProcessing.GetPositionSizeOfWindowAfterProcessing(hwnd, windowInformation, hotkeyItemInformation.PositionSize, hotkeyItemInformation.StandardDisplay, hotkeyItemInformation.PositionSize.ClientArea);       // 処理後のウィンドウの位置とサイズ
-                            if (ApplicationData.Settings.HotkeyInformation.DoNotChangeOutOfScreen == false || WindowProcessing.CheckWindowIsInTheScreen(windowRectangle))
+                    if (windowInformation.ShowCmd != (int)SW.SW_SHOWNORMAL)
+                    {
+                        NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWNORMAL);
+                    }
+
+                    switch (hotkeyItemInformation.ProcessingType)
+                    {
+                        case HotkeyProcessingType.PositionSize:
                             {
-                                // 1回目の処理
-                                NativeMethods.SetWindowPos(hwnd, 0, (int)windowRectangle.X, (int)windowRectangle.Y, (int)windowRectangle.Width, (int)windowRectangle.Height, (int)SWP.SWP_NOZORDER);
-                                switch (hotkeyItemInformation.PositionSize.SettingsWindowState)
+                                Rect windowRectangle = WindowProcessing.GetPositionSizeOfWindowAfterProcessing(hwnd, windowInformation, hotkeyItemInformation.PositionSize, hotkeyItemInformation.StandardDisplay, hotkeyItemInformation.PositionSize.ClientArea);       // 処理後のウィンドウの位置とサイズ
+                                if (ApplicationData.Settings.HotkeyInformation.DoNotChangeOutOfScreen == false || WindowProcessing.CheckWindowIsInTheScreen(windowRectangle))
                                 {
-                                    case SettingsWindowState.Normal:
-                                        {
-                                            // 2回目の処理
-                                            // 1回の処理では一部の条件で正しい位置やサイズに変更されないので、2回処理するようにしている。
-                                            windowInformation = WindowProcessing.GetWindowRectangleAndStateFromHandle(hwnd);
-                                            windowRectangle = WindowProcessing.GetPositionSizeOfWindowAfterProcessing(hwnd, windowInformation, hotkeyItemInformation.PositionSize, hotkeyItemInformation.StandardDisplay, hotkeyItemInformation.PositionSize.ClientArea);
-                                            if ((int)windowRectangle.X != windowInformation.Rectangle.Left
-                                                || (int)windowRectangle.Y != windowInformation.Rectangle.Top
-                                                || (int)windowRectangle.Width != windowInformation.Rectangle.Width
-                                                || (int)windowRectangle.Height != windowInformation.Rectangle.Height)
+                                    // 1回目の処理
+                                    NativeMethods.SetWindowPos(hwnd, 0, (int)windowRectangle.X, (int)windowRectangle.Y, (int)windowRectangle.Width, (int)windowRectangle.Height, (int)SWP.SWP_NOZORDER);
+                                    switch (hotkeyItemInformation.PositionSize.SettingsWindowState)
+                                    {
+                                        case SettingsWindowState.Normal:
                                             {
-                                                NativeMethods.SetWindowPos(hwnd, 0, (int)windowRectangle.X, (int)windowRectangle.Y, (int)windowRectangle.Width, (int)windowRectangle.Height, (int)SWP.SWP_NOZORDER);
+                                                // 2回目の処理
+                                                // 1回の処理では一部の条件で正しい位置やサイズに変更されないので、2回処理するようにしている。
+                                                windowInformation = WindowProcessing.GetWindowRectangleAndStateFromHandle(hwnd);
+                                                windowRectangle = WindowProcessing.GetPositionSizeOfWindowAfterProcessing(hwnd, windowInformation, hotkeyItemInformation.PositionSize, hotkeyItemInformation.StandardDisplay, hotkeyItemInformation.PositionSize.ClientArea);
+                                                if ((int)windowRectangle.X != windowInformation.Rectangle.Left
+                                                    || (int)windowRectangle.Y != windowInformation.Rectangle.Top
+                                                    || (int)windowRectangle.Width != windowInformation.Rectangle.Width
+                                                    || (int)windowRectangle.Height != windowInformation.Rectangle.Height)
+                                                {
+                                                    NativeMethods.SetWindowPos(hwnd, 0, (int)windowRectangle.X, (int)windowRectangle.Y, (int)windowRectangle.Width, (int)windowRectangle.Height, (int)SWP.SWP_NOZORDER);
+                                                }
                                             }
-                                        }
-                                        break;
-                                    case SettingsWindowState.Minimize:
-                                        NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWMINIMIZED);
-                                        break;
-                                    case SettingsWindowState.Maximize:
-                                        NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWMAXIMIZED);
-                                        break;
+                                            break;
+                                        case SettingsWindowState.Minimize:
+                                            NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWMINIMIZED);
+                                            break;
+                                        case SettingsWindowState.Maximize:
+                                            NativeMethods.ShowWindow(hwnd, (int)SW.SW_SHOWMAXIMIZED);
+                                            break;
+                                    }
                                 }
                             }
-                        }
-                        break;
-                    case HotkeyProcessingType.MoveX:
-                        NativeMethods.SetWindowPos(hwnd, 0, windowInformation.Rectangle.Left + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Top, 0, 0, (int)SWP.SWP_NOSIZE | (int)SWP.SWP_NOZORDER);
-                        break;
-                    case HotkeyProcessingType.MoveY:
-                        NativeMethods.SetWindowPos(hwnd, 0, windowInformation.Rectangle.Left, windowInformation.Rectangle.Top + hotkeyItemInformation.ProcessingValue, 0, 0, (int)SWP.SWP_NOSIZE | (int)SWP.SWP_NOZORDER);
-                        break;
-                    case HotkeyProcessingType.IncreaseDecreaseWidth:
-                        NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Height, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
-                        break;
-                    case HotkeyProcessingType.IncreaseDecreaseHeight:
-                        NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width, windowInformation.Rectangle.Height + hotkeyItemInformation.ProcessingValue, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
-                        break;
-                    case HotkeyProcessingType.IncreaseDecreaseWidthHeight:
-                        NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Height + hotkeyItemInformation.ProcessingValue, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
-                        break;
+                            break;
+                        case HotkeyProcessingType.MoveX:
+                            NativeMethods.SetWindowPos(hwnd, 0, windowInformation.Rectangle.Left + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Top, 0, 0, (int)SWP.SWP_NOSIZE | (int)SWP.SWP_NOZORDER);
+                            break;
+                        case HotkeyProcessingType.MoveY:
+                            NativeMethods.SetWindowPos(hwnd, 0, windowInformation.Rectangle.Left, windowInformation.Rectangle.Top + hotkeyItemInformation.ProcessingValue, 0, 0, (int)SWP.SWP_NOSIZE | (int)SWP.SWP_NOZORDER);
+                            break;
+                        case HotkeyProcessingType.IncreaseDecreaseWidth:
+                            NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Height, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
+                            break;
+                        case HotkeyProcessingType.IncreaseDecreaseHeight:
+                            NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width, windowInformation.Rectangle.Height + hotkeyItemInformation.ProcessingValue, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
+                            break;
+                        case HotkeyProcessingType.IncreaseDecreaseWidthHeight:
+                            NativeMethods.SetWindowPos(hwnd, 0, 0, 0, windowInformation.Rectangle.Width + hotkeyItemInformation.ProcessingValue, windowInformation.Rectangle.Height + hotkeyItemInformation.ProcessingValue, (int)SWP.SWP_NOMOVE | (int)SWP.SWP_NOZORDER);
+                            break;
+                    }
                 }
                 break;
         }

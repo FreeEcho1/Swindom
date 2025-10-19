@@ -12,7 +12,7 @@ public partial class HotkeyPage : Page
     /// <summary>
     /// ウィンドウ選択枠
     /// </summary>
-    private readonly FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse = new()
+    private FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse { get; } = new()
     {
         MouseLeftUpStop = true
     };
@@ -128,7 +128,7 @@ public partial class HotkeyPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -157,7 +157,7 @@ public partial class HotkeyPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -200,25 +200,25 @@ public partial class HotkeyPage : Page
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Settings.HotkeyInformation.Items[HotkeyListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(ApplicationData.Settings.HotkeyInformation.Items[HotkeyListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 ApplicationData.WindowProcessingManagement.HotkeyProcessing?.UnregisterHotkeys();
                 try
                 {
                     ApplicationData.Settings.HotkeyInformation.Items.RemoveAt(HotkeyListBox.SelectedIndex);
                     HotkeyListBox.Items.RemoveAt(HotkeyListBox.SelectedIndex);
-                    FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 }
                 catch
                 {
-                    FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 }
                 ApplicationData.WindowProcessingManagement.HotkeyProcessing?.RegisterHotkeys();
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -239,7 +239,7 @@ public partial class HotkeyPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -260,7 +260,7 @@ public partial class HotkeyPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -283,7 +283,7 @@ public partial class HotkeyPage : Page
         catch
         {
             Window.GetWindow(this).WindowState = BeforeWindowState;
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -305,7 +305,7 @@ public partial class HotkeyPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -449,20 +449,20 @@ public partial class HotkeyPage : Page
         try
         {
             UpdateHotkeyListBox();
-            AddButton.Text = ApplicationData.Languages.Add;
-            ModifyButton.Text = ApplicationData.Languages.Modify;
-            DeleteButton.Text = ApplicationData.Languages.Delete;
-            MoveUpButton.Text = ApplicationData.Languages.MoveUp;
-            MoveDownButton.Text = ApplicationData.Languages.MoveDown;
-            SelectWindowTargetButton.Text = ApplicationData.Languages.Select;
-            SelectWindowTargetButton.ToolTip = ApplicationData.Languages.HoldDownMousePointerMoveToSelectWindow;
-            SettingsButton.Text = ApplicationData.Languages.Setting;
+            AddButton.Text = ApplicationData.Strings.Add;
+            ModifyButton.Text = ApplicationData.Strings.Modify;
+            DeleteButton.Text = ApplicationData.Strings.Delete;
+            MoveUpButton.Text = ApplicationData.Strings.MoveUp;
+            MoveDownButton.Text = ApplicationData.Strings.MoveDown;
+            SelectWindowTargetButton.Text = ApplicationData.Strings.Select;
+            SelectWindowTargetButton.ToolTip = ApplicationData.Strings.HoldDownMousePointerMoveToSelectWindow;
+            SettingsButton.Text = ApplicationData.Strings.Setting;
 
-            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Languages.ProcessingState;
-            DoNotChangeOutOfScreenToggleSwitch.OffContent = DoNotChangeOutOfScreenToggleSwitch.OnContent = ApplicationData.Languages.DoNotChangePositionSizeOutOfScreen;
-            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Languages.StopProcessingWhenWindowIsFullScreen;
+            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Strings.ProcessingState;
+            DoNotChangeOutOfScreenToggleSwitch.OffContent = DoNotChangeOutOfScreenToggleSwitch.OnContent = ApplicationData.Strings.DoNotChangePositionSizeOutOfScreen;
+            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Strings.StopProcessingWhenWindowIsFullScreen;
 
-            ExplanationTextBlock.Text = ApplicationData.Languages.HotkeyExplanation;
+            ExplanationTextBlock.Text = ApplicationData.Strings.HotkeyExplanation;
         }
         catch
         {
@@ -513,100 +513,103 @@ public partial class HotkeyPage : Page
                 case HotkeyProcessingType.PositionSize:
                     string separateString = "";        // 区切り文字列
 
-                    stringData += ApplicationData.Languages.SpecifyPositionAndSize + WindowControlValue.ExplainAndValueSeparateString;
+                    stringData += ApplicationData.Strings.SpecifyPositionAndSize + WindowControlValue.ExplainAndValueSeparateString;
                     switch (hotkeyItemInformation.PositionSize.XType)
                     {
                         case WindowXType.Left:
-                            stringData += separateString + ApplicationData.Languages.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.LeftEdge;
+                            stringData += separateString + ApplicationData.Strings.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.LeftEdge;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowXType.Middle:
-                            stringData += separateString + ApplicationData.Languages.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.Middle;
+                            stringData += separateString + ApplicationData.Strings.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.Middle;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowXType.Right:
-                            stringData += separateString + ApplicationData.Languages.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.RightEdge;
+                            stringData += separateString + ApplicationData.Strings.X + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.RightEdge;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowXType.Value:
-                            stringData += separateString + ApplicationData.Languages.X + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.X + " " + ((hotkeyItemInformation.PositionSize.XValueType == PositionSizeValueType.Pixel) ? ApplicationData.Languages.Pixel : ApplicationData.Languages.Percent);
+                            stringData += separateString + ApplicationData.Strings.X + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.X + " " + ((hotkeyItemInformation.PositionSize.XValueType == PositionSizeValueType.Pixel) ? ApplicationData.Strings.Pixel : ApplicationData.Strings.Percent);
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                     }
                     switch (hotkeyItemInformation.PositionSize.YType)
                     {
                         case WindowYType.Top:
-                            stringData += separateString + ApplicationData.Languages.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.TopEdge;
+                            stringData += separateString + ApplicationData.Strings.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.TopEdge;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowYType.Middle:
-                            stringData += separateString + ApplicationData.Languages.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.Middle;
+                            stringData += separateString + ApplicationData.Strings.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.Middle;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowYType.Bottom:
-                            stringData += separateString + ApplicationData.Languages.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Languages.BottomEdge;
+                            stringData += separateString + ApplicationData.Strings.Y + WindowControlValue.TypeAndValueSeparateString + ApplicationData.Strings.BottomEdge;
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                         case WindowYType.Value:
-                            stringData += separateString + ApplicationData.Languages.Y + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Y + " " + ((hotkeyItemInformation.PositionSize.YValueType == PositionSizeValueType.Pixel) ? ApplicationData.Languages.Pixel : ApplicationData.Languages.Percent);
+                            stringData += separateString + ApplicationData.Strings.Y + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Y + " " + ((hotkeyItemInformation.PositionSize.YValueType == PositionSizeValueType.Pixel) ? ApplicationData.Strings.Pixel : ApplicationData.Strings.Percent);
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                     }
                     switch (hotkeyItemInformation.PositionSize.WidthType)
                     {
                         case WindowSizeType.Value:
-                            stringData += separateString + ApplicationData.Languages.Width + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Width + " " + ((hotkeyItemInformation.PositionSize.WidthValueType == PositionSizeValueType.Pixel) ? ApplicationData.Languages.Pixel : ApplicationData.Languages.Percent);
+                            stringData += separateString + ApplicationData.Strings.Width + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Width + " " + ((hotkeyItemInformation.PositionSize.WidthValueType == PositionSizeValueType.Pixel) ? ApplicationData.Strings.Pixel : ApplicationData.Strings.Percent);
                             separateString = WindowControlValue.ValueAndValueSeparateString;
                             break;
                     }
                     switch (hotkeyItemInformation.PositionSize.HeightType)
                     {
                         case WindowSizeType.Value:
-                            stringData += separateString + ApplicationData.Languages.Height + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Height + " " + ((hotkeyItemInformation.PositionSize.HeightValueType == PositionSizeValueType.Pixel) ? ApplicationData.Languages.Pixel : ApplicationData.Languages.Percent);
+                            stringData += separateString + ApplicationData.Strings.Height + WindowControlValue.TypeAndValueSeparateString + hotkeyItemInformation.PositionSize.Height + " " + ((hotkeyItemInformation.PositionSize.HeightValueType == PositionSizeValueType.Pixel) ? ApplicationData.Strings.Pixel : ApplicationData.Strings.Percent);
                             break;
                     }
                     break;
                 case HotkeyProcessingType.MoveX:
-                    stringData += ApplicationData.Languages.MoveXCoordinate + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Languages.Pixel;
+                    stringData += ApplicationData.Strings.MoveXCoordinate + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Strings.Pixel;
                     break;
                 case HotkeyProcessingType.MoveY:
-                    stringData += ApplicationData.Languages.MoveYCoordinate + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Languages.Pixel;
+                    stringData += ApplicationData.Strings.MoveYCoordinate + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Strings.Pixel;
                     break;
                 case HotkeyProcessingType.IncreaseDecreaseWidth:
-                    stringData += ApplicationData.Languages.IncreaseDecreaseWidth + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " +ApplicationData.Languages.Pixel;
+                    stringData += ApplicationData.Strings.IncreaseDecreaseWidth + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " +ApplicationData.Strings.Pixel;
                     break;
                 case HotkeyProcessingType.IncreaseDecreaseHeight:
-                    stringData += ApplicationData.Languages.IncreaseDecreaseHeight + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Languages.Pixel;
+                    stringData += ApplicationData.Strings.IncreaseDecreaseHeight + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Strings.Pixel;
                     break;
                 case HotkeyProcessingType.IncreaseDecreaseWidthHeight:
-                    stringData += ApplicationData.Languages.IncreaseDecreaseWidthAndHeight + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Languages.Pixel;
+                    stringData += ApplicationData.Strings.IncreaseDecreaseWidthAndHeight + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue + " " + ApplicationData.Strings.Pixel;
                     break;
                 case HotkeyProcessingType.StartStopSpecifyWindow:
-                    stringData += ApplicationData.Languages.StartStopProcessingOfSpecifyWindow;
+                    stringData += ApplicationData.Strings.StartStopProcessingOfSpecifyWindow;
                     break;
                 case HotkeyProcessingType.StartStopAllWindow:
-                    stringData += ApplicationData.Languages.StartStopProcessingOfAllWindow;
+                    stringData += ApplicationData.Strings.StartStopProcessingOfAllWindow;
                     break;
                 case HotkeyProcessingType.StartStopMagnet:
-                    stringData += ApplicationData.Languages.StartStopProcessingOfMagnet;
+                    stringData += ApplicationData.Strings.StartStopProcessingOfMagnet;
                     break;
                 case HotkeyProcessingType.AlwaysForefrontOrCancel:
-                    stringData += ApplicationData.Languages.AlwaysShowOrCancelOnTop;
+                    stringData += ApplicationData.Strings.AlwaysShowOrCancelOnTop;
                     break;
                 case HotkeyProcessingType.SpecifyTransparencyOrCancel:
-                    stringData += ApplicationData.Languages.SpecifyCancelTransparency + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue;
+                    stringData += ApplicationData.Strings.SpecifyCancelTransparency + WindowControlValue.ExplainAndValueSeparateString + hotkeyItemInformation.ProcessingValue;
+                    break;
+                case HotkeyProcessingType.TitleBarAndBorderShowAndHidden:
+                    stringData += ApplicationData.Strings.TitleBarAndBorderShowAndHidden;
                     break;
                 case HotkeyProcessingType.BatchSpecifyWindow:
-                    stringData += ApplicationData.Languages.BatchProcessingOfSpecifyWindow;
+                    stringData += ApplicationData.Strings.BatchProcessingOfSpecifyWindow;
                     break;
                 case HotkeyProcessingType.OnlyActiveWindowSpecifyWindow:
-                    stringData += ApplicationData.Languages.OnlyActiveWindowSpecifyWindow;
+                    stringData += ApplicationData.Strings.OnlyActiveWindowSpecifyWindow;
                     break;
                 case HotkeyProcessingType.ShowThisApplicationWindow:
-                    stringData += ApplicationData.Languages.ShowThisApplicationWindow;
+                    stringData += ApplicationData.Strings.ShowThisApplicationWindow;
                     break;
                 case HotkeyProcessingType.ShowNotifyIconMenu:
-                    stringData += ApplicationData.Languages.ShowSystemTrayIconMenu;
+                    stringData += ApplicationData.Strings.ShowSystemTrayIconMenu;
                     break;
             }
             stringData += Environment.NewLine + "  " + FreeEcho.FEHotKeyWPF.HotKeyWPF.GetHotKeyString(hotkeyItemInformation.Hotkey);

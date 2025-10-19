@@ -74,6 +74,91 @@ public class AllWindowProcessing : IDisposable
     }
 
     /// <summary>
+    /// ディスプレイの設定を変更
+    /// </summary>
+    /// <param name="changeDisplaySettingsData">設定しているディスプレイが存在しなくなった場合に設定するデータ</param>
+    /// <returns>設定を変更したかの値 (「false」変更していない/「true」変更した)</returns>
+    public static bool ChangeDisplaySettings(
+        ChangeDisplaySettingsData changeDisplaySettingsData
+        )
+    {
+        bool result = false;        // 設定を変更したかの値
+
+        try
+        {
+            bool checkMatch = false;        // 一致確認
+
+            foreach (MonitorInfoEx nowMIE in ApplicationData.MonitorInformation.MonitorInfo)
+            {
+                if (nowMIE.DeviceName == ApplicationData.Settings.AllWindowInformation.PositionSize.Display)
+                {
+                    checkMatch = true;
+                    break;
+                }
+            }
+
+            if (checkMatch == false)
+            {
+                if (changeDisplaySettingsData.ApplySameSettingToRemaining)
+                {
+                    if (changeDisplaySettingsData.IsModified)
+                    {
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.Display = changeDisplaySettingsData.AutoSettingDisplayName;
+                    }
+                }
+                else
+                {
+                    SelectDisplayWindow window = new(ApplicationData.Strings.AllWindow, "");
+
+                    window.ShowDialog();
+                    changeDisplaySettingsData.ApplySameSettingToRemaining = window.ApplySameSettingToRemaining;
+                    if (window.ApplySameSettingToRemaining)
+                    {
+                        changeDisplaySettingsData.AutoSettingDisplayName = window.SelectedDisplay;
+                    }
+                    if (window.IsModified)
+                    {
+                        changeDisplaySettingsData.IsModified = true;
+                        ApplicationData.Settings.AllWindowInformation.PositionSize.Display = window.SelectedDisplay;
+                        result = true;
+                    }
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 設定されているディスプレイが存在するかを確認
+    /// </summary>
+    /// <param name="newMonitorInformation">新しいモニター情報</param>
+    /// <returns>存在するかの値 (「false」存在しない/「true」存在する)</returns>
+    public static bool CheckSettingDisplaysExist(
+        MonitorInformation newMonitorInformation
+        )
+    {
+        try
+        {
+            foreach (MonitorInfoEx nowMIE in newMonitorInformation.MonitorInfo)
+            {
+                if (nowMIE.DeviceName == ApplicationData.Settings.AllWindowInformation.PositionSize.Display)
+                {
+                    return true;
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return false;
+    }
+
+    /// <summary>
     /// 処理が有効か確認
     /// </summary>
     /// <returns>処理が有効かの値 (無効「false」/有効「true」)</returns>
@@ -167,6 +252,12 @@ public class AllWindowProcessing : IDisposable
         WindowInformation windowInformation
         )
     {
+        // 除外するウィンドウの判定
+        if (WindowProcessing.CheckExclusionProcessing(windowInformation))
+        {
+            return false;
+        }
+
         // 処理しないウィンドウの判定 (指定ウィンドウ)
         foreach (SpecifyWindowItemInformation nowEII in ApplicationData.Settings.SpecifyWindowInformation.Items)
         {
@@ -198,8 +289,14 @@ public class AllWindowProcessing : IDisposable
             string checkString;      // 確認する文字列
 
             // タイトル名判定
-            if (string.IsNullOrEmpty(titleName) == false)
+            if (string.IsNullOrEmpty(nowData.TitleName) == false)
             {
+                // タイトル名がない場合は処理しない
+                if (string.IsNullOrEmpty(titleName))
+                {
+                    return false;
+                }
+
                 if (ApplicationData.Settings.AllWindowInformation.CaseSensitive)
                 {
                     checkString = nowData.TitleName;
@@ -370,7 +467,7 @@ public class AllWindowProcessing : IDisposable
     {
         WindowJudgementInformation newItem = new(copyData);     // 新しい項目
         int number = 1;     // 番号
-        string stringData = newItem.RegisteredName + WindowControlValue.CopySeparateString + ApplicationData.Languages.Copy + WindowControlValue.SpaceSeparateString;
+        string stringData = newItem.RegisteredName + WindowControlValue.CopySeparateString + ApplicationData.Strings.Copy + WindowControlValue.SpaceSeparateString;
         // 登録名に含める番号を決める
         for (int count = 0; count < ApplicationData.Settings.AllWindowInformation.Items.Count; count++)
         {

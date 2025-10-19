@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FEWindowEvent</name>
+    </assembly>
+    <members>
+        <member name="T:FreeEcho.FEWindowEvent.EVENT_CONSTANTS">
+            <summary>
+            イベント定数
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_MIN">
+            <summary>
+            EVENT_MIN
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_FOREGROUND">
+            <summary>
+            EVENT_SYSTEM_FOREGROUND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MOVESIZESTART">
+            <summary>
+            EVENT_SYSTEM_MOVESIZESTART
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MOVESIZEEND">
+            <summary>
+            EVENT_SYSTEM_MOVESIZEEND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZESTART">
+            <summary>
+            EVENT_SYSTEM_MINIMIZESTART
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZEEND">
+            <summary>
+            EVENT_SYSTEM_MINIMIZEEND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_CREATE">
+            <summary>
+            EVENT_OBJECT_CREATE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_DESTROY">
+            <summary>
+            EVENT_OBJECT_DESTROY
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_SHOW">
+            <summary>
+            EVENT_OBJECT_SHOW
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_HIDE">
+            <summary>
+            EVENT_OBJECT_HIDE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_LOCATIONCHANGE">
+            <summary>
+            EVENT_OBJECT_LOCATIONCHANGE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_NAMECHANGE">
+            <summary>
+            EVENT_OBJECT_NAMECHANGE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_MAX">
+            <summary>
+            EVENT_MAX
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowEvent.HookWindowEventType">
+            <summary>
+            フックするウィンドウイベントの種類
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.Foreground">
+            <summary>
+            EVENT_SYSTEM_FOREGROUND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeStart">
+            <summary>
+            EVENT_SYSTEM_MOVESIZESTART
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeEnd">
+            <summary>
+            EVENT_SYSTEM_MOVESIZEEND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeStart">
+            <summary>
+            EVENT_SYSTEM_MINIMIZESTART
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeEnd">
+            <summary>
+            EVENT_SYSTEM_MINIMIZEEND
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.Create">
+            <summary>
+            EVENT_OBJECT_CREATE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.Destroy">
+            <summary>
+            EVENT_OBJECT_DESTROY
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.Show">
+            <summary>
+            EVENT_OBJECT_SHOW
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.Hide">
+            <summary>
+            EVENT_OBJECT_HIDE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.LocationChange">
+            <summary>
+            EVENT_OBJECT_LOCATIONCHANGE
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.HookWindowEventType.NameChange">
+            <summary>
+            EVENT_OBJECT_NAMECHANGE
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowEvent.SettingsEventInformation">
+            <summary>
+            設定するイベント情報
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.SettingsEventInformation.EventMin">
+            <summary>
+            イベントの範囲内の最小値
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.SettingsEventInformation.EventMax">
+            <summary>
+            イベントの範囲内の最大値
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowEvent.WindowEvent">
+            <summary>
+            ウィンドウイベント
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.WindowEvent.Disposed">
+            <summary>
+            Disposeが呼ばれたかの値 (いいえ「false」/はい「true」)
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.WindowEvent.Hhook">
+            <summary>
+            フックハンドル
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.WindowEvent.WinEventProcDelegate">
+            <summary>
+            WinEventProcのデリゲート
+            </summary>
+        </member>
+        <member name="E:FreeEcho.FEWindowEvent.WindowEvent.WindowEventOccurrence">
+            <summary>
+            イベント発生のイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.DoWindowEventOccurrence(FreeEcho.FEWindowEvent.WindowEventArgs)">
+            <summary>
+            イベント発生のイベントを実行
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Finalize">
+            <summary>
+            デストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Dispose(System.Boolean)">
+            <summary>
+            非公開Dispose
+            </summary>
+            <param name="disposing">disposing</param>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Hook">
+            <summary>
+            フック開始
+            「HookWindowEventType」の全て。
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Hook(FreeEcho.FEWindowEvent.HookWindowEventType)">
+            <summary>
+            フック開始
+            </summary>
+            <param name="type">フックするイベントの種類</param>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Hook(System.UInt32,System.UInt32)">
+            <summary>
+            フック開始
+            </summary>
+            <param name="eventMin">イベント範囲の最小値</param>
+            <param name="eventMax">イベント範囲の最大値</param>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Hook(System.Collections.Generic.List{FreeEcho.FEWindowEvent.SettingsEventInformation})">
+            <summary>
+            フック開始
+            </summary>
+            <param name="settingsEventInformation">設定するイベント情報</param>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.Unhook">
+            <summary>
+            フック終了
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.WinEventProc(System.IntPtr,System.UInt32,System.IntPtr,System.Int64,System.Int64,System.UInt32,System.UInt32)">
+            <summary>
+            イベントのプロシージャ
+            </summary>
+            <param name="hWinEventHook"></param>
+            <param name="eventType"></param>
+            <param name="hwnd"></param>
+            <param name="idObject"></param>
+            <param name="idChild"></param>
+            <param name="dwEventThread"></param>
+            <param name="dwmsEventTime"></param>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.GetAncestorHwnd(System.IntPtr,System.UInt32)">
+            <summary>
+            指定したウィンドウの祖先へのハンドル、又は、指定したウィンドウのハンドルを取得
+            </summary>
+            <param name="hwnd">ウィンドウハンドル</param>
+            <param name="eventType">イベント定数</param>
+            <returns>ウィンドウのハンドル (一部のイベントのみ祖先へのハンドル、その他は指定されたハンドル。)</returns>
+        </member>
+        <member name="M:FreeEcho.FEWindowEvent.WindowEvent.ConfirmWindowVisible(System.IntPtr,System.UInt32)">
+            <summary>
+            ウィンドウが表示されているか確認
+            </summary>
+            <param name="hwnd">ウィンドウハンドル</param>
+            <param name="eventType">イベント定数</param>
+            <returns>ウィンドウが表示されているかの値 (表示されていない「false」/表示されている「true」)</returns>
+        </member>
+        <member name="T:FreeEcho.FEWindowEvent.WindowEventArgs">
+            <summary>
+            ウィンドウイベントのデータ
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.WindowEventArgs.Hwnd">
+            <summary>
+            ウィンドウハンドル
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowEvent.WindowEventArgs.EventType">
+            <summary>
+            イベントの種類
+            </summary>
+        </member>
+    </members>
+</doc>

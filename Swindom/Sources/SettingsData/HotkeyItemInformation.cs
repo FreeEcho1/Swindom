@@ -13,7 +13,7 @@ public class HotkeyItemInformation
     /// 処理の種類
     /// </summary>
     [JsonIgnore]
-    private HotkeyProcessingType PrivateProcessingType;
+    private HotkeyProcessingType _processingType;
     /// <summary>
     /// 処理の種類
     /// </summary>
@@ -22,12 +22,12 @@ public class HotkeyItemInformation
     {
         get
         {
-            return PrivateProcessingType;
+            return _processingType;
         }
         set
         {
-            PrivateProcessingType = value;
-            ProcessingValue = PrivateProcessingValue;
+            _processingType = value;
+            ProcessingValue = _processingValue;
         }
     }
     /// <summary>
@@ -73,7 +73,7 @@ public class HotkeyItemInformation
     /// 処理値 (移動量、サイズ変更量、透明度)
     /// </summary>
     [JsonIgnore]
-    private int PrivateProcessingValue;
+    private int _processingValue;
     /// <summary>
     /// 処理値 (移動量、サイズ変更量、透明度)
     /// </summary>
@@ -81,7 +81,7 @@ public class HotkeyItemInformation
     {
         get
         {
-            return PrivateProcessingValue;
+            return _processingValue;
         }
         set
         {
@@ -91,15 +91,15 @@ public class HotkeyItemInformation
                 case HotkeyProcessingType.MoveY:
                     if (value < MinimumAmountOfMovement)
                     {
-                        PrivateProcessingValue = MinimumAmountOfMovement;
+                        _processingValue = MinimumAmountOfMovement;
                     }
                     else if (MaximumAmountOfMovement < value)
                     {
-                        PrivateProcessingValue = MaximumAmountOfMovement;
+                        _processingValue = MaximumAmountOfMovement;
                     }
                     else
                     {
-                        PrivateProcessingValue = value;
+                        _processingValue = value;
                     }
                     break;
                 case HotkeyProcessingType.IncreaseDecreaseWidth:
@@ -107,29 +107,29 @@ public class HotkeyItemInformation
                 case HotkeyProcessingType.IncreaseDecreaseWidthHeight:
                     if (value < MinimumSizeChangeAmount)
                     {
-                        PrivateProcessingValue = MinimumSizeChangeAmount;
+                        _processingValue = MinimumSizeChangeAmount;
                     }
                     else if (MaximumSizeChangeAmount < value)
                     {
-                        PrivateProcessingValue = MaximumSizeChangeAmount;
+                        _processingValue = MaximumSizeChangeAmount;
                     }
                     else
                     {
-                        PrivateProcessingValue = value;
+                        _processingValue = value;
                     }
                     break;
                 case HotkeyProcessingType.SpecifyTransparencyOrCancel:
                     if (value < MinimumTransparency)
                     {
-                        PrivateProcessingValue = MinimumTransparency;
+                        _processingValue = MinimumTransparency;
                     }
                     else if (MaximumTransparency < value)
                     {
-                        PrivateProcessingValue = MaximumTransparency;
+                        _processingValue = MaximumTransparency;
                     }
                     else
                     {
-                        PrivateProcessingValue = value;
+                        _processingValue = value;
                     }
                     break;
             }

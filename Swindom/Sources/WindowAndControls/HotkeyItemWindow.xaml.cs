@@ -12,11 +12,11 @@ public partial class HotkeyItemWindow : Window
     /// <summary>
     /// 修正する項目のインデックス (追加「-1」)
     /// </summary>
-    private readonly int IndexOfItemToBeModified = -1;
+    private int IndexOfItemToBeModified { get; } = -1;
     /// <summary>
     /// 「ホットキー」機能の項目情報
     /// </summary>
-    private readonly HotkeyItemInformation HotkeyItemInformation = new();
+    private HotkeyItemInformation HotkeyItemInformation { get; } = new();
 
     /// <summary>
     /// コンストラクタ (使用しない)
@@ -70,104 +70,106 @@ public partial class HotkeyItemWindow : Window
 
         if (IndexOfItemToBeModified == -1)
         {
-            Title = ApplicationData.Languages.Add;
-            AddModifyButton.Content = ApplicationData.Languages.Add;
+            Title = ApplicationData.Strings.Add;
+            AddModifyButton.Content = ApplicationData.Strings.Add;
         }
         else
         {
-            Title = ApplicationData.Languages.Modify;
-            AddModifyButton.Content = ApplicationData.Languages.Modify;
+            Title = ApplicationData.Strings.Modify;
+            AddModifyButton.Content = ApplicationData.Strings.Modify;
         }
-        RegisteredNameLabel.Content = ApplicationData.Languages.RegisteredName;
-        TypeOfProcessingLabel.Content = ApplicationData.Languages.ProcessingType;
-        TypeOfProcessingSpecifyPositionAndSizeComboBoxItem.Content = ApplicationData.Languages.SpecifyPositionAndSize;
-        TypeOfProcessingMoveXCoordinateComboBoxItem.Content = ApplicationData.Languages.MoveXCoordinate;
-        TypeOfProcessingMoveYCoordinateComboBoxItem.Content = ApplicationData.Languages.MoveYCoordinate;
-        TypeOfProcessingIncreaseDecreaseWidthComboBoxItem.Content = ApplicationData.Languages.IncreaseDecreaseWidth;
-        TypeOfProcessingIncreaseDecreaseHeightComboBoxItem.Content = ApplicationData.Languages.IncreaseDecreaseHeight;
-        TypeOfProcessingIncreaseDecreaseWidthAndHeightComboBoxItem.Content = ApplicationData.Languages.IncreaseDecreaseWidthAndHeight;
-        TypeOfProcessingAlwaysShowOrCancelOnTopComboBoxItem.Content = ApplicationData.Languages.AlwaysShowOrCancelOnTop;
-        TypeOfProcessingSpecifyCancelTransparencyComboBoxItem.Content = ApplicationData.Languages.SpecifyCancelTransparency;
-        TypeOfProcessingStartStopProcessingOfSpecifyWindowComboBoxItem.Content = ApplicationData.Languages.StartStopProcessingOfSpecifyWindow;
-        TypeOfProcessingBatchProcessingOfSpecifyWindowComboBoxItem.Content = ApplicationData.Languages.BatchProcessingOfSpecifyWindow;
-        TypeOfProcessingOnlyActiveWindowSpecifyWindowComboBoxItem.Content = ApplicationData.Languages.OnlyActiveWindowSpecifyWindow;
-        TypeOfProcessingStartStopProcessingOfAllWindowComboBoxItem.Content = ApplicationData.Languages.StartStopProcessingOfAllWindow;
-        TypeOfProcessingStartStopProcessingOfMagnetComboBoxItem.Content = ApplicationData.Languages.StartStopProcessingOfMagnet;
-        TypeOfProcessingShowThisApplicationWindowComboBoxItem.Content = ApplicationData.Languages.ShowThisApplicationWindow;
-        TypeOfProcessingShowNotifyIconContextMenuComboBoxItem.Content = ApplicationData.Languages.ShowSystemTrayIconMenu;
-        StandardDisplayLabel.Content = ApplicationData.Languages.DisplayToUseAsStandard;
-        StandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Languages.CurrentDisplay;
-        StandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Languages.SpecifiedDisplay;
-        DisplayLabel.Content = ApplicationData.Languages.Display;
-        WindowStateLabel.Content = ApplicationData.Languages.WindowState;
-        WindowStateDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowStateNormalWindowComboBoxItem.Content = ApplicationData.Languages.NormalWindow;
-        WindowStateMaximizeComboBoxItem.Content = ApplicationData.Languages.Maximize;
-        WindowStateMinimizeComboBoxItem.Content = ApplicationData.Languages.Minimize;
-        XLabel.Content = ApplicationData.Languages.X;
-        XDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        XLeftEdgeComboBoxItem.Content = ApplicationData.Languages.LeftEdge;
-        XMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-        XRightEdgeComboBoxItem.Content = ApplicationData.Languages.RightEdge;
-        XCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-        XTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        XTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        YLabel.Content = ApplicationData.Languages.Y;
-        YDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        YTopEdgeComboBoxItem.Content = ApplicationData.Languages.TopEdge;
-        YMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-        YBottomEdgeComboBoxItem.Content = ApplicationData.Languages.BottomEdge;
-        YCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-        YTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        YTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        WidthLabel.Content = ApplicationData.Languages.Width;
-        WidthDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WidthWidthSpecificationComboBoxItem.Content = ApplicationData.Languages.WidthSpecification;
-        WidthTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        WidthTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        HeightLabel.Content = ApplicationData.Languages.Height;
-        HeightDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        HeightHeightSpecificationComboBoxItem.Content = ApplicationData.Languages.HeightSpecification;
-        HeightTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        HeightTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        ClientAreaToggleSwitch.OffContent = ClientAreaToggleSwitch.OnContent = ApplicationData.Languages.ClientArea;
-        AmountOfMovementLabel.Content = ApplicationData.Languages.AmountOfMovement;
-        AmountOfMovementPixelLabel.Content = ApplicationData.Languages.Pixel;
-        SizeChangeAmountLabel.Content = ApplicationData.Languages.SizeChangeAmount;
-        SizeChangeAmountPixelLabel.Content = ApplicationData.Languages.Pixel;
-        TransparencyLabel.Content = ApplicationData.Languages.Transparency;
-        HotkeyLabel.Content = ApplicationData.Languages.Hotkey;
-        CancelButton.Content = ApplicationData.Languages.Cancel;
+        RegisteredNameLabel.Content = ApplicationData.Strings.RegisteredName;
+        TypeOfProcessingLabel.Content = ApplicationData.Strings.ProcessingType;
+        TypeOfProcessingSpecifyPositionAndSizeComboBoxItem.Content = ApplicationData.Strings.SpecifyPositionAndSize;
+        TypeOfProcessingMoveXCoordinateComboBoxItem.Content = ApplicationData.Strings.MoveXCoordinate;
+        TypeOfProcessingMoveYCoordinateComboBoxItem.Content = ApplicationData.Strings.MoveYCoordinate;
+        TypeOfProcessingIncreaseDecreaseWidthComboBoxItem.Content = ApplicationData.Strings.IncreaseDecreaseWidth;
+        TypeOfProcessingIncreaseDecreaseHeightComboBoxItem.Content = ApplicationData.Strings.IncreaseDecreaseHeight;
+        TypeOfProcessingIncreaseDecreaseWidthAndHeightComboBoxItem.Content = ApplicationData.Strings.IncreaseDecreaseWidthAndHeight;
+        TypeOfProcessingAlwaysShowOrCancelOnTopComboBoxItem.Content = ApplicationData.Strings.AlwaysShowOrCancelOnTop;
+        TypeOfProcessingSpecifyCancelTransparencyComboBoxItem.Content = ApplicationData.Strings.SpecifyCancelTransparency;
+        TypeOfProcessingTitleBarAndBorderShowAndHiddenComboBoxItem.Content = ApplicationData.Strings.TitleBarAndBorderShowAndHidden;
+        TypeOfProcessingStartStopProcessingOfSpecifyWindowComboBoxItem.Content = ApplicationData.Strings.StartStopProcessingOfSpecifyWindow;
+        TypeOfProcessingBatchProcessingOfSpecifyWindowComboBoxItem.Content = ApplicationData.Strings.BatchProcessingOfSpecifyWindow;
+        TypeOfProcessingOnlyActiveWindowSpecifyWindowComboBoxItem.Content = ApplicationData.Strings.OnlyActiveWindowSpecifyWindow;
+        TypeOfProcessingStartStopProcessingOfAllWindowComboBoxItem.Content = ApplicationData.Strings.StartStopProcessingOfAllWindow;
+        TypeOfProcessingStartStopProcessingOfMagnetComboBoxItem.Content = ApplicationData.Strings.StartStopProcessingOfMagnet;
+        TypeOfProcessingShowThisApplicationWindowComboBoxItem.Content = ApplicationData.Strings.ShowThisApplicationWindow;
+        TypeOfProcessingShowNotifyIconContextMenuComboBoxItem.Content = ApplicationData.Strings.ShowSystemTrayIconMenu;
+        StandardDisplayLabel.Content = ApplicationData.Strings.DisplayToUseAsStandard;
+        StandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Strings.CurrentDisplay;
+        StandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Strings.SpecifiedDisplay;
+        DisplayLabel.Content = ApplicationData.Strings.Display;
+        WindowStateLabel.Content = ApplicationData.Strings.WindowState;
+        WindowStateDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowStateNormalWindowComboBoxItem.Content = ApplicationData.Strings.NormalWindow;
+        WindowStateMaximizeComboBoxItem.Content = ApplicationData.Strings.Maximize;
+        WindowStateMinimizeComboBoxItem.Content = ApplicationData.Strings.Minimize;
+        XLabel.Content = ApplicationData.Strings.X;
+        XDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        XLeftEdgeComboBoxItem.Content = ApplicationData.Strings.LeftEdge;
+        XMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+        XRightEdgeComboBoxItem.Content = ApplicationData.Strings.RightEdge;
+        XCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+        XTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        XTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        YLabel.Content = ApplicationData.Strings.Y;
+        YDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        YTopEdgeComboBoxItem.Content = ApplicationData.Strings.TopEdge;
+        YMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+        YBottomEdgeComboBoxItem.Content = ApplicationData.Strings.BottomEdge;
+        YCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+        YTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        YTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        WidthLabel.Content = ApplicationData.Strings.Width;
+        WidthDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WidthWidthSpecificationComboBoxItem.Content = ApplicationData.Strings.WidthSpecification;
+        WidthTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        WidthTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        HeightLabel.Content = ApplicationData.Strings.Height;
+        HeightDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        HeightHeightSpecificationComboBoxItem.Content = ApplicationData.Strings.HeightSpecification;
+        HeightTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        HeightTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        ClientAreaToggleSwitch.OffContent = ClientAreaToggleSwitch.OnContent = ApplicationData.Strings.ClientArea;
+        AmountOfMovementLabel.Content = ApplicationData.Strings.AmountOfMovement;
+        AmountOfMovementPixelLabel.Content = ApplicationData.Strings.Pixel;
+        SizeChangeAmountLabel.Content = ApplicationData.Strings.SizeChangeAmount;
+        SizeChangeAmountPixelLabel.Content = ApplicationData.Strings.Pixel;
+        TransparencyLabel.Content = ApplicationData.Strings.Transparency;
+        HotkeyLabel.Content = ApplicationData.Strings.Hotkey;
+        CancelButton.Content = ApplicationData.Strings.Cancel;
 
         string stringData;
         RegisteredNameTextBox.Text = HotkeyItemInformation.RegisteredName;
         stringData = HotkeyItemInformation.ProcessingType switch
         {
-            HotkeyProcessingType.PositionSize => ApplicationData.Languages.SpecifyPositionAndSize,
-            HotkeyProcessingType.MoveX => ApplicationData.Languages.MoveXCoordinate,
-            HotkeyProcessingType.MoveY => ApplicationData.Languages.MoveYCoordinate,
-            HotkeyProcessingType.IncreaseDecreaseWidth => ApplicationData.Languages.IncreaseDecreaseWidth,
-            HotkeyProcessingType.IncreaseDecreaseHeight => ApplicationData.Languages.IncreaseDecreaseHeight,
-            HotkeyProcessingType.IncreaseDecreaseWidthHeight => ApplicationData.Languages.IncreaseDecreaseWidthAndHeight,
-            HotkeyProcessingType.AlwaysForefrontOrCancel => ApplicationData.Languages.AlwaysShowOrCancelOnTop,
-            HotkeyProcessingType.SpecifyTransparencyOrCancel => ApplicationData.Languages.SpecifyCancelTransparency,
-            HotkeyProcessingType.StartStopSpecifyWindow => ApplicationData.Languages.StartStopProcessingOfSpecifyWindow,
-            HotkeyProcessingType.BatchSpecifyWindow => ApplicationData.Languages.BatchProcessingOfSpecifyWindow,
-            HotkeyProcessingType.OnlyActiveWindowSpecifyWindow => ApplicationData.Languages.OnlyActiveWindowSpecifyWindow,
-            HotkeyProcessingType.StartStopAllWindow => ApplicationData.Languages.StartStopProcessingOfAllWindow,
-            HotkeyProcessingType.StartStopMagnet => ApplicationData.Languages.StartStopProcessingOfMagnet,
-            HotkeyProcessingType.ShowThisApplicationWindow => ApplicationData.Languages.ShowThisApplicationWindow,
-            HotkeyProcessingType.ShowNotifyIconMenu => ApplicationData.Languages.ShowSystemTrayIconMenu,
-            _ => ApplicationData.Languages.SpecifyPositionAndSize
+            HotkeyProcessingType.PositionSize => ApplicationData.Strings.SpecifyPositionAndSize,
+            HotkeyProcessingType.MoveX => ApplicationData.Strings.MoveXCoordinate,
+            HotkeyProcessingType.MoveY => ApplicationData.Strings.MoveYCoordinate,
+            HotkeyProcessingType.IncreaseDecreaseWidth => ApplicationData.Strings.IncreaseDecreaseWidth,
+            HotkeyProcessingType.IncreaseDecreaseHeight => ApplicationData.Strings.IncreaseDecreaseHeight,
+            HotkeyProcessingType.IncreaseDecreaseWidthHeight => ApplicationData.Strings.IncreaseDecreaseWidthAndHeight,
+            HotkeyProcessingType.AlwaysForefrontOrCancel => ApplicationData.Strings.AlwaysShowOrCancelOnTop,
+            HotkeyProcessingType.SpecifyTransparencyOrCancel => ApplicationData.Strings.SpecifyCancelTransparency,
+            HotkeyProcessingType.TitleBarAndBorderShowAndHidden => ApplicationData.Strings.TitleBarAndBorderShowAndHidden,
+            HotkeyProcessingType.StartStopSpecifyWindow => ApplicationData.Strings.StartStopProcessingOfSpecifyWindow,
+            HotkeyProcessingType.BatchSpecifyWindow => ApplicationData.Strings.BatchProcessingOfSpecifyWindow,
+            HotkeyProcessingType.OnlyActiveWindowSpecifyWindow => ApplicationData.Strings.OnlyActiveWindowSpecifyWindow,
+            HotkeyProcessingType.StartStopAllWindow => ApplicationData.Strings.StartStopProcessingOfAllWindow,
+            HotkeyProcessingType.StartStopMagnet => ApplicationData.Strings.StartStopProcessingOfMagnet,
+            HotkeyProcessingType.ShowThisApplicationWindow => ApplicationData.Strings.ShowThisApplicationWindow,
+            HotkeyProcessingType.ShowNotifyIconMenu => ApplicationData.Strings.ShowSystemTrayIconMenu,
+            _ => ApplicationData.Strings.SpecifyPositionAndSize
         };
         ControlsProcessing.SelectComboBoxItem(TypeOfProcessingComboBox, stringData);
         switch (HotkeyItemInformation.StandardDisplay)
         {
             case StandardDisplay.SpecifiedDisplay:
-                stringData = ApplicationData.Languages.SpecifiedDisplay;
+                stringData = ApplicationData.Strings.SpecifiedDisplay;
                 break;
             default:
-                stringData = ApplicationData.Languages.CurrentDisplay;
+                stringData = ApplicationData.Strings.CurrentDisplay;
                 DisplayLabel.IsEnabled = false;
                 DisplayComboBox.IsEnabled = false;
                 break;
@@ -180,71 +182,71 @@ public partial class HotkeyItemWindow : Window
         }
         stringData = HotkeyItemInformation.PositionSize.SettingsWindowState switch
         {
-            SettingsWindowState.Normal => ApplicationData.Languages.NormalWindow,
-            SettingsWindowState.Maximize => ApplicationData.Languages.Maximize,
-            SettingsWindowState.Minimize => ApplicationData.Languages.Minimize,
-            _ => ApplicationData.Languages.DoNotChange
+            SettingsWindowState.Normal => ApplicationData.Strings.NormalWindow,
+            SettingsWindowState.Maximize => ApplicationData.Strings.Maximize,
+            SettingsWindowState.Minimize => ApplicationData.Strings.Minimize,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowStateComboBox, stringData);
         stringData = HotkeyItemInformation.PositionSize.XType switch
         {
-            WindowXType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowXType.Left => ApplicationData.Languages.LeftEdge,
-            WindowXType.Middle => ApplicationData.Languages.Middle,
-            WindowXType.Right => ApplicationData.Languages.RightEdge,
-            WindowXType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange,
+            WindowXType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowXType.Left => ApplicationData.Strings.LeftEdge,
+            WindowXType.Middle => ApplicationData.Strings.Middle,
+            WindowXType.Right => ApplicationData.Strings.RightEdge,
+            WindowXType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange,
         };
         ControlsProcessing.SelectComboBoxItem(XComboBox, stringData);
         stringData = HotkeyItemInformation.PositionSize.XValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(XTypeComboBox, stringData);
         XNumberBox.Value = HotkeyItemInformation.PositionSize.X;
         stringData = HotkeyItemInformation.PositionSize.YType switch
         {
-            WindowYType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowYType.Top => ApplicationData.Languages.TopEdge,
-            WindowYType.Middle => ApplicationData.Languages.Middle,
-            WindowYType.Bottom => ApplicationData.Languages.BottomEdge,
-            WindowYType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange,
+            WindowYType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowYType.Top => ApplicationData.Strings.TopEdge,
+            WindowYType.Middle => ApplicationData.Strings.Middle,
+            WindowYType.Bottom => ApplicationData.Strings.BottomEdge,
+            WindowYType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange,
         };
         ControlsProcessing.SelectComboBoxItem(YComboBox, stringData);
         stringData = HotkeyItemInformation.PositionSize.YValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(YTypeComboBox, stringData);
         YNumberBox.Value = HotkeyItemInformation.PositionSize.Y;
         stringData = HotkeyItemInformation.PositionSize.WidthType switch
         {
-            WindowSizeType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowSizeType.Value => ApplicationData.Languages.WidthSpecification,
-            _ => ApplicationData.Languages.DoNotChange,
+            WindowSizeType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowSizeType.Value => ApplicationData.Strings.WidthSpecification,
+            _ => ApplicationData.Strings.DoNotChange,
         };
         ControlsProcessing.SelectComboBoxItem(WidthComboBox, stringData);
         stringData = HotkeyItemInformation.PositionSize.WidthValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(WidthTypeComboBox, stringData);
         WidthNumberBox.Value = HotkeyItemInformation.PositionSize.Width;
         stringData = HotkeyItemInformation.PositionSize.HeightType switch
         {
-            WindowSizeType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowSizeType.Value => ApplicationData.Languages.HeightSpecification,
-            _ => ApplicationData.Languages.DoNotChange,
+            WindowSizeType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowSizeType.Value => ApplicationData.Strings.HeightSpecification,
+            _ => ApplicationData.Strings.DoNotChange,
         };
         ControlsProcessing.SelectComboBoxItem(HeightComboBox, stringData);
         stringData = HotkeyItemInformation.PositionSize.HeightValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(HeightTypeComboBox, stringData);
         HeightNumberBox.Value = HotkeyItemInformation.PositionSize.Height;
@@ -359,7 +361,7 @@ public partial class HotkeyItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)StandardDisplayComboBox.SelectedItem).Content == ApplicationData.Languages.CurrentDisplay)
+            if ((string)((ComboBoxItem)StandardDisplayComboBox.SelectedItem).Content == ApplicationData.Strings.CurrentDisplay)
             {
                 DisplayLabel.IsEnabled = false;
                 DisplayComboBox.IsEnabled = false;
@@ -425,7 +427,7 @@ public partial class HotkeyItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)XTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)XTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 XNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 XNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -472,7 +474,7 @@ public partial class HotkeyItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)YTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)YTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 YNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 YNumberBox.Maximum= PositionSize.PositionSizePercentMaximum;
@@ -519,7 +521,7 @@ public partial class HotkeyItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WidthTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)WidthTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 WidthNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 WidthNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -566,7 +568,7 @@ public partial class HotkeyItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)HeightTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)HeightTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 HeightNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 HeightNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -644,7 +646,7 @@ public partial class HotkeyItemWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -670,30 +672,30 @@ public partial class HotkeyItemWindow : Window
                     if (IndexOfItemToBeModified == -1)
                     {
                         ApplicationData.Settings.HotkeyInformation.Items.Add(HotkeyItemInformation);
-                        FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                        FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     }
                     else
                     {
                         ApplicationData.Settings.HotkeyInformation.Items[IndexOfItemToBeModified] = HotkeyItemInformation;
-                        FEMessageBox.Show(ApplicationData.Languages.Modified, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                        FEMessageBox.Show(ApplicationData.Strings.Modified, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     }
                     AddedModified = true;
                 }
                 catch
                 {
-                    FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 }
                 ApplicationData.WindowProcessingManagement.HotkeyProcessing?.RegisterHotkeys();
                 Close();
             }
             else
             {
-                FEMessageBox.Show(resultString, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(resultString, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -721,7 +723,7 @@ public partial class HotkeyItemWindow : Window
     /// </summary>
     private void SettingsXControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)XComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)XComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             XNumberBox.IsEnabled = true;
             XTypeComboBox.IsEnabled = true;
@@ -738,7 +740,7 @@ public partial class HotkeyItemWindow : Window
     /// </summary>
     private void SettingsYControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)YComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)YComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             YNumberBox.IsEnabled = true;
             YTypeComboBox.IsEnabled = true;
@@ -755,7 +757,7 @@ public partial class HotkeyItemWindow : Window
     /// </summary>
     private void SettingsWidthControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)WidthComboBox.SelectedItem).Content == ApplicationData.Languages.WidthSpecification)
+        if ((string)((ComboBoxItem)WidthComboBox.SelectedItem).Content == ApplicationData.Strings.WidthSpecification)
         {
             WidthNumberBox.IsEnabled = true;
             WidthTypeComboBox.IsEnabled = true;
@@ -772,7 +774,7 @@ public partial class HotkeyItemWindow : Window
     /// </summary>
     private void SettingsHeightControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)HeightComboBox.SelectedItem).Content == ApplicationData.Languages.HeightSpecification)
+        if ((string)((ComboBoxItem)HeightComboBox.SelectedItem).Content == ApplicationData.Strings.HeightSpecification)
         {
             HeightNumberBox.IsEnabled = true;
             HeightTypeComboBox.IsEnabled = true;
@@ -790,7 +792,7 @@ public partial class HotkeyItemWindow : Window
     private void SettingsControlsIsEnabled()
     {
         string selectedItemString = (string)((ComboBoxItem)TypeOfProcessingComboBox.SelectedItem).Content;
-        if (selectedItemString == ApplicationData.Languages.SpecifyPositionAndSize)
+        if (selectedItemString == ApplicationData.Strings.SpecifyPositionAndSize)
         {
             StandardDisplayLabel.IsEnabled = true;
             StandardDisplayComboBox.IsEnabled = true;
@@ -799,7 +801,7 @@ public partial class HotkeyItemWindow : Window
             WindowStateLabel.IsEnabled = true;
             WindowStateComboBox.IsEnabled = true;
             string stringData = (string)((ComboBoxItem)WindowStateComboBox.SelectedItem).Content;
-            if (stringData == ApplicationData.Languages.NormalWindow)
+            if (stringData == ApplicationData.Strings.NormalWindow)
             {
                 XLabel.IsEnabled = true;
                 XGrid.IsEnabled = true;
@@ -847,26 +849,32 @@ public partial class HotkeyItemWindow : Window
             ClientAreaToggleSwitch.IsEnabled = false;
         }
 
-        if ((selectedItemString == ApplicationData.Languages.MoveXCoordinate)
-            || (selectedItemString == ApplicationData.Languages.MoveYCoordinate))
+        if ((selectedItemString == ApplicationData.Strings.MoveXCoordinate)
+            || (selectedItemString == ApplicationData.Strings.MoveYCoordinate))
         {
             AmountOfMovementGrid.IsEnabled = true;
             SizeChangeAmountGrid.IsEnabled = false;
             TransparencyGrid.IsEnabled = false;
         }
-        else if ((selectedItemString == ApplicationData.Languages.IncreaseDecreaseWidth)
-            || (selectedItemString == ApplicationData.Languages.IncreaseDecreaseHeight)
-            || (selectedItemString == ApplicationData.Languages.IncreaseDecreaseWidthAndHeight))
+        else if ((selectedItemString == ApplicationData.Strings.IncreaseDecreaseWidth)
+            || (selectedItemString == ApplicationData.Strings.IncreaseDecreaseHeight)
+            || (selectedItemString == ApplicationData.Strings.IncreaseDecreaseWidthAndHeight))
         {
             AmountOfMovementGrid.IsEnabled = false;
             SizeChangeAmountGrid.IsEnabled = true;
             TransparencyGrid.IsEnabled = false;
         }
-        else if (selectedItemString == ApplicationData.Languages.SpecifyCancelTransparency)
+        else if (selectedItemString == ApplicationData.Strings.SpecifyCancelTransparency)
         {
             AmountOfMovementGrid.IsEnabled = false;
             SizeChangeAmountGrid.IsEnabled = false;
             TransparencyGrid.IsEnabled = true;
+        }
+        else if (selectedItemString == ApplicationData.Strings.TitleBarAndBorderShowAndHidden)
+        {
+            AmountOfMovementGrid.IsEnabled = false;
+            SizeChangeAmountGrid.IsEnabled = false;
+            TransparencyGrid.IsEnabled = false;
         }
         else
         {
@@ -893,63 +901,67 @@ public partial class HotkeyItemWindow : Window
 
         HotkeyItemInformation.RegisteredName = RegisteredNameTextBox.Text;
         stringData = (string)((ComboBoxItem)TypeOfProcessingComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.SpecifyPositionAndSize)
+        if (stringData == ApplicationData.Strings.SpecifyPositionAndSize)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.PositionSize;
         }
-        else if (stringData == ApplicationData.Languages.MoveXCoordinate)
+        else if (stringData == ApplicationData.Strings.MoveXCoordinate)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.MoveX;
         }
-        else if (stringData == ApplicationData.Languages.MoveYCoordinate)
+        else if (stringData == ApplicationData.Strings.MoveYCoordinate)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.MoveY;
         }
-        else if (stringData == ApplicationData.Languages.IncreaseDecreaseWidth)
+        else if (stringData == ApplicationData.Strings.IncreaseDecreaseWidth)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.IncreaseDecreaseWidth;
         }
-        else if (stringData == ApplicationData.Languages.IncreaseDecreaseHeight)
+        else if (stringData == ApplicationData.Strings.IncreaseDecreaseHeight)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.IncreaseDecreaseHeight;
         }
-        else if (stringData == ApplicationData.Languages.IncreaseDecreaseWidthAndHeight)
+        else if (stringData == ApplicationData.Strings.IncreaseDecreaseWidthAndHeight)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.IncreaseDecreaseWidthHeight;
         }
-        else if (stringData == ApplicationData.Languages.AlwaysShowOrCancelOnTop)
+        else if (stringData == ApplicationData.Strings.AlwaysShowOrCancelOnTop)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.AlwaysForefrontOrCancel;
         }
-        else if (stringData == ApplicationData.Languages.SpecifyCancelTransparency)
+        else if (stringData == ApplicationData.Strings.SpecifyCancelTransparency)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.SpecifyTransparencyOrCancel;
         }
-        else if (stringData == ApplicationData.Languages.StartStopProcessingOfSpecifyWindow)
+        else if (stringData == ApplicationData.Strings.TitleBarAndBorderShowAndHidden)
+        {
+            HotkeyItemInformation.ProcessingType = HotkeyProcessingType.TitleBarAndBorderShowAndHidden;
+        }
+        else if (stringData == ApplicationData.Strings.StartStopProcessingOfSpecifyWindow)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.StartStopSpecifyWindow;
         }
-        else if (stringData == ApplicationData.Languages.BatchProcessingOfSpecifyWindow)
+        else if (stringData == ApplicationData.Strings.BatchProcessingOfSpecifyWindow)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.BatchSpecifyWindow;
         }
-        else if (stringData == ApplicationData.Languages.OnlyActiveWindowSpecifyWindow)
+        else if (stringData == ApplicationData.Strings.OnlyActiveWindowSpecifyWindow)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.OnlyActiveWindowSpecifyWindow;
         }
-        else if (stringData == ApplicationData.Languages.StartStopProcessingOfAllWindow)
+        else if (stringData == ApplicationData.Strings.StartStopProcessingOfAllWindow)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.StartStopAllWindow;
         }
-        else if (stringData == ApplicationData.Languages.StartStopProcessingOfMagnet)
+        else if (stringData == ApplicationData.Strings.StartStopProcessingOfMagnet)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.StartStopMagnet;
         }
-        else if (stringData == ApplicationData.Languages.ShowThisApplicationWindow)
+        else if (stringData == ApplicationData.Strings.ShowThisApplicationWindow)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.ShowThisApplicationWindow;
         }
-        else if (stringData == ApplicationData.Languages.ShowSystemTrayIconMenu)
+        else if (stringData == ApplicationData.Strings.ShowSystemTrayIconMenu)
         {
             HotkeyItemInformation.ProcessingType = HotkeyProcessingType.ShowNotifyIconMenu;
         }
@@ -957,25 +969,25 @@ public partial class HotkeyItemWindow : Window
         {
             case HotkeyProcessingType.PositionSize:
                 stringData = (string)((ComboBoxItem)StandardDisplayComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.SpecifiedDisplay)
+                if (stringData == ApplicationData.Strings.SpecifiedDisplay)
                 {
                     HotkeyItemInformation.StandardDisplay = StandardDisplay.SpecifiedDisplay;
                 }
-                else if (stringData == ApplicationData.Languages.CurrentDisplay)
+                else if (stringData == ApplicationData.Strings.CurrentDisplay)
                 {
                     HotkeyItemInformation.StandardDisplay = StandardDisplay.CurrentDisplay;
                 }
                 HotkeyItemInformation.PositionSize.Display = (string)((ComboBoxItem)DisplayComboBox.SelectedItem).Content;
                 stringData = (string)((ComboBoxItem)WindowStateComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.NormalWindow)
+                if (stringData == ApplicationData.Strings.NormalWindow)
                 {
                     HotkeyItemInformation.PositionSize.SettingsWindowState = SettingsWindowState.Normal;
                 }
-                else if (stringData == ApplicationData.Languages.Maximize)
+                else if (stringData == ApplicationData.Strings.Maximize)
                 {
                     HotkeyItemInformation.PositionSize.SettingsWindowState = SettingsWindowState.Maximize;
                 }
-                else if (stringData == ApplicationData.Languages.Minimize)
+                else if (stringData == ApplicationData.Strings.Minimize)
                 {
                     HotkeyItemInformation.PositionSize.SettingsWindowState = SettingsWindowState.Minimize;
                 }
@@ -984,27 +996,27 @@ public partial class HotkeyItemWindow : Window
                     HotkeyItemInformation.PositionSize.SettingsWindowState = SettingsWindowState.DoNotChange;
                 }
                 stringData = (string)((ComboBoxItem)XComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.DoNotChange)
+                if (stringData == ApplicationData.Strings.DoNotChange)
                 {
                     HotkeyItemInformation.PositionSize.XType = WindowXType.DoNotChange;
                 }
-                else if (stringData == ApplicationData.Languages.LeftEdge)
+                else if (stringData == ApplicationData.Strings.LeftEdge)
                 {
                     HotkeyItemInformation.PositionSize.XType = WindowXType.Left;
                 }
-                else if (stringData == ApplicationData.Languages.Middle)
+                else if (stringData == ApplicationData.Strings.Middle)
                 {
                     HotkeyItemInformation.PositionSize.XType = WindowXType.Middle;
                 }
-                else if (stringData == ApplicationData.Languages.RightEdge)
+                else if (stringData == ApplicationData.Strings.RightEdge)
                 {
                     HotkeyItemInformation.PositionSize.XType = WindowXType.Right;
                 }
-                else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+                else if (stringData == ApplicationData.Strings.CoordinateSpecification)
                 {
                     HotkeyItemInformation.PositionSize.XType = WindowXType.Value;
                     HotkeyItemInformation.PositionSize.X = XNumberBox.Value;
-                    if ((string)((ComboBoxItem)XTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+                    if ((string)((ComboBoxItem)XTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
                     {
                         HotkeyItemInformation.PositionSize.XValueType = PositionSizeValueType.Percent;
                     }
@@ -1014,27 +1026,27 @@ public partial class HotkeyItemWindow : Window
                     }
                 }
                 stringData = (string)((ComboBoxItem)YComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.DoNotChange)
+                if (stringData == ApplicationData.Strings.DoNotChange)
                 {
                     HotkeyItemInformation.PositionSize.YType = WindowYType.DoNotChange;
                 }
-                else if (stringData == ApplicationData.Languages.TopEdge)
+                else if (stringData == ApplicationData.Strings.TopEdge)
                 {
                     HotkeyItemInformation.PositionSize.YType = WindowYType.Top;
                 }
-                else if (stringData == ApplicationData.Languages.Middle)
+                else if (stringData == ApplicationData.Strings.Middle)
                 {
                     HotkeyItemInformation.PositionSize.YType = WindowYType.Middle;
                 }
-                else if (stringData == ApplicationData.Languages.BottomEdge)
+                else if (stringData == ApplicationData.Strings.BottomEdge)
                 {
                     HotkeyItemInformation.PositionSize.YType = WindowYType.Bottom;
                 }
-                else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+                else if (stringData == ApplicationData.Strings.CoordinateSpecification)
                 {
                     HotkeyItemInformation.PositionSize.YType = WindowYType.Value;
                     HotkeyItemInformation.PositionSize.Y = YNumberBox.Value;
-                    if ((string)((ComboBoxItem)YTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+                    if ((string)((ComboBoxItem)YTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
                     {
                         HotkeyItemInformation.PositionSize.YValueType = PositionSizeValueType.Percent;
                     }
@@ -1044,15 +1056,15 @@ public partial class HotkeyItemWindow : Window
                     }
                 }
                 stringData = (string)((ComboBoxItem)WidthComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.DoNotChange)
+                if (stringData == ApplicationData.Strings.DoNotChange)
                 {
                     HotkeyItemInformation.PositionSize.WidthType = WindowSizeType.DoNotChange;
                 }
-                else if (stringData == ApplicationData.Languages.WidthSpecification)
+                else if (stringData == ApplicationData.Strings.WidthSpecification)
                 {
                     HotkeyItemInformation.PositionSize.WidthType = WindowSizeType.Value;
                     HotkeyItemInformation.PositionSize.Width = WidthNumberBox.Value;
-                    if ((string)((ComboBoxItem)WidthTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+                    if ((string)((ComboBoxItem)WidthTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
                     {
                         HotkeyItemInformation.PositionSize.WidthValueType = PositionSizeValueType.Percent;
                     }
@@ -1062,15 +1074,15 @@ public partial class HotkeyItemWindow : Window
                     }
                 }
                 stringData = (string)((ComboBoxItem)HeightComboBox.SelectedItem).Content;
-                if (stringData == ApplicationData.Languages.DoNotChange)
+                if (stringData == ApplicationData.Strings.DoNotChange)
                 {
                     HotkeyItemInformation.PositionSize.HeightType = WindowSizeType.DoNotChange;
                 }
-                else if (stringData == ApplicationData.Languages.HeightSpecification)
+                else if (stringData == ApplicationData.Strings.HeightSpecification)
                 {
                     HotkeyItemInformation.PositionSize.HeightType = WindowSizeType.Value;
                     HotkeyItemInformation.PositionSize.Height = HeightNumberBox.Value;
-                    if ((string)((ComboBoxItem)HeightTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+                    if ((string)((ComboBoxItem)HeightTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
                     {
                         HotkeyItemInformation.PositionSize.HeightValueType = PositionSizeValueType.Percent;
                     }
@@ -1083,15 +1095,15 @@ public partial class HotkeyItemWindow : Window
                 break;
             case HotkeyProcessingType.MoveX:
             case HotkeyProcessingType.MoveY:
-                HotkeyItemInformation.ProcessingValue = (int)AmountOfMovementNumberBox.Value;
+                HotkeyItemInformation.ProcessingValue = double.IsNaN(AmountOfMovementNumberBox.Value) ? 0 : (int)AmountOfMovementNumberBox.Value;
                 break;
             case HotkeyProcessingType.IncreaseDecreaseWidth:
             case HotkeyProcessingType.IncreaseDecreaseHeight:
             case HotkeyProcessingType.IncreaseDecreaseWidthHeight:
-                HotkeyItemInformation.ProcessingValue = (int)SizeChangeAmountNumberBox.Value;
+                HotkeyItemInformation.ProcessingValue = double.IsNaN(SizeChangeAmountNumberBox.Value) ? 0 : (int)SizeChangeAmountNumberBox.Value;
                 break;
             case HotkeyProcessingType.SpecifyTransparencyOrCancel:
-                HotkeyItemInformation.ProcessingValue = (int)TransparencyNumberBox.Value;
+                HotkeyItemInformation.ProcessingValue = double.IsNaN(TransparencyNumberBox.Value) ? HotkeyItemInformation.MaximumTransparency : (int)TransparencyNumberBox.Value;
                 break;
         }
     }
@@ -1110,7 +1122,7 @@ public partial class HotkeyItemWindow : Window
             if (nowItem.RegisteredName == HotkeyItemInformation.RegisteredName
                 && (IndexOfItemToBeModified == -1 || IndexOfItemToBeModified != count))
             {
-                return ApplicationData.Languages.ThereIsADuplicateRegistrationName;
+                return ApplicationData.Strings.ThereIsADuplicateRegistrationName;
             }
             count++;
         }

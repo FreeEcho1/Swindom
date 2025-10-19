@@ -6,6 +6,17 @@
 public static class FileProcessing
 {
     /// <summary>
+    /// 読み書きで使用するJsonSerializerOptions
+    /// </summary>
+    public static JsonSerializerOptions JsonSerializerOptions { get; } = new()
+    {
+        Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
+        WriteIndented = true,
+        IgnoreReadOnlyProperties = true,
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+    };
+
+    /// <summary>
     /// ファイルやウェブページを開く
     /// </summary>
     /// <param name="fileAndUrl">ファイルパス/URL</param>

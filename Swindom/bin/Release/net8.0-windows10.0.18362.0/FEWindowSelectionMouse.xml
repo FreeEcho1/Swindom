@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FEWindowSelectionMouse</name>
+    </assembly>
+    <members>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.FrameWindow">
+            <summary>
+            フレームウィンドウ
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowSelectionMouse.FrameWindow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.FrameWindow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.FrameWindow.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.MouseLeftButtonUpEventArgs">
+            <summary>
+            マウスの左ボタンが離されたイベントデータ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.NativeMethods">
+            <summary>
+            NativeMethods
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.NativeMethodsDelegate">
+            <summary>
+            NativeMethods delegate
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.StartWindowSelectionException">
+            <summary>
+            ウィンドウ選択開始の例外
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.StartWindowSelectionException.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.StopWindowSelectionException">
+            <summary>
+            ウィンドウ選択停止の例外
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.StopWindowSelectionException.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame">
+            <summary>
+            ウィンドウ選択枠
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Disposed">
+            <summary>
+            Disposeが呼ばれたかの値 (いいえ「false」/はい「true」)
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.FrameWindow">
+            <summary>
+            フレームウィンドウ
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.ColorFrameWindow">
+            <summary>
+            フレームウィンドウの色
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.FrameWidth">
+            <summary>
+            フレームの幅
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.SelectedHwnd">
+            <summary>
+            選択したウィンドウのハンドル
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.MouseLeftUpStop">
+            <summary>
+            マウスの左ボタンが離されたら停止するかの値 (停止しない「false」/停止する「true」)
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Handle">
+            <summary>
+            マウスのフックプロシージャのハンドル
+            </summary>
+        </member>
+        <member name="E:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.HookCallback">
+            <summary>
+            フックチェーンにインストールするフックプロシージャのイベント
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.MouseLeftButtonUpEventHandler">
+            <summary>
+            マウスの左ボタンが離されたイベントのデリゲート
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.MouseLeftButtonUp">
+            <summary>
+            マウスの左ボタンが離されたときのイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Finalize">
+            <summary>
+            デストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Dispose(System.Boolean)">
+            <summary>
+            非公開Dispose
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.Delete">
+            <summary>
+            削除
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.FrameWindowProcessing">
+            <summary>
+            フレームウィンドウ処理
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.StartWindowSelection">
+            <summary>
+            ウィンドウ選択開始
+            </summary>
+            <exception cref="T:FreeEcho.FEWindowSelectionMouse.StartWindowSelectionException">ウィンドウ選択開始の例外</exception>
+            <exception cref="T:System.ComponentModel.Win32Exception">Win 32のエラーコードの例外</exception>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.StopWindowSelection">
+            <summary>
+            ウィンドウ選択停止
+            </summary>
+            <exception cref="T:FreeEcho.FEWindowSelectionMouse.StopWindowSelectionException">ウィンドウ選択停止の例外</exception>
+        </member>
+        <member name="M:FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame.MouseHookProcedure(System.Int32,System.UInt32,FreeEcho.FEWindowSelectionMouse.MSLLHOOKSTRUCT@)">
+            <summary>
+            マウスのフックプロシージャ
+            </summary>
+            <param name="nCode">フックコード</param>
+            <param name="msg">フックプロシージャに渡す値</param>
+            <param name="s">フックプロシージャに渡す値</param>
+            <returns>フックチェーン内の次のフックプロシージャの戻り値</returns>
+        </member>
+    </members>
+</doc>

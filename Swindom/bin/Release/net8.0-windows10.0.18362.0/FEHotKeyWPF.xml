@@ -1,0 +1,117 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FEHotKeyWPF</name>
+    </assembly>
+    <members>
+        <member name="T:FreeEcho.FEHotKeyWPF.HotKeyInformation">
+            <summary>
+            ホットキー情報
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEHotKeyWPF.HotKeyInformation.Ctrl">
+            <summary>
+            Ctrl
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEHotKeyWPF.HotKeyInformation.Shift">
+            <summary>
+            Shift
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEHotKeyWPF.HotKeyInformation.Alt">
+            <summary>
+            Alt
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEHotKeyWPF.HotKeyInformation.Windows">
+            <summary>
+            Windows
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEHotKeyWPF.HotKeyInformation.KeyCharacter">
+            <summary>
+            数字及び文字
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyInformation.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyInformation.#ctor(FreeEcho.FEHotKeyWPF.HotKeyInformation)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="hotKeyInformation">ホットキー情報</param>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyInformation.Copy(FreeEcho.FEHotKeyWPF.HotKeyInformation)">
+            <summary>
+            コピー
+            </summary>
+            <param name="hotKeyInformation">ホットキー情報</param>
+        </member>
+        <member name="T:FreeEcho.FEHotKeyWPF.HotKeyProcessing">
+            <summary>
+            ホットキー処理
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyProcessing.RegisterHotKey(System.IntPtr,FreeEcho.FEHotKeyWPF.HotKeyInformation,System.Int32)">
+            <summary>
+            ホットキーを登録
+            </summary>
+            <param name="hwnd">ウィンドウハンドル</param>
+            <param name="hotKeyInformation">ホットキー情報</param>
+            <param name="id">ホットキーの識別子 (0x0000～0xBFFF)</param>
+            <returns>結果 (登録に失敗「false」/登録に成功「true」)</returns>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyProcessing.RegisterHotKey(System.IntPtr,System.Boolean,System.Boolean,System.Boolean,System.Boolean,System.Int32,System.Int32)">
+            <summary>
+            ホットキーを登録
+            </summary>
+            <param name="hwnd">ウィンドウハンドル</param>
+            <param name="alt">Alt</param>
+            <param name="ctrl">Ctrl</param>
+            <param name="shift">Shift</param>
+            <param name="windows">Windows</param>
+            <param name="vk">仮想キーコード (文字)</param>
+            <param name="id">ホットキーの識別子 (0x0000～0xBFFF)</param>
+            <returns>結果 (登録に失敗「false」/登録に成功「true」)</returns>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyProcessing.UnregisterHotKey(System.IntPtr,System.Int32)">
+            <summary>
+            定義したホットキーを破棄
+            </summary>
+            <param name="hwnd">ウィンドウハンドル</param>
+            <param name="id">ホットキーの識別子</param>
+            <returns>結果 (破棄に失敗「false」/破棄に成功「true」)</returns>
+        </member>
+        <member name="T:FreeEcho.FEHotKeyWPF.HotKeyWPF">
+            <summary>
+            ホットキー (WPF)
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyWPF.GetHotKey(System.Windows.Input.KeyEventArgs,System.Boolean)">
+            <summary>
+            キーイベント情報からホットキー情報を取得
+            <para>「PreviewKeyDown」を使用する必要がある。「KeyDown」だと一部キーが機能しない</para>
+            </summary>
+            <param name="e">キーイベント</param>
+            <param name="backspaceErase">Back Spaceは無し (No「false」/Yes「true」)</param>
+            <returns>ホットキー情報</returns>
+        </member>
+        <member name="M:FreeEcho.FEHotKeyWPF.HotKeyWPF.GetHotKeyString(FreeEcho.FEHotKeyWPF.HotKeyInformation,System.String)">
+            <summary>
+            ホットキー情報からホットキーの文字列を取得
+            </summary>
+            <param name="hotKeyInformation">ホットキー情報</param>
+            <param name="separatorString">区切り文字列</param>
+            <returns>ホットキー文字列 (失敗「null」)</returns>
+        </member>
+        <member name="T:FreeEcho.FEHotKeyWPF.NativeMethods">
+            <summary>
+            NativeMethods
+            </summary>
+        </member>
+    </members>
+</doc>

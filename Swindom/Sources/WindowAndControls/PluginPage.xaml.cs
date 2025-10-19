@@ -6,18 +6,13 @@
 public partial class PluginPage : Page
 {
     /// <summary>
-    /// プラグインのファイル情報
-    /// </summary>
-    private readonly List<PluginFileInformation> PluginFileInformation;
-
-    /// <summary>
     /// コンストラクタ
     /// </summary>
     public PluginPage()
     {
         InitializeComponent();
 
-        PluginFileInformation = PluginProcessing.GetPluginsInformation();       // プラグインのファイルパス
+        PluginProcessing.UpdatePluginsInformation();
 
         if (ApplicationPath.CheckInstalled() == false)
         {
@@ -33,7 +28,6 @@ public partial class PluginPage : Page
         PluginFolderTextBox.Text = ApplicationData.Settings.PluginInformation.PluginFolder;
         UpdatePluginListBox();
         PluginSettingsButton.IsEnabled = false;
-        RestartStackPanel.Visibility = Visibility.Collapsed;
         SettingsControlsImage();
         SetTextOnControls();
 
@@ -44,7 +38,6 @@ public partial class PluginPage : Page
         PluginFolderTextBox.TextChanged += PluginFolderTextBox_TextChanged;
         PluginPathButton.Click += PluginPathButton_Click;
         PluginExplanationButton.Click += PluginExplanationButton_Click;
-        RestartButton.Click += RestartButton_Click;
         ApplicationData.EventData.ProcessingEvent += ApplicationData_ProcessingEvent;
     }
 
@@ -81,7 +74,7 @@ public partial class PluginPage : Page
 
                 foreach (RunningPluginInformation nowInformation in ApplicationData.WindowProcessingManagement.PluginProcessing.RunningPluginInformation)
                 {
-                    if (nowInformation.Path == PluginFileInformation[PluginListBox.SelectedIndex].Path && PluginFileInformation[PluginListBox.SelectedIndex].IsWindowExist)
+                    if (nowInformation.Path == PluginProcessing.PluginFileInformation[PluginListBox.SelectedIndex].Path && PluginProcessing.PluginFileInformation[PluginListBox.SelectedIndex].IsWindowExist)
                     {
                         isEnabled = true;
                         break;
@@ -114,10 +107,9 @@ public partial class PluginPage : Page
 
                 foreach (RunningPluginInformation nowInformation in ApplicationData.WindowProcessingManagement.PluginProcessing.RunningPluginInformation)
                 {
-                    if (nowInformation.IPlugin != null && selectedPlugin == nowInformation.IPlugin.PluginName && nowInformation.IPlugin.IsWindowExist)
+                    if (selectedPlugin == nowInformation.PluginName)
                     {
-                        nowInformation.IPlugin.ShowWindow();
-                        break;
+                        nowInformation.ShowWindow();
                     }
                 }
             }
@@ -174,11 +166,6 @@ public partial class PluginPage : Page
     {
         try
         {
-            if (ApplicationData.Settings.PluginInformation.IsEnabled
-                && ProcessingStateToggleSwitch.IsOn == false)
-            {
-                RestartStackPanel.Visibility = Visibility.Visible;
-            }
             ApplicationData.Settings.PluginInformation.IsEnabled = ProcessingStateToggleSwitch.IsOn;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.PluginProcessingStateChanged);
         }
@@ -255,25 +242,6 @@ public partial class PluginPage : Page
     }
 
     /// <summary>
-    /// 「再起動」Buttonの「Click」イベント
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void RestartButton_Click(
-        object sender,
-        RoutedEventArgs e
-        )
-    {
-        try
-        {
-            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.RestartProcessing);
-        }
-        catch
-        {
-        }
-    }
-
-    /// <summary>
     /// 「処理」イベント
     /// </summary>
     /// <param name="sender"></param>
@@ -311,7 +279,7 @@ public partial class PluginPage : Page
         {
             int selectedIndex = PluginListBox.SelectedIndex;       // 選択している項目のインデックス
 
-            foreach (PluginFileInformation nowPFI in PluginFileInformation)
+            foreach (PluginFileInformation nowPFI in PluginProcessing.PluginFileInformation)
             {
                 bool isEnabled = false;     // 有効状態
 
@@ -356,51 +324,53 @@ public partial class PluginPage : Page
                 return;
             }
 
-            PluginFileInformation? checkStateChangedItem = null;        // チェック状態が変更された項目のプラグインのファイル情報
-            PluginItemInformation? runningItem = null;       // 実行中のプラグイン項目情報 (実行中ではない「null」)
+            PluginFileInformation? checkStateChangedPFI = null;        // チェック状態が変更された項目のプラグインのファイル情報
+            PluginItemInformation? runningPII = null;       // 実行中のプラグイン項目情報 (実行中ではない「null」)
             string itemText = (string)e.Item.Text;      // チェック状態が変更された項目のテキスト
 
-            foreach (PluginFileInformation nowPFI in PluginFileInformation)
+            // チェック状態が変更されたプラグインを探す (プラグインのファイル情報)
+            foreach (PluginFileInformation nowPFI in PluginProcessing.PluginFileInformation)
             {
                 if (itemText == nowPFI.PluginName
                     || itemText == Path.GetFileNameWithoutExtension(nowPFI.Path))
                 {
-                    checkStateChangedItem = nowPFI;
+                    checkStateChangedPFI = nowPFI;
                     break;
                 }
             }
-            if (checkStateChangedItem == null)
+            if (checkStateChangedPFI == null)
             {
                 return;
             }
 
+            // 実行中のプラグイン項目情報を探す
             foreach (PluginItemInformation nowPII in ApplicationData.Settings.PluginInformation.Items)
             {
-                if (Path.GetFileNameWithoutExtension(checkStateChangedItem.Path) == nowPII.PluginFileName)
+                if (nowPII.PluginFileName == Path.GetFileNameWithoutExtension(checkStateChangedPFI.Path))
                 {
-                    runningItem = nowPII;
+                    runningPII = nowPII;
                     break;
                 }
             }
 
             if (e.Item.IsChecked)
             {
-                if (runningItem == null)
+                if (runningPII == null)
                 {
                     PluginItemInformation newItem = new()
                     {
-                        PluginFileName = Path.GetFileNameWithoutExtension(checkStateChangedItem.Path)
+                        PluginFileName = Path.GetFileNameWithoutExtension(checkStateChangedPFI.Path)
                     };
                     ApplicationData.Settings.PluginInformation.Items.Add(newItem);
-                    ApplicationData.WindowProcessingManagement.PluginProcessing?.RunPlugins();
+                    ApplicationData.WindowProcessingManagement.PluginProcessing?.RunStopPlugins();
                 }
             }
             else
             {
-                if (runningItem != null)
+                if (runningPII != null)
                 {
-                    ApplicationData.Settings.PluginInformation.Items.Remove(runningItem);
-                    RestartStackPanel.Visibility = Visibility.Visible;
+                    ApplicationData.Settings.PluginInformation.Items.Remove(runningPII);
+                    ApplicationData.WindowProcessingManagement.PluginProcessing?.RunStopPlugins();
                 }
             }
         }
@@ -416,16 +386,14 @@ public partial class PluginPage : Page
     {
         try
         {
-            PluginSettingsButton.Text = ApplicationData.Languages.PluginSettings;
-            SettingsButton.Text = ApplicationData.Languages.Setting;
-            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Languages.ProcessingState;
-            PluginFolderLabel.Content = ApplicationData.Languages.PluginFolder;
-            PluginPathButton.ToolTip = ApplicationData.Languages.FolderSelection;
-            PluginExplanationButton.Content = ApplicationData.Languages.Question;
-            PluginExplanationButton.ToolTip = ApplicationData.Languages.Help;
-            RestartButton.Content = ApplicationData.Languages.Restart;
-            RestartLabel.Content = ApplicationData.Languages.NeedRestart;
-            ExplanationTextBlock.Text = ApplicationData.Languages.PluginExplanation;
+            PluginSettingsButton.Text = ApplicationData.Strings.PluginSettings;
+            SettingsButton.Text = ApplicationData.Strings.Setting;
+            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Strings.ProcessingState;
+            PluginFolderLabel.Content = ApplicationData.Strings.PluginFolder;
+            PluginPathButton.ToolTip = ApplicationData.Strings.FolderSelection;
+            PluginExplanationButton.Content = ApplicationData.Strings.Question;
+            PluginExplanationButton.ToolTip = ApplicationData.Strings.Help;
+            ExplanationTextBlock.Text = ApplicationData.Strings.PluginExplanation;
         }
         catch
         {

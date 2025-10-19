@@ -23,7 +23,7 @@ public class ShiftPastePosition
     /// 左側の距離
     /// </summary>
     [JsonIgnore]
-    private int PrivateLeft;
+    private int _left;
     /// <summary>
     /// 左側の距離
     /// </summary>
@@ -31,21 +31,21 @@ public class ShiftPastePosition
     {
         get
         {
-            return PrivateLeft;
+            return _left;
         }
         set
         {
             if (value < MinimumValue)
             {
-                PrivateLeft = MinimumValue;
+                _left = MinimumValue;
             }
             else if (MaximumValue < value)
             {
-                PrivateLeft = MaximumValue;
+                _left = MaximumValue;
             }
             else
             {
-                PrivateLeft = value;
+                _left = value;
             }
         }
     }
@@ -53,7 +53,7 @@ public class ShiftPastePosition
     /// 上側の距離
     /// </summary>
     [JsonIgnore]
-    private int PrivateTop;
+    private int _top;
     /// <summary>
     /// 上側の距離
     /// </summary>
@@ -61,21 +61,21 @@ public class ShiftPastePosition
     {
         get
         {
-            return PrivateTop;
+            return _top;
         }
         set
         {
             if (value < MinimumValue)
             {
-                PrivateTop = MinimumValue;
+                _top = MinimumValue;
             }
             else if (MaximumValue < value)
             {
-                PrivateTop = MaximumValue;
+                _top = MaximumValue;
             }
             else
             {
-                PrivateTop = value;
+                _top = value;
             }
         }
     }
@@ -83,7 +83,7 @@ public class ShiftPastePosition
     /// 右側の距離
     /// </summary>
     [JsonIgnore]
-    private int PrivateRight;
+    private int _right;
     /// <summary>
     /// 右側の距離
     /// </summary>
@@ -91,21 +91,21 @@ public class ShiftPastePosition
     {
         get
         {
-            return PrivateRight;
+            return _right;
         }
         set
         {
             if (value < MinimumValue)
             {
-                PrivateRight = MinimumValue;
+                _right = MinimumValue;
             }
             else if (MaximumValue < value)
             {
-                PrivateRight = MaximumValue;
+                _right = MaximumValue;
             }
             else
             {
-                PrivateRight = value;
+                _right = value;
             }
         }
     }
@@ -113,7 +113,7 @@ public class ShiftPastePosition
     /// 下側の距離
     /// </summary>
     [JsonIgnore]
-    private int PrivateBottom;
+    private int _bottom;
     /// <summary>
     /// 下側の距離
     /// </summary>
@@ -121,21 +121,21 @@ public class ShiftPastePosition
     {
         get
         {
-            return PrivateBottom;
+            return _bottom;
         }
         set
         {
             if (value < MinimumValue)
             {
-                PrivateBottom = MinimumValue;
+                _bottom = MinimumValue;
             }
             else if (MaximumValue < value)
             {
-                PrivateBottom = MaximumValue;
+                _bottom = MaximumValue;
             }
             else
             {
-                PrivateBottom = value;
+                _bottom = value;
             }
         }
     }

@@ -38,6 +38,10 @@ public enum HotkeyProcessingType : int
     /// </summary>
     SpecifyTransparencyOrCancel,
     /// <summary>
+    /// タイトルバーと枠を表示/非表示
+    /// </summary>
+    TitleBarAndBorderShowAndHidden,
+    /// <summary>
     /// 「指定ウィンドウ」の処理開始/停止
     /// </summary>
     StartStopSpecifyWindow,

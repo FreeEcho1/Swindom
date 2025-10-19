@@ -8,7 +8,7 @@ public class MonitorInformation
     /// <summary>
     /// モニター情報
     /// </summary>
-    public List<MonitorInfoEx> MonitorInfo { get; } = new();
+    public List<MonitorInfoEx> MonitorInfo { get; } = [];
 
     /// <summary>
     /// モニター情報を取得
@@ -54,7 +54,7 @@ public class MonitorInformation
     /// 指定領域があるモニター情報を取得
     /// </summary>
     /// <param name="specifiedAreaRectangle">ウィンドウの上下左右の位置</param>
-    /// <param name="monitorInfo">MonitorInfoEx</param>
+    /// <param name="monitorInfo">指定領域があるモニター情報が格納される。入っていない場合は初期値。</param>
     /// <returns>結果 (どのディスプレイにも入っていない「false」/ディスプレイに入っている「true」)</returns>
     public static bool GetMonitorInformationForSpecifiedArea(
         RectangleInt specifiedAreaRectangle,

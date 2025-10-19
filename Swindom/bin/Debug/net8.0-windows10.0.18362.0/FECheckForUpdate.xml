@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FECheckForUpdate</name>
+    </assembly>
+    <members>
+        <member name="T:FreeEcho.FECheckForUpdate.CheckForUpdate">
+            <summary>
+            更新確認
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.CheckForUpdate.VersionCompare(FreeEcho.FECheckForUpdate.VersionInformation,FreeEcho.FECheckForUpdate.VersionInformation)">
+            <summary>
+            バージョン比較
+            </summary>
+            <param name="applicationVersionInformation">アプリケーションのバージョン情報</param>
+            <param name="checkVersionInformation">確認するバージョン情報</param>
+            <returns>更新確認の結果</returns>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.CheckForUpdate.CheckForUpdateFileURL(System.String,System.String,System.Boolean)">
+            <summary>
+            アプリケーションファイルとURLから更新確認
+            </summary>
+            <param name="filePath">確認するアプリケーションのファイルパス</param>
+            <param name="url">確認するバージョン情報が書かれたファイルがあるURL</param>
+            <param name="checkBeta">ベータバージョンも確認するかの値 (確認しない「false」/確認する「true」)</param>
+            <returns>更新確認の結果</returns>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.CheckForUpdate.CheckForUpdateFileURL(System.String,System.String,FreeEcho.FECheckForUpdate.VersionInformation@,System.Boolean)">
+            <summary>
+            アプリケーションファイルとURLから更新確認、URLのバージョン番号取得
+            </summary>
+            <param name="filePath">確認するアプリケーションのファイルパス</param>
+            <param name="url">確認するバージョン情報が書かれたファイルがあるURL</param>
+            <param name="urlVersionInformation">URLから取得したバージョン情報を格納</param>
+            <param name="checkBeta">ベータバージョンも確認するかの値 (確認しない「false」/確認する「true」)</param>
+            <returns>更新確認の結果</returns>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.CheckForUpdate.GetWebPageString(System.String)">
+            <summary>
+            ウェブページの文字列を取得
+            </summary>
+            <param name="url">URL</param>
+            <returns>Task</returns>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.CheckForUpdate.StringFromNumber(System.String)">
+            <summary>
+            バージョン番号の文字列を数値に変換して取得
+            </summary>
+            <param name="versionString">バージョン番号の文字列</param>
+            <returns>バージョン情報</returns>
+        </member>
+        <member name="T:FreeEcho.FECheckForUpdate.CheckForUpdateResult">
+            <summary>
+            更新確認の結果
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FECheckForUpdate.CheckForUpdateResult.Fail">
+            <summary>
+            更新確認失敗
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FECheckForUpdate.CheckForUpdateResult.LatestVersion">
+            <summary>
+            最新バージョン
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FECheckForUpdate.CheckForUpdateResult.NotLatestVersion">
+            <summary>
+            最新バージョンではない
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FECheckForUpdate.VersionInformation">
+            <summary>
+            バージョン情報
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FECheckForUpdate.VersionInformation.Major">
+            <summary>
+            メジャーバージョン
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FECheckForUpdate.VersionInformation.Minor">
+            <summary>
+            マイナーバージョン
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FECheckForUpdate.VersionInformation.Build">
+            <summary>
+            ビルドバージョン
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FECheckForUpdate.VersionInformation.Revision">
+            <summary>
+            リビジョンバージョン
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FECheckForUpdate.VersionInformation.Beta">
+            <summary>
+            ベータバージョンかの値
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.VersionInformation.#ctor">
+            <summary>
+            コンストラクタ
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.VersionInformation.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="majorVersion">メジャーバージョン</param>
+            <param name="minorVersion">マイナーバージョン</param>
+            <param name="buildVersion">ビルドバージョン</param>
+            <param name="revisionVersion">リビジョンバージョン</param>
+            <param name="betaVersion">ベータバージョンかの値</param>
+        </member>
+        <member name="M:FreeEcho.FECheckForUpdate.VersionInformation.#ctor(FreeEcho.FECheckForUpdate.VersionInformation)">
+            <summary>
+            コンストラクタ
+            </summary>
+            <param name="versionInformation">バージョン情報</param>
+        </member>
+    </members>
+</doc>

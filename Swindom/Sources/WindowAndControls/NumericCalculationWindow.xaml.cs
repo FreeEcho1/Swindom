@@ -25,8 +25,8 @@ public partial class NumericCalculationWindow : Window
 
         ChainImage.Source = ImageProcessing.GetImageUnattachedChain();
 
-        Title = ApplicationData.Languages.NumericCalculation + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
-        RatioGroupBox.Header = ApplicationData.Languages.Ratio;
+        Title = ApplicationData.Strings.NumericCalculation + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
+        RatioGroupBox.Header = ApplicationData.Strings.Ratio;
 
         Loaded += NumericCalculationWindow_Loaded;
         Ratio1NumberBox.ValueChanged += Ratio1NumberBox_ValueChanged;

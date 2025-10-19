@@ -8,7 +8,41 @@ public class PositionSize
     /// <summary>
     /// ディスプレイ
     /// </summary>
-    public string Display { get; set; }
+    [JsonIgnore]
+    private string _display = "";
+    /// <summary>
+    /// ディスプレイ
+    /// </summary>
+    public string Display
+    {
+        get
+        {
+            return _display;
+        }
+        set
+        {
+            if (string.IsNullOrEmpty(value))
+            {
+                if (ApplicationData.MonitorInformation == null
+                    || ApplicationData.MonitorInformation.MonitorInfo.Count <= 0)
+                {
+                    MonitorInformation monitorInformation = MonitorInformation.GetMonitorInformation();     // モニター情報
+                    if (monitorInformation.MonitorInfo.Count > 0)
+                    {
+                        _display = monitorInformation.MonitorInfo[0].DeviceName;
+                    }
+                }
+                else
+                {
+                    _display = ApplicationData.MonitorInformation.MonitorInfo[0].DeviceName;
+                }
+            }
+            else
+            {
+                _display = value;
+            }
+        }
+    }
     /// <summary>
     /// ウィンドウの状態
     /// </summary>
@@ -43,7 +77,7 @@ public class PositionSize
     /// X
     /// </summary>
     [JsonIgnore]
-    private double PrivateX;
+    private double _x;
     /// <summary>
     /// X
     /// </summary>
@@ -51,38 +85,46 @@ public class PositionSize
     {
         get
         {
-            return PrivateX;
+            return _x;
         }
         set
         {
             if (XValueType == PositionSizeValueType.Percent)
             {
-                if (value < PositionSizePercentMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateX = PositionSizePercentMinimum;
+                    _x = 0;
+                }
+                else if (value < PositionSizePercentMinimum)
+                {
+                    _x = PositionSizePercentMinimum;
                 }
                 else if (PositionSizePercentMaximum < value)
                 {
-                    PrivateX = PositionSizePercentMaximum;
+                    _x = PositionSizePercentMaximum;
                 }
                 else
                 {
-                    PrivateX = value;
+                    _x = value;
                 }
             }
             else
             {
-                if (value < PositionPixelMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateX = PositionPixelMinimum;
+                    _x = 0;
+                }
+                else if (value < PositionPixelMinimum)
+                {
+                    _x = PositionPixelMinimum;
                 }
                 else if (PositionSizePixelMaximum < value)
                 {
-                    PrivateX = PositionSizePixelMaximum;
+                    _x = PositionSizePixelMaximum;
                 }
                 else
                 {
-                    PrivateX = value;
+                    _x = value;
                 }
             }
         }
@@ -91,7 +133,7 @@ public class PositionSize
     /// Y
     /// </summary>
     [JsonIgnore]
-    private double PrivateY;
+    private double _y;
     /// <summary>
     /// Y
     /// </summary>
@@ -99,38 +141,46 @@ public class PositionSize
     {
         get
         {
-            return PrivateY;
+            return _y;
         }
         set
         {
             if (YValueType == PositionSizeValueType.Percent)
             {
-                if (value < PositionSizePercentMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateY = PositionSizePercentMinimum;
+                    _y = 0;
+                }
+                else if (value < PositionSizePercentMinimum)
+                {
+                    _y = PositionSizePercentMinimum;
                 }
                 else if (PositionSizePercentMaximum < value)
                 {
-                    PrivateY = PositionSizePercentMaximum;
+                    _y = PositionSizePercentMaximum;
                 }
                 else
                 {
-                    PrivateY = value;
+                    _y = value;
                 }
             }
             else
             {
-                if (value < PositionPixelMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateY = PositionPixelMinimum;
+                    _y = 0;
+                }
+                else if (value < PositionPixelMinimum)
+                {
+                    _y = PositionPixelMinimum;
                 }
                 else if (PositionSizePixelMaximum < value)
                 {
-                    PrivateY = PositionSizePixelMaximum;
+                    _y = PositionSizePixelMaximum;
                 }
                 else
                 {
-                    PrivateY = value;
+                    _y = value;
                 }
             }
         }
@@ -139,7 +189,7 @@ public class PositionSize
     /// Width
     /// </summary>
     [JsonIgnore]
-    private double PrivateWidth;
+    private double _width;
     /// <summary>
     /// Width
     /// </summary>
@@ -147,38 +197,46 @@ public class PositionSize
     {
         get
         {
-            return PrivateWidth;
+            return _width;
         }
         set
         {
             if (WidthValueType == PositionSizeValueType.Percent)
             {
-                if (value < PositionSizePercentMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateWidth = PositionSizePercentMinimum;
+                    _width = 0;
+                }
+                else if (value < PositionSizePercentMinimum)
+                {
+                    _width = PositionSizePercentMinimum;
                 }
                 else if (PositionSizePercentMaximum < value)
                 {
-                    PrivateWidth = PositionSizePercentMaximum;
+                    _width = PositionSizePercentMaximum;
                 }
                 else
                 {
-                    PrivateWidth = value;
+                    _width = value;
                 }
             }
             else
             {
-                if (value < SizePixelMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateWidth = SizePixelMinimum;
+                    _width = 0;
+                }
+                else if (value < SizePixelMinimum)
+                {
+                    _width = SizePixelMinimum;
                 }
                 else if (PositionSizePixelMaximum < value)
                 {
-                    PrivateWidth = PositionSizePixelMaximum;
+                    _width = PositionSizePixelMaximum;
                 }
                 else
                 {
-                    PrivateWidth = value;
+                    _width = value;
                 }
             }
         }
@@ -187,7 +245,7 @@ public class PositionSize
     /// Height
     /// </summary>
     [JsonIgnore]
-    private double PrivateHeight;
+    private double _height;
     /// <summary>
     /// Height
     /// </summary>
@@ -195,38 +253,46 @@ public class PositionSize
     {
         get
         {
-            return PrivateHeight;
+            return _height;
         }
         set
         {
             if (HeightValueType == PositionSizeValueType.Percent)
             {
-                if (value < PositionSizePercentMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateHeight = PositionSizePercentMinimum;
+                    _height = 0;
+                }
+                else if (value < PositionSizePercentMinimum)
+                {
+                    _height = PositionSizePercentMinimum;
                 }
                 else if (PositionSizePercentMaximum < value)
                 {
-                    PrivateHeight = PositionSizePercentMaximum;
+                    _height = PositionSizePercentMaximum;
                 }
                 else
                 {
-                    PrivateHeight = value;
+                    _height = value;
                 }
             }
             else
             {
-                if (value < SizePixelMinimum)
+                if (double.IsNaN(value))
                 {
-                    PrivateHeight = SizePixelMinimum;
+                    _height = 0;
+                }
+                else if (value < SizePixelMinimum)
+                {
+                    _height = SizePixelMinimum;
                 }
                 else if (PositionSizePixelMaximum < value)
                 {
-                    PrivateHeight = PositionSizePixelMaximum;
+                    _height = PositionSizePixelMaximum;
                 }
                 else
                 {
-                    PrivateHeight = value;
+                    _height = value;
                 }
             }
         }
@@ -255,7 +321,7 @@ public class PositionSize
     /// ウィンドウのX座標の値の種類
     /// </summary>
     [JsonIgnore]
-    private PositionSizeValueType PrivateXValueType;
+    private PositionSizeValueType _xValueType;
     /// <summary>
     /// ウィンドウのX座標の値の種類
     /// </summary>
@@ -264,19 +330,19 @@ public class PositionSize
     {
         get
         {
-            return PrivateXValueType;
+            return _xValueType;
         }
         set
         {
-            PrivateXValueType = value;
-            X = PrivateX;
+            _xValueType = value;
+            X = _x;
         }
     }
     /// <summary>
     /// ウィンドウのY座標の値の種類
     /// </summary>
     [JsonIgnore]
-    private PositionSizeValueType PrivateYValueType;
+    private PositionSizeValueType _yValueType;
     /// <summary>
     /// ウィンドウのY座標の値の種類
     /// </summary>
@@ -285,19 +351,19 @@ public class PositionSize
     {
         get
         {
-            return PrivateYValueType;
+            return _yValueType;
         }
         set
         {
-            PrivateYValueType = value;
-            Y = PrivateY;
+            _yValueType = value;
+            Y = _y;
         }
     }
     /// <summary>
     /// ウィンドウの幅の値の種類
     /// </summary>
     [JsonIgnore]
-    private PositionSizeValueType PrivateWidthValueType;
+    private PositionSizeValueType _widthValueType;
     /// <summary>
     /// ウィンドウの幅の値の種類
     /// </summary>
@@ -306,19 +372,19 @@ public class PositionSize
     {
         get
         {
-            return PrivateWidthValueType;
+            return _widthValueType;
         }
         set
         {
-            PrivateWidthValueType = value;
-            Width = PrivateWidth;
+            _widthValueType = value;
+            Width = _width;
         }
     }
     /// <summary>
     /// ウィンドウの高さの値の種類
     /// </summary>
     [JsonIgnore]
-    private PositionSizeValueType PrivateHeightValueType;
+    private PositionSizeValueType _heightValueType;
     /// <summary>
     /// ウィンドウの高さの値の種類
     /// </summary>
@@ -327,12 +393,12 @@ public class PositionSize
     {
         get
         {
-            return PrivateHeightValueType;
+            return _heightValueType;
         }
         set
         {
-            PrivateHeightValueType = value;
-            Height = PrivateHeight;
+            _heightValueType = value;
+            Height = _height;
         }
     }
     /// <summary>

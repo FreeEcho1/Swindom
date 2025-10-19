@@ -58,7 +58,7 @@ public partial class SettingsPage : Page
         if (ApplicationStartup.CheckTaskRegistered())
         {
             StartupToggleSwitch.IsOn = true;
-            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Languages.RunAtWindowsStartupAdministrator;
+            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Strings.RunAtWindowsStartupAdministrator;
         }
         else if (ApplicationStartup.CheckStartup())
         {
@@ -68,8 +68,8 @@ public partial class SettingsPage : Page
         AutomaticallyCheckForUpdatesWhenRunToggleSwitch.IsOn = ApplicationData.Settings.AutomaticallyUpdateCheck;
         stringData = ApplicationData.Settings.CoordinateType switch
         {
-            CoordinateType.PrimaryDisplay => ApplicationData.Languages.PrimaryDisplay,
-            _ => ApplicationData.Languages.EachDisplay
+            CoordinateType.PrimaryDisplay => ApplicationData.Strings.PrimaryDisplay,
+            _ => ApplicationData.Strings.EachDisplay
         };
         ControlsProcessing.SelectComboBoxItem(CoordinateComboBox, stringData);
         if (ApplicationData.MonitorInformation.MonitorInfo.Count == 1)
@@ -78,6 +78,15 @@ public partial class SettingsPage : Page
             CoordinateStackPanel.Visibility = Visibility.Collapsed;
         }
         FullScreenWindowAdditionDecisionToggleSwitch.IsOn = ApplicationData.Settings.FullScreenWindowAdditionDecision;
+        DoNotChangeDisplayToggleSwitch.IsOn = ApplicationData.Settings.DoNotChangeDisplaySettings;
+        stringData = ApplicationData.Settings.DisplayChangeMode switch
+        {
+            DisplayChangeMode.Auto => ApplicationData.Strings.Auto,
+            DisplayChangeMode.AutoOrManual => ApplicationData.Strings.OneAutoTwoOrMoreManual,
+            DisplayChangeMode.Manual => ApplicationData.Strings.Manual,
+            _=> ApplicationData.Strings.Auto
+        };
+        ControlsProcessing.SelectComboBoxItem(HowToChangeDisplayComboBox, stringData);
         LanguageComboBox.SelectionChanged += LanguageComboBox_SelectionChanged;
         StartupToggleSwitch.Toggled += StartupToggleSwitch_Toggled;
         DarkModeToggleSwitch.Toggled += DarkModeToggleSwitch_Toggled;
@@ -86,6 +95,8 @@ public partial class SettingsPage : Page
         CoordinateComboBox.SelectionChanged += CoordinateComboBox_SelectionChanged;
         CoordinateExplanationButton.Click += CoordinateExplanationButton_Click;
         FullScreenWindowAdditionDecisionToggleSwitch.Toggled += FullScreenWindowAdditionDecisionToggleSwitch_Toggled;
+        DoNotChangeDisplayToggleSwitch.Toggled += DoNotChangeDisplayToggleSwitch_Toggled;
+        HowToChangeDisplayComboBox.SelectionChanged += HowToChangeDisplayComboBox_SelectionChanged;
 
         // 「貼り付ける位置をずらす」タブ
         LeftEdgeNumberBox.Minimum = ShiftPastePosition.MinimumValue;
@@ -165,13 +176,13 @@ public partial class SettingsPage : Page
                         CancelNextEvent = true;
                         LanguageComboBox.SelectedItem = removedItem as ComboBoxItem;
                     }
-                    FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 }
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -198,7 +209,7 @@ public partial class SettingsPage : Page
                 // 有効化する
                 if (StartupToggleSwitch.IsOn)
                 {
-                    switch (FEMessageBox.Show(ApplicationData.Languages.NormalExecution, ApplicationData.Languages.Check, MessageBoxButton.YesNo))
+                    switch (FEMessageBox.Show(ApplicationData.Strings.NormalExecution, ApplicationData.Strings.Check, MessageBoxButton.YesNo))
                     {
                         case MessageBoxResult.Yes:
                             ApplicationStartup.RegisterStartup();
@@ -215,7 +226,7 @@ public partial class SettingsPage : Page
                                 process.WaitForExit();
                                 if (ApplicationStartup.CheckTaskRegistered())
                                 {
-                                    StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Languages.RunAtWindowsStartupAdministrator;
+                                    StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Strings.RunAtWindowsStartupAdministrator;
                                 }
                                 else
                                 {
@@ -248,7 +259,7 @@ public partial class SettingsPage : Page
                         }
                         else
                         {
-                            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Languages.RunAtWindowsStartup;
+                            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationData.Strings.RunAtWindowsStartup;
                         }
                     }
                     else
@@ -260,7 +271,7 @@ public partial class SettingsPage : Page
             catch
             {
                 StartupToggleSwitch.IsOn = !StartupToggleSwitch.IsOn;
-                FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
     }
@@ -339,7 +350,7 @@ public partial class SettingsPage : Page
         {
             string stringData = (string)((ComboBoxItem)CoordinateComboBox.SelectedItem).Content;
 
-            if (stringData == ApplicationData.Languages.PrimaryDisplay)
+            if (stringData == ApplicationData.Strings.PrimaryDisplay)
             {
                 ApplicationData.Settings.CoordinateType = CoordinateType.PrimaryDisplay;
             }
@@ -368,6 +379,58 @@ public partial class SettingsPage : Page
         {
             ApplicationData.Settings.FullScreenWindowAdditionDecision = FullScreenWindowAdditionDecisionToggleSwitch.IsOn;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.FullScreenWindowAdditionDecisionChanged);
+        }
+        catch
+        {
+        }
+    }
+
+    /// <summary>
+    /// 「存在するディスプレイに設定を変更」-「変更しない」ToggleSwitchの「Toggled」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void DoNotChangeDisplayToggleSwitch_Toggled(
+        object sender,
+        RoutedEventArgs e
+        )
+    {
+        try
+        {
+            ApplicationData.Settings.DoNotChangeDisplaySettings = DoNotChangeDisplayToggleSwitch.IsOn;
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.DisplayInformationUpdate);
+        }
+        catch
+        {
+        }
+    }
+
+    /// <summary>
+    /// 「存在するディスプレイに設定を変更」-「変更する方法 (自動/手動)」ComboBoxの「SelectionChanged」イベント
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="e"></param>
+    private void HowToChangeDisplayComboBox_SelectionChanged(
+        object sender,
+        SelectionChangedEventArgs e
+        )
+    {
+        try
+        {
+            string stringData = (string)((ComboBoxItem)HowToChangeDisplayComboBox.SelectedItem).Content;
+
+            if (stringData == ApplicationData.Strings.Auto)
+            {
+                ApplicationData.Settings.DisplayChangeMode = DisplayChangeMode.Auto;
+            }
+            else if (stringData == ApplicationData.Strings.OneAutoTwoOrMoreManual)
+            {
+                ApplicationData.Settings.DisplayChangeMode = DisplayChangeMode.AutoOrManual;
+            }
+            else if (stringData == ApplicationData.Strings.Manual)
+            {
+                ApplicationData.Settings.DisplayChangeMode = DisplayChangeMode.Manual;
+            }
         }
         catch
         {
@@ -424,7 +487,7 @@ public partial class SettingsPage : Page
     {
         try
         {
-            ApplicationData.Settings.ShiftPastePosition.Left = (int)LeftEdgeNumberBox.Value;
+            ApplicationData.Settings.ShiftPastePosition.Left = double.IsNaN(LeftEdgeNumberBox.Value) ? 0 : (int)LeftEdgeNumberBox.Value;
         }
         catch
         {
@@ -443,7 +506,7 @@ public partial class SettingsPage : Page
     {
         try
         {
-            ApplicationData.Settings.ShiftPastePosition.Top = (int)TopEdgeNumberBox.Value;
+            ApplicationData.Settings.ShiftPastePosition.Top = double.IsNaN(TopEdgeNumberBox.Value) ? 0 : (int)TopEdgeNumberBox.Value;
         }
         catch
         {
@@ -462,7 +525,7 @@ public partial class SettingsPage : Page
     {
         try
         {
-            ApplicationData.Settings.ShiftPastePosition.Right = (int)RightEdgeNumberBox.Value;
+            ApplicationData.Settings.ShiftPastePosition.Right = double.IsNaN(RightEdgeNumberBox.Value) ? 0 : (int)RightEdgeNumberBox.Value;
         }
         catch
         {
@@ -481,7 +544,7 @@ public partial class SettingsPage : Page
     {
         try
         {
-            ApplicationData.Settings.ShiftPastePosition.Bottom = (int)BottomEdgeNumberBox.Value;
+            ApplicationData.Settings.ShiftPastePosition.Bottom = double.IsNaN(BottomEdgeNumberBox.Value) ? 0 : (int)BottomEdgeNumberBox.Value;
         }
         catch
         {
@@ -519,26 +582,32 @@ public partial class SettingsPage : Page
     {
         try
         {
-            GeneralTabItem.Header = ApplicationData.Languages.General;
-            LanguageLabel.Content = ApplicationData.Languages.Language;
-            TranslatorsLabel.Content = ApplicationData.Languages.Translators;
-            DarkModeToggleSwitch.OffContent = DarkModeToggleSwitch.OnContent = ApplicationData.Languages.DarkMode;
-            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationStartup.CheckTaskRegistered() ? ApplicationData.Languages.RunAtWindowsStartupAdministrator : ApplicationData.Languages.RunAtWindowsStartup;
-            CheckForUpdatesIncludingBetaVersionToggleSwitch.OffContent = CheckForUpdatesIncludingBetaVersionToggleSwitch.OnContent = ApplicationData.Languages.CheckBetaVersion;
-            AutomaticallyCheckForUpdatesWhenRunToggleSwitch.OffContent = AutomaticallyCheckForUpdatesWhenRunToggleSwitch.OnContent = ApplicationData.Languages.AutomaticUpdateCheck;
-            CoordinateLabel.Content = ApplicationData.Languages.Coordinate;
-            CoordinateEachDisplayComboBoxItem.Content = ApplicationData.Languages.EachDisplay;
-            CoordinatePrimaryDisplayComboBoxItem.Content = ApplicationData.Languages.PrimaryDisplay;
-            CoordinateExplanationButton.Content = ApplicationData.Languages.Question;
-            CoordinateExplanationButton.ToolTip = ApplicationData.Languages.Help;
-            FullScreenWindowAdditionDecisionToggleSwitch.OffContent = FullScreenWindowAdditionDecisionToggleSwitch.OnContent = ApplicationData.Languages.FullScreenWindowAdditionDecision;
+            GeneralTabItem.Header = ApplicationData.Strings.General;
+            LanguageLabel.Content = ApplicationData.Strings.Language;
+            TranslatorsLabel.Content = ApplicationData.Strings.Translators;
+            DarkModeToggleSwitch.OffContent = DarkModeToggleSwitch.OnContent = ApplicationData.Strings.DarkMode;
+            StartupToggleSwitch.OffContent = StartupToggleSwitch.OnContent = ApplicationStartup.CheckTaskRegistered() ? ApplicationData.Strings.RunAtWindowsStartupAdministrator : ApplicationData.Strings.RunAtWindowsStartup;
+            CheckForUpdatesIncludingBetaVersionToggleSwitch.OffContent = CheckForUpdatesIncludingBetaVersionToggleSwitch.OnContent = ApplicationData.Strings.CheckBetaVersion;
+            AutomaticallyCheckForUpdatesWhenRunToggleSwitch.OffContent = AutomaticallyCheckForUpdatesWhenRunToggleSwitch.OnContent = ApplicationData.Strings.AutomaticUpdateCheck;
+            CoordinateLabel.Content = ApplicationData.Strings.Coordinate;
+            CoordinateEachDisplayComboBoxItem.Content = ApplicationData.Strings.EachDisplay;
+            CoordinatePrimaryDisplayComboBoxItem.Content = ApplicationData.Strings.PrimaryDisplay;
+            CoordinateExplanationButton.Content = ApplicationData.Strings.Question;
+            CoordinateExplanationButton.ToolTip = ApplicationData.Strings.Help;
+            FullScreenWindowAdditionDecisionToggleSwitch.OffContent = FullScreenWindowAdditionDecisionToggleSwitch.OnContent = ApplicationData.Strings.FullScreenWindowAdditionDecision;
+            ChangeSettingsExistDisplayGroupBox.Header = ApplicationData.Strings.ChangeSettingsExistDisplay;
+            DoNotChangeDisplayToggleSwitch.OffContent = DoNotChangeDisplayToggleSwitch.OnContent = ApplicationData.Strings.DoNotChange;
+            HowToChangeDisplayLabel.Content = ApplicationData.Strings.HowToChange;
+            HowToChangeDisplayFirstDisplayComboBoxItem.Content = ApplicationData.Strings.Auto;
+            HowToChangeDisplayAutoOrManualComboBoxItem.Content = ApplicationData.Strings.OneAutoTwoOrMoreManual;
+            HowToChangeDisplayManualComboBoxItem.Content = ApplicationData.Strings.Manual;
 
-            MoveThePastePositionTabItem.Header = ApplicationData.Languages.MovePastePosition;
-            MoveThePastePositionToggleSwitch.OffContent = MoveThePastePositionToggleSwitch.OnContent = ApplicationData.Languages.MovePastePosition;
-            LeftEdgeLabel.Content = ApplicationData.Languages.LeftEdge;
-            TopEdgeLabel.Content = ApplicationData.Languages.TopEdge;
-            RightEdgeLabel.Content = ApplicationData.Languages.RightEdge;
-            BottomEdgeLabel.Content = ApplicationData.Languages.BottomEdge;
+            MoveThePastePositionTabItem.Header = ApplicationData.Strings.MovePastePosition;
+            MoveThePastePositionToggleSwitch.OffContent = MoveThePastePositionToggleSwitch.OnContent = ApplicationData.Strings.MovePastePosition;
+            LeftEdgeLabel.Content = ApplicationData.Strings.LeftEdge;
+            TopEdgeLabel.Content = ApplicationData.Strings.TopEdge;
+            RightEdgeLabel.Content = ApplicationData.Strings.RightEdge;
+            BottomEdgeLabel.Content = ApplicationData.Strings.BottomEdge;
         }
         catch
         {

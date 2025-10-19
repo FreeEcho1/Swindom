@@ -32,7 +32,29 @@ public class WindowEventData
     /// <summary>
     /// 処理の待ち時間 (ミリ秒) (「表示された」のみ)
     /// </summary>
-    public int DelayTime { get; set; }
+    [JsonIgnore]
+    private int _delayTime;
+    /// <summary>
+    /// 処理の待ち時間 (ミリ秒) (「表示された」のみ)
+    /// </summary>
+    public int DelayTime
+    {
+        get
+        {
+            return _delayTime;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _delayTime = 0;
+            }
+            else
+            {
+                _delayTime = value;
+            }
+        }
+    }
 
     /// <summary>
     /// コンストラクタ

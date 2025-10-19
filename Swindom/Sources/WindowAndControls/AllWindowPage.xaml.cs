@@ -44,47 +44,47 @@ public partial class AllWindowPage : Page
         string stringData;
         stringData = ApplicationData.Settings.AllWindowInformation.StandardDisplay switch
         {
-            StandardDisplay.SpecifiedDisplay => ApplicationData.Languages.SpecifiedDisplay,
-            StandardDisplay.ExclusiveSpecifiedDisplay => ApplicationData.Languages.LimitedToSpecifiedDisplay,
-            _ => ApplicationData.Languages.CurrentDisplay
+            StandardDisplay.SpecifiedDisplay => ApplicationData.Strings.SpecifiedDisplay,
+            StandardDisplay.ExclusiveSpecifiedDisplay => ApplicationData.Strings.LimitedToSpecifiedDisplay,
+            _ => ApplicationData.Strings.CurrentDisplay
         };
         ControlsProcessing.SelectComboBoxItem(StandardDisplayComboBox, stringData);
         ControlsProcessing.SelectComboBoxItem(DisplayComboBox, ApplicationData.Settings.AllWindowInformation.PositionSize.Display);
         SettingsIsEnabledDisplayControls();
         stringData = ApplicationData.Settings.AllWindowInformation.PositionSize.XType switch
         {
-            WindowXType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowXType.Left => ApplicationData.Languages.LeftEdge,
-            WindowXType.Middle => ApplicationData.Languages.Middle,
-            WindowXType.Right => ApplicationData.Languages.RightEdge,
-            WindowXType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowXType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowXType.Left => ApplicationData.Strings.LeftEdge,
+            WindowXType.Middle => ApplicationData.Strings.Middle,
+            WindowXType.Right => ApplicationData.Strings.RightEdge,
+            WindowXType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(MoveAllWindowToSpecifiedXComboBox, stringData);
         MoveAllWindowToSpecifiedXNumberBox.Value = ApplicationData.Settings.AllWindowInformation.PositionSize.X;
         stringData = ApplicationData.Settings.AllWindowInformation.PositionSize.XValueType switch
         {
-            PositionSizeValueType.Pixel => ApplicationData.Languages.Pixel,
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Pixel => ApplicationData.Strings.Pixel,
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(MoveAllWindowToSpecifiedXTypeComboBox, stringData);
         stringData = ApplicationData.Settings.AllWindowInformation.PositionSize.YType switch
         {
-            WindowYType.DoNotChange => ApplicationData.Languages.DoNotChange,
-            WindowYType.Top => ApplicationData.Languages.TopEdge,
-            WindowYType.Middle => ApplicationData.Languages.Middle,
-            WindowYType.Bottom => ApplicationData.Languages.BottomEdge,
-            WindowYType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowYType.DoNotChange => ApplicationData.Strings.DoNotChange,
+            WindowYType.Top => ApplicationData.Strings.TopEdge,
+            WindowYType.Middle => ApplicationData.Strings.Middle,
+            WindowYType.Bottom => ApplicationData.Strings.BottomEdge,
+            WindowYType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(MoveAllWindowToSpecifiedYComboBox, stringData);
         MoveAllWindowToSpecifiedYNumberBox.Value = ApplicationData.Settings.AllWindowInformation.PositionSize.Y;
         stringData = ApplicationData.Settings.AllWindowInformation.PositionSize.YValueType switch
         {
-            PositionSizeValueType.Pixel => ApplicationData.Languages.Pixel,
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Pixel => ApplicationData.Strings.Pixel,
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(MoveAllWindowToSpecifiedYTypeComboBox, stringData);
         SettingsXControlsIsEnabled();
@@ -148,43 +148,43 @@ public partial class AllWindowPage : Page
     {
         try
         {
-            AddButton.Text = ApplicationData.Languages.Add;
-            ModifyButton.Text = ApplicationData.Languages.Modify;
-            DeleteButton.Text = ApplicationData.Languages.Delete;
-            CopyButton.Text = ApplicationData.Languages.Copy;
-            MoveUpButton.Text = ApplicationData.Languages.MoveUp;
-            MoveDownButton.Text = ApplicationData.Languages.MoveDown;
-            SettingsButton.Text = ApplicationData.Languages.Setting;
-            ExplanationTextBlock.Text = ApplicationData.Languages.ExplanationOfAllWindow;
+            AddButton.Text = ApplicationData.Strings.Add;
+            ModifyButton.Text = ApplicationData.Strings.Modify;
+            DeleteButton.Text = ApplicationData.Strings.Delete;
+            CopyButton.Text = ApplicationData.Strings.Copy;
+            MoveUpButton.Text = ApplicationData.Strings.MoveUp;
+            MoveDownButton.Text = ApplicationData.Strings.MoveDown;
+            SettingsButton.Text = ApplicationData.Strings.Setting;
+            ExplanationTextBlock.Text = ApplicationData.Strings.ExplanationOfAllWindow;
 
-            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Languages.ProcessingState;
-            CaseSensitiveWindowQueriesToggleSwitch.OffContent = CaseSensitiveWindowQueriesToggleSwitch.OnContent = ApplicationData.Languages.CaseSensitiveWindowQueries;
-            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Languages.StopProcessingWhenWindowIsFullScreen;
-            PositionGroupBox.Header = ApplicationData.Languages.Position;
-            StandardDisplayLabel.Content = ApplicationData.Languages.DisplayToUseAsStandard;
-            StandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Languages.CurrentDisplay;
-            StandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Languages.SpecifiedDisplay;
-            DisplayLabel.Content = ApplicationData.Languages.Display;
-            MoveAllWindowToSpecifiedXLabel.Content = ApplicationData.Languages.X;
-            MoveAllWindowToSpecifiedXDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-            MoveAllWindowToSpecifiedXLeftEdgeComboBoxItem.Content = ApplicationData.Languages.LeftEdge;
-            MoveAllWindowToSpecifiedXMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-            MoveAllWindowToSpecifiedXRightEdgeComboBoxItem.Content = ApplicationData.Languages.RightEdge;
-            MoveAllWindowToSpecifiedXCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-            MoveAllWindowToSpecifiedXTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-            MoveAllWindowToSpecifiedXTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-            MoveAllWindowToSpecifiedYLabel.Content = ApplicationData.Languages.Y;
-            MoveAllWindowToSpecifiedYDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-            MoveAllWindowToSpecifiedYTopEdgeComboBoxItem.Content = ApplicationData.Languages.TopEdge;
-            MoveAllWindowToSpecifiedYMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-            MoveAllWindowToSpecifiedYBottomEdgeComboBoxItem.Content = ApplicationData.Languages.BottomEdge;
-            MoveAllWindowToSpecifiedYCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-            MoveAllWindowToSpecifiedYTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-            MoveAllWindowToSpecifiedYTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-            MoveAllWindowToSpecifiedPositionEventGroupBox.Header = ApplicationData.Languages.Event;
-            EventMoveSizeEndToggleSwitch.OffContent = EventMoveSizeEndToggleSwitch.OnContent = ApplicationData.Languages.MoveSizeChangeEnd;
-            EventShowToggleSwitch.OffContent = EventShowToggleSwitch.OnContent = ApplicationData.Languages.Show;
-            EventDelayTimeLabel.Content = ApplicationData.Languages.EventDelayTime;
+            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Strings.ProcessingState;
+            CaseSensitiveWindowQueriesToggleSwitch.OffContent = CaseSensitiveWindowQueriesToggleSwitch.OnContent = ApplicationData.Strings.CaseSensitiveWindowQueries;
+            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Strings.StopProcessingWhenWindowIsFullScreen;
+            PositionGroupBox.Header = ApplicationData.Strings.Position;
+            StandardDisplayLabel.Content = ApplicationData.Strings.DisplayToUseAsStandard;
+            StandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Strings.CurrentDisplay;
+            StandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Strings.SpecifiedDisplay;
+            DisplayLabel.Content = ApplicationData.Strings.Display;
+            MoveAllWindowToSpecifiedXLabel.Content = ApplicationData.Strings.X;
+            MoveAllWindowToSpecifiedXDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+            MoveAllWindowToSpecifiedXLeftEdgeComboBoxItem.Content = ApplicationData.Strings.LeftEdge;
+            MoveAllWindowToSpecifiedXMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+            MoveAllWindowToSpecifiedXRightEdgeComboBoxItem.Content = ApplicationData.Strings.RightEdge;
+            MoveAllWindowToSpecifiedXCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+            MoveAllWindowToSpecifiedXTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+            MoveAllWindowToSpecifiedXTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+            MoveAllWindowToSpecifiedYLabel.Content = ApplicationData.Strings.Y;
+            MoveAllWindowToSpecifiedYDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+            MoveAllWindowToSpecifiedYTopEdgeComboBoxItem.Content = ApplicationData.Strings.TopEdge;
+            MoveAllWindowToSpecifiedYMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+            MoveAllWindowToSpecifiedYBottomEdgeComboBoxItem.Content = ApplicationData.Strings.BottomEdge;
+            MoveAllWindowToSpecifiedYCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+            MoveAllWindowToSpecifiedYTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+            MoveAllWindowToSpecifiedYTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+            MoveAllWindowToSpecifiedPositionEventGroupBox.Header = ApplicationData.Strings.Event;
+            EventMoveSizeEndToggleSwitch.OffContent = EventMoveSizeEndToggleSwitch.OnContent = ApplicationData.Strings.MoveSizeChangeEnd;
+            EventShowToggleSwitch.OffContent = EventShowToggleSwitch.OnContent = ApplicationData.Strings.Show;
+            EventDelayTimeLabel.Content = ApplicationData.Strings.EventDelayTime;
         }
         catch
         {
@@ -272,7 +272,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -337,7 +337,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -380,17 +380,17 @@ public partial class AllWindowPage : Page
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Settings.AllWindowInformation.Items[CancelProcessingListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(ApplicationData.Settings.AllWindowInformation.Items[CancelProcessingListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 ApplicationData.Settings.AllWindowInformation.Items.RemoveAt(CancelProcessingListBox.SelectedIndex);
                 CancelProcessingListBox.Items.RemoveAt(CancelProcessingListBox.SelectedIndex);
-                FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 CancelProcessingListBox.Focus();
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -411,7 +411,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -433,7 +433,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -455,7 +455,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -570,11 +570,11 @@ public partial class AllWindowPage : Page
         try
         {
             string stringData = (string)((ComboBoxItem)StandardDisplayComboBox.SelectedItem).Content;
-            if (stringData == ApplicationData.Languages.CurrentDisplay)
+            if (stringData == ApplicationData.Strings.CurrentDisplay)
             {
                 ApplicationData.Settings.AllWindowInformation.StandardDisplay = StandardDisplay.CurrentDisplay;
             }
-            else if (stringData == ApplicationData.Languages.SpecifiedDisplay)
+            else if (stringData == ApplicationData.Strings.SpecifiedDisplay)
             {
                 ApplicationData.Settings.AllWindowInformation.StandardDisplay = StandardDisplay.SpecifiedDisplay;
             }
@@ -636,23 +636,23 @@ public partial class AllWindowPage : Page
         {
             SettingsXControlsIsEnabled();
             string stringData = (string)((ComboBoxItem)MoveAllWindowToSpecifiedXComboBox.SelectedItem).Content;
-            if (stringData == ApplicationData.Languages.DoNotChange)
+            if (stringData == ApplicationData.Strings.DoNotChange)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.XType = WindowXType.DoNotChange;
             }
-            else if (stringData == ApplicationData.Languages.LeftEdge)
+            else if (stringData == ApplicationData.Strings.LeftEdge)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.XType = WindowXType.Left;
             }
-            else if (stringData == ApplicationData.Languages.Middle)
+            else if (stringData == ApplicationData.Strings.Middle)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.XType = WindowXType.Middle;
             }
-            else if (stringData == ApplicationData.Languages.RightEdge)
+            else if (stringData == ApplicationData.Strings.RightEdge)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.XType = WindowXType.Right;
             }
-            else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+            else if (stringData == ApplicationData.Strings.CoordinateSpecification)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.XType = WindowXType.Value;
             }
@@ -693,7 +693,7 @@ public partial class AllWindowPage : Page
     {
         try
         {
-            if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedXTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedXTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 MoveAllWindowToSpecifiedXNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 MoveAllWindowToSpecifiedXNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -725,23 +725,23 @@ public partial class AllWindowPage : Page
         {
             SettingsYControlsIsEnabled();
             string stringData = (string)((ComboBoxItem)MoveAllWindowToSpecifiedYComboBox.SelectedItem).Content;
-            if (stringData == ApplicationData.Languages.DoNotChange)
+            if (stringData == ApplicationData.Strings.DoNotChange)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.YType = WindowYType.DoNotChange;
             }
-            else if (stringData == ApplicationData.Languages.TopEdge)
+            else if (stringData == ApplicationData.Strings.TopEdge)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.YType = WindowYType.Top;
             }
-            else if (stringData == ApplicationData.Languages.Middle)
+            else if (stringData == ApplicationData.Strings.Middle)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.YType = WindowYType.Middle;
             }
-            else if (stringData == ApplicationData.Languages.BottomEdge)
+            else if (stringData == ApplicationData.Strings.BottomEdge)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.YType = WindowYType.Bottom;
             }
-            else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+            else if (stringData == ApplicationData.Strings.CoordinateSpecification)
             {
                 ApplicationData.Settings.AllWindowInformation.PositionSize.YType = WindowYType.Value;
             }
@@ -782,7 +782,7 @@ public partial class AllWindowPage : Page
     {
         try
         {
-            if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedYTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedYTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 MoveAllWindowToSpecifiedYNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 MoveAllWindowToSpecifiedYNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -817,7 +817,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -838,7 +838,7 @@ public partial class AllWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -866,7 +866,7 @@ public partial class AllWindowPage : Page
     /// </summary>
     private void SettingsXControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedXComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedXComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             MoveAllWindowToSpecifiedXNumberBox.IsEnabled = true;
             MoveAllWindowToSpecifiedXTypeComboBox.IsEnabled = true;
@@ -883,7 +883,7 @@ public partial class AllWindowPage : Page
     /// </summary>
     private void SettingsYControlsIsEnabled()
     {
-        if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedYComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)MoveAllWindowToSpecifiedYComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             MoveAllWindowToSpecifiedYNumberBox.IsEnabled = true;
             MoveAllWindowToSpecifiedYTypeComboBox.IsEnabled = true;

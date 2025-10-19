@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="追加" WindowStartupLocation="CenterOwner" MinWidth="340" MaxWidth="800" MinHeight="300" MaxHeight="1070" SizeToContent="WidthAndHeight" ShowInTaskbar="False">
+        Title="追加" WindowStartupLocation="CenterOwner" MinWidth="340" MaxWidth="1200" MinHeight="300" MaxHeight="1070" SizeToContent="WidthAndHeight" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,6 +27,7 @@
                     <ComboBoxItem x:Name="TypeOfProcessingIncreaseDecreaseWidthAndHeightComboBoxItem" Content="幅と高さを増減"/>
                     <ComboBoxItem x:Name="TypeOfProcessingAlwaysShowOrCancelOnTopComboBoxItem" Content="常に最前面に表示/解除"/>
                     <ComboBoxItem x:Name="TypeOfProcessingSpecifyCancelTransparencyComboBoxItem" Content="透明度を指定/解除"/>
+                    <ComboBoxItem x:Name="TypeOfProcessingTitleBarAndBorderShowAndHiddenComboBoxItem" Content="タイトルバーと枠を表示/非表示"/>
                     <ComboBoxItem x:Name="TypeOfProcessingStartStopProcessingOfSpecifyWindowComboBoxItem" Content="「指定ウィンドウ」の処理開始/停止"/>
                     <ComboBoxItem x:Name="TypeOfProcessingBatchProcessingOfSpecifyWindowComboBoxItem" Content="「指定ウィンドウ」の一括処理"/>
                     <ComboBoxItem x:Name="TypeOfProcessingOnlyActiveWindowSpecifyWindowComboBoxItem" Content="「指定ウィンドウ」のアクティブウィンドウのみ処理"/>

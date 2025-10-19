@@ -16,5 +16,5 @@ public class PluginInformation
     /// <summary>
     /// プラグイン項目情報
     /// </summary>
-    public List<PluginItemInformation> Items { get; set; } = new();
+    public List<PluginItemInformation> Items { get; set; } = [];
 }

@@ -17,8 +17,4 @@ public static class PluginValue
     /// プラグインを実行するexeファイル名
     /// </summary>
     public static string RunPluginFileName { get; } = "RunPlugin.exe";
-    /// <summary>
-    /// リスタート用のバッチファイル名
-    /// </summary>
-    public static string RestartBatchFileName { get; } = "RestartBat.bat";
 }

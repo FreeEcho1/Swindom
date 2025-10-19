@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "+nWG24Wdo2Y=",
+  "success": true,
+  "projectFilePath": "Z:\\AppDevelopment\\Application\\ウィンドウ操作\\Swindom\\ソースコード\\Swindom\\Swindom\\Swindom.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\morin\\.nuget\\packages\\modernwpfui\\0.9.6\\modernwpfui.0.9.6.nupkg.sha512",
+    "C:\\Users\\morin\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.18362.57\\microsoft.windows.sdk.net.ref.10.0.18362.57.nupkg.sha512"
+  ],
+  "logs": []
+}

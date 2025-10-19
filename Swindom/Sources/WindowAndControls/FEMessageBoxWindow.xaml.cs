@@ -48,7 +48,7 @@ public partial class FEMessageBoxWindow : Window
     /// <summary>
     /// ディスプレイの幅からウィンドウを小さくする値
     /// </summary>
-    private static readonly int MakeWindowSmall = 80;
+    private static int MakeWindowSmall { get; } = 80;
 
     /// <summary>
     /// コンストラクタ (使用しない)

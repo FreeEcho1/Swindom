@@ -45,6 +45,10 @@ public enum ProcessingEventType : int
     /// 全画面ウィンドウの追加判定の有効状態が変更された
     /// </summary>
     FullScreenWindowAdditionDecisionChanged,
+    /// <summary>
+    /// ディスプレイ情報更新
+    /// </summary>
+    DisplayInformationUpdate,
 
     /// <summary>
     /// 「指定ウィンドウ」の処理状態が変更された
@@ -103,9 +107,4 @@ public enum ProcessingEventType : int
     /// 全ての処理状態を無効にする、無効にした処理を有効にする
     /// </summary>
     AllProcessingChangeEnabled,
-
-    /// <summary>
-    /// 再起動処理
-    /// </summary>
-    RestartProcessing,
 }

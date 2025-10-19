@@ -374,6 +374,112 @@ public class SpecifyWindowProcessing : IDisposable
     }
 
     /// <summary>
+    /// ディスプレイの設定を変更
+    /// </summary>
+    /// <param name="changeDisplaySettingsData">設定しているディスプレイが存在しなくなった場合に設定するデータ</param>
+    /// <returns>設定を変更したかの値 (「false」変更していない/「true」変更した)</returns>
+    public static bool ChangeDisplaySettings(
+        ChangeDisplaySettingsData changeDisplaySettingsData
+        )
+    {
+        bool result = false;        // 設定を変更したかの値
+
+        try
+        {
+            foreach (SpecifyWindowItemInformation nowSWII in ApplicationData.Settings.SpecifyWindowInformation.Items)
+            {
+                foreach (WindowProcessingInformation nowWPI in nowSWII.WindowProcessingInformation)
+                {
+                    bool checkMatch = false;        // 一致確認
+
+                    foreach (MonitorInfoEx nowMIE in ApplicationData.MonitorInformation.MonitorInfo)
+                    {
+                        if (nowMIE.DeviceName == nowWPI.PositionSize.Display)
+                        {
+                            checkMatch = true;
+                            break;
+                        }
+                    }
+
+                    if (checkMatch == false)
+                    {
+                        if (changeDisplaySettingsData.ApplySameSettingToRemaining)
+                        {
+                            if (changeDisplaySettingsData.IsModified)
+                            {
+                                nowWPI.PositionSize.Display = changeDisplaySettingsData.AutoSettingDisplayName;
+                                result = true;
+                            }
+                        }
+                        else
+                        {
+                            SelectDisplayWindow window = new(ApplicationData.Strings.SpecifyWindow, nowSWII.RegisteredName + WindowControlValue.CopySeparateString + nowWPI.ProcessingName);
+
+                            window.ShowDialog();
+                            changeDisplaySettingsData.ApplySameSettingToRemaining = window.ApplySameSettingToRemaining;
+                            if (window.ApplySameSettingToRemaining)
+                            {
+                                changeDisplaySettingsData.AutoSettingDisplayName = window.SelectedDisplay;
+                            }
+                            if (window.IsModified)
+                            {
+                                changeDisplaySettingsData.IsModified = true;
+                                nowWPI.PositionSize.Display = window.SelectedDisplay;
+                                result = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return result;
+    }
+
+    /// <summary>
+    /// 登録された全項目で、設定されているディスプレイが存在するかを確認
+    /// </summary>
+    /// <param name="newMonitorInformation">新しいモニター情報</param>
+    /// <returns>全て存在するかの値 (「false」存在しない項目がある/「true」全て存在する)</returns>
+    public static bool CheckSettingDisplaysExist(
+        MonitorInformation newMonitorInformation
+        )
+    {
+        try
+        {
+            foreach (SpecifyWindowItemInformation nowSWII in ApplicationData.Settings.SpecifyWindowInformation.Items)
+            {
+                foreach (WindowProcessingInformation nowWPI in nowSWII.WindowProcessingInformation)
+                {
+                    bool checkMatch = false;        // 一致確認
+
+                    foreach (MonitorInfoEx nowMIE in newMonitorInformation.MonitorInfo)
+                    {
+                        if (nowMIE.DeviceName == nowWPI.PositionSize.Display)
+                        {
+                            checkMatch = true;
+                            break;
+                        }
+                    }
+
+                    if (checkMatch == false)
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+        catch
+        {
+        }
+
+        return true;
+    }
+
+    /// <summary>
     /// 「ウィンドウイベント」の「WindowEventOccurrence」イベント
     /// </summary>
     /// <param name="sender"></param>
@@ -922,6 +1028,12 @@ public class SpecifyWindowProcessing : IDisposable
     {
         try
         {
+            // 除外するウィンドウの判定
+            if (WindowProcessing.CheckExclusionProcessing(windowInformation))
+            {
+                return false;
+            }
+
             string checkString;      // 確認する文字列
             string windowString;       // ウィンドウ文字列
 
@@ -1187,19 +1299,19 @@ public class SpecifyWindowProcessing : IDisposable
                     if (specifyWindowItemInformation.WindowProcessingInformation.Count == 1)
                     {
                         WindowProcessingInformation information = specifyWindowItemInformation.WindowProcessingInformation[0];
-                        message += ApplicationData.Languages.Width + WindowControlValue.TypeAndValueSeparateString + information.PositionSize.Width + WindowControlValue.ValueAndValueSeparateString + ApplicationData.Languages.Height + WindowControlValue.TypeAndValueSeparateString + information.PositionSize.Height + Environment.NewLine;
+                        message += ApplicationData.Strings.Width + WindowControlValue.TypeAndValueSeparateString + information.PositionSize.Width + WindowControlValue.ValueAndValueSeparateString + ApplicationData.Strings.Height + WindowControlValue.TypeAndValueSeparateString + information.PositionSize.Height + Environment.NewLine;
                     }
-                    message += ApplicationData.Languages.Version + WindowControlValue.TypeAndValueSeparateString + specifyWindowItemInformation.NotificationOtherThanSpecifiedVersion + Environment.NewLine;
+                    message += ApplicationData.Strings.Version + WindowControlValue.TypeAndValueSeparateString + specifyWindowItemInformation.NotificationOtherThanSpecifiedVersion + Environment.NewLine;
                     message += Environment.NewLine;
-                    message += ApplicationData.Languages.WindowInformation + Environment.NewLine;
-                    message += ApplicationData.Languages.Width + WindowControlValue.TypeAndValueSeparateString + windowInformation.Rectangle.Width + WindowControlValue.ValueAndValueSeparateString + ApplicationData.Languages.Height + WindowControlValue.TypeAndValueSeparateString + windowInformation.Rectangle.Height + Environment.NewLine;
-                    message += ApplicationData.Languages.Version + WindowControlValue.TypeAndValueSeparateString + windowInformation.Version + Environment.NewLine;
-                    message += Environment.NewLine + ApplicationData.Languages.ChangeSettingToNewVersion;
+                    message += ApplicationData.Strings.WindowInformation + Environment.NewLine;
+                    message += ApplicationData.Strings.Width + WindowControlValue.TypeAndValueSeparateString + windowInformation.Rectangle.Width + WindowControlValue.ValueAndValueSeparateString + ApplicationData.Strings.Height + WindowControlValue.TypeAndValueSeparateString + windowInformation.Rectangle.Height + Environment.NewLine;
+                    message += ApplicationData.Strings.Version + WindowControlValue.TypeAndValueSeparateString + windowInformation.Version + Environment.NewLine;
+                    message += Environment.NewLine + ApplicationData.Strings.ChangeSettingToNewVersion;
 
                     // メッセージ表示中は処理を無効化する
                     specifyWindowItemInformation.IsEnabled = false;
 
-                    switch (FEMessageBox.Show(message, ApplicationData.Languages.ChangeVersion + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.YesNoCancel))
+                    switch (FEMessageBox.Show(message, ApplicationData.Strings.ChangeVersion + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.YesNoCancel))
                     {
                         case MessageBoxResult.Yes:
                             {
@@ -1307,7 +1419,7 @@ public class SpecifyWindowProcessing : IDisposable
             {
                 if ((NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) & (int)WS_EX.WS_EX_LAYERED) != (int)WS_EX.WS_EX_LAYERED)
                 {
-                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (int)(NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
+                    NativeMethods.SetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE, (NativeMethods.GetWindowLongPtr(hwnd, (int)GWL.GWL_EXSTYLE) ^ (int)WS_EX.WS_EX_LAYERED));
                 }
                 uint lwa = (uint)LWA.LWA_ALPHA;
                 NativeMethods.GetLayeredWindowAttributes(hwnd, out uint getKey, out byte getAlpha, out lwa);
@@ -1545,14 +1657,14 @@ public class SpecifyWindowProcessing : IDisposable
         int number = 1;     // 番号
         for (int count = 0; count < ApplicationData.Settings.SpecifyWindowInformation.Items.Count; count++)
         {
-            if (ApplicationData.Settings.SpecifyWindowInformation.Items[count].RegisteredName == (newItem.RegisteredName + WindowControlValue.CopySeparateString + ApplicationData.Languages.Copy + WindowControlValue.SpaceSeparateString + number))
+            if (ApplicationData.Settings.SpecifyWindowInformation.Items[count].RegisteredName == (newItem.RegisteredName + WindowControlValue.CopySeparateString + ApplicationData.Strings.Copy + WindowControlValue.SpaceSeparateString + number))
             {
                 // 番号を変えて最初から確認
                 count = 0;
                 number++;
             }
         }
-        newItem.RegisteredName += WindowControlValue.CopySeparateString + ApplicationData.Languages.Copy + WindowControlValue.SpaceSeparateString + number;
+        newItem.RegisteredName += WindowControlValue.CopySeparateString + ApplicationData.Strings.Copy + WindowControlValue.SpaceSeparateString + number;
         ApplicationData.Settings.SpecifyWindowInformation.Items.Add(newItem);
     }
 }

@@ -16,7 +16,7 @@ public class CheckFullScreenProcessing
     /// <summary>
     /// 全画面ウィンドウの判定タイマーの間隔 (ミリ秒)
     /// </summary>
-    public static readonly int FullScreenWindowDecisionTimerInterval = 10000;
+    public static int FullScreenWindowDecisionTimerInterval { get; } = 10000;
 
     /// <summary>
     /// 開始

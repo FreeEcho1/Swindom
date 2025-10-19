@@ -161,7 +161,7 @@ public partial class MagnetPage : Page
     {
         try
         {
-            ApplicationData.Settings.MagnetInformation.PastingDecisionDistance = (int)DecisionDistanceToPasteNumberBox.Value;
+            ApplicationData.Settings.MagnetInformation.PastingDecisionDistance = double.IsNaN(DecisionDistanceToPasteNumberBox.Value) ? 0 : (int)DecisionDistanceToPasteNumberBox.Value;
         }
         catch
         {
@@ -180,7 +180,7 @@ public partial class MagnetPage : Page
     {
         try
         {
-            ApplicationData.Settings.MagnetInformation.PastingTime = (int)PastingTimeNumberBox.Value;
+            ApplicationData.Settings.MagnetInformation.PastingTime = double.IsNaN(PastingTimeNumberBox.Value) ? 0 : (int)PastingTimeNumberBox.Value;
         }
         catch
         {
@@ -244,16 +244,16 @@ public partial class MagnetPage : Page
     {
         try
         {
-            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Languages.ProcessingState;
-            PasteToScreenEdgeToggleSwitch.OffContent = PasteToScreenEdgeToggleSwitch.OnContent = ApplicationData.Languages.PasteToEdgeOfScreen;
-            PasteToAnotherWindowToggleSwitch.OffContent = PasteToAnotherWindowToggleSwitch.OnContent = ApplicationData.Languages.PasteIntoAnotherWindow;
-            PressTheKeyToPasteToggleSwitch.OffContent = PressTheKeyToPasteToggleSwitch.OnContent = ApplicationData.Languages.PasteWithCtrlKeyPressed;
-            KeepPasteUntilKeyUpToggleSwitch.OffContent = KeepPasteUntilKeyUpToggleSwitch.OnContent = ApplicationData.Languages.KeepPasteUntilKeyUp;
-            DecisionDistanceToPasteLabel.Content = ApplicationData.Languages.DecisionDistanceToPaste;
-            DecisionDistanceToPastePixelLabel.Content = ApplicationData.Languages.Pixel;
-            PastingTimeLabel.Content = ApplicationData.Languages.PastingTime;
-            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Languages.StopProcessingWhenWindowIsFullScreen;
-            ExplanationTextBlock.Text = ApplicationData.Languages.MagnetExplanation;
+            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Strings.ProcessingState;
+            PasteToScreenEdgeToggleSwitch.OffContent = PasteToScreenEdgeToggleSwitch.OnContent = ApplicationData.Strings.PasteToEdgeOfScreen;
+            PasteToAnotherWindowToggleSwitch.OffContent = PasteToAnotherWindowToggleSwitch.OnContent = ApplicationData.Strings.PasteIntoAnotherWindow;
+            PressTheKeyToPasteToggleSwitch.OffContent = PressTheKeyToPasteToggleSwitch.OnContent = ApplicationData.Strings.PasteWithCtrlKeyPressed;
+            KeepPasteUntilKeyUpToggleSwitch.OffContent = KeepPasteUntilKeyUpToggleSwitch.OnContent = ApplicationData.Strings.KeepPasteUntilKeyUp;
+            DecisionDistanceToPasteLabel.Content = ApplicationData.Strings.DecisionDistanceToPaste;
+            DecisionDistanceToPastePixelLabel.Content = ApplicationData.Strings.Pixel;
+            PastingTimeLabel.Content = ApplicationData.Strings.PastingTime;
+            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Strings.StopProcessingWhenWindowIsFullScreen;
+            ExplanationTextBlock.Text = ApplicationData.Strings.MagnetExplanation;
         }
         catch
         {

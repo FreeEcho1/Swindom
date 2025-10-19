@@ -8,7 +8,7 @@ public partial class GetInformationWindow : Window
     /// <summary>
     /// ウィンドウ選択枠
     /// </summary>
-    private readonly FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse = new()
+    private FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse { get; } = new()
     {
         MouseLeftUpStop = true
     };
@@ -27,17 +27,17 @@ public partial class GetInformationWindow : Window
         }
         TargetImage.Source = ImageProcessing.GetImageTarget();
 
-        Title = ApplicationData.Languages.GetWindowInformation + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
-        TargetButton.ToolTip = ApplicationData.Languages.HoldDownMousePointerMoveToSelectWindow;
-        TitleNameLabel.Content = ApplicationData.Languages.TitleName;
-        ClassNameLabel.Content = ApplicationData.Languages.ClassName;
-        FileNameLabel.Content = ApplicationData.Languages.FileName;
-        DisplayLabel.Content = ApplicationData.Languages.Display;
-        VersionLabel.Content = ApplicationData.Languages.Version;
-        XLabel.Content = ApplicationData.Languages.X;
-        YLabel.Content = ApplicationData.Languages.Y;
-        WidthLabel.Content = ApplicationData.Languages.Width;
-        HeightLabel.Content = ApplicationData.Languages.Height;
+        Title = ApplicationData.Strings.GetWindowInformation + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
+        TargetButton.ToolTip = ApplicationData.Strings.HoldDownMousePointerMoveToSelectWindow;
+        TitleNameLabel.Content = ApplicationData.Strings.TitleName;
+        ClassNameLabel.Content = ApplicationData.Strings.ClassName;
+        FileNameLabel.Content = ApplicationData.Strings.FileName;
+        DisplayLabel.Content = ApplicationData.Strings.Display;
+        VersionLabel.Content = ApplicationData.Strings.Version;
+        XLabel.Content = ApplicationData.Strings.X;
+        YLabel.Content = ApplicationData.Strings.Y;
+        WidthLabel.Content = ApplicationData.Strings.Width;
+        HeightLabel.Content = ApplicationData.Strings.Height;
 
         Loaded += GetInformationWindow_Loaded;
         TargetButton.PreviewMouseDown += SelectWindowTargetButton_PreviewMouseDown;
@@ -92,7 +92,7 @@ public partial class GetInformationWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -135,7 +135,7 @@ public partial class GetInformationWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 }

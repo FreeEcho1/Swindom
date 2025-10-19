@@ -12,22 +12,22 @@ public partial class CancelAllWindowPositionSizeWindow : Window
     /// <summary>
     /// 修正する項目のインデックス (追加「-1」)
     /// </summary>
-    private readonly int IndexOfItemToBeModified = -1;
+    private int IndexOfItemToBeModified { get; } = -1;
     /// <summary>
     /// ウィンドウ判定情報
     /// </summary>
-    private readonly WindowJudgementInformation WindowJudgementInformation;
+    private WindowJudgementInformation WindowJudgementInformation { get; }
     /// <summary>
     /// ウィンドウ情報取得タイマー
     /// </summary>
-    private readonly System.Windows.Threading.DispatcherTimer WindowInformationAcquisitionTimer = new()
+    private System.Windows.Threading.DispatcherTimer WindowInformationAcquisitionTimer { get; } = new()
     {
         Interval = new(0, 0, 0, 0, WindowProcessingValue.WaitTimeForWindowInformationAcquisition)
     };
     /// <summary>
     /// ウィンドウ選択枠
     /// </summary>
-    private readonly FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse = new()
+    private FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse { get; } = new()
     {
         MouseLeftUpStop = true
     };
@@ -67,61 +67,61 @@ public partial class CancelAllWindowPositionSizeWindow : Window
 
         if (IndexOfItemToBeModified == -1)
         {
-            Title = ApplicationData.Languages.Add;
-            AddOrModifyButton.Content = ApplicationData.Languages.Add;
+            Title = ApplicationData.Strings.Add;
+            AddOrModifyButton.Content = ApplicationData.Strings.Add;
         }
         else
         {
-            Title = ApplicationData.Languages.Modify;
-            AddOrModifyButton.Content = ApplicationData.Languages.Modify;
+            Title = ApplicationData.Strings.Modify;
+            AddOrModifyButton.Content = ApplicationData.Strings.Modify;
         }
-        CancelProcessConditionsExplanationLabel.Content = ApplicationData.Languages.ConditionsNotToBeProcessed;
-        RegisteredNameLabel.Content = ApplicationData.Languages.RegisteredName;
-        GetWindowInformationButton.Content = ApplicationData.Languages.GetWindowInformation;
-        TargetButton.ToolTip = ApplicationData.Languages.HoldDownMousePointerMoveToSelectWindow;
-        WindowDecisionExplanationButton.Content = ApplicationData.Languages.Question;
-        WindowDecisionExplanationButton.ToolTip = ApplicationData.Languages.Help;
-        TitleNameLabel.Content = ApplicationData.Languages.TitleName;
-        TitleNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Languages.ExactMatch;
-        TitleNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Languages.PartialMatch;
-        TitleNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Languages.ForwardMatch;
-        TitleNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Languages.BackwardMatch;
-        ClassNameLabel.Content = ApplicationData.Languages.ClassName;
-        ClassNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Languages.ExactMatch;
-        ClassNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Languages.PartialMatch;
-        ClassNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Languages.ForwardMatch;
-        ClassNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Languages.BackwardMatch;
-        FileNameLabel.Content = ApplicationData.Languages.FileName;
-        FileNameFileSelectionButton.ToolTip = ApplicationData.Languages.FileSelection;
-        FileNameMatchingConditionIncludePathComboBoxItem.Content = ApplicationData.Languages.IncludePath;
-        FileNameMatchingConditionNotIncludePathComboBoxItem.Content = ApplicationData.Languages.NotIncludePath;
-        CancelButton.Content = ApplicationData.Languages.Cancel;
+        CancelProcessConditionsExplanationLabel.Content = ApplicationData.Strings.ConditionsNotToBeProcessed;
+        RegisteredNameLabel.Content = ApplicationData.Strings.RegisteredName;
+        GetWindowInformationButton.Content = ApplicationData.Strings.GetWindowInformation;
+        TargetButton.ToolTip = ApplicationData.Strings.HoldDownMousePointerMoveToSelectWindow;
+        WindowDecisionExplanationButton.Content = ApplicationData.Strings.Question;
+        WindowDecisionExplanationButton.ToolTip = ApplicationData.Strings.Help;
+        TitleNameLabel.Content = ApplicationData.Strings.TitleName;
+        TitleNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Strings.ExactMatch;
+        TitleNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Strings.PartialMatch;
+        TitleNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Strings.ForwardMatch;
+        TitleNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Strings.BackwardMatch;
+        ClassNameLabel.Content = ApplicationData.Strings.ClassName;
+        ClassNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Strings.ExactMatch;
+        ClassNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Strings.PartialMatch;
+        ClassNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Strings.ForwardMatch;
+        ClassNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Strings.BackwardMatch;
+        FileNameLabel.Content = ApplicationData.Strings.FileName;
+        FileNameFileSelectionButton.ToolTip = ApplicationData.Strings.FileSelection;
+        FileNameMatchingConditionIncludePathComboBoxItem.Content = ApplicationData.Strings.IncludePath;
+        FileNameMatchingConditionNotIncludePathComboBoxItem.Content = ApplicationData.Strings.NotIncludePath;
+        CancelButton.Content = ApplicationData.Strings.Cancel;
 
         string stringData;     // 文字列データ
         RegisteredNameTextBox.Text = WindowJudgementInformation.RegisteredName;
         TitleNameTextBox.Text = WindowJudgementInformation.TitleName;
         stringData = WindowJudgementInformation.TitleNameMatchCondition switch
         {
-            NameMatchCondition.PartialMatch => ApplicationData.Languages.PartialMatch,
-            NameMatchCondition.ForwardMatch => ApplicationData.Languages.ForwardMatch,
-            NameMatchCondition.BackwardMatch => ApplicationData.Languages.BackwardMatch,
-            _ => ApplicationData.Languages.ExactMatch
+            NameMatchCondition.PartialMatch => ApplicationData.Strings.PartialMatch,
+            NameMatchCondition.ForwardMatch => ApplicationData.Strings.ForwardMatch,
+            NameMatchCondition.BackwardMatch => ApplicationData.Strings.BackwardMatch,
+            _ => ApplicationData.Strings.ExactMatch
         };
         ControlsProcessing.SelectComboBoxItem(TitleNameMatchingConditionComboBox, stringData);
         ClassNameTextBox.Text = WindowJudgementInformation.ClassName;
         stringData = WindowJudgementInformation.ClassNameMatchCondition switch
         {
-            NameMatchCondition.PartialMatch => ApplicationData.Languages.PartialMatch,
-            NameMatchCondition.ForwardMatch => ApplicationData.Languages.ForwardMatch,
-            NameMatchCondition.BackwardMatch => ApplicationData.Languages.BackwardMatch,
-            _ => ApplicationData.Languages.ExactMatch
+            NameMatchCondition.PartialMatch => ApplicationData.Strings.PartialMatch,
+            NameMatchCondition.ForwardMatch => ApplicationData.Strings.ForwardMatch,
+            NameMatchCondition.BackwardMatch => ApplicationData.Strings.BackwardMatch,
+            _ => ApplicationData.Strings.ExactMatch
         };
         ControlsProcessing.SelectComboBoxItem(ClassNameMatchingConditionComboBox, stringData);
         FileNameTextBox.Text = WindowJudgementInformation.FileName;
         stringData = WindowJudgementInformation.FileNameMatchCondition switch
         {
-            FileNameMatchCondition.NotInclude => ApplicationData.Languages.NotIncludePath,
-            _ => ApplicationData.Languages.IncludePath
+            FileNameMatchCondition.NotInclude => ApplicationData.Strings.NotIncludePath,
+            _ => ApplicationData.Strings.IncludePath
         };
         ControlsProcessing.SelectComboBoxItem(FileNameMatchingConditionComboBox, stringData);
 
@@ -174,7 +174,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Languages.RetrievedAfterFiveSeconds, ApplicationData.Languages.Check, MessageBoxButton.OK) == MessageBoxResult.OK)
+            if (FEMessageBox.Show(ApplicationData.Strings.RetrievedAfterFiveSeconds, ApplicationData.Strings.Check, MessageBoxButton.OK) == MessageBoxResult.OK)
             {
                 WindowInformationAcquisitionTimer.Start();
                 GetWindowInformationStackPanel.IsEnabled = false;
@@ -182,7 +182,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -201,12 +201,12 @@ public partial class CancelAllWindowPositionSizeWindow : Window
             WindowInformationAcquisitionTimer.Stop();
             GetInformationFromWindowHandle(NativeMethods.GetForegroundWindow());
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.Obtained, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Obtained, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         finally
         {
@@ -233,7 +233,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -253,11 +253,11 @@ public partial class CancelAllWindowPositionSizeWindow : Window
             Owner.WindowState = PreviousOwnerWindowState;
             WindowState = WindowState.Normal;
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.Obtained, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Obtained, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -351,21 +351,21 @@ public partial class CancelAllWindowPositionSizeWindow : Window
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new()
             {
-                Title = ApplicationData.Languages.FileSelection,
+                Title = ApplicationData.Strings.FileSelection,
                 Filter = ".exe|*.exe*",
                 Multiselect = false
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                FileNameTextBox.Text = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Languages.NotIncludePath
+                FileNameTextBox.Text = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Strings.NotIncludePath
                     ? Path.GetFileNameWithoutExtension(openFileDialog.FileName)
                     : openFileDialog.FileName;
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -407,7 +407,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
                 {
                     ApplicationData.Settings.AllWindowInformation.Items.Add(WindowJudgementInformation);
                     ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.ProcessingSettings();
-                    FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     AddedOrModified = true;
                     Close();
                 }
@@ -417,19 +417,19 @@ public partial class CancelAllWindowPositionSizeWindow : Window
                     ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.UnregisterHotkeys();
                     ApplicationData.Settings.AllWindowInformation.Items[IndexOfItemToBeModified] = WindowJudgementInformation;
                     ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.ProcessingSettings();
-                    FEMessageBox.Show(ApplicationData.Languages.Modified, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.Modified, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     AddedOrModified = true;
                     Close();
                 }
             }
             else
             {
-                FEMessageBox.Show(check, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(check, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -471,7 +471,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
         WindowInformation windowInformation = WindowProcessing.GetWindowInformationFromHandle(hwnd);
         TitleNameTextBox.Text = windowInformation.TitleName;
         ClassNameTextBox.Text = windowInformation.ClassName;
-        FileNameTextBox.Text = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Languages.IncludePath ? windowInformation.FileName : Path.GetFileNameWithoutExtension(windowInformation.FileName);
+        FileNameTextBox.Text = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Strings.IncludePath ? windowInformation.FileName : Path.GetFileNameWithoutExtension(windowInformation.FileName);
     }
 
     /// <summary>
@@ -484,47 +484,47 @@ public partial class CancelAllWindowPositionSizeWindow : Window
         WindowJudgementInformation.RegisteredName = RegisteredNameTextBox.Text;
         WindowJudgementInformation.TitleName = TitleNameTextBox.Text;
         stringData = (string)((ComboBoxItem)TitleNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.ExactMatch)
+        if (stringData == ApplicationData.Strings.ExactMatch)
         {
             WindowJudgementInformation.TitleNameMatchCondition = NameMatchCondition.ExactMatch;
         }
-        else if (stringData == ApplicationData.Languages.PartialMatch)
+        else if (stringData == ApplicationData.Strings.PartialMatch)
         {
             WindowJudgementInformation.TitleNameMatchCondition = NameMatchCondition.PartialMatch;
         }
-        else if (stringData == ApplicationData.Languages.ForwardMatch)
+        else if (stringData == ApplicationData.Strings.ForwardMatch)
         {
             WindowJudgementInformation.TitleNameMatchCondition = NameMatchCondition.ForwardMatch;
         }
-        else if (stringData == ApplicationData.Languages.BackwardMatch)
+        else if (stringData == ApplicationData.Strings.BackwardMatch)
         {
             WindowJudgementInformation.TitleNameMatchCondition = NameMatchCondition.BackwardMatch;
         }
         WindowJudgementInformation.ClassName = ClassNameTextBox.Text;
         stringData = (string)((ComboBoxItem)ClassNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.ExactMatch)
+        if (stringData == ApplicationData.Strings.ExactMatch)
         {
             WindowJudgementInformation.ClassNameMatchCondition = NameMatchCondition.ExactMatch;
         }
-        else if (stringData == ApplicationData.Languages.PartialMatch)
+        else if (stringData == ApplicationData.Strings.PartialMatch)
         {
             WindowJudgementInformation.ClassNameMatchCondition = NameMatchCondition.PartialMatch;
         }
-        else if (stringData == ApplicationData.Languages.ForwardMatch)
+        else if (stringData == ApplicationData.Strings.ForwardMatch)
         {
             WindowJudgementInformation.ClassNameMatchCondition = NameMatchCondition.ForwardMatch;
         }
-        else if (stringData == ApplicationData.Languages.BackwardMatch)
+        else if (stringData == ApplicationData.Strings.BackwardMatch)
         {
             WindowJudgementInformation.ClassNameMatchCondition = NameMatchCondition.BackwardMatch;
         }
         WindowJudgementInformation.FileName = FileNameTextBox.Text;
         stringData = (string)((ComboBoxItem)FileNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.IncludePath)
+        if (stringData == ApplicationData.Strings.IncludePath)
         {
             WindowJudgementInformation.FileNameMatchCondition = FileNameMatchCondition.Include;
         }
-        else if (stringData == ApplicationData.Languages.NotIncludePath)
+        else if (stringData == ApplicationData.Strings.NotIncludePath)
         {
             WindowJudgementInformation.FileNameMatchCondition = FileNameMatchCondition.NotInclude;
         }
@@ -545,7 +545,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
             {
                 if (WindowJudgementInformation.RegisteredName == nowItem.RegisteredName)
                 {
-                    result = ApplicationData.Languages.ThereIsADuplicateRegistrationName;
+                    result = ApplicationData.Strings.ThereIsADuplicateRegistrationName;
                     break;
                 }
             }
@@ -558,7 +558,7 @@ public partial class CancelAllWindowPositionSizeWindow : Window
                 if (count != IndexOfItemToBeModified
                     && WindowJudgementInformation.RegisteredName == nowItem.RegisteredName)
                 {
-                    result = ApplicationData.Languages.ThereIsADuplicateRegistrationName;
+                    result = ApplicationData.Strings.ThereIsADuplicateRegistrationName;
                     break;
                 }
                 count++;

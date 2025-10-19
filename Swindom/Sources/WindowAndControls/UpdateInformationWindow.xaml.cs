@@ -30,16 +30,16 @@ public partial class UpdateInformationWindow : Window
             WindowStartupLocation = WindowStartupLocation.CenterOwner;
         }
 
-        Title = ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
-        ThereIsTheLatestVersionLabel.Content = ApplicationData.Languages.ThereIsLatestVersion;
-        OpenWebsiteButton.Content = ApplicationData.Languages.Website;
+        Title = ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
+        ThereIsTheLatestVersionLabel.Content = ApplicationData.Strings.ThereIsLatestVersion;
+        OpenWebsiteButton.Content = ApplicationData.Strings.Website;
         try
         {
             _ = GetHistory();
         }
         catch
         {
-            UpdateHistoryTextBox.Text = ApplicationData.Languages.ErrorOccurred;
+            UpdateHistoryTextBox.Text = ApplicationData.Strings.ErrorOccurred;
         }
 
         OpenWebsiteButton.Click += OpenWebsiteButton_Click;
@@ -84,7 +84,7 @@ public partial class UpdateInformationWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.Check, ApplicationData.Languages.ErrorOccurred, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Check, ApplicationData.Strings.ErrorOccurred, MessageBoxButton.OK);
         }
     }
 }

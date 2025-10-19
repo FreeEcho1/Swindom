@@ -50,7 +50,7 @@ public class ImageNavigationViewItem : NavigationViewItem
     /// <summary>
     /// ナビゲーションビュー項目の幅の余白
     /// </summary>
-    private readonly int NatigationViewItemWidthMargin = 50;
+    private int NatigationViewItemWidthMargin { get; } = 50;
 
     /// <summary>
     /// コンストラクタ

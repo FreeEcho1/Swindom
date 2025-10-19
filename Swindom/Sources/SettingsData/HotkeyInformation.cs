@@ -35,6 +35,6 @@ public class HotkeyInformation
         DoNotChangeOutOfScreen = true;
         StopProcessingFullScreen = false;
         AddModifyWindowSize = new();
-        Items = new();
+        Items = [];
     }
 }

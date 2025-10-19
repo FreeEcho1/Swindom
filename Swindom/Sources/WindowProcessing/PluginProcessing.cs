@@ -13,10 +13,6 @@ public class PluginProcessing
     /// 実行中のプラグイン情報
     /// </summary>
     public List<RunningPluginInformation> RunningPluginInformation = new();
-    /// <summary>
-    /// ウィンドウイベント
-    /// </summary>
-    private FreeEcho.FEWindowEvent.WindowEvent? WindowEvent;
 
     /// <summary>
     /// プラグインの取得する情報数
@@ -24,11 +20,16 @@ public class PluginProcessing
     private const int GetNumberOfInformation = 3;
 
     /// <summary>
+    /// プラグインのファイル情報
+    /// </summary>
+    public static List<PluginFileInformation> PluginFileInformation { get; private set; } = new();
+
+    /// <summary>
     /// コンストラクタ
     /// </summary>
     public PluginProcessing()
     {
-        RunPlugins();
+        RunStopPlugins();
     }
 
     /// <summary>
@@ -61,22 +62,9 @@ public class PluginProcessing
         }
         if (disposing)
         {
-            DisposeWindowEvent();
             StopAllPlugins();
         }
         Disposed = true;
-    }
-
-    /// <summary>
-    /// ウィンドウイベントを破棄
-    /// </summary>
-    private void DisposeWindowEvent()
-    {
-        if (WindowEvent != null)
-        {
-            WindowEvent.Dispose();
-            WindowEvent = null;
-        }
     }
 
     /// <summary>
@@ -86,29 +74,54 @@ public class PluginProcessing
     public static bool CheckIfTheProcessingIsValid() => ApplicationData.Settings.PluginInformation.IsEnabled;
 
     /// <summary>
-    /// プラグインを実行
+    /// プラグインを実行と停止
     /// </summary>
-    public void RunPlugins()
+    public async void RunStopPlugins()
     {
+        // 処理状態が無効の場合は全てのプラグインを停止
+        if (ApplicationData.Settings.PluginInformation.IsEnabled == false)
+        {
+            StopAllPlugins();
+            return;
+        }
+
         string settingDirectory = SettingFileProcessing.GetSettingsDirectory();     // 設定ディレクトリ
         if (string.IsNullOrEmpty(settingDirectory))
         {
             return;
         }
-        List<PluginFileInformation> pluginFileInformation = GetPluginsInformation();     // プラグインのファイル情報
         string? ipluginTypeName = typeof(IPlugin).FullName;       // プラグインインターフェースの型名
         if (ipluginTypeName == null)
         {
             return;
         }
 
-        foreach (PluginFileInformation nowPFI in pluginFileInformation)
+        // 動作しているプラグインが無効になっていたら動作を停止
+        for (int index = RunningPluginInformation.Count - 1; index >= 0; index--)
         {
-            bool checkRunning = false;      // プラグインが実行中かの値
-            // プラグインが実行中か確認
+            bool isEnabled = false;     // 有効状態
+            foreach (PluginItemInformation nowPII in ApplicationData.Settings.PluginInformation.Items)
+            {
+                if (nowPII.PluginFileName == Path.GetFileNameWithoutExtension(RunningPluginInformation[index].Path))
+                {
+                    isEnabled = true;
+                    break;
+                }
+            }
+            if (isEnabled == false)
+            {
+                RunningPluginInformation[index].StopPlugin();
+                RunningPluginInformation.RemoveAt(index);
+            }
+        }
+
+        // プラグインが有効になっていたら動作させる
+        foreach (PluginItemInformation nowPII in ApplicationData.Settings.PluginInformation.Items)
+        {
+            bool checkRunning = false;      // 動作しているかの値
             foreach (RunningPluginInformation nowRPI in RunningPluginInformation)
             {
-                if (nowRPI.Path == nowPFI.Path)
+                if (nowPII.PluginFileName == Path.GetFileNameWithoutExtension(nowRPI.Path))
                 {
                     checkRunning = true;
                     break;
@@ -117,229 +130,61 @@ public class PluginProcessing
 
             if (checkRunning == false)
             {
-                foreach (PluginItemInformation nowPII in ApplicationData.Settings.PluginInformation.Items)
+                foreach (PluginFileInformation nowPFI in PluginFileInformation)
                 {
                     if (nowPII.PluginFileName == Path.GetFileNameWithoutExtension(nowPFI.Path))
                     {
                         try
                         {
-                            System.Reflection.Assembly assembly = System.Reflection.Assembly.LoadFrom(nowPFI.Path);
-
-                            foreach (Type nowType in assembly.GetTypes())
-                            {
-                                // プラグインかの確認
-                                if (nowType.IsClass && nowType.IsPublic
-                                    && nowType.IsAbstract == false
-                                    && nowType.GetInterface(ipluginTypeName) != null
-                                    && string.IsNullOrEmpty(nowType.FullName) == false)
-                                {
-                                    object? objectInterface = assembly.CreateInstance(nowType.FullName);
-                                    if (objectInterface == null)
-                                    {
-                                        break;
-                                    }
-                                    RunningPluginInformation newItem = new(nowPFI.Path, (IPlugin)objectInterface);
-                                    if (newItem.IPlugin == null)
-                                    {
-                                        break;
-                                    }
-                                    newItem.IPlugin.Initialize(settingDirectory, ApplicationData.Settings.Language);
-                                    newItem.IPlugin.ChangeGetWindowEventTypeData.ChangeEventType += ChangeGetWindowEventTypeData_ChangeEventType;
-                                    RunningPluginInformation.Add(newItem);
-                                    break;
-                                }
-                            }
+                            RunningPluginInformation newItem = new();
+                            await newItem.RunPlugin(nowPFI.Path, nowPFI.PluginName);
+                            newItem.PluginProcessExitedEvent += NewItem_PluginProcessExitedEvent;
+                            RunningPluginInformation.Add(newItem);
                         }
                         catch
                         {
+                            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred + Environment.NewLine + nowPFI.PluginName, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName + WindowControlValue.CopySeparateString + ApplicationData.Strings.Plugin, MessageBoxButton.OK);
                         }
                         break;
                     }
                 }
             }
         }
-
-        SettingsWindowEvent();
     }
 
     /// <summary>
-    /// ウィンドウイベントを設定
-    /// </summary>
-    private void SettingsWindowEvent()
-    {
-        FreeEcho.FEWindowEvent.HookWindowEventType eventType = 0;       // イベントの種類
-
-        foreach (RunningPluginInformation nowItem in RunningPluginInformation)
-        {
-            if (nowItem.IPlugin != null)
-            {
-                eventType |= (FreeEcho.FEWindowEvent.HookWindowEventType)nowItem.IPlugin.GetWindowEventType;
-            }
-        }
-
-        if (eventType == 0)
-        {
-            DisposeWindowEvent();
-        }
-        else
-        {
-            if (WindowEvent == null)
-            {
-                WindowEvent = new();
-                WindowEvent.WindowEventOccurrence += WindowEvent_WindowEventOccurrence;
-            }
-            else
-            {
-                WindowEvent.Unhook();
-            }
-            WindowEvent.Hook(eventType);
-        }
-    }
-
-    /// <summary>
-    /// 「取得するウィンドウイベントの種類」の「ChangeEventType」イベント
+    /// 「プラグインプロセスが閉じた」イベント
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="e"></param>
-    private void ChangeGetWindowEventTypeData_ChangeEventType(
+    /// <exception cref="NotImplementedException"></exception>
+    private void NewItem_PluginProcessExitedEvent(
         object? sender,
-        ChangeGetWindowEventTypeArgs e
+        EventArgs e
         )
     {
         try
         {
-            SettingsWindowEvent();
-        }
-        catch
-        {
-        }
-    }
-
-    /// <summary>
-    /// 「ウィンドウイベント」の「WindowEventOccurrence」イベント
-    /// </summary>
-    /// <param name="sender"></param>
-    /// <param name="e"></param>
-    private void WindowEvent_WindowEventOccurrence(
-        object? sender,
-        FreeEcho.FEWindowEvent.WindowEventArgs e
-        )
-    {
-        try
-        {
-            IntPtr windowHandle = FreeEcho.FEWindowEvent.WindowEvent.GetAncestorHwnd(e.Hwnd, e.EventType);        // ウィンドウのハンドル
-            bool isExistWindow = FreeEcho.FEWindowEvent.WindowEvent.ConfirmWindowVisible(windowHandle, e.EventType);      // ウィンドウが表示されているかの値
-
-            foreach (RunningPluginInformation nowItem in RunningPluginInformation)
+            if (sender == null)
             {
-                if (CheckPluginRegisterEvent(e, nowItem))
+                return;
+            }
+
+            RunningPluginInformation rpi = (RunningPluginInformation)sender;
+
+            foreach (RunningPluginInformation nowRPI in RunningPluginInformation)
+            {
+                if (nowRPI.PluginName == rpi.PluginName)
                 {
-                    if (nowItem.IPlugin != null)
-                    {
-                        if (nowItem.IPlugin.IsWindowOnlyEventProcessing ? isExistWindow : true)
-                        {
-                            IntPtr handle = nowItem.IPlugin.IsWindowOnlyEventProcessing ? windowHandle : e.Hwnd;        // ウィンドウハンドル
-
-                            nowItem.IPlugin.EventProcessingData.DoEventProcessing(handle, e.EventType);
-                        }
-                    }
+                    nowRPI.Dispose();
+                    RunningPluginInformation.Remove(nowRPI);
+                    break;
                 }
             }
         }
         catch
         {
         }
-    }
-
-    /// <summary>
-    /// プラグインが登録しているイベントか確認
-    /// </summary>
-    /// <param name="e">ウィンドウイベントのデータ</param>
-    /// <param name="runningPluginInformation">実行中のプラグイン情報</param>
-    /// <returns></returns>
-    private bool CheckPluginRegisterEvent(
-        FreeEcho.FEWindowEvent.WindowEventArgs e,
-        RunningPluginInformation runningPluginInformation
-        )
-    {
-        bool result = false;        // 結果
-
-        if (runningPluginInformation.IPlugin != null)
-        {
-            FreeEcho.FEWindowEvent.HookWindowEventType type = (FreeEcho.FEWindowEvent.HookWindowEventType)runningPluginInformation.IPlugin.GetWindowEventType;      // イベントの種類
-
-            switch (e.EventType)
-            {
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_CREATE:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.Create) == FreeEcho.FEWindowEvent.HookWindowEventType.Create)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_DESTROY:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.Destroy) == FreeEcho.FEWindowEvent.HookWindowEventType.Destroy)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_FOREGROUND:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.Foreground) == FreeEcho.FEWindowEvent.HookWindowEventType.Foreground)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_HIDE:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.Hide) == FreeEcho.FEWindowEvent.HookWindowEventType.Hide)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_LOCATIONCHANGE:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.LocationChange) == FreeEcho.FEWindowEvent.HookWindowEventType.LocationChange)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZEEND:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeEnd) == FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeEnd)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MINIMIZESTART:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeStart) == FreeEcho.FEWindowEvent.HookWindowEventType.MinimizeStart)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MOVESIZEEND:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeEnd) == FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeEnd)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_SYSTEM_MOVESIZESTART:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeStart) == FreeEcho.FEWindowEvent.HookWindowEventType.MoveSizeStart)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_NAMECHANGE:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.NameChange) == FreeEcho.FEWindowEvent.HookWindowEventType.NameChange)
-                    {
-                        result = true;
-                    }
-                    break;
-                case FreeEcho.FEWindowEvent.EVENT_CONSTANTS.EVENT_OBJECT_SHOW:
-                    if ((type & FreeEcho.FEWindowEvent.HookWindowEventType.Show) == FreeEcho.FEWindowEvent.HookWindowEventType.Show)
-                    {
-                        result = true;
-                    }
-                    break;
-            }
-        }
-
-        return result;
     }
 
     /// <summary>
@@ -347,18 +192,18 @@ public class PluginProcessing
     /// </summary>
     public void StopAllPlugins()
     {
-        foreach (RunningPluginInformation nowInformation in RunningPluginInformation)
+        foreach (RunningPluginInformation nowRPI in RunningPluginInformation)
         {
-            nowInformation.StopPlugin();
+            nowRPI.StopPlugin();
         }
+
         RunningPluginInformation.Clear();
     }
 
     /// <summary>
-    /// プラグインのファイル情報を取得
+    /// プラグインのファイル情報を更新
     /// </summary>
-    /// <returns>プラグインのファイル情報</returns>
-    public static List<PluginFileInformation> GetPluginsInformation()
+    public static void UpdatePluginsInformation()
     {
         List<PluginFileInformation> information = new();
 
@@ -389,30 +234,33 @@ public class PluginProcessing
                 information.Add(newInformation);
             }
             process.WaitForExit();
+
+            PluginFileInformation = information;
         }
         catch
         {
         }
-
-        return information;
     }
 
     /// <summary>
-    /// 存在しないプラグインの情報を削除
+    /// 有効にしているプラグインが存在しない場合は、プラグインのファイル情報を削除
     /// </summary>
-    public static void CheckExistsPlugin()
+    public static void DeletePluginFileInformation()
     {
         try
         {
-            List<PluginFileInformation> information = GetPluginsInformation();       // プラグインのファイル情報
+            if (PluginFileInformation.Count == 0)
+            {
+                UpdatePluginsInformation();
+            }
 
-            for (int index1 = 0; index1 < ApplicationData.Settings.PluginInformation.Items.Count; index1++)
+            for (int index = ApplicationData.Settings.PluginInformation.Items.Count - 1; index >= 0; index--)
             {
                 bool isExists = false;
 
-                for (int index2 = 0; index2 < information.Count; index2++)
+                foreach (PluginFileInformation nowPFI in PluginFileInformation)
                 {
-                    if (ApplicationData.Settings.PluginInformation.Items[index1].PluginFileName == Path.GetFileNameWithoutExtension(information[index2].Path))
+                    if (ApplicationData.Settings.PluginInformation.Items[index].PluginFileName == Path.GetFileNameWithoutExtension(nowPFI.Path))
                     {
                         isExists = true;
                         break;
@@ -421,8 +269,7 @@ public class PluginProcessing
 
                 if (isExists == false)
                 {
-                    ApplicationData.Settings.PluginInformation.Items.RemoveAt(index1);
-                    index1--;
+                    ApplicationData.Settings.PluginInformation.Items.RemoveAt(index);
                 }
             }
         }

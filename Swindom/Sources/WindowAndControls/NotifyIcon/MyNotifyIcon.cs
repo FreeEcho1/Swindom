@@ -12,7 +12,7 @@ public class MyNotifyIcon : IDisposable
     /// <summary>
     /// システムトレイアイコンのウィンドウ
     /// </summary>
-    private readonly NotifyIconWindow NotifyIconWindow = new();
+    private NotifyIconWindow NotifyIconWindow { get; } = new();
     /// <summary>
     /// アイコン
     /// </summary>
@@ -20,7 +20,7 @@ public class MyNotifyIcon : IDisposable
     {
         get
         {
-            return NotifyIconWindow?.SystemTrayIcon;
+            return NotifyIconWindow.SystemTrayIcon;
         }
         set
         {

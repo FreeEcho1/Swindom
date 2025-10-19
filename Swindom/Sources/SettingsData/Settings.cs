@@ -40,8 +40,18 @@ public class Settings
     /// </summary>
     public bool FullScreenWindowAdditionDecision { get; set; }
     /// <summary>
+    /// ディスプレイ設定を変更しない
+    /// </summary>
+    public bool DoNotChangeDisplaySettings { get; set; }
+    /// <summary>
+    /// ディスプレイの設定を変更する方法
+    /// </summary>
+    public DisplayChangeMode DisplayChangeMode {  get; set; }
+
+    /// <summary>
     /// 長いパスを使用 (32767文字)
     /// </summary>
+    [JsonIgnore]
     public bool UseLongPath { get; set; }
     /// <summary>
     /// 「貼り付ける位置をずらす」情報
@@ -89,6 +99,9 @@ public class Settings
         DarkMode = false;
         AutomaticallyUpdateCheck = false;
         CheckBetaVersion = false;
+        FullScreenWindowAdditionDecision = false;
+        DoNotChangeDisplaySettings = true;
+        DisplayChangeMode = DisplayChangeMode.AutoOrManual;
         UseLongPath = false;
         ShiftPastePosition = new();
         ExplanationWindowSize = new(500, 400);

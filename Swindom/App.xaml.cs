@@ -22,32 +22,25 @@
             StartupEventArgs e
             )
         {
-            bool taskCheck = false;     // タスクスケジューラ処理かの値
-            foreach (string nowCommand in Environment.GetCommandLineArgs())
+            try
             {
-                if (nowCommand == ApplicationStartup.CreateTaskString)
+                foreach (string nowCommand in Environment.GetCommandLineArgs())
                 {
-                    taskCheck = true;
-                    ApplicationStartup.RegisterTask();
-                    Shutdown();
-                    Environment.Exit(0);
-                    return;
+                    if (nowCommand == ApplicationStartup.CreateTaskString)
+                    {
+                        ApplicationStartup.RegisterTask();
+                        Environment.Exit(0);
+                        return;
+                    }
+                    else if (nowCommand == ApplicationStartup.DeleteTaskString)
+                    {
+                        ApplicationStartup.DeleteTask();
+                        Environment.Exit(0);
+                        return;
+                    }
                 }
-                else if (nowCommand == ApplicationStartup.DeleteTaskString)
-                {
-                    taskCheck = true;
-                    ApplicationStartup.DeleteTask();
-                    Shutdown();
-                    Environment.Exit(0);
-                    return;
-                }
-            }
 
-            if (taskCheck == false)
-            {
                 // 多重実行の場合は終了
-                try
-                {
 #if !DEBUG
                 Mutex = new System.Threading.Mutex(false, "SwindomMutex");
                 if (Mutex.WaitOne(0, false) == false)
@@ -55,20 +48,31 @@
                     Mutex.Close();
                     Mutex.Dispose();
                     Mutex = null;
-                    Shutdown();
+                    Environment.Exit(0);
                     return;
                 }
 #endif
-                }
-                catch
-                {
-                }
 
+                // Windows Forms用の高DPIの設定
+                System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode.PerMonitorV2);
+            }
+            catch
+            {
+                Environment.Exit(0);
+                return;
+            }
+
+            try
+            {
                 base.OnStartup(e);
                 ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
                 MainProcessing = new();
                 MainProcessing.CloseEvent += NotifyIconWindow_CloseEvent;
+            }
+            catch
+            {
+                Shutdown();
             }
         }
 

@@ -12,26 +12,26 @@ public partial class SpecifyWindowItemWindow : Window
     /// <summary>
     /// 修正する項目のインデックス (追加「-1」)
     /// </summary>
-    private readonly int IndexOfItemToBeModified = -1;
+    private int IndexOfItemToBeModified { get; } = -1;
     /// <summary>
     /// 「指定ウィンドウ」機能の項目情報
     /// </summary>
-    private readonly SpecifyWindowItemInformation SpecifyWindowItemInformation;
+    private SpecifyWindowItemInformation SpecifyWindowItemInformation { get; }
     /// <summary>
     /// ホットキー情報
     /// </summary>
-    private readonly FreeEcho.FEHotKeyWPF.HotKeyInformation HotkeyInformation = new();
+    private FreeEcho.FEHotKeyWPF.HotKeyInformation HotkeyInformation { get; } = new();
     /// <summary>
     /// ウィンドウ情報取得タイマー
     /// </summary>
-    private readonly System.Windows.Threading.DispatcherTimer WindowInformationAcquisitionTimer = new()
+    private System.Windows.Threading.DispatcherTimer WindowInformationAcquisitionTimer { get; } = new()
     {
         Interval = new (0, 0, 0, 0, WindowProcessingValue.WaitTimeForWindowInformationAcquisition)
     };
     /// <summary>
     /// ウィンドウ選択枠
     /// </summary>
-    private readonly FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse = new()
+    private FreeEcho.FEWindowSelectionMouse.WindowSelectionFrame WindowSelectionMouse { get; } = new()
     {
         MouseLeftUpStop = true
     };
@@ -97,145 +97,145 @@ public partial class SpecifyWindowItemWindow : Window
 
         if (IndexOfItemToBeModified == -1)
         {
-            Title = ApplicationData.Languages.Add;
-            AddOrModifyButton.Content = ApplicationData.Languages.Add;
+            Title = ApplicationData.Strings.Add;
+            AddOrModifyButton.Content = ApplicationData.Strings.Add;
         }
         else
         {
-            Title = ApplicationData.Languages.Modify;
-            AddOrModifyButton.Content = ApplicationData.Languages.Modify;
+            Title = ApplicationData.Strings.Modify;
+            AddOrModifyButton.Content = ApplicationData.Strings.Modify;
         }
-        RegisteredNameLabel.Content = ApplicationData.Languages.RegisteredName;
-        InformationToBeObtainedTabItem.Header = ApplicationData.Languages.InformationToBeObtained;
-        GetInformationTitleNameCheckBox.Content = ApplicationData.Languages.TitleName;
-        GetInformationClassNameCheckBox.Content = ApplicationData.Languages.ClassName;
-        GetInformationFileNameCheckBox.Content = ApplicationData.Languages.FileName;
-        GetInformationDisplayCheckBox.Content = ApplicationData.Languages.Display;
-        GetInformationWindowStateCheckBox.Content = ApplicationData.Languages.WindowState;
-        GetInformationXCheckBox.Content = ApplicationData.Languages.X;
-        GetInformationYCheckBox.Content = ApplicationData.Languages.Y;
-        GetInformationWidthCheckBox.Content = ApplicationData.Languages.Width;
-        GetInformationHeightCheckBox.Content = ApplicationData.Languages.Height;
-        GetInformationVersionCheckBox.Content = ApplicationData.Languages.Version;
-        GetInformationVersionLabel.Content = ApplicationData.Languages.Version;
-        GetWindowInformationButton.Content = ApplicationData.Languages.GetWindowInformation;
-        TargetButton.ToolTip = ApplicationData.Languages.HoldDownMousePointerMoveToSelectWindow;
-        WindowDecisionTabItem.Header = ApplicationData.Languages.WindowDecide;
-        WindowDecisionExplanationButton.Content = ApplicationData.Languages.Question;
-        WindowDecisionExplanationButton.ToolTip = ApplicationData.Languages.Help;
-        DecisionTitleNameLabel.Content = ApplicationData.Languages.TitleName;
-        DecisionTitleNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Languages.ExactMatch;
-        DecisionTitleNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Languages.PartialMatch;
-        DecisionTitleNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Languages.ForwardMatch;
-        DecisionTitleNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Languages.BackwardMatch;
-        DecisionClassNameLabel.Content = ApplicationData.Languages.ClassName;
-        DecisionClassNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Languages.ExactMatch;
-        DecisionClassNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Languages.PartialMatch;
-        DecisionClassNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Languages.ForwardMatch;
-        DecisionClassNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Languages.BackwardMatch;
-        DecisionFileNameLabel.Content = ApplicationData.Languages.FileName;
-        DecisionFileNameFileSelectionButton.ToolTip = ApplicationData.Languages.FileSelection;
-        DecisionFileNameMatchingConditionIncludePathComboBoxItem.Content = ApplicationData.Languages.IncludePath;
-        DecisionFileNameMatchingConditionNotIncludePathComboBoxItem.Content = ApplicationData.Languages.NotIncludePath;
-        ProcessingSettingsTabItem.Header = ApplicationData.Languages.ProcessingSettings;
-        ProcessingSettingsStandardDisplayLabel.Content = ApplicationData.Languages.DisplayToUseAsStandard;
-        ProcessingSettingsStandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Languages.CurrentDisplay;
-        ProcessingSettingsStandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Languages.SpecifiedDisplay;
-        ProcessingSettingsStandardDisplayLimitedToSpecifiedDisplayComboBoxItem.Content = ApplicationData.Languages.LimitedToSpecifiedDisplay;
-        ProcessingSettingsOneTimeProcessingLabel.Content = ApplicationData.Languages.ProcessOnlyOnce;
-        ProcessingSettingsOneTimeProcessingDoNotSpecifyComboBoxItem.Content = ApplicationData.Languages.DoNotSpecify;
-        ProcessingSettingsOneTimeProcessingOnceWindowOpenComboBoxItem.Content = ApplicationData.Languages.OnceWindowOpen;
-        ProcessingSettingsOneTimeProcessingOnceWhileItIsRunningComboBoxItem.Content = ApplicationData.Languages.OnceWhileItIsRunning;
-        ProcessingSettingsEventGroupBox.Header = ApplicationData.Languages.Event;
-        EventExplanationButton.Content = ApplicationData.Languages.Question;
-        EventExplanationButton.ToolTip = ApplicationData.Languages.Help;
-        ProcessingSettingsForegroundToggleSwitch.OffContent = ProcessingSettingsForegroundToggleSwitch.OnContent = ApplicationData.Languages.Foregrounded;
-        ProcessingSettingsMoveSizeEndToggleSwitch.OffContent = ProcessingSettingsMoveSizeEndToggleSwitch.OnContent = ApplicationData.Languages.MoveSizeChangeEnd;
-        ProcessingSettingsMinimizeStartToggleSwitch.OffContent = ProcessingSettingsMinimizeStartToggleSwitch.OnContent = ApplicationData.Languages.MinimizeStart;
-        ProcessingSettingsMinimizeEndToggleSwitch.OffContent = ProcessingSettingsMinimizeEndToggleSwitch.OnContent = ApplicationData.Languages.MinimizeEnd;
-        ProcessingSettingsShowToggleSwitch.OffContent = ProcessingSettingsShowToggleSwitch.OnContent = ApplicationData.Languages.Show;
-        ProcessingSettingsNameChangeToggleSwitch.OffContent = ProcessingSettingsNameChangeToggleSwitch.OnContent = ApplicationData.Languages.TitleNameChanged;
-        ProcessingSettingsEventDelayTimeLabel.Content = ApplicationData.Languages.EventDelayTime;
-        ProcessingSettingsTimerGroupBox.Header = ApplicationData.Languages.Timer;
-        TimerExplanationButton.Content = ApplicationData.Languages.Question;
-        TimerExplanationButton.ToolTip = ApplicationData.Languages.Help;
-        ProcessingSettingsTimerProcessingToggleSwitch.OffContent = ProcessingSettingsTimerProcessingToggleSwitch.OnContent = ApplicationData.Languages.TimerProcessing;
-        ProcessingSettingsDelayLabel.Content = ApplicationData.Languages.NumberOfTimesNotToProcessingFirst;
-        WindowProcessingTabItem.Header = ApplicationData.Languages.SpecifyWindow;
-        WindowProcessingProcessNameLabel.Content = ApplicationData.Languages.ProcessingName;
-        WindowProcessingDisplayLabel.Content = ApplicationData.Languages.Display;
-        WindowProcessingWindowStateLabel.Content = ApplicationData.Languages.WindowState;
-        WindowProcessingWindowStateDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingWindowStateNormalWindowComboBoxItem.Content = ApplicationData.Languages.NormalWindow;
-        WindowProcessingWindowStateMaximizeComboBoxItem.Content = ApplicationData.Languages.Maximize;
-        WindowProcessingWindowStateMinimizeComboBoxItem.Content = ApplicationData.Languages.Minimize;
-        WindowProcessingXLabel.Content = ApplicationData.Languages.X;
-        WindowProcessingXDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingXLeftEdgeComboBoxItem.Content = ApplicationData.Languages.LeftEdge;
-        WindowProcessingXMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-        WindowProcessingXRightEdgeComboBoxItem.Content = ApplicationData.Languages.RightEdge;
-        WindowProcessingXCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-        WindowProcessingXTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        WindowProcessingXTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        WindowProcessingYLabel.Content = ApplicationData.Languages.Y;
-        WindowProcessingYDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingYTopEdgeComboBoxItem.Content = ApplicationData.Languages.TopEdge;
-        WindowProcessingYMiddleComboBoxItem.Content = ApplicationData.Languages.Middle;
-        WindowProcessingYBottomEdgeComboBoxItem.Content = ApplicationData.Languages.BottomEdge;
-        WindowProcessingYCoordinateSpecificationComboBoxItem.Content = ApplicationData.Languages.CoordinateSpecification;
-        WindowProcessingYTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        WindowProcessingYTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        WindowProcessingWidthLabel.Content = ApplicationData.Languages.Width;
-        WindowProcessingWidthDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingWidthWidthSpecificationComboBoxItem.Content = ApplicationData.Languages.WidthSpecification;
-        WindowProcessingWidthTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        WindowProcessingWidthTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        WindowProcessingHeightLabel.Content = ApplicationData.Languages.Height;
-        WindowProcessingHeightDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingHeightHeightSpecificationComboBoxItem.Content = ApplicationData.Languages.HeightSpecification;
-        WindowProcessingHeightTypePixelComboBoxItem.Content = ApplicationData.Languages.Pixel;
-        WindowProcessingHeightTypePercentComboBoxItem.Content = ApplicationData.Languages.Percent;
-        WindowProcessingNormalWindowOnlyToggleSwitch.OffContent = WindowProcessingNormalWindowOnlyToggleSwitch.OnContent = ApplicationData.Languages.ProcessOnlyWhenNormalWindow;
-        WindowProcessingClientAreaToggleSwitch.OffContent = WindowProcessingClientAreaToggleSwitch.OnContent = ApplicationData.Languages.ClientArea;
-        WindowProcessingForefrontLabel.Content = ApplicationData.Languages.Forefront;
-        WindowProcessingForefrontDoNotChangeComboBoxItem.Content = ApplicationData.Languages.DoNotChange;
-        WindowProcessingForefrontAlwaysForefrontComboBoxItem.Content = ApplicationData.Languages.AlwaysForefront;
-        WindowProcessingForefrontAlwaysCancelForefrontComboBoxItem.Content = ApplicationData.Languages.AlwaysCancelForefront;
-        WindowProcessingForefrontForefrontComboBoxItem.Content = ApplicationData.Languages.Forefront;
-        WindowProcessingSpecifyTransparencyToggleSwitch.OffContent = WindowProcessingSpecifyTransparencyToggleSwitch.OnContent = ApplicationData.Languages.SpecifyTransparency;
-        WindowProcessingCloseWindowToggleSwitch.OffContent = WindowProcessingCloseWindowToggleSwitch.OnContent = ApplicationData.Languages.CloseWindow;
-        WindowProcessingHotkeyLabel.Content = ApplicationData.Languages.Hotkey;
-        WindowProcessingAddProcessingButton.Content = ApplicationData.Languages.Add;
-        WindowProcessingModifyProcessingButton.Content = ApplicationData.Languages.Modify;
-        WindowProcessingCopyProcessingButton.Content = ApplicationData.Languages.Copy;
-        WindowProcessingDeleteProcessingButton.Content = ApplicationData.Languages.Delete;
-        ConditionsNotProcessTabItem.Header = ApplicationData.Languages.ConditionsNotProcess;
-        ConditionsNotProcessChildWindowToggleSwitch.OffContent = ConditionsNotProcessChildWindowToggleSwitch.OnContent = ApplicationData.Languages.ChildWindow;
-        ChildWindowExplanationButton.Content = ApplicationData.Languages.Question;
-        ChildWindowExplanationButton.ToolTip = ApplicationData.Languages.Help;
-        ConditionsNotProcessTitleNameRequirementsLabel.Content = ApplicationData.Languages.TitleNameRequirements;
-        ConditionsNotProcessTitleNameRequirementsDoNotSpecifyComboBoxItem.Content = ApplicationData.Languages.DoNotSpecify;
-        ConditionsNotProcessTitleNameRequirementsWindowWithoutTitleNameComboBoxItem.Content = ApplicationData.Languages.WindowWithoutTitleName;
-        ConditionsNotProcessTitleNameRequirementsWindowWithTitleNameComboBoxItem.Content = ApplicationData.Languages.WindowWithTitleName;
-        ConditionsNotProcessOtherThanSpecifiedVersionLabel.Content = ApplicationData.Languages.OtherThanSpecifiedVersion;
-        ConditionsNotProcessTitleNameExclusionStringGroupBox.Header = ApplicationData.Languages.TitleNameExclusionString;
-        ConditionsNotProcessAddTitleNameExclusionStringButton.Content = ApplicationData.Languages.Add;
-        ConditionsNotProcessDeleteTitleNameExclusionStringButton.Content = ApplicationData.Languages.Delete;
-        ConditionsNotProcessSizeGroupBox.Header = ApplicationData.Languages.Size;
-        ConditionsNotProcessSizeWidthLabel.Content = ApplicationData.Languages.Width;
-        ConditionsNotProcessSizeHeightLabel.Content = ApplicationData.Languages.Height;
-        ConditionsNotProcessSizeAddButton.Content = ApplicationData.Languages.Add;
-        ConditionsNotProcessSizeDeleteButton.Content = ApplicationData.Languages.Delete;
-        ConditionsNotProcessOtherThanSpecifiedSizeGroupBox.Header = ApplicationData.Languages.OtherThanSpecifiedSize;
-        ConditionsNotProcessOtherThanSpecifiedSizeWidthLabel.Content = ApplicationData.Languages.Width;
-        ConditionsNotProcessOtherThanSpecifiedSizeHeightLabel.Content = ApplicationData.Languages.Height;
-        ConditionsNotProcessOtherThanSpecifiedSizeAddButton.Content = ApplicationData.Languages.Add;
-        ConditionsNotProcessOtherThanSpecifiedSizeDeleteButton.Content = ApplicationData.Languages.Delete;
-        NotificationTabItem.Header = ApplicationData.Languages.Notification;
-        NotificationVersionAnnounceToggleSwitch.OffContent = NotificationVersionAnnounceToggleSwitch.OnContent = ApplicationData.Languages.Notification;
-        NotificationOtherThanSpecifiedVersionLabel.Content = ApplicationData.Languages.OtherThanSpecifiedVersion;
-        NotificationSynchronizationVersionToggleSwitch.OffContent = NotificationSynchronizationVersionToggleSwitch.OnContent = ApplicationData.Languages.SynchronizationOtherThanSpecifiedVersion;
-        CancelButton.Content = ApplicationData.Languages.Cancel;
+        RegisteredNameLabel.Content = ApplicationData.Strings.RegisteredName;
+        InformationToBeObtainedTabItem.Header = ApplicationData.Strings.InformationToBeObtained;
+        GetInformationTitleNameCheckBox.Content = ApplicationData.Strings.TitleName;
+        GetInformationClassNameCheckBox.Content = ApplicationData.Strings.ClassName;
+        GetInformationFileNameCheckBox.Content = ApplicationData.Strings.FileName;
+        GetInformationDisplayCheckBox.Content = ApplicationData.Strings.Display;
+        GetInformationWindowStateCheckBox.Content = ApplicationData.Strings.WindowState;
+        GetInformationXCheckBox.Content = ApplicationData.Strings.X;
+        GetInformationYCheckBox.Content = ApplicationData.Strings.Y;
+        GetInformationWidthCheckBox.Content = ApplicationData.Strings.Width;
+        GetInformationHeightCheckBox.Content = ApplicationData.Strings.Height;
+        GetInformationVersionCheckBox.Content = ApplicationData.Strings.Version;
+        GetInformationVersionLabel.Content = ApplicationData.Strings.Version;
+        GetWindowInformationButton.Content = ApplicationData.Strings.GetWindowInformation;
+        TargetButton.ToolTip = ApplicationData.Strings.HoldDownMousePointerMoveToSelectWindow;
+        WindowDecisionTabItem.Header = ApplicationData.Strings.WindowDecide;
+        WindowDecisionExplanationButton.Content = ApplicationData.Strings.Question;
+        WindowDecisionExplanationButton.ToolTip = ApplicationData.Strings.Help;
+        DecisionTitleNameLabel.Content = ApplicationData.Strings.TitleName;
+        DecisionTitleNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Strings.ExactMatch;
+        DecisionTitleNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Strings.PartialMatch;
+        DecisionTitleNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Strings.ForwardMatch;
+        DecisionTitleNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Strings.BackwardMatch;
+        DecisionClassNameLabel.Content = ApplicationData.Strings.ClassName;
+        DecisionClassNameMatchingConditionExactMatchComboBoxItem.Content = ApplicationData.Strings.ExactMatch;
+        DecisionClassNameMatchingConditionPartialMatchComboBoxItem.Content = ApplicationData.Strings.PartialMatch;
+        DecisionClassNameMatchingConditionForwardMatchComboBoxItem.Content = ApplicationData.Strings.ForwardMatch;
+        DecisionClassNameMatchingConditionBackwardMatchComboBoxItem.Content = ApplicationData.Strings.BackwardMatch;
+        DecisionFileNameLabel.Content = ApplicationData.Strings.FileName;
+        DecisionFileNameFileSelectionButton.ToolTip = ApplicationData.Strings.FileSelection;
+        DecisionFileNameMatchingConditionIncludePathComboBoxItem.Content = ApplicationData.Strings.IncludePath;
+        DecisionFileNameMatchingConditionNotIncludePathComboBoxItem.Content = ApplicationData.Strings.NotIncludePath;
+        ProcessingSettingsTabItem.Header = ApplicationData.Strings.ProcessingSettings;
+        ProcessingSettingsStandardDisplayLabel.Content = ApplicationData.Strings.DisplayToUseAsStandard;
+        ProcessingSettingsStandardDisplayCurrentDisplayComboBoxItem.Content = ApplicationData.Strings.CurrentDisplay;
+        ProcessingSettingsStandardDisplaySpecifiedDisplayComboBoxItem.Content = ApplicationData.Strings.SpecifiedDisplay;
+        ProcessingSettingsStandardDisplayLimitedToSpecifiedDisplayComboBoxItem.Content = ApplicationData.Strings.LimitedToSpecifiedDisplay;
+        ProcessingSettingsOneTimeProcessingLabel.Content = ApplicationData.Strings.ProcessOnlyOnce;
+        ProcessingSettingsOneTimeProcessingDoNotSpecifyComboBoxItem.Content = ApplicationData.Strings.DoNotSpecify;
+        ProcessingSettingsOneTimeProcessingOnceWindowOpenComboBoxItem.Content = ApplicationData.Strings.OnceWindowOpen;
+        ProcessingSettingsOneTimeProcessingOnceWhileItIsRunningComboBoxItem.Content = ApplicationData.Strings.OnceWhileItIsRunning;
+        ProcessingSettingsEventGroupBox.Header = ApplicationData.Strings.Event;
+        EventExplanationButton.Content = ApplicationData.Strings.Question;
+        EventExplanationButton.ToolTip = ApplicationData.Strings.Help;
+        ProcessingSettingsForegroundToggleSwitch.OffContent = ProcessingSettingsForegroundToggleSwitch.OnContent = ApplicationData.Strings.Foregrounded;
+        ProcessingSettingsMoveSizeEndToggleSwitch.OffContent = ProcessingSettingsMoveSizeEndToggleSwitch.OnContent = ApplicationData.Strings.MoveSizeChangeEnd;
+        ProcessingSettingsMinimizeStartToggleSwitch.OffContent = ProcessingSettingsMinimizeStartToggleSwitch.OnContent = ApplicationData.Strings.MinimizeStart;
+        ProcessingSettingsMinimizeEndToggleSwitch.OffContent = ProcessingSettingsMinimizeEndToggleSwitch.OnContent = ApplicationData.Strings.MinimizeEnd;
+        ProcessingSettingsShowToggleSwitch.OffContent = ProcessingSettingsShowToggleSwitch.OnContent = ApplicationData.Strings.Show;
+        ProcessingSettingsNameChangeToggleSwitch.OffContent = ProcessingSettingsNameChangeToggleSwitch.OnContent = ApplicationData.Strings.TitleNameChanged;
+        ProcessingSettingsEventDelayTimeLabel.Content = ApplicationData.Strings.EventDelayTime;
+        ProcessingSettingsTimerGroupBox.Header = ApplicationData.Strings.Timer;
+        TimerExplanationButton.Content = ApplicationData.Strings.Question;
+        TimerExplanationButton.ToolTip = ApplicationData.Strings.Help;
+        ProcessingSettingsTimerProcessingToggleSwitch.OffContent = ProcessingSettingsTimerProcessingToggleSwitch.OnContent = ApplicationData.Strings.TimerProcessing;
+        ProcessingSettingsDelayLabel.Content = ApplicationData.Strings.NumberOfTimesNotToProcessingFirst;
+        WindowProcessingTabItem.Header = ApplicationData.Strings.SpecifyWindow;
+        WindowProcessingProcessNameLabel.Content = ApplicationData.Strings.ProcessingName;
+        WindowProcessingDisplayLabel.Content = ApplicationData.Strings.Display;
+        WindowProcessingWindowStateLabel.Content = ApplicationData.Strings.WindowState;
+        WindowProcessingWindowStateDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingWindowStateNormalWindowComboBoxItem.Content = ApplicationData.Strings.NormalWindow;
+        WindowProcessingWindowStateMaximizeComboBoxItem.Content = ApplicationData.Strings.Maximize;
+        WindowProcessingWindowStateMinimizeComboBoxItem.Content = ApplicationData.Strings.Minimize;
+        WindowProcessingXLabel.Content = ApplicationData.Strings.X;
+        WindowProcessingXDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingXLeftEdgeComboBoxItem.Content = ApplicationData.Strings.LeftEdge;
+        WindowProcessingXMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+        WindowProcessingXRightEdgeComboBoxItem.Content = ApplicationData.Strings.RightEdge;
+        WindowProcessingXCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+        WindowProcessingXTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        WindowProcessingXTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        WindowProcessingYLabel.Content = ApplicationData.Strings.Y;
+        WindowProcessingYDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingYTopEdgeComboBoxItem.Content = ApplicationData.Strings.TopEdge;
+        WindowProcessingYMiddleComboBoxItem.Content = ApplicationData.Strings.Middle;
+        WindowProcessingYBottomEdgeComboBoxItem.Content = ApplicationData.Strings.BottomEdge;
+        WindowProcessingYCoordinateSpecificationComboBoxItem.Content = ApplicationData.Strings.CoordinateSpecification;
+        WindowProcessingYTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        WindowProcessingYTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        WindowProcessingWidthLabel.Content = ApplicationData.Strings.Width;
+        WindowProcessingWidthDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingWidthWidthSpecificationComboBoxItem.Content = ApplicationData.Strings.WidthSpecification;
+        WindowProcessingWidthTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        WindowProcessingWidthTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        WindowProcessingHeightLabel.Content = ApplicationData.Strings.Height;
+        WindowProcessingHeightDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingHeightHeightSpecificationComboBoxItem.Content = ApplicationData.Strings.HeightSpecification;
+        WindowProcessingHeightTypePixelComboBoxItem.Content = ApplicationData.Strings.Pixel;
+        WindowProcessingHeightTypePercentComboBoxItem.Content = ApplicationData.Strings.Percent;
+        WindowProcessingNormalWindowOnlyToggleSwitch.OffContent = WindowProcessingNormalWindowOnlyToggleSwitch.OnContent = ApplicationData.Strings.ProcessOnlyWhenNormalWindow;
+        WindowProcessingClientAreaToggleSwitch.OffContent = WindowProcessingClientAreaToggleSwitch.OnContent = ApplicationData.Strings.ClientArea;
+        WindowProcessingForefrontLabel.Content = ApplicationData.Strings.Forefront;
+        WindowProcessingForefrontDoNotChangeComboBoxItem.Content = ApplicationData.Strings.DoNotChange;
+        WindowProcessingForefrontAlwaysForefrontComboBoxItem.Content = ApplicationData.Strings.AlwaysForefront;
+        WindowProcessingForefrontAlwaysCancelForefrontComboBoxItem.Content = ApplicationData.Strings.AlwaysCancelForefront;
+        WindowProcessingForefrontForefrontComboBoxItem.Content = ApplicationData.Strings.Forefront;
+        WindowProcessingSpecifyTransparencyToggleSwitch.OffContent = WindowProcessingSpecifyTransparencyToggleSwitch.OnContent = ApplicationData.Strings.SpecifyTransparency;
+        WindowProcessingCloseWindowToggleSwitch.OffContent = WindowProcessingCloseWindowToggleSwitch.OnContent = ApplicationData.Strings.CloseWindow;
+        WindowProcessingHotkeyLabel.Content = ApplicationData.Strings.Hotkey;
+        WindowProcessingAddProcessingButton.Content = ApplicationData.Strings.Add;
+        WindowProcessingModifyProcessingButton.Content = ApplicationData.Strings.Modify;
+        WindowProcessingCopyProcessingButton.Content = ApplicationData.Strings.Copy;
+        WindowProcessingDeleteProcessingButton.Content = ApplicationData.Strings.Delete;
+        ConditionsNotProcessTabItem.Header = ApplicationData.Strings.ConditionsNotProcess;
+        ConditionsNotProcessChildWindowToggleSwitch.OffContent = ConditionsNotProcessChildWindowToggleSwitch.OnContent = ApplicationData.Strings.ChildWindow;
+        ChildWindowExplanationButton.Content = ApplicationData.Strings.Question;
+        ChildWindowExplanationButton.ToolTip = ApplicationData.Strings.Help;
+        ConditionsNotProcessTitleNameRequirementsLabel.Content = ApplicationData.Strings.TitleNameRequirements;
+        ConditionsNotProcessTitleNameRequirementsDoNotSpecifyComboBoxItem.Content = ApplicationData.Strings.DoNotSpecify;
+        ConditionsNotProcessTitleNameRequirementsWindowWithoutTitleNameComboBoxItem.Content = ApplicationData.Strings.WindowWithoutTitleName;
+        ConditionsNotProcessTitleNameRequirementsWindowWithTitleNameComboBoxItem.Content = ApplicationData.Strings.WindowWithTitleName;
+        ConditionsNotProcessOtherThanSpecifiedVersionLabel.Content = ApplicationData.Strings.OtherThanSpecifiedVersion;
+        ConditionsNotProcessTitleNameExclusionStringGroupBox.Header = ApplicationData.Strings.TitleNameExclusionString;
+        ConditionsNotProcessAddTitleNameExclusionStringButton.Content = ApplicationData.Strings.Add;
+        ConditionsNotProcessDeleteTitleNameExclusionStringButton.Content = ApplicationData.Strings.Delete;
+        ConditionsNotProcessSizeGroupBox.Header = ApplicationData.Strings.Size;
+        ConditionsNotProcessSizeWidthLabel.Content = ApplicationData.Strings.Width;
+        ConditionsNotProcessSizeHeightLabel.Content = ApplicationData.Strings.Height;
+        ConditionsNotProcessSizeAddButton.Content = ApplicationData.Strings.Add;
+        ConditionsNotProcessSizeDeleteButton.Content = ApplicationData.Strings.Delete;
+        ConditionsNotProcessOtherThanSpecifiedSizeGroupBox.Header = ApplicationData.Strings.OtherThanSpecifiedSize;
+        ConditionsNotProcessOtherThanSpecifiedSizeWidthLabel.Content = ApplicationData.Strings.Width;
+        ConditionsNotProcessOtherThanSpecifiedSizeHeightLabel.Content = ApplicationData.Strings.Height;
+        ConditionsNotProcessOtherThanSpecifiedSizeAddButton.Content = ApplicationData.Strings.Add;
+        ConditionsNotProcessOtherThanSpecifiedSizeDeleteButton.Content = ApplicationData.Strings.Delete;
+        NotificationTabItem.Header = ApplicationData.Strings.Notification;
+        NotificationVersionAnnounceToggleSwitch.OffContent = NotificationVersionAnnounceToggleSwitch.OnContent = ApplicationData.Strings.Notification;
+        NotificationOtherThanSpecifiedVersionLabel.Content = ApplicationData.Strings.OtherThanSpecifiedVersion;
+        NotificationSynchronizationVersionToggleSwitch.OffContent = NotificationSynchronizationVersionToggleSwitch.OnContent = ApplicationData.Strings.SynchronizationOtherThanSpecifiedVersion;
+        CancelButton.Content = ApplicationData.Strings.Cancel;
 
         string stringData;     // 文字列データ
         RegisteredNameTextBox.Text = SpecifyWindowItemInformation.RegisteredName;
@@ -252,40 +252,40 @@ public partial class SpecifyWindowItemWindow : Window
         DecisionTitleNameTextBox.Text = SpecifyWindowItemInformation.TitleName;
         stringData = SpecifyWindowItemInformation.TitleNameMatchCondition switch
         {
-            NameMatchCondition.PartialMatch => ApplicationData.Languages.PartialMatch,
-            NameMatchCondition.ForwardMatch => ApplicationData.Languages.ForwardMatch,
-            NameMatchCondition.BackwardMatch => ApplicationData.Languages.BackwardMatch,
-            _ => ApplicationData.Languages.ExactMatch
+            NameMatchCondition.PartialMatch => ApplicationData.Strings.PartialMatch,
+            NameMatchCondition.ForwardMatch => ApplicationData.Strings.ForwardMatch,
+            NameMatchCondition.BackwardMatch => ApplicationData.Strings.BackwardMatch,
+            _ => ApplicationData.Strings.ExactMatch
         };
         ControlsProcessing.SelectComboBoxItem(DecisionTitleNameMatchingConditionComboBox, stringData);
         DecisionClassNameTextBox.Text = SpecifyWindowItemInformation.ClassName;
         stringData = SpecifyWindowItemInformation.ClassNameMatchCondition switch
         {
-            NameMatchCondition.PartialMatch => ApplicationData.Languages.PartialMatch,
-            NameMatchCondition.ForwardMatch => ApplicationData.Languages.ForwardMatch,
-            NameMatchCondition.BackwardMatch => ApplicationData.Languages.BackwardMatch,
-            _ => ApplicationData.Languages.ExactMatch
+            NameMatchCondition.PartialMatch => ApplicationData.Strings.PartialMatch,
+            NameMatchCondition.ForwardMatch => ApplicationData.Strings.ForwardMatch,
+            NameMatchCondition.BackwardMatch => ApplicationData.Strings.BackwardMatch,
+            _ => ApplicationData.Strings.ExactMatch
         };
         ControlsProcessing.SelectComboBoxItem(DecisionClassNameMatchingConditionComboBox, stringData);
         DecisionFileNameTextBox.Text = SpecifyWindowItemInformation.FileName;
         stringData = SpecifyWindowItemInformation.FileNameMatchCondition switch
         {
-            FileNameMatchCondition.NotInclude => ApplicationData.Languages.NotIncludePath,
-            _ => ApplicationData.Languages.IncludePath
+            FileNameMatchCondition.NotInclude => ApplicationData.Strings.NotIncludePath,
+            _ => ApplicationData.Strings.IncludePath
         };
         ControlsProcessing.SelectComboBoxItem(DecisionFileNameMatchingConditionComboBox, stringData);
         stringData = SpecifyWindowItemInformation.StandardDisplay switch
         {
-            StandardDisplay.SpecifiedDisplay => ApplicationData.Languages.SpecifiedDisplay,
-            StandardDisplay.ExclusiveSpecifiedDisplay => ApplicationData.Languages.LimitedToSpecifiedDisplay,
-            _ => ApplicationData.Languages.CurrentDisplay
+            StandardDisplay.SpecifiedDisplay => ApplicationData.Strings.SpecifiedDisplay,
+            StandardDisplay.ExclusiveSpecifiedDisplay => ApplicationData.Strings.LimitedToSpecifiedDisplay,
+            _ => ApplicationData.Strings.CurrentDisplay
         };
         ControlsProcessing.SelectComboBoxItem(ProcessingSettingsStandardDisplayComboBox, stringData);
         stringData = SpecifyWindowItemInformation.ProcessingOnlyOnce switch
         {
-            ProcessingOnlyOnce.WindowOpen => ApplicationData.Languages.OnceWindowOpen,
-            ProcessingOnlyOnce.Running => ApplicationData.Languages.OnceWhileItIsRunning,
-            _ => ApplicationData.Languages.DoNotSpecify
+            ProcessingOnlyOnce.WindowOpen => ApplicationData.Strings.OnceWindowOpen,
+            ProcessingOnlyOnce.Running => ApplicationData.Strings.OnceWhileItIsRunning,
+            _ => ApplicationData.Strings.DoNotSpecify
         };
         ControlsProcessing.SelectComboBoxItem(ProcessingSettingsOneTimeProcessingComboBox, stringData);
         ProcessingSettingsForegroundToggleSwitch.IsOn = SpecifyWindowItemInformation.WindowEventData.Foreground;
@@ -302,9 +302,9 @@ public partial class SpecifyWindowItemWindow : Window
         ConditionsNotProcessChildWindowToggleSwitch.IsOn = SpecifyWindowItemInformation.DoNotProcessingChildWindow;
         stringData = SpecifyWindowItemInformation.DoNotProcessingTitleNameConditions switch
         {
-            TitleNameProcessingConditions.NotIncluded => ApplicationData.Languages.WindowWithoutTitleName,
-            TitleNameProcessingConditions.Included => ApplicationData.Languages.WindowWithTitleName,
-            _ => ApplicationData.Languages.DoNotSpecify
+            TitleNameProcessingConditions.NotIncluded => ApplicationData.Strings.WindowWithoutTitleName,
+            TitleNameProcessingConditions.Included => ApplicationData.Strings.WindowWithTitleName,
+            _ => ApplicationData.Strings.DoNotSpecify
         };
         ControlsProcessing.SelectComboBoxItem(ConditionsNotProcessTitleNameRequirementsComboBox, stringData);
         ConditionsNotProcessOtherThanSpecifiedVersionTextBox.Text = SpecifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedVersion;
@@ -487,7 +487,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Languages.RetrievedAfterFiveSeconds, ApplicationData.Languages.Check, MessageBoxButton.OK) == MessageBoxResult.OK)
+            if (FEMessageBox.Show(ApplicationData.Strings.RetrievedAfterFiveSeconds, ApplicationData.Strings.Check, MessageBoxButton.OK) == MessageBoxResult.OK)
             {
                 GetWindowInformationStackPanel.IsEnabled = false;
                 WindowInformationAcquisitionTimer.Start();
@@ -496,7 +496,7 @@ public partial class SpecifyWindowItemWindow : Window
         catch
         {
             GetWindowInformationStackPanel.IsEnabled = true;
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -515,12 +515,12 @@ public partial class SpecifyWindowItemWindow : Window
             WindowInformationAcquisitionTimer.Stop();
             GetInformationFromWindowHandle(NativeMethods.GetForegroundWindow());
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.Obtained, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Obtained, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         finally
         {
@@ -547,7 +547,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -567,11 +567,11 @@ public partial class SpecifyWindowItemWindow : Window
             Owner.WindowState = PreviousOwnerWindowState;
             WindowState = WindowState.Normal;
             Activate();
-            FEMessageBox.Show(ApplicationData.Languages.Obtained, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Obtained, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -665,21 +665,21 @@ public partial class SpecifyWindowItemWindow : Window
         {
             Microsoft.Win32.OpenFileDialog openFileDialog = new()
             {
-                Title = ApplicationData.Languages.FileSelection,
+                Title = ApplicationData.Strings.FileSelection,
                 Filter = ".exe|*.exe*",
                 Multiselect = false
             };
 
             if (openFileDialog.ShowDialog() == true)
             {
-                DecisionFileNameTextBox.Text = (string)((ComboBoxItem)DecisionFileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Languages.NotIncludePath
+                DecisionFileNameTextBox.Text = (string)((ComboBoxItem)DecisionFileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Strings.NotIncludePath
                     ? Path.GetFileNameWithoutExtension(openFileDialog.FileName)
                     : openFileDialog.FileName;
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -779,7 +779,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WindowProcessingWindowStateComboBox.SelectedItem).Content == ApplicationData.Languages.NormalWindow)
+            if ((string)((ComboBoxItem)WindowProcessingWindowStateComboBox.SelectedItem).Content == ApplicationData.Strings.NormalWindow)
             {
                 SettingsIsEnabledStateOfXControls();
                 SettingsEnabledStateOfYControls();
@@ -824,7 +824,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WindowProcessingXTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)WindowProcessingXTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 WindowProcessingXNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 WindowProcessingXNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -871,7 +871,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WindowProcessingYTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)WindowProcessingYTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 WindowProcessingYNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 WindowProcessingYNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -918,7 +918,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WindowProcessingWidthTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)WindowProcessingWidthTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 WindowProcessingWidthNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 WindowProcessingWidthNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -965,7 +965,7 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if ((string)((ComboBoxItem)WindowProcessingHeightTypeComboBox.SelectedItem).Content == ApplicationData.Languages.Percent)
+            if ((string)((ComboBoxItem)WindowProcessingHeightTypeComboBox.SelectedItem).Content == ApplicationData.Strings.Percent)
             {
                 WindowProcessingHeightNumberBox.Minimum = PositionSize.PositionSizePercentMinimum;
                 WindowProcessingHeightNumberBox.Maximum = PositionSize.PositionSizePercentMaximum;
@@ -1193,7 +1193,7 @@ public partial class SpecifyWindowItemWindow : Window
             string? resultString = CheckTitleNameExclusionString(ConditionsNotProcessTitleNameExclusionStringTextBox.Text);
             if (string.IsNullOrEmpty(resultString) == false)
             {
-                FEMessageBox.Show(resultString, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(resultString, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 return;
             }
 
@@ -1203,11 +1203,11 @@ public partial class SpecifyWindowItemWindow : Window
                 Content = ConditionsNotProcessTitleNameExclusionStringTextBox.Text
             };      // 新しいListBoxの項目
             ConditionsNotProcessExclusionTitleNameStringListBox.Items.Add(newItem);
-            FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1223,16 +1223,16 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if (FEMessageBox.Show(SpecifyWindowItemInformation.DoNotProcessingStringContainedInTitleName[ConditionsNotProcessExclusionTitleNameStringListBox.SelectedIndex] + Environment.NewLine + ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(SpecifyWindowItemInformation.DoNotProcessingStringContainedInTitleName[ConditionsNotProcessExclusionTitleNameStringListBox.SelectedIndex] + Environment.NewLine + ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 SpecifyWindowItemInformation.DoNotProcessingStringContainedInTitleName.RemoveAt(ConditionsNotProcessExclusionTitleNameStringListBox.SelectedIndex);
                 ConditionsNotProcessExclusionTitleNameStringListBox.Items.RemoveAt(ConditionsNotProcessExclusionTitleNameStringListBox.SelectedIndex);
-                FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1268,25 +1268,28 @@ public partial class SpecifyWindowItemWindow : Window
         try
         {
             // 値を確認
-            SizeInt size = new((int)ConditionsNotProcessSizeWidthNumberBox.Value, (int)ConditionsNotProcessSizeHeightNumberBox.Value);
+            SizeInt size = new(
+                double.IsNaN(ConditionsNotProcessSizeWidthNumberBox.Value) ? 0 : (int)ConditionsNotProcessSizeWidthNumberBox.Value,
+                double.IsNaN(ConditionsNotProcessSizeHeightNumberBox.Value) ? 0 : (int)ConditionsNotProcessSizeHeightNumberBox.Value
+                );
             string? resultString = CheckForSize(size, SpecifyWindowItemInformation.DoNotProcessingSize);
             if (string.IsNullOrEmpty(resultString) == false)
             {
-                FEMessageBox.Show(resultString, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(resultString, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 return;
             }
 
-            SpecifyWindowItemInformation.DoNotProcessingSize.Add(new((int)ConditionsNotProcessSizeWidthNumberBox.Value, (int)ConditionsNotProcessSizeHeightNumberBox.Value));
+            SpecifyWindowItemInformation.DoNotProcessingSize.Add(size);
             ListBoxItem newItem = new()
             {
-                Content = ConditionsNotProcessSizeWidthNumberBox.Value + WindowControlValue.CopySeparateString + ConditionsNotProcessSizeHeightNumberBox.Value
+                Content = size.Width + WindowControlValue.CopySeparateString + size.Height
             };      // 新しいListBoxの項目
             ConditionsNotProcessSizeListBox.Items.Add(newItem);
-            FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1302,16 +1305,16 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 SpecifyWindowItemInformation.DoNotProcessingSize.RemoveAt(ConditionsNotProcessSizeListBox.SelectedIndex);
                 ConditionsNotProcessSizeListBox.Items.RemoveAt(ConditionsNotProcessSizeListBox.SelectedIndex);
-                FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1349,25 +1352,28 @@ public partial class SpecifyWindowItemWindow : Window
         try
         {
             // 値を確認
-            SizeInt size = new((int)ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox.Value, (int)ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox.Value);
+            SizeInt size = new(
+                double.IsNaN(ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox.Value) ? 0 : (int)ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox.Value,
+                double.IsNaN(ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox.Value) ? 0 : (int)ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox.Value
+                );
             string? resultString = CheckForSize(size, SpecifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedSize);
             if (string.IsNullOrEmpty(resultString) == false)
             {
-                FEMessageBox.Show(resultString, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(resultString, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 return;
             }
 
-            SpecifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedSize.Add(new((int)ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox.Value, (int)ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox.Value));
+            SpecifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedSize.Add(size);
             ListBoxItem newItem = new()
             {
-                Content = ConditionsNotProcessOtherThanSpecifiedSizeWidthNumberBox.Value + WindowControlValue.CopySeparateString + ConditionsNotProcessOtherThanSpecifiedSizeHeightNumberBox.Value
+                Content = size.Width + WindowControlValue.CopySeparateString + size.Height
             };      // 新しいListBoxの項目
             ConditionsNotProcessOtherThanSpecifiedSizeListBox.Items.Add(newItem);
-            FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1384,16 +1390,16 @@ public partial class SpecifyWindowItemWindow : Window
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 SpecifyWindowItemInformation.DoNotProcessingOtherThanSpecifiedSize.RemoveAt(ConditionsNotProcessOtherThanSpecifiedSizeListBox.SelectedIndex);
                 ConditionsNotProcessOtherThanSpecifiedSizeListBox.Items.RemoveAt(ConditionsNotProcessOtherThanSpecifiedSizeListBox.SelectedIndex);
-                FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1413,12 +1419,12 @@ public partial class SpecifyWindowItemWindow : Window
             {
                 WindowProcessingListBox.SelectedIndex = WindowProcessingListBox.Items.Count - 1;
                 SettingsTheActiveStateOfTheItemsListBox();
-                FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1437,12 +1443,12 @@ public partial class SpecifyWindowItemWindow : Window
             if (ModifyWindowProcessingInformation())
             {
                 SettingsTheActiveStateOfTheItemsListBox();
-                FEMessageBox.Show(ApplicationData.Languages.Modified, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(ApplicationData.Strings.Modified, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1462,7 +1468,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1493,7 +1499,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1515,11 +1521,11 @@ public partial class SpecifyWindowItemWindow : Window
             SettingsActiveStateAllWPI(GetSelectedDisplayToUseAsStandard(), -1);
             SettingsTheActiveStateOfTheItemsListBox();
             WindowProcessingListBox.SelectedIndex = -1;
-            FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1542,12 +1548,12 @@ public partial class SpecifyWindowItemWindow : Window
             int number = 1;     // 名前の後ろに付ける番号
             foreach (WindowProcessingInformation nowWPI in SpecifyWindowItemInformation.WindowProcessingInformation)
             {
-                if (nowWPI.ProcessingName == newWPI.ProcessingName + WindowControlValue.CopySeparateString + ApplicationData.Languages.Copy + WindowControlValue.SpaceSeparateString + number)
+                if (nowWPI.ProcessingName == newWPI.ProcessingName + WindowControlValue.CopySeparateString + ApplicationData.Strings.Copy + WindowControlValue.SpaceSeparateString + number)
                 {
                     number++;
                 }
             }
-            newWPI.ProcessingName += WindowControlValue.CopySeparateString + ApplicationData.Languages.Copy + WindowControlValue.SpaceSeparateString + number;
+            newWPI.ProcessingName += WindowControlValue.CopySeparateString + ApplicationData.Strings.Copy + WindowControlValue.SpaceSeparateString + number;
             SpecifyWindowItemInformation.WindowProcessingInformation.Add(newWPI);
             CheckListBoxItem newItem = new()
             {
@@ -1560,7 +1566,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1621,7 +1627,7 @@ public partial class SpecifyWindowItemWindow : Window
                     {
                         ApplicationData.Settings.SpecifyWindowInformation.Items.Add(SpecifyWindowItemInformation);
                         ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.ProcessingSettings();
-                        FEMessageBox.Show(ApplicationData.Languages.Added, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                        FEMessageBox.Show(ApplicationData.Strings.Added, ApplicationData.Strings.Check, MessageBoxButton.OK);
                         AddedOrModified = true;
                         Close();
                     }
@@ -1643,7 +1649,7 @@ public partial class SpecifyWindowItemWindow : Window
                         ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.UnregisterHotkeys();
                         ApplicationData.Settings.SpecifyWindowInformation.Items[IndexOfItemToBeModified] = SpecifyWindowItemInformation;
                         ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.ProcessingSettings();
-                        FEMessageBox.Show(ApplicationData.Languages.Modified, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                        FEMessageBox.Show(ApplicationData.Strings.Modified, ApplicationData.Strings.Check, MessageBoxButton.OK);
                         AddedOrModified = true;
                         Close();
                     }
@@ -1651,12 +1657,12 @@ public partial class SpecifyWindowItemWindow : Window
             }
             else
             {
-                FEMessageBox.Show(check, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(check, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -1704,7 +1710,7 @@ public partial class SpecifyWindowItemWindow : Window
                 WindowProcessingDisplayComboBox.IsEnabled = true;
                 break;
         }
-        if ((string)((ComboBoxItem)WindowProcessingWindowStateComboBox.SelectedItem).Content == ApplicationData.Languages.NormalWindow)
+        if ((string)((ComboBoxItem)WindowProcessingWindowStateComboBox.SelectedItem).Content == ApplicationData.Strings.NormalWindow)
         {
             WindowProcessingXLabel.IsEnabled = true;
             WindowProcessingXStackPanel.IsEnabled = true;
@@ -1760,61 +1766,61 @@ public partial class SpecifyWindowItemWindow : Window
         SpecifyWindowItemInformation.RegisteredName = RegisteredNameTextBox.Text;
         SpecifyWindowItemInformation.TitleName = DecisionTitleNameTextBox.Text;
         stringData = (string)((ComboBoxItem)DecisionTitleNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.ExactMatch)
+        if (stringData == ApplicationData.Strings.ExactMatch)
         {
             SpecifyWindowItemInformation.TitleNameMatchCondition = NameMatchCondition.ExactMatch;
         }
-        else if (stringData == ApplicationData.Languages.PartialMatch)
+        else if (stringData == ApplicationData.Strings.PartialMatch)
         {
             SpecifyWindowItemInformation.TitleNameMatchCondition = NameMatchCondition.PartialMatch;
         }
-        else if (stringData == ApplicationData.Languages.ForwardMatch)
+        else if (stringData == ApplicationData.Strings.ForwardMatch)
         {
             SpecifyWindowItemInformation.TitleNameMatchCondition = NameMatchCondition.ForwardMatch;
         }
-        else if (stringData == ApplicationData.Languages.BackwardMatch)
+        else if (stringData == ApplicationData.Strings.BackwardMatch)
         {
             SpecifyWindowItemInformation.TitleNameMatchCondition = NameMatchCondition.BackwardMatch;
         }
         SpecifyWindowItemInformation.ClassName = DecisionClassNameTextBox.Text;
         stringData = (string)((ComboBoxItem)DecisionClassNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.ExactMatch)
+        if (stringData == ApplicationData.Strings.ExactMatch)
         {
             SpecifyWindowItemInformation.ClassNameMatchCondition = NameMatchCondition.ExactMatch;
         }
-        else if (stringData == ApplicationData.Languages.PartialMatch)
+        else if (stringData == ApplicationData.Strings.PartialMatch)
         {
             SpecifyWindowItemInformation.ClassNameMatchCondition = NameMatchCondition.PartialMatch;
         }
-        else if (stringData == ApplicationData.Languages.ForwardMatch)
+        else if (stringData == ApplicationData.Strings.ForwardMatch)
         {
             SpecifyWindowItemInformation.ClassNameMatchCondition = NameMatchCondition.ForwardMatch;
         }
-        else if (stringData == ApplicationData.Languages.BackwardMatch)
+        else if (stringData == ApplicationData.Strings.BackwardMatch)
         {
             SpecifyWindowItemInformation.ClassNameMatchCondition = NameMatchCondition.BackwardMatch;
         }
         SpecifyWindowItemInformation.FileName = DecisionFileNameTextBox.Text;
         stringData = (string)((ComboBoxItem)DecisionFileNameMatchingConditionComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.IncludePath)
+        if (stringData == ApplicationData.Strings.IncludePath)
         {
             SpecifyWindowItemInformation.FileNameMatchCondition = FileNameMatchCondition.Include;
         }
-        else if (stringData == ApplicationData.Languages.NotIncludePath)
+        else if (stringData == ApplicationData.Strings.NotIncludePath)
         {
             SpecifyWindowItemInformation.FileNameMatchCondition = FileNameMatchCondition.NotInclude;
         }
         SpecifyWindowItemInformation.StandardDisplay = GetSelectedDisplayToUseAsStandard();
         stringData = (string)((ComboBoxItem)ProcessingSettingsOneTimeProcessingComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotSpecify)
+        if (stringData == ApplicationData.Strings.DoNotSpecify)
         {
             SpecifyWindowItemInformation.ProcessingOnlyOnce = ProcessingOnlyOnce.NotSpecified;
         }
-        else if (stringData == ApplicationData.Languages.OnceWindowOpen)
+        else if (stringData == ApplicationData.Strings.OnceWindowOpen)
         {
             SpecifyWindowItemInformation.ProcessingOnlyOnce = ProcessingOnlyOnce.WindowOpen;
         }
-        else if (stringData == ApplicationData.Languages.OnceWhileItIsRunning)
+        else if (stringData == ApplicationData.Strings.OnceWhileItIsRunning)
         {
             SpecifyWindowItemInformation.ProcessingOnlyOnce = ProcessingOnlyOnce.Running;
         }
@@ -1824,20 +1830,20 @@ public partial class SpecifyWindowItemWindow : Window
         SpecifyWindowItemInformation.WindowEventData.MinimizeEnd = ProcessingSettingsMinimizeEndToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.Show = ProcessingSettingsShowToggleSwitch.IsOn;
         SpecifyWindowItemInformation.WindowEventData.NameChange = ProcessingSettingsNameChangeToggleSwitch.IsOn;
-        SpecifyWindowItemInformation.WindowEventData.DelayTime = (int)ProcessingSettingsEventDelayTimeNumberBox.Value;
+        SpecifyWindowItemInformation.WindowEventData.DelayTime = double.IsNaN(ProcessingSettingsEventDelayTimeNumberBox.Value) ? 0 : (int)ProcessingSettingsEventDelayTimeNumberBox.Value;
         SpecifyWindowItemInformation.TimerProcessing = ProcessingSettingsTimerProcessingToggleSwitch.IsOn;
-        SpecifyWindowItemInformation.NumberOfTimesNotToProcessingFirst = (int)ProcessingSettingsDelayNumberBox.Value;
+        SpecifyWindowItemInformation.NumberOfTimesNotToProcessingFirst = double.IsNaN(ProcessingSettingsDelayNumberBox.Value) ? 0 : (int)ProcessingSettingsDelayNumberBox.Value;
         SpecifyWindowItemInformation.DoNotProcessingChildWindow = ConditionsNotProcessChildWindowToggleSwitch.IsOn;
         stringData = (string)((ComboBoxItem)ConditionsNotProcessTitleNameRequirementsComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotSpecify)
+        if (stringData == ApplicationData.Strings.DoNotSpecify)
         {
             SpecifyWindowItemInformation.DoNotProcessingTitleNameConditions = TitleNameProcessingConditions.NotSpecified;
         }
-        else if (stringData == ApplicationData.Languages.WindowWithoutTitleName)
+        else if (stringData == ApplicationData.Strings.WindowWithoutTitleName)
         {
             SpecifyWindowItemInformation.DoNotProcessingTitleNameConditions = TitleNameProcessingConditions.NotIncluded;
         }
-        else if (stringData == ApplicationData.Languages.WindowWithTitleName)
+        else if (stringData == ApplicationData.Strings.WindowWithTitleName)
         {
             SpecifyWindowItemInformation.DoNotProcessingTitleNameConditions = TitleNameProcessingConditions.Included;
         }
@@ -1873,7 +1879,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         else
         {
-            FEMessageBox.Show(check, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(check, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
 
         return result;
@@ -1905,7 +1911,7 @@ public partial class SpecifyWindowItemWindow : Window
             }
             else
             {
-                FEMessageBox.Show(check, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                FEMessageBox.Show(check, ApplicationData.Strings.Check, MessageBoxButton.OK);
             }
         }
 
@@ -1924,145 +1930,145 @@ public partial class SpecifyWindowItemWindow : Window
             ProcessingName = WindowProcessingProcessNameTextBox.Text
         };      // 新しい情報
 
-        newWPI.PositionSize.Display = WindowProcessingDisplayComboBox.Text;
+        newWPI.PositionSize.Display = (string)((ComboBoxItem)WindowProcessingDisplayComboBox.SelectedItem).Content;
         string stringData = (string)((ComboBoxItem)WindowProcessingWindowStateComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.PositionSize.SettingsWindowState = SettingsWindowState.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.NormalWindow)
+        else if (stringData == ApplicationData.Strings.NormalWindow)
         {
             newWPI.PositionSize.SettingsWindowState = SettingsWindowState.Normal;
         }
-        else if (stringData == ApplicationData.Languages.Maximize)
+        else if (stringData == ApplicationData.Strings.Maximize)
         {
             newWPI.PositionSize.SettingsWindowState = SettingsWindowState.Maximize;
         }
-        else if (stringData == ApplicationData.Languages.Minimize)
+        else if (stringData == ApplicationData.Strings.Minimize)
         {
             newWPI.PositionSize.SettingsWindowState = SettingsWindowState.Minimize;
         }
         stringData = (string)((ComboBoxItem)WindowProcessingXComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.PositionSize.XType = WindowXType.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.LeftEdge)
+        else if (stringData == ApplicationData.Strings.LeftEdge)
         {
             newWPI.PositionSize.XType = WindowXType.Left;
         }
-        else if (stringData == ApplicationData.Languages.Middle)
+        else if (stringData == ApplicationData.Strings.Middle)
         {
             newWPI.PositionSize.XType = WindowXType.Middle;
         }
-        else if (stringData == ApplicationData.Languages.RightEdge)
+        else if (stringData == ApplicationData.Strings.RightEdge)
         {
             newWPI.PositionSize.XType = WindowXType.Right;
         }
-        else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+        else if (stringData == ApplicationData.Strings.CoordinateSpecification)
         {
             newWPI.PositionSize.XType = WindowXType.Value;
         }
         newWPI.PositionSize.X = WindowProcessingXNumberBox.Value;
         stringData = (string)((ComboBoxItem)WindowProcessingXTypeComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.Pixel)
+        if (stringData == ApplicationData.Strings.Pixel)
         {
             newWPI.PositionSize.XValueType = PositionSizeValueType.Pixel;
         }
-        else if (stringData == ApplicationData.Languages.Percent)
+        else if (stringData == ApplicationData.Strings.Percent)
         {
             newWPI.PositionSize.XValueType = PositionSizeValueType.Percent;
         }
         stringData = (string)((ComboBoxItem)WindowProcessingYComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.PositionSize.YType = WindowYType.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.TopEdge)
+        else if (stringData == ApplicationData.Strings.TopEdge)
         {
             newWPI.PositionSize.YType = WindowYType.Top;
         }
-        else if (stringData == ApplicationData.Languages.Middle)
+        else if (stringData == ApplicationData.Strings.Middle)
         {
             newWPI.PositionSize.YType = WindowYType.Middle;
         }
-        else if (stringData == ApplicationData.Languages.BottomEdge)
+        else if (stringData == ApplicationData.Strings.BottomEdge)
         {
             newWPI.PositionSize.YType = WindowYType.Bottom;
         }
-        else if (stringData == ApplicationData.Languages.CoordinateSpecification)
+        else if (stringData == ApplicationData.Strings.CoordinateSpecification)
         {
             newWPI.PositionSize.YType = WindowYType.Value;
         }
         newWPI.PositionSize.Y = WindowProcessingYNumberBox.Value;
         stringData = (string)((ComboBoxItem)WindowProcessingYTypeComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.Pixel)
+        if (stringData == ApplicationData.Strings.Pixel)
         {
             newWPI.PositionSize.YValueType = PositionSizeValueType.Pixel;
         }
-        else if (stringData == ApplicationData.Languages.Percent)
+        else if (stringData == ApplicationData.Strings.Percent)
         {
             newWPI.PositionSize.YValueType = PositionSizeValueType.Percent;
         }
         stringData = (string)((ComboBoxItem)WindowProcessingWidthComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.PositionSize.WidthType = WindowSizeType.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.WidthSpecification)
+        else if (stringData == ApplicationData.Strings.WidthSpecification)
         {
             newWPI.PositionSize.WidthType = WindowSizeType.Value;
         }
         newWPI.PositionSize.Width = WindowProcessingWidthNumberBox.Value;
         stringData = (string)((ComboBoxItem)WindowProcessingWidthTypeComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.Pixel)
+        if (stringData == ApplicationData.Strings.Pixel)
         {
             newWPI.PositionSize.WidthValueType = PositionSizeValueType.Pixel;
         }
-        else if (stringData == ApplicationData.Languages.Percent)
+        else if (stringData == ApplicationData.Strings.Percent)
         {
             newWPI.PositionSize.WidthValueType = PositionSizeValueType.Percent;
         }
         stringData = (string)((ComboBoxItem)WindowProcessingHeightComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.PositionSize.HeightType = WindowSizeType.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.HeightSpecification)
+        else if (stringData == ApplicationData.Strings.HeightSpecification)
         {
             newWPI.PositionSize.HeightType = WindowSizeType.Value;
         }
         newWPI.PositionSize.Height = WindowProcessingHeightNumberBox.Value;
         stringData = (string)((ComboBoxItem)WindowProcessingHeightTypeComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.Pixel)
+        if (stringData == ApplicationData.Strings.Pixel)
         {
             newWPI.PositionSize.HeightValueType = PositionSizeValueType.Pixel;
         }
-        else if (stringData == ApplicationData.Languages.Percent)
+        else if (stringData == ApplicationData.Strings.Percent)
         {
             newWPI.PositionSize.HeightValueType = PositionSizeValueType.Percent;
         }
         newWPI.NormalWindowOnly = WindowProcessingNormalWindowOnlyToggleSwitch.IsOn;
         newWPI.PositionSize.ClientArea = WindowProcessingClientAreaToggleSwitch.IsOn;
         stringData = (string)((ComboBoxItem)WindowProcessingForefrontComboBox.SelectedItem).Content;
-        if (stringData == ApplicationData.Languages.DoNotChange)
+        if (stringData == ApplicationData.Strings.DoNotChange)
         {
             newWPI.Forefront = Forefront.DoNotChange;
         }
-        else if (stringData == ApplicationData.Languages.AlwaysForefront)
+        else if (stringData == ApplicationData.Strings.AlwaysForefront)
         {
             newWPI.Forefront = Forefront.Always;
         }
-        else if (stringData == ApplicationData.Languages.AlwaysCancelForefront)
+        else if (stringData == ApplicationData.Strings.AlwaysCancelForefront)
         {
             newWPI.Forefront = Forefront.Cancel;
         }
-        else if (stringData == ApplicationData.Languages.Forefront)
+        else if (stringData == ApplicationData.Strings.Forefront)
         {
             newWPI.Forefront = Forefront.Forefront;
         }
         newWPI.SpecifyTransparency = WindowProcessingSpecifyTransparencyToggleSwitch.IsOn;
-        newWPI.Transparency = (int)WindowProcessingTransparencyNumberBox.Value;
+        newWPI.Transparency = double.IsNaN(WindowProcessingTransparencyNumberBox.Value) ? WindowProcessingInformation.MaximumTransparency : (int)WindowProcessingTransparencyNumberBox.Value;
         newWPI.CloseWindow = WindowProcessingCloseWindowToggleSwitch.IsOn;
         newWPI.Hotkey.Copy(HotkeyInformation);
 
@@ -2092,70 +2098,70 @@ public partial class SpecifyWindowItemWindow : Window
         string stringData;
         stringData = settingsWPI.PositionSize.SettingsWindowState switch
         {
-            SettingsWindowState.Normal => ApplicationData.Languages.NormalWindow,
-            SettingsWindowState.Maximize => ApplicationData.Languages.Maximize,
-            SettingsWindowState.Minimize => ApplicationData.Languages.Minimize,
-            _ => ApplicationData.Languages.DoNotChange
+            SettingsWindowState.Normal => ApplicationData.Strings.NormalWindow,
+            SettingsWindowState.Maximize => ApplicationData.Strings.Maximize,
+            SettingsWindowState.Minimize => ApplicationData.Strings.Minimize,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingWindowStateComboBox, stringData);
         stringData = settingsWPI.PositionSize.XType switch
         {
-            WindowXType.Left => ApplicationData.Languages.LeftEdge,
-            WindowXType.Middle => ApplicationData.Languages.Middle,
-            WindowXType.Right => ApplicationData.Languages.RightEdge,
-            WindowXType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowXType.Left => ApplicationData.Strings.LeftEdge,
+            WindowXType.Middle => ApplicationData.Strings.Middle,
+            WindowXType.Right => ApplicationData.Strings.RightEdge,
+            WindowXType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingXComboBox, stringData);
         stringData = settingsWPI.PositionSize.XValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingXTypeComboBox, stringData);
         WindowProcessingXNumberBox.Value = (double)settingsWPI.PositionSize.X;
         SettingsIsEnabledStateOfXControls();
         stringData = settingsWPI.PositionSize.YType switch
         {
-            WindowYType.Top => ApplicationData.Languages.TopEdge,
-            WindowYType.Middle => ApplicationData.Languages.Middle,
-            WindowYType.Bottom => ApplicationData.Languages.BottomEdge,
-            WindowYType.Value => ApplicationData.Languages.CoordinateSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowYType.Top => ApplicationData.Strings.TopEdge,
+            WindowYType.Middle => ApplicationData.Strings.Middle,
+            WindowYType.Bottom => ApplicationData.Strings.BottomEdge,
+            WindowYType.Value => ApplicationData.Strings.CoordinateSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingYComboBox, stringData);
         stringData = settingsWPI.PositionSize.YValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingYTypeComboBox, stringData);
         WindowProcessingYNumberBox.Value = (double)settingsWPI.PositionSize.Y;
         SettingsEnabledStateOfYControls();
         stringData = settingsWPI.PositionSize.WidthType switch
         {
-            WindowSizeType.Value => ApplicationData.Languages.WidthSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowSizeType.Value => ApplicationData.Strings.WidthSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingWidthComboBox, stringData);
         stringData = settingsWPI.PositionSize.WidthValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingWidthTypeComboBox, stringData);
         WindowProcessingWidthNumberBox.Value = settingsWPI.PositionSize.Width;
         SettingsIsEnabledStateOfWidthControls();
         stringData = settingsWPI.PositionSize.HeightType switch
         {
-            WindowSizeType.Value => ApplicationData.Languages.HeightSpecification,
-            _ => ApplicationData.Languages.DoNotChange
+            WindowSizeType.Value => ApplicationData.Strings.HeightSpecification,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingHeightComboBox, stringData);
         stringData = settingsWPI.PositionSize.HeightValueType switch
         {
-            PositionSizeValueType.Percent => ApplicationData.Languages.Percent,
-            _ => ApplicationData.Languages.Pixel
+            PositionSizeValueType.Percent => ApplicationData.Strings.Percent,
+            _ => ApplicationData.Strings.Pixel
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingHeightTypeComboBox, stringData);
         WindowProcessingHeightNumberBox.Value = settingsWPI.PositionSize.Height;
@@ -2165,10 +2171,10 @@ public partial class SpecifyWindowItemWindow : Window
         WindowProcessingClientAreaToggleSwitch.IsOn = settingsWPI.PositionSize.ClientArea;
         stringData = settingsWPI.Forefront switch
         {
-            Forefront.Always => ApplicationData.Languages.AlwaysForefront,
-            Forefront.Cancel => ApplicationData.Languages.AlwaysCancelForefront,
-            Forefront.Forefront => ApplicationData.Languages.Forefront,
-            _ => ApplicationData.Languages.DoNotChange
+            Forefront.Always => ApplicationData.Strings.AlwaysForefront,
+            Forefront.Cancel => ApplicationData.Strings.AlwaysCancelForefront,
+            Forefront.Forefront => ApplicationData.Strings.Forefront,
+            _ => ApplicationData.Strings.DoNotChange
         };
         ControlsProcessing.SelectComboBoxItem(WindowProcessingForefrontComboBox, stringData);
         WindowProcessingSpecifyTransparencyToggleSwitch.IsOn = settingsWPI.SpecifyTransparency;
@@ -2211,7 +2217,7 @@ public partial class SpecifyWindowItemWindow : Window
         }
         if (GetInformationFileNameCheckBox.IsChecked == true)
         {
-            DecisionFileNameTextBox.Text = (string)((ComboBoxItem)DecisionFileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Languages.IncludePath ? windowInformation.FileName : Path.GetFileNameWithoutExtension(windowInformation.FileName);
+            DecisionFileNameTextBox.Text = (string)((ComboBoxItem)DecisionFileNameMatchingConditionComboBox.SelectedItem).Content == ApplicationData.Strings.IncludePath ? windowInformation.FileName : Path.GetFileNameWithoutExtension(windowInformation.FileName);
         }
         if (GetInformationVersionCheckBox.IsChecked == true)
         {
@@ -2241,9 +2247,9 @@ public partial class SpecifyWindowItemWindow : Window
             {
                 string stringData = windowPlacement.showCmd switch
                 {
-                    (int)SW.SW_SHOWMAXIMIZED => ApplicationData.Languages.Maximize,
-                    (int)SW.SW_SHOWMINIMIZED => ApplicationData.Languages.Minimize,
-                    _ => ApplicationData.Languages.NormalWindow,
+                    (int)SW.SW_SHOWMAXIMIZED => ApplicationData.Strings.Maximize,
+                    (int)SW.SW_SHOWMINIMIZED => ApplicationData.Strings.Minimize,
+                    _ => ApplicationData.Strings.NormalWindow,
                 };
                 ControlsProcessing.SelectComboBoxItem(WindowProcessingWindowStateComboBox, stringData);
             }
@@ -2256,25 +2262,25 @@ public partial class SpecifyWindowItemWindow : Window
             NativeMethods.GetWindowRect(hwnd, out RECT windowRect);       // ウィンドウの上下左右の位置
             if (GetInformationXCheckBox.IsChecked == true)
             {
-                ControlsProcessing.SelectComboBoxItem(WindowProcessingXComboBox, ApplicationData.Languages.CoordinateSpecification);
+                ControlsProcessing.SelectComboBoxItem(WindowProcessingXComboBox, ApplicationData.Strings.CoordinateSpecification);
                 WindowProcessingXTypeComboBox.SelectedIndex = 0;
                 WindowProcessingXNumberBox.Value = windowRect.Left - displayPoint.X;
             }
             if (GetInformationYCheckBox.IsChecked == true)
             {
-                ControlsProcessing.SelectComboBoxItem(WindowProcessingYComboBox, ApplicationData.Languages.CoordinateSpecification);
+                ControlsProcessing.SelectComboBoxItem(WindowProcessingYComboBox, ApplicationData.Strings.CoordinateSpecification);
                 WindowProcessingYTypeComboBox.SelectedIndex = 0;
                 WindowProcessingYNumberBox.Value = windowRect.Top - displayPoint.Y;
             }
             if (GetInformationWidthCheckBox.IsChecked == true)
             {
-                ControlsProcessing.SelectComboBoxItem(WindowProcessingWidthComboBox, ApplicationData.Languages.WidthSpecification);
+                ControlsProcessing.SelectComboBoxItem(WindowProcessingWidthComboBox, ApplicationData.Strings.WidthSpecification);
                 WindowProcessingWidthTypeComboBox.SelectedIndex = 0;
                 WindowProcessingWidthNumberBox.Value = windowRect.Right - windowRect.Left;
             }
             if (GetInformationHeightCheckBox.IsChecked == true)
             {
-                ControlsProcessing.SelectComboBoxItem(WindowProcessingHeightComboBox, ApplicationData.Languages.HeightSpecification);
+                ControlsProcessing.SelectComboBoxItem(WindowProcessingHeightComboBox, ApplicationData.Strings.HeightSpecification);
                 WindowProcessingHeightTypeComboBox.SelectedIndex = 0;
                 WindowProcessingHeightNumberBox.Value = windowRect.Bottom - windowRect.Top;
             }
@@ -2290,7 +2296,7 @@ public partial class SpecifyWindowItemWindow : Window
     /// </summary>
     private void SettingsIsEnabledStateOfXControls()
     {
-        if ((string)((ComboBoxItem)WindowProcessingXComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)WindowProcessingXComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             WindowProcessingXNumberBox.IsEnabled = true;
             WindowProcessingXTypeComboBox.IsEnabled = true;
@@ -2307,7 +2313,7 @@ public partial class SpecifyWindowItemWindow : Window
     /// </summary>
     private void SettingsEnabledStateOfYControls()
     {
-        if ((string)((ComboBoxItem)WindowProcessingYComboBox.SelectedItem).Content == ApplicationData.Languages.CoordinateSpecification)
+        if ((string)((ComboBoxItem)WindowProcessingYComboBox.SelectedItem).Content == ApplicationData.Strings.CoordinateSpecification)
         {
             WindowProcessingYNumberBox.IsEnabled = true;
             WindowProcessingYTypeComboBox.IsEnabled = true;
@@ -2324,7 +2330,7 @@ public partial class SpecifyWindowItemWindow : Window
     /// </summary>
     private void SettingsIsEnabledStateOfWidthControls()
     {
-        if ((string)((ComboBoxItem)WindowProcessingWidthComboBox.SelectedItem).Content == ApplicationData.Languages.WidthSpecification)
+        if ((string)((ComboBoxItem)WindowProcessingWidthComboBox.SelectedItem).Content == ApplicationData.Strings.WidthSpecification)
         {
             WindowProcessingWidthNumberBox.IsEnabled = true;
             WindowProcessingWidthTypeComboBox.IsEnabled = true;
@@ -2341,7 +2347,7 @@ public partial class SpecifyWindowItemWindow : Window
     /// </summary>
     private void SettingsIsEnabledStateOfHeightControls()
     {
-        if ((string)((ComboBoxItem)WindowProcessingHeightComboBox.SelectedItem).Content == ApplicationData.Languages.HeightSpecification)
+        if ((string)((ComboBoxItem)WindowProcessingHeightComboBox.SelectedItem).Content == ApplicationData.Strings.HeightSpecification)
         {
             WindowProcessingHeightNumberBox.IsEnabled = true;
             WindowProcessingHeightTypeComboBox.IsEnabled = true;
@@ -2362,11 +2368,11 @@ public partial class SpecifyWindowItemWindow : Window
         StandardDisplay selected = StandardDisplay.CurrentDisplay;
         string stringData = (string)((ComboBoxItem)ProcessingSettingsStandardDisplayComboBox.SelectedItem).Content;
 
-        if (stringData == ApplicationData.Languages.SpecifiedDisplay)
+        if (stringData == ApplicationData.Strings.SpecifiedDisplay)
         {
             selected = StandardDisplay.SpecifiedDisplay;
         }
-        else if (stringData == ApplicationData.Languages.LimitedToSpecifiedDisplay)
+        else if (stringData == ApplicationData.Strings.LimitedToSpecifiedDisplay)
         {
             selected = StandardDisplay.ExclusiveSpecifiedDisplay;
         }
@@ -2409,7 +2415,7 @@ public partial class SpecifyWindowItemWindow : Window
 
         if (string.IsNullOrEmpty(wpi.ProcessingName))
         {
-            result = ApplicationData.Languages.ErrorOccurred;
+            result = ApplicationData.Strings.ErrorOccurred;
         }
         else
         {
@@ -2422,7 +2428,7 @@ public partial class SpecifyWindowItemWindow : Window
                     if (count != itemSelectedIndex
                         && nowWPI.ProcessingName == wpi.ProcessingName)
                     {
-                        result = ApplicationData.Languages.ThereIsADuplicateProcessingName;
+                        result = ApplicationData.Strings.ThereIsADuplicateProcessingName;
                         break;
                     }
                     count++;
@@ -2434,7 +2440,7 @@ public partial class SpecifyWindowItemWindow : Window
                 {
                     if (nowWPI.ProcessingName == wpi.ProcessingName)
                     {
-                        result = ApplicationData.Languages.ThereIsADuplicateProcessingName;
+                        result = ApplicationData.Strings.ThereIsADuplicateProcessingName;
                         break;
                     }
                 }
@@ -2462,7 +2468,7 @@ public partial class SpecifyWindowItemWindow : Window
             {
                 if (SpecifyWindowItemInformation.RegisteredName == nowItem.RegisteredName)
                 {
-                    result = ApplicationData.Languages.ThereIsADuplicateRegistrationName;
+                    result = ApplicationData.Strings.ThereIsADuplicateRegistrationName;
                     break;
                 }
             }
@@ -2475,7 +2481,7 @@ public partial class SpecifyWindowItemWindow : Window
                 if (count != indexOfItemToBeModify
                     && SpecifyWindowItemInformation.RegisteredName == nowItem.RegisteredName)
                 {
-                    result = ApplicationData.Languages.ThereIsADuplicateRegistrationName;
+                    result = ApplicationData.Strings.ThereIsADuplicateRegistrationName;
                     break;
                 }
                 count++;
@@ -2639,7 +2645,7 @@ public partial class SpecifyWindowItemWindow : Window
         {
             if (nowTitleName == titleName)
             {
-                return ApplicationData.Languages.ThereAreDuplicateItems;
+                return ApplicationData.Strings.ThereAreDuplicateItems;
             }
         }
 
@@ -2662,7 +2668,7 @@ public partial class SpecifyWindowItemWindow : Window
             if (nowSize.Width == size.Width
                 && nowSize.Height == size.Height)
             {
-                return ApplicationData.Languages.ThereAreDuplicateItems;
+                return ApplicationData.Strings.ThereAreDuplicateItems;
             }
         }
 

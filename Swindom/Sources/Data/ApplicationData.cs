@@ -14,9 +14,9 @@ public static class ApplicationData
     /// </summary>
     public static string? SpecifySettingsFilePath { get; set; }
     /// <summary>
-    /// 言語データ
+    /// UIで使用する文字列
     /// </summary>
-    public static Languages Languages { get; set; } = new();
+    public static Strings Strings { get; set; } = new();
     /// <summary>
     /// 処理イベント
     /// </summary>
@@ -44,7 +44,7 @@ public static class ApplicationData
     /// <summary>
     /// 使用済みのホットキーのID
     /// </summary>
-    public static List<int> UsedHotkeyId { get; } = new();
+    public static List<int> UsedHotkeyId { get; } = [];
 
     /// <summary>
     /// 破棄

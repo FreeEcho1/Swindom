@@ -44,7 +44,7 @@ public class WindowProcessingInformation
     /// 透明度
     /// </summary>
     [JsonIgnore]
-    private int PrivateTransparency;
+    private int _transparency;
     /// <summary>
     /// 透明度
     /// </summary>
@@ -52,21 +52,21 @@ public class WindowProcessingInformation
     {
         get
         {
-            return PrivateTransparency;
+            return _transparency;
         }
         set
         {
             if (value < MinimumTransparency)
             {
-                PrivateTransparency = MinimumTransparency;
+                _transparency = MinimumTransparency;
             }
             else if (MaximumTransparency < value)
             {
-                PrivateTransparency = MaximumTransparency;
+                _transparency = MaximumTransparency;
             }
             else
             {
-                PrivateTransparency = value;
+                _transparency = value;
             }
         }
     }

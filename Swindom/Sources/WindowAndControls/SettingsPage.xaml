@@ -32,6 +32,17 @@
                             <Button x:Name="CoordinateExplanationButton" Content="?" ToolTip="ヘルプ" Margin="5,0,0,0"/>
                         </StackPanel>
                         <ui:ToggleSwitch x:Name="FullScreenWindowAdditionDecisionToggleSwitch" OffContent="全画面ウィンドウの追加判定 (正しく判定されない場合のみ)" OnContent="全画面ウィンドウの追加判定 (正しく判定されない場合のみ)" Margin="0,5,0,0"/>
+                        <GroupBox x:Name="ChangeSettingsExistDisplayGroupBox" Header="存在するディスプレイに設定を変更" Margin="0,5,0,0">
+                            <StackPanel>
+                                <ui:ToggleSwitch x:Name="DoNotChangeDisplayToggleSwitch" OffContent="変更しない" OnContent="設定を変更しない"/>
+                                <Label x:Name="HowToChangeDisplayLabel" Content="変更する方法" Margin="0,5,0,0"/>
+                                <ComboBox x:Name="HowToChangeDisplayComboBox" SelectedIndex="0" Width="250" Margin="0,5,0,0">
+                                    <ComboBoxItem x:Name="HowToChangeDisplayFirstDisplayComboBoxItem" Content="自動"/>
+                                    <ComboBoxItem x:Name="HowToChangeDisplayAutoOrManualComboBoxItem" Content="1枚は自動/2枚以上は手動"/>
+                                    <ComboBoxItem x:Name="HowToChangeDisplayManualComboBoxItem" Content="手動"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </GroupBox>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

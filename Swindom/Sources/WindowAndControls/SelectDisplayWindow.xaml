@@ -1,0 +1,26 @@
+﻿<Window x:Class="Swindom.SelectDisplayWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Swindom"
+        mc:Ignorable="d"
+        Title="確認" MaxWidth="700"
+        SizeToContent="WidthAndHeight" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="10">
+            <Label x:Name="MessageLabel" HorizontalAlignment="Center">
+                <TextBlock x:Name="MessageTextBlock" TextWrapping="WrapWithOverflow" Text="設定している「ディスプレイ」が存在しないので変更する必要があります。"/>
+            </Label>
+            <Label x:Name="FunctionNameLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Content="機能名"/>
+            <Label x:Name="RegisterNameLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10,0,0" Content="登録名"/>
+            <Label x:Name="DisplayLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Content="ディスプレイ" Margin="0,20,0,0"/>
+            <ComboBox x:Name="DisplayComboBox" HorizontalAlignment="Center" Width="150" Margin="0,5,0,0"/>
+            <CheckBox x:Name="ApplySameSettingToRemainingCheckBox" Content="以降も同じ設定や操作を適用" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0">
+                <Button x:Name="ModifyButton" Content="変更"/>
+                <Button x:Name="CancelButton" Content="キャンセル" Margin="10,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

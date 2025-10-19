@@ -104,7 +104,8 @@ public static class ApplicationInitialize
         catch
         {
         }
-        PluginProcessing.CheckExistsPlugin();
+        PluginProcessing.UpdatePluginsInformation();
+        PluginProcessing.DeletePluginFileInformation();
 
         if (ApplicationData.Settings.DarkMode)
         {
@@ -114,7 +115,9 @@ public static class ApplicationInitialize
         {
             ThemeManager.Current.ApplicationTheme = ApplicationTheme.Light;
         }
-        WindowProcessingValue.PathMaxLength = ApplicationData.Settings.UseLongPath ? WindowProcessingValue.LongPathMaxLength : WindowProcessingValue.PathMaxLength;
+        //WindowProcessingValue.PathMaxLength = ApplicationData.Settings.UseLongPath ? WindowProcessingValue.LongPathMaxLength : WindowProcessingValue.PathMaxLength;
+
+        ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.DisplayInformationUpdate);
 
         // 更新確認
         if (ApplicationData.Settings.AutomaticallyUpdateCheck)

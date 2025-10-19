@@ -1,4 +1,6 @@
-﻿namespace Swindom;
+﻿using static Swindom.NativeMethods;
+
+namespace Swindom;
 
 /// <summary>
 /// メインウィンドウ
@@ -219,13 +221,13 @@ public partial class MainWindow : Window
     {
         try
         {
-            SpecifyWindowNavigationViewItem.Text = ApplicationData.Languages.SpecifyWindow;
-            AllWindowNavigationViewItem.Text = ApplicationData.Languages.AllWindow;
-            MagnetNavigationViewItem.Text = ApplicationData.Languages.Magnet;
-            HotkeyNavigationViewItem.Text = ApplicationData.Languages.Hotkey;
-            PluginNavigationViewItem.Text = ApplicationData.Languages.Plugin;
-            SettingsNavigationViewItem.Text = ApplicationData.Languages.Setting;
-            InformationNavigationViewItem.Text = ApplicationData.Languages.Information;
+            SpecifyWindowNavigationViewItem.Text = ApplicationData.Strings.SpecifyWindow;
+            AllWindowNavigationViewItem.Text = ApplicationData.Strings.AllWindow;
+            MagnetNavigationViewItem.Text = ApplicationData.Strings.Magnet;
+            HotkeyNavigationViewItem.Text = ApplicationData.Strings.Hotkey;
+            PluginNavigationViewItem.Text = ApplicationData.Strings.Plugin;
+            SettingsNavigationViewItem.Text = ApplicationData.Strings.Setting;
+            InformationNavigationViewItem.Text = ApplicationData.Strings.Information;
         }
         catch
         {

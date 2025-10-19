@@ -52,19 +52,19 @@ public partial class InformationPage : Page
             switch (FreeEcho.FECheckForUpdate.CheckForUpdate.CheckForUpdateFileURL(ApplicationPath.OwnApplicationPath(), ApplicationValue.UpdateCheckURL, ApplicationData.Settings.CheckBetaVersion))
             {
                 case FreeEcho.FECheckForUpdate.CheckForUpdateResult.LatestVersion:
-                    FEMessageBox.Show(ApplicationData.Languages.LatestVersion, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.LatestVersion, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     break;
                 case FreeEcho.FECheckForUpdate.CheckForUpdateResult.NotLatestVersion:
                     ApplicationData.WindowManagement.ShowUpdateCheckWindow(true);
                     break;
                 default:
-                    FEMessageBox.Show(ApplicationData.Languages.UpdateCheckFailed, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.UpdateCheckFailed, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     break;
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -103,7 +103,7 @@ public partial class InformationPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -123,7 +123,7 @@ public partial class InformationPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -143,7 +143,7 @@ public partial class InformationPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -163,7 +163,7 @@ public partial class InformationPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -184,7 +184,7 @@ public partial class InformationPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -224,15 +224,15 @@ public partial class InformationPage : Page
             ApplicationInformationTextBlock.Inlines.Clear();
             ApplicationInformationTextBlock.Inlines.Add(ApplicationValue.ApplicationName + WindowControlValue.SpaceSeparateString + fvi.ProductVersion + Environment.NewLine
                 + fvi.LegalCopyright + Environment.NewLine
-                + ApplicationData.Languages.Website + WindowControlValue.TypeAndValueSeparateString);
+                + ApplicationData.Strings.Website + WindowControlValue.TypeAndValueSeparateString);
             ApplicationInformationTextBlock.Inlines.Add(WebsiteHyperlink);
-            ApplicationInformationTextBlock.Inlines.Add(Environment.NewLine + ApplicationData.Languages.ReportsAndRequests + WindowControlValue.TypeAndValueSeparateString);
+            ApplicationInformationTextBlock.Inlines.Add(Environment.NewLine + ApplicationData.Strings.ReportsAndRequests + WindowControlValue.TypeAndValueSeparateString);
             ApplicationInformationTextBlock.Inlines.Add(ReportsRequestsHyperlink);
-            UpdateCheckButton.Content = ApplicationData.Languages.UpdateCheck;
-            ExplanationButton.Content = ApplicationData.Languages.Help;
-            ReadmeButton.Content = ApplicationData.Languages.Readme;
-            UpdateHistoryButton.Content = ApplicationData.Languages.UpdateHistory;
-            LicenseGroupBox.Header = ApplicationData.Languages.Library;
+            UpdateCheckButton.Content = ApplicationData.Strings.UpdateCheck;
+            ExplanationButton.Content = ApplicationData.Strings.Help;
+            ReadmeButton.Content = ApplicationData.Strings.Readme;
+            UpdateHistoryButton.Content = ApplicationData.Strings.UpdateHistory;
+            LicenseGroupBox.Header = ApplicationData.Strings.Library;
         }
         catch
         {

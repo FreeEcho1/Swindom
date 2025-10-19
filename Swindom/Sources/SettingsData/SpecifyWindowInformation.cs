@@ -47,7 +47,7 @@ public class SpecifyWindowInformation
     /// 処理間隔 (ミリ秒)
     /// </summary>
     [JsonIgnore]
-    private int PrivateProcessingInterval;
+    private int _processingInterval;
     /// <summary>
     /// 処理間隔 (ミリ秒)
     /// </summary>
@@ -55,21 +55,21 @@ public class SpecifyWindowInformation
     {
         get
         {
-            return PrivateProcessingInterval;
+            return _processingInterval;
         }
         set
         {
             if (value < MinimumProcessingInterval)
             {
-                PrivateProcessingInterval = MinimumProcessingInterval;
+                _processingInterval = MinimumProcessingInterval;
             }
             if (MaximumProcessingInterval < value)
             {
-                PrivateProcessingInterval = MaximumProcessingInterval;
+                _processingInterval = MaximumProcessingInterval;
             }
             else
             {
-                PrivateProcessingInterval = value;
+                _processingInterval = value;
             }
         }
     }
@@ -92,7 +92,7 @@ public class SpecifyWindowInformation
     /// 次のウィンドウを処理する待ち時間 (ミリ秒) (待たない「0」)
     /// </summary>
     [JsonIgnore]
-    private int PrivateWaitTimeToProcessingNextWindow;
+    private int _waitTimeToProcessingNextWindow;
     /// <summary>
     /// 次のウィンドウを処理する待ち時間 (ミリ秒) (待たない「0」)
     /// </summary>
@@ -100,21 +100,21 @@ public class SpecifyWindowInformation
     {
         get
         {
-            return PrivateWaitTimeToProcessingNextWindow;
+            return _waitTimeToProcessingNextWindow;
         }
         set
         {
             if (value < MinimumWaitTimeToProcessingNextWindow)
             {
-                PrivateWaitTimeToProcessingNextWindow = MinimumWaitTimeToProcessingNextWindow;
+                _waitTimeToProcessingNextWindow = MinimumWaitTimeToProcessingNextWindow;
             }
             else if (MaximumWaitTimeToProcessingNextWindow < value)
             {
-                PrivateWaitTimeToProcessingNextWindow = MaximumWaitTimeToProcessingNextWindow;
+                _waitTimeToProcessingNextWindow = MaximumWaitTimeToProcessingNextWindow;
             }
             else
             {
-                PrivateWaitTimeToProcessingNextWindow = value;
+                _waitTimeToProcessingNextWindow = value;
             }
         }
     }
@@ -148,6 +148,6 @@ public class SpecifyWindowInformation
         WaitTimeToProcessingNextWindow = MinimumWaitTimeToProcessingNextWindow;
         AddModifyWindowSize = new();
         AcquiredItems = new();
-        Items = new();
+        Items = [];
     }
 }

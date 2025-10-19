@@ -1,0 +1,144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FEWindowMoveDetectionMouse</name>
+    </assembly>
+    <members>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.MoveEventArgs">
+            <summary>
+            マウスでウィンドウが移動された時のイベントデータ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.NativeMethods">
+            <summary>
+            NativeMethods
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.NativeMethodsDelegate">
+            <summary>
+            NativeMethodsDelegate
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.StartMoveEventArgs">
+            <summary>
+            マウスでウィンドウ移動開始のイベントデータ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.StopMoveEventArgs">
+            <summary>
+            マウスでウィンドウ移動停止のイベントデータ
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection">
+            <summary>
+            マウスでウィンドウ移動検知
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.IsHooking">
+            <summary>
+            フックを実行しているかの値 (実行していない「false」/実行している「true」)
+            </summary>
+        </member>
+        <member name="P:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.MovingWindow">
+            <summary>
+            ウィンドウが移動中かの値 (移動中ではない「false」/移動中「true」)
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.Handle">
+            <summary>
+            フックプロシージャのハンドル
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.MouseButtonDown">
+            <summary>
+            マウスの左ボタンが押されているかの値 (押されていない「false」/押されている「true」)
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.PreviousWindowPosition">
+            <summary>
+            前回調べた時のウィンドウの位置
+            </summary>
+        </member>
+        <member name="F:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.MoveHwnd">
+            <summary>
+            移動しているウィンドウのハンドル
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.MovedEventHandler">
+            <summary>
+            マウスでウィンドウが移動された時のイベントのデリゲート
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.Moved">
+            <summary>
+            マウスでウィンドウが移動された時のイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.DoMoved">
+            <summary>
+            マウスでウィンドウが移動された時のイベントを実行
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.StartMoveEventHandler">
+            <summary>
+            マウスでウィンドウ移動開始のイベントのデリゲート
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.StartMove">
+            <summary>
+            マウスでウィンドウ移動開始のイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.DoStartMove">
+            <summary>
+            マウスでウィンドウ移動開始のイベントを実行
+            </summary>
+        </member>
+        <member name="T:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.StopMoveEventHandler">
+            <summary>
+            マウスでウィンドウ移動停止のイベントのデリゲート
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="E:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.StopMove">
+            <summary>
+            マウスでウィンドウ移動停止のイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.DoStopMove">
+            <summary>
+            マウスでウィンドウ移動停止のイベントを実行
+            </summary>
+        </member>
+        <member name="E:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.HookCallback">
+            <summary>
+            フックチェーンにインストールするフックプロシージャのイベント
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.Start">
+            <summary>
+            マウスでウィンドウ移動の検知を開始
+            </summary>
+            <exception cref="T:System.ComponentModel.Win32Exception">Win32エラーコードの例外</exception>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.Stop">
+            <summary>
+            マウスでウィンドウ移動の検知を停止
+            </summary>
+        </member>
+        <member name="M:FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection.HookProcedure(System.Int32,System.UInt32,FreeEcho.FEWindowMoveDetectionMouse.MSLLHOOKSTRUCT@)">
+            <summary>
+            フックプロシージャ
+            </summary>
+            <param name="nCode">フックコード</param>
+            <param name="msg">フックプロシージャに渡す値</param>
+            <param name="s">フックプロシージャに渡す値</param>
+            <returns>フックチェーン内の次のフックプロシージャの戻り値</returns>
+        </member>
+    </members>
+</doc>

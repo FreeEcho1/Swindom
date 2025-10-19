@@ -8,15 +8,15 @@ public static class ApplicationStartup
     /// <summary>
     /// 登録情報の「Author」
     /// </summary>
-    public static readonly string RegistrationInformationAuthor = "FreeEcho";
+    public static string RegistrationInformationAuthor { get; } = "FreeEcho";
     /// <summary>
     /// タスクを作成 (識別する文字列)
     /// </summary>
-    public static readonly string CreateTaskString = "CreateTask";
+    public static string CreateTaskString { get; } = "CreateTask";
     /// <summary>
     /// タスクを削除 (識別する文字列)
     /// </summary>
-    public static readonly string DeleteTaskString = "DeleteTask";
+    public static string DeleteTaskString { get; } = "DeleteTask";
 
     /// <summary>
     /// スタートアップのショートカットファイルのパスを取得

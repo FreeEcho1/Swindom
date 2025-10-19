@@ -162,23 +162,23 @@ internal static partial class NativeMethods
     private static extern int SetWindowLong32(
         IntPtr hWnd,
         int nIndex,
-        int dwNewLong
+        long dwNewLong
         );
     [DllImport("user32.dll", EntryPoint = "SetWindowLongPtr")]
     private static extern IntPtr SetWindowLongPtr64(
         IntPtr hWnd,
         int nIndex,
-        int dwNewLong
+        long dwNewLong
         );
     public static long SetWindowLongPtr(
         IntPtr hWnd,
         int nIndex,
-        int dwNewLong
+        long dwNewLong
         )
     {
         if (IntPtr.Size == 8)
         {
-            return (long)SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
+            return SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
         }
         else
         {
@@ -322,6 +322,9 @@ internal static partial class NativeMethods
         IntPtr hwnd, int idObject, int idChild, uint dwEventThread, uint dwmsEventTime);
     [DllImport("user32.dll")]
     public static extern bool UnhookWinEvent(IntPtr hWinEventHook);
+
+    [DllImport("kernel32.dll", CharSet = CharSet.Unicode, SetLastError = true)]
+    public static extern IntPtr GetProcAddress(IntPtr hModule, string procName);
 
     //[DllImport("user32.dll", ExactSpelling = true)]
     //public static extern IntPtr GetParent(

@@ -46,8 +46,8 @@ public partial class SpecifyWindowPage : Page
         string stringData;
         stringData = ApplicationData.Settings.SpecifyWindowInformation.ProcessingWindowRange switch
         {
-            ProcessingWindowRange.All => ApplicationData.Languages.AllWindow,
-            _ => ApplicationData.Languages.ActiveWindowOnly
+            ProcessingWindowRange.All => ApplicationData.Strings.AllWindow,
+            _ => ApplicationData.Strings.ActiveWindowOnly
         };
         ControlsProcessing.SelectComboBoxItem(ProcessingWindowRangeComboBox, stringData);
         WaitTimeToProcessingNextWindowNumberBox.Minimum = SpecifyWindowInformation.MinimumWaitTimeToProcessingNextWindow;
@@ -123,7 +123,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -152,7 +152,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -195,26 +195,26 @@ public partial class SpecifyWindowPage : Page
     {
         try
         {
-            if (FEMessageBox.Show(ApplicationData.Settings.SpecifyWindowInformation.Items[SpecifyWindowListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Languages.AllowDelete, ApplicationData.Languages.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            if (FEMessageBox.Show(ApplicationData.Settings.SpecifyWindowInformation.Items[SpecifyWindowListBox.SelectedIndex].RegisteredName + Environment.NewLine + ApplicationData.Strings.AllowDelete, ApplicationData.Strings.Check, MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
                 ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.UnregisterHotkeys();
                 try
                 {
                     ApplicationData.Settings.SpecifyWindowInformation.Items.RemoveAt(SpecifyWindowListBox.SelectedIndex);
                     SpecifyWindowListBox.Items.RemoveAt(SpecifyWindowListBox.SelectedIndex);
-                    FEMessageBox.Show(ApplicationData.Languages.Deleted, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.Deleted, ApplicationData.Strings.Check, MessageBoxButton.OK);
                     SpecifyWindowListBox.Focus();
                 }
                 catch
                 {
-                    FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+                    FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
                 }
                 ApplicationData.WindowProcessingManagement.SpecifyWindowProcessing?.RegisterHotkeys();
             }
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -235,7 +235,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -256,7 +256,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -277,7 +277,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -363,7 +363,7 @@ public partial class SpecifyWindowPage : Page
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check, MessageBoxButton.OK);
         }
     }
 
@@ -530,7 +530,7 @@ public partial class SpecifyWindowPage : Page
     {
         try
         {
-            ApplicationData.Settings.SpecifyWindowInformation.ProcessingInterval = (int)ProcessingIntervalNumberBox.Value;
+            ApplicationData.Settings.SpecifyWindowInformation.ProcessingInterval = double.IsNaN(ProcessingIntervalNumberBox.Value) ? SpecifyWindowInformation.MinimumProcessingInterval : (int)ProcessingIntervalNumberBox.Value;
             ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.SpecifyWindowChangeTimerProcessingInterval);
         }
         catch
@@ -552,11 +552,11 @@ public partial class SpecifyWindowPage : Page
         {
             string stringData = (string)((ComboBoxItem)ProcessingWindowRangeComboBox.SelectedItem).Content;        // 選択項目の文字列
 
-            if (stringData == ApplicationData.Languages.ActiveWindowOnly)
+            if (stringData == ApplicationData.Strings.ActiveWindowOnly)
             {
                 ApplicationData.Settings.SpecifyWindowInformation.ProcessingWindowRange = ProcessingWindowRange.ActiveOnly;
             }
-            else if (stringData == ApplicationData.Languages.AllWindow)
+            else if (stringData == ApplicationData.Strings.AllWindow)
             {
                 ApplicationData.Settings.SpecifyWindowInformation.ProcessingWindowRange = ProcessingWindowRange.All;
             }
@@ -616,7 +616,7 @@ public partial class SpecifyWindowPage : Page
     {
         try
         {
-            ApplicationData.Settings.SpecifyWindowInformation.WaitTimeToProcessingNextWindow = (int)WaitTimeToProcessingNextWindowNumberBox.Value;
+            ApplicationData.Settings.SpecifyWindowInformation.WaitTimeToProcessingNextWindow = double.IsNaN(WaitTimeToProcessingNextWindowNumberBox.Value) ? 0 : (int)WaitTimeToProcessingNextWindowNumberBox.Value;
         }
         catch
         {
@@ -630,30 +630,30 @@ public partial class SpecifyWindowPage : Page
     {
         try
         {
-            AddButton.Text = ApplicationData.Languages.Add;
-            ModifyButton.Text = ApplicationData.Languages.Modify;
-            DeleteButton.Text = ApplicationData.Languages.Delete;
-            CopyButton.Text = ApplicationData.Languages.Copy;
-            MoveUpButton.Text = ApplicationData.Languages.MoveUp;
-            MoveDownButton.Text = ApplicationData.Languages.MoveDown;
-            SettingsButton.Text = ApplicationData.Languages.Setting;
-            ExplanationTextBlock.Text = ApplicationData.Languages.ExplanationOfSpecifyWindow;
+            AddButton.Text = ApplicationData.Strings.Add;
+            ModifyButton.Text = ApplicationData.Strings.Modify;
+            DeleteButton.Text = ApplicationData.Strings.Delete;
+            CopyButton.Text = ApplicationData.Strings.Copy;
+            MoveUpButton.Text = ApplicationData.Strings.MoveUp;
+            MoveDownButton.Text = ApplicationData.Strings.MoveDown;
+            SettingsButton.Text = ApplicationData.Strings.Setting;
+            ExplanationTextBlock.Text = ApplicationData.Strings.ExplanationOfSpecifyWindow;
 
-            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Languages.ProcessingState;
-            RegisterMultipleToggleSwitch.OffContent = RegisterMultipleToggleSwitch.OnContent = ApplicationData.Languages.RegisterMultipleWindowActions;
-            CaseSensitiveWindowQueriesToggleSwitch.OffContent = CaseSensitiveWindowQueriesToggleSwitch.OnContent = ApplicationData.Languages.CaseSensitiveWindowQueries;
-            DoNotChangeOutOfScreenToggleSwitch.OffContent = DoNotChangeOutOfScreenToggleSwitch.OnContent = ApplicationData.Languages.DoNotChangePositionSizeOutOfScreen;
-            StopProcessingShowAddModifyToggleSwitch.OffContent = StopProcessingShowAddModifyToggleSwitch.OnContent = ApplicationData.Languages.StopProcessingShowAddModify;
-            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Languages.StopProcessingWhenWindowIsFullScreen;
-            HotkeysDoNotStopFullScreenToggleSwitch.OffContent = HotkeysDoNotStopFullScreenToggleSwitch.OnContent = ApplicationData.Languages.HotkeysDoNotStop;
-            TimerGroupBox.Header = ApplicationData.Languages.Timer;
-            ProcessingIntervalLabel.Content = ApplicationData.Languages.ProcessingInterval;
-            ProcessingWindowRangeLabel.Content = ApplicationData.Languages.ProcessingWindowRange;
-            ProcessingWindowRangeActiveWindowOnlyComboBoxItem.Content = ApplicationData.Languages.ActiveWindowOnly;
-            ProcessingWindowRangeAllWindowComboBoxItem.Content = ApplicationData.Languages.AllWindow;
-            ActiveWindowExplanationButton.Content = ApplicationData.Languages.Question;
-            ActiveWindowExplanationButton.ToolTip = ApplicationData.Languages.Help;
-            WaitTimeToProcessingNextWindowLabel.Content = ApplicationData.Languages.WaitTimeToProcessingNextWindow;
+            ProcessingStateToggleSwitch.OffContent = ProcessingStateToggleSwitch.OnContent = ApplicationData.Strings.ProcessingState;
+            RegisterMultipleToggleSwitch.OffContent = RegisterMultipleToggleSwitch.OnContent = ApplicationData.Strings.RegisterMultipleWindowActions;
+            CaseSensitiveWindowQueriesToggleSwitch.OffContent = CaseSensitiveWindowQueriesToggleSwitch.OnContent = ApplicationData.Strings.CaseSensitiveWindowQueries;
+            DoNotChangeOutOfScreenToggleSwitch.OffContent = DoNotChangeOutOfScreenToggleSwitch.OnContent = ApplicationData.Strings.DoNotChangePositionSizeOutOfScreen;
+            StopProcessingShowAddModifyToggleSwitch.OffContent = StopProcessingShowAddModifyToggleSwitch.OnContent = ApplicationData.Strings.StopProcessingShowAddModify;
+            StopProcessingFullScreenToggleSwitch.OffContent = StopProcessingFullScreenToggleSwitch.OnContent = ApplicationData.Strings.StopProcessingWhenWindowIsFullScreen;
+            HotkeysDoNotStopFullScreenToggleSwitch.OffContent = HotkeysDoNotStopFullScreenToggleSwitch.OnContent = ApplicationData.Strings.HotkeysDoNotStop;
+            TimerGroupBox.Header = ApplicationData.Strings.Timer;
+            ProcessingIntervalLabel.Content = ApplicationData.Strings.ProcessingInterval;
+            ProcessingWindowRangeLabel.Content = ApplicationData.Strings.ProcessingWindowRange;
+            ProcessingWindowRangeActiveWindowOnlyComboBoxItem.Content = ApplicationData.Strings.ActiveWindowOnly;
+            ProcessingWindowRangeAllWindowComboBoxItem.Content = ApplicationData.Strings.AllWindow;
+            ActiveWindowExplanationButton.Content = ApplicationData.Strings.Question;
+            ActiveWindowExplanationButton.ToolTip = ApplicationData.Strings.Help;
+            WaitTimeToProcessingNextWindowLabel.Content = ApplicationData.Strings.WaitTimeToProcessingNextWindow;
         }
         catch
         {

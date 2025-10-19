@@ -50,13 +50,7 @@
         <Grid Grid.Row="1">
             <Border BorderBrush="#000000" BorderThickness="0,1,0,0">
                 <ScrollViewer VerticalScrollBarVisibility="Auto" Padding="10, 10, 20, 10">
-                    <StackPanel>
-                        <StackPanel x:Name="RestartStackPanel" Orientation="Horizontal" Margin="0,0,0,5">
-                            <Button x:Name="RestartButton" Content="再起動" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                            <Label x:Name="RestartLabel" Content="このソフトウェアを再起動する必要があります。" VerticalAlignment="Center" Margin="5,0,0,0"/>
-                        </StackPanel>
-                        <TextBlock x:Name="ExplanationTextBlock" TextWrapping="Wrap" Text="プラグインは機能を追加することができます。"/>
-                    </StackPanel>
+                    <TextBlock x:Name="ExplanationTextBlock" TextWrapping="Wrap" Text="プラグインは機能を追加することができます。"/>
                 </ScrollViewer>
             </Border>
         </Grid>

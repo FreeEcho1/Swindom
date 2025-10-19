@@ -6,7 +6,7 @@
 public class WindowProcessing
 {
     /// <summary>
-    /// ウィンドウ処理後のウィンドウがあるディスプレイの位置とサイズを取得
+    /// ウィンドウ処理後のウィンドウが表示されるディスプレイの位置とサイズを取得
     /// </summary>
     /// <param name="windowRectangle">ウィンドウの位置とサイズ</param>
     /// <param name="standardDisplay">基準にするディスプレイ</param>
@@ -337,6 +337,38 @@ public class WindowProcessing
     }
 
     /// <summary>
+    /// 除外するウィンドウかを確認
+    /// </summary>
+    /// <param name="windowInformation">ウィンドウの情報</param>
+    /// <returns>除外するウィンドウかの値 (除外しないウィンドウ「false」/除外するウィンドウ「true」)</returns>
+    public static bool CheckExclusionProcessing(
+        WindowInformation windowInformation
+        )
+    {
+        // 「explorer.exe」のウィンドウ以外は除外
+        if (Path.GetFileNameWithoutExtension(windowInformation.FileName).ToLower() == "explorer"
+            && (windowInformation.ClassName != "CabinetWClass" && windowInformation.ClassName != "ExploreWClass"))
+        {
+            return true;
+        }
+
+        // ポップアップなどは除外
+        switch (windowInformation.ClassName)
+        {
+            case "Microsoft.UI.Content.PopupWindowSiteBridge":
+                return true;
+            case "#32768":
+                return true;
+            case "XamlExplorerHostIslandWindow":
+                return true;
+            case "Message":
+                return true;
+        }
+
+        return false;
+    }
+
+    /// <summary>
     /// ウィンドウハンドルからウィンドウの位置とサイズと状態を取得
     /// </summary>
     /// <param name="hwnd">ウィンドウハンドル</param>
@@ -414,6 +446,86 @@ public class WindowProcessing
                     NativeMethods.SetWindowPos(nowHwnd, (int)HwndInsertAfter.HWND_NOTOPMOST, ApplicationData.MonitorInformation.MonitorInfo[0].WorkArea.Left, ApplicationData.MonitorInformation.MonitorInfo[0].WorkArea.Top, 0, 0, (int)SWP.SWP_NOSIZE | (int)SWP.SWP_NOZORDER);
                 }
             }
+        }
+    }
+
+    /// <summary>
+    /// 全ての設定で、設定されているディスプレイが存在するかを確認
+    /// </summary>
+    /// <param name="newMonitorInformation">新しいモニター情報</param>
+    /// <returns>全て存在するかの値 (「false」存在しない設定がある/「true」全て存在する)</returns>
+    public static bool CheckSettingDisplaysExist(
+        MonitorInformation newMonitorInformation
+        )
+    {
+        bool check = true;       // 全ての設定でディスプレイが存在するかの値
+
+        if (SpecifyWindowProcessing.CheckSettingDisplaysExist(newMonitorInformation) == false)
+        {
+            check = false;
+        }
+        if (AllWindowProcessing.CheckSettingDisplaysExist(newMonitorInformation) == false)
+        {
+            check = false;
+        }
+        if (HotkeyProcessing.CheckSettingDisplaysExist(newMonitorInformation) == false)
+        {
+            check = false;
+        }
+
+        return check;
+    }
+
+    /// <summary>
+    /// ディスプレイの設定を変更
+    /// </summary>
+    public static void ChangeDisplaySettings()
+    {
+        try
+        {
+            // ディスプレイの設定を変更しない
+            if (ApplicationData.Settings.DoNotChangeDisplaySettings)
+            {
+                return;
+            }
+            if (ApplicationData.MonitorInformation.MonitorInfo.Count <= 0)
+            {
+                return;
+            }
+
+            bool changed = false;       // 設定が変更されたかの値
+            ChangeDisplaySettingsData changeDisplaySettingsData = new();
+
+            if (ApplicationData.Settings.DisplayChangeMode == DisplayChangeMode.Auto
+                || (ApplicationData.Settings.DisplayChangeMode == DisplayChangeMode.AutoOrManual
+                && ApplicationData.MonitorInformation.MonitorInfo.Count == 1))
+            {
+                changeDisplaySettingsData.IsModified = true;
+                changeDisplaySettingsData.ApplySameSettingToRemaining = true;
+                changeDisplaySettingsData.AutoSettingDisplayName = ApplicationData.MonitorInformation.MonitorInfo[0].DeviceName;
+            }
+
+            if (SpecifyWindowProcessing.ChangeDisplaySettings(changeDisplaySettingsData))
+            {
+                changed = true;
+            }
+            if (AllWindowProcessing.ChangeDisplaySettings(changeDisplaySettingsData))
+            {
+                changed = true;
+            }
+            if (HotkeyProcessing.ChangeDisplaySettings(changeDisplaySettingsData))
+            {
+                changed = true;
+            }
+
+            // 設定が変更されたら保存する
+            if (changed)
+            {
+                SettingFileProcessing.WriteSettings();
+            }
+        }
+        catch
+        {
         }
     }
 }

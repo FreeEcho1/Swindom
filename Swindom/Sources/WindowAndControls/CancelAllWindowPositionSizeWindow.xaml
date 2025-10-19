@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:ui="http://schemas.modernwpf.com/2019"
         ui:WindowHelper.UseModernWindowStyle="True"
-        Title="追加" MinWidth="390" MaxWidth="800" MinHeight="300" MaxHeight="548" SizeToContent="Width" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
+        Title="追加" MinWidth="390" MaxWidth="1200" MinHeight="300" MaxHeight="548" SizeToContent="Width" WindowStartupLocation="CenterOwner" ShowInTaskbar="False">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>

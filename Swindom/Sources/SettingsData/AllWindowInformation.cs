@@ -50,7 +50,7 @@ public class AllWindowInformation
         StandardDisplay = StandardDisplay.CurrentDisplay;
         PositionSize = new();
         WindowEvent = new();
-        Items = new();
+        Items = [];
         AddModifyWindowSize = new();
     }
 
@@ -68,7 +68,7 @@ public class AllWindowInformation
         StandardDisplay = item.StandardDisplay;
         PositionSize = new(item.PositionSize);
         WindowEvent = new(item.WindowEvent);
-        Items = new();
+        Items = [];
         foreach (WindowJudgementInformation nowInformation in item.Items)
         {
             item.Items.Add(new(nowInformation));

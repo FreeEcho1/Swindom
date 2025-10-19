@@ -169,7 +169,11 @@ public class WindowProcessingManagement : IDisposable
     /// </summary>
     private void DisposePluginProcessing()
     {
-        PluginProcessing?.Dispose();
+        if (PluginProcessing != null)
+        {
+            PluginProcessing.Dispose();
+            PluginProcessing = null;
+        }
     }
 
     /// <summary>
@@ -455,7 +459,12 @@ public class WindowProcessingManagement : IDisposable
     {
         if (PluginProcessing.CheckIfTheProcessingIsValid())
         {
+            InitializeAllStopProcessingInformation();
             PluginProcessing ??= new();
+        }
+        else
+        {
+            DisposePluginProcessing();
         }
     }
 }

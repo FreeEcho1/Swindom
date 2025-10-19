@@ -12,7 +12,7 @@ public class MagnetProcessing : IDisposable
     /// <summary>
     /// マウスポインターでウィンドウ移動検知
     /// </summary>
-    private readonly FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection MouseMoveWindowDetection = new();
+    private FreeEcho.FEWindowMoveDetectionMouse.MouseMoveWindowDetection MouseMoveWindowDetection { get; } = new();
     /// <summary>
     /// マウスポインターのX座標の停止タイマー
     /// </summary>

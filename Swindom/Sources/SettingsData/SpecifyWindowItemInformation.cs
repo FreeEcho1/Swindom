@@ -72,7 +72,7 @@ public class SpecifyWindowItemInformation
     /// 最初に処理しない回数 (指定しない「0」)
     /// </summary>
     [JsonIgnore]
-    private int PrivateNumberOfTimesNotToProcessingFirst;
+    private int _numberOfTimesNotToProcessingFirst;
     /// <summary>
     /// 最初に処理しない回数 (指定しない「0」)
     /// </summary>
@@ -80,21 +80,21 @@ public class SpecifyWindowItemInformation
     {
         get
         {
-            return PrivateNumberOfTimesNotToProcessingFirst;
+            return _numberOfTimesNotToProcessingFirst;
         }
         set
         {
             if (value < MinimumNumberOfTimesNotToProcessingFirst)
             {
-                PrivateNumberOfTimesNotToProcessingFirst = MinimumNumberOfTimesNotToProcessingFirst;
+                _numberOfTimesNotToProcessingFirst = MinimumNumberOfTimesNotToProcessingFirst;
             }
             else if (MaximumNumberOfTimesNotToProcessingFirst < value)
             {
-                PrivateNumberOfTimesNotToProcessingFirst = MaximumNumberOfTimesNotToProcessingFirst;
+                _numberOfTimesNotToProcessingFirst = MaximumNumberOfTimesNotToProcessingFirst;
             }
             else
             {
-                PrivateNumberOfTimesNotToProcessingFirst = value;
+                _numberOfTimesNotToProcessingFirst = value;
             }
         }
     }
@@ -138,7 +138,7 @@ public class SpecifyWindowItemInformation
     /// <summary>
     /// 「処理しない条件」の「指定したバージョン以外」と同期
     /// </summary>
-    public bool NotificationSynchronizationVersion = false;
+    public bool NotificationSynchronizationVersion { get; set; } = false;
 
     /// <summary>
     /// 一度だけ処理が終わっているかの値 (終わってない「false」/終わってる「true」)
@@ -174,12 +174,12 @@ public class SpecifyWindowItemInformation
         WindowEventData = new();
         TimerProcessing = false;
         NumberOfTimesNotToProcessingFirst = MinimumNumberOfTimesNotToProcessingFirst;
-        WindowProcessingInformation = new();
+        WindowProcessingInformation = [];
         DoNotProcessingChildWindow = false;
         DoNotProcessingTitleNameConditions = TitleNameProcessingConditions.NotSpecified;
-        DoNotProcessingStringContainedInTitleName = new();
-        DoNotProcessingSize = new();
-        DoNotProcessingOtherThanSpecifiedSize = new();
+        DoNotProcessingStringContainedInTitleName = [];
+        DoNotProcessingSize = [];
+        DoNotProcessingOtherThanSpecifiedSize = [];
         DoNotProcessingOtherThanSpecifiedVersion = "";
         Notification = false;
         NotificationOtherThanSpecifiedVersion = "";
@@ -212,20 +212,20 @@ public class SpecifyWindowItemInformation
         WindowEventData = new(item.WindowEventData);
         TimerProcessing = item.TimerProcessing;
         NumberOfTimesNotToProcessingFirst = item.NumberOfTimesNotToProcessingFirst;
-        WindowProcessingInformation = new();
+        WindowProcessingInformation = [];
         foreach (WindowProcessingInformation nowWPI in item.WindowProcessingInformation)
         {
             WindowProcessingInformation.Add(new WindowProcessingInformation(nowWPI, copyHotkey));
         }
         DoNotProcessingChildWindow = item.DoNotProcessingChildWindow;
         DoNotProcessingTitleNameConditions = item.DoNotProcessingTitleNameConditions;
-        DoNotProcessingStringContainedInTitleName = new(item.DoNotProcessingStringContainedInTitleName);
-        DoNotProcessingSize = new();
+        DoNotProcessingStringContainedInTitleName = [..item.DoNotProcessingStringContainedInTitleName];
+        DoNotProcessingSize = [];
         foreach (SizeInt nowSize in item.DoNotProcessingSize)
         {
             DoNotProcessingSize.Add(nowSize);
         }
-        DoNotProcessingOtherThanSpecifiedSize = new();
+        DoNotProcessingOtherThanSpecifiedSize = [];
         foreach (SizeInt nowSize in item.DoNotProcessingOtherThanSpecifiedSize)
         {
             DoNotProcessingOtherThanSpecifiedSize.Add(nowSize);
@@ -263,20 +263,20 @@ public class SpecifyWindowItemInformation
         WindowEventData = new(item.WindowEventData);
         TimerProcessing = item.TimerProcessing;
         NumberOfTimesNotToProcessingFirst = item.NumberOfTimesNotToProcessingFirst;
-        WindowProcessingInformation = new();
+        WindowProcessingInformation = [];
         foreach (WindowProcessingInformation nowWPI in item.WindowProcessingInformation)
         {
             WindowProcessingInformation.Add(new WindowProcessingInformation(nowWPI, copyHotkey));
         }
         DoNotProcessingChildWindow = item.DoNotProcessingChildWindow;
         DoNotProcessingTitleNameConditions = item.DoNotProcessingTitleNameConditions;
-        DoNotProcessingStringContainedInTitleName = new(item.DoNotProcessingStringContainedInTitleName);
-        DoNotProcessingSize = new();
+        DoNotProcessingStringContainedInTitleName = [..item.DoNotProcessingStringContainedInTitleName];
+        DoNotProcessingSize = [];
         foreach (SizeInt nowSize in item.DoNotProcessingSize)
         {
             DoNotProcessingSize.Add(nowSize);
         }
-        DoNotProcessingOtherThanSpecifiedSize = new();
+        DoNotProcessingOtherThanSpecifiedSize = [];
         foreach (SizeInt nowSize in item.DoNotProcessingOtherThanSpecifiedSize)
         {
             DoNotProcessingOtherThanSpecifiedSize.Add(nowSize);

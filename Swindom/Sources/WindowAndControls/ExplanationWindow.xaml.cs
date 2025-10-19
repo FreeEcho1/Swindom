@@ -26,21 +26,21 @@ public partial class ExplanationWindow : Window
         Width = ApplicationData.Settings.ExplanationWindowSize.Width;
         Height = ApplicationData.Settings.ExplanationWindowSize.Height;
 
-        Title = ApplicationData.Languages.Help + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
-        CoordinateTabItem.Header = ApplicationData.Languages.Coordinate;
-        CoordinateExplanationTextBox.Text = ApplicationData.Languages.CoordinateDetailedExplanation;
-        WindowDecisionTabItem.Header = ApplicationData.Languages.WindowDecide;
-        WindowDecisionExplanationTextBox.Text = ApplicationData.Languages.WindowDecisionDetailedExplanation;
-        EventTimerTabItem.Header = ApplicationData.Languages.EventTimer;
-        EventTimerExplanationTextBox.Text = ApplicationData.Languages.EventTimerDetailedExplanation;
-        ClientAreaTabItem.Header = ApplicationData.Languages.ClientArea;
-        ClientAreaExplanationTextBox.Text = ApplicationData.Languages.ClientAreaDetailedExplanation;
-        ActiveWindowTabItem.Header = ApplicationData.Languages.ActiveWindow;
-        ActiveWindowExplanationTextBox.Text = ApplicationData.Languages.ActiveWindowDetailedExplanation;
-        PluginTabItem.Header = ApplicationData.Languages.Plugin;
-        PluginExplanationTextBox.Text = ApplicationData.Languages.PluginDetailedExplanation;
-        ChildWindowTabItem.Header = ApplicationData.Languages.ChildWindow;
-        ChildWindowExplanationTextBox.Text = ApplicationData.Languages.ChildWindowExplanation;
+        Title = ApplicationData.Strings.Help + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName;
+        CoordinateTabItem.Header = ApplicationData.Strings.Coordinate;
+        CoordinateExplanationTextBox.Text = ApplicationData.Strings.CoordinateDetailedExplanation;
+        WindowDecisionTabItem.Header = ApplicationData.Strings.WindowDecide;
+        WindowDecisionExplanationTextBox.Text = ApplicationData.Strings.WindowDecisionDetailedExplanation;
+        EventTimerTabItem.Header = ApplicationData.Strings.EventTimer;
+        EventTimerExplanationTextBox.Text = ApplicationData.Strings.EventTimerDetailedExplanation;
+        ClientAreaTabItem.Header = ApplicationData.Strings.ClientArea;
+        ClientAreaExplanationTextBox.Text = ApplicationData.Strings.ClientAreaDetailedExplanation;
+        ActiveWindowTabItem.Header = ApplicationData.Strings.ActiveWindow;
+        ActiveWindowExplanationTextBox.Text = ApplicationData.Strings.ActiveWindowDetailedExplanation;
+        PluginTabItem.Header = ApplicationData.Strings.Plugin;
+        PluginExplanationTextBox.Text = ApplicationData.Strings.PluginDetailedExplanation;
+        ChildWindowTabItem.Header = ApplicationData.Strings.ChildWindow;
+        ChildWindowExplanationTextBox.Text = ApplicationData.Strings.ChildWindowExplanation;
 
         SelectTabItem(explanationType);
 

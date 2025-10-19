@@ -1,4 +1,7 @@
-﻿namespace Swindom;
+﻿using System.Threading;
+using System.Threading.Tasks;
+
+namespace Swindom;
 
 /// <summary>
 /// メインの処理
@@ -17,71 +20,84 @@ public class MainProcessing
     /// <summary>
     /// システムトレイアイコン
     /// </summary>
-    private readonly MyNotifyIcon MyNotifyIcon = new();
+    private MyNotifyIcon MyNotifyIcon { get; } = new();
     /// <summary>
     /// 「システムトレイアイコン」のContextMenu
     /// </summary>
-    private readonly ContextMenu NotifyIconContextMenu = new();
+    private ContextMenu NotifyIconContextMenu { get; } = new();
     /// <summary>
     /// 「開く」MenuItem
     /// </summary>
-    private readonly MenuItem OpenMenuItem = new();
+    private MenuItem OpenMenuItem { get; } = new();
     /// <summary>
     /// 「指定ウィンドウ」MenuItem
     /// </summary>
-    private readonly MenuItem SpecifyWindowMenuItem = new()
+    private MenuItem SpecifyWindowMenuItem { get; } = new()
     {
         IsCheckable = true,
     };
     /// <summary>
     /// 「全てのウィンドウ」MenuItem
     /// </summary>
-    private readonly MenuItem AllWindowMenuItem = new()
+    private MenuItem AllWindowMenuItem { get; } = new()
     {
         IsCheckable = true,
     };
     /// <summary>
     /// 「マグネット」MenuItem
     /// </summary>
-    private readonly MenuItem MagnetMenuItem = new()
+    private MenuItem MagnetMenuItem { get; } = new()
     {
         IsCheckable = true,
     };
     /// <summary>
     /// 「ホットキー」MenuItem
     /// </summary>
-    private readonly MenuItem HotkeyMenuItem = new()
+    private MenuItem HotkeyMenuItem { get; } = new()
     {
         IsCheckable = true,
     };
     /// <summary>
     /// 「指定ウィンドウの一括実行」MenuItem
     /// </summary>
-    private readonly MenuItem BatchProcessingOfSpecifyWindowMenuItem = new();
+    private MenuItem BatchProcessingOfSpecifyWindowMenuItem { get; } = new();
     /// <summary>
     /// 「ウィンドウが画面外の場合は画面内に移動」MenuItem
     /// </summary>
-    private readonly MenuItem DoOutsideToInsideMenuItem = new();
+    private MenuItem DoOutsideToInsideMenuItem { get; } = new();
     /// <summary>
     /// 「ウィンドウ情報取得」MenuItem
     /// </summary>
-    private readonly MenuItem GetInformationWindowMenuItem = new();
+    private MenuItem GetInformationWindowMenuItem { get; } = new();
     /// <summary>
     /// 「数値計算」MenuItem
     /// </summary>
-    private readonly MenuItem NumericCalculationWindowMenuItem = new();
+    private MenuItem NumericCalculationWindowMenuItem { get; } = new();
     /// <summary>
     /// 「ディスプレイ情報更新」MenuItem
     /// </summary>
-    private readonly MenuItem DisplayInformationUpdateMenuItem = new();
+    private MenuItem DisplayInformationUpdateMenuItem { get; } = new();
     /// <summary>
     /// 「説明」MenuItem
     /// </summary>
-    private readonly MenuItem ExplanationMenuItem = new();
+    private MenuItem ExplanationMenuItem { get; } = new();
     /// <summary>
     /// 「終了」MenuItem
     /// </summary>
-    private readonly MenuItem EndMenuItem = new();
+    private MenuItem EndMenuItem { get; } = new();
+
+    /// <summary>
+    /// ディスプレイ変更の待機数
+    /// </summary>
+    private int CountDisplayChange = 0;
+    /// <summary>
+    /// ディスプレイ変更の待ち間隔 (ミリ秒)
+    /// </summary>
+    private static int DisplayChangeWaitInterval { get; } = 1000;
+    /// <summary>
+    /// ディスプレイ変更の最大待ち回数
+    /// </summary>
+    private static int MaxWaitCountForDisplayChange { get; } = 1200000;
 
     /// <summary>
     /// コンストラクタ
@@ -140,10 +156,12 @@ public class MainProcessing
             {
                 ApplicationData.WindowManagement.ShowMainWindow(true);
             }
+
+            DisplayInformationUpdateAsync();
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
             DoClose();
         }
     }
@@ -164,7 +182,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -187,7 +205,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -210,7 +228,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -233,7 +251,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -256,7 +274,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -314,7 +332,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -334,7 +352,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -350,7 +368,7 @@ public class MainProcessing
     {
         try
         {
-            ApplicationData.MonitorInformation = MonitorInformation.GetMonitorInformation();
+            ApplicationData.EventData.DoProcessingEvent(ProcessingEventType.DisplayInformationUpdate);
         }
         catch
         {
@@ -433,7 +451,7 @@ public class MainProcessing
         }
         catch
         {
-            FEMessageBox.Show(ApplicationData.Languages.ErrorOccurred, ApplicationData.Languages.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+            FEMessageBox.Show(ApplicationData.Strings.ErrorOccurred, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
         }
     }
 
@@ -476,11 +494,11 @@ public class MainProcessing
                 case ProcessingEventType.ThemeChanged:
                     NotifyIconContextMenu.UpdateDefaultStyle();
                     break;
-                case ProcessingEventType.RestartProcessing:
-                    RestartProcessing();
-                    break;
                 case ProcessingEventType.ShowNotifyIconContextMenu:
                     MyNotifyIcon.ShowContextMenu();
+                    break;
+                case ProcessingEventType.DisplayInformationUpdate:
+                    DisplayInformationUpdateAsync();
                     break;
             }
         }
@@ -504,7 +522,7 @@ public class MainProcessing
             // ディスプレイの解像度が変更された場合はディスプレイの情報を更新
             if (e.Message.Msg == (int)WM.WM_DISPLAYCHANGE)
             {
-                ApplicationData.MonitorInformation = MonitorInformation.GetMonitorInformation();
+                DisplayInformationUpdateAsync();
             }
         }
         catch
@@ -513,28 +531,180 @@ public class MainProcessing
     }
 
     /// <summary>
-    /// 再起動処理
+    /// ディスプレイ情報更新
     /// </summary>
-    private static void RestartProcessing()
+    private async void DisplayInformationUpdateAsync()
     {
-        string batFilePath = ApplicationPath.GetApplicationDirectory() + Path.DirectorySeparatorChar + PluginValue.RestartBatchFileName;       // バッチファイルのパス
+        await DisplayInformationUpdate();
+    }
 
-        string batString = "";
-        batString += "taskkill /f /im \"" + ApplicationPath.GetApplicationFileName() + "\"" + Environment.NewLine;       // プロセスを停止
-        batString += "timeout /t 2" + Environment.NewLine;      // 待機時間
-        batString += "pushd \"" + ApplicationPath.GetApplicationDirectory() + "\"" + Environment.NewLine;        // ディレクトリを移動
-        batString += "start \"\" \"" + ApplicationPath.GetApplicationFileName() + "\"" + Environment.NewLine;        // アプリケーションを実行
-        batString += "del /f \"" + PluginValue.RestartBatchFileName + "\"" + Environment.NewLine;      // バッチファイルを削除
-        batString += "exit /b" + Environment.NewLine;
-        File.WriteAllText(batFilePath, batString);
+    /// <summary>
+    /// ディスプレイ情報更新
+    /// </summary>
+    /// <returns>Task</returns>
+    //private async Task DisplayInformationUpdate()
+    //{
+    //    try
+    //    {
+    //        // 必要以上の更新はしない
+    //        if (CountDisplayChange > 1)
+    //        {
+    //            return;
+    //        }
 
-        Process process = new();
-        process.StartInfo.FileName = batFilePath;
-        process.StartInfo.Verb = "open";
-        process.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-        process.StartInfo.CreateNoWindow = true;
-        process.StartInfo.UseShellExecute = false;
-        process.Start();
+    //        CountDisplayChange++;
+
+    //        // 待機する
+    //        if (CountDisplayChange > 2)
+    //        {
+    //            int waitCount = 0;      // 待機回数
+
+    //            await Task.Run(() =>
+    //            {
+    //                while (CountDisplayChange > 1)
+    //                {
+    //                    Thread.Sleep(DisplayChangeWaitInterval);
+    //                    waitCount++;
+    //                    if (waitCount > MaxWaitCountForDisplayChange)
+    //                    {
+    //                        return;
+    //                    }
+    //                }
+    //            });
+    //        }
+
+    //        // ディスプレイの状態が変更されたかを確認
+    //        // Windowsの仕様で変更されていないのに2回「WM_DISPLAYCHANGE」イベントが発生するなどの対策
+    //        bool displayChange = false;     // ディスプレイの状態が変更されたかの値
+    //        MonitorInformation monitorInformation = MonitorInformation.GetMonitorInformation();     // モニター情報
+    //        if (monitorInformation.MonitorInfo.Count == ApplicationData.MonitorInformation.MonitorInfo.Count)
+    //        {
+    //            foreach (MonitorInfoEx nowNewMonitorInfo in monitorInformation.MonitorInfo)
+    //            {
+    //                bool match = false;     // 一致したかの値
+
+    //                foreach (MonitorInfoEx nowOldMonitorInfo in ApplicationData.MonitorInformation.MonitorInfo)
+    //                {
+    //                    if (nowNewMonitorInfo.DeviceName == nowOldMonitorInfo.DeviceName
+    //                        && nowNewMonitorInfo.WorkArea.Left == nowOldMonitorInfo.WorkArea.Left
+    //                        && nowNewMonitorInfo.WorkArea.Top == nowOldMonitorInfo.WorkArea.Top
+    //                        && nowNewMonitorInfo.WorkArea.Right == nowOldMonitorInfo.WorkArea.Right
+    //                        && nowNewMonitorInfo.WorkArea.Bottom == nowOldMonitorInfo.WorkArea.Bottom
+    //                        )
+    //                    {
+    //                        match = true;
+    //                        break;
+    //                    }
+    //                }
+    //                if (match == false)
+    //                {
+    //                    displayChange = true;
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //        else
+    //        {
+    //            displayChange = true;
+    //        }
+
+    //        // ディスプレイの状態が変更されている場合は処理
+    //        if (displayChange)
+    //        {
+    //            ApplicationData.MonitorInformation = monitorInformation;
+    //            WindowProcessing.ChangeDisplaySettings();
+    //        }
+
+    //        CountDisplayChange--;
+    //        if (CountDisplayChange < 0)
+    //        {
+    //            CountDisplayChange = 0;
+    //        }
+    //    }
+    //    catch
+    //    {
+    //        CountDisplayChange--;
+    //    }
+    //}
+
+    /// <summary>
+    /// ディスプレイ情報更新
+    /// </summary>
+    /// <returns>Task</returns>
+    private async Task DisplayInformationUpdate()
+    {
+        try
+        {
+            MonitorInformation monitorInformation;     // モニター情報
+
+            if (CountDisplayChange > 0)
+            {
+                monitorInformation = MonitorInformation.GetMonitorInformation();
+                // ディスプレイの数が変わっていないなら以降の処理はしない (更新しない)
+                if (monitorInformation.MonitorInfo.Count == ApplicationData.MonitorInformation.MonitorInfo.Count)
+                {
+                    return;
+                }
+                else
+                {
+                    if (WindowProcessing.CheckSettingDisplaysExist(monitorInformation))
+                    {
+                        FEMessageBox.Show(ApplicationData.Strings.MessageDisplayChangeAllValid, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+                    }
+                    else
+                    {
+                        FEMessageBox.Show(ApplicationData.Strings.MessageDisplayChangeRequiresReset, ApplicationData.Strings.Check + WindowControlValue.CopySeparateString + ApplicationValue.ApplicationName, MessageBoxButton.OK);
+                    }
+
+                    // 必要以上の更新はしない (待機中の処理に任せる)
+                    if (CountDisplayChange > 1)
+                    {
+                        return;
+                    }
+                }
+            }
+
+            CountDisplayChange++;
+
+            try
+            {
+                // 待機する
+                if (CountDisplayChange > 1)
+                {
+                    int waitCount = 0;      // 待機回数
+
+                    await Task.Run(() =>
+                    {
+                        while (CountDisplayChange > 1)
+                        {
+                            Thread.Sleep(DisplayChangeWaitInterval);
+                            waitCount++;
+                            if (waitCount > MaxWaitCountForDisplayChange)
+                            {
+                                return;
+                            }
+                        }
+                    });
+                }
+
+                monitorInformation = MonitorInformation.GetMonitorInformation();
+
+                ApplicationData.MonitorInformation = monitorInformation;
+                WindowProcessing.ChangeDisplaySettings();
+            }
+            catch
+            {
+            }
+
+            CountDisplayChange--;
+            if (CountDisplayChange < 0)
+            {
+                CountDisplayChange = 0;
+            }
+        }
+        catch
+        {
+        }
     }
 
     /// <summary>
@@ -557,23 +727,23 @@ public class MainProcessing
     {
         try
         {
-            FEMessageBoxWindow.Ok = ApplicationData.Languages.Ok;
-            FEMessageBoxWindow.Yes = ApplicationData.Languages.Yes;
-            FEMessageBoxWindow.No = ApplicationData.Languages.No;
-            FEMessageBoxWindow.Cancel = ApplicationData.Languages.Cancel;
+            FEMessageBoxWindow.Ok = ApplicationData.Strings.Ok;
+            FEMessageBoxWindow.Yes = ApplicationData.Strings.Yes;
+            FEMessageBoxWindow.No = ApplicationData.Strings.No;
+            FEMessageBoxWindow.Cancel = ApplicationData.Strings.Cancel;
 
-            OpenMenuItem.Header = ApplicationData.Languages.Open;
-            SpecifyWindowMenuItem.Header = ApplicationData.Languages.SpecifyWindow;
-            AllWindowMenuItem.Header = ApplicationData.Languages.AllWindow;
-            MagnetMenuItem.Header = ApplicationData.Languages.Magnet;
-            HotkeyMenuItem.Header = ApplicationData.Languages.Hotkey;
-            BatchProcessingOfSpecifyWindowMenuItem.Header = ApplicationData.Languages.BatchProcessingOfSpecifyWindow;
-            DoOutsideToInsideMenuItem.Header = ApplicationData.Languages.WindowMoveOutsideToInside;
-            GetInformationWindowMenuItem.Header = ApplicationData.Languages.GetWindowInformation;
-            NumericCalculationWindowMenuItem.Header = ApplicationData.Languages.NumericCalculation;
-            DisplayInformationUpdateMenuItem.Header = ApplicationData.Languages.DisplayInformationUpdate;
-            ExplanationMenuItem.Header = ApplicationData.Languages.Help;
-            EndMenuItem.Header = ApplicationData.Languages.End;
+            OpenMenuItem.Header = ApplicationData.Strings.Open;
+            SpecifyWindowMenuItem.Header = ApplicationData.Strings.SpecifyWindow;
+            AllWindowMenuItem.Header = ApplicationData.Strings.AllWindow;
+            MagnetMenuItem.Header = ApplicationData.Strings.Magnet;
+            HotkeyMenuItem.Header = ApplicationData.Strings.Hotkey;
+            BatchProcessingOfSpecifyWindowMenuItem.Header = ApplicationData.Strings.BatchProcessingOfSpecifyWindow;
+            DoOutsideToInsideMenuItem.Header = ApplicationData.Strings.WindowMoveOutsideToInside;
+            GetInformationWindowMenuItem.Header = ApplicationData.Strings.GetWindowInformation;
+            NumericCalculationWindowMenuItem.Header = ApplicationData.Strings.NumericCalculation;
+            DisplayInformationUpdateMenuItem.Header = ApplicationData.Strings.DisplayInformationUpdate;
+            ExplanationMenuItem.Header = ApplicationData.Strings.Help;
+            EndMenuItem.Header = ApplicationData.Strings.End;
         }
         catch
         {
